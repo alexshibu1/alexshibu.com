@@ -1,60 +1,60 @@
 import Link from "next/link";
 
 export default function Sidebar() {
-  const linkClassName = "block hover:bg-gray-100 transition-colors";
+  const linkClassName = "nav-link";
 
   return (
     <div className="sidebar">
       <div className="nav-links">
         <Link href="/" className={linkClassName}>
-          HOME
+          <h1>home</h1>
         </Link>
-        <Link href="/write" className={linkClassName}>
-          WRITING
+        <Link href="/writing" className={linkClassName}>
+          writing
         </Link>
         <Link href="/read" className={linkClassName}>
-          READING
+          reading
         </Link>
         <Link href="/experiments" className={linkClassName}>
-          EXPERIMENTS
+          experiments
         </Link>
         <Link href="/sidequest" className={linkClassName}>
-          SIDE QUESTS
+          side quests
         </Link>
         <Link href="/photos" className={linkClassName}>
-          PHOTOS
+          photos
         </Link>
         <Link href="/coffee" className={linkClassName}>
-          COFFEE REVIEWS ☕
+          coffee reviews ☕
         </Link>
         <Link href="/submitreview" className={linkClassName}>
-          SUBMIT A REVIEW ☕
+          values
         </Link>
         <Link href="/work" className={linkClassName}>
-          WORK
+          journey
         </Link>
       </div>
 
-      <div className="social-links mt-8">
+      <div className="social-links mt-12">
         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-          Twitter
+          x
         </a>
         <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-          GitHub
+          github
         </a>
         <a
           href="https://linkedin.com/in/alexshibu"
           target="_blank"
           rel="noopener noreferrer"
         >
-          LinkedIn
+          linkedin
         </a>
         <a
           href="https://instagram.com/alexshibu1"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Instagram
+          instagram
         </a>
       </div>
     </div>
