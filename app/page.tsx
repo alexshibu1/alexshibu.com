@@ -13,9 +13,9 @@ export default function Home() {
         <p>
           this site is where i park experiments, side quests, document my
           journey, and thoughts going down rabbit holes I&apos;m obsessed with.
-          A lot of people tell me I have insane amount of lore. I've done a lot
-          of things. From during reasearch in Israel during a war to running a
-          whole amazon review talent mangment system for chinese companies.
+          A lot of people tell me I have insane amount of lore. I&apos;ve done a
+          lot of things. From during reasearch in Israel during a war to running
+          a whole amazon review talent mangment system for chinese companies.
           Excited to learn and share my journey with you.
         </p>
       </div>
