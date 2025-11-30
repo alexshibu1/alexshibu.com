@@ -1,30 +1,34 @@
 import Link from "next/link";
-import { posts } from "./posts";
 
-function formatDate(dateString: string) {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
+const essays = [
+  {
+    slug: "gap-year",
+    title: "My Builder Gap Year",
+    date: "January 20, 2025",
+  },
+  {
+    slug: "systems-glitches",
+    title: "Finding Glitches In Systems",
+    date: "TBD",
+  },
+];
 
-export default function Writing() {
+export default function WritingPage() {
   return (
-    <div className="page-content">
-      <h1>writing</h1>
+    <main className="page-content">
+      <h1 className="hero-heading">writing</h1>
+      <p className="hero-subline">
+        essays, logs, and experiments from the builder gap year.
+      </p>
 
-      <div className="writing-list">
-        {posts.map((post) => (
-          <div key={post.slug} className="writing-item">
-            <h2>
-              <Link href={`/writing/${post.slug}`}>{post.title}</Link>
-            </h2>
-            <p>{formatDate(post.date)}</p>
-          </div>
+      <ul style={{ marginTop: "2rem" }}>
+        {essays.map((essay) => (
+          <li key={essay.slug} className="essay-item">
+            <span className="date">{essay.date}</span>
+            <Link href={`/essay/${essay.slug}`}>{essay.title}</Link>
+          </li>
         ))}
-      </div>
-    </div>
+      </ul>
+    </main>
   );
 }
