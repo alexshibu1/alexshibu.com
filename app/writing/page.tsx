@@ -11,6 +11,11 @@ const essays = [
     title: "predictive outlook at Ethereum price 2022",
     date: "December 1, 2021",
   },
+  {
+    slug: "profs",
+    title: "profs need coaches",
+    date: "February 25, 2024",
+  },
 ];
 
 export default function WritingPage() {
@@ -21,11 +26,11 @@ export default function WritingPage() {
         essays, logs, and experiments from the builder gap year.
       </p>
 
-      <ul style={{ marginTop: "2rem" }}>
+      <ul className="writing-list">
         {essays.map((essay) => (
           <li key={essay.slug} className="essay-item">
-            <span className="date">{essay.date}</span>
             <Link href={`/essay/${essay.slug}`}>{essay.title}</Link>
+            <span className="date">{essay.date}</span>
           </li>
         ))}
       </ul>

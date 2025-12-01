@@ -21,6 +21,9 @@ export default function Sidebar() {
         <Link href="/sidequest" className={linkClassName}>
           side quests
         </Link>
+        <Link href="/travel" className={linkClassName}>
+          travel
+        </Link>
         <Link href="/photos" className={linkClassName}>
           photos
         </Link>
