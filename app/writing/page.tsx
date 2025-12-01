@@ -7,9 +7,9 @@ const essays = [
     date: "January 20, 2025",
   },
   {
-    slug: "systems-glitches",
-    title: "Finding Glitches In Systems",
-    date: "TBD",
+    slug: "ethereum",
+    title: "predictive outlook at Ethereum price 2022",
+    date: "December 1, 2021",
   },
 ];
 
