@@ -1,23 +1,39 @@
 // app/page.tsx
+import InteractiveHeading from "./components/waveHeading";
+
 export default function Home() {
   return (
     <div className="page-content">
       <div className="hero">
-        <h1 className="hero-heading">Hey, I&apos;m Alex.</h1>
+        <h1 className="hero-heading">
+          {" "}
+          <span>
+            <InteractiveHeading />
+          </span>
+        </h1>
         <p className="hero-subline">
-          i’m a 21-year-old builder in Toronto, trying to go from “ideas guy” to
-          “actually ships things.” right now i’m on a self-designed “builder
-          year” to get dangerous at full-stack dev + AI, deeply understand
-          physics and math, and start throwing potatoes at the wall.
+          I’m a 21 y/o in Toronto, going from “ideas guy” to shipping cool shit.
+          Right now i&apos;m obsessed with getting dangerous at full-stack dev,
+          deeply understaning math & physics, and then build really great
+          products.
         </p>
         <p>
-          this site is where i park experiments, side quests, document my
-          journey, and thoughts going down rabbit holes I&apos;m obsessed with.
-          A lot of people tell me I have insane amount of lore. I&apos;ve done a
-          lot of things. From during reasearch in Israel during a war to running
-          a whole amazon review talent mangment system for chinese companies.
-          Excited to learn and share my journey with you.
+          At UofT I study physics & com sci. on this site i park experiments,
+          document my journey, and thoughts going down rabbit holes. previously
+          I&apos;ve done a lot of randome side quests, from reasearch in Israel
+          during a war to running a whole bunch of ig theme pages keto, bath
+          bombs and gaming. Excited to learn and share my journey with you.
         </p>
+        <p>
+          currently running in different cities, becoming healthy, throwing
+          potatoes at the wall, and documenting the mess in between.
+        </p>
+        <p>
+          I will soon become the ultimate swiss-army knife that can understand
+          users, build, and growth hack extremely useful things.
+        </p>
+        <p>Join my internal board of directors</p>
+        <p>would love to chat!</p>
       </div>
 
       <footer className="footer mt-auto">
