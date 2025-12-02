@@ -228,9 +228,8 @@ body {
 
   letter-spacing: -0.02em;
 
-  text-transform: lowercase;
-
   margin-top: 4rem;
+  padding-bottom: 0.5rem;
 }
 
 .hero-subline {
