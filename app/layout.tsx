@@ -4,6 +4,7 @@ import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Sidebar from "./components/sidebar";
 import { Inter, Space_Grotesk, IBM_Plex_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -44,6 +45,7 @@ export default function RootLayout({
         <Sidebar />
         {children}
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
