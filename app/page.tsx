@@ -1,6 +1,5 @@
 // app/page.tsx
 import InteractiveHeading from "./components/waveHeading";
-
 export default function Home() {
   return (
     <div className="page-content">

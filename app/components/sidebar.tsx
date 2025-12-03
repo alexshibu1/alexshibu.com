@@ -9,10 +9,10 @@ export default function Sidebar() {
         <Link
           href="/"
           // Change -mt-2 to -mt-8 or similar
-          className="mb-22 text-black no-underline hover:none block -mt-14"
+          className="mb-16 text-black no-underline hover:none block -mt-10"
         >
           <h1 className="text-5xl font-medium tracking-tighter font-[family-name:var(--font-space-grotesk)]">
-            Alex
+            alex
           </h1>
         </Link>
 

@@ -1,6 +1,7 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Sidebar from "./components/sidebar";
 import { Inter, Space_Grotesk, IBM_Plex_Sans } from "next/font/google";
 
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body className="antialiased">
         <Sidebar />
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
