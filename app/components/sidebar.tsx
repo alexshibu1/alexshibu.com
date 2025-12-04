@@ -6,7 +6,7 @@ export default function Sidebar() {
   return (
     <div className="sidebar">
       <div className="nav-links">
-        <Link
+        {/* <Link
           href="/"
           // Change -mt-2 to -mt-8 or similar
           className="mb-16 text-black no-underline hover:none block -mt-10"
@@ -14,6 +14,9 @@ export default function Sidebar() {
           <h1 className="text-5xl font-medium tracking-tighter font-[family-name:var(--font-space-grotesk)]">
             alex
           </h1>
+        </Link> */}
+        <Link href="/" className={linkClassName}>
+          home
         </Link>
 
         <Link href="/writing" className={linkClassName}>
