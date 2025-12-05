@@ -12,7 +12,7 @@ const essays = [
     date: "February 25, 2024",
   },
   {
-    slug: "gap-year",
+    slug: "gapyear",
     title: "My Builder Gap Year",
     date: "January 20, 2025",
   },
