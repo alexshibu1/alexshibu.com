@@ -7,7 +7,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     EssayHeader,
 
     wrapper: ({ children }) => (
-      <main className="page-content" style={{ maxWidth: "650px" }}>
+      <main
+        className="page-content"
+        style={{ maxWidth: "650px", display: "block" }}
+      >
         {children}
       </main>
     ),

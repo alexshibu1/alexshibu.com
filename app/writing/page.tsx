@@ -1,42 +1,103 @@
 import Link from "next/link";
+import fs from "fs";
+import path from "path";
 
-const essays = [
-  {
-    slug: "ethereum",
-    title: "predictive outlook at Ethereum price 2022",
-    date: "December 1, 2021",
-  },
-  {
-    slug: "profs",
-    title: "profs need coaches",
-    date: "February 25, 2024",
-  },
-  {
-    slug: "gapyear",
-    title: "My Builder Gap Year",
-    date: "January 20, 2025",
-  },
-];
+type EssayMeta = {
+  slug: string;
+  title: string;
+  date?: string;
+  description?: string;
+};
 
-export default function WritingPage() {
+function readAllEssayMeta(): EssayMeta[] {
+  const essaysDir = path.join(process.cwd(), "app", "essay");
+  if (!fs.existsSync(essaysDir)) return [];
+
+  const entries = fs.readdirSync(essaysDir, { withFileTypes: true });
+
+  const metas: EssayMeta[] = entries
+    .filter((e) => e.isDirectory())
+    .map((dir) => {
+      const mdxPath = path.join(essaysDir, dir.name, "page.mdx");
+      if (!fs.existsSync(mdxPath)) return null;
+      const raw = fs.readFileSync(mdxPath, "utf8");
+
+      // Parse metadata manually since it's in JS export, not YAML frontmatter
+      let title = dir.name;
+      let date = undefined;
+      let description = undefined;
+
+      // 1. Try to extract title/desc/date from export const metadata
+      const metadataMatch = raw.match(
+        /export const metadata = \{([\s\S]*?)\};/
+      );
+      if (metadataMatch) {
+        const content = metadataMatch[1];
+        const titleMatch = content.match(/title:\s*"([^"]*)"/);
+        if (titleMatch) title = titleMatch[1];
+
+        const descMatch = content.match(/description:\s*"([^"]*)"/);
+        if (descMatch) description = descMatch[1];
+
+        const dateMatch = content.match(/date:\s*"([^"]*)"/);
+        if (dateMatch) date = dateMatch[1];
+      }
+
+      // 2. Try to extract date from <EssayHeader /> if not found in metadata
+      if (!date) {
+        // Matches date="..." inside EssayHeader tag
+        const headerMatch = raw.match(/<EssayHeader[^>]*date="([^"]*)"/);
+        if (headerMatch) {
+          date = headerMatch[1];
+        }
+      }
+
+      // 3. Fallback: if title is in EssayHeader but not metadata
+      if (title === dir.name) {
+        const headerTitleMatch = raw.match(/<EssayHeader[^>]*title="([^"]*)"/);
+        if (headerTitleMatch) {
+          title = headerTitleMatch[1];
+        }
+      }
+
+      return {
+        slug: dir.name,
+        title,
+        date,
+        description,
+      } as EssayMeta;
+    })
+    .filter(Boolean) as EssayMeta[];
+
+  // sort: newest first (if date present)
+  metas.sort((a, b) => {
+    if (a.date && b.date) return +new Date(b.date) - +new Date(a.date);
+    if (a.date) return -1;
+    if (b.date) return 1;
+    return a.slug.localeCompare(b.slug);
+  });
+
+  return metas;
+}
+
+export default function WritingIndex() {
+  const essays = readAllEssayMeta();
+
   return (
     <main className="page-content">
       <h1 className="hero-heading">writing</h1>
       <p className="hero-subline">
         essays, logs, and experiments from the builder gap year.
       </p>
+
       <ul className="writing-list">
-        {/* Change this line: */}
-        {essays
-          .slice()
-          .reverse()
-          .map((essay) => (
-            <li key={essay.slug} className="essay-item">
-              <Link href={`/essay/${essay.slug}`}>{essay.title}</Link>
-              <span className="date">{essay.date}</span>
-            </li>
-          ))}
-      </ul>{" "}
+        {essays.map((e) => (
+          <li key={e.slug} className="essay-item">
+            <span className="date">{e.date ?? ""}</span>
+            <Link href={`/essay/${e.slug}`}>{e.title}</Link>
+          </li>
+        ))}
+      </ul>
     </main>
   );
 }
