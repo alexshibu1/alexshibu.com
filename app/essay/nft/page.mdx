@@ -1,18 +1,23 @@
 export const metadata = {
-  title: "NFT 101 & How to make it",
+  title: "NFTs 101 & How to make it",
   description: "A step-by-step guide to creating, uploading, and minting NFTs.",
   date: "June 13, 2022",
 };
 
-<EssayHeader title="NFT 101 & How to make it" date="June 13, 2022" />
-
-# Non-Fungible Tokens
-
-_Created By: Alex Shibu_
+<EssayHeader title="NFTs 101 & How to make it" date="June 13, 2022" />
 
 ## What is an NFT?
 
-![](./images/image16.png)
+<img
+  src="/images/nft/image16.png"
+  alt="NFT illustration"
+  style={{
+    float: "right",
+    width: "50%",
+    margin: "0 0 1rem 2rem",
+    borderRadius: "8px",
+  }}
+/>
 
 There are thousands of other people out there on what exactly they are I'll just keep it brief.
 
@@ -24,13 +29,31 @@ This phenomenon of digital assets that could be worth something and not be repli
 
 Hope that makes sense. If not conduct further self-directed research.
 
-![](./images/image13.png)
+<img
+  src="/images/nft/image13.png"
+  alt="NFT illustration"
+  style={{
+    float: "right",
+    width: "50%",
+    margin: "0 0 1rem 2rem",
+    borderRadius: "8px",
+  }}
+/>
 
 In this unit, we will be learning to start and finish the process of creating, minting your custom NFT, and publishing it to the OpenSea marketplace. Keep in mind we will be testing our tokens on the Rinkeby testnet, which is free of charge but if you would like to really sell your NFT or art select Ethereum Mainnet when we get to that portion of the tutorial. Keep in mind “minting” or in other words publishing to the chain would incur charges of $10–15 USD based upon gas prices (the cost of completing any transaction on the blockchain).
 
 Let’s get started by selecting what the presentation image of our NFT would be. This could be an image or illustration of someone or something that you would like to make non-fungible. In my case, I will be minting a picture of my new collection Circus Clownz.
 
-![](./images/image8.png)
+<img
+  src="/images/nft/image8.png"
+  alt="NFT illustration"
+  style={{
+    float: "right",
+    width: "50%",
+    margin: "0 0 1rem 2rem",
+    borderRadius: "8px",
+  }}
+/>
 
 Once you’ve selected that we will be creating metadata for that image.
 
@@ -45,8 +68,8 @@ For us to set similar properties to our characters and images we will need to cr
 
 Begin with the name of the token then the description and for the _file URL_ we will be getting back to this a bit later but for now, leave it blank. Finally for attributes follow the format below to add traits the value of these traits. Don’t forget to end with curly brackets. The rest of the portions are completely optional. Save the file as a `.json` and move on to step two.
 
-![](./images/image9.png)
-![](./images/image10.png)
+![](/images/nft/image9.png)
+![](/images/nft/image10.png)
 
 ### IPFS
 
@@ -58,31 +81,31 @@ IPFS is a peer-to-peer network that enables people to store and share data in a 
 
 There are many decentralized storage solution providers but in our case, we will be using pinata.cloud. Sign in and create an account. Once you get to a screen similar to the one below you’re ready to move on to the next step.
 
-![](./images/image1.png)
+![](/images/nft/image1.png)
 
 Select “upload” and continue with the image file you would like to turn into a NFT. It would take a few seconds to process but in the end, it would all be worth it.
 
-![](./images/image18.png)
+![](/images/nft/image18.png)
 
 Awesome work! You published your image to IPFS, but you are not quite done yet.
 
-![](./images/image5.png)
+![](/images/nft/image5.png)
 
 From the files section of your account copy the CID number to your metadata file. More specifically the _file URL_ portion. The Content-ID number should only replace or come after the `ipfs.io/ipfs/` portion. This is very important in terms of identifying your image.
 
-![](./images/image17.png)
+![](/images/nft/image17.png)
 
 Once saving the `.json` file, upload that metadata file to InterPlanetary File System, similarly to the image from earlier. This should give you another content ID number. Note that ID is down and let's move on to the last portion of the third portion of this unit where we explore and develop Ethereum smart contracts.
 
 ## Smart Contract
 
-![](./images/image7.png)
+![](/images/nft/image7.png)
 
 Now that files are both uploaded to NFT creation, we’re in the third part where we will be developing the smart contract to be published to the network. The smart contract calls the `.json` file that then calls the image to place on OpenSea as illustrated above.
 
 What are Smart Contracts?
 
-![](./images/image22.png)
+![](/images/nft/image22.png)
 
 Smart contracts are digital contracts programmed in Solidity, which defines the conditions of an agreement between two parties. They can be used to automate transactions or to enforce agreements. In an NFT, a smart contract can be used to enforce the terms of the sale, such as specifying the price, the date of the sale, and the conditions under which the NFT can be transferred.
 
@@ -94,21 +117,21 @@ Now copy [this file](https://github.com/alexshibu1/nft_contract/blob/main/contra
 
 There is not a lot of programming you need to understand but here is a basic run through of the important thing you should know.
 
-![](./images/image4.png)
+![](/images/nft/image4.png)
 
 This is the contract importing the important OpenZeppelin library to get the contract working on the blockchain.
 
-![](./images/image11.png)
+![](/images/nft/image11.png)
 
 In this portion, we set the cost of the NFTs for others to purchase alongside the total supply since we’re simply making 1 we don’t have to change anything except the _price_ set to 0. For _maxmint_ put 1 instead so we avoid access errors and for pause set it to _false_. We want the official image to be the one OpenSea looks at first. In the _constructor_ area, we set the name of the contract and symbol, it’s totally up to you. Get creative! Finally, add the CID number of the `.json` file to the `hiddenmetadatauri`. At the end, it should look like the image above. Don’t forget to remove the `.json` from the line.
 
-![](./images/image3.png)
+![](/images/nft/image3.png)
 
 This is the function in which the user is able to mint the NFT only if one has sufficient funds in their wallet.
 
 Great Job! You are now ready to deploy. But before that, we need to get you a wallet and some eth in it.
 
-![](./images/image2.png)
+![](/images/nft/image2.png)
 
 ### Deploy
 
@@ -120,7 +143,7 @@ A digital wallet is a software program that stores your private keys and public 
 
 When first opening your MetaMask wallet it should look something similar to this but have a balance of 0.00. Switch over the Rinkeby testnet by clicking the drop-down menu near Ethereum Mainnet and select Rinkeby Test Network.
 
-![](./images/image20.png)
+![](/images/nft/image20.png)
 
 The next step is to add some eth into our wallets. Check out any of these websites to add some fake eth to our wallets. You would need at least 0.01 before moving on to the next step. If none of these work tweet at people with the #Rinkeby people are usually nice.
 
@@ -130,22 +153,22 @@ The next step is to add some eth into our wallets. Check out any of these websit
 
 With some eth now in your wallet you’re ready to deploy your smart contract to the blockchain.
 
-![](./images/image21.png)
+![](/images/nft/image21.png)
 
 Going back into remix.ethereum.org, let’s head over to the deploy tab and then select a few options. In the _environment_ dropdown select _Injected Web3_, _account address_ would be automatic — if not please ensure you’ve selected the _Rinkeby network_ on your MetaMask account. Next in Contract select your main contract. That for me would be _clownz.sol_. This is also the portion where you can choose using your wallet to either use the _Rinkeby_ or the _Ethereum Mainnet_. While keeping in mind the Mainnet will incur real-world fees. Select _Deploy_ and approve the transaction.
 
-![](./images/image12.png)
+![](/images/nft/image12.png)
 
 Congrats! You’ve deployed your first smart contract. Very exciting!
 
 Now that you’ve deployed your contract let’s mint our first NFT! Open the drop-down from the Deployed Contracts menu and enter in `1` into the _mint_, and prove the transaction. You’ve done it! You’ve created your first Non-Fungible Token!
 
-![](./images/image15.png)
+![](/images/nft/image15.png)
 
 Now let’s go see it. Copy the contract address from the left corner and head over to `testnets.opensea.io` and paste it into the URL in the format `https://testnets.opensea.io/assets/rinkeby/<contract-address>/<token-id>` — for example:
 https://testnets.opensea.io/assets/rinkeby/0xc3fcb878717c8b8b9b6add9de9cfcdc7170fdbd9/1
 
-![result example](./images/image6.png)
+![result example](/images/nft/image6.png)
 
 ## 😍 You've done it
 

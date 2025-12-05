@@ -20,6 +20,11 @@ const nextConfig = {
         destination: "/essay/profs",
         permanent: true,
       },
+      {
+        source: "/nft",
+        destination: "/essay/nft",
+        permanent: true,
+      },
     ];
   },
 };

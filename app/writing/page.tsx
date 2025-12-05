@@ -2,6 +2,8 @@ import Link from "next/link";
 import fs from "fs";
 import path from "path";
 
+export const dynamic = "force-dynamic";
+
 type EssayMeta = {
   slug: string;
   title: string;
@@ -46,7 +48,6 @@ function readAllEssayMeta(): EssayMeta[] {
         if (dateMatch) date = dateMatch[1];
       }
 
-      // 2. Try to extract date from <EssayHeader /> if not found in metadata
       if (!date) {
         // Matches date="..." inside EssayHeader tag
         const headerMatch = raw.match(/<EssayHeader[^>]*date=["']([^"']*)["']/);
@@ -73,7 +74,7 @@ function readAllEssayMeta(): EssayMeta[] {
         }
       }
 
-      console.log(`Parsed essay: ${dir.name}, Title: ${title}, Date: ${date}`); // Debug log
+      console.log(`Parsed essay: ${dir.name}, Title: ${title}, Date: ${date}`);
 
       return {
         slug: dir.name,

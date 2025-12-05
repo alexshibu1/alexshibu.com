@@ -36,8 +36,10 @@ export default function Home() {
       </div>
 
       <footer className="footer">
-        <div className="flex items-center gap-3 text-sm text-gray-500">
-          <span className="font-sans text-gray-500 ">God Bless the Hustle</span>
+        <div className="flex items-center gap-1 text-sm text-gray-500">
+          <span className="font-sans text-gray-500 ">
+            God Bless the Hustle 🚢
+          </span>
 
           <span className="opacity-20 select-none">|</span>
 
