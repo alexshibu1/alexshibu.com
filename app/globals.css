@@ -146,7 +146,7 @@ body {
 
   max-width: 820px; /* Increased to maintain text width */
 
-  padding: 2rem;
+  padding: 2rem 2rem 20px 2rem;
 
   /* No margin auto needed if parent centers it */
 }
@@ -243,9 +243,21 @@ body {
 /* Footer */
 
 .page-content footer {
-  text-align: left;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  z-index: 100;
+}
 
-  margin-top: auto;
+.footer-right-corner {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  font-size: 0.875rem;
+  color: #6b7280;
 }
 
 /* Essays list */

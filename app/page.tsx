@@ -35,12 +35,39 @@ export default function Home() {
         <p>would love to chat!</p>
       </div>
 
-      <footer className="footer mt-auto">
-        {/* <p>
-          Last edited {new Date().toLocaleDateString()} – God bless the hustle.
-          Made with ❤️ Alex Shibu
-        </p> */}
+      <footer className="footer">
+        <div className="flex items-center gap-3 text-sm text-gray-500">
+          <span className="font-sans text-gray-500 ">God Bless the Hustle</span>
+
+          <span className="opacity-20 select-none">|</span>
+
+          <span>
+            <a
+              href="https://web.archive.org/web/20230404045813/https://alexshibu.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="!text-gray-500 opacity-50 hover:!text-red-500 hover:underline transition-colors hover:opacity-100"
+            >
+              v1
+            </a>
+            <span className="mx-1 text-gray-300">,</span>
+            <a
+              href="https://personalsite-jfsmu01xm-alex-ss-projects-55e2bcbf.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="!text-gray-500 opacity-50 hover:!text-red-500 hover:underline transition-colors hover:opacity-100"
+            >
+              v2
+            </a>
+          </span>
+        </div>
       </footer>
+      {/* 
+      <div className="footer-right-corner">
+        <span className="opacity-80 tracking-tight">
+          Last edited <span className="italic tracking-tight">Dec 5, 2025</span>
+        </span>
+      </div> */}
     </div>
   );
 }
