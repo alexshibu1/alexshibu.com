@@ -28,25 +28,28 @@ function readAllEssayMeta(): EssayMeta[] {
       let description = undefined;
 
       // 1. Try to extract title/desc/date from export const metadata
-      const metadataMatch = raw.match(
-        /export const metadata = \{([\s\S]*?)\};/
-      );
+      // Relaxed regex: matches export const metadata = { ... } (ignoring trailing semicolon/whitespace)
+      const metadataMatch = raw.match(/export const metadata = \{([\s\S]*?)\}/);
       if (metadataMatch) {
         const content = metadataMatch[1];
-        const titleMatch = content.match(/title:\s*"([^"]*)"/);
+
+        // Match title: "..." or title: '...'
+        const titleMatch = content.match(/title:\s*["']([^"']*)["']/);
         if (titleMatch) title = titleMatch[1];
 
-        const descMatch = content.match(/description:\s*"([^"]*)"/);
+        // Match description: "..." or description: '...'
+        const descMatch = content.match(/description:\s*["']([^"']*)["']/);
         if (descMatch) description = descMatch[1];
 
-        const dateMatch = content.match(/date:\s*"([^"]*)"/);
+        // Match date: "..." or date: '...'
+        const dateMatch = content.match(/date:\s*["']([^"']*)["']/);
         if (dateMatch) date = dateMatch[1];
       }
 
       // 2. Try to extract date from <EssayHeader /> if not found in metadata
       if (!date) {
         // Matches date="..." inside EssayHeader tag
-        const headerMatch = raw.match(/<EssayHeader[^>]*date="([^"]*)"/);
+        const headerMatch = raw.match(/<EssayHeader[^>]*date=["']([^"']*)["']/);
         if (headerMatch) {
           date = headerMatch[1];
         }
@@ -54,11 +57,23 @@ function readAllEssayMeta(): EssayMeta[] {
 
       // 3. Fallback: if title is in EssayHeader but not metadata
       if (title === dir.name) {
-        const headerTitleMatch = raw.match(/<EssayHeader[^>]*title="([^"]*)"/);
+        const headerTitleMatch = raw.match(
+          /<EssayHeader[^>]*title=["']([^"']*)["']/
+        );
         if (headerTitleMatch) {
           title = headerTitleMatch[1];
         }
       }
+
+      // 4. Fallback: try to find # Title in markdown content
+      if (title === dir.name) {
+        const h1Match = raw.match(/^#\s+(.+)$/m);
+        if (h1Match) {
+          title = h1Match[1];
+        }
+      }
+
+      console.log(`Parsed essay: ${dir.name}, Title: ${title}, Date: ${date}`); // Debug log
 
       return {
         slug: dir.name,
