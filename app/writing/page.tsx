@@ -108,8 +108,8 @@ export default function WritingIndex() {
 
       <ul className="writing-list">
         {essays.map((e) => (
-          <li key={e.slug} className="essay-item">
-            <span className="date">{e.date ?? ""}</span>
+          <li key={e.slug} className="essay-item ">
+            <span className="date ">{e.date ?? ""}</span>
             <Link href={`/essay/${e.slug}`}>{e.title}</Link>
           </li>
         ))}

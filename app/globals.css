@@ -124,7 +124,7 @@ body {
 }
 
 .social-links a:hover {
-  color: #ff4a4a;
+  color: #ff3a3a;
 }
 
 /* Main Wrapper - centers content column in remaining space */
@@ -207,7 +207,7 @@ body {
 }
 
 .page-content a {
-  color: #277dff;
+  color: #ff3a3a;
   text-decoration: none;
 }
 
@@ -281,12 +281,13 @@ body {
 
 .essay-item a {
   text-decoration: none;
-  color: #277dff;
+  color: #ff3a3a !important;
   font-weight: 500;
 }
 
 .essay-item a:hover {
   text-decoration: underline;
+  color: #d80000 !important;
 }
 
 .date {
