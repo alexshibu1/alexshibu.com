@@ -1,0 +1,65 @@
+import Link from "next/link";
+
+export default function ResumePage() {
+  return (
+    <main className="page-content">
+      {/* Fixed heading */}
+      <h1 className="hero-heading">resume / contact</h1>
+
+      {/* Micro Bio */}
+      <section className="mb-8">
+        <p className="text-lg text-gray-600 mb-4">
+          I’m Alex. I’m a 21 y/o physics & CS student currently on a
+          &apos;builder&apos; gap year. My goal is to ship 12 projects in 12
+          months and get dangerous at full-stack development.
+        </p>
+
+        {/* Contact */}
+        <div className="flex gap-4 text-sm text-gray-500">
+          <a
+            href="mailto:alexshibu04@gmail.com"
+            className="hover:text-red-500 transition-colors"
+          >
+            alexshibu04@gmail.com
+          </a>
+          <span>•</span>
+          <span>Toronto, ON</span>
+        </div>
+      </section>
+
+      {/* Video Intro (Optional) */}
+      <section className="mb-12">
+        <h2 className="text-xl font-bold mb-4">Video Intro</h2>
+        <div className="aspect-video bg-gray-100 rounded-lg flex items-center justify-center text-gray-400">
+          {/* Replace this div with your <video> or <iframe> tag later */}
+          <p>Video coming soon...</p>
+        </div>
+      </section>
+
+      {/* Resume Download / Embed */}
+      <section>
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-xl font-bold">PDF Version</h2>
+          <a
+            /* Fixed path: removed /public */
+            href="/resume/AlexShibu_2025_General.pdf"
+            target="_blank"
+            className="px-4 py-2 bg-black text-white rounded-md text-sm hover:bg-gray-800 transition-colors"
+          >
+            Download PDF
+          </a>
+        </div>
+
+        {/* PDF Embed Preview */}
+        <div className="w-full h-[600px] border border-gray-200 rounded-lg bg-gray-50">
+          <iframe
+            /* Fixed path: removed public/ */
+            src="/resume/AlexShibu_2025_General.pdf"
+            className="w-full h-full rounded-lg"
+            title="Resume PDF"
+          />
+        </div>
+      </section>
+    </main>
+  );
+}
