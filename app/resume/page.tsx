@@ -44,7 +44,7 @@ export default function ResumePage() {
             /* Fixed path: removed /public */
             href="/resume/AlexShibu_2025_General.pdf"
             target="_blank"
-            className="px-4 py-2 bg-black text-white rounded-md text-sm hover:bg-gray-800 transition-colors"
+            className="px-4 py-2 bg-white text-red-500 border border-red-500 rounded-md text-sm hover:bg-red-50 transition-colors"
           >
             Download PDF
           </a>
