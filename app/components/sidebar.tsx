@@ -6,19 +6,12 @@ export default function Sidebar() {
   return (
     <div className="sidebar">
       <div className="nav-links">
-        {/* <Link
-          href="/"
-          // Change -mt-2 to -mt-8 or similar
-          className="mb-16 text-black no-underline hover:none block -mt-10"
-        >
-          <h1 className="text-5xl font-medium tracking-tighter font-[family-name:var(--font-space-grotesk)]">
-            alex
-          </h1>
-        </Link> */}
         <Link href="/" className={linkClassName}>
           home
         </Link>
-
+        <Link href="/projects" className={linkClassName}>
+          projects
+        </Link>
         <Link href="/writing" className={linkClassName}>
           writing
         </Link>
@@ -34,20 +27,14 @@ export default function Sidebar() {
         <Link href="/content" className={linkClassName}>
           content
         </Link>
-        <Link href="/travel" className={linkClassName}>
-          travel
-        </Link>
-        <Link href="/photos" className={linkClassName}>
-          photos
+        <Link href="/lore" className={linkClassName}>
+          lore
         </Link>
         <Link href="/coffee" className={linkClassName}>
           coffee reviews ☕
         </Link>
-        <Link href="/submitreview" className={linkClassName}>
-          values
-        </Link>
-        <Link href="/about" className={linkClassName}>
-          journey
+        <Link href="/life" className={linkClassName}>
+          life story
         </Link>
       </div>
 
