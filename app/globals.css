@@ -297,6 +297,85 @@ body {
   white-space: nowrap; /* Prevent date wrapping */
 }
 
+/* Projects list */
+.projects-list {
+  margin-top: 2rem;
+  padding-left: 0;
+  list-style: none;
+  width: 100%;
+}
+
+.project-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Back to center */
+  margin-bottom: 1rem;
+  gap: 1.5rem;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.project-left {
+  display: inline-flex;
+  align-items: center; /* Back to center */
+  gap: 1.5rem;
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.project-title {
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 1.4; /* Match the description line-height */
+  vertical-align: middle;
+}
+
+.project-desc {
+  font-size: 14px;
+  color: #999;
+  line-height: 1.4; /* Consistent with title */
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.project-right {
+  display: inline-flex;
+  align-items: center; /* Back to center */
+  gap: 1rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.project-link {
+  font-size: 14px;
+  color: #ff3a3a;
+  text-decoration: none;
+  line-height: 1.4; /* Match other elements */
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+.project-date {
+  font-size: 14px;
+  color: #999;
+  line-height: 1.4; /* Match other elements */
+  vertical-align: middle;
+  display: inline-block;
+}
+
 /* Responsive */
 
 @media (max-width: 800px) {
