@@ -170,6 +170,25 @@ export default function WorkIndex() {
       video: "",
       writeup: "",
     },
+    {
+      name: "2022 Ethereum Analysis: Regression Analysis on the Ethereum Market",
+      description: "Regression Analysis on the Ethereum Market",
+      link: "#",
+      date: "2022",
+      repo: "",
+      video: "https://www.youtube.com/watch?v=JaFX-dkkLl0",
+      writeup: "",
+    },
+    {
+      name: "SMS AI Tool",
+      description:
+        "The AI-powered SMS system provides an effective and efficient way for students to learn and improve their skills through mobile devices. The system works by analyzing student responses to questions and providing personalized feedback to help them better understand the material. This personalized approach to learning allows students to learn at their own pace and receive guidance tailored to their unique needs.",
+      link: "#",
+      date: "2023",
+      repo: "",
+      video: "https://www.youtube.com/watch?v=p2OSkHM308g",
+      writeup: "",
+    },
   ];
 
   // Sort projects by date (newest first)
