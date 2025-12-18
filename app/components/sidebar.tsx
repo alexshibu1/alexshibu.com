@@ -9,6 +9,9 @@ export default function Sidebar() {
         <Link href="/" className={linkClassName}>
           home
         </Link>
+        <Link href="/about" className={linkClassName}>
+          about
+        </Link>
         <Link href="/projects" className={linkClassName}>
           projects
         </Link>
@@ -35,9 +38,6 @@ export default function Sidebar() {
         </Link>
         <Link href="/life" className={linkClassName}>
           life story
-        </Link>
-        <Link href="/resume" className={linkClassName}>
-          resume
         </Link>
       </div>
 
