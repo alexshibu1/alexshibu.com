@@ -11,28 +11,28 @@ export default function Home() {
           </span>
         </h1>
         <p className="hero-subline">
-          I’m a 21 y/o in Toronto, going from “ideas guy” to shipping cool shit.
-          Right now i&apos;m obsessed with getting dangerous at full-stack dev,
-          deeply understaning math & physics, and then build really great
-          products.
+          I&apos;m a 21 y/o in Toronto, going from &quot;ideas guy&quot; to
+          shipping cool shit. Right now I&apos;m obsessed with getting dangerous
+          at full-stack dev, deeply understanding math & physics, and then
+          building really great products.
         </p>
         <p>
-          At UofT I study physics & com sci. on this site i park experiments,
-          document my journey, and thoughts going down rabbit holes. previously
-          I&apos;ve done a lot of randome side quests, from reasearch in Israel
-          during a war to running a whole bunch of ig theme pages keto, bath
-          bombs and gaming. Excited to learn and share my journey with you.
+          At UofT I study physics & comp sci. On this site I park experiments,
+          document my journey, and thoughts from rabbit holes. Previously
+          I&apos;ve done a lot of random side quests, from research in Israel
+          during a war to running a bunch of IG theme pages: keto, bath bombs,
+          and gaming. Excited to learn and share my journey with you.
         </p>
         <p>
-          currently running in different cities, becoming healthy, throwing
+          Currently running in different cities, becoming healthy, throwing
           potatoes at the wall, and documenting the mess in between.
         </p>
         <p>
-          I will soon become the ultimate swiss-army knife that can understand
+          I will soon become the ultimate Swiss Army knife that can understand
           users, build, and growth hack extremely useful things.
         </p>
-        <p>Join my internal board of directors</p>
-        <p>would love to chat!</p>
+        <p>Join my internal board of directors.</p>
+        <p>Would love to chat!</p>
       </div>
 
       <footer className="footer">
