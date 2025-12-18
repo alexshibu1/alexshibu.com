@@ -14,7 +14,7 @@ export default function WorkIndex() {
     {
       name: "Top 14% in Junior Breakthrough Challenge",
       description:
-        "Built a physics explainer video that ranked globally among thousands of entries. First major taste of internet-scale competition.",
+        "Built a video explaining Radioisotope thermoelectric generators that ranked globally among thousands of entries.",
       link: "#", // Add link later
       date: "2022",
       video: "https://youtu.be/vQcW4T5JnPU?si=OT2fkNW9jxXhedVF", // Add video link later
@@ -22,17 +22,7 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
-      name: "NFTs: Turned $3K into $100K, then lost it all",
-      description:
-        "Took all my YMCA internship money ($3K) and gained the NFT game. Everything from Veefriends, World of Women, DeFi farming, and whole lot of Discord gaming to build a portfolio around $100K. Could've put a downpayment but didn't. Lost it all, but now know I did it once and can do it again.",
-      link: "#", // Add link later
-      date: "2021",
-      video: "",
-      repo: "",
-      writeup: "",
-    },
-    {
-      name: "Hackathon for Rejects – easyhacks.org",
+      name: "easyhacks.org - Hackathon for Rejects",
       description:
         "Created and led EasyHacks, a hackathon for everyone, rejected in an email thread from UBC nwhacks. It transformed into a 10-person operation for 170+ true beginners, from military veterans to high school students in Nepal, with 170+ participants and $8K in prizes raised from sponsors.",
       link: "https://easyhacks.org/",
@@ -52,13 +42,24 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
-      name: "Easter Seals Assistive Technology",
+      name: "ASLO [Hackathon]",
       description:
         "The development of glasses that can interpret ASL would help bridge the communication gap by allowing wearers to see text translations of what is being signed in real-time, thus making communication easier and more accessible. This technology could have a significant impact on the lives of people who rely on ASL for communication.",
       link: "https://firebasestorage.googleapis.com/v0/b/tks-life-prod.appspot.com/o/items%2FZnFxCGk9nXYoiuJ37ArrGUjiBDB2%2FExplore%20Hackathon%20-%20ASL.pdf?alt=media&token=7d19ef3d-7d77-4059-8bd0-526fef256322",
-      date: "2019",
+      date: "2022",
       repo: "",
       video: "https://www.youtube.com/watch?v=1n0SDjeV7Ao",
+      writeup: "",
+    },
+
+    {
+      name: "Easter Seals Assistive Technology ",
+      description:
+        "Made AI GLASSES for Easter Seals. A raspberry pi that reads text and signs in front of you and uses Google Assistant and Alexa to answer questions and read out loud.",
+      link: "",
+      date: "2019",
+      repo: "",
+      video: "",
       writeup: "",
     },
     {
