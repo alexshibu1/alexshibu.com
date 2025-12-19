@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* Universal box-sizing for consistent sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* Layout */
 
 body {
@@ -17,6 +24,56 @@ body {
   color: #333333;
 }
 
+/* Hamburger Button */
+.hamburger-button {
+  display: none; /* Hidden on desktop */
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 1001;
+  background: white;
+  border: 1px solid #DDE2EB;
+  border-radius: 8px;
+  padding: 0;
+  cursor: pointer;
+  color: #6C757D;
+  transition: all 0.2s ease;
+  width: 44px; /* Touch-friendly size for iPhone */
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.hamburger-button:hover {
+  background: #f9f9f9;
+  border-color: #DDE2EB;
+}
+
+.hamburger-button:active {
+  transform: scale(0.95);
+  background: #f5f5f5;
+}
+
+.hamburger-button svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+/* Menu Overlay */
+.menu-overlay {
+  display: none; /* Hidden on desktop */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  backdrop-filter: blur(2px);
+}
+
 /* Sidebar */
 
 .sidebar {
@@ -25,6 +82,7 @@ body {
   padding: 6rem 2rem 4rem 5rem;
 
   font-family: var(--font-inter), system-ui, sans-serif;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 .nav-links {
   display: flex; /* make it a flex container           */
@@ -425,32 +483,199 @@ body {
   font-variant-numeric: tabular-nums; /* Monospaced numbers for alignment */
 }
 
-/* Responsive */
+/* Responsive - iPhone 14 Pro Max and smaller (430px) */
 
-@media (max-width: 800px) {
+@media (max-width: 430px) {
+  html {
+    overflow-x: hidden; /* Prevent horizontal scroll on mobile only */
+    width: 100%;
+  }
+
+  body {
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll on mobile only */
+  }
+
+  /* Show hamburger button on mobile */
+  .hamburger-button {
+    display: flex;
+  }
+
+  /* Show overlay when menu is open */
+  .menu-overlay {
+    display: block;
+  }
+
+  /* Sidebar - hidden by default, slides in when open */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 320px;
+    max-width: 90vw;
+    background: white;
+    padding: 6rem 2.5rem 2rem 2.5rem;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+    opacity: 0;
+    overflow-y: auto;
+    flex: none;
+    pointer-events: none; /* Prevent interaction when hidden */
+  }
+
+  /* Sidebar when open */
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto; /* Enable interaction when open */
+  }
+
+  /* Larger nav links in mobile sidebar */
+  .sidebar .nav-link {
+    font-size: 18px;
+    padding: 8px 14px;
+    margin: 4px 0;
+    min-height: 44px; /* Touch-friendly target size */
+    display: flex;
+    align-items: center;
+  }
+
+  /* Larger social links in mobile sidebar */
+  .sidebar .social-links {
+    margin-top: 2rem;
+  }
+
+  .sidebar .social-links a {
+    font-size: 18px;
+    padding: 8px 0;
+    min-height: 44px; /* Touch-friendly target size */
+    display: flex;
+    align-items: center;
+  }
+
+  /* More spacing between nav links on mobile */
+  .sidebar .nav-links {
+    gap: 0.25rem;
+  }
+
+  .main-wrapper {
+    display: block;
+    width: 100%;
+  }
+
+  .page-content {
+    max-width: 100%;
+    padding: 1rem 1.25rem;
+    padding-top: 4.5rem; /* Space for hamburger button */
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+
+  .projects-list {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Stack essays vertically on mobile */
+  .essay-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .date {
+    text-align: left;
+    min-width: auto;
+  }
+
+  /* Adjust hero heading for mobile */
+  .hero-heading {
+    font-size: 36px;
+    margin-top: 1.5rem;
+  }
+
+  .hero-subline {
+    font-size: 18px;
+  }
+
+  /* Project items stack better on mobile */
+  .project-item {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .project-left {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .project-title-wrapper {
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Allow project titles to wrap on mobile */
+  .project-title {
+    white-space: normal !important;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    display: inline;
+    box-sizing: border-box;
+  }
+
+  .project-link-icon {
+    flex-shrink: 0; /* Keep icons from shrinking */
+  }
+
+  .project-desc {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+  }
+
+  .project-right {
+    margin-left: 0;
+    padding-left: 0;
+    width: 100%;
+  }
+}
+
+/* Responsive - Tablets and medium screens (431px - 800px) */
+@media (min-width: 431px) and (max-width: 800px) {
   body {
     flex-direction: column;
   }
 
   .sidebar {
     flex: 0 0 auto;
-
     padding: 2rem;
   }
 
   .main-wrapper {
-    display: block; /* Stack normally on mobile */
+    display: block;
   }
 
   .page-content {
     max-width: 100%;
-
     padding: 1.5rem;
   }
 
-  /* Stack essays vertically on mobile if needed */
   .essay-item {
-    display: flex; /* Switch back to flex for mobile stacking */
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 0.25rem;

@@ -1,68 +1,108 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Sidebar() {
+  const [isOpen, setIsOpen] = useState(false);
   const linkClassName = "nav-link";
 
-  return (
-    <div className="sidebar">
-      <div className="nav-links">
-        <Link href="/" className={linkClassName}>
-          home
-        </Link>
-        <Link href="/about" className={linkClassName}>
-          about
-        </Link>
-        <Link href="/projects" className={linkClassName}>
-          projects
-        </Link>
-        <Link href="/writing" className={linkClassName}>
-          writing
-        </Link>
-        <Link href="/read" className={linkClassName}>
-          reading
-        </Link>
-        <Link href="/experiments" className={linkClassName}>
-          experiments
-        </Link>
-        <Link href="/sidequest" className={linkClassName}>
-          side quests
-        </Link>
-        <Link href="/content" className={linkClassName}>
-          content
-        </Link>
-        <Link href="/lore" className={linkClassName}>
-          lore
-        </Link>
-        <Link href="/coffee" className={linkClassName}>
-          coffee reviews ☕
-        </Link>
-        <Link href="/life" className={linkClassName}>
-          life story
-        </Link>
-      </div>
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
-      <div className="social-links mt-12">
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-          x
-        </a>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-          github
-        </a>
-        <a
-          href="https://linkedin.com/in/alexshibu"
-          target="_blank"
-          rel="noopener noreferrer"
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
+  return (
+    <>
+      {/* Hamburger button - visible on mobile only */}
+      <button
+        className="hamburger-button"
+        onClick={toggleMenu}
+        aria-label="Toggle menu"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
-          linkedin
-        </a>
-        <a
-          href="https://instagram.com/alexshibu1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          instagram
-        </a>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      {/* Overlay - appears when menu is open on mobile */}
+      {isOpen && <div className="menu-overlay" onClick={closeMenu}></div>}
+
+      {/* Sidebar */}
+      <div className={`sidebar ${isOpen ? "sidebar-open" : ""}`}>
+        <div className="nav-links">
+          <Link href="/" className={linkClassName} onClick={closeMenu}>
+            home
+          </Link>
+          <Link href="/about" className={linkClassName} onClick={closeMenu}>
+            about
+          </Link>
+          <Link href="/projects" className={linkClassName} onClick={closeMenu}>
+            projects
+          </Link>
+          <Link href="/writing" className={linkClassName} onClick={closeMenu}>
+            writing
+          </Link>
+          <Link href="/read" className={linkClassName} onClick={closeMenu}>
+            reading
+          </Link>
+          <Link href="/experiments" className={linkClassName} onClick={closeMenu}>
+            experiments
+          </Link>
+          <Link href="/sidequest" className={linkClassName} onClick={closeMenu}>
+            side quests
+          </Link>
+          <Link href="/content" className={linkClassName} onClick={closeMenu}>
+            content
+          </Link>
+          <Link href="/lore" className={linkClassName} onClick={closeMenu}>
+            lore
+          </Link>
+          <Link href="/coffee" className={linkClassName} onClick={closeMenu}>
+            coffee reviews ☕
+          </Link>
+          <Link href="/life" className={linkClassName} onClick={closeMenu}>
+            life story
+          </Link>
+        </div>
+
+        <div className="social-links mt-12">
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            x
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            github
+          </a>
+          <a
+            href="https://linkedin.com/in/alexshibu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            linkedin
+          </a>
+          <a
+            href="https://instagram.com/alexshibu1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            instagram
+          </a>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
