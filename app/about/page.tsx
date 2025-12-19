@@ -2,7 +2,7 @@ export default function ResumePage() {
   return (
     <main className="page-content">
       {/* Fixed heading */}
-      <h1 className="hero-heading">resume / contact</h1>
+      <h1 className="hero-heading">about me ✌️</h1>
 
       {/* Micro Bio */}
       <section className="mb-8">
@@ -34,7 +34,7 @@ export default function ResumePage() {
         </div>
       </section>
 
-      {/* Resume Download / Embed */}
+      {/* Resume Download */}
       <section>
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-bold">PDF Version</h2>
@@ -46,16 +46,6 @@ export default function ResumePage() {
           >
             Download PDF
           </a>
-        </div>
-
-        {/* PDF Embed Preview */}
-        <div className="w-full h-[600px] border border-gray-200 rounded-lg bg-gray-50">
-          <iframe
-            /* Fixed path: removed public/ */
-            src="/resume/AlexShibu_2025_General.pdf"
-            className="w-full h-full rounded-lg"
-            title="Resume PDF"
-          />
         </div>
       </section>
     </main>
