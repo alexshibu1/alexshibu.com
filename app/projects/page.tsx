@@ -12,12 +12,12 @@ export default function WorkIndex() {
         "https://www.linkedin.com/posts/alexshibu_dreamtheimpossible-reverlimpossible-activity-7077475467871600640-FrKP/",
     },
     {
-      name: "Top 14% in Junior Breakthrough Challenge",
+      name: "Breakthrough Junior Challenge",
       description:
-        "Built a video explaining Radioisotope thermoelectric generators that ranked globally among thousands of entries.",
+        "Top 14% global finalist for the challenge, explaining quantum computing fundamentals, superposition, entanglement, and John Bell's Theorem. Built a video explaining Radioisotope thermoelectric generators that ranked globally among thousands of entries.",
       link: "#", // Add link later
       date: "2022",
-      video: "https://youtu.be/vQcW4T5JnPU?si=OT2fkNW9jxXhedVF", // Add video link later
+      video: "https://www.youtube.com/watch?v=xuL75NnIcks&t=11s",
       repo: "",
       writeup: "",
     },
@@ -34,17 +34,17 @@ export default function WorkIndex() {
     {
       name: "LUMA (Luminous Understanding through Mindful AI)",
       description:
-        "LUMA uses generative AI to create a unique, personalized meditation experience on demand, addressing the global mental health crisis by making effective, accessible mindfulness practices available to everyone. Built with Cohere Command-R LLM, Google Cloud TTS, and custom audio processing.",
+        "Built generative-AI meditation app with neural voice, ultra-low-latency audio mixing. LUMA uses generative AI to create a unique, personalized meditation experience on demand, addressing the global mental health crisis by making effective, accessible mindfulness practices available to everyone. Built with React, Flask, Cohere Command-R LLM, Google Cloud TTS, and pydub. Submitted to GenAI Genesis 2025.",
       link: "https://devpost.com/software/luma-luminous-understanding-through-mindful-ai",
       date: "2025",
-      repo: "",
+      repo: "https://github.com/e-ndorfin/luma",
       video: "https://www.youtube.com/watch?v=neO-K2qJo6Y&t=20s",
       writeup: "",
     },
     {
-      name: "Optimizing Productivity at BenchSci",
+      name: "BenchBot - Internal Slack AI for BenchSci",
       description:
-        "Repetitive queries and information overload are hindering BenchSci's productivity up to 104,000 hours annually. As BenchSci's team size doubled from 200 to 400+ employees in 2022, repetition of common administrative and technical questions asked by new and existing employees have surged.",
+        "Built an internal Slack AI (BenchBot) prototype to streamline HR/business communications and modeled a $4.5M annual savings scenario that CIBC stakeholders adopted as an internal estimate. Repetitive queries and information overload are hindering BenchSci's productivity up to 104,000 hours annually. As BenchSci's team size doubled from 200 to 400+ employees in 2022, repetition of common administrative and technical questions asked by new and existing employees have surged.",
       link: "",
       date: "2024",
       repo: "",
@@ -62,13 +62,15 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
-      name: "Avalon Pitch",
-      description: "Pitch presentation for Avalon project.",
-      link: "",
-      date: "2024",
+      name: "Avalonn - Voice Agents for SMBs",
+      description:
+        "Co-founded Avalonn, a 24/7 voice agent that answers common inquiries in under 8s, books jobs and quotes with automatic CRM updates, and escalates emergencies via SMS, helping small businesses recover roughly $78 per missed call on average. Built using React + Flask + ElevenLabs + OpenAI + Twilio. Found early stage traction through customer interviews, live demos and onboarding local service businesses in plumbing, HVAC, and retail, integrating into their existing workflows. Received $25k in AWS credits, participated in DMZ Basecamp and featured in UofT Centre for Entrepreneurship founder showcases.",
+      link: "https://www.youtube.com/watch?v=qsD2kOopCK4",
+      date: "2025",
       repo: "",
       video: "https://www.youtube.com/watch?v=dnusNHRDGMo",
-      writeup: "",
+      writeup:
+        "https://www.entrepreneurship.artsci.utoronto.ca/news/we-asked-7-founders-what-sparked-your-startup-idea",
     },
     {
       name: "CoachMi.co",
@@ -93,9 +95,9 @@ export default function WorkIndex() {
         "https://docs.google.com/presentation/d/1EGrDyCZGxc3NRiDLo3721Ev--xtsH0U9p3JEGijZNIs/edit?slide=id.p#slide=id.p",
     },
     {
-      name: "ASLO [Hackathon]",
+      name: "ASL Glasses [Hackathon]",
       description:
-        "The development of glasses that can interpret ASL would help bridge the communication gap by allowing wearers to see text translations of what is being signed in real-time, thus making communication easier and more accessible. This technology could have a significant impact on the lives of people who rely on ASL for communication.",
+        "Designed AR glasses translating sign language to text using transformers and OCR, demoed prototype. The development of glasses that can interpret ASL would help bridge the communication gap by allowing wearers to see text translations of what is being signed in real-time, thus making communication easier and more accessible.",
       link: "https://firebasestorage.googleapis.com/v0/b/tks-life-prod.appspot.com/o/items%2FZnFxCGk9nXYoiuJ37ArrGUjiBDB2%2FExplore%20Hackathon%20-%20ASL.pdf?alt=media&token=7d19ef3d-7d77-4059-8bd0-526fef256322",
       date: "2022",
       repo: "",
@@ -145,27 +147,27 @@ export default function WorkIndex() {
     {
       name: "Cuddle - AI Focus Hackathon [hackathon]",
       description:
-        "The app uses artificial intelligence and K-means clustering to create personalized music for insomniacs, based on their sleep routines and music preferences. It aims to improve sleep quality by providing unique music playlists that are tailored to the individual's sleep patterns and habits. Overall, the goal is to help individuals relax and fall asleep faster by providing personalized playlists.",
-      link: "https://firebasestorage.googleapis.com/v0/b/tks-life-prod.appspot.com/o/items%2FZnFxCGk9nXYoiuJ37ArrGUjiBDB2%2FDeck.pdf?alt=media&token=20495ac1-0629-43a1-b3c6-86ceb06c8115",
+        "Built an AI-powered sleep-music generator using K-means clustering for personalized audio. The app uses artificial intelligence and K-means clustering to create personalized music for insomniacs, based on their sleep routines and music preferences. Hackathon finalist with Figma prototype.",
+      link: "https://www.figma.com/design/WJ7zap2lEOHglmLiuYWH2K/Cyberpunk-Music-App--Community-?node-id=0-1&p=f",
       date: "2024",
       repo: "",
       video: "",
       writeup: "",
     },
     {
-      name: "Reimagining the Future of Finance w/CIBC [TKS]",
+      name: "CIBC Rewards - UX Design [TKS]",
       description:
-        "Gen Z customers are switching banks, with only 50% remaining loyal to their parents' bank. To retain and attract this demographic, CIBC proposes a reward program, virtual cards, and an interactive learning platform. CIBC hopes to impact 90,000 Canadian youth and increase Gen Z clients by 77% in six months, with a projected 15% conversion to future clients. The plan could increase traffic by 152%.",
-      link: "https://firebasestorage.googleapis.com/v0/b/tks-life-prod.appspot.com/o/items%2FZnFxCGk9nXYoiuJ37ArrGUjiBDB2%2FCIBC%20Challenge%20Recommendation%20deck%20%20(1).pdf?alt=media&token=be2d2b45-0450-4bbe-ae23-92509b825136",
+        "Designed a consulting prototype for CIBC Rewards using Figma, modeling user engagement and projecting lift. Worked to increase Gen Z adoption of CIBC projecting up to 77% increase in Gen Z adoption through prototype user testing and survey analysis. Gen Z customers are switching banks, with only 50% remaining loyal to their parents' bank.",
+      link: "https://www.figma.com/file/X8pq2OGANVnQhQkyE5bTzR/CIBC-Rewards-Design",
       date: "2024",
       repo: "",
       video: "",
       writeup: "",
     },
     {
-      name: "bioBlox",
+      name: "BioBlox",
       description:
-        "Transform your profiles with AI generated images for a standout professional presence.",
+        "Developed a 2-click AI system for professional-quality profile images using Stable Diffusion, serving 50+ users and fine-tuned on 10–12 samples. Transform your profiles with AI generated images for a standout professional presence.",
       link: "#", // Add link later
       date: "2024",
       repo: "",
@@ -195,18 +197,39 @@ export default function WorkIndex() {
     {
       name: "Web3 Message Board",
       description:
-        "Connect your wallet and say something on our open message board. Created late 2021.",
+        "Wallet-gated message wall for authenticated messages and posts. Connect your wallet and say something on our open message board. Created late 2021.",
       link: "#", // Add link later
       date: "2021",
-      repo: "",
+      repo: "https://github.com/alexshibu1/web3-message-board",
       video: "",
       writeup: "",
     },
     {
-      name: "Instagram Theme Pages",
+      name: "Legacy iPhone 4 Revival",
+      description:
+        "Restored full usability to iOS 7 devices by engineering a downgrade/jailbreak to iOS 6, fully documented for the community. Used iOS 6, Jailbreak, and Cydia tools.",
+      link: "",
+      date: "2024",
+      repo: "",
+      video: "https://www.youtube.com/watch?v=mIjrcIrA4IM",
+      writeup: "",
+    },
+    {
+      name: "Instagram Theme Pages 📷📷📷",
       description:
         "Built and grew multiple Instagram theme pages including Bath Bombs For Vanauley (595 followers), Healthy Life Tips (621 followers), and Game Lynxe (739 followers). Received around $500 in free products across channels through partnerships and sponsorships.",
       link: "https://www.instagram.com/bath.bombs.for.vanauley/",
+      date: "2020",
+      repo: "",
+      video: "",
+      writeup: "",
+      image: "/images/proj/bathbombs.png",
+    },
+    {
+      name: "Bath Bombs for Vanauley",
+      description:
+        "Launched a Shopify storefront for bath bomb fundraising for the Vanauley homeless shelter with Instagram while learning e-commerce and order fulfillment workflows. Built using Shopify, Marketing, and Frontend development.",
+      link: "https://www.linkedin.com/in/alexshibu/details/experience/1753015047/multiple-media-viewer/?profileId=ACoAACk8q9ABrmBqQ4wz9R3Ev5JU1iATl26x-5M&treasuryMediaId=1719025718914/",
       date: "2020",
       repo: "",
       video: "",
@@ -251,10 +274,10 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
-      name: "Cultivating Ethiopian Coffee Production to Create 5 Million Jobs by 2030 [TKS]",
+      name: "Ethiopian Coffee Strategy [TKS]",
       description:
-        "10 million smallholder coffee farmers in Ethiopia face issues with access to international markets, inefficient farming practices, and inadequate lending options. The proposed solution is to create agriculture centers providing low-interest loans, education and access to international markets. This solution could result in 285% profit increase, creation of 5.6 million jobs by 2030.",
-      link: "https://firebasestorage.googleapis.com/v0/b/tks-life-prod.appspot.com/o/items%2FZnFxCGk9nXYoiuJ37ArrGUjiBDB2%2FAlex's%20Copu%20of%20Imrpoving%20Ethiopian%20Coffee%20Farming%20%20(1).pdf?alt=media&token=8d46a90b-6725-409d-b4c6-df28963c3dac",
+        "Developed agri-center model projecting 5.6M jobs and a 285% profit increase for Ethiopian farmers by 2030 based on export and yield data. Worked with a 4-person team to develop strategic solutions to problems faced by 10 million Ethiopian coffee farmers, proposing 5.6M jobs based on agricultural data and stakeholder input. 10 million smallholder coffee farmers in Ethiopia face issues with access to international markets, inefficient farming practices, and inadequate lending options.",
+      link: "https://www.linkedin.com/in/alexshibu/details/projects/1635528864697/single-media-viewer?type=DOCUMENT",
       date: "2024",
       repo: "",
       video: "",
@@ -271,22 +294,23 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
-      name: "2022 Ethereum Analysis: Regression Analysis on the Ethereum Market",
-      description: "Regression Analysis on the Ethereum Market",
+      name: "Ethereum Trend Analysis",
+      description:
+        "Ran deep-dive technical analysis on Ethereum price trends, built sheets & regression models, published insights and project video for public walkthrough. Full-stack Web3 project with technical analysis.",
       link: "#",
       date: "2022",
       repo: "",
-      video: "https://www.youtube.com/watch?v=JaFX-dkkLl0",
+      video: "https://youtu.be/JaFX-dkkLl0?si=5XxSh6zqk1TdqF7P",
       writeup: "",
     },
     {
       name: "SMS AI Tool",
       description:
-        "The AI-powered SMS system provides an effective and efficient way for students to learn and improve their skills through mobile devices. The system works by analyzing student responses to questions and providing personalized feedback to help them better understand the material. This personalized approach to learning allows students to learn at their own pace and receive guidance tailored to their unique needs.",
+        "Developed a mobile Q&A system using Twilio and OpenAI providing personalized feedback and reducing help-response time for users. The AI-powered SMS system provides an effective and efficient way for students to learn and improve their skills through mobile devices.",
       link: "#",
       date: "2023",
       repo: "",
-      video: "https://www.youtube.com/watch?v=p2OSkHM308g",
+      video: "https://www.youtube.com/watch?v=kNTfCxXBre4",
       writeup: "",
     },
   ];
