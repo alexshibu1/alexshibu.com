@@ -28,18 +28,69 @@ export default function WorkIndex() {
       link: "https://easyhacks.org/",
       date: "2025",
       repo: "",
-      video: "",
+      video: "https://www.youtube.com/watch?v=BUFH1s5iUtw&t=55s",
       writeup: "",
+    },
+    {
+      name: "LUMA (Luminous Understanding through Mindful AI)",
+      description:
+        "LUMA uses generative AI to create a unique, personalized meditation experience on demand, addressing the global mental health crisis by making effective, accessible mindfulness practices available to everyone. Built with Cohere Command-R LLM, Google Cloud TTS, and custom audio processing.",
+      link: "https://devpost.com/software/luma-luminous-understanding-through-mindful-ai",
+      date: "2025",
+      repo: "",
+      video: "https://www.youtube.com/watch?v=neO-K2qJo6Y&t=20s",
+      writeup: "",
+    },
+    {
+      name: "Optimizing Productivity at BenchSci",
+      description:
+        "Repetitive queries and information overload are hindering BenchSci's productivity up to 104,000 hours annually. As BenchSci's team size doubled from 200 to 400+ employees in 2022, repetition of common administrative and technical questions asked by new and existing employees have surged.",
+      link: "",
+      date: "2024",
+      repo: "",
+      video: "https://www.youtube.com/watch?v=Mqb1hEqly_Y",
+      writeup: "",
+    },
+    {
+      name: "BridgeWorks Fellowship - Increase Youth Employment",
+      description:
+        "Pitch for BridgeWorks Fellowship focused on increasing youth employment opportunities.",
+      link: "",
+      date: "2024",
+      repo: "",
+      video: "https://www.youtube.com/watch?v=Jz48kAlGy3o&t=25s",
+      writeup: "",
+    },
+    {
+      name: "Avalon Pitch",
+      description: "Pitch presentation for Avalon project.",
+      link: "",
+      date: "2024",
+      repo: "",
+      video: "https://www.youtube.com/watch?v=dnusNHRDGMo",
+      writeup: "",
+    },
+    {
+      name: "CoachMi.co",
+      description:
+        "Forge your path with Titans - AI-powered mentorship platform that provides guidance from industry giants. Features custom virtual boardrooms, optimized action roadmaps, and 50+ decision-making frameworks.",
+      link: "https://web.archive.org/web/20240924161229/http://www.coachmi.co/",
+      date: "2024",
+      repo: "",
+      video: "https://www.youtube.com/watch?v=xWqw_l3Nh2M",
+      writeup:
+        "https://docs.google.com/presentation/d/1kiCEzGCJV-VriZXeSeexSCXZerS3k28HrKrysDQ4vbE/edit?slide=id.g26767847792_2_120#slide=id.g26767847792_2_120",
     },
     {
       name: "Circus Clownz NFT",
       description:
-        "NFT project where I led a team of 4, partnered with projects, learned Solidity but lacked product market fit.",
+        "Delved into NFTs, created a personal portfolio valued around $100k in May 2021. Created over 300 unique pieces of Circus Clownz NFTs and learned Solidity to build ERC-721 smart contracts. Managed a team ranging from 2 to 4 members, coordinating tasks and ensuring project progression. Authored a 'How to Build an NFT' playbook aimed at high school students, empowering the next generation with knowledge about the blockchain; used for IDC4U1. Initiated working on 'Circus Penutz' a DeFi token and Bio Blox, a linktree for web3, but faced challenges in front-end development, leading to the project's failure. Built a following of 200 on Twitter and discord. Lacked project market fit even after 6 months of active transaction.",
       link: "https://web.archive.org/web/20220128132945/https:/circusclownz.com/",
       date: "2021",
       repo: "",
-      video: "",
-      writeup: "",
+      video: "https://youtu.be/_ycxR8aP980?si=oeGxGrFIYkKJ_gkC",
+      writeup:
+        "https://docs.google.com/presentation/d/1EGrDyCZGxc3NRiDLo3721Ev--xtsH0U9p3JEGijZNIs/edit?slide=id.p#slide=id.p",
     },
     {
       name: "ASLO [Hackathon]",
@@ -149,6 +200,54 @@ export default function WorkIndex() {
       date: "2021",
       repo: "",
       video: "",
+      writeup: "",
+    },
+    {
+      name: "Instagram Theme Pages",
+      description:
+        "Built and grew multiple Instagram theme pages including Bath Bombs For Vanauley (595 followers), Healthy Life Tips (621 followers), and Game Lynxe (739 followers). Received around $500 in free products across channels through partnerships and sponsorships.",
+      link: "https://www.instagram.com/bath.bombs.for.vanauley/",
+      date: "2020",
+      repo: "",
+      video: "",
+      writeup: "",
+    },
+    {
+      name: "Cube Runner",
+      description: "A Unity game project - cube runner style game.",
+      link: "",
+      date: "2019",
+      repo: "",
+      video: "",
+      writeup: "",
+    },
+    {
+      name: "Calculator App 1.1",
+      description: "Calculator application built in 2018.",
+      link: "",
+      date: "2018",
+      repo: "",
+      video: "",
+      writeup: "",
+    },
+    {
+      name: "Logos Quiz Academy",
+      description:
+        "Student platform to prepare for the Logo Quiz Exam. Web development using HTML & Javascript, WordPress, and course development. Project failed because I was too late for the market and the project got boring.",
+      link: "",
+      date: "2019",
+      repo: "",
+      video: "",
+      writeup: "",
+    },
+    {
+      name: "First YouTube Channel",
+      description:
+        "Started my first YouTube channel and received around $500 in free products across channels through partnerships and sponsorships.",
+      link: "https://www.youtube.com/watch?v=ShW01SDJI0c",
+      date: "2018",
+      repo: "",
+      video: "https://www.youtube.com/watch?v=ShW01SDJI0c",
       writeup: "",
     },
     {
