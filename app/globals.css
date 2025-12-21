@@ -750,11 +750,34 @@ body {
   }
 }
 
+/* Large screens - bigger than 14" MacBook Pro */
+@media (min-width: 1600px) {
+  .sidebar {
+    padding-top: 96px; /* 1 inch from top */
+  }
+
+  .sidebar-brand {
+    margin-bottom: 4rem; /* Increased space between name and nav items */
+  }
+
+  .brand-name {
+    font-size: 40px; /* Larger name on big screens */
+  }
+}
+
 @media (min-width: 1920px) {
   .sidebar {
-    padding: 10rem 4rem 4rem 150px;
+    padding: 96px 4rem 4rem 150px; /* 1 inch (96px) from top */
 
     font-size: 22px;
+  }
+
+  .sidebar-brand {
+    margin-bottom: 4rem; /* Increased space between name and nav items */
+  }
+
+  .brand-name {
+    font-size: 40px; /* Larger name on big screens */
   }
 
   .page-content {
