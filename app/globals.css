@@ -715,6 +715,18 @@ body {
     padding-left: 0;
     width: 100%;
   }
+
+  /* About page mobile optimizations */
+  .about-current-focus {
+    margin-top: -1rem !important;
+    margin-bottom: -10px !important;
+  }
+
+  /* Touch-friendly targets */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }
 
 /* Responsive - Tablets and medium screens (431px - 800px) */

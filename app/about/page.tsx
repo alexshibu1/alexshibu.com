@@ -21,19 +21,22 @@ export default function AboutPage() {
       </h1>
 
       {/* Banner Image */}
-      <div className="mb-2 -mx-2 sm:-mx-0" style={{ marginTop: "-0.5rem" }}>
+      <div
+        className="mb-3 sm:mb-2 -mx-2 sm:-mx-0"
+        style={{ marginTop: "-0.5rem" }}
+      >
         <Image
           src="/images/about/banner.jpeg"
           alt="Banner"
           width={1200}
           height={400}
-          className="w-full h-auto rounded-lg object-cover"
+          className="w-full h-auto rounded-lg sm:rounded-lg object-cover"
           priority
         />
       </div>
 
       {/* Profile Section */}
-      <div className="flex flex-col sm:flex-row gap-6 mb-4">
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-4">
         {/* Profile Picture */}
         <div className="flex-shrink-0" style={{ marginTop: "-1rem" }}>
           <Image
@@ -41,7 +44,7 @@ export default function AboutPage() {
             alt="Alex Shibu"
             width={280}
             height={280}
-            className="w-64 h-64 sm:w-72 sm:h-72 rounded-full object-cover border-2 border-gray-200"
+            className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full object-cover border-2 border-gray-200 mx-auto sm:mx-0"
             priority
           />
         </div>
@@ -52,7 +55,7 @@ export default function AboutPage() {
             <p className="text-gray-700 leading-relaxed mb-2">{bio}</p>
             <button
               onClick={copyBio}
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs text-gray-500 hover:text-gray-700 transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-2 text-xs text-gray-500 hover:text-gray-700 transition-colors touch-target"
               title="Copy bio"
             >
               {copied ? (
@@ -102,7 +105,10 @@ export default function AboutPage() {
       </div>
 
       {/* Current Focus */}
-      <section style={{ marginTop: "-2rem", marginBottom: "-20px" }}>
+      <section
+        className="about-current-focus"
+        style={{ marginTop: "-2rem", marginBottom: "-20px" }}
+      >
         <h2 className="text-xl font-semibold mb-1 text-gray-900">
           Current Focus
         </h2>
@@ -131,13 +137,13 @@ export default function AboutPage() {
 
       {/* Work with me */}
       <section>
-        <div className="flex items-start justify-between gap-4 mb-2">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4 mb-2">
           <h2 className="text-xl font-semibold text-gray-900">Work with me</h2>
           <a
             href="/resume/AlexShibu_2025_General.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors flex-shrink-0"
+            className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors sm:flex-shrink-0 w-full sm:w-auto"
           >
             <svg
               width="16"
