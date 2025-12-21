@@ -44,10 +44,14 @@ export default function Sidebar() {
 
       {/* Sidebar */}
       <div className={`sidebar ${isOpen ? "sidebar-open" : ""}`}>
-        <div className="nav-links">
-          <Link href="/" className={linkClassName} onClick={closeMenu}>
-            home
+        {/* Brand/Header Block */}
+        <div className="sidebar-brand">
+          <Link href="/" className="brand-link" onClick={closeMenu}>
+            <h1 className="brand-name">Alex</h1>
           </Link>
+        </div>
+
+        <div className="nav-links">
           <Link href="/about" className={linkClassName} onClick={closeMenu}>
             about
           </Link>
@@ -60,7 +64,11 @@ export default function Sidebar() {
           <Link href="/read" className={linkClassName} onClick={closeMenu}>
             reading
           </Link>
-          <Link href="/experiments" className={linkClassName} onClick={closeMenu}>
+          <Link
+            href="/experiments"
+            className={linkClassName}
+            onClick={closeMenu}
+          >
             experiments
           </Link>
           <Link href="/sidequest" className={linkClassName} onClick={closeMenu}>
@@ -81,10 +89,18 @@ export default function Sidebar() {
         </div>
 
         <div className="social-links mt-12">
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             x
           </a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             github
           </a>
           <a

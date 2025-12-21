@@ -79,11 +79,60 @@ body {
 .sidebar {
   flex: 0 0 20%;
 
-  padding: 6rem 2rem 4rem 5rem;
+  padding: 4.5rem 2rem 4rem 5rem;
 
   font-family: var(--font-inter), system-ui, sans-serif;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
+/* Brand/Header Block */
+.sidebar-brand {
+  margin-bottom: 2.5rem;
+  padding-left: 0;
+}
+
+.brand-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.brand-name {
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  display: inline-block;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transform: translateZ(0);
+  transform-origin: left center;
+  transition: letter-spacing 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.brand-link:hover .brand-name {
+  letter-spacing: 0.03em;
+  transform: translateX(-0.08em) scale(1.02) translateZ(0);
+}
+
+.brand-tagline {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 12px;
+  color: #999999;
+  margin: 0.25rem 0 0 0;
+  padding: 0;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
 .nav-links {
   display: flex; /* make it a flex container           */
   flex-direction: column; /* stack children vertically          */
@@ -178,7 +227,7 @@ body {
 
   font-size: 16px;
   justify-content: space-between;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.3rem;
 }
 
 .social-links a:hover {
@@ -517,7 +566,7 @@ body {
     width: 320px;
     max-width: 90vw;
     background: white;
-    padding: 6rem 2.5rem 2rem 2.5rem;
+    padding: 3rem 2.5rem 2rem 2.5rem;
     z-index: 1000;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     transform: translateX(-100%);
@@ -532,6 +581,20 @@ body {
     transform: translateX(0);
     opacity: 1;
     pointer-events: auto; /* Enable interaction when open */
+  }
+
+  /* Brand block on mobile */
+  .sidebar-brand {
+    margin-bottom: 2rem;
+    padding-top: 0.5rem;
+  }
+
+  .brand-name {
+    font-size: 28px;
+  }
+
+  .brand-tagline {
+    font-size: 11px;
   }
 
   /* Larger nav links in mobile sidebar */
