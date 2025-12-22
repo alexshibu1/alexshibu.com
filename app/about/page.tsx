@@ -26,7 +26,7 @@ export default function AboutPage() {
         style={{ marginTop: "-0.5rem" }}
       >
         <Image
-          src="/images/about/banner.jpeg"
+          src="/images/about/banner3.png"
           alt="Banner"
           width={1200}
           height={400}
