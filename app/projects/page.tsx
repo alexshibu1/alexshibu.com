@@ -1,3 +1,121 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { useState } from "react";
+
+type Project = {
+  name: string;
+  description: string;
+  link: string;
+  date: string;
+  video?: string;
+  repo?: string;
+  writeup?: string;
+  featured?: boolean;
+  image?: string;
+};
+
+function FeaturedIndicator({ isHovered }: { isHovered: boolean }) {
+  return (
+    <motion.span
+      animate={
+        isHovered
+          ? {
+              width: 4,
+              height: 12,
+              borderRadius: 999,
+            }
+          : {
+              width: 5,
+              height: 5,
+              borderRadius: 999,
+            }
+      }
+      className="flex items-center justify-center"
+      initial={false}
+      style={{
+        background: "#ff3a3a",
+        display: "inline-block",
+        opacity: 0.6,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 600,
+        damping: 22,
+      }}
+    />
+  );
+}
+
+function ProjectItem({ project }: { project: Project }) {
+  const [isTitleHovered, setIsTitleHovered] = useState(false);
+
+  return (
+    <li className="project-item">
+      <div className="project-left">
+        <div
+          className="project-title-wrapper"
+          onMouseEnter={() => setIsTitleHovered(true)}
+          onMouseLeave={() => setIsTitleHovered(false)}
+        >
+          {project.featured && (
+            <span style={{ marginRight: "0.3rem", verticalAlign: "middle" }}>
+              <FeaturedIndicator isHovered={isTitleHovered} />
+            </span>
+          )}
+          <a
+            href={project.link}
+            className="project-title"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {project.name}
+            <span className="project-arrow">↗</span>
+          </a>
+          {/* Optional link icons - only show if link exists */}
+          {project.repo && project.repo !== "" && (
+            <a
+              href={project.repo}
+              className="project-link-icon"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Repository"
+            >
+              💻
+            </a>
+          )}
+          {project.writeup && project.writeup !== "" && (
+            <a
+              href={project.writeup}
+              className="project-link-icon"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Write-up"
+            >
+              ✍️
+            </a>
+          )}
+          {project.video && project.video !== "" && (
+            <a
+              href={project.video}
+              className="project-link-icon"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Video"
+            >
+              🎥
+            </a>
+          )}
+        </div>
+        <span className="project-desc">{project.description}</span>
+      </div>
+      <div className="project-right">
+        <span className="project-date">{project.date}</span>
+      </div>
+    </li>
+  );
+}
+
 export default function WorkIndex() {
   const projects = [
     {
@@ -30,6 +148,7 @@ export default function WorkIndex() {
       repo: "",
       video: "https://www.youtube.com/watch?v=BUFH1s5iUtw&t=55s",
       writeup: "",
+      featured: true,
     },
     {
       name: "LUMA (Luminous Understanding through Mindful AI)",
@@ -71,6 +190,7 @@ export default function WorkIndex() {
       video: "https://www.youtube.com/watch?v=dnusNHRDGMo",
       writeup:
         "https://www.entrepreneurship.artsci.utoronto.ca/news/we-asked-7-founders-what-sparked-your-startup-idea",
+      featured: true,
     },
     {
       name: "CoachMi.co",
@@ -86,13 +206,14 @@ export default function WorkIndex() {
     {
       name: "Circus Clownz NFT",
       description:
-        "Delved into NFTs, created a personal portfolio valued around $100k in May 2021. Created over 300 unique pieces of Circus Clownz NFTs and learned Solidity to build ERC-721 smart contracts. Managed a team ranging from 2 to 4 members, coordinating tasks and ensuring project progression. Authored a 'How to Build an NFT' playbook aimed at high school students, empowering the next generation with knowledge about the blockchain; used for IDC4U1. Initiated working on 'Circus Penutz' a DeFi token and Bio Blox, a linktree for web3, but faced challenges in front-end development, leading to the project's failure. Built a following of 200 on Twitter and discord. Lacked project market fit even after 6 months of active transaction.",
-      link: "https://web.archive.org/web/20220128132945/https:/circusclownz.com/",
+        "hired 2 ppl; created nfts, social media, and discord community; Did not launch due to the lack of long-term utility.",
+      link: "/essay/circusclownz",
       date: "2021",
-      repo: "",
+      repo: "https://web.archive.org/web/20220128132945/https:/circusclownz.com/",
       video: "https://youtu.be/_ycxR8aP980?si=oeGxGrFIYkKJ_gkC",
       writeup:
         "https://docs.google.com/presentation/d/1EGrDyCZGxc3NRiDLo3721Ev--xtsH0U9p3JEGijZNIs/edit?slide=id.p#slide=id.p",
+      featured: true,
     },
     {
       name: "ASL Glasses [Hackathon]",
@@ -322,68 +443,31 @@ export default function WorkIndex() {
     return dateB - dateA; // Descending order (newest first)
   });
 
+  // Count featured projects
+  const featuredCount = projects.filter((p) => p.featured).length;
+
   return (
     <main className="page-content">
-      <h1 className="hero-heading">projects</h1>
-      <p className="hero-subline">
-        projects, side quests, and experiments both past and present.
-      </p>
+      <div style={{ display: "flex", alignItems: "baseline", gap: "1rem" }}>
+        <h1 className="hero-heading">projects</h1>
+        {featuredCount > 0 && (
+          <span
+            style={{
+              fontSize: "14px",
+              color: "#999",
+              fontFamily: "var(--font-inter), sans-serif",
+              fontWeight: 400,
+            }}
+          >
+            big project
+          </span>
+        )}
+      </div>
+      <p className="hero-subline">some of past and present work and projects</p>
 
       <ul className="projects-list">
         {sortedProjects.map((project, i) => (
-          <li key={i} className="project-item">
-            <div className="project-left">
-              <div className="project-title-wrapper">
-                <a
-                  href={project.link}
-                  className="project-title"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {project.name}
-                  <span className="project-arrow">↗</span>
-                </a>
-                {/* Optional link icons - only show if link exists */}
-                {project.repo && project.repo !== "" && (
-                  <a
-                    href={project.repo}
-                    className="project-link-icon"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Repository"
-                  >
-                    💻
-                  </a>
-                )}
-                {project.writeup && project.writeup !== "" && (
-                  <a
-                    href={project.writeup}
-                    className="project-link-icon"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Write-up"
-                  >
-                    ✍️
-                  </a>
-                )}
-                {project.video && project.video !== "" && (
-                  <a
-                    href={project.video}
-                    className="project-link-icon"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Video"
-                  >
-                    🎥
-                  </a>
-                )}
-              </div>
-              <span className="project-desc">{project.description}</span>
-            </div>
-            <div className="project-right">
-              <span className="project-date">{project.date}</span>
-            </div>
-          </li>
+          <ProjectItem key={i} project={project} />
         ))}
       </ul>
     </main>

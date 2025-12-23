@@ -72,7 +72,7 @@ export default function Sidebar() {
             experiments
           </Link>
           <Link href="/sidequest" className={linkClassName} onClick={closeMenu}>
-            side quests
+            sidequests
           </Link>
           <Link href="/content" className={linkClassName} onClick={closeMenu}>
             content

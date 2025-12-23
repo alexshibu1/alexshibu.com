@@ -17,7 +17,7 @@ export default function AboutPage() {
   return (
     <main className="page-content">
       <h1 className="hero-heading" style={{ marginBottom: "0" }}>
-        about
+        about ✌️
       </h1>
 
       {/* Banner Image */}
