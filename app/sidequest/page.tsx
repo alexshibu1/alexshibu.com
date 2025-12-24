@@ -10,6 +10,8 @@ export default function Sidequests() {
         I&apos;m always looking for new sidequests to take on. If you have any
         ideas, please let me know.
       </p>
+      <h2>Current Sidequests</h2>
+      <p>teaching kids startup stuff </p>
       <h2>Past Sidequests</h2>
       <p>
         I&apos;ve done a lot of sidequests in the past. Here are some of them.
