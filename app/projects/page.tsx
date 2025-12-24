@@ -24,11 +24,13 @@ function FeaturedIndicator({ isHovered }: { isHovered: boolean }) {
               width: 4,
               height: 12,
               borderRadius: 999,
+              opacity: 1,
             }
           : {
               width: 5,
               height: 5,
               borderRadius: 999,
+              opacity: 0.6,
             }
       }
       className="flex items-center justify-center"
@@ -36,7 +38,6 @@ function FeaturedIndicator({ isHovered }: { isHovered: boolean }) {
       style={{
         background: "#ff3a3a",
         display: "inline-block",
-        opacity: 0.6,
       }}
       transition={{
         type: "spring",
@@ -44,6 +45,67 @@ function FeaturedIndicator({ isHovered }: { isHovered: boolean }) {
         damping: 22,
       }}
     />
+  );
+}
+
+function BigProjectButton() {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <motion.span
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: "0.5rem",
+        padding: "0.4rem 0.8rem",
+        borderRadius: "6px",
+        cursor: "pointer",
+        transition: "background-color 0.2s ease",
+      }}
+      whileHover={{
+        backgroundColor: "rgba(0, 0, 0, 0.02)",
+      }}
+    >
+      <motion.span
+        animate={
+          isHovered
+            ? {
+                width: 4,
+                height: 12,
+                borderRadius: 999,
+              }
+            : {
+                width: 5,
+                height: 5,
+                borderRadius: 999,
+              }
+        }
+        initial={false}
+        style={{
+          background: isHovered ? "#ff3a3a" : "#ff3a3a",
+          display: "inline-block",
+          opacity: isHovered ? 1 : 0.6,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 600,
+          damping: 22,
+        }}
+      />
+      <span
+        style={{
+          fontSize: "14px",
+          color: "#666",
+          fontFamily: "var(--font-inter), sans-serif",
+          fontWeight: 400,
+          transition: "color 0.2s ease",
+        }}
+      >
+        big project
+      </span>
+    </motion.span>
   );
 }
 
@@ -448,20 +510,16 @@ export default function WorkIndex() {
 
   return (
     <main className="page-content">
-      <div style={{ display: "flex", alignItems: "baseline", gap: "1rem" }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "baseline",
+          justifyContent: "space-between",
+          gap: "1rem",
+        }}
+      >
         <h1 className="hero-heading">projects</h1>
-        {featuredCount > 0 && (
-          <span
-            style={{
-              fontSize: "14px",
-              color: "#999",
-              fontFamily: "var(--font-inter), sans-serif",
-              fontWeight: 400,
-            }}
-          >
-            big project
-          </span>
-        )}
+        {featuredCount > 0 && <BigProjectButton />}
       </div>
       <p className="hero-subline">some of past and present work and projects</p>
 
