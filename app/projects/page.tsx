@@ -174,7 +174,7 @@ export default function WorkIndex() {
       name: "BridgeWorks Fellowship - Increase Youth Employment",
       description:
         "Pitch for BridgeWorks Fellowship focused on increasing youth employment opportunities.",
-      link: "",
+      link: "public/projects/bridgeworks.pdf",
       date: "2024",
       repo: "",
       video: "https://www.youtube.com/watch?v=Jz48kAlGy3o&t=25s",
