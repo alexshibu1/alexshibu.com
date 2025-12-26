@@ -179,7 +179,7 @@ export default function AboutPage() {
 
       {/* Work with me */}
       <section>
-        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4 mb-2">
+        <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-3 sm:gap-4 mb-2">
           <h2 className="text-xl font-semibold text-gray-900">Work with me</h2>
           <a
             href="/resume/AlexShibu_2025_General.pdf"
