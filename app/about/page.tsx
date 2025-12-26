@@ -5,13 +5,20 @@ import { useState } from "react";
 
 export default function AboutPage() {
   const [copied, setCopied] = useState(false);
+  const [emailCopied, setEmailCopied] = useState(false);
 
-  const bio = `Alex Shibu is a second-year student at the University of Toronto, majoring in Physics with minors in Computer Science and Economics. Alex is passionate about leveraging emerging technologies to drive impactful change. He has worked on startups and alongside organizations to build solutions and tools using AI for web3, healthcare, decision theory, nonprofits and EdTech. Alex also loves bringing together young people to drive change and has hosted experiences for over 600 students. In his spare time, he builds cool projects, takes on fitness challenges, and reviews cafes.`;
+  const bio = `Alex Shibu is a student at the University of Toronto, majoring in Physics and Computer Science. Passionate about leveraging emerging technologies to drive impactful change. Alex has worked on startups and larger organizations to build tools and solutions using AI, web3, healthcare, decision theory. Alex also loves bringing together young people to and has hosted experiences for over 600 folks. In his spare time, he ships intresting sidequests, takes on fitness challenges, and reviews cafes.`;
 
   const copyBio = () => {
     navigator.clipboard.writeText(bio);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText("alexshibu@gmail.com");
+    setEmailCopied(true);
+    setTimeout(() => setEmailCopied(false), 2000);
   };
 
   return (
@@ -45,9 +52,31 @@ export default function AboutPage() {
             width={280}
             height={280}
             className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full object-cover border-2 border-gray-200 mx-auto sm:mx-0"
-            style={{ margin: "22px" }}
+            style={{ margin: "22px", marginBottom: "0" }}
             priority
           />
+          <button
+            onClick={copyEmail}
+            style={{
+              marginBottom: "0",
+              marginTop: "0",
+              padding: "4px",
+              paddingLeft: "54px",
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              textAlign: "left",
+              color: "#374151",
+              fontSize: "1rem",
+              lineHeight: "1.5",
+              fontFamily: "inherit",
+              userSelect: "text",
+              WebkitUserSelect: "text",
+            }}
+            title="Click to copy email"
+          >
+            Email: {emailCopied ? "Copied!" : "alexshibu[at]gmail.com"}
+          </button>
         </div>
 
         {/* Bio with Copy Button */}
