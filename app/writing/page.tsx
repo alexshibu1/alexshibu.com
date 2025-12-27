@@ -1,6 +1,6 @@
-import Link from "next/link";
 import fs from "fs";
 import path from "path";
+import WritingClient from "./WritingClient";
 
 export const dynamic = "force-dynamic";
 
@@ -9,6 +9,7 @@ type EssayMeta = {
   title: string;
   date?: string;
   description?: string;
+  type?: "essay" | "thought" | "book";
 };
 
 function readAllEssayMeta(): EssayMeta[] {
@@ -28,6 +29,7 @@ function readAllEssayMeta(): EssayMeta[] {
       let title = dir.name;
       let date = undefined;
       let description = undefined;
+      let type: "essay" | "thought" | "book" | undefined = undefined;
 
       // 1. Try to extract title/desc/date from export const metadata
       // Relaxed regex: matches export const metadata = { ... } (ignoring trailing semicolon/whitespace)
@@ -46,6 +48,10 @@ function readAllEssayMeta(): EssayMeta[] {
         // Match date: "..." or date: '...'
         const dateMatch = content.match(/date:\s*["']([^"']*)["']/);
         if (dateMatch) date = dateMatch[1];
+
+        // Match type: "..." or type: '...'
+        const typeMatch = content.match(/type:\s*["']([^"']*)["']/);
+        if (typeMatch) type = typeMatch[1] as "essay" | "thought" | "book";
       }
 
       if (!date) {
@@ -81,6 +87,7 @@ function readAllEssayMeta(): EssayMeta[] {
         title,
         date,
         description,
+        type: type || "essay", // Default to essay if no type specified
       } as EssayMeta;
     })
     .filter(Boolean) as EssayMeta[];
@@ -106,14 +113,7 @@ export default function WritingIndex() {
         essays, logs, and experiments from the builder gap year.
       </p>
 
-      <ul className="writing-list">
-        {essays.map((e) => (
-          <li key={e.slug} className="essay-item ">
-            <span className="date ">{e.date ?? ""}</span>
-            <Link href={`/essay/${e.slug}`}>{e.title}</Link>
-          </li>
-        ))}
-      </ul>
+      <WritingClient essays={essays} />
     </main>
   );
 }

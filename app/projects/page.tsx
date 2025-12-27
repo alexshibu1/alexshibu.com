@@ -48,13 +48,20 @@ function FeaturedIndicator({ isHovered }: { isHovered: boolean }) {
   );
 }
 
-function BigProjectButton() {
+function BigProjectButton({
+  isActive,
+  onClick,
+}: {
+  isActive: boolean;
+  onClick: () => void;
+}) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <motion.span
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={onClick}
       style={{
         display: "inline-flex",
         alignItems: "center",
@@ -63,9 +70,12 @@ function BigProjectButton() {
         borderRadius: "6px",
         cursor: "pointer",
         transition: "background-color 0.2s ease",
+        backgroundColor: isActive ? "rgba(255, 58, 58, 0.1)" : "transparent",
       }}
       whileHover={{
-        backgroundColor: "rgba(0, 0, 0, 0.02)",
+        backgroundColor: isActive
+          ? "rgba(255, 58, 58, 0.15)"
+          : "rgba(0, 0, 0, 0.02)",
       }}
     >
       <motion.span
@@ -84,9 +94,9 @@ function BigProjectButton() {
         }
         initial={false}
         style={{
-          background: isHovered ? "#ff3a3a" : "#ff3a3a",
+          background: isActive ? "#ff3a3a" : isHovered ? "#ff3a3a" : "#ff3a3a",
           display: "inline-block",
-          opacity: isHovered ? 1 : 0.6,
+          opacity: isActive ? 1 : isHovered ? 1 : 0.6,
         }}
         transition={{
           type: "spring",
@@ -97,13 +107,13 @@ function BigProjectButton() {
       <span
         style={{
           fontSize: "14px",
-          color: "#666",
+          color: isActive ? "#ff3a3a" : "#666",
           fontFamily: "var(--font-inter), sans-serif",
           fontWeight: 400,
           transition: "color 0.2s ease",
         }}
       >
-        big project
+        {isActive ? "big projects" : "big project"}
       </span>
     </motion.span>
   );
@@ -179,6 +189,8 @@ function ProjectItem({ project }: { project: Project }) {
 }
 
 export default function WorkIndex() {
+  const [showOnlyFeatured, setShowOnlyFeatured] = useState(false);
+
   const projects = [
     {
       name: "Youth 4 Entrepreneurship",
@@ -498,8 +510,13 @@ export default function WorkIndex() {
     },
   ];
 
+  // Filter projects if showing only featured
+  const filteredProjects = showOnlyFeatured
+    ? projects.filter((p) => p.featured)
+    : projects;
+
   // Sort projects by date (newest first)
-  const sortedProjects = [...projects].sort((a, b) => {
+  const sortedProjects = [...filteredProjects].sort((a, b) => {
     const dateA = parseInt(a.date);
     const dateB = parseInt(b.date);
     return dateB - dateA; // Descending order (newest first)
@@ -519,7 +536,12 @@ export default function WorkIndex() {
         }}
       >
         <h1 className="hero-heading">projects</h1>
-        {featuredCount > 0 && <BigProjectButton />}
+        {featuredCount > 0 && (
+          <BigProjectButton
+            isActive={showOnlyFeatured}
+            onClick={() => setShowOnlyFeatured(!showOnlyFeatured)}
+          />
+        )}
       </div>
       <p className="hero-subline">some of past and present work and projects</p>
 
