@@ -43,7 +43,7 @@ export default function AboutPage() {
       </div>
 
       {/* Profile Section */}
-      <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-4">
+      <div className="flex flex-col sm:flex-row  mb-4">
         {/* Profile Picture */}
         <div className="flex-shrink-0" style={{ marginTop: "-1rem" }}>
           <Image
@@ -100,6 +100,8 @@ export default function AboutPage() {
                 transition: "background-color 0.2s",
                 backgroundColor: "rgba(0, 0, 0, 0)",
                 border: "none",
+                marginLeft: "0",
+                marginTop: "0.5rem",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0.02)";
@@ -187,10 +189,22 @@ export default function AboutPage() {
         <ul className="space-y-1">
           <li className="flex items-start gap-2">
             <span className="text-gray-400 mt-1.5">•</span>
-            <span className="text-gray-700">
-              Building Avalonn - voice agents for SMBs
-            </span>
+            <span className="text-gray-700">Commit to Github everyday</span>
           </li>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "flex-end",
+              marginTop: "-1.5rem",
+            }}
+          >
+            <img
+              src="https://ghchart.rshah.org/0e4429/alexshibu1"
+              alt="GitHub contribution chart"
+              style={{ maxWidth: "700px" }}
+            />
+          </div>
+
           <li className="flex items-start gap-2">
             <span className="text-gray-400 mt-1.5">•</span>
             <span className="text-gray-700">
