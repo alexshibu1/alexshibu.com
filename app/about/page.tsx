@@ -6,6 +6,7 @@ import { useState } from "react";
 export default function AboutPage() {
   const [copied, setCopied] = useState(false);
   const [emailCopied, setEmailCopied] = useState(false);
+  const [isQ4Open, setIsQ4Open] = useState(true);
 
   const bio = `Alex Shibu is a student at the University of Toronto, majoring in Physics and Computer Science. Passionate about leveraging emerging technologies to drive impactful change. Alex has worked on startups and larger organizations to build tools and solutions using AI, web3, healthcare, decision theory. Alex also loves bringing together young people to and has hosted experiences for over 600 folks. In his spare time, he ships intresting sidequests, takes on fitness challenges, and reviews cafes.`;
 
@@ -185,8 +186,37 @@ export default function AboutPage() {
         <h2 className="text-xl font-semibold mb-1 text-gray-900">
           Current Focus
         </h2>
-        <p className="text-sm text-gray-500 mb-1">Q4 2025</p>
-        <ul className="space-y-1">
+        <button
+          onClick={() => setIsQ4Open(!isQ4Open)}
+          className="flex items-center justify-between w-full gap-3 px-4 py-3 text-base font-medium text-gray-800 hover:text-gray-900 hover:bg-gray-50 transition-all duration-200 cursor-pointer border border-gray-200 rounded-lg bg-white shadow-sm hover:shadow-md"
+          style={{ marginBottom: "1rem" }}
+        >
+          <span className="flex items-center gap-2">
+            <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+            Q4 2025
+          </span>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className={`transition-transform duration-200 text-gray-500 ${
+              isQ4Open ? "rotate-180" : ""
+            }`}
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <ul
+          className={`space-y-1 transition-all duration-300 ease-in-out ${
+            isQ4Open ? "opacity-100 max-h-96" : "opacity-0 max-h-0"
+          }`}
+          style={{ overflow: "hidden" }}
+        >
           <li className="flex items-start gap-2">
             <span className="text-gray-400 mt-1.5">•</span>
             <span className="text-gray-700">Commit to Github everyday</span>
