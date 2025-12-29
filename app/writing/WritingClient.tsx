@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 type EssayMeta = {
   slug: string;
@@ -56,9 +57,20 @@ function FilterButtons({
 }
 
 export default function WritingClient({ essays }: { essays: EssayMeta[] }) {
+  const searchParams = useSearchParams();
+  const urlFilter = searchParams.get("filter");
+
   const [activeFilter, setActiveFilter] = useState<
     "all" | "essay" | "thought" | "book"
-  >("all");
+  >(
+    urlFilter === "book"
+      ? "book"
+      : urlFilter === "essay"
+      ? "essay"
+      : urlFilter === "thought"
+      ? "thought"
+      : "all"
+  );
 
   // Filter essays based on active filter
   const filteredEssays = essays.filter((essay) => {
