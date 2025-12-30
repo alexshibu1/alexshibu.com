@@ -375,6 +375,34 @@ body {
   color: #111111;
 }
 
+.essay-osteo h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.essay-osteo h3 {
+  margin-top: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.essay-osteo p {
+  margin-bottom: 0.9rem;
+}
+
+.essay-osteo ul,
+.essay-osteo ol {
+  margin-bottom: 0.9rem;
+}
+
+.essay-osteo li {
+  margin-bottom: 0.35rem;
+}
+
+.essay-osteo li p {
+  margin-bottom: 0;
+  padding-bottom: 0.5rem;
+}
+
 .essay-soil ul li {
   margin-bottom: 0.5rem;
 }
