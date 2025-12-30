@@ -58,10 +58,15 @@ function BigProjectButton({
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <motion.span
+    <motion.button
+      type="button"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={onClick}
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        onClick();
+      }}
       style={{
         display: "inline-flex",
         alignItems: "center",
@@ -69,6 +74,8 @@ function BigProjectButton({
         padding: "0.4rem 0.8rem",
         borderRadius: "6px",
         cursor: "pointer",
+        border: "none",
+        background: "transparent",
         transition: "background-color 0.2s ease",
         backgroundColor: isActive ? "rgba(255, 58, 58, 0.1)" : "transparent",
       }}
@@ -115,7 +122,7 @@ function BigProjectButton({
       >
         {isActive ? "big projects" : "big project"}
       </span>
-    </motion.span>
+    </motion.button>
   );
 }
 
@@ -135,15 +142,26 @@ function ProjectItem({ project }: { project: Project }) {
               <FeaturedIndicator isHovered={isTitleHovered} />
             </span>
           )}
-          <a
-            href={project.link}
-            className="project-title"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {project.name}
-            <span className="project-arrow">↗</span>
-          </a>
+          {(project.link && project.link !== "") ||
+          (project.image && project.image !== "") ? (
+            <a
+              href={
+                project.link && project.link !== ""
+                  ? project.link
+                  : project.image
+              }
+              className="project-title"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {project.name}
+              <span className="project-arrow">↗</span>
+            </a>
+          ) : (
+            <span className="project-title" style={{ cursor: "default" }}>
+              {project.name}
+            </span>
+          )}
           {/* Optional link icons - only show if link exists */}
           {project.repo && project.repo !== "" && (
             <a
@@ -176,6 +194,17 @@ function ProjectItem({ project }: { project: Project }) {
               title="Video"
             >
               🎥
+            </a>
+          )}
+          {project.image && project.image !== "" && (
+            <a
+              href={project.image}
+              className="project-link-icon"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="View Image"
+            >
+              📷
             </a>
           )}
         </div>
@@ -248,7 +277,7 @@ export default function WorkIndex() {
       name: "BridgeWorks Fellowship - Increase Youth Employment",
       description:
         "Pitch for BridgeWorks Fellowship focused on increasing youth employment opportunities.",
-      link: "public/projects/bridgeworks.pdf",
+      link: "/projects/bridgeworks.pdf",
       date: "2024",
       repo: "",
       video: "https://www.youtube.com/watch?v=Jz48kAlGy3o&t=25s",
@@ -410,7 +439,7 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
-      name: "Instagram Theme Pages 📷📷📷",
+      name: "Instagram Theme Pages ",
       description:
         "Built and grew multiple Instagram theme pages including Bath Bombs For Vanauley (595 followers), Healthy Life Tips (621 followers), and Game Lynxe (739 followers). Received around $500 in free products across channels through partnerships and sponsorships.",
       link: "https://www.instagram.com/bath.bombs.for.vanauley/",
@@ -418,7 +447,7 @@ export default function WorkIndex() {
       repo: "",
       video: "",
       writeup: "",
-      image: "/images/proj/bathbombs.png",
+      image: "/projects/gaming.png",
     },
     {
       name: "Bath Bombs for Vanauley",
@@ -429,6 +458,7 @@ export default function WorkIndex() {
       repo: "",
       video: "",
       writeup: "",
+      image: "/projects/bathbombs.png",
     },
     {
       name: "Cube Runner",
@@ -438,15 +468,17 @@ export default function WorkIndex() {
       repo: "",
       video: "",
       writeup: "",
+      image: "/projects/cube runner.png",
     },
     {
       name: "Calculator App 1.1",
       description: "Calculator application built in 2018.",
-      link: "",
+      link: "/projects/cal.png",
       date: "2018",
       repo: "",
       video: "",
       writeup: "",
+      image: "/projects/cal.png",
     },
     {
       name: "Logos Quiz Academy",
@@ -457,6 +489,7 @@ export default function WorkIndex() {
       repo: "",
       video: "",
       writeup: "",
+      image: "/projects/logos.png",
     },
     {
       name: "First YouTube Channel",
