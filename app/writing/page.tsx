@@ -9,7 +9,7 @@ type EssayMeta = {
   title: string;
   date?: string;
   description?: string;
-  type?: "essay" | "thought" | "book";
+  type?: "essay" | "thought" | "book" | "project";
 };
 
 function readAllEssayMeta(): EssayMeta[] {
@@ -80,7 +80,7 @@ function readAllEssayMeta(): EssayMeta[] {
         }
       }
 
-      console.log(`Parsed essay: ${dir.name}, Title: ${title}, Date: ${date}`);
+      console.log(`Parsed essay: ${dir.name}, Title: ${title}, Date: ${date}, Type: ${type}`);
 
       return {
         slug: dir.name,

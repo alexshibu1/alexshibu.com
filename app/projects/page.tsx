@@ -222,7 +222,7 @@ export default function WorkIndex() {
 
   const projects = [
     {
-      name: "Youth 4 Entrepreneurship",
+      name: "Youth 4 Entrepreneurship Desjardins x YMCA",
       description:
         "Created a film on why young people should build and won first place in a nationwide competition. Led to invite to Desjardins Dream the Impossible event in Montreal.",
       link: "https://www.ymcagta.org/blog/congratulations-to-the-winners-of-the-youth-for-entrepreneurship-media-contest-powered-by-desjardins", // Add link later

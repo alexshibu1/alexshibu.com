@@ -9,21 +9,24 @@ type EssayMeta = {
   title: string;
   date?: string;
   description?: string;
-  type?: "essay" | "thought" | "book";
+  type?: "essay" | "thought" | "book" | "project";
 };
 
 function FilterButtons({
   activeFilter,
   onFilterChange,
 }: {
-  activeFilter: "all" | "essay" | "thought" | "book";
-  onFilterChange: (filter: "all" | "essay" | "thought" | "book") => void;
+  activeFilter: "all" | "essay" | "thought" | "book" | "project";
+  onFilterChange: (
+    filter: "all" | "essay" | "thought" | "book" | "project"
+  ) => void;
 }) {
   const filters = [
     { key: "all" as const, label: "All", emoji: "" },
     { key: "essay" as const, label: "Essays", emoji: "📝" },
     { key: "thought" as const, label: "Dumb Thoughts", emoji: "💭" },
     { key: "book" as const, label: "Books", emoji: "📚" },
+    { key: "project" as const, label: "Projects", emoji: "🚀" },
   ];
 
   return (
@@ -61,7 +64,7 @@ export default function WritingClient({ essays }: { essays: EssayMeta[] }) {
   const urlFilter = searchParams.get("filter");
 
   const [activeFilter, setActiveFilter] = useState<
-    "all" | "essay" | "thought" | "book"
+    "all" | "essay" | "thought" | "book" | "project"
   >(
     urlFilter === "book"
       ? "book"
@@ -69,6 +72,8 @@ export default function WritingClient({ essays }: { essays: EssayMeta[] }) {
       ? "essay"
       : urlFilter === "thought"
       ? "thought"
+      : urlFilter === "project"
+      ? "project"
       : "all"
   );
 
