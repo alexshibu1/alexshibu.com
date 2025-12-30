@@ -462,22 +462,24 @@ export default function WorkIndex() {
     },
     {
       name: "Cube Runner",
-      description: "A Unity game project - cube runner style game.",
+      description:
+        "INTRODUCING IMPOSSIBLE-*FINISH IT*-TEST&DEVLOP YOUR IQ-TOTALLY FREE!!-*NO ADDS* Cube runner game with impossible levels designed to increase IQ and reaction times.",
       link: "/projects/cube.png",
       date: "2019",
       repo: "",
       video: "",
-      writeup: "",
+      writeup: "/essay/cuberunner",
       image: "/projects/cube.png",
     },
     {
       name: "Calculator App 1.1",
-      description: "Calculator application built in 2018.",
+      description:
+        "A very simple calculator app written in Kotlin, meant for everyone and helpful for quick calculations. Features a clean design with basic operations: addition, subtraction, multiplication, and division. Simple keypad layout that's quick and easy to use, compatible with 82.1% of devices. My first Android application - feedback was requested for improvements.",
       link: "/projects/cal link.png",
       date: "2018",
       repo: "",
       video: "",
-      writeup: "",
+      writeup: "/essay/calculator",
       image: "/projects/cal main.png",
     },
     {
