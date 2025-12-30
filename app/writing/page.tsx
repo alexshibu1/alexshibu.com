@@ -80,14 +80,16 @@ function readAllEssayMeta(): EssayMeta[] {
         }
       }
 
-      console.log(`Parsed essay: ${dir.name}, Title: ${title}, Date: ${date}, Type: ${type}`);
+      console.log(
+        `Parsed essay: ${dir.name}, Title: ${title}, Date: ${date}, Type: ${type}`
+      );
 
       return {
         slug: dir.name,
         title,
         date,
         description,
-        type: type || "essay", // Default to essay if no type specified
+        type: type, // Only use explicit type from metadata
       } as EssayMeta;
     })
     .filter(Boolean) as EssayMeta[];
