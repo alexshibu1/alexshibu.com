@@ -18,7 +18,7 @@ const books: Book[] = [
     rating: 10,
     dateRead: "2024",
     notes: "atomic-habits-notes",
-    description: "how to set up the perfect habits that last ",
+    description: "set up the perfect habits that last",
   },
   {
     title: "Naval's Almanack",
