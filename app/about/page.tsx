@@ -251,23 +251,34 @@ export default function AboutPage() {
       </section>
 
       {/* Organizations & Fellowships */}
-      <section style={{ marginTop: "2rem", marginBottom: "2rem" }}>
-        <h2 className="text-xl font-semibold mb-4 text-gray-900">
+      <section style={{ marginTop: "0rem", marginBottom: "2rem" }}>
+        <h2 className="text-lg font-semibold mb-2 text-gray-900">
           Organizations & Fellowships
         </h2>
-        <div className="space-y-3">
-          <div className="flex items-center gap-3">
-            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-            <span className="text-gray-700">CAN Gap Fellowship</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span className="text-gray-700">The Knowledge Society</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-            <span className="text-gray-700">YC AI Startup School</span>
-          </div>
+        <div className="flex flex-wrap gap-2">
+          <span className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200">
+            Canadian Gap Year Association
+          </span>
+          <span className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200">
+            The Knowledge Society
+          </span>
+          <span className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200">
+            YC AI Startup School
+          </span>
+          <span className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200">
+            YMCA Youth Advisory Committee (YAC)
+          </span>
+          <span className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200">
+            UofT Centre for Entrepreneurship
+          </span>
+          <a
+            href="https://www.apathyisboring.com/rtt_9_rsvp_youth_innovators"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200 cursor-pointer"
+          >
+            Apathy is Boring
+          </a>
         </div>
       </section>
 
