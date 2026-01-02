@@ -13,6 +13,7 @@ type Project = {
   writeup?: string;
   featured?: boolean;
   image?: string;
+  images?: string[];
 };
 
 function FeaturedIndicator({ isHovered }: { isHovered: boolean }) {
@@ -207,6 +208,20 @@ function ProjectItem({ project }: { project: Project }) {
               📷
             </a>
           )}
+          {project.images &&
+            project.images.length > 0 &&
+            project.images.map((img, index) => (
+              <a
+                key={index}
+                href={img}
+                className="project-link-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+                title={`View Image ${index + 1}`}
+              >
+                📷
+              </a>
+            ))}
         </div>
         <span className="project-desc">{project.description}</span>
       </div>
@@ -350,14 +365,19 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
-      name: "Bible Companion on Google Actions",
+      name: "Actions on Google - Bible Companion",
       description:
-        "Shipped Actions on Google app Bible Companion and received $10K in cloud credits.",
+        "Received 10k in cloud credits to work on Actions on Google + free merch. Created Bible Companion - a voice-first Bible study application that allows users to ask questions about scripture, receive daily verses, and explore biblical content through natural language conversations. Built using Google's Actions SDK, Dialogflow, and TensorFlow.",
       link: "#", // Add link later
       date: "2019",
       video: "",
       repo: "",
       writeup: "",
+      featured: true,
+      images: [
+        "/projects/actions on google.png",
+        "/projects/actions on google 2.png",
+      ],
     },
     {
       name: "Bioblox",

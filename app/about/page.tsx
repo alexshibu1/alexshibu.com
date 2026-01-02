@@ -250,6 +250,27 @@ export default function AboutPage() {
         </ul>
       </section>
 
+      {/* Organizations & Fellowships */}
+      <section style={{ marginTop: "2rem", marginBottom: "2rem" }}>
+        <h2 className="text-xl font-semibold mb-4 text-gray-900">
+          Organizations & Fellowships
+        </h2>
+        <div className="space-y-3">
+          <div className="flex items-center gap-3">
+            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+            <span className="text-gray-700">CAN Gap Fellowship</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+            <span className="text-gray-700">The Knowledge Society</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+            <span className="text-gray-700">YC AI Startup School</span>
+          </div>
+        </div>
+      </section>
+
       {/* Work with me */}
       <section>
         <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-3 sm:gap-4 mb-2">

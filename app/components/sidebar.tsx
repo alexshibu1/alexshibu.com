@@ -61,8 +61,8 @@ export default function Sidebar() {
           <Link href="/writing" className={linkClassName} onClick={closeMenu}>
             writing
           </Link>
-          <Link href="/read" className={linkClassName} onClick={closeMenu}>
-            reading
+          <Link href="/books" className={linkClassName} onClick={closeMenu}>
+            books
           </Link>
           <Link
             href="/experiments"
