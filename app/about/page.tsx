@@ -7,6 +7,7 @@ export default function AboutPage() {
   const [copied, setCopied] = useState(false);
   const [emailCopied, setEmailCopied] = useState(false);
   const [isQ4Open, setIsQ4Open] = useState(true);
+  const [is2025Open, setIs2025Open] = useState(false);
 
   const bio = `Alex Shibu is a student at the University of Toronto, majoring in Physics and Computer Science. Passionate about leveraging emerging technologies to drive impactful change. Alex has worked on startups and larger organizations to build tools and solutions using AI, web3, healthcare, decision theory. Alex also loves bringing together young people to and has hosted experiences for over 600 folks. In his spare time, he ships intresting sidequests, takes on fitness challenges, and reviews cafes.`;
 
@@ -315,6 +316,80 @@ export default function AboutPage() {
           values. If you&apos;re building something interesting or have an
           opportunity that aligns, let&apos;s connect.
         </p>
+      </section>
+
+      {/* 2025 Year Review */}
+      <section style={{ marginTop: "2rem", marginBottom: "2rem" }}>
+        <h2 className="text-xl font-semibold mb-1 text-gray-900">
+          Year Review
+        </h2>
+        <button
+          onClick={() => setIs2025Open(!is2025Open)}
+          className="flex items-center justify-between w-full gap-3 px-4 py-3 text-base font-medium text-gray-800 hover:text-gray-900 hover:bg-gray-50 transition-all duration-200 cursor-pointer border border-gray-200 rounded-lg bg-white shadow-sm hover:shadow-md"
+          style={{ marginBottom: "1rem" }}
+        >
+          <span className="flex items-center gap-2">
+            <span className="inline-block w-2 h-2 bg-blue-500 rounded-full"></span>
+            2025
+          </span>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className={`transition-transform duration-200 text-gray-500 ${
+              is2025Open ? "rotate-180" : ""
+            }`}
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div
+          className={`space-y-3 transition-all duration-300 ease-in-out ${
+            is2025Open ? "opacity-100 max-h-96" : "opacity-0 max-h-0"
+          }`}
+          style={{ overflow: "hidden" }}
+        >
+          {/* Strava Stats */}
+          <div className="bg-green-50 border border-green-200 rounded-lg p-3">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-green-600 font-medium">🏃‍♂️ Strava Stats</span>
+              <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span>
+            </div>
+            <p className="text-green-800 text-sm">52 runs • 190km ran • 12 cities</p>
+          </div>
+
+          {/* Coding Progress */}
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-blue-600 font-medium">💻 Learning to Code</span>
+              <span className="inline-block w-2 h-2 bg-blue-500 rounded-full"></span>
+            </div>
+            <p className="text-blue-800 text-sm">25% completed</p>
+          </div>
+
+          {/* Half Marathon */}
+          <div className="bg-red-50 border border-red-200 rounded-lg p-3">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-red-600 font-medium">🏃‍♂️ Half Marathon</span>
+              <span className="inline-block w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+            </div>
+            <p className="text-red-800 text-sm">Incomplete</p>
+          </div>
+
+          {/* Weightlifting */}
+          <div className="bg-purple-50 border border-purple-200 rounded-lg p-3">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-purple-600 font-medium">🏋️‍♂️ Weightlifting</span>
+              <span className="inline-block w-2 h-2 bg-purple-500 rounded-full"></span>
+            </div>
+            <p className="text-purple-800 text-sm">Lifted 1000lbs in volume over 33 workouts</p>
+          </div>
+        </div>
       </section>
     </main>
   );
