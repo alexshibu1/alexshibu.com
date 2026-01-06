@@ -372,6 +372,15 @@ export default function AboutPage() {
             <p className="text-blue-800 text-sm">25% completed</p>
           </div>
 
+          {/* Coding Hours */}
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-blue-600 font-medium">⌨️ Hours Coded</span>
+              <span className="inline-block w-2 h-2 bg-blue-500 rounded-full"></span>
+            </div>
+            <p className="text-blue-800 text-sm">54 hours</p>
+          </div>
+
           {/* Half Marathon */}
           <div className="bg-red-50 border border-red-200 rounded-lg p-3">
             <div className="flex items-center gap-2 mb-1">
