@@ -318,6 +318,59 @@ export default function AboutPage() {
         </p>
       </section>
 
+      {/* Featured In */}
+      <section style={{ marginTop: "2rem", marginBottom: "2rem" }}>
+        <h2 className="text-xl font-semibold mb-2 text-gray-900">
+          Featured In
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <a
+            href="#"
+            className="group bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+          >
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                <span className="text-white text-xs font-bold">🏛️</span>
+              </div>
+              <div>
+                <h3 className="font-semibold text-blue-900 group-hover:text-blue-800">University of Toronto</h3>
+                <p className="text-xs text-blue-700">Featured Student Innovator</p>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="#"
+            className="group bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 rounded-xl p-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+          >
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
+                <span className="text-white text-xs font-bold">🚀</span>
+              </div>
+              <div>
+                <h3 className="font-semibold text-purple-900 group-hover:text-purple-800">YC Startup School</h3>
+                <p className="text-xs text-purple-700">AI Cohort Graduate</p>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="#"
+            className="group bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-xl p-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+          >
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                <span className="text-white text-xs font-bold">📰</span>
+              </div>
+              <div>
+                <h3 className="font-semibold text-green-900 group-hover:text-green-800">TechCrunch</h3>
+                <p className="text-xs text-green-700">Startup Spotlight</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
       {/* 2025 Year Review */}
       <section style={{ marginTop: "2rem", marginBottom: "2rem" }}>
         <h2 className="text-xl font-semibold mb-1 text-gray-900">
@@ -349,54 +402,137 @@ export default function AboutPage() {
           </svg>
         </button>
         <div
-          className={`space-y-3 transition-all duration-300 ease-in-out ${
-            is2025Open ? "opacity-100 max-h-96" : "opacity-0 max-h-0"
+          className={`grid grid-cols-1 sm:grid-cols-2 gap-4 transition-all duration-300 ease-in-out ${
+            is2025Open ? "opacity-100 max-h-screen" : "opacity-0 max-h-0"
           }`}
           style={{ overflow: "hidden" }}
         >
           {/* Strava Stats */}
-          <div className="bg-green-50 border border-green-200 rounded-lg p-3">
-            <div className="flex items-center gap-2 mb-1">
-              <span className="text-green-600 font-medium">🏃‍♂️ Strava Stats</span>
-              <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span>
+          <div className="group bg-gradient-to-br from-emerald-50 via-green-50 to-emerald-100 border border-emerald-200 rounded-xl p-5 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-white text-lg">🏃‍♂️</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-emerald-900">Strava Stats</h3>
+                  <div className="w-2 h-2 bg-emerald-500 rounded-full mt-1"></div>
+                </div>
+              </div>
             </div>
-            <p className="text-green-800 text-sm">52 runs • 190km ran • 12 cities</p>
+            <div className="space-y-1">
+              <p className="text-emerald-800 font-medium text-lg">52 runs</p>
+              <p className="text-emerald-700 text-sm">190km ran • 12 cities</p>
+            </div>
           </div>
 
           {/* Coding Progress */}
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
-            <div className="flex items-center gap-2 mb-1">
-              <span className="text-blue-600 font-medium">💻 Learning to Code</span>
-              <span className="inline-block w-2 h-2 bg-blue-500 rounded-full"></span>
+          <div className="group bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 border border-blue-200 rounded-xl p-5 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-white text-lg">💻</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-blue-900">Learning to Code</h3>
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-1"></div>
+                </div>
+              </div>
             </div>
-            <p className="text-blue-800 text-sm">25% completed</p>
+            <div className="space-y-1">
+              <p className="text-blue-800 font-medium text-lg">25% completed</p>
+            </div>
           </div>
 
           {/* Coding Hours */}
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
-            <div className="flex items-center gap-2 mb-1">
-              <span className="text-blue-600 font-medium">⌨️ Hours Coded</span>
-              <span className="inline-block w-2 h-2 bg-blue-500 rounded-full"></span>
+          <div className="group bg-gradient-to-br from-cyan-50 via-blue-50 to-cyan-100 border border-cyan-200 rounded-xl p-5 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-white text-lg">⌨️</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-cyan-900">Hours Coded</h3>
+                  <div className="w-2 h-2 bg-cyan-500 rounded-full mt-1"></div>
+                </div>
+              </div>
             </div>
-            <p className="text-blue-800 text-sm">54 hours</p>
+            <div className="space-y-1">
+              <p className="text-cyan-800 font-medium text-lg">54 hours</p>
+            </div>
           </div>
 
           {/* Half Marathon */}
-          <div className="bg-red-50 border border-red-200 rounded-lg p-3">
-            <div className="flex items-center gap-2 mb-1">
-              <span className="text-red-600 font-medium">🏃‍♂️ Half Marathon</span>
-              <span className="inline-block w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+          <div className="group bg-gradient-to-br from-red-50 via-rose-50 to-red-100 border border-red-200 rounded-xl p-5 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-red-400 to-rose-500 rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-white text-lg">🏃‍♂️</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-red-900">Half Marathon</h3>
+                  <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse mt-1"></div>
+                </div>
+              </div>
             </div>
-            <p className="text-red-800 text-sm">Incomplete</p>
+            <div className="space-y-1">
+              <p className="text-red-800 font-medium text-lg">Incomplete</p>
+            </div>
           </div>
 
           {/* Weightlifting */}
-          <div className="bg-purple-50 border border-purple-200 rounded-lg p-3">
-            <div className="flex items-center gap-2 mb-1">
-              <span className="text-purple-600 font-medium">🏋️‍♂️ Weightlifting</span>
-              <span className="inline-block w-2 h-2 bg-purple-500 rounded-full"></span>
+          <div className="group bg-gradient-to-br from-purple-50 via-violet-50 to-purple-100 border border-purple-200 rounded-xl p-5 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-violet-500 rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-white text-lg">🏋️‍♂️</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-purple-900">Weightlifting</h3>
+                  <div className="w-2 h-2 bg-purple-500 rounded-full mt-1"></div>
+                </div>
+              </div>
             </div>
-            <p className="text-purple-800 text-sm">Lifted 1000lbs in volume over 33 workouts</p>
+            <div className="space-y-1">
+              <p className="text-purple-800 font-medium text-lg">1000lbs volume</p>
+              <p className="text-purple-700 text-sm">over 33 workouts</p>
+            </div>
+          </div>
+
+          {/* Hours in Meetings */}
+          <div className="group bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 border border-amber-200 rounded-xl p-5 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-white text-lg">👥</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-amber-900">Hours in Meetings</h3>
+                  <div className="w-2 h-2 bg-amber-500 rounded-full mt-1"></div>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-1">
+              <p className="text-amber-800 font-medium text-lg">307 hours</p>
+            </div>
+          </div>
+
+          {/* People Met */}
+          <div className="group bg-gradient-to-br from-yellow-50 via-amber-50 to-yellow-100 border border-yellow-200 rounded-xl p-5 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer sm:col-span-2">
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-white text-lg">🤝</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-yellow-900">People Met</h3>
+                  <div className="w-2 h-2 bg-yellow-500 rounded-full mt-1"></div>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-1">
+              <p className="text-yellow-800 font-medium text-lg">381 different people</p>
+            </div>
           </div>
         </div>
       </section>
