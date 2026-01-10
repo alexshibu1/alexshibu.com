@@ -318,54 +318,145 @@ export default function AboutPage() {
         </p>
       </section>
 
-      {/* Featured In */}
-      <section style={{ marginTop: "2rem", marginBottom: "2rem" }}>
-        <h2 className="text-xl font-semibold mb-2 text-gray-900">
+      {/* Featured In - Upgraded Compact Tags */}
+      <section style={{ marginTop: "1rem", marginBottom: "1rem" }}>
+        <h2 className="text-base font-semibold mb-3 text-gray-900">
           Featured In
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="flex flex-wrap gap-2">
           <a
-            href="#"
-            className="group bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+            href="https://www.aiacanada.com/about-us/annual-reports/2022-2/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-2.5 py-1.5 bg-white hover:bg-red-50 border border-gray-200 hover:border-red-200 hover:shadow-md hover:-translate-y-0.5 rounded-lg cursor-pointer transition-all duration-200 text-xs"
           >
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-                <span className="text-white text-xs font-bold">🏛️</span>
-              </div>
-              <div>
-                <h3 className="font-semibold text-blue-900 group-hover:text-blue-800">University of Toronto</h3>
-                <p className="text-xs text-blue-700">Featured Student Innovator</p>
-              </div>
+            <div className="flex flex-col leading-tight">
+              <span className="font-medium text-gray-900 hover:text-gray-800">
+                AIA Canada
+              </span>
+              <span className="text-gray-600 hover:text-gray-700">
+                Annual Report 2022
+              </span>
             </div>
           </a>
-
           <a
-            href="#"
-            className="group bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 rounded-xl p-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+            href="https://www.ymcagta.org/about-us/organizational-structure/youth-advisory-committee"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-2.5 py-1.5 bg-white hover:bg-red-50 border border-gray-200 hover:border-red-200 hover:shadow-md hover:-translate-y-0.5 rounded-lg cursor-pointer transition-all duration-200 text-xs"
           >
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
-                <span className="text-white text-xs font-bold">🚀</span>
-              </div>
-              <div>
-                <h3 className="font-semibold text-purple-900 group-hover:text-purple-800">YC Startup School</h3>
-                <p className="text-xs text-purple-700">AI Cohort Graduate</p>
-              </div>
+            <div className="flex flex-col leading-tight">
+              <span className="font-medium text-gray-900 hover:text-gray-800">
+                YMCA of Greater Toronto
+              </span>
+              <span className="text-gray-600 hover:text-gray-700">
+                Youth Advisory Committee (YAC) Members
+              </span>
             </div>
           </a>
-
           <a
-            href="#"
-            className="group bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-xl p-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+            href="https://www.ymcagta.org/blog/congratulations-to-the-winners-of-the-youth-for-entrepreneurship-media-contest-2025"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-2.5 py-1.5 bg-white hover:bg-red-50 border border-gray-200 hover:border-red-200 hover:shadow-md hover:-translate-y-0.5 rounded-lg cursor-pointer transition-all duration-200 text-xs"
           >
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                <span className="text-white text-xs font-bold">📰</span>
-              </div>
-              <div>
-                <h3 className="font-semibold text-green-900 group-hover:text-green-800">TechCrunch</h3>
-                <p className="text-xs text-green-700">Startup Spotlight</p>
-              </div>
+            <div className="flex flex-col leading-tight">
+              <span className="font-medium text-gray-900 hover:text-gray-800">
+                YMCA
+              </span>
+              <span className="text-gray-600 hover:text-gray-700">
+                Youth Entrepreneurship Winner
+              </span>
+            </div>
+          </a>
+          <a
+            href="https://www.ymca.int/enhesa-and-ymca-support-young-people-in-toronto/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-2.5 py-1.5 bg-white hover:bg-red-50 border border-gray-200 hover:border-red-200 hover:shadow-md hover:-translate-y-0.5 rounded-lg cursor-pointer transition-all duration-200 text-xs"
+          >
+            <div className="flex flex-col leading-tight">
+              <span className="font-medium text-gray-900 hover:text-gray-800">
+                YMCA World
+              </span>
+              <span className="text-gray-600 hover:text-gray-700">
+                Event Emcee
+              </span>
+            </div>
+          </a>
+          <a
+            href="https://www.youtube.com/watch?v=2z1HoLVZZOY"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-2.5 py-1.5 bg-white hover:bg-red-50 border border-gray-200 hover:border-red-200 hover:shadow-md hover:-translate-y-0.5 rounded-lg cursor-pointer transition-all duration-200 text-xs"
+          >
+            <div className="flex flex-col leading-tight">
+              <span className="font-medium text-gray-900 hover:text-gray-800">
+                YMCA Video
+              </span>
+              <span className="text-gray-600 hover:text-gray-700">
+                Youth Newcomer Feature
+              </span>
+            </div>
+          </a>
+          <a
+            href="https://www.entrepreneurship.artsci.utoronto.ca/news/we-asked-7-founders-what-sparked-your-startup-idea"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-2.5 py-1.5 bg-white hover:bg-red-50 border border-gray-200 hover:border-red-200 hover:shadow-md hover:-translate-y-0.5 rounded-lg cursor-pointer transition-all duration-200 text-xs"
+          >
+            <div className="flex flex-col leading-tight">
+              <span className="font-medium text-gray-900 hover:text-gray-800">
+                UofT Entrepreneurship
+              </span>
+              <span className="text-gray-600 hover:text-gray-700">
+                Founders Interview
+              </span>
+            </div>
+          </a>
+          <a
+            href="https://www.instagram.com/reels/DTPr8Waks1J/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-2.5 py-1.5 bg-white hover:bg-red-50 border border-gray-200 hover:border-red-200 hover:shadow-md hover:-translate-y-0.5 rounded-lg cursor-pointer transition-all duration-200 text-xs"
+          >
+            <div className="flex flex-col leading-tight">
+              <span className="font-medium text-gray-900 hover:text-gray-800">
+                UofT Video
+              </span>
+              <span className="text-gray-600 hover:text-gray-700">
+                Student Spotlight
+              </span>
+            </div>
+          </a>
+          <a
+            href="http://sportsandrec.ca/photo2020.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-2.5 py-1.5 bg-white hover:bg-red-50 border border-gray-200 hover:border-red-200 hover:shadow-md hover:-translate-y-0.5 rounded-lg cursor-pointer transition-all duration-200 text-xs"
+          >
+            <div className="flex flex-col leading-tight">
+              <span className="font-medium text-gray-900 hover:text-gray-800">
+                West Rouge Sports
+              </span>
+              <span className="text-gray-600 hover:text-gray-700">
+                Photo Contest Winner
+              </span>
+            </div>
+          </a>
+          <a
+            href="https://childrenfirstcanada.org/wp-content/uploads/2025/08/Raising-Canada-Report-2025-FINAL_WEB.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-2.5 py-1.5 bg-white hover:bg-red-50 border border-gray-200 hover:border-red-200 hover:shadow-md hover:-translate-y-0.5 rounded-lg cursor-pointer transition-all duration-200 text-xs"
+          >
+            <div className="flex flex-col leading-tight">
+              <span className="font-medium text-gray-900 hover:text-gray-800">
+                Children First Canada
+              </span>
+              <span className="text-gray-600 hover:text-gray-700">
+                Raising Canada Report
+              </span>
             </div>
           </a>
         </div>
@@ -415,7 +506,9 @@ export default function AboutPage() {
                   <span className="text-white text-lg">🏃‍♂️</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-emerald-900">Strava Stats</h3>
+                  <h3 className="font-semibold text-emerald-900">
+                    Strava Stats
+                  </h3>
                   <div className="w-2 h-2 bg-emerald-500 rounded-full mt-1"></div>
                 </div>
               </div>
@@ -434,7 +527,9 @@ export default function AboutPage() {
                   <span className="text-white text-lg">💻</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-blue-900">Learning to Code</h3>
+                  <h3 className="font-semibold text-blue-900">
+                    Learning to Code
+                  </h3>
                   <div className="w-2 h-2 bg-blue-500 rounded-full mt-1"></div>
                 </div>
               </div>
@@ -488,13 +583,17 @@ export default function AboutPage() {
                   <span className="text-white text-lg">🏋️‍♂️</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-purple-900">Weightlifting</h3>
+                  <h3 className="font-semibold text-purple-900">
+                    Weightlifting
+                  </h3>
                   <div className="w-2 h-2 bg-purple-500 rounded-full mt-1"></div>
                 </div>
               </div>
             </div>
             <div className="space-y-1">
-              <p className="text-purple-800 font-medium text-lg">1000lbs volume</p>
+              <p className="text-purple-800 font-medium text-lg">
+                1000lbs volume
+              </p>
               <p className="text-purple-700 text-sm">over 33 workouts</p>
             </div>
           </div>
@@ -507,7 +606,9 @@ export default function AboutPage() {
                   <span className="text-white text-lg">👥</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-amber-900">Hours in Meetings</h3>
+                  <h3 className="font-semibold text-amber-900">
+                    Hours in Meetings
+                  </h3>
                   <div className="w-2 h-2 bg-amber-500 rounded-full mt-1"></div>
                 </div>
               </div>
@@ -531,7 +632,9 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="space-y-1">
-              <p className="text-yellow-800 font-medium text-lg">381 different people</p>
+              <p className="text-yellow-800 font-medium text-lg">
+                381 different people
+              </p>
             </div>
           </div>
         </div>
