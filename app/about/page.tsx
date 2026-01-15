@@ -184,7 +184,7 @@ export default function AboutPage() {
         className="about-current-focus"
         style={{ marginTop: "-2rem", marginBottom: "-20px" }}
       >
-        <h2 className="text-2xl md:text-4xl font-black mb-3 uppercase text-gray-900">
+        <h2 className="pt-10 text-2xl md:text-4xl font-black mb-3 uppercase text-gray-900">
           <span className="inline-flex items-center gap-3 tracking-[0.28em]">
             <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
               OPERATION
@@ -197,12 +197,12 @@ export default function AboutPage() {
         </h2>
         <button
           onClick={() => setIsQ4Open(!isQ4Open)}
-          className="group relative flex items-center justify-between w-full gap-3 px-4 py-3 text-base font-medium text-gray-900 transition-all duration-200 cursor-pointer border border-gray-200/80 rounded-xl bg-white/80 backdrop-blur shadow-sm hover:shadow-lg hover:-translate-y-0.5"
+          className="group relative flex items-center justify-between w-full gap-3 px-4 py-3 text-base font-semibold text-gray-900 transition-all duration-200 cursor-pointer rounded-2xl border border-gray-300/70 border-l-4 border-l-gray-900/80 bg-gradient-to-r from-gray-50 via-white to-gray-50 shadow-md ring-1 ring-gray-200/40 hover:shadow-lg hover:-translate-y-0.5"
           style={{ marginBottom: "1rem" }}
         >
           <span className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-300/60 bg-emerald-50/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700 shadow-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-600"></span>
               Q1 2026
             </span>
           </span>
@@ -223,59 +223,150 @@ export default function AboutPage() {
           </svg>
         </button>
         <ul
-          className={`transition-all duration-300 ease-in-out rounded-xl border border-gray-200/80 bg-white/90 shadow-sm divide-y divide-gray-200/70 ${
-            isQ4Open ? "opacity-100 max-h-[900px]" : "opacity-0 max-h-0"
+          className={`transition-all duration-300 ease-in-out rounded-2xl border border-gray-200/70 bg-white/90 shadow-md ring-1 ring-gray-200/40 divide-y divide-gray-200/60 ${
+            isQ4Open ? "opacity-100 max-h-[1400px]" : "opacity-0 max-h-0"
           }`}
           style={{ overflow: "hidden" }}
         >
-          <li className="flex items-center justify-between px-4 py-2 bg-gray-50/80 text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-600">
+          <li className="flex items-center justify-between px-4 py-2 bg-gradient-to-r from-gray-50 via-white to-gray-50 text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-600">
             Ops Brief
             <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-500">
               Q1 2026
             </span>
           </li>
-          <li className="flex items-start gap-3 px-4 py-3">
-            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-gray-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600">
+          <li className="flex items-start gap-3 px-4 py-1 transition-colors hover:bg-gray-50/70">
+            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 01
             </span>
-            <span className="text-gray-800">Commit to GitHub daily</span>
-            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700">
-              Active
+            <span className="text-gray-800">
+              Ship code to GitHub 6 days/week
+            </span>
+            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+              Executing
             </span>
           </li>
-          <li className="px-4 py-3">
+          <li className="px-3 py-0 pb-[5px] bg-gradient-to-b from-white to-gray-50/40">
             <div style={{ display: "flex", justifyContent: "flex-end" }}>
               <img
                 src="https://ghchart.rshah.org/0e4429/alexshibu1"
                 alt="GitHub contribution chart"
                 style={{
                   maxWidth: "700px",
-                  borderRadius: "12px",
+                  borderRadius: "4px",
                   border: "1px solid rgba(229, 231, 235, 0.8)",
-                  padding: "6px",
+                  padding: "4px",
                   background: "rgba(255, 255, 255, 0.8)",
+                  marginTop: "0px",
+                  marginBottom: "0px",
                 }}
               />
             </div>
           </li>
-          <li className="flex items-start gap-3 px-4 py-3">
-            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-gray-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600">
+          <li className="flex items-start gap-3 px-4 py-1 transition-colors hover:bg-gray-50/70">
+            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 02
             </span>
-            <span className="text-gray-800">Complete Marc Lou + CS50x</span>
-            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700">
-              Active
+            <span className="text-gray-800">Finish Marc Lou + CS50x</span>
+            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+              Executing
             </span>
           </li>
-          <li className="flex items-start gap-3 px-4 py-3">
-            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-gray-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600">
+          <li className="flex items-start gap-3 px-4 py-1 transition-colors hover:bg-gray-50/70">
+            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 03
             </span>
             <span className="text-gray-800">
-              Study physics + math fundamentals
+              Build physics + math fundamentals
             </span>
-            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700">
-              Active
+            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+              Executing
+            </span>
+          </li>
+          <li className="flex items-start gap-3 px-4 py-1 transition-colors hover:bg-gray-50/70">
+            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
+              Obj 04
+            </span>
+            <span className="text-gray-800">Ship one public project</span>
+            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+              Executing
+            </span>
+          </li>
+          <li className="flex items-center justify-between px-4 py-2 bg-gradient-to-r from-gray-50 via-white to-gray-50 text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-600">
+            Mind
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-500">
+              Discipline
+            </span>
+          </li>
+          <li className="flex items-start gap-3 px-4 py-1 transition-colors hover:bg-gray-50/70">
+            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
+              Obj 05
+            </span>
+            <span className="text-gray-800">Read 3 books</span>
+            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+              Executing
+            </span>
+          </li>
+          <li className="flex items-start gap-3 px-4 py-1 transition-colors hover:bg-gray-50/70">
+            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
+              Obj 06
+            </span>
+            <span className="text-gray-800">
+              Two 90-minute deep-work blocks, 3x/week
+            </span>
+            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+              Executing
+            </span>
+          </li>
+          <li className="flex items-start gap-3 px-4 py-1 transition-colors hover:bg-gray-50/70">
+            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
+              Obj 07
+            </span>
+            <span className="text-gray-800">
+              Keep YouTube under 20 hours/week
+            </span>
+            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+              Executing
+            </span>
+          </li>
+          <li className="flex items-center justify-between px-4 py-2 bg-gradient-to-r from-gray-50 via-white to-gray-50 text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-600">
+            Body
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-500">
+              Conditioning
+            </span>
+          </li>
+          <li className="flex items-start gap-3 px-4 py-1 transition-colors hover:bg-gray-50/70">
+            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
+              Obj 08
+            </span>
+            <span className="text-gray-800">Run once per week</span>
+            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+              Executing
+            </span>
+          </li>
+          <li className="flex items-start gap-3 px-4 py-1 transition-colors hover:bg-gray-50/70">
+            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
+              Obj 09
+            </span>
+            <span className="text-gray-800">Lift 3x per week</span>
+            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+              Executing
+            </span>
+          </li>
+          <li className="flex items-start gap-3 px-4 py-1 transition-colors hover:bg-gray-50/70">
+            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
+              Obj 10
+            </span>
+            <span className="text-gray-800">
+              Sleep by 11:30pm at least 85% of nights
+            </span>
+            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+              Executing
+            </span>
+          </li>
+          <li className="flex items-center justify-between px-4 py-2 bg-gradient-to-r from-gray-50 via-white to-gray-50 text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-600">
+            Q1 Outcome
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-500">
+              TBD
             </span>
           </li>
         </ul>
