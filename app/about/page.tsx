@@ -184,17 +184,27 @@ export default function AboutPage() {
         className="about-current-focus"
         style={{ marginTop: "-2rem", marginBottom: "-20px" }}
       >
-        <h2 className="text-xl font-semibold mb-1 text-gray-900">
-          Current Focus
+        <h2 className="text-2xl md:text-4xl font-black mb-3 uppercase text-gray-900">
+          <span className="inline-flex items-center gap-3 tracking-[0.28em]">
+            <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+              OPERATION
+            </span>
+            <span className="px-2 py-0.5 rounded-md border border-gray-300 bg-gray-50 text-gray-800 shadow-sm">
+              FORGE
+            </span>
+          </span>
+          <span className="block mt-2 h-[2px] w-24 bg-gradient-to-r from-gray-900 via-gray-600 to-transparent"></span>
         </h2>
         <button
           onClick={() => setIsQ4Open(!isQ4Open)}
-          className="flex items-center justify-between w-full gap-3 px-4 py-3 text-base font-medium text-gray-800 hover:text-gray-900 hover:bg-gray-50 transition-all duration-200 cursor-pointer border border-gray-200 rounded-lg bg-white shadow-sm hover:shadow-md"
+          className="group relative flex items-center justify-between w-full gap-3 px-4 py-3 text-base font-medium text-gray-900 transition-all duration-200 cursor-pointer border border-gray-200/80 rounded-xl bg-white/80 backdrop-blur shadow-sm hover:shadow-lg hover:-translate-y-0.5"
           style={{ marginBottom: "1rem" }}
         >
-          <span className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-            Q4 2025
+          <span className="flex items-center gap-3">
+            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-300/60 bg-emerald-50/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              Q1 2026
+            </span>
           </span>
           <svg
             width="18"
@@ -205,7 +215,7 @@ export default function AboutPage() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className={`transition-transform duration-200 text-gray-500 ${
+            className={`transition-transform duration-200 text-gray-500 group-hover:text-gray-700 ${
               isQ4Open ? "rotate-180" : ""
             }`}
           >
@@ -213,39 +223,59 @@ export default function AboutPage() {
           </svg>
         </button>
         <ul
-          className={`space-y-1 transition-all duration-300 ease-in-out ${
-            isQ4Open ? "opacity-100 max-h-96" : "opacity-0 max-h-0"
+          className={`transition-all duration-300 ease-in-out rounded-xl border border-gray-200/80 bg-white/90 shadow-sm divide-y divide-gray-200/70 ${
+            isQ4Open ? "opacity-100 max-h-[900px]" : "opacity-0 max-h-0"
           }`}
           style={{ overflow: "hidden" }}
         >
-          <li className="flex items-start gap-2">
-            <span className="text-gray-400 mt-1.5">•</span>
-            <span className="text-gray-700">Commit to Github everyday</span>
-          </li>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "flex-end",
-              marginTop: "-1.5rem",
-            }}
-          >
-            <img
-              src="https://ghchart.rshah.org/0e4429/alexshibu1"
-              alt="GitHub contribution chart"
-              style={{ maxWidth: "700px" }}
-            />
-          </div>
-
-          <li className="flex items-start gap-2">
-            <span className="text-gray-400 mt-1.5">•</span>
-            <span className="text-gray-700">
-              Exploring AI applications in healthcare and decision theory
+          <li className="flex items-center justify-between px-4 py-2 bg-gray-50/80 text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-600">
+            Ops Brief
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-500">
+              Q1 2026
             </span>
           </li>
-          <li className="flex items-start gap-2">
-            <span className="text-gray-400 mt-1.5">•</span>
-            <span className="text-gray-700">
-              Completing my builder gap year with 12 projects in 12 months
+          <li className="flex items-start gap-3 px-4 py-3">
+            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-gray-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600">
+              Obj 01
+            </span>
+            <span className="text-gray-800">Commit to GitHub daily</span>
+            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700">
+              Active
+            </span>
+          </li>
+          <li className="px-4 py-3">
+            <div style={{ display: "flex", justifyContent: "flex-end" }}>
+              <img
+                src="https://ghchart.rshah.org/0e4429/alexshibu1"
+                alt="GitHub contribution chart"
+                style={{
+                  maxWidth: "700px",
+                  borderRadius: "12px",
+                  border: "1px solid rgba(229, 231, 235, 0.8)",
+                  padding: "6px",
+                  background: "rgba(255, 255, 255, 0.8)",
+                }}
+              />
+            </div>
+          </li>
+          <li className="flex items-start gap-3 px-4 py-3">
+            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-gray-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600">
+              Obj 02
+            </span>
+            <span className="text-gray-800">Complete Marc Lou + CS50x</span>
+            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700">
+              Active
+            </span>
+          </li>
+          <li className="flex items-start gap-3 px-4 py-3">
+            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-gray-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600">
+              Obj 03
+            </span>
+            <span className="text-gray-800">
+              Study physics + math fundamentals
+            </span>
+            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700">
+              Active
             </span>
           </li>
         </ul>
@@ -311,8 +341,8 @@ export default function AboutPage() {
           </a>
         </div>
         <p className="text-gray-700 leading-relaxed">
-          Right now I&apos;m looking for internships at cool companies or YC
-          companies, and would like to collaborate with people with similar
+          Right now I&apos;m looking for internships at cool companies or
+          startups, and would like to collaborate with people with similar
           values. If you&apos;re building something interesting or have an
           opportunity that aligns, let&apos;s connect.
         </p>
@@ -499,20 +529,17 @@ export default function AboutPage() {
           style={{ overflow: "hidden" }}
         >
           <div className="flex justify-between py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
-            <span className="font-medium">🏃‍♂️ Strava Stats</span>
+            <span className="font-medium">🏃‍♂️ Strava/Running Stats</span>
             <span className="text-gray-700 font-medium">
-              52 runs • 190km • 12 cities
+              52 runs | 190km | 12 cities
             </span>
           </div>
 
           <div className="flex justify-between py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
-            <span className="font-medium">💻 Learning to Code</span>
-            <span className="text-gray-700 font-medium">25% completed</span>
-          </div>
-
-          <div className="flex justify-between py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
-            <span className="font-medium">⌨️ Hours Coded</span>
-            <span className="text-gray-700 font-medium">54 hours</span>
+            <span className="font-medium">💻 Become Technical Weapon</span>
+            <span className="text-gray-700 font-medium">
+              25% completed | 54 hours
+            </span>
           </div>
 
           <div className="flex justify-between py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
@@ -523,7 +550,7 @@ export default function AboutPage() {
           <div className="flex justify-between py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
             <span className="font-medium">🏋️‍♂️ Weightlifting</span>
             <span className="text-gray-700 font-medium">
-              1000lbs • 33 workouts
+              1000lbs | 33 workouts
             </span>
           </div>
 
