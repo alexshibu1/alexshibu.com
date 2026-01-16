@@ -19,20 +19,18 @@ export default function ExperimentsPage() {
       <div className="flex flex-col gap-2">
         {/* Marathon 2026 */}
         <div className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 p-3">
-          {/* Top Row: Status Pill + Icon Button */}
+          {/* Top Row: Status Pill */}
           <div className="flex items-center justify-between mb-1.5">
             <span className="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs font-medium rounded-full">
               In Progress
             </span>
-            <button className="w-7 h-7 flex items-center justify-center rounded-md border border-gray-300 text-gray-400 hover:text-gray-600 hover:border-gray-400 transition-colors">
-              <span className="text-sm">🏃‍♂️</span>
-            </button>
           </div>
 
           {/* Title + Subtext */}
           <div className="mb-1.5">
-            <h3 className="text-lg font-bold text-gray-900 mb-0.5 leading-tight">
-              Can I complete a full marathon?
+            <h3 className="text-lg font-bold text-gray-900 mb-0.5 leading-tight flex items-center gap-2">
+              <span>🏃‍♂️</span>
+              <span>Can I complete a full marathon?</span>
             </h3>
             <p className="text-xs text-gray-500 leading-tight">
               Building base mileage for Toronto Marathon 2026
@@ -62,20 +60,18 @@ export default function ExperimentsPage() {
 
         {/* Vitamin D Hair Growth */}
         <div className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 p-3">
-          {/* Top Row: Status Pill + Icon Button */}
+          {/* Top Row: Status Pill */}
           <div className="flex items-center justify-between mb-1.5">
             <span className="px-2 py-0.5 bg-green-100 text-green-700 text-xs font-medium rounded-full">
               In Progress
             </span>
-            <button className="w-7 h-7 flex items-center justify-center rounded-md border border-gray-300 text-gray-400 hover:text-gray-600 hover:border-gray-400 transition-colors">
-              <span className="text-sm">💊</span>
-            </button>
           </div>
 
           {/* Title + Subtext */}
           <div className="mb-1.5">
-            <h3 className="text-lg font-bold text-gray-900 mb-0.5 leading-tight">
-              Does vitamin D help hair growth?
+            <h3 className="text-lg font-bold text-gray-900 mb-0.5 leading-tight flex items-center gap-2">
+              <span>💊</span>
+              <span>Does vitamin D help hair growth?</span>
             </h3>
             <p className="text-xs text-gray-500 leading-tight">
               Testing 2000 IU daily supplementation for hair thickness
@@ -105,20 +101,18 @@ export default function ExperimentsPage() {
 
         {/* Sleep Optimization */}
         <div className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 p-3">
-          {/* Top Row: Status Pill + Icon Button */}
+          {/* Top Row: Status Pill */}
           <div className="flex items-center justify-between mb-1.5">
             <span className="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs font-medium rounded-full">
               In Progress
             </span>
-            <button className="w-7 h-7 flex items-center justify-center rounded-md border border-gray-300 text-gray-400 hover:text-gray-600 hover:border-gray-400 transition-colors">
-              <span className="text-sm">😴</span>
-            </button>
           </div>
 
           {/* Title + Subtext */}
           <div className="mb-1.5">
-            <h3 className="text-lg font-bold text-gray-900 mb-0.5 leading-tight">
-              How can I sleep earlier and wake earlier?
+            <h3 className="text-lg font-bold text-gray-900 mb-0.5 leading-tight flex items-center gap-2">
+              <span>😴</span>
+              <span>How can I sleep earlier and wake earlier?</span>
             </h3>
             <p className="text-xs text-gray-500 leading-tight">
               Optimizing sleep schedule to 10:30 PM - 6:30 AM with light therapy
@@ -148,20 +142,18 @@ export default function ExperimentsPage() {
 
         {/* Body Fat Reduction */}
         <div className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 p-3">
-          {/* Top Row: Status Pill + Icon Button */}
+          {/* Top Row: Status Pill */}
           <div className="flex items-center justify-between mb-1.5">
             <span className="px-2 py-0.5 bg-orange-100 text-orange-700 text-xs font-medium rounded-full">
               In Progress
             </span>
-            <button className="w-7 h-7 flex items-center justify-center rounded-md border border-gray-300 text-gray-400 hover:text-gray-600 hover:border-gray-400 transition-colors">
-              <span className="text-sm">💪</span>
-            </button>
           </div>
 
           {/* Title + Subtext */}
           <div className="mb-1.5">
-            <h3 className="text-lg font-bold text-gray-900 mb-0.5 leading-tight">
-              Can I lower my body fat to under 20%?
+            <h3 className="text-lg font-bold text-gray-900 mb-0.5 leading-tight flex items-center gap-2">
+              <span>💪</span>
+              <span>Can I lower my body fat to under 20%?</span>
             </h3>
             <p className="text-xs text-gray-500 leading-tight">
               Reducing body fat through calorie deficit and strength training
