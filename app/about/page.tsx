@@ -627,6 +627,13 @@ export default function AboutPage() {
           </div>
 
           <div className="flex justify-between py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
+            <span className="font-medium">🚴 Biking Stats</span>
+            <span className="text-gray-700 font-medium">
+              675 rides | 1100km | 92 hrs
+            </span>
+          </div>
+
+          <div className="flex justify-between py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
             <span className="font-medium">💻 Become Technical Weapon</span>
             <span className="text-gray-700 font-medium">
               25% completed | 54 hours
