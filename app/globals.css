@@ -853,9 +853,13 @@ body {
 
   .project-title-wrapper {
     grid-area: title;
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
+    /*
+      Why: with flex items, the title can wrap internally but the emoji icon
+      links are separate siblings, so they may not sit at the *end of the
+      wrapped title text* (they can jump to a new flex line).
+      Fix: use normal inline flow so icons follow the title text naturally.
+    */
+    display: block;
     width: 100%;
     min-width: 0;
     box-sizing: border-box;
@@ -867,9 +871,7 @@ body {
     word-wrap: break-word;
     overflow-wrap: break-word;
     max-width: 100%;
-    display: block;
-    flex: 1 1 auto;
-    min-width: 0; /* let title shrink so emoji icons can stay on the same row */
+    display: inline;
     box-sizing: border-box;
   }
 
@@ -896,6 +898,43 @@ body {
   .about-current-focus {
     margin-top: -1rem !important;
     margin-bottom: -10px !important;
+  }
+
+  /*
+    About page: "Operation Forge" card (mobile)
+    Why: the objective rows are `flex-col` on mobile, which makes the status pill
+    drop awkwardly and reduces scanability. We switch to a compact 2-row grid:
+    [Obj tag] [Status] on row 1, description spanning row 2.
+  */
+  .about-current-focus .about-ops-item {
+    display: grid !important;
+    grid-template-columns: auto 1fr;
+    column-gap: 12px;
+    row-gap: 6px;
+    padding-top: 0.55rem !important;
+    padding-bottom: 0.55rem !important;
+  }
+
+  .about-current-focus .about-ops-label {
+    grid-column: 1;
+    grid-row: 1;
+    white-space: nowrap;
+    align-self: start;
+    letter-spacing: 0.12em;
+  }
+
+  .about-current-focus .about-ops-status {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    align-self: start;
+    letter-spacing: 0.12em;
+  }
+
+  .about-current-focus .about-ops-text {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    line-height: 1.35;
   }
 
   /* Touch-friendly targets */
@@ -935,6 +974,17 @@ body {
   .date {
     text-align: left;
     min-width: auto;
+  }
+}
+
+/* Desktop/laptop-only tweaks (801px+) */
+@media (min-width: 801px) {
+  /*
+    Why: keep mobile tight, add breathing room on larger screens.
+    Scoped to the about-page bio paragraph only.
+  */
+  .about-bio {
+    padding: 20px;
   }
 }
 

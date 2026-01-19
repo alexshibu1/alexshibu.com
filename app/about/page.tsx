@@ -47,19 +47,19 @@ export default function AboutPage() {
       {/* Profile Section */}
       <div className="flex flex-col sm:flex-row gap-4 sm:gap-0 mb-4">
         {/* Profile Picture */}
-        <div className="flex-shrink-0 flex flex-col items-center sm:items-start mt-0 sm:mt-[-1rem]">
+        <div className="flex-shrink-0 flex flex-col items-center sm:items-start mx-auto sm:mx-0 mt-0 sm:mt-[-1rem]">
           <Image
             src="/images/about/pfp.jpg"
             alt="Alex Shibu"
             width={280}
             height={280}
-            className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full object-cover border-2 border-gray-200 mx-auto sm:m-[22px] sm:mb-0"
+            className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 !rounded-full object-cover border-2 border-gray-200 mx-auto !m-0 sm:!m-[22px] sm:!mb-0"
             priority
           />
           <button
             onClick={copyEmail}
             type="button"
-            className="mt-0 p-1 text-gray-700 hover:text-gray-900 text-sm sm:text-base leading-relaxed cursor-pointer bg-transparent border-0 select-text text-center sm:text-left sm:pl-[54px]"
+            className="mt-0 p-0 sm:p-1 text-gray-700 hover:text-gray-900 text-sm sm:text-base leading-tight sm:leading-relaxed cursor-pointer bg-transparent border-0 select-text text-center sm:text-left sm:pl-[54px]"
             title="Click to copy email"
           >
             Email: {emailCopied ? "Copied!" : "alexshibu[at]gmail.com"}
@@ -70,7 +70,7 @@ export default function AboutPage() {
         <div className="flex-1">
           <div className="mb-4">
             <p
-              className="text-gray-700 leading-relaxed"
+              className="text-gray-700 leading-relaxed about-bio"
               style={{ marginBottom: "0" }}
             >
               {bio}
@@ -219,14 +219,14 @@ export default function AboutPage() {
               Q1 2026
             </span>
           </li>
-          <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
-            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
+          <li className="about-ops-item flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
+            <span className="about-ops-label inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 01
             </span>
-            <span className="text-gray-800">
+            <span className="text-gray-800 about-ops-text">
               Ship code to GitHub 6 days/week
             </span>
-            <span className="sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+            <span className="about-ops-status sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing
             </span>
           </li>
@@ -247,32 +247,36 @@ export default function AboutPage() {
               />
             </div>
           </li>
-          <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
-            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
+          <li className="about-ops-item flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
+            <span className="about-ops-label inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 02
             </span>
-            <span className="text-gray-800">Finish Marc Lou + CS50x</span>
-            <span className="sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+            <span className="text-gray-800 about-ops-text">
+              Finish Marc Lou + CS50x
+            </span>
+            <span className="about-ops-status sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing
             </span>
           </li>
-          <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
-            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
+          <li className="about-ops-item flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
+            <span className="about-ops-label inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 03
             </span>
-            <span className="text-gray-800">
+            <span className="text-gray-800 about-ops-text">
               Build physics + math fundamentals
             </span>
-            <span className="sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+            <span className="about-ops-status sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing
             </span>
           </li>
-          <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
-            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
+          <li className="about-ops-item flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
+            <span className="about-ops-label inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 04
             </span>
-            <span className="text-gray-800">Ship one public project</span>
-            <span className="sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+            <span className="text-gray-800 about-ops-text">
+              Ship one public project
+            </span>
+            <span className="about-ops-status sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing
             </span>
           </li>
@@ -282,34 +286,34 @@ export default function AboutPage() {
               Discipline
             </span>
           </li>
-          <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
-            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
+          <li className="about-ops-item flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
+            <span className="about-ops-label inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 05
             </span>
-            <span className="text-gray-800">Read 3 books</span>
-            <span className="sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+            <span className="text-gray-800 about-ops-text">Read 3 books</span>
+            <span className="about-ops-status sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing
             </span>
           </li>
-          <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
-            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
+          <li className="about-ops-item flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
+            <span className="about-ops-label inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 06
             </span>
-            <span className="text-gray-800">
+            <span className="text-gray-800 about-ops-text">
               Two 90-minute deep-work blocks, 3x/week
             </span>
-            <span className="sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+            <span className="about-ops-status sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing
             </span>
           </li>
-          <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
-            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
+          <li className="about-ops-item flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
+            <span className="about-ops-label inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 07
             </span>
-            <span className="text-gray-800">
+            <span className="text-gray-800 about-ops-text">
               Keep YouTube under 20 hours/week
             </span>
-            <span className="sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+            <span className="about-ops-status sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing
             </span>
           </li>
@@ -319,32 +323,34 @@ export default function AboutPage() {
               Conditioning
             </span>
           </li>
-          <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
-            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
+          <li className="about-ops-item flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
+            <span className="about-ops-label inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 08
             </span>
-            <span className="text-gray-800">Run once per week</span>
-            <span className="sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+            <span className="text-gray-800 about-ops-text">
+              Run once per week
+            </span>
+            <span className="about-ops-status sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing
             </span>
           </li>
-          <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
-            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
+          <li className="about-ops-item flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
+            <span className="about-ops-label inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 09
             </span>
-            <span className="text-gray-800">Lift 3x per week</span>
-            <span className="sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+            <span className="text-gray-800 about-ops-text">Lift 3x per week</span>
+            <span className="about-ops-status sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing
             </span>
           </li>
-          <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
-            <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
+          <li className="about-ops-item flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
+            <span className="about-ops-label inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 10
             </span>
-            <span className="text-gray-800">
+            <span className="text-gray-800 about-ops-text">
               Sleep by 11:30pm at least 85% of nights
             </span>
-            <span className="sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+            <span className="about-ops-status sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing
             </span>
           </li>
