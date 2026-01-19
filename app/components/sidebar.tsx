@@ -19,7 +19,7 @@ export default function Sidebar() {
     <>
       {/* Hamburger button - visible on mobile only */}
       <button
-        className="hamburger-button"
+        className={`hamburger-button ${isOpen ? "hamburger-open" : ""}`}
         onClick={toggleMenu}
         aria-label="Toggle menu"
       >

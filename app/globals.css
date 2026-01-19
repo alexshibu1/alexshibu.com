@@ -701,6 +701,16 @@ body {
     display: flex;
   }
 
+  /*
+    Why: the hamburger is fixed + higher z-index than the sidebar, so when the
+    sidebar opens it can overlap the sidebar header ("Alex").
+    Fix: when open, move the button to the top-right of the opened sidebar.
+  */
+  .hamburger-button.hamburger-open {
+    /* Sidebar width is `min(320px, 90vw)` in this breakpoint */
+    left: calc(min(320px, 90vw) - 1.5rem - 44px);
+  }
+
   /* Show overlay when menu is open */
   .menu-overlay {
     display: block;
@@ -818,24 +828,36 @@ body {
   }
 
   /* Project items stack better on mobile */
+  /*
+    Why: mobile flex-column puts the date under the description, and flex wrapping
+    can push the emoji icons onto their own line.
+    Fix: grid layout that keeps (title + emojis) on the left and date on the right.
+  */
   .project-item {
-    flex-direction: column;
-    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "title date"
+      "desc desc";
+    column-gap: 0.75rem;
+    row-gap: 0.4rem;
     padding: 0.75rem 0;
     width: 100%;
     box-sizing: border-box;
   }
 
+  /* Flatten wrapper so title + desc can be grid children */
   .project-left {
-    max-width: 100%;
-    width: 100%;
-    box-sizing: border-box;
+    display: contents;
   }
 
   .project-title-wrapper {
-    flex-wrap: wrap;
+    grid-area: title;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
     width: 100%;
-    max-width: 100%;
+    min-width: 0;
     box-sizing: border-box;
   }
 
@@ -845,7 +867,9 @@ body {
     word-wrap: break-word;
     overflow-wrap: break-word;
     max-width: 100%;
-    display: inline;
+    display: block;
+    flex: 1 1 auto;
+    min-width: 0; /* let title shrink so emoji icons can stay on the same row */
     box-sizing: border-box;
   }
 
@@ -854,15 +878,18 @@ body {
   }
 
   .project-desc {
+    grid-area: desc;
     word-wrap: break-word;
     overflow-wrap: break-word;
     max-width: 100%;
   }
 
   .project-right {
+    grid-area: date;
+    align-self: end; /* align date with the last line of a wrapped title */
     margin-left: 0;
     padding-left: 0;
-    width: 100%;
+    width: auto;
   }
 
   /* About page mobile optimizations */

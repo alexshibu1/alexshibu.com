@@ -45,36 +45,21 @@ export default function AboutPage() {
       </div>
 
       {/* Profile Section */}
-      <div className="flex flex-col sm:flex-row  mb-4">
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-0 mb-4">
         {/* Profile Picture */}
-        <div className="flex-shrink-0" style={{ marginTop: "-1rem" }}>
+        <div className="flex-shrink-0 flex flex-col items-center sm:items-start mt-0 sm:mt-[-1rem]">
           <Image
             src="/images/about/pfp.jpg"
             alt="Alex Shibu"
             width={280}
             height={280}
-            className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full object-cover border-2 border-gray-200 mx-auto sm:mx-0"
-            style={{ margin: "22px", marginBottom: "0" }}
+            className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full object-cover border-2 border-gray-200 mx-auto sm:m-[22px] sm:mb-0"
             priority
           />
           <button
             onClick={copyEmail}
-            style={{
-              marginBottom: "0",
-              marginTop: "0",
-              padding: "4px",
-              paddingLeft: "54px",
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              textAlign: "left",
-              color: "#374151",
-              fontSize: "1rem",
-              lineHeight: "1.5",
-              fontFamily: "inherit",
-              userSelect: "text",
-              WebkitUserSelect: "text",
-            }}
+            type="button"
+            className="mt-0 p-1 text-gray-700 hover:text-gray-900 text-sm sm:text-base leading-relaxed cursor-pointer bg-transparent border-0 select-text text-center sm:text-left sm:pl-[54px]"
             title="Click to copy email"
           >
             Email: {emailCopied ? "Copied!" : "alexshibu[at]gmail.com"}
@@ -185,7 +170,7 @@ export default function AboutPage() {
         style={{ marginTop: "-2rem", marginBottom: "-20px" }}
       >
         <h2 className="pt-10 text-2xl md:text-4xl font-black mb-3 uppercase text-gray-900">
-          <span className="inline-flex items-center gap-3 tracking-[0.28em]">
+          <span className="inline-flex items-center gap-2 sm:gap-3 tracking-[0.18em] sm:tracking-[0.28em]">
             <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
               OPERATION
             </span>
@@ -197,7 +182,7 @@ export default function AboutPage() {
         </h2>
         <button
           onClick={() => setIsQ4Open(!isQ4Open)}
-          className="group relative flex items-center justify-between w-full gap-3 px-4 py-3 text-base font-semibold text-gray-900 transition-all duration-200 cursor-pointer rounded-2xl border border-gray-300/70 border-l-4 border-l-gray-900/80 bg-gradient-to-r from-gray-50 via-white to-gray-50 shadow-md ring-1 ring-gray-200/40 hover:shadow-lg hover:-translate-y-0.5"
+          className="group relative flex items-center justify-between w-full gap-3 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-semibold text-gray-900 transition-all duration-200 cursor-pointer rounded-xl sm:rounded-2xl border border-gray-300/70 border-l-4 border-l-gray-900/80 bg-gradient-to-r from-gray-50 via-white to-gray-50 shadow-md ring-1 ring-gray-200/40 hover:shadow-lg hover:-translate-y-0.5"
           style={{ marginBottom: "1rem" }}
         >
           <span className="flex items-center gap-3">
@@ -223,35 +208,35 @@ export default function AboutPage() {
           </svg>
         </button>
         <ul
-          className={`transition-all duration-300 ease-in-out rounded-2xl border border-gray-200/70 bg-white/90 shadow-md ring-1 ring-gray-200/40 divide-y divide-gray-200/60 ${
+          className={`transition-all duration-300 ease-in-out rounded-xl sm:rounded-2xl border border-gray-200/70 bg-white/90 shadow-md ring-1 ring-gray-200/40 divide-y divide-gray-200/60 ${
             isQ4Open ? "opacity-100 max-h-[1400px]" : "opacity-0 max-h-0"
           }`}
           style={{ overflow: "hidden" }}
         >
-          <li className="flex items-center justify-between px-4 py-2 bg-gradient-to-r from-gray-50 via-white to-gray-50 text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-600">
+          <li className="flex items-center justify-between px-3 sm:px-4 py-2 bg-gradient-to-r from-gray-50 via-white to-gray-50 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-600">
             Ops Brief
             <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-500">
               Q1 2026
             </span>
           </li>
-          <li className="flex items-start gap-3 px-4 py-1 transition-colors hover:bg-gray-50/70">
+          <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
             <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 01
             </span>
             <span className="text-gray-800">
               Ship code to GitHub 6 days/week
             </span>
-            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+            <span className="sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing
             </span>
           </li>
           <li className="px-3 py-0 pb-[5px] bg-gradient-to-b from-white to-gray-50/40">
-            <div style={{ display: "flex", justifyContent: "flex-end" }}>
+            <div className="flex justify-center sm:justify-end">
               <img
                 src="https://ghchart.rshah.org/0e4429/alexshibu1"
                 alt="GitHub contribution chart"
+                className="w-full max-w-[700px]"
                 style={{
-                  maxWidth: "700px",
                   borderRadius: "4px",
                   border: "1px solid rgba(229, 231, 235, 0.8)",
                   padding: "4px",
@@ -262,108 +247,108 @@ export default function AboutPage() {
               />
             </div>
           </li>
-          <li className="flex items-start gap-3 px-4 py-1 transition-colors hover:bg-gray-50/70">
+          <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
             <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 02
             </span>
             <span className="text-gray-800">Finish Marc Lou + CS50x</span>
-            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+            <span className="sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing
             </span>
           </li>
-          <li className="flex items-start gap-3 px-4 py-1 transition-colors hover:bg-gray-50/70">
+          <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
             <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 03
             </span>
             <span className="text-gray-800">
               Build physics + math fundamentals
             </span>
-            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+            <span className="sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing
             </span>
           </li>
-          <li className="flex items-start gap-3 px-4 py-1 transition-colors hover:bg-gray-50/70">
+          <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
             <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 04
             </span>
             <span className="text-gray-800">Ship one public project</span>
-            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+            <span className="sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing
             </span>
           </li>
-          <li className="flex items-center justify-between px-4 py-2 bg-gradient-to-r from-gray-50 via-white to-gray-50 text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-600">
+          <li className="flex items-center justify-between px-3 sm:px-4 py-2 bg-gradient-to-r from-gray-50 via-white to-gray-50 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-600">
             Mind
             <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-500">
               Discipline
             </span>
           </li>
-          <li className="flex items-start gap-3 px-4 py-1 transition-colors hover:bg-gray-50/70">
+          <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
             <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 05
             </span>
             <span className="text-gray-800">Read 3 books</span>
-            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+            <span className="sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing
             </span>
           </li>
-          <li className="flex items-start gap-3 px-4 py-1 transition-colors hover:bg-gray-50/70">
+          <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
             <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 06
             </span>
             <span className="text-gray-800">
               Two 90-minute deep-work blocks, 3x/week
             </span>
-            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+            <span className="sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing
             </span>
           </li>
-          <li className="flex items-start gap-3 px-4 py-1 transition-colors hover:bg-gray-50/70">
+          <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
             <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 07
             </span>
             <span className="text-gray-800">
               Keep YouTube under 20 hours/week
             </span>
-            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+            <span className="sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing
             </span>
           </li>
-          <li className="flex items-center justify-between px-4 py-2 bg-gradient-to-r from-gray-50 via-white to-gray-50 text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-600">
+          <li className="flex items-center justify-between px-3 sm:px-4 py-2 bg-gradient-to-r from-gray-50 via-white to-gray-50 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-600">
             Body
             <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-500">
               Conditioning
             </span>
           </li>
-          <li className="flex items-start gap-3 px-4 py-1 transition-colors hover:bg-gray-50/70">
+          <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
             <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 08
             </span>
             <span className="text-gray-800">Run once per week</span>
-            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+            <span className="sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing
             </span>
           </li>
-          <li className="flex items-start gap-3 px-4 py-1 transition-colors hover:bg-gray-50/70">
+          <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
             <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 09
             </span>
             <span className="text-gray-800">Lift 3x per week</span>
-            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+            <span className="sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing
             </span>
           </li>
-          <li className="flex items-start gap-3 px-4 py-1 transition-colors hover:bg-gray-50/70">
+          <li className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-1 transition-colors hover:bg-gray-50/70">
             <span className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 10
             </span>
             <span className="text-gray-800">
               Sleep by 11:30pm at least 85% of nights
             </span>
-            <span className="ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
+            <span className="sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing
             </span>
           </li>
-          <li className="flex items-center justify-between px-4 py-2 bg-gradient-to-r from-gray-50 via-white to-gray-50 text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-600">
+          <li className="flex items-center justify-between px-3 sm:px-4 py-2 bg-gradient-to-r from-gray-50 via-white to-gray-50 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-gray-600">
             Q1 Outcome
             <span className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-500">
               TBD
@@ -406,37 +391,35 @@ export default function AboutPage() {
 
       {/* Work with me */}
       <section>
-        <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-3 sm:gap-4 mb-2">
-          <h2 className="text-xl font-semibold text-gray-900">Work with me</h2>
-          <a
-            href="/resume/AlexShibu_2025_General.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors sm:flex-shrink-0 w-full sm:w-auto"
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            Resume PDF
-          </a>
-        </div>
+        <h2 className="text-xl font-semibold text-gray-900 mb-2">Work with me</h2>
         <p className="text-gray-700 leading-relaxed">
           Right now I&apos;m looking for internships at cool companies or
           startups, and would like to collaborate with people with similar
           values. If you&apos;re building something interesting or have an
           opportunity that aligns, let&apos;s connect.
         </p>
+        <a
+          href="/resume/AlexShibu_2025_General.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors w-full sm:w-auto"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Resume PDF
+        </a>
       </section>
 
       {/* Featured In - Upgraded Compact Tags */}
@@ -619,47 +602,51 @@ export default function AboutPage() {
           }`}
           style={{ overflow: "hidden" }}
         >
-          <div className="flex justify-between py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
+          <div className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-4 py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
             <span className="font-medium">🏃‍♂️ Strava/Running Stats</span>
-            <span className="text-gray-700 font-medium">
+            <span className="text-gray-700 font-medium sm:text-right sm:whitespace-nowrap">
               52 runs | 190km | 12 cities
             </span>
           </div>
 
-          <div className="flex justify-between py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
+          <div className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-4 py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
             <span className="font-medium">🚴 Biking Stats</span>
-            <span className="text-gray-700 font-medium">
+            <span className="text-gray-700 font-medium sm:text-right sm:whitespace-nowrap">
               675 rides | 1100km | 92 hrs
             </span>
           </div>
 
-          <div className="flex justify-between py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
+          <div className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-4 py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
             <span className="font-medium">💻 Become Technical Weapon</span>
-            <span className="text-gray-700 font-medium">
+            <span className="text-gray-700 font-medium sm:text-right sm:whitespace-nowrap">
               25% completed | 54 hours
             </span>
           </div>
 
-          <div className="flex justify-between py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
+          <div className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-4 py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
             <span className="font-medium">🏃‍♂️ Half Marathon</span>
-            <span className="text-gray-700 font-medium">Incomplete</span>
+            <span className="text-gray-700 font-medium sm:text-right sm:whitespace-nowrap">
+              Incomplete
+            </span>
           </div>
 
-          <div className="flex justify-between py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
+          <div className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-4 py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
             <span className="font-medium">🏋️‍♂️ Weightlifting</span>
-            <span className="text-gray-700 font-medium">
+            <span className="text-gray-700 font-medium sm:text-right sm:whitespace-nowrap">
               1000lbs | 33 workouts
             </span>
           </div>
 
-          <div className="flex justify-between py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
+          <div className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-4 py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
             <span className="font-medium">👥 Hours in Meetings</span>
-            <span className="text-gray-700 font-medium">307 hours</span>
+            <span className="text-gray-700 font-medium sm:text-right sm:whitespace-nowrap">
+              307 hours
+            </span>
           </div>
 
-          <div className="flex justify-between py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
+          <div className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-4 py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
             <span className="font-medium">🤝 People Met</span>
-            <span className="text-gray-700 font-medium">
+            <span className="text-gray-700 font-medium sm:text-right sm:whitespace-nowrap">
               381 different people
             </span>
           </div>
