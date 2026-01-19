@@ -180,6 +180,40 @@ export default function ExperimentsPage() {
             <span>In Progress</span>
           </div>
         </div>
+
+        {/* 20 Pushups a Day */}
+        <div className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 p-3">
+          {/* Top Row: Status Pill */}
+          <div className="flex items-center justify-between mb-1.5">
+            <span className="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-full">
+              Complete
+            </span>
+          </div>
+
+          {/* Title + Subtext */}
+          <div className="mb-1.5">
+            <h3 className="text-lg font-bold text-gray-900 mb-0.5 leading-tight flex items-center gap-2">
+              <span>🏋️‍♂️</span>
+              <span>Can 20 pushups a day change my life?</span>
+            </h3>
+            <p className="text-xs text-gray-500 leading-tight">
+              Small daily habit experiment — just show up every day.
+            </p>
+          </div>
+
+          {/* Result */}
+          <p className="text-xs text-gray-700 leading-relaxed mb-1.5">
+            <span className="font-semibold">Result:</span> Yes — massively. Weight
+            loss, better body image, mental toughness, confidence, and
+            consistency.
+          </p>
+
+          {/* Footer Metadata */}
+          <div className="flex items-center justify-between text-xs text-gray-500 pt-1.5 border-t border-gray-100">
+            <span>Completed: Dec 31, 2024</span>
+            <span>Outcome: Positive</span>
+          </div>
+        </div>
       </div>
     </main>
   );
