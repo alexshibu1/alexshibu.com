@@ -614,6 +614,12 @@ export default function AboutPage() {
               52 runs | 190km | 12 cities
             </span>
           </div>
+          <div className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-4 py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
+            <span className="font-medium">💪 Pushups</span>
+            <span className="text-gray-700 font-medium sm:text-right sm:whitespace-nowrap">
+              7,000 pushups done
+            </span>
+          </div>
 
           <div className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-4 py-2 px-1 hover:bg-gray-50/50 rounded-md transition-colors text-base">
             <span className="font-medium">🚴 Biking Stats</span>

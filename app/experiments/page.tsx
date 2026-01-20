@@ -182,36 +182,78 @@ export default function ExperimentsPage() {
         </div>
 
         {/* 20 Pushups a Day */}
-        <div className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 p-3">
+        <div className="bg-gradient-to-br from-emerald-50 to-white border border-emerald-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 p-4">
           {/* Top Row: Status Pill */}
           <div className="flex items-center justify-between mb-1.5">
-            <span className="px-2 py-0.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-full">
-              Complete
+            <span className="px-2 py-0.5 bg-emerald-100 text-emerald-800 text-xs font-semibold rounded-full">
+              Completed ✅
             </span>
           </div>
 
           {/* Title + Subtext */}
-          <div className="mb-1.5">
+          <div className="mb-2">
             <h3 className="text-lg font-bold text-gray-900 mb-0.5 leading-tight flex items-center gap-2">
               <span>🏋️‍♂️</span>
               <span>Can 20 pushups a day change my life?</span>
             </h3>
-            <p className="text-xs text-gray-500 leading-tight">
-              Small daily habit experiment — just show up every day.
+            <p className="text-xs text-gray-600 leading-relaxed">
+              First thing every morning (no decisions). Aimed for strict reps (no
+              knees), but often used knee pushups to keep the streak alive.
             </p>
           </div>
 
-          {/* Result */}
-          <p className="text-xs text-gray-700 leading-relaxed mb-1.5">
-            <span className="font-semibold">Result:</span> Yes — massively. Weight
-            loss, better body image, mental toughness, confidence, and
+          {/* Key Stats (compact) */}
+          <div className="mb-2">
+            <div className="text-[11px] font-semibold text-gray-500 mb-1">
+              STATS
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 border border-emerald-200 px-2.5 py-0.5 text-xs leading-none text-gray-700 shadow-sm">
+              <span className="text-gray-500 font-medium">Consistency</span>
+              <span className="font-semibold text-gray-900">92%</span>
+              <span className="w-14 bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                <span className="block bg-emerald-600 h-1.5 rounded-full" style={{ width: "92%" }} />
+              </span>
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 border border-emerald-200 px-2.5 py-0.5 text-xs leading-none text-gray-700 shadow-sm">
+              <span className="text-gray-500 font-medium">Total</span>
+              <span className="font-semibold text-gray-900">7,300+</span>
+              <span className="text-gray-500">pushups</span>
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 border border-emerald-200 px-2.5 py-0.5 text-xs leading-none text-gray-700 shadow-sm">
+              <span className="text-gray-500 font-medium">By the end</span>
+              <span className="font-semibold text-gray-900">~15</span>
+              <span className="text-gray-500">strict unbroken</span>
+            </span>
+            </div>
+          </div>
+
+          {/* Completed Bar */}
+          <div className="mb-2 pt-2 border-t border-emerald-100">
+            <div className="flex items-center justify-between text-xs text-gray-500 mb-1">
+              <span>Dec 31, 2024</span>
+              <span className="font-semibold text-emerald-700">100%</span>
+            </div>
+            <div className="w-full bg-emerald-100 rounded-full h-2 overflow-hidden">
+              <div
+                className="bg-emerald-600 h-2 rounded-full"
+                style={{ width: "100%" }}
+              />
+            </div>
+          </div>
+
+          {/* Result (sentence) */}
+          <p className="text-xs text-gray-700 leading-relaxed mb-2">
+            <span className="font-semibold text-emerald-900">Result:</span>{" "}
+            <span className="font-semibold text-gray-900">Yes — massively.</span>{" "}
+            Weight loss, better body image, mental toughness, confidence, and
             consistency.
           </p>
 
           {/* Footer Metadata */}
           <div className="flex items-center justify-between text-xs text-gray-500 pt-1.5 border-t border-gray-100">
-            <span>Completed: Dec 31, 2024</span>
-            <span>Outcome: Positive</span>
+            <span>Outcome: Yes — massively</span>
+            <span className="text-emerald-700 font-medium">Built the habit</span>
           </div>
         </div>
       </div>
