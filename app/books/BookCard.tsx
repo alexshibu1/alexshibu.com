@@ -3,8 +3,8 @@ import type { Book } from "./books-data";
 
 export function BookCard({ book }: { book: Book }) {
   return (
-    <li className="py-1.5 border-b border-gray-100 last:border-b-0">
-      <div className="flex flex-col gap-1.5">
+    <li className="pt-1.5 pb-1 border-b border-gray-100 last:border-b-0">
+      <div className="flex flex-col gap-1">
         <div className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between md:gap-6">
           <div className="text-base text-black leading-snug">
             {book.notes ? (
@@ -49,7 +49,7 @@ export function BookCard({ book }: { book: Book }) {
         </div>
 
         {book.description ? (
-          <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+          <p className="text-sm md:text-base text-gray-600 leading-relaxed !mb-[14px]">
             {book.description}
           </p>
         ) : null}
