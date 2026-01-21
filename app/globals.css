@@ -817,6 +817,45 @@ body {
     min-width: auto;
   }
 
+  /* Writing page (mobile): make filters + list feel intentional */
+  .writing-page .writing-filter-scroll {
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .writing-page .writing-filter-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .writing-page .writing-filter-scroll > div > * {
+    scroll-snap-align: start;
+  }
+
+  .writing-page .writing-list {
+    margin-top: 1.25rem;
+  }
+
+  .writing-page .essay-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+  }
+
+  .writing-page .essay-item:last-child {
+    border-bottom: 0;
+  }
+
+  .writing-page .essay-item a {
+    font-size: 18px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+
+  .writing-page .date {
+    font-size: 13px;
+    color: #9ca3af;
+    letter-spacing: 0.02em;
+  }
+
   /* Adjust hero heading for mobile */
   .hero-heading {
     font-size: 36px;
@@ -974,6 +1013,40 @@ body {
   .date {
     text-align: left;
     min-width: auto;
+  }
+
+  /* Writing page (small tablets): same tuning */
+  .writing-page .writing-filter-scroll {
+    scrollbar-width: none;
+  }
+
+  .writing-page .writing-filter-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .writing-page .writing-list {
+    margin-top: 1.25rem;
+  }
+
+  .writing-page .essay-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+  }
+
+  .writing-page .essay-item:last-child {
+    border-bottom: 0;
+  }
+
+  .writing-page .essay-item a {
+    font-size: 18px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+
+  .writing-page .date {
+    font-size: 13px;
+    color: #9ca3af;
+    letter-spacing: 0.02em;
   }
 }
 

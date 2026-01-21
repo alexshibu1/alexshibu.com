@@ -109,7 +109,7 @@ export default function WritingIndex() {
   const essays = readAllEssayMeta();
 
   return (
-    <main className="page-content">
+    <main className="page-content writing-page">
       <h1 className="hero-heading">writing</h1>
       <p className="hero-subline">
         essays, logs, and experiments from the builder gap year.

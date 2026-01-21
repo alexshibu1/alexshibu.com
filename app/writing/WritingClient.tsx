@@ -30,32 +30,73 @@ function FilterButtons({
   ];
 
   return (
-    <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1rem" }}>
-      {filters.map(({ key, label, emoji }) => (
-        <button
-          key={key}
-          onClick={() => onFilterChange(key)}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "0.5rem",
-            padding: "0.5rem 1rem",
-            borderRadius: "8px",
-            border: "1px solid",
-            borderColor: activeFilter === key ? "#dc2626" : "#e5e7eb",
-            backgroundColor: activeFilter === key ? "#fef2f2" : "white",
-            color: activeFilter === key ? "#dc2626" : "#6b7280",
-            cursor: "pointer",
-            fontSize: "0.875rem",
-            fontWeight: activeFilter === key ? "600" : "500",
-            transition: "all 0.2s ease",
-          }}
-        >
-          <span>{emoji}</span>
-          <span>{label}</span>
-        </button>
-      ))}
-    </div>
+    <>
+      {/* Mobile: horizontally scrollable filter chips */}
+      <div
+        className="md:hidden writing-filter-scroll -mx-5 px-5 mb-4 pb-1 overflow-x-auto"
+        style={{ WebkitOverflowScrolling: "touch" }}
+      >
+        <div className="flex gap-2 w-max">
+          {filters.map(({ key, label, emoji }) => {
+            const isActive = activeFilter === key;
+            return (
+              <button
+                key={key}
+                type="button"
+                onClick={() => onFilterChange(key)}
+                aria-pressed={isActive}
+                className={[
+                  "shrink-0",
+                  "inline-flex items-center gap-2",
+                  "h-11 px-4",
+                  "rounded-full border",
+                  "text-sm font-medium",
+                  "transition-colors",
+                  isActive
+                    ? "border-red-600 bg-red-50 text-red-700"
+                    : "border-gray-200 bg-white text-gray-600",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-200 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
+                ].join(" ")}
+              >
+                {emoji ? <span aria-hidden="true">{emoji}</span> : null}
+                <span>{label}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Desktop: keep existing look */}
+      <div
+        className="hidden md:flex"
+        style={{ gap: "0.5rem", marginBottom: "1rem" }}
+      >
+        {filters.map(({ key, label, emoji }) => (
+          <button
+            key={key}
+            onClick={() => onFilterChange(key)}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              padding: "0.5rem 1rem",
+              borderRadius: "8px",
+              border: "1px solid",
+              borderColor: activeFilter === key ? "#dc2626" : "#e5e7eb",
+              backgroundColor: activeFilter === key ? "#fef2f2" : "white",
+              color: activeFilter === key ? "#dc2626" : "#6b7280",
+              cursor: "pointer",
+              fontSize: "0.875rem",
+              fontWeight: activeFilter === key ? "600" : "500",
+              transition: "all 0.2s ease",
+            }}
+          >
+            <span>{emoji}</span>
+            <span>{label}</span>
+          </button>
+        ))}
+      </div>
+    </>
   );
 }
 

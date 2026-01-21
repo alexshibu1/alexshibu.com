@@ -313,7 +313,7 @@ const LORE: LoreItem[] = [
   {
     id: "easter-seals-2019-11",
     date: "11.2019",
-    line: "Built and Shipped Raspberry Pi OCR glasses at Easter Seals Canada ",
+    line: "Built a Raspberry Pi OCR glasses for Easter Seals Canada ",
     more: "Built and shipped real time Raspberry Pi glasses to help visually impaired folks read what is in front of them. Used OCR and wired it up to Google Assistant and Alexa. First shipped hardware project at 15. I was the youngest there. Thanks Ms. Chan for the opportunity.",
   },
   {
@@ -338,19 +338,13 @@ const LORE: LoreItem[] = [
     id: "arduino-2015-2016",
     date: "11.2018",
     line: "Arduino obsession and robot builds",
-    more: "Arduino obsession begins. Attempts at robot builds (mostly failed, learned electronics basics). First exposure to “I can build things that move.”",
-  },
-  {
-    id: "rc-cars-2012-2014",
-    date: "06.2013",
-    line: "Negotiated for tech access and tore down RC cars",
-    more: "Persistently negotiated with parents for tech access (laptop, RC cars). Took apart RC cars to understand internals. Early pattern: obsession + persistence > permission.",
+    more: "Begged my parents for random arduino tech. And started building random things like RC cars and open source OTTO project.",
   },
   {
     id: "moved-canada-2012",
     date: "09.2012",
     line: "Moved to Canada at 9",
-    more: "Big identity shift: new country, new norms, and learning to adapt fast.",
+    more: "Big shift. Joined ESL at school.",
   },
   {
     id: "born-2004-05",
@@ -363,17 +357,94 @@ function LoreListRow({
   item,
   isActive,
   isPinned,
+  isExpanded,
   onHover,
   onPin,
+  onToggleExpand,
 }: {
   item: LoreItem;
   isActive: boolean;
   isPinned: boolean;
+  isExpanded: boolean;
   onHover: () => void;
   onPin: () => void;
+  onToggleExpand: () => void;
 }) {
+  const panelId = `lore-panel-${item.id}`;
+  const toggleId = `lore-toggle-${item.id}`;
+
   return (
     <li>
+      {/* Mobile: tap to expand inline (accordion) */}
+      <button
+        type="button"
+        onClick={onToggleExpand}
+        className={[
+          "group",
+          "w-full text-left",
+          "grid grid-cols-[90px_1fr] gap-6 items-baseline",
+          "py-2.5 rounded-md",
+          "transition-colors",
+          "md:hidden",
+          isExpanded ? "bg-gray-50" : "active:bg-gray-50",
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-200 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
+        ].join(" ")}
+        id={toggleId}
+        aria-expanded={isExpanded}
+        aria-controls={panelId}
+      >
+        <span className="text-sm text-gray-400 tabular-nums leading-snug group-hover:text-gray-500">
+          {item.date}
+        </span>
+
+        <span className="min-w-0">
+          <span className="block text-sm text-gray-900 leading-snug truncate group-hover:underline group-hover:decoration-gray-200 group-hover:underline-offset-4">
+            {item.line}
+          </span>
+        </span>
+      </button>
+
+      <div
+        id={panelId}
+        role="region"
+        aria-labelledby={toggleId}
+        hidden={!isExpanded}
+        className="md:hidden"
+      >
+        <div className="grid grid-cols-[90px_1fr] gap-6">
+          <span aria-hidden="true" />
+          <div className="pb-2">
+            {item.more ? (
+              <>
+                <p className="text-sm text-gray-600 leading-relaxed mt-2">
+                  {item.more}
+                </p>
+                {item.links?.length ? (
+                  <div className="mt-3 flex flex-col gap-1">
+                    {item.links.map((link) => (
+                      <a
+                        key={link.url}
+                        href={link.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-sm text-gray-900 underline decoration-gray-200 underline-offset-4 hover:decoration-gray-400"
+                      >
+                        {link.label} <span aria-hidden="true">↗</span>
+                      </a>
+                    ))}
+                  </div>
+                ) : null}
+              </>
+            ) : (
+              <p className="text-sm text-gray-500 mt-2">
+                No extra context yet.
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop: hover to preview, click to pin (unchanged UX) */}
       <button
         type="button"
         onMouseEnter={onHover}
@@ -382,7 +453,7 @@ function LoreListRow({
         className={[
           "group",
           "w-full text-left",
-          "grid grid-cols-[90px_1fr] gap-6 items-baseline",
+          "hidden md:grid grid-cols-[90px_1fr] gap-6 items-baseline",
           "py-1 rounded-md",
           "transition-colors",
           isActive ? "bg-gray-50" : "hover:bg-gray-50",
@@ -407,6 +478,7 @@ function LoreListRow({
 export default function LorePage() {
   const [pinnedId, setPinnedId] = useState<string | null>(null);
   const [hoverId, setHoverId] = useState<string | null>(null);
+  const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const items = useMemo(() => {
     return [...LORE].sort((a, b) => {
@@ -423,6 +495,7 @@ export default function LorePage() {
       if (e.key === "Escape") {
         setPinnedId(null);
         setHoverId(null);
+        setExpandedId(null);
       }
     }
 
@@ -443,8 +516,14 @@ export default function LorePage() {
 
       <div className="mb-4">
         <p className="text-gray-700 leading-relaxed text-sm">
-          Reverse-chronological moments that shaped me. One line each. Hover to
-          preview details, click to pin.
+          <span className="hidden md:inline">
+            Reverse-chronological moments that shaped me. One line each. Hover
+            to preview details, click to pin.
+          </span>
+          <span className="md:hidden">
+            Reverse-chronological moments that shaped me. One line each. Tap a
+            moment to expand.
+          </span>
         </p>
       </div>
 
@@ -455,56 +534,25 @@ export default function LorePage() {
             {items.map((item) => {
               const isPinned = pinnedId === item.id;
               const isActive = activeId === item.id;
+              const isExpanded = expandedId === item.id;
               return (
                 <LoreListRow
                   key={item.id}
                   item={item}
                   isActive={isActive}
                   isPinned={isPinned}
+                  isExpanded={isExpanded}
                   onHover={() => setHoverId(item.id)}
                   onPin={() =>
                     setPinnedId((prev) => (prev === item.id ? null : item.id))
+                  }
+                  onToggleExpand={() =>
+                    setExpandedId((prev) => (prev === item.id ? null : item.id))
                   }
                 />
               );
             })}
           </ul>
-
-          {/* Mobile details */}
-          <div className="md:hidden mt-4 pt-4 border-t border-gray-100">
-            {active?.more ? (
-              <>
-                <div className="text-xs text-gray-400 tabular-nums">
-                  {active.date}
-                </div>
-                <div className="text-sm font-semibold text-gray-900 mt-1">
-                  {active.line}
-                </div>
-                <p className="text-sm text-gray-600 leading-relaxed mt-2">
-                  {active.more}
-                </p>
-                {active.links?.length ? (
-                  <div className="mt-3 flex flex-col gap-1">
-                    {active.links.map((link) => (
-                      <a
-                        key={link.url}
-                        href={link.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-sm text-gray-900 underline decoration-gray-200 underline-offset-4 hover:decoration-gray-400"
-                      >
-                        {link.label} <span aria-hidden="true">↗</span>
-                      </a>
-                    ))}
-                  </div>
-                ) : null}
-              </>
-            ) : (
-              <p className="text-sm text-gray-500">
-                Pick a moment to see more context.
-              </p>
-            )}
-          </div>
         </div>
 
         {/* Desktop details pane */}

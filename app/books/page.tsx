@@ -1,110 +1,51 @@
-"use client";
-
-import Link from "next/link";
-
-type Book = {
-  title: string;
-  author: string;
-  rating: number; // out of 10
-  dateRead: string;
-  notes?: string; // slug of the essay with notes, or null if no notes
-  description?: string; // one-liner description
-};
-
-const books: Book[] = [
-  {
-    title: "Atomic Habits",
-    author: "James Clear",
-    rating: 10,
-    dateRead: "2024",
-    notes: "atomic-habits-notes",
-    description: "set up the perfect habits that last",
-  },
-  {
-    title: "Naval's Almanack",
-    author: "Eric Jorgenson",
-    rating: 10,
-    dateRead: "2024",
-    notes: "naval-almanack-notes",
-    description: "formulas and thoughts /his outlook on life",
-  },
-  {
-    title: "How to Make Your Bed",
-    author: "Admiral William H. McRaven",
-    rating: 8,
-    dateRead: "2024",
-    notes: "make-your-bed-notes",
-    description: "somthing tiny impacts your life in many ways",
-  },
-  {
-    title: "The War of Art",
-    author: "Steven Pressfield",
-    rating: 10,
-    dateRead: "2024",
-    notes: "war-of-art-notes",
-    description:
-      "converting procrastination into a war against a force of nature",
-  },
-];
-
-function BookItem({ book }: { book: Book }) {
-  return (
-    <li className="book-item">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center gap-4 flex-1">
-          <div className="text-base text-black leading-tight">
-            {book.notes ? (
-              <Link
-                href={`/essay/${book.notes}`}
-                className="!text-black hover:!text-red-600 transition-colors"
-              >
-                <span className="font-bold">{book.title}</span> by{" "}
-                <span className="font-normal">{book.author}</span>
-              </Link>
-            ) : (
-              <>
-                <span className="font-bold">{book.title}</span> by{" "}
-                <span className="font-normal">{book.author}</span>
-              </>
-            )}
-          </div>
-          <span className="text-sm text-gray-500">
-            Finished: {book.dateRead}
-          </span>
-        </div>
-        <span className="text-sm text-gray-600">Rating: {book.rating}/10</span>
-      </div>
-      {book.description && (
-        <p className="text-base text-gray-600 mt-2 leading-relaxed w-3/4">
-          {book.description}
-        </p>
-      )}
-    </li>
-  );
-}
+import { BookCard } from "./BookCard";
+import { books, READING_HOURS_ESTIMATE } from "./books-data";
 
 export default function ReadingPage() {
+  const totalBooks = books.length;
+  const totalHours = READING_HOURS_ESTIMATE;
+
   return (
     <main className="page-content">
-      <div className="flex items-end justify-between mb-1">
+      <div className="flex flex-col gap-3 mb-1 md:flex-row md:items-end md:justify-between">
         <h1 className="hero-heading">books</h1>
-        <a
-          href="https://www.goodreads.com/user/show/162066297-alex-shibu"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-3 text-base text-gray-700 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md hover:border-gray-300 transition-all duration-200"
-        >
-          📚 Goodreads
-        </a>
+        <div className="flex flex-col gap-1 w-full md:w-auto md:items-end">
+          <a
+            href="https://www.goodreads.com/user/show/162066297-alex-shibu"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 w-full md:w-auto px-4 py-2.5 text-base text-gray-700 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md hover:border-gray-300 transition-all duration-200"
+          >
+            📚 Goodreads
+          </a>
+          <div className="w-full md:w-auto rounded-lg border border-gray-200 bg-gray-50 divide-x divide-gray-200 flex overflow-hidden">
+            <div className="flex-1 px-3 py-2 text-center md:text-right">
+              <div className="text-xs text-gray-500 uppercase tracking-wide">
+                Books
+              </div>
+              <div className="text-base text-gray-900 font-semibold tabular-nums leading-tight">
+                {totalBooks}
+              </div>
+            </div>
+            <div className="flex-1 px-3 py-2 text-center md:text-right">
+              <div className="text-xs text-gray-500 uppercase tracking-wide">
+                Hours
+              </div>
+              <div className="text-base text-gray-900 font-semibold tabular-nums leading-tight">
+                {totalHours}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <p className="hero-subline">
         where I track the books I&apos;ve read and what I think
       </p>
 
-      <ul className="books-list mt-6">
-        {books.map((book, index) => (
-          <BookItem key={index} book={book} />
+      <ul className="mt-6">
+        {books.map((book) => (
+          <BookCard key={`${book.title}-${book.author}`} book={book} />
         ))}
       </ul>
     </main>
