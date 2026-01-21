@@ -10,6 +10,8 @@ type LoreItem = {
   line: string;
   /** Optional details (shown in a clean side pane) */
   more?: string;
+  /** Optional external links shown in the details pane */
+  links?: { label: string; url: string }[];
   /**
    * Optional manual sort override (bigger = newer).
    * If omitted, we infer it from `date` so new entries auto-slot correctly.
@@ -83,22 +85,93 @@ function inferSortKey(date: string): number {
 
 const LORE: LoreItem[] = [
   {
+    id: "shopify-vanauley-2022-04",
+    date: "04.2022",
+    line: "First dollars on Shopify selling bath bombs",
+    more: "Launched a Shopify storefront for bath bomb fundraising for the Vanauley homeless shelter, promoted via Instagram theme pages. Had around 600 folloewers. Learned e-commerce + order fulfillment and marketing.",
+    links: [
+      {
+        label: "Screenshot",
+        url: "/projects/bathbombs.png",
+      },
+      
+    ],
+  },
+  {
+    id: "easyhacks-2025-03",
+    date: "03.2025",
+    line: "Started EasyHacks",
+    more: "Hackathon for Rejects on easyhacks.org. It started from an accidental rejection email thread from UBC nwhacks. Turned into a 10 person team with 170+ beginners from 7+ countries and about $8K in prizes.",
+    links: [
+      {
+        label: "easyhacks.org",
+        url: "https://easyhacks.org",
+      },
+    ],
+  },
+  {
     id: "tks-2022-09",
     date: "09.2022",
     line: "Joined The Knowledge Society (TKS)",
-    more: "Joined TKS a community that opened my eyes to what's really possible.",
+    more: "Joined TKS — a community that opened my eyes to what’s really possible. Pitched and built tech with 200+ innovators, shipped and showcased impact, and explored 30+ conferences around the world. Projects at Microsoft HQ, Interac, and Sensei Labs.",
+  },
+  {
+    id: "nfts-2021-05",
+    date: "05.2021",
+    line: "Turned $3K into $100K in NFTs then lost it",
+    more: "Got super into NFTs. Took my YMCA internship money, about $3K, and went all in. Flipped Veefriends and World of Women, did some DeFi farming, lived in Discord. Ran it up to around $100K then the market crashed and I lost it all. But I did it once and I can do it again.",
+    links: [
+      {
+        label: "Screenshots",
+        url: "/images/nft/image1.png",
+      },
+    ],
+  },
+  {
+    id: "circus-clounz-2021-09",
+    date: "09.2021",
+    line: "Led the Circus Clounz NFT team",
+    more: "Led a 4 person team. Partnered and dropped NFTs, learned Solidity, and got way more crypto native. Missed product market fit, still learned a lot.",
+    links: [
+      {
+        label: "Circus Clounz (archive)",
+        url: "https://web.archive.org/web/20220128132945/https://circusclownz.com/",
+      },
+      {
+        label: "Screenshots",
+        url: "/images/nft/image2.png",
+      },
+    ],
   },
   {
     id: "cangap-scholarship-2023-10",
     date: "10.2023",
     line: "Won the CanGap Scholarship",
-    more: "The Canadian Gap Year Association helped fund my trip on my gap year across  Bangalore, Kerala, and Colombo. Thank you CanGap ❤️",
+    more: "Canadian Gap Year Association helped fund my trip on my gap year across Bangalore, Kerala, and Colombo. Thank you CanGap ❤️",
+  },
+  {
+    id: "ymca-y-story-2023-10",
+    date: "10.2023",
+    line: "YMCA did a Y Story about me",
+    more: "I shared my experience with the YMCA Newcomer Youth Leadership Development Program and how it gave me the confidence and opportunity to help make a change in my community. Big thank you to the donors who make programs like this possible.",
+    links: [
+      {
+        label: "Watch on Instagram",
+        url: "https://www.instagram.com/p/Cyi95HKKV2d/",
+      },
+    ],
   },
   {
     id: "gap-year-2023-09",
     date: "09.2023",
     line: "Started my gap year",
     more: "A year to do cool shit, explore, travel, and learn outside school. I said yes to everything",
+  },
+  {
+    id: "uatx-forbidden-courses-2023-07",
+    date: "07.2023",
+    line: "UATX Forbidden Courses (Science and Christianity)",
+    more: "University of Austin (UATX) — Forbidden Courses (2023): focus in “Science and Christianity.” Completed the pre-course work, but couldn’t join the in-person seminar due to visa constraints. With Harvard and MIT kids",
   },
   {
     id: "york-university-2023-09",
@@ -128,7 +201,13 @@ const LORE: LoreItem[] = [
     id: "yc-ai-school-2025-06",
     date: "06.2025",
     line: "YC AI Startup School",
-    more: "Absorbed founder lessons: talk to users, ship fast, and iterate.",
+    more: "Two-day intensive workshop in San Francisco on building and shipping with AI, alongside ~2,000 top CS undergrads and grad students. Absorbed founder lessons: talk to users, ship fast, and iterate.",
+  },
+  {
+    id: "veritas-2025-06",
+    date: "06.2025",
+    line: "Invited to VERITAS (Thomistic Institute) in DC",
+    more: "Invited participant at the VERITAS conference in Washington, DC (Thomistic Institute, 2025). Engaged with scholars and explored foundational questions and philosophical thought.",
   },
   {
     id: "yakov-research-2024-07",
@@ -146,7 +225,13 @@ const LORE: LoreItem[] = [
     id: "first-10k-2024-10",
     date: "10.2024",
     line: "Ran my first 10K",
-    more: "Oct 2024 — did my first 10K",
+    more: "Oct 2024 did my first 10K",
+    links: [
+      {
+        label: "Strava",
+        url: "https://strava.app.link/bfdpyqTA5Zb",
+      },
+    ],
   },
   {
     id: "cold-plunge-2024-01",
@@ -171,6 +256,12 @@ const LORE: LoreItem[] = [
     date: "05.2020",
     line: "First dollar online (affiliate pages)",
     more: "Started experimenting with online money by building themed affiliate pages (keto products). First taste of leverage: write once, earn repeatedly (sometimes).",
+    links: [
+      {
+        label: "Screenshot",
+        url: "/projects/keto.png",
+      },
+    ],
   },
   {
     id: "scholarship-workflow-2021",
@@ -194,7 +285,23 @@ const LORE: LoreItem[] = [
     id: "cube-runner-2019",
     date: "08.2019",
     line: "Released Cube Runner (my first game)",
-    more: "Cube Runner: an “impossible” reaction-time mobile game with brutally hard levels. Built as a fun way to test speed + focus. I wrote the store-style description (and yes — I called out “totally free” and “no ads”).",
+    more: "Built and shipped a Unity mobile game at 15. Cube Runner was an impossible levels kind of game, all reaction time. It got taken down by Google for privacy reasons. First real lesson in platform risk",
+    links: [
+      {
+        label: "Screenshot",
+        url: "/projects/cube.png",
+      },
+      {
+        label: "Instagram post",
+        url: "https://www.instagram.com/p/BwTdbmtjkZD/",
+      },
+    ],
+  },
+  {
+    id: "easter-seals-2019-11",
+    date: "11.2019",
+    line: "Shipped Raspberry Pi OCR glasses (Easter Seals)",
+    more: "Built and shipped real time Raspberry Pi glasses to help visually impaired folks read what is in front of them. Used OCR and wired it up to Google Assistant and Alexa. First shipped hardware project at 15.",
   },
   {
     id: "first-yt-2018",
@@ -369,6 +476,21 @@ export default function LorePage() {
                 <p className="text-sm text-gray-600 leading-relaxed mt-2">
                   {active.more}
                 </p>
+                {active.links?.length ? (
+                  <div className="mt-3 flex flex-col gap-1">
+                    {active.links.map((link) => (
+                      <a
+                        key={link.url}
+                        href={link.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-sm text-gray-900 underline decoration-gray-200 underline-offset-4 hover:decoration-gray-400"
+                      >
+                        {link.label} <span aria-hidden="true">↗</span>
+                      </a>
+                    ))}
+                  </div>
+                ) : null}
               </>
             ) : (
               <p className="text-sm text-gray-500">
@@ -392,6 +514,21 @@ export default function LorePage() {
                 <p className="text-sm text-gray-600 leading-relaxed mt-2">
                   {active.more}
                 </p>
+                {active.links?.length ? (
+                  <div className="mt-3 flex flex-col gap-1">
+                    {active.links.map((link) => (
+                      <a
+                        key={link.url}
+                        href={link.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-sm text-gray-900 underline decoration-gray-200 underline-offset-4 hover:decoration-gray-400"
+                      >
+                        {link.label} <span aria-hidden="true">↗</span>
+                      </a>
+                    ))}
+                  </div>
+                ) : null}
               </>
             ) : (
               <p className="text-sm text-gray-500">
