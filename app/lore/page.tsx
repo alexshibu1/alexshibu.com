@@ -278,20 +278,8 @@ const LORE: LoreItem[] = [
   {
     id: "cube-2-shutdown-late-2021",
     date: "11.2021",
-    line: "Shut down Cube 2.0 after a legal threat",
-    more: "Builds Cube 2.0, a game storing user info. Project grows fast enough to attract attention. Almost sued by Google (credible legal threat). Shuts it down.",
-  },
-  {
-    id: "mckinnon-2020-02",
-    date: "02.2020",
-    line: "Got into filmmaking",
-    more: "Deeply influenced by creators like Peter McKinnon. Studied pacing (what to cut), story beats (why it matters), and how visuals support emotion.",
-  },
-  {
-    id: "cube-runner-2019",
-    date: "08.2019",
-    line: "Released Cube Runner (my first game)",
-    more: "Built and shipped a Unity mobile game at 15. Cube Runner was an impossible levels kind of game, all reaction time. It got taken down by Google for privacy reasons. First real lesson in platform risk",
+    line: "My first game Cube Runner 2.0 got Shut down by Google after a privacy threat",
+    more: "I was a child who built my first game with unity but few weeks after release and 30 users. Project got shut down by Google for violting user privacy and got a legal email from them.",
     links: [
       {
         label: "Screenshot",
@@ -301,41 +289,54 @@ const LORE: LoreItem[] = [
         label: "Instagram post",
         url: "https://www.instagram.com/p/BwTdbmtjkZD/",
       },
+
+    ],
+  },
+  {
+    id: "mckinnon-2020-02",
+    date: "02.2020",
+    line: "Got into filmmaking",
+    more: "Deeply influenced by creators like Peter McKinnon and got into filmmaking. Did over 10+ videos, short films entered into short film competions. Won a few thousand dollars. It's now a passion of mine.",
+    links: [
+      {
+        label: "mars rover",
+        url: "https://youtu.be/vQcW4T5JnPU?si=txlOTA6LekbJNyPI",
+      },
+      {
+  
+        label: "my rode reel (short film)",
+        url: "https://youtu.be/lFMXM3H3K1I?si=0fx5mwu6zfClNrro",
+
+      },
     ],
   },
   {
     id: "easter-seals-2019-11",
     date: "11.2019",
-    line: "Shipped Raspberry Pi OCR glasses (Easter Seals)",
-    more: "Built and shipped real time Raspberry Pi glasses to help visually impaired folks read what is in front of them. Used OCR and wired it up to Google Assistant and Alexa. First shipped hardware project at 15.",
+    line: "Built and Shipped Raspberry Pi OCR glasses at Easter Seals Canada ",
+    more: "Built and shipped real time Raspberry Pi glasses to help visually impaired folks read what is in front of them. Used OCR and wired it up to Google Assistant and Alexa. First shipped hardware project at 15. I was the youngest there. Thanks Ms. Chan for the opportunity.",
   },
   {
     id: "first-yt-2018",
     date: "03.2018",
     line: "Started my first YouTube channel",
-    more: "Started my first YouTube channel and made my first videos. Over time I received ~ $500 in free products across channels through partnerships and sponsorships — a real early lesson in distribution and leverage.",
+    more: "Started my first YouTube channel and made my first videos. Over time I received ~ $100 in free products across channels through partnerships and sponsorships. Even tho I only had 50 subscribers.",
   },
   {
     id: "first-app-2018",
     date: "06.2018",
     line: "Launched my first Android app (Kotlin calculator)",
-    more: "A simple calculator app written in Kotlin: clean UI, basic operations (add/subtract/multiply/divide), and a straightforward keypad layout. It was built to be helpful for quick calculations, and I asked users for feedback to improve it.",
-  },
-  {
-    id: "internet-money-2018-2019",
-    date: "11.2018",
-    line: "Internet money experiments begin",
-    more: "First exposure to internet money: ran Instagram pages and experimented with ClickBank affiliate offers (keto niche). Wrote Amazon product reviews → eventually banned. Lesson logged: platforms reward edge-pushing until they don’t.",
+    more: "A simple calculator app written in Kotlin: clean UI, basic operations (add/subtract/multiply/divide), and a straightforward keypad layout. It was written in kotlin.",
   },
   {
     id: "first-pc-2017",
-    date: "07.2017",
+    date: "06.2017",
     line: "Built my first PC",
-    more: "Shift from consumer → builder mindset. Learned hardware constraints the hard way and started seeing tech as something I could build and debug.",
+    more: "Inspired by dave2d and linus tech tips. I built my first PC. This started everything.",
   },
   {
     id: "arduino-2015-2016",
-    date: "03.2016",
+    date: "11.2018",
     line: "Arduino obsession and robot builds",
     more: "Arduino obsession begins. Attempts at robot builds (mostly failed, learned electronics basics). First exposure to “I can build things that move.”",
   },
