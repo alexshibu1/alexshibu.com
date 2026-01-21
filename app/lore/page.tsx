@@ -100,12 +100,12 @@ const LORE: LoreItem[] = [
   {
     id: "easyhacks-2025-03",
     date: "03.2025",
-    line: "Started EasyHacks",
-    more: "Hackathon for Rejects on easyhacks.org. It started from an accidental rejection email thread from UBC nwhacks. Turned into a 10 person team with 170+ beginners from 7+ countries and about $8K in prizes.",
+    line: "Created, led and funraised 8K for EasyHacks",
+    more: "Hackathon for Rejects on easyhacks.org. Started from an accidental rejection email thread from UBC nwhacks. Turned into a 10 person team with 170+ beginners from 7+ countries and about $8K in prizes.",
     links: [
       {
         label: "easyhacks.org",
-        url: "https://easyhacks.org",
+        url: "https://archive.ph/2mqxj",
       },
     ],
   },
@@ -113,33 +113,29 @@ const LORE: LoreItem[] = [
     id: "tks-2022-09",
     date: "09.2022",
     line: "Joined The Knowledge Society (TKS)",
-    more: "Joined TKS — a community that opened my eyes to what’s really possible. Pitched and built tech with 200+ innovators, shipped and showcased impact, and explored 30+ conferences around the world. Projects at Microsoft HQ, Interac, and Sensei Labs.",
+    more: "A community that opened my eyes to what’s really possible. Pitched and built tech with 200+ innovators, shipped and explored 30+ conferences around the world. Presented projects at Microsoft HQ, Interac, and Sensei Labs. This is where I met some of my best friends and learned to pitch and ship.",
   },
   {
     id: "nfts-2021-05",
     date: "05.2021",
-    line: "Turned $3K into $100K in NFTs then lost it",
-    more: "Got super into NFTs. Took my YMCA internship money, about $3K, and went all in. Flipped Veefriends and World of Women, did some DeFi farming, lived in Discord. Ran it up to around $100K then the market crashed and I lost it all. But I did it once and I can do it again.",
+    line: "Turned $3K into $100K in NFTs then lost it all",
+    more: "Got super into NFTs cuz of Gary Vee. Took my YMCA internship money, about $3K, and went all in. Flipped Veefriends and World of Women, did some DeFi farming, lived in Discord. Ran it up portfolio to around $100K then the market crashed and I lost it all. I did once so I can do it again! :)",
     links: [
       {
-        label: "Screenshots",
-        url: "/images/nft/image1.png",
+        label: "Some of my NFTs",
+        url: "https://zapper.xyz/bundle/0xa141a92144f926ae25e740875aefd8f99012c1f4,0x5bd7829b7f120fc75e3b57089838e7df4932bc35,0x40f8425e7804e6595647efef935fffa33957b6d8,0x17161ba8ca6829d1fea60ee49299a8ffcd3f5dbc,0x0d2ce0f6fd1df570bd151d295368784bb7265ca5,0x400ce51986840f5c096033a6a70dc26152edbbea?label=Wallets&id=0x54f1961c9482b65e088967b4013c52917db01bdf&tab=nft",
       },
     ],
   },
   {
     id: "circus-clounz-2021-09",
     date: "09.2021",
-    line: "Led the Circus Clounz NFT team",
-    more: "Led a 4 person team. Partnered and dropped NFTs, learned Solidity, and got way more crypto native. Missed product market fit, still learned a lot.",
+    line: "Created Circus Clounz NFT project ",
+    more: "Led a 4 person team for the Circus Clounz NFT project and learned Solidity. Starting building a whole ecossystem around it with token (circus penutz) and linktree tool (bio blox). At the end of the day no product market fit and launch failed.",
     links: [
       {
         label: "Circus Clounz (archive)",
         url: "https://web.archive.org/web/20220128132945/https://circusclownz.com/",
-      },
-      {
-        label: "Screenshots",
-        url: "/images/nft/image2.png",
       },
     ],
   },
@@ -153,7 +149,7 @@ const LORE: LoreItem[] = [
     id: "ymca-y-story-2023-10",
     date: "10.2023",
     line: "YMCA did a Y Story about me",
-    more: "I shared my experience with the YMCA Newcomer Youth Leadership Development Program and how it gave me the confidence and opportunity to help make a change in my community. Big thank you to the donors who make programs like this possible.",
+    more: "I shared my experience with the YMCA  and how it gave me the confidence and opportunity to help make a change the world.  Big thank you to the donors and staff who make programs like this possible.",
     links: [
       {
         label: "Watch on Instagram",
@@ -165,37 +161,43 @@ const LORE: LoreItem[] = [
     id: "gap-year-2023-09",
     date: "09.2023",
     line: "Started my gap year",
-    more: "A year to do cool shit, explore, travel, and learn outside school. I said yes to everything",
+    more: "A year to do cool shit, explore, travel, and learn outside school. I said yes to everything. I travel to new cities and visited family in India.",
   },
   {
     id: "uatx-forbidden-courses-2023-07",
     date: "07.2023",
-    line: "UATX Forbidden Courses (Science and Christianity)",
-    more: "University of Austin (UATX) — Forbidden Courses (2023): focus in “Science and Christianity.” Completed the pre-course work, but couldn’t join the in-person seminar due to visa constraints. With Harvard and MIT kids",
+    line: "Accepted to UATX Forbidden Courses (Science and Christianity)",
+    more: "Massive Validation of my path so far. Invited to Forbidden Courses prior to it become a university. Completed the pre-course work, but couldn’t join the in-person seminar due to visa constraints. With Harvard and MIT kids",
   },
   {
     id: "york-university-2023-09",
     date: "08.2023",
     line: "Started comp eng at York University",
-    more: "I joined the Computer Engineering program at York University. I did frosh and 2 weeks of classes before dropping out.",
+    more: "I joined the Computer Engineering program at York University. I had fun at engineering frosh and 2 weeks of classes before dropping out.Still have many friends ",
   },
   {
     id: "villars-2025-08",
     date: "08.2025",
     line: "Villars reset in Switzerland",
-    more: "A month of fresh air, big walks, and a reset in the mountains.",
+    more: "Immersive global fellowship on Systems Thinking and Ecopreneurship in the Swiss Alps to develop scalable impact ventures. Met some of my best friends and learned systems thinking. Swiszzerland is expensive but probly the most beautiful place I've ever been alongside San Francisco.",
   },
   {
     id: "poland-2025-07",
     date: "07.2025",
-    line: "Teaching in Poland",
-    more: "Learned by teaching: explaining ideas forced clarity and patience.",
+    line: "Went to Poland to teach tech and English",
+    more: "It was a traveling circus acorss Krakow and Warsaw. Led daily conversations, group sessions and acitivities for 80+ students. I mainly taught frameworks and pitching while helping teenagers build English confidence.",
   },
   {
     id: "half-murph-2025-05",
     date: "05.2025",
-    line: "Half Murph challenge",
-    more: "May 2025 — did a half Murph challenge",
+    line: "Did the Half Murph challenge",
+    more: "Me and my friend did a half Murph in Toronto. 1.34 hours for 2.53 km, 150 squats, 100 pushups and 50 pullups. I was sore for a week.",
+    links: [
+      {
+        label: "Youtube Video",
+        url: "https://youtu.be/eGbw5Yj34qM?si=BdD4A3wOUBUDw4TB",
+      },
+    ],
   },
   {
     id: "yc-ai-school-2025-06",
@@ -206,20 +208,26 @@ const LORE: LoreItem[] = [
   {
     id: "veritas-2025-06",
     date: "06.2025",
-    line: "Invited to VERITAS (Thomistic Institute) in DC",
-    more: "Invited participant at the VERITAS conference in Washington, DC (Thomistic Institute, 2025). Engaged with scholars and explored foundational questions and philosophical thought.",
+    line: "Invited to VERITAS at the Thomistic Institute in DC",
+    more: "Some of the smartest catholics I've met. Engaged with scholars and explored foundational questions and philosophical thought though aquinas lens. Inspired me to take my faith more seriously.",
   },
   {
     id: "yakov-research-2024-07",
     date: "07.2024",
-    line: "Decision theory research in Haifa, Israel",
-    more: "Research work with Professor Yakov, focused on info-gap decision theory: making robust choices under severe uncertainty.",
+    line: "Decision theory research with Professor Yakov in Haifa, Israel during a war",
+    more: "Research work with Professor Yakov, focused on info-gap decision theory. Optimizing for windfall while increasing robustness under severe uncertainty. One of the most intense and challenging experiences of my life. Transfored my thinking, travled acorss Israel and met some of my best friends.",
   },
   {
     id: "bike-rides-2024-11",
     date: "11.2024",
     line: "50km Scarborough → downtown bike rides",
-    more: "Nov 2024 — did 50km Scarborough → downtown bike rides",
+    more: "Did a 50km Scarborough → downtown bike ride for fun. All on the toronto bike share system. Probly the first person to do it. Switched bikes 13 times",
+    links: [
+      {
+        label: "Strava",
+        url: "https://strava.app.link/R9CRcto25Zb",
+      },
+    ],
   },
   {
     id: "first-10k-2024-10",
@@ -243,23 +251,21 @@ const LORE: LoreItem[] = [
     id: "monitor-flip-2024",
     date: "03.2024",
     line: "Flipped free monitors to fund my startup",
-    more: "Carried free monitors across Toronto from the Beach Sci office to resell and fund my startup",
-  },
-  {
-    id: "covid-online-systems-2020",
-    date: "04.2020",
-    line: "Went deep on online systems during COVID",
-    more: "Goes deep on online systems during lockdown. Begins scholarship + grant experimentation. Learns to reuse essays aggressively. Discovers nonprofit + COVID loopholes.",
+    more: "Carried free monitors from benchsci's old office across Toronto to resell and fund my voice agents project",
   },
   {
     id: "online-money-2020-05",
     date: "05.2020",
-    line: "First dollar online (affiliate pages)",
-    more: "Started experimenting with online money by building themed affiliate pages (keto products). First taste of leverage: write once, earn repeatedly (sometimes).",
+    line: "Made my first dollar online selling keto books to women in nebraska",
+    more: "Build mutiple theme pages for gaming, health keto and other stuff and sold a clickbank product",
     links: [
       {
         label: "Screenshot",
         url: "/projects/keto.png",
+      }, 
+      {
+        label: "Youtube Video",
+        url: "https://youtu.be/Lw3WRJgAT5M?si=pobcTDrmK0c8BoP3",
       },
     ],
   },
@@ -267,7 +273,7 @@ const LORE: LoreItem[] = [
     id: "scholarship-workflow-2021",
     date: "06.2021",
     line: "Built a scholarship workflow and raised $8k+",
-    more: "Builds a scholarship/grant workflow. Experiments with early GPT-2 fine-tuning to speed up applications. Raises $8k+ through scholarships, grants, and honorariums. Takes acquisition-style cuts on opportunities. Learns how incentives really work in education + nonprofits.",
+    more: "Learned millions of dollars are left on the table. So I did a experiment with early GPT-2 fine-tuning to speed up applications. Raised $6k+ from scholarships, grants, and honorariums. Learned how incentives really work in education + nonprofits.",
   },
   {
     id: "cube-2-shutdown-late-2021",
