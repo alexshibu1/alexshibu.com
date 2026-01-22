@@ -363,38 +363,6 @@ export default function AboutPage() {
         </ul>
       </section>
 
-      {/* Organizations & Fellowships */}
-      <section style={{ marginTop: "0rem", marginBottom: "2rem" }}>
-        <h2 className="text-lg font-semibold mb-2 text-gray-900">
-          Organizations & Fellowships
-        </h2>
-        <div className="flex flex-wrap gap-2">
-          <span className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200">
-            Canadian Gap Year Association
-          </span>
-          <span className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200">
-            The Knowledge Society
-          </span>
-          <span className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200">
-            YC AI Startup School
-          </span>
-          <span className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200">
-            YMCA Youth Advisory Committee (YAC)
-          </span>
-          <span className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200">
-            UofT Centre for Entrepreneurship
-          </span>
-          <a
-            href="https://www.apathyisboring.com/rtt_9_rsvp_youth_innovators"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200 cursor-pointer"
-          >
-            Apathy is Boring
-          </a>
-        </div>
-      </section>
-
       {/* Work with me */}
       <section>
         <h2 className="text-xl font-semibold text-gray-900 mb-2">Work with me</h2>
@@ -428,146 +396,95 @@ export default function AboutPage() {
         </a>
       </section>
 
-      {/* Featured In - Upgraded Compact Tags */}
-      <section style={{ marginTop: "1rem", marginBottom: "1rem" }}>
-        <h2 className="text-base font-semibold mb-3 text-gray-900">
-          Featured In
+      {/* Affiliations */}
+      <section style={{ marginTop: "2rem", marginBottom: "2rem" }}>
+        <h2 className="text-lg font-semibold mb-2 text-gray-900">
+          Affiliations
         </h2>
         <div className="flex flex-wrap gap-2">
+          <span className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200">
+            Canadian Gap Year Association
+          </span>
+          <span className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200">
+            The Knowledge Society
+          </span>
+          <span className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200">
+            YC AI Startup School
+          </span>
+          <span className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200">
+            YMCA Youth Advisory Committee (YAC)
+          </span>
+          <a
+            href="https://www.apathyisboring.com/rtt_9_rsvp_youth_innovators"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200 cursor-pointer"
+          >
+            Apathy is Boring
+          </a>
           <a
             href="https://www.aiacanada.com/about-us/annual-reports/2022-2/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-2.5 py-1.5 bg-white hover:bg-red-50 border border-gray-200 hover:border-red-200 hover:shadow-md hover:-translate-y-0.5 rounded-lg cursor-pointer transition-all duration-200 text-xs"
+            className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200 cursor-pointer"
           >
-            <div className="flex flex-col leading-tight">
-              <span className="font-medium text-gray-900 hover:text-gray-800">
-                AIA Canada
-              </span>
-              <span className="text-gray-600 hover:text-gray-700">
-                Annual Report 2022
-              </span>
-            </div>
+            AIA Canada - Annual Report 2022
           </a>
           <a
             href="https://www.ymcagta.org/about-us/organizational-structure/youth-advisory-committee"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-2.5 py-1.5 bg-white hover:bg-red-50 border border-gray-200 hover:border-red-200 hover:shadow-md hover:-translate-y-0.5 rounded-lg cursor-pointer transition-all duration-200 text-xs"
+            className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200 cursor-pointer"
           >
-            <div className="flex flex-col leading-tight">
-              <span className="font-medium text-gray-900 hover:text-gray-800">
-                YMCA of Greater Toronto
-              </span>
-              <span className="text-gray-600 hover:text-gray-700">
-                Youth Advisory Committee (YAC) Members
-              </span>
-            </div>
-          </a>
-          <a
-            href="https://www.ymcagta.org/blog/congratulations-to-the-winners-of-the-youth-for-entrepreneurship-media-contest-2025"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-2.5 py-1.5 bg-white hover:bg-red-50 border border-gray-200 hover:border-red-200 hover:shadow-md hover:-translate-y-0.5 rounded-lg cursor-pointer transition-all duration-200 text-xs"
-          >
-            <div className="flex flex-col leading-tight">
-              <span className="font-medium text-gray-900 hover:text-gray-800">
-                YMCA
-              </span>
-              <span className="text-gray-600 hover:text-gray-700">
-                Youth Entrepreneurship Winner
-              </span>
-            </div>
+            YMCA of Greater Toronto - YAC Members
           </a>
           <a
             href="https://www.ymca.int/enhesa-and-ymca-support-young-people-in-toronto/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-2.5 py-1.5 bg-white hover:bg-red-50 border border-gray-200 hover:border-red-200 hover:shadow-md hover:-translate-y-0.5 rounded-lg cursor-pointer transition-all duration-200 text-xs"
+            className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200 cursor-pointer"
           >
-            <div className="flex flex-col leading-tight">
-              <span className="font-medium text-gray-900 hover:text-gray-800">
-                YMCA World
-              </span>
-              <span className="text-gray-600 hover:text-gray-700">
-                Event Emcee
-              </span>
-            </div>
+            YMCA World - Event Emcee
           </a>
           <a
             href="https://www.youtube.com/watch?v=2z1HoLVZZOY"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-2.5 py-1.5 bg-white hover:bg-red-50 border border-gray-200 hover:border-red-200 hover:shadow-md hover:-translate-y-0.5 rounded-lg cursor-pointer transition-all duration-200 text-xs"
+            className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200 cursor-pointer"
           >
-            <div className="flex flex-col leading-tight">
-              <span className="font-medium text-gray-900 hover:text-gray-800">
-                YMCA Video
-              </span>
-              <span className="text-gray-600 hover:text-gray-700">
-                Youth Newcomer Feature
-              </span>
-            </div>
+            YMCA Video - Youth Newcomer Feature
           </a>
           <a
             href="https://www.entrepreneurship.artsci.utoronto.ca/news/we-asked-7-founders-what-sparked-your-startup-idea"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-2.5 py-1.5 bg-white hover:bg-red-50 border border-gray-200 hover:border-red-200 hover:shadow-md hover:-translate-y-0.5 rounded-lg cursor-pointer transition-all duration-200 text-xs"
+            className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200 cursor-pointer"
           >
-            <div className="flex flex-col leading-tight">
-              <span className="font-medium text-gray-900 hover:text-gray-800">
-                UofT Entrepreneurship
-              </span>
-              <span className="text-gray-600 hover:text-gray-700">
-                Founders Interview
-              </span>
-            </div>
+            UofT Entrepreneurship - Founders Interview
           </a>
           <a
             href="https://www.instagram.com/reels/DTPr8Waks1J/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-2.5 py-1.5 bg-white hover:bg-red-50 border border-gray-200 hover:border-red-200 hover:shadow-md hover:-translate-y-0.5 rounded-lg cursor-pointer transition-all duration-200 text-xs"
+            className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200 cursor-pointer"
           >
-            <div className="flex flex-col leading-tight">
-              <span className="font-medium text-gray-900 hover:text-gray-800">
-                UofT Video
-              </span>
-              <span className="text-gray-600 hover:text-gray-700">
-                Student Spotlight
-              </span>
-            </div>
+            UofT Video - Student Spotlight
           </a>
           <a
             href="http://sportsandrec.ca/photo2020.html"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-2.5 py-1.5 bg-white hover:bg-red-50 border border-gray-200 hover:border-red-200 hover:shadow-md hover:-translate-y-0.5 rounded-lg cursor-pointer transition-all duration-200 text-xs"
+            className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200 cursor-pointer"
           >
-            <div className="flex flex-col leading-tight">
-              <span className="font-medium text-gray-900 hover:text-gray-800">
-                West Rouge Sports
-              </span>
-              <span className="text-gray-600 hover:text-gray-700">
-                Photo Contest Winner
-              </span>
-            </div>
+            West Rouge Sports - Photo Contest Winner
           </a>
           <a
             href="https://childrenfirstcanada.org/wp-content/uploads/2025/08/Raising-Canada-Report-2025-FINAL_WEB.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-2.5 py-1.5 bg-white hover:bg-red-50 border border-gray-200 hover:border-red-200 hover:shadow-md hover:-translate-y-0.5 rounded-lg cursor-pointer transition-all duration-200 text-xs"
+            className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200 cursor-pointer"
           >
-            <div className="flex flex-col leading-tight">
-              <span className="font-medium text-gray-900 hover:text-gray-800">
-                Children First Canada
-              </span>
-              <span className="text-gray-600 hover:text-gray-700">
-                Raising Canada Report
-              </span>
-            </div>
+            Children First Canada - Raising Canada Report
           </a>
         </div>
       </section>
