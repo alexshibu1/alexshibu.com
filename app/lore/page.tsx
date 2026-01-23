@@ -254,6 +254,12 @@ const LORE: LoreItem[] = [
     more: "Carried free monitors from benchsci's old office across Toronto to resell and fund my voice agents project",
   },
   {
+    id: "dji-mavic-2020-07",
+    date: "07.2020",
+    line: "Got DJI Mavic and Transport Canada basic Flight license",
+    more: "I got a DJI Mavic. Since it was the early days for drone stuff, I got the Transport Canada basic Flight license.",
+  },
+  {
     id: "online-money-2020-05",
     date: "05.2020",
     line: "Made my first dollar online selling keto books to women in nebraska",
@@ -268,6 +274,12 @@ const LORE: LoreItem[] = [
         url: "https://youtu.be/Lw3WRJgAT5M?si=pobcTDrmK0c8BoP3",
       },
     ],
+  },
+  {
+    id: "sony-a7-iii-2021-06",
+    date: "06.2021",
+    line: "Bought Sony A7 III with crypto profits",
+    more: "Took some of the crypto money and cashed out to buy a Sony A7 III for around $2k. I love it!",
   },
   {
     id: "scholarship-workflow-2021",
@@ -295,8 +307,8 @@ const LORE: LoreItem[] = [
   {
     id: "mckinnon-2020-02",
     date: "02.2020",
-    line: "Got into filmmaking",
-    more: "Deeply influenced by creators like Peter McKinnon and got into filmmaking. Did over 10+ videos, short films entered into short film competions. Won a few thousand dollars. It's now a passion of mine.",
+    line: "Fell in love with filmmaking",
+    more: "Deeply influenced by creators like Peter McKinnon, potato and got into filmmaking. Did over 10+ videos, short films entered into short film competions. Won a few thousand dollars for corporate vids. It's now a passion of mine.",
     links: [
       {
         label: "mars rover",
@@ -315,6 +327,12 @@ const LORE: LoreItem[] = [
     date: "11.2019",
     line: "Built a Raspberry Pi OCR glasses for Easter Seals Canada ",
     more: "Built and shipped real time Raspberry Pi glasses to help visually impaired folks read what is in front of them. Used OCR and wired it up to Google Assistant and Alexa. First shipped hardware project at 15. I was the youngest there. Thanks Ms. Chan for the opportunity.",
+  },
+  {
+    id: "church-logo-2019-06",
+    date: "06.2019",
+    line: "Won church logo competition and got $100 from the bishop",
+    more: "I made the first logo for the St. Thomas Syro Malabar Forane Church. It was a competition. I won and got $100 from the bishop in front of everyone. This started my pursuit of money.",
   },
   {
     id: "first-yt-2018",
