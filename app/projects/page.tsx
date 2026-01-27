@@ -345,26 +345,6 @@ export default function WorkIndex() {
     },
 
     {
-      name: "Easter Seals Assistive Technology ",
-      description:
-        "Made AI GLASSES for Easter Seals. A raspberry pi that reads text and signs in front of you and uses Google Assistant and Alexa to answer questions and read out loud.",
-      link: "",
-      date: "2019",
-      repo: "",
-      video: "",
-      writeup: "",
-    },
-    {
-      name: "Unity Game",
-      description:
-        "Shipped a Unity game but got taken down by Google for 'privacy'.",
-      link: "https://www.instagram.com/p/BwTdbmtjkZD/",
-      date: "2019",
-      video: "",
-      repo: "",
-      writeup: "",
-    },
-    {
       name: "Actions on Google - Bible Companion",
       description:
         "Received 10k in cloud credits to work on Actions on Google + free merch. Created Bible Companion - a voice-first Bible study application that allows users to ask questions about scripture, receive daily verses, and explore biblical content through natural language conversations. Built using Google's Actions SDK, Dialogflow, and TensorFlow.",
@@ -501,27 +481,6 @@ export default function WorkIndex() {
       video: "",
       writeup: "/essay/calculator",
       image: "/projects/cal main.png",
-    },
-    {
-      name: "Logos Quiz Academy",
-      description:
-        "Student platform to prepare for the Logo Quiz Exam. Web development using HTML & Javascript, WordPress, and course development. Project failed because I was too late for the market and the project got boring.",
-      link: "",
-      date: "2019",
-      repo: "",
-      video: "",
-      writeup: "",
-      image: "/projects/logos.png",
-    },
-    {
-      name: "First YouTube Channel",
-      description:
-        "Started my first YouTube channel and received around $500 in free products across channels through partnerships and sponsorships.",
-      link: "https://www.youtube.com/watch?v=ShW01SDJI0c",
-      date: "2018",
-      repo: "",
-      video: "https://www.youtube.com/watch?v=ShW01SDJI0c",
-      writeup: "",
     },
     {
       name: "Ethiopian Coffee Strategy [TKS]",

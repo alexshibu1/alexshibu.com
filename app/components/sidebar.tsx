@@ -74,8 +74,8 @@ export default function Sidebar() {
           <Link href="/lore" className={linkClassName} onClick={closeMenu}>
             lore
           </Link>
-          <Link href="/coffee" className={linkClassName} onClick={closeMenu}>
-            coffee reviews ☕
+          <Link href="/others" className={linkClassName} onClick={closeMenu}>
+            others
           </Link>
         </div>
 

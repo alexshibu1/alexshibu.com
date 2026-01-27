@@ -40,8 +40,7 @@ function inferSortKey(date: string): number {
       const [, whenRaw, yyyyRaw] = m;
       const yyyy = Number(yyyyRaw);
       const when = whenRaw.toLowerCase();
-      const month =
-        when === "early" ? 2 : when === "mid" ? 6 : /* late */ 12;
+      const month = when === "early" ? 2 : when === "mid" ? 6 : /* late */ 12;
       return yyyy * 10000 + month * 100;
     }
   }
@@ -50,7 +49,10 @@ function inferSortKey(date: string): number {
   // - "MM.DD.YYYY" or "MM.DD.YY" (e.g. 12.18.25)
   // - "MM.YYYY" (e.g. 07.2024)
   // - "YYYY" (e.g. 2012)
-  const parts = normalized.split(".").map((p) => p.trim()).filter(Boolean);
+  const parts = normalized
+    .split(".")
+    .map((p) => p.trim())
+    .filter(Boolean);
 
   // "MM.DD.YYYY" or "MM.DD.YY"
   if (parts.length === 3) {
@@ -94,7 +96,6 @@ const LORE: LoreItem[] = [
         label: "Screenshot",
         url: "/projects/bathbombs.png",
       },
-      
     ],
   },
   {
@@ -178,7 +179,7 @@ const LORE: LoreItem[] = [
   {
     id: "villars-2025-08",
     date: "08.2025",
-    line: "Villars reset in Switzerland",
+    line: "Villars fellowship in Switzerland",
     more: "Immersive global fellowship on Systems Thinking and Ecopreneurship in the Swiss Alps to develop scalable impact ventures. Met some of my best friends and learned systems thinking. Swiszzerland is expensive but probly the most beautiful place I've ever been alongside San Francisco.",
   },
   {
@@ -212,6 +213,36 @@ const LORE: LoreItem[] = [
     more: "Some of the smartest catholics I've met. Engaged with scholars and explored foundational questions and philosophical thought though aquinas lens. Inspired me to take my faith more seriously.",
   },
   {
+    id: "india-ai-film-family-2025-09",
+    date: "09.2025",
+    line: "AI film festival and family trip across South India",
+    more: "In Kerala, Bangalore, Hyderabad, and Wayanad I did an AI film festival and visited family.",
+  },
+  {
+    id: "first-book-finished-2025-11",
+    date: "11.2025",
+    line: "Finished my first book",
+    more: "Nov 2025 I finished my first full book cover to cover. Atomic Habits by James Clear.I've carried it acorss almost 20 flights for the past 2 years.",
+  },
+  {
+    id: "programming-serious-2025-12",
+    date: "12.2025",
+    line: "Started shipping daily to GitHub",
+    more: "Dec 2025 I decided to take programming seriously and started shipping code to GitHub every day. I felt like a fraud of a developer.",
+  },
+  {
+    id: "missing-relic-film-2026-01",
+    date: "01.2026",
+    line: "Four-day sprint to film the missing relic story",
+    more: "Jan 2026 I spent four straight days making my first film in a long time, documenting the story of the missing relic at our church.",
+  },
+  {
+    id: "italy-24hr-no-internet-2024-08",
+    date: "08.2024",
+    line: "24 hours in Italy with no internet",
+    more: "Survived an insane 24 hours in Italy without internet, relying on the kindness of strangers to get around.",
+  },
+  {
     id: "yakov-research-2024-07",
     date: "07.2024",
     line: "Decision theory research with Professor Yakov in Haifa, Israel during a war",
@@ -233,7 +264,7 @@ const LORE: LoreItem[] = [
     id: "first-10k-2024-10",
     date: "10.2024",
     line: "Ran my first 10K",
-    more: "Oct 2024 did my first 10K",
+    more: "Oct 2024 did my first 10K after 2 weeks of running with uoft running club",
     links: [
       {
         label: "Strava",
@@ -268,7 +299,7 @@ const LORE: LoreItem[] = [
       {
         label: "Screenshot",
         url: "/projects/keto.png",
-      }, 
+      },
       {
         label: "Youtube Video",
         url: "https://youtu.be/Lw3WRJgAT5M?si=pobcTDrmK0c8BoP3",
@@ -301,7 +332,6 @@ const LORE: LoreItem[] = [
         label: "Instagram post",
         url: "https://www.instagram.com/p/BwTdbmtjkZD/",
       },
-
     ],
   },
   {
@@ -315,10 +345,8 @@ const LORE: LoreItem[] = [
         url: "https://youtu.be/vQcW4T5JnPU?si=txlOTA6LekbJNyPI",
       },
       {
-  
         label: "my rode reel (short film)",
         url: "https://youtu.be/lFMXM3H3K1I?si=0fx5mwu6zfClNrro",
-
       },
     ],
   },
@@ -614,4 +642,3 @@ export default function LorePage() {
     </main>
   );
 }
-
