@@ -69,8 +69,8 @@ const DEFAULT_LOCATION = {
 export const coffeeShops: CoffeeShop[] = [
   {
     id: "starbucks-march-1-2024",
-    date: "March 1st 2024",
-    drink: "Blonde Vanilla Latte -with 2 hazelnut shot",
+    date: "March 1st, 2024",
+    drink: "Blonde Vanilla Latte with 2 hazelnut shot",
     shopName: "Starbucks",
     rating: 6,
     review: "too sugary and watery",
@@ -79,8 +79,8 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "tim-hortons-march-10-2024",
-    date: "March 10th 2024",
-    drink: "Coffee mocha",
+    date: "March 10th, 2024",
+    drink: "Coffee Mocha",
     shopName: "Tim Hortons",
     rating: 7,
     review: "Mid good but taste water and like bad hot chocolate",
@@ -89,8 +89,8 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "starbucks-march-11-2024",
-    date: "11th March 2024",
-    drink: "Cafe mocca with wip cream",
+    date: "March 11th, 2024",
+    drink: "Café Mocha with whip cream",
     shopName: "Starbucks",
     rating: 8.5,
     review:
@@ -100,9 +100,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "lesspresso-feb-20-2024",
-    date: "Feb 20 20204",
-    drink: "Mocha latte",
-    shopName: "L'esspresso bar mercurio",
+    date: "Feb 20th, 2024",
+    drink: "Mocha Latte",
+    shopName: "L'Espresso Bar Mercurio",
     rating: 9,
     review: "Perfect",
     isChain: false,
@@ -110,9 +110,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "the-alley-feb-10-2024",
-    date: "Feb 10 2024",
-    drink: "Crunchy coca tea",
-    shopName: "The alley",
+    date: "Feb 10th, 2024",
+    drink: "Crunchy Cocoa Tea",
+    shopName: "The Alley",
     rating: 3,
     review: "Taste like bad boba tea.",
     isChain: false,
@@ -120,9 +120,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "balzacs-jan-12-2024",
-    date: "jAn 12 2024",
-    drink: "Peanut Mocca Coffee",
-    shopName: "Balzacs",
+    date: "Jan 12th, 2024",
+    drink: "Peanut Mocha Coffee",
+    shopName: "Balzac's",
     rating: 2,
     review:
       "The pentuc crunch. Much rather have orange juice. TASTES like I wanna throw up. SHOULD have NEVER added peanut butter. AT the bottom you can taste all the unblended peanut butter",
@@ -131,18 +131,18 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "tim-hortons-march-12-2024",
-    date: "12 march 2024",
-    drink: "London fog",
+    date: "March 12th, 2024",
+    drink: "London Fog",
     shopName: "Tim Hortons",
     rating: 2.5,
-    review: "Awful, tastes like mint. More eatable than penury but",
+    review: "Awful, tastes like mint. More edible than peanut butter tho",
     isChain: true,
     location: DEFAULT_LOCATION,
   },
   {
     id: "tim-hortons-march-13-2024",
-    date: "March 13th",
-    drink: "Mocha latte",
+    date: "March 13th, 2024",
+    drink: "Mocha Latte",
     shopName: "Tim Hortons",
     rating: 4,
     review: "Idk weird",
@@ -151,8 +151,8 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "starbucks-march-21-2024",
-    date: "21march",
-    drink: "caramel macchiato hot",
+    date: "March 21st, 2024",
+    drink: "Caramel Macchiato Hot",
     shopName: "Starbucks",
     rating: 8,
     review: "Good but very sugary",
@@ -161,8 +161,8 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "starbucks-march-22-2024",
-    date: "22 march",
-    drink: "Hot chocolate hot",
+    date: "March 22nd, 2024",
+    drink: "Hot Chocolate Hot",
     shopName: "Starbucks",
     rating: 6,
     review: "Good but very chocolatey",
@@ -171,8 +171,8 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "starbucks-march-20-2024",
-    date: "20 march",
-    drink: "Cafe Mocha",
+    date: "March 20th, 2024",
+    drink: "Café Mocha",
     shopName: "Starbucks",
     rating: 9.5,
     review:
@@ -182,9 +182,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "little-pebbles-april-5-2024",
-    date: "April 5th",
-    drink: "Cafe Mocha",
-    shopName: "Little pebbles cafe",
+    date: "April 5th, 2024",
+    drink: "Café Mocha",
+    shopName: "Little Pebbles Café",
     rating: 9.7,
     review:
       "Very close to perfect. Tastes. The right amount of coffee and chocate. Ideally I want more hot coffee. The bliss is crazy.",
@@ -193,9 +193,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "jimmys-april-9-2024",
-    date: "April 9",
+    date: "April 9th, 2024",
     drink: "Mocha",
-    shopName: "Jimmy's coffee",
+    shopName: "Jimmy's Coffee",
     rating: 9,
     review: "Somithin weird but really good. Very hot as well",
     isChain: false,
@@ -203,9 +203,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "coco-april-13-2024",
-    date: "April 13",
+    date: "April 13th, 2024",
     drink: "Mocha",
-    shopName: "Coco expresso bar",
+    shopName: "Coco Espresso Bar",
     rating: 9.5,
     review: "Sweetly nice, I like it",
     isChain: false,
@@ -213,30 +213,30 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "tim-hortons-april-15-2024",
-    date: "April 15",
-    drink: "Vanila latte",
+    date: "April 15th, 2024",
+    drink: "Vanilla Latte",
     shopName: "Tim Hortons",
     rating: 4.4,
     review:
-      "Either this isn't vanilla late; I got a large cup so can't taste valina. Or it taste pretty bad.",
+      "Either this isn't vanilla latte; I got a large cup so can't taste the vanilla. Or it taste pretty bad.",
     isChain: true,
     location: DEFAULT_LOCATION,
   },
   {
     id: "tim-hortons-april-16-2024",
-    date: "April 16",
-    drink: "Mocha latte",
+    date: "April 16th, 2024",
+    drink: "Mocha Latte",
     shopName: "Tim Hortons",
     rating: 6,
-    review: "Very watery, too Much viscosity",
+    review: "Very watery, too much viscoscity",
     isChain: true,
     location: DEFAULT_LOCATION,
   },
   {
     id: "black-bean-april-18-2024",
-    date: "April 18",
+    date: "April 18th, 2024",
     drink: "Mocha",
-    shopName: "Black bean(very popular)",
+    shopName: "Black Bean",
     rating: 7,
     review: "Very strong in my opinion",
     isChain: false,
@@ -244,8 +244,8 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "second-cup-april-22-2024",
-    date: "April 22",
-    drink: "macchiato",
+    date: "April 22nd, 2024",
+    drink: "Macchiato",
     shopName: "Second Cup",
     rating: 9.2,
     review: "Very good, smooth, creamy, choaclate",
@@ -254,9 +254,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "neo-april-25-2024",
-    date: "April 25th",
-    drink: "mocha",
-    shopName: "Neo coffee bar",
+    date: "April 25th, 2024",
+    drink: "Mocha",
+    shopName: "Neo Coffee Bar",
     rating: 9.6,
     review:
       "Idk if it's the fame of this place or I actually think this is really good but. The is pretty good but bit bitter at the end. I want more sugar but this could be how a real one supposed to be. I feel like Starbucks is better tho",
@@ -265,13 +265,13 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "aroma-april-30-2024",
-    date: "APRIL 30",
-    drink: "Aroma/mocha+",
+    date: "April 30th, 2024",
+    drink: "Aroma/Mocha+",
     shopName: "Aroma Espresso Bar",
     rating: 8,
     review:
       "The presentation was 9.6/10 like none other. Very good with wipp cream and everything. But after that all went away it tastes like the watery coffee Amma always used to drink",
-    isChain: true,
+    isChain: false,
     location: {
       lat: 43.64095,
       lng: -79.37817,
@@ -280,8 +280,8 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "starbucks-may-4-2024",
-    date: "May 4th",
-    drink: "Ice cafe mocha",
+    date: "May 4th, 2024",
+    drink: "Iced Café Mocha",
     shopName: "Starbucks",
     rating: 6,
     review: "Not very good. State like bitter milk water.",
@@ -290,9 +290,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "dark-horse-may-6-2024",
-    date: "May 6th",
+    date: "May 6th, 2024",
     drink: "Mocha",
-    shopName: "Dark horse espresso bar",
+    shopName: "Dark Horse Espresso Bar",
     rating: 9.85,
     review: "Jeez this is good. Sugar perfect. But I'd like it to hotter tho.",
     isChain: false,
@@ -304,9 +304,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "monopol-may-8-2024",
-    date: "May 8",
-    drink: "mocha",
-    shopName: "Monopol cafe",
+    date: "May 8th, 2024",
+    drink: "Mocha",
+    shopName: "Monopol Café",
     rating: 8,
     review: "If sugar had a name this would be it",
     isChain: false,
@@ -318,9 +318,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "rooster-may-15-2024",
-    date: "May 15",
+    date: "May 15th, 2024",
     drink: "Mocha",
-    shopName: "Rooster coffee",
+    shopName: "Rooster Coffee",
     rating: 9.75,
     review:
       "Really good but somthin is missing. It not full flavour. The beginning is nice. Great place to work.",
@@ -333,8 +333,8 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "tim-hortons-may-30-2024",
-    date: "May 30",
-    drink: "Mocha iced cap",
+    date: "May 30th, 2024",
+    drink: "Mocha Iced Cap",
     shopName: "Tim Hortons",
     rating: 9,
     review:
@@ -344,9 +344,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "dinners-june-10-2024",
-    date: "June 10th",
+    date: "June 10th, 2024",
     drink: "Mocha",
-    shopName: "Dinners coffee",
+    shopName: "Dinner's Coffee",
     rating: 6,
     review:
       "Pretty standard. Had to put sugar and honey to make it statement better. Also the wifi and me had fight. I lost. Nothing special.",
@@ -355,9 +355,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "page-one-june-11-2024",
-    date: "June 11th",
-    drink: "Nutella latte",
-    shopName: "Page one",
+    date: "June 11th, 2024",
+    drink: "Nutella Latte",
+    shopName: "Page One",
     rating: 9.8,
     review:
       "Superb. Idk if it's the Nutella or the ppl making it. The coffee is fire. plenty of aesthetic place to work but the window looks out the ugly tmu buildings. A hint of less sugar would be nice, for when it gets cold.",
@@ -366,8 +366,8 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "tim-hortons-june-17-2024",
-    date: "June 17th",
-    drink: "Carmel latter",
+    date: "June 17th, 2024",
+    drink: "Caramel Latte",
     shopName: "Tim Hortons",
     rating: 8,
     review: "Only a hint of caramel. Maybe it's cuz they only have a little",
@@ -376,8 +376,8 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "tim-hortons-june-30-2024",
-    date: "June 30th",
-    drink: "French Vanila",
+    date: "June 30th, 2024",
+    drink: "French Vanilla",
     shopName: "Tim Hortons",
     rating: 8,
     review: "Good drink but very watery, + sugar.",
@@ -386,9 +386,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "cafe-cofe-israel-july-4-2024",
-    date: "July 4th",
-    drink: "mekupelet",
-    shopName: "Cafe cofe israel",
+    date: "July 4th, 2024",
+    drink: "Mekupelet",
+    shopName: "Café Coffee (Israel)",
     rating: 9.3,
     review: "Great. Sorta tastes like hot chocolate . Great place to work.",
     isChain: false,
@@ -396,8 +396,8 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "kioscafe-july-18-2024",
-    date: "July 18th",
-    drink: "Chocolate cappuccino",
+    date: "July 18th, 2024",
+    drink: "Chocolate Cappuccino",
     shopName: "kioscafe קיוסקפה חיפה",
     rating: 9,
     review:
@@ -407,9 +407,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "pauls-coffee-oct-9-2024",
-    date: "Oct 9th",
-    drink: "Mocha latte",
-    shopName: "Pauls coffee Uoft",
+    date: "Oct 9th, 2024",
+    drink: "Mocha Latte",
+    shopName: "Paul's Coffee UofT",
     rating: 6,
     review: "Dog water. Not smooth. Watery as hell too expensive",
     isChain: false,
@@ -417,9 +417,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "mos-moss-oct-15-2024",
-    date: "Oct 15th",
-    drink: "Mocha latte",
-    shopName: "Mos moss",
+    date: "Oct 15th, 2024",
+    drink: "Mocha Latte",
+    shopName: "Mos Moss",
     rating: 9.4,
     review:
       "Awesome at least it seems like it. I don't have my 9th sense today cuz of how nervous I am for a cal mid term. Good place to work. But not many chairs",
@@ -428,9 +428,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "quantum-oct-19-2024",
-    date: "oct19th",
-    drink: "Mocha latte",
-    shopName: "Quantum coffee",
+    date: "Oct 19th, 2024",
+    drink: "Mocha Latte",
+    shopName: "Quantum Coffee",
     rating: 9.82,
     review:
       "Almost perfect. Not too sugary. Perfection, foam everything. Not hot enough though. Good place to work in the summer. I went to the one at the well",
@@ -439,9 +439,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "versus-oct-21-2024",
-    date: "Oct 21",
-    drink: "Mocha latte",
-    shopName: "Versus coffee",
+    date: "Oct 21st, 2024",
+    drink: "Mocha Latte",
+    shopName: "Versus Coffee",
     rating: 8.5,
     review:
       "So much space and stuff to work on laptop. But the coffee is too cold. I sipped it in a few minutes. Way to watery.plain, I want rich Tates. Non of the. It takes old.",
@@ -450,7 +450,7 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "tim-hortons-oct-29-2024",
-    date: "Oct 29",
+    date: "Oct 29th, 2024",
     drink: "Hazelnut",
     shopName: "Tim Hortons",
     rating: 6,
@@ -461,8 +461,8 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "tim-hortons-oct-31-2024",
-    date: "Oct 31",
-    drink: "Caramel latte",
+    date: "Oct 31st, 2024",
+    drink: "Caramel Latte",
     shopName: "Tim Hortons",
     rating: 8,
     review: "fine.fine.fine. not great but good. Not special but something",
@@ -471,8 +471,8 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "tim-hortons-nov-1-2024",
-    date: "Nov 1",
-    drink: "Vanila Latte",
+    date: "Nov 1st, 2024",
+    drink: "Vanilla Latte",
     shopName: "Tim Hortons",
     rating: 9.4,
     review:
@@ -482,19 +482,19 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "walmart-nov-15-2024",
-    date: "Nov 15",
+    date: "Nov 15th, 2024",
     drink: "Van Houtte Belgian Chocolate Light Roast Coffee",
     shopName: "Walmart",
     rating: 6.5,
     review:
       "Since it's light roast the chocate taste isn't there but it's better than having normal coffee with milk.",
-    isChain: true,
+    isChain: false,
     location: DEFAULT_LOCATION,
   },
   {
     id: "second-cup-nov-19-2024",
-    date: "Nov 19th",
-    drink: "Dark chocolate hezulnut latte",
+    date: "Nov 19th, 2024",
+    drink: "Dark Chocolate Hazelnut Latte",
     shopName: "Second Cup",
     rating: 7,
     review:
@@ -504,7 +504,7 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "found-coffee-nov-25-2024",
-    date: "Nov 25th",
+    date: "Nov 25th, 2024",
     drink: "Mocha",
     shopName: "Found Coffee",
     rating: 3,
@@ -515,8 +515,8 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "tim-hortons-nov-26-2024",
-    date: "Nov 26th",
-    drink: "latte",
+    date: "Nov 26th, 2024",
+    drink: "Latte",
     shopName: "Tim Hortons",
     rating: 8.5,
     review:
@@ -526,19 +526,19 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "pret-dec-6-2024",
-    date: "Dec 6th",
-    drink: "mocha",
+    date: "Dec 6th, 2024",
+    drink: "Mocha",
     shopName: "Pret A Manger",
     rating: 7,
     review:
       "Bad coffee but space is nice. I LOVE THE SPACE. Good place to work",
-    isChain: true,
+    isChain: false,
     location: DEFAULT_LOCATION,
   },
   {
     id: "tim-hortons-dec-11-2024",
-    date: "Dec 11th",
-    drink: "Bailey's cream coffee",
+    date: "Dec 11th, 2024",
+    drink: "Bailey's Cream Coffee",
     shopName: "Tim Hortons",
     rating: 5,
     review: "Weird. Watery. Does not taste good. But better than normal coffee",
@@ -547,9 +547,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "le-gourmand-jan-16-2025",
-    date: "Jan 16th 20205",
-    drink: "Hot chocolate",
-    shopName: "Le Goermand",
+    date: "Jan 16th, 2025",
+    drink: "Hot Chocolate",
+    shopName: "Le Gourmand",
     rating: 9,
     review:
       "Ngl. At best this host colcolate could be one of the best hot Cocolates. But at worst. It can be the normal powder hot chocolate with some fluffy milk. Ideally I want less viscus. More darker taste. But after it turns cold this is rely good and deep. Great place to work",
@@ -558,9 +558,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "lesspresso-jan-24-2025",
-    date: "Jan 24th",
-    drink: "Mocha latte",
-    shopName: "L'esspresso bar mercurio",
+    date: "Jan 24th, 2025",
+    drink: "Mocha Latte",
+    shopName: "L'Espresso Bar Mercurio",
     rating: 9.9,
     review:
       "Litterly perfect. Idk what to say. + the view is awesome. Coming to school in the early morning, buy-in a cup of Joe and sitting down and guiding. That's what life is all about . Great place to work.",
@@ -569,9 +569,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "le-gourmand-jan-31-2025",
-    date: "Jan 31th",
-    drink: "Mocha Latter",
-    shopName: "Le gourmant",
+    date: "Jan 31st, 2025",
+    drink: "Mocha Latte",
+    shopName: "Le Gourmand",
     rating: 9.4,
     review:
       "Very good. Nothing bad. But doesn't floor me. Cambery chressoint is really good. But cold sooo. I can at 9 30. Plenty of space to sit. I like that",
@@ -580,9 +580,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "la-gloria-feb-8-2025",
-    date: "Feb 8th",
+    date: "Feb 8th, 2025",
     drink: "Mexican Mocha",
-    shopName: "La Gloria Mexican coffee",
+    shopName: "La Gloria Mexican Coffee",
     rating: 9.4,
     review:
       "Really good. The space is awesome. Ideally I'd like most space to work. So much care went into each aspect of this place. I think it would be too busy on a normal weekday for me to able to do work. The coffee it self is really good. But hint of a new taste, presentation is really good. I like it.",
@@ -591,9 +591,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "creeds-feb-14-2025",
-    date: "Feb 14th",
+    date: "Feb 14th, 2025",
     drink: "Mocha",
-    shopName: "Creeds Coffee",
+    shopName: "Creed's Coffee",
     rating: 9.7,
     review:
       "This is awesome. Although it was expensive. The amount of space and the lack of judgment for sitting here and working is what makes it 10/10. Along with a whole Bunch of other people who are also working. The coffee is great. Simple. Foamy, not too much coffee taste, nor chocolate. Perfect surgar. Plenty of space to sit. But the are around the place is 3/5 getto.",
@@ -602,9 +602,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "carbonic-march-3-2025",
-    date: "March 3rd",
-    drink: "Dates latte",
-    shopName: "Carbonic cafe",
+    date: "March 3rd, 2025",
+    drink: "Dates Latte",
+    shopName: "Carbonic Café",
     rating: 4,
     review:
       "One I don't \"LOVE \" the taste of dates. This taste like something else not dates. It's not worth the 6 dollars idk. But that's subjective. The make is really good. There is literally benches to work. Ideally I'd ilike more actual space. Idk what it is. Not dates. I got it. It smells and somewhat tastes like paysesum without the sugar. Actually literally. Fr. when I was there wifi was broken as well.",
@@ -613,9 +613,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "maman-march-4-2025",
-    date: "March 4th",
+    date: "March 4th, 2025",
     drink: "Mocha",
-    shopName: "maman",
+    shopName: "Maman",
     rating: 1,
     review:
       "Dog water. Awful coffee. It taste like water. Powder mix. Not real coffee. Idk how it can be this bad. Tim Hortons does it better for sure. Really bad. No sugar. At all.",
@@ -624,9 +624,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "le-beau-march-13-2025",
-    date: "March 13th",
-    drink: "Dark morcha",
-    shopName: "Le beau crosontiere",
+    date: "March 13th, 2025",
+    drink: "Dark Mocha",
+    shopName: "Le Beau Croissantière",
     rating: 9.5,
     review:
       "Really good coffee. Modern sorting nice outside neighbourhood vibes. But but. Do not work here. Not many chairs. Ppl just come here for convos. you're sitting in front of the recenption and the people ordering. No wifi either. So good spot for networking and coffee chats. Prizes are expensive but understnadable corssontnsta are really good. It's flakey Ngl.. it's insane how many rich new parents come here. Very budgey",
@@ -635,9 +635,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "soma-march-28-2025",
-    date: "March 28th",
-    drink: "Hot cholcolate",
-    shopName: "Soma chocolatemaker",
+    date: "March 28th, 2025",
+    drink: "Hot Chocolate",
+    shopName: "Soma Chocolatemaker",
     rating: 9.7,
     review:
       "Probably the best hot chocolate I've ever had. I could really taste the chlorate /coco. But in the relativity of things it doesn't taste exponentially better than any other hot chocolate you could buy. Very good density but still feels like something I'm looking for Is missing from this. It's pretty perfectly sweet. But I'm talking something else.",
@@ -646,9 +646,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "hazukido-april-1-2025",
-    date: "April 1st",
-    drink: "late",
-    shopName: "hazukido",
+    date: "April 1st, 2025",
+    drink: "Latte",
+    shopName: "Hazukido",
     rating: 7,
     review:
       "Space is REALLY NICE. But coffee is mid. Unfortunate. I love the have all tjhse windows. And space to sit. Idk if they specialize in cold stuff. Location is also really good",
@@ -657,7 +657,7 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "fusettes-april-15-2025",
-    date: "April 15h",
+    date: "April 15th, 2025",
     drink: "Mocha",
     shopName: "Fusettes",
     rating: 9.5,
@@ -668,9 +668,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "cafe23-may-9-2025",
-    date: "May 9th",
+    date: "May 9th, 2025",
     drink: "Mocha",
-    shopName: "Cafe23",
+    shopName: "Café23",
     rating: 9.99,
     review:
       "Probably the or top 3 of the best cafe's I've ever been to. Has literal birds in it. Awesome place. It's probably only good I the summer. Great. Patio. You get to sit there and drink coffee. Doesn't feel like you're taking up everyone's space. Design is awesome. And coffee is pretty perfect. meaning nothing bad. Everything is was. I can't describe it any other way. Idk if it's better than top 5 coffee but perfect because of the environment. It really does play a role. I had a huge problem with wifi. If I persists the second time I go there. Never again, cuz I need wifi. Maybe it was the place I was sitting.",
@@ -679,9 +679,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "ritual-june-19-2025",
-    date: "June 19",
+    date: "June 19th, 2025",
     drink: "Mocha",
-    shopName: "Ritual coffee Hayes, Valley, San Francisco",
+    shopName: "Ritual Coffee (San Francisco)",
     rating: 8,
     review:
       "The coffee is fine. It's not special. The viscosity of the drink is really nice. The space outside is really nice but it's not provided by the coffee people to the very small space but it's not anything special. The mocha really needs more sugar in my liking, but I guess people don't like that much sugar in their coffee even after adding a ton of sugar it still doesn't taste very nice.",
@@ -690,9 +690,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "story-coffee-june-15-2025",
-    date: "June 15th",
-    drink: "Iced Late",
-    shopName: "story coffee livermore",
+    date: "June 15th, 2025",
+    drink: "Iced Latte",
+    shopName: "Story Coffee (Livermore, CA)",
     rating: 6,
     review:
       "very nice coffee, but not enough sugar viscosity for an ice latte is very nice. Vibe is very nice, but I wish they had more tears outside. Not my cup of tea",
@@ -701,9 +701,9 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "tatte-june-29-2025",
-    date: "June 29th",
-    drink: "Iced mocha",
-    shopName: "tatte bakery & cafe foggy bottom",
+    date: "June 29th, 2025",
+    drink: "Iced Mocha",
+    shopName: "Tatte Bakery & Café (Washington, DC)",
     rating: 9.5,
     review:
       "Best iced mocha I've had. Much more viscous than other ones. Rich in Taste sweet and everything. The best part is there is too much space to sit in and outside. And in the nearby plaza. The almond croissant was awesome but I do wish they take the incicitive to warm it it up. Since it's my first time buying an almond croissant I didn't know you should warm it up so didn't the taste of that is 8/10 becuz of that. I don't know the customs and I could've asked later but I was waiting for my lyft",
@@ -712,31 +712,31 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "coffee-fellows-july-4-2025",
-    date: "July 4th",
+    date: "July 4th, 2025",
     drink: "Cappuccino",
-    shopName: "coffee fellows frankfurt airport",
+    shopName: "Coffee Fellows (Frankfurt, Germany)",
     rating: 9,
     review:
       "Great coffee. Right viscosity maybe it's just the way I like my coffee but I need more sugar.",
-    isChain: true,
+    isChain: false,
     location: DEFAULT_LOCATION,
   },
   {
     id: "costa-july-6-2025",
-    date: "July 6th",
-    drink: "Chocolate Frappe cold",
+    date: "July 6th, 2025",
+    drink: "Chocolate Frappe Cold",
     shopName: "Costa Coffee",
     rating: 9.2,
     review:
       "Probably the best cold drink I've had. There is coffee in it but chocolate is the think",
-    isChain: true,
+    isChain: false,
     location: DEFAULT_LOCATION,
   },
   {
-    id: "tim-hortons-nov-6-2024",
-    date: "Nov 6th",
+    id: "tim-hortons-nov-6-2025",
+    date: "Nov 6th, 2025",
     drink: "Double Double",
-    shopName: "Tim Hortons - 18 Yorkville Ave, Toronto, ON M4W 1L4",
+    shopName: "Tim Hortons",
     rating: 9,
     review:
       "Smooth Drink, taste good, but a bit too sugary. but I feel like it is more water than milk.",
@@ -744,9 +744,9 @@ export const coffeeShops: CoffeeShop[] = [
     location: DEFAULT_LOCATION,
   },
   {
-    id: "tim-hortons-oct-30-2024",
-    date: "Oct 30th",
-    drink: "Iced cap with protein",
+    id: "tim-hortons-oct-30-2025",
+    date: "Oct 30th, 2025",
+    drink: "Iced Cap with Protein",
     shopName: "Tim Hortons",
     rating: 9.2,
     review:
@@ -756,13 +756,24 @@ export const coffeeShops: CoffeeShop[] = [
   },
   {
     id: "moonbean-nov-18-2025",
-    date: "Nov 18th 2025",
-    drink: "mocha",
-    shopName: "Moonbean coffee company",
+    date: "Nov 18th, 2025",
+    drink: "Mocha",
+    shopName: "Moonbean Coffee Company",
     rating: 8.7,
     review:
       "Coffee. It is true my pallet more diabitites than off other people but the coffee is good. The bean is good. But nothgins tanks out. But I'm a simple man. The people are awesome so it boosts it a lot. A lot of cool oeioke, and regular customers. So you can tell. Cheaper than the other places. The food looks good.",
     isChain: false,
+    location: DEFAULT_LOCATION,
+  },
+  {
+    id: "tim-hortons-dec-22-2025",
+    date: "Dec 22nd, 2025",
+    drink: "Tim Double Double Dark Roast",
+    shopName: "Tim Hortons",
+    rating: 9,
+    review:
+      "prime coffee. great coffee. bit milkey tho but def worth the money.",
+    isChain: true,
     location: DEFAULT_LOCATION,
   },
 ];
