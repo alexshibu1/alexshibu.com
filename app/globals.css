@@ -16,8 +16,13 @@ body {
 
   margin: 0;
 
-  font-family: var(--font-plex-sans), system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    var(--font-plex-sans),
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 
   background: #ffffff;
 
@@ -82,7 +87,9 @@ body {
   padding: 4.5rem 2rem 4rem 5rem;
 
   font-family: var(--font-inter), system-ui, sans-serif;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 /* Brand/Header Block */
@@ -114,7 +121,9 @@ body {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   transform: translateZ(0);
   transform-origin: left center;
-  transition: letter-spacing 0.3s ease, transform 0.3s ease;
+  transition:
+    letter-spacing 0.3s ease,
+    transform 0.3s ease;
   cursor: pointer;
 }
 
@@ -168,7 +177,9 @@ body {
 
   text-decoration: none;
 
-  transition: color 160ms ease-out, transform 160ms ease-out;
+  transition:
+    color 160ms ease-out,
+    transform 160ms ease-out;
 }
 
 .nav-link::before {
@@ -198,7 +209,9 @@ body {
 
   z-index: -1;
 
-  transition: opacity 160ms ease-out, transform 160ms ease-out,
+  transition:
+    opacity 160ms ease-out,
+    transform 160ms ease-out,
     box-shadow 160ms ease-out;
 }
 
@@ -602,7 +615,9 @@ body {
   line-height: 1.4;
   vertical-align: baseline;
   text-decoration: none !important;
-  transition: color 0.15s ease, opacity 0.15s ease;
+  transition:
+    color 0.15s ease,
+    opacity 0.15s ease;
   letter-spacing: -0.01em; /* Tighter letter spacing for cleaner look */
 }
 
@@ -633,7 +648,9 @@ body {
   font-size: 0.9em;
   text-decoration: none !important;
   opacity: 0.6;
-  transition: opacity 0.15s ease, transform 0.15s ease;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
   color: #868686 !important;
   line-height: 1;
   margin-left: 0.4rem; /* Space between icons */
@@ -1093,5 +1110,159 @@ body {
 
   .page-content {
     max-width: 800px;
+  }
+}
+
+/* Coffee page styles */
+
+.coffee-content {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.coffee-map-container {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+/* Custom marker styles */
+.custom-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Coffee table styles */
+.coffee-table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.coffee-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-plex-sans), system-ui, sans-serif;
+  font-size: 14px;
+}
+
+.coffee-table thead {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.coffee-table th {
+  text-align: left;
+  padding: 0.5rem 0.5rem;
+  font-weight: 500;
+  color: #555;
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+  font-size: 12px;
+}
+
+.coffee-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.coffee-table th.sortable:hover {
+  color: #222;
+  background-color: #f9fafb;
+}
+
+.coffee-table tbody tr {
+  border-bottom: 1px solid #f3f4f6;
+  transition: background-color 0.12s ease;
+  cursor: pointer;
+}
+
+.coffee-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.coffee-table tbody tr.selected-row {
+  background-color: #fdf2f2;
+}
+
+.coffee-table td {
+  padding: 0.5rem 0.5rem;
+  color: #555;
+  vertical-align: top;
+}
+
+.coffee-table .date-cell {
+  font-size: 12px;
+  color: #999;
+  white-space: nowrap;
+  width: 100px;
+}
+
+.coffee-table .shop-cell {
+  font-weight: 500;
+  color: #333;
+  min-width: 150px;
+}
+
+.coffee-table .drink-cell {
+  color: #777;
+  font-style: italic;
+  min-width: 120px;
+}
+
+.coffee-table .rating-cell {
+  font-weight: 500;
+  color: #e11d48;
+  white-space: nowrap;
+  width: 80px;
+}
+
+.coffee-table .review-cell {
+  color: #666;
+  line-height: 1.5;
+  max-width: 400px;
+}
+
+/* Chain badge */
+.chain-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Mobile responsive */
+@media (max-width: 430px) {
+  .coffee-map-container {
+    height: 300px !important;
+  }
+
+  .coffee-table-container {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .coffee-table {
+    font-size: 12px;
+    min-width: 600px;
+  }
+
+  .coffee-table th,
+  .coffee-table td {
+    padding: 0.5rem;
+  }
+
+  .coffee-table .review-cell {
+    max-width: 200px;
   }
 }

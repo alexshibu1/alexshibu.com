@@ -233,8 +233,14 @@ const LORE: LoreItem[] = [
   {
     id: "missing-relic-film-2026-01",
     date: "01.2026",
-    line: "Four-day sprint to film the missing relic story",
+    line: "Spent 4 days filming and creating a film about our missing relic",
     more: "Jan 2026 I spent four straight days making my first film in a long time, documenting the story of the missing relic at our church.",
+    links: [
+      {
+        label: "Film",
+        url: "https://www.instagram.com/p/DUB6-6hjtkp/",
+      },
+    ],
   },
   {
     id: "italy-24hr-no-internet-2024-08",
