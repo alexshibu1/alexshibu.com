@@ -1284,6 +1284,32 @@ body {
   letter-spacing: 0.05em;
 }
 
+/* Clickable stats (e.g., Unique cities) */
+.stat-button {
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.stat-button .stat-value,
+.stat-button .stat-label {
+  transition: color 0.15s ease;
+}
+
+/* Slightly red on hover */
+.stat-button:hover .stat-value,
+.stat-button:hover .stat-label {
+  color: #ff3a3a;
+}
+
+/* Stay red while active (toggle on/off) */
+.stat-button.active .stat-value,
+.stat-button.active .stat-label {
+  color: #ff3a3a;
+}
+
 /* Mobile responsive */
 @media (max-width: 430px) {
   .coffee-stats {

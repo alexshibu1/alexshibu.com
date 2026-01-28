@@ -12,40 +12,100 @@ interface CoffeeTableProps {
   onShopClick?: (shopId: string) => void;
 }
 
+// Principle: keep “derivation rules” pure and reusable.
+// Why: multiple features (stats + filtering) should compute “city” the same way.
+function getCityLabel(shop: CoffeeShop): string {
+  // Heuristic: if the shop name includes "(City, Country)" or "(City, State)",
+  // treat that parenthetical as the city label. Otherwise, assume Toronto.
+  //
+  // Why: your dataset encodes travel cafes in the name (e.g. "Ritual Coffee (San Francisco)"),
+  // but most Toronto entries have no explicit city field.
+  const match = shop.shopName.match(/\(([^)]+)\)\s*$/);
+  return match?.[1]?.trim() || "Toronto";
+}
+
+function isExplicitNonTorontoCity(shop: CoffeeShop): boolean {
+  // Principle: don’t “invent” cities for Toronto-only entries.
+  // Why: “Unique cities” is meant to highlight travel cities encoded in parentheses.
+  return /\(([^)]+)\)\s*$/.test(shop.shopName);
+}
+
 export default function CoffeeTable({
   shops,
   selectedShopId,
-  onShopClick,
 }: CoffeeTableProps) {
   const [sortField, setSortField] = useState<SortField>("date");
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
   const [filteredShop, setFilteredShop] = useState<string | null>(null);
+  const [citySamplerMode, setCitySamplerMode] = useState(false);
 
   // Calculate stats with actual average order values
   const stats = useMemo(() => {
     const uniqueCafes = new Set(shops.map((s) => s.shopName)).size;
+    const uniqueCities = new Set(
+      shops.filter(isExplicitNonTorontoCity).map((s) => getCityLabel(s)),
+    ).size;
 
-    // Average order values per chain/cafe type (CAD)
-    const priceMap: Record<string, number> = {
-      "Tim Hortons": 2.1,
-      Starbucks: 4.0,
-      "Second Cup": 4.5,
-      "Pret A Manger": 4.5,
-      "Aroma Espresso Bar": 4.5,
-      "Costa Coffee": 4.5,
-      Walmart: 2.5,
-      "Coffee Fellows": 4.0,
-    };
+    // Principle: estimate per DRINK, not per SHOP.
+    // Why: your dataset includes what you ordered (iced/frappe/hot chocolate/etc),
+    // and those items have meaningfully different price bands even at the same cafe.
+    function normalizeShopNameForPricing(shopName: string): string {
+      // Strip trailing location qualifiers like "Ritual Coffee (San Francisco)"
+      // so pricing rules match the underlying brand.
+      return shopName.replace(/\s*\([^)]*\)\s*$/, "").trim();
+    }
 
-    // Calculate total dollars spent based on actual prices
+    function estimateDrinkPriceCAD(shop: CoffeeShop): number {
+      const shopKey = normalizeShopNameForPricing(shop.shopName);
+      const drink = shop.drink.toLowerCase();
+
+      // Baseline “typical drink” price by shop/chain (CAD-ish).
+      // (These are intentionally rough; the drink modifiers below do most of the work.)
+      const baseByShop: Record<string, number> = {
+        "Tim Hortons": 2.5,
+        Starbucks: 4.8,
+        "Second Cup": 4.8,
+        "Pret A Manger": 4.8,
+        "Aroma Espresso Bar": 5.0,
+        "Costa Coffee": 5.0,
+        Walmart: 2.5,
+        "Coffee Fellows": 5.0,
+      };
+
+      // Start from a shop baseline; default assumes an indie cafe drink.
+      let price = baseByShop[shopKey] ?? 5.25;
+
+      // Drink-based adjustments (keywords → add/subtract).
+      // Why: “frappe/iced cap” usually costs more than “latte”; hot chocolate is often cheaper.
+      if (drink.includes("frappe") || drink.includes("iced cap")) price += 1.25;
+      if (drink.includes("iced")) price += 0.5;
+      if (drink.includes("hot chocolate")) price -= 0.75;
+      if (drink.includes("london fog")) price += 0.25;
+
+      // Espresso drinks (light bump for “crafted” drinks)
+      if (
+        drink.includes("latte") ||
+        drink.includes("cappuccino") ||
+        drink.includes("macchiato") ||
+        drink.includes("mocha")
+      ) {
+        price += 0.35;
+      }
+
+      // Keep the estimator sane.
+      price = Math.max(1.5, Math.min(price, 9.5));
+      return price;
+    }
+
+    // Calculate total dollars spent based on estimated per-drink prices
     const estimatedDollars = shops.reduce((total, shop) => {
-      const price = priceMap[shop.shopName] || 4.5; // Default $4.50 for regular cafes
-      return total + price;
+      return total + estimateDrinkPriceCAD(shop);
     }, 0);
 
     return {
       drinks: shops.length,
       uniqueCafes,
+      uniqueCities,
       estimatedDollars: Math.round(estimatedDollars * 10) / 10, // Round to 1 decimal
     };
   }, [shops]);
@@ -57,6 +117,34 @@ export default function CoffeeTable({
     // If a chain shop is clicked, filter to show only that shop
     if (filteredShop) {
       filtered = shops.filter((s) => s.shopName === filteredShop);
+    }
+
+    // City sampler mode: show one representative cafe per city (highest-rated entry).
+    // Why: “different cafes from different cities” is a summary view, not every drink you had there.
+    if (citySamplerMode) {
+      // Only include explicit (non-Toronto) city-labeled entries, e.g. "(San Francisco)".
+      filtered = filtered.filter(isExplicitNonTorontoCity);
+
+      const bestByCity = new Map<string, CoffeeShop>();
+
+      for (const shop of filtered) {
+        const city = getCityLabel(shop);
+        const currentBest = bestByCity.get(city);
+        if (!currentBest) {
+          bestByCity.set(city, shop);
+          continue;
+        }
+
+        // Pick higher rating; if tied, pick the newer date.
+        const better =
+          shop.rating > currentBest.rating ||
+          (shop.rating === currentBest.rating &&
+            normalizeDate(shop.date) > normalizeDate(currentBest.date));
+
+        if (better) bestByCity.set(city, shop);
+      }
+
+      filtered = Array.from(bestByCity.values());
     }
 
     if (!sortField) return filtered;
@@ -86,10 +174,11 @@ export default function CoffeeTable({
       if (aValue > bValue) return sortDirection === "asc" ? 1 : -1;
       return 0;
     });
-  }, [shops, sortField, sortDirection, filteredShop]);
+  }, [shops, sortField, sortDirection, filteredShop, citySamplerMode]);
 
   const handleChainClick = (shopName: string, e: React.MouseEvent) => {
     e.stopPropagation();
+    setCitySamplerMode(false); // Don’t combine chain filter with city sampler mode
     if (filteredShop === shopName) {
       setFilteredShop(null); // Clear filter if clicking same shop
     } else {
@@ -123,6 +212,17 @@ export default function CoffeeTable({
           <span className="stat-value">${stats.estimatedDollars}</span>
           <span className="stat-label">spent</span>
         </div>
+        <button
+          type="button"
+          className={`stat-item stat-button ${citySamplerMode ? "active" : ""}`}
+          onClick={() => {
+            setFilteredShop(null);
+            setCitySamplerMode((v) => !v);
+          }}
+        >
+          <span className="stat-value">{stats.uniqueCities}</span>
+          <span className="stat-label">unique cities</span>
+        </button>
         <div className="stat-item">
           <span className="stat-value">{stats.uniqueCafes}</span>
           <span className="stat-label">unique cafes</span>
@@ -130,11 +230,22 @@ export default function CoffeeTable({
       </div>
 
       {/* Filter indicator */}
-      {filteredShop && (
+      {(filteredShop || citySamplerMode) && (
         <div className="mb-2 text-sm text-gray-600">
-          Showing reviews from <strong>{filteredShop}</strong>{" "}
+          {filteredShop ? (
+            <>
+              Showing reviews from <strong>{filteredShop}</strong>{" "}
+            </>
+          ) : (
+            <>
+              Showing <strong>one cafe per city</strong>{" "}
+            </>
+          )}
           <button
-            onClick={() => setFilteredShop(null)}
+            onClick={() => {
+              setFilteredShop(null);
+              setCitySamplerMode(false);
+            }}
             className="text-gray-400 hover:text-gray-600 underline"
           >
             (clear)

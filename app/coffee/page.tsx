@@ -9,8 +9,11 @@ export default function CoffeePage() {
 
   return (
     <main className="page-content coffee-page">
-      <h1 className="hero-heading">coffee</h1>
-      <p className="hero-subline">reviews of downtown Toronto cafes</p>
+      <h1 className="hero-heading">Coffee Reviews</h1>
+      <p className="hero-subline">
+        reviews of cafes in Toronto + others that I&apos;ve been to when
+        traveling
+      </p>
 
       <div className="mt-4 mb-2">
         <a
