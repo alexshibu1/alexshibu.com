@@ -25,6 +25,11 @@ const nextConfig = {
         destination: "/essay/nft",
         permanent: true,
       },
+      {
+        source: "/reject",
+        destination: "/rejected",
+        permanent: true,
+      },
     ];
   },
 };
