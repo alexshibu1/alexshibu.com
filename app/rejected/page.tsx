@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import type { ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 
 const TARGET_CONVERSION_RATE = 55; // low, under 60%: (applications sent - rejections) / applications sent
@@ -133,6 +134,7 @@ export default function RejectedPage() {
           <ReactMarkdown
             components={{
               img: ({ src, alt }) => (
+                // eslint-disable-next-line @next/next/no-img-element -- markdown images: dynamic src, no known dimensions
                 <img
                   src={src ?? ""}
                   alt={alt ?? ""}
@@ -141,15 +143,17 @@ export default function RejectedPage() {
                 />
               ),
               p: ({ children }) => {
-                // Extract text content from React children (simple approach)
-                const getTextContent = (node: any): string => {
+                const getTextContent = (node: ReactNode): string => {
+                  if (node == null) return "";
                   if (typeof node === "string") return node;
                   if (typeof node === "number") return String(node);
                   if (Array.isArray(node))
                     return node.map(getTextContent).join("");
-                  if (node && typeof node === "object" && "props" in node) {
-                    const props = node.props as any;
-                    if (props?.children) return getTextContent(props.children);
+                  if (typeof node === "object" && "props" in node) {
+                    const props = (node as { props: { children?: ReactNode } })
+                      .props;
+                    if (props?.children != null)
+                      return getTextContent(props.children);
                   }
                   return "";
                 };
