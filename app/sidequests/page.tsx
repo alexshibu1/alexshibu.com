@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-export default function OthersPage() {
+export default function SidequestsPage() {
   return (
     <main className="page-content">
       <h1 className="hero-heading" style={{ marginBottom: "0.25rem" }}>
-        others
+        sidequests
       </h1>
       <p className="text-base text-gray-600">
         tiny side quests and lists that don&apos;t fit anywhere else.
@@ -61,4 +61,3 @@ export default function OthersPage() {
     </main>
   );
 }
-

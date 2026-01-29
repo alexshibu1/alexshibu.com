@@ -19,7 +19,7 @@ function readAllEssayMeta(): EssayMeta[] {
   const entries = fs.readdirSync(essaysDir, { withFileTypes: true });
 
   const metas: EssayMeta[] = entries
-    .filter((e) => e.isDirectory())
+    .filter((e) => e.isDirectory() && e.name !== "rejection")
     .map((dir) => {
       const mdxPath = path.join(essaysDir, dir.name, "page.mdx");
       if (!fs.existsSync(mdxPath)) return null;
@@ -65,7 +65,7 @@ function readAllEssayMeta(): EssayMeta[] {
       // 3. Fallback: if title is in EssayHeader but not metadata
       if (title === dir.name) {
         const headerTitleMatch = raw.match(
-          /<EssayHeader[^>]*title=["']([^"']*)["']/
+          /<EssayHeader[^>]*title=["']([^"']*)["']/,
         );
         if (headerTitleMatch) {
           title = headerTitleMatch[1];
@@ -81,7 +81,7 @@ function readAllEssayMeta(): EssayMeta[] {
       }
 
       console.log(
-        `Parsed essay: ${dir.name}, Title: ${title}, Date: ${date}, Type: ${type}`
+        `Parsed essay: ${dir.name}, Title: ${title}, Date: ${date}, Type: ${type}`,
       );
 
       return {

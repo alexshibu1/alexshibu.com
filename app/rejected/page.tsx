@@ -1,14 +1,190 @@
-"use client";
+import fs from "fs";
+import path from "path";
+import ReactMarkdown from "react-markdown";
 
-export default function ExperimentsPage() {
+const TARGET_CONVERSION_RATE = 55; // low, under 60%: (applications sent - rejections) / applications sent
+
+/** Count screenshot images in markdown (lines matching ![...](...) ). */
+function countScreenshotsInMarkdown(content: string | null): number {
+  if (!content) return 0;
+  const matches = content.match(/!\[[^\]]*\]\([^)]+\)/g);
+  return matches ? matches.length : 0;
+}
+
+/** Read rejection log from app/rejected/rejection-log.md. Strips the "Alex's Rejections" heading so it isn't shown. */
+function getRejectionMarkdown(): string | null {
+  const filePath = path.join(
+    process.cwd(),
+    "app",
+    "rejected",
+    "rejection-log.md",
+  );
+  if (!fs.existsSync(filePath)) return null;
+  let content = fs.readFileSync(filePath, "utf8");
+  // Remove the first line if it's the title heading (handles straight and curly apostrophe)
+  content = content.replace(/^#\s*Alex['\u2019]s\s+Rejections\s*\n\n?/i, "");
+  return content;
+}
+
+export default function RejectedPage() {
+  const rejectionContent = getRejectionMarkdown();
+  const rejectionsLogged = countScreenshotsInMarkdown(rejectionContent);
+  // applications sent so conversion rate = target: (sent - rejections) / sent => sent = rejections / (1 - rate)
+  const applicationsSent =
+    rejectionsLogged > 0
+      ? Math.round(rejectionsLogged / (1 - TARGET_CONVERSION_RATE / 100))
+      : 400;
+  const conversionRate = `~${TARGET_CONVERSION_RATE}%`;
+
   return (
     <main className="page-content">
       <h1 className="hero-heading">rejected</h1>
       <p className="hero-subline">
-        {" "}
-        running list of rejections. you miss the shots you don&apos;t take, and
-        throwing potatoes gets you far.
+        Running log of rejections. Used as training data for a better ML model.
+        Simply me throwing enough potatoes at the wall.
       </p>
+
+      <p>
+        Although it may seem like only a small portion of the attepmpts convert,
+        the ones that do at the right time, are tremendously more meaningful in
+        creating asymmetric outcomes I&apos;m looking for. I try to think
+        it&apos;s God. Great miracles come to people in motion.
+      </p>
+
+      {/* Stats: rejections logged = screenshot count, conversion under 60% */}
+      <section
+        className="grid grid-cols-1 sm:grid-cols-3 gap-px rounded-xl bg-neutral-100 overflow-hidden mb-8 mt-6 shadow-sm"
+        aria-label="Rejection log stats"
+      >
+        <div className="bg-white rounded-l-xl sm:rounded-none px-6 py-5 flex flex-col gap-0.5">
+          <span className="text-[11px] font-semibold uppercase tracking-widest text-neutral-500">
+            Rejections logged
+          </span>
+          <span className="text-3xl font-bold tabular-nums text-neutral-900 tracking-tight">
+            {rejectionsLogged}
+          </span>
+        </div>
+        <div className="bg-white px-6 py-5 flex flex-col gap-0.5">
+          <span className="text-[11px] font-semibold uppercase tracking-widest text-neutral-500">
+            Applications sent
+          </span>
+          <span className="text-3xl font-bold tabular-nums text-neutral-900 tracking-tight">
+            ~{applicationsSent}
+          </span>
+        </div>
+        <div className="bg-white rounded-r-xl sm:rounded-none px-6 py-5 flex flex-col gap-0.5">
+          <span className="text-[11px] font-semibold uppercase tracking-widest text-neutral-500">
+            Conversion rate
+          </span>
+          <span className="text-3xl font-bold tabular-nums text-neutral-900 tracking-tight">
+            {conversionRate}
+          </span>
+        </div>
+      </section>
+
+      <div className="flex flex-col sm:flex-row sm:items-center gap-4 my-10">
+        <p className="text-base text-neutral-600 italic tracking-tight sm:max-w-[240px] shrink-0 pl-4 border-l-2 border-neutral-200 leading-relaxed">
+          Best experienced scrolling with this playlist ❤️
+        </p>
+        <iframe
+          title="Spotify playlist – soundtrack for reading"
+          className="rounded-xl shrink-0 w-full sm:w-auto sm:min-w-[520px] sm:max-w-[640px]"
+          src="https://open.spotify.com/embed/playlist/6IWoTmIKn5lCE3LdBSqW2D?utm_source=generator&theme=0"
+          width="640"
+          height="152"
+          frameBorder={0}
+          allowFullScreen
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        />
+      </div>
+
+      <section className="mt-2 pb-8">
+        <a
+          href="https://alexshibu.notion.site/Alex-s-Rejections-1a1305d8d2448059bc5dd5e6c499d0f5"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-neutral-300 bg-neutral-50 text-neutral-700 font-medium hover:bg-neutral-100 hover:border-neutral-400 transition-colors"
+        >
+          View the full rejection log
+          <svg
+            className="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+            />
+          </svg>
+        </a>
+      </section>
+
+      {/* Rejection essay + screenshots from app/essay/rejection/*.md */}
+      {rejectionContent && (
+        <section
+          className="mt-10 pt-8 border-t border-neutral-200 rejection-markdown"
+          aria-label="Rejection log screenshots"
+        >
+          <ReactMarkdown
+            components={{
+              img: ({ src, alt }) => (
+                <img
+                  src={src ?? ""}
+                  alt={alt ?? ""}
+                  className="w-full rounded-lg my-4 pointer-events-none select-none"
+                  draggable={false}
+                />
+              ),
+              p: ({ children }) => {
+                // Extract text content from React children (simple approach)
+                const getTextContent = (node: any): string => {
+                  if (typeof node === "string") return node;
+                  if (typeof node === "number") return String(node);
+                  if (Array.isArray(node))
+                    return node.map(getTextContent).join("");
+                  if (node && typeof node === "object" && "props" in node) {
+                    const props = node.props as any;
+                    if (props?.children) return getTextContent(props.children);
+                  }
+                  return "";
+                };
+
+                const text = getTextContent(children).trim();
+
+                // Comments are standalone text lines that:
+                // - Are not empty
+                // - Don't start with markdown image syntax (handled by img component)
+                // - Don't start with heading markers
+                // - Are likely personal commentary (short standalone thoughts)
+                // Exclude very long paragraphs (likely actual content, not comments)
+                const isComment =
+                  text &&
+                  text.length > 0 &&
+                  text.length < 200 && // Comments are typically short
+                  !text.match(/^#+\s/) && // Not a heading
+                  !text.match(/^Screenshot \d{4}-\d{2}-\d{2}/); // Not image alt text pattern
+
+                if (isComment) {
+                  return (
+                    <div className="my-4 px-4 py-3 bg-neutral-100 border-l-4 border-neutral-300 rounded-r-lg text-neutral-600 italic text-sm">
+                      {children}
+                    </div>
+                  );
+                }
+                // Regular paragraph
+                return <p className="mb-4">{children}</p>;
+              },
+            }}
+          >
+            {rejectionContent}
+          </ReactMarkdown>
+        </section>
+      )}
     </main>
   );
 }

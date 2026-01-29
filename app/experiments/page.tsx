@@ -197,8 +197,8 @@ export default function ExperimentsPage() {
               <span>Can 20 pushups a day change my life?</span>
             </h3>
             <p className="text-xs text-gray-600 leading-relaxed">
-              First thing every morning (no decisions). Aimed for strict reps (no
-              knees), but often used knee pushups to keep the streak alive.
+              First thing every morning (no decisions). Aimed for strict reps
+              (no knees), but often used knee pushups to keep the streak alive.
             </p>
           </div>
 
@@ -208,23 +208,26 @@ export default function ExperimentsPage() {
               STATS
             </div>
             <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 border border-emerald-200 px-2.5 py-0.5 text-xs leading-none text-gray-700 shadow-sm">
-              <span className="text-gray-500 font-medium">Consistency</span>
-              <span className="font-semibold text-gray-900">92%</span>
-              <span className="w-14 bg-gray-100 rounded-full h-1.5 overflow-hidden">
-                <span className="block bg-emerald-600 h-1.5 rounded-full" style={{ width: "92%" }} />
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 border border-emerald-200 px-2.5 py-0.5 text-xs leading-none text-gray-700 shadow-sm">
+                <span className="text-gray-500 font-medium">Consistency</span>
+                <span className="font-semibold text-gray-900">92%</span>
+                <span className="w-14 bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                  <span
+                    className="block bg-emerald-600 h-1.5 rounded-full"
+                    style={{ width: "92%" }}
+                  />
+                </span>
               </span>
-            </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 border border-emerald-200 px-2.5 py-0.5 text-xs leading-none text-gray-700 shadow-sm">
-              <span className="text-gray-500 font-medium">Total</span>
-              <span className="font-semibold text-gray-900">7,300+</span>
-              <span className="text-gray-500">pushups</span>
-            </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 border border-emerald-200 px-2.5 py-0.5 text-xs leading-none text-gray-700 shadow-sm">
-              <span className="text-gray-500 font-medium">By the end</span>
-              <span className="font-semibold text-gray-900">~15</span>
-              <span className="text-gray-500">strict unbroken</span>
-            </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 border border-emerald-200 px-2.5 py-0.5 text-xs leading-none text-gray-700 shadow-sm">
+                <span className="text-gray-500 font-medium">Total</span>
+                <span className="font-semibold text-gray-900">7,300+</span>
+                <span className="text-gray-500">pushups</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 border border-emerald-200 px-2.5 py-0.5 text-xs leading-none text-gray-700 shadow-sm">
+                <span className="text-gray-500 font-medium">By the end</span>
+                <span className="font-semibold text-gray-900">~15</span>
+                <span className="text-gray-500">strict unbroken</span>
+              </span>
             </div>
           </div>
 
@@ -245,7 +248,9 @@ export default function ExperimentsPage() {
           {/* Result (sentence) */}
           <p className="text-xs text-gray-700 leading-relaxed mb-2">
             <span className="font-semibold text-emerald-900">Result:</span>{" "}
-            <span className="font-semibold text-gray-900">Yes — massively.</span>{" "}
+            <span className="font-semibold text-gray-900">
+              Yes — massively.
+            </span>{" "}
             Weight loss, better body image, mental toughness, confidence, and
             consistency.
           </p>
@@ -253,7 +258,9 @@ export default function ExperimentsPage() {
           {/* Footer Metadata */}
           <div className="flex items-center justify-between text-xs text-gray-500 pt-1.5 border-t border-gray-100">
             <span>Outcome: Yes — massively</span>
-            <span className="text-emerald-700 font-medium">Built the habit</span>
+            <span className="text-emerald-700 font-medium">
+              Built the habit
+            </span>
           </div>
         </div>
       </div>
