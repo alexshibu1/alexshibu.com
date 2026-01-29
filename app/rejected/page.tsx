@@ -2,8 +2,9 @@ import fs from "fs";
 import path from "path";
 import type { ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
+import RejectionStats from "./RejectionStats";
 
-const TARGET_CONVERSION_RATE = 55; // low, under 60%: (applications sent - rejections) / applications sent
+const TARGET_CONVERSION_RATE = 35; // (applications sent - rejections) / applications sent
 
 /** Count screenshot images in markdown (lines matching ![...](...) ). */
 function countScreenshotsInMarkdown(content: string | null): number {
@@ -45,51 +46,26 @@ export default function RejectedPage() {
         Simply me throwing enough potatoes at the wall.
       </p>
 
-      <p>
+      <p className="mb-4 sm:mb-6">
         Although it may seem like only a small portion of the attepmpts convert,
         the ones that do at the right time, are tremendously more meaningful in
         creating asymmetric outcomes I&apos;m looking for. I try to think
         it&apos;s God. Great miracles come to people in motion.
       </p>
 
-      {/* Stats: rejections logged = screenshot count, conversion under 60% */}
-      <section
-        className="grid grid-cols-1 sm:grid-cols-3 gap-px rounded-xl bg-neutral-100 overflow-hidden mb-8 mt-6 shadow-sm"
-        aria-label="Rejection log stats"
-      >
-        <div className="bg-white rounded-l-xl sm:rounded-none px-6 py-5 flex flex-col gap-0.5">
-          <span className="text-[11px] font-semibold uppercase tracking-widest text-neutral-500">
-            Rejections logged
-          </span>
-          <span className="text-3xl font-bold tabular-nums text-neutral-900 tracking-tight">
-            {rejectionsLogged}
-          </span>
-        </div>
-        <div className="bg-white px-6 py-5 flex flex-col gap-0.5">
-          <span className="text-[11px] font-semibold uppercase tracking-widest text-neutral-500">
-            Applications sent
-          </span>
-          <span className="text-3xl font-bold tabular-nums text-neutral-900 tracking-tight">
-            ~{applicationsSent}
-          </span>
-        </div>
-        <div className="bg-white rounded-r-xl sm:rounded-none px-6 py-5 flex flex-col gap-0.5">
-          <span className="text-[11px] font-semibold uppercase tracking-widest text-neutral-500">
-            Conversion rate
-          </span>
-          <span className="text-3xl font-bold tabular-nums text-neutral-900 tracking-tight">
-            {conversionRate}
-          </span>
-        </div>
-      </section>
+      <RejectionStats
+        rejectionsLogged={rejectionsLogged}
+        applicationsSentComputed={applicationsSent}
+        conversionRate={conversionRate}
+      />
 
-      <div className="flex flex-col sm:flex-row sm:items-center gap-4 my-10">
-        <p className="text-base text-neutral-600 italic tracking-tight sm:max-w-[240px] shrink-0 pl-4 border-l-2 border-neutral-200 leading-relaxed">
+      <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 my-6 sm:my-10">
+        <p className="text-sm sm:text-base text-neutral-600 italic tracking-tight sm:max-w-[240px] shrink-0 pl-3 sm:pl-4 border-l-2 border-neutral-200 leading-relaxed">
           Best experienced scrolling with this playlist ❤️
         </p>
         <iframe
           title="Spotify playlist – soundtrack for reading"
-          className="rounded-xl shrink-0 w-full sm:w-auto sm:min-w-[520px] sm:max-w-[640px]"
+          className="rounded-xl w-full max-w-full sm:w-auto sm:min-w-[520px] sm:max-w-[640px] h-[152px] min-h-[80px]"
           src="https://open.spotify.com/embed/playlist/6IWoTmIKn5lCE3LdBSqW2D?utm_source=generator&theme=0"
           width="640"
           height="152"
@@ -100,12 +76,12 @@ export default function RejectedPage() {
         />
       </div>
 
-      <section className="mt-2 pb-8">
+      <section className="mt-2 pb-6 sm:pb-8">
         <a
           href="https://alexshibu.notion.site/Alex-s-Rejections-1a1305d8d2448059bc5dd5e6c499d0f5"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-neutral-300 bg-neutral-50 text-neutral-700 font-medium hover:bg-neutral-100 hover:border-neutral-400 transition-colors"
+          className="inline-flex items-center gap-2 min-h-[44px] px-5 py-3.5 sm:py-2.5 rounded-lg border border-neutral-300 bg-neutral-50 text-neutral-700 font-medium hover:bg-neutral-100 hover:border-neutral-400 active:scale-[0.98] transition-colors touch-manipulation"
         >
           View the full rejection log
           <svg
@@ -128,7 +104,7 @@ export default function RejectedPage() {
       {/* Rejection essay + screenshots from app/essay/rejection/*.md */}
       {rejectionContent && (
         <section
-          className="mt-10 pt-8 border-t border-neutral-200 rejection-markdown"
+          className="mt-6 pt-6 sm:mt-10 sm:pt-8 border-t border-neutral-200 rejection-markdown"
           aria-label="Rejection log screenshots"
         >
           <ReactMarkdown
@@ -138,8 +114,9 @@ export default function RejectedPage() {
                 <img
                   src={src ?? ""}
                   alt={alt ?? ""}
-                  className="w-full rounded-lg my-4 pointer-events-none select-none"
+                  className="w-full max-w-full h-auto rounded-lg my-3 sm:my-4 pointer-events-none select-none"
                   draggable={false}
+                  loading="lazy"
                 />
               ),
               p: ({ children }) => {
@@ -175,13 +152,12 @@ export default function RejectedPage() {
 
                 if (isComment) {
                   return (
-                    <div className="my-4 px-4 py-3 bg-neutral-100 border-l-4 border-neutral-300 rounded-r-lg text-neutral-600 italic text-sm">
+                    <div className="my-3 sm:my-4 px-3 sm:px-4 py-3 bg-neutral-100 border-l-4 border-neutral-300 rounded-r-lg text-neutral-600 italic text-sm">
                       {children}
                     </div>
                   );
                 }
-                // Regular paragraph
-                return <p className="mb-4">{children}</p>;
+                return <p className="mb-3 sm:mb-4">{children}</p>;
               },
             }}
           >
