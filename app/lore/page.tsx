@@ -87,6 +87,12 @@ function inferSortKey(date: string): number {
 
 const LORE: LoreItem[] = [
   {
+    id: "learned-drive-motorcycle-2025-09",
+    date: "09.2025",
+    line: "Learned to drive manuel and ride motorcycle",
+    more: "Learned to drive manuel on a Toyota Innova and a KIA while in India and 100 cc motorcycle Yamaha Rx 100. Nothing more fun!",
+  },
+  {
     id: "shopify-vanauley-2022-04",
     date: "04.2022",
     line: "First dollars on Shopify selling bath bombs",

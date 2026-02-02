@@ -338,7 +338,9 @@ export default function AboutPage() {
             <span className="about-ops-label inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-600 shadow-sm">
               Obj 09
             </span>
-            <span className="text-gray-800 about-ops-text">Lift 3x per week</span>
+            <span className="text-gray-800 about-ops-text">
+              Lift 3x per week
+            </span>
             <span className="about-ops-status sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing
             </span>
@@ -365,7 +367,9 @@ export default function AboutPage() {
 
       {/* Work with me */}
       <section>
-        <h2 className="text-xl font-semibold text-gray-900 mb-2">Work with me</h2>
+        <h2 className="text-xl font-semibold text-gray-900 mb-2">
+          Work with me
+        </h2>
         <p className="text-gray-700 leading-relaxed">
           Right now I&apos;m looking for internships at cool companies or
           startups, and would like to collaborate with people with similar
@@ -581,6 +585,17 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <p className="mt-0 pt-0 border-t border-neutral-200 text-center">
+        <a
+          href="https://docs.google.com/document/d/1j5WOx9gao1vKG2NpczVFo49O5kxLEFYmUHhnuPNFGag/edit?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs !text-neutral-200 hover:!text-neutral-400 transition-colors"
+        >
+          why I made this website!
+        </a>
+      </p>
     </main>
   );
 }
