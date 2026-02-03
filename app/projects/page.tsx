@@ -258,6 +258,17 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
+      name: "WagerAI",
+      description:
+        "The Polymarket for focus. A command terminal for deep work: open a position (task), add liquidity, execute or get liquidated. Built with Tempo Labs in 5 days—gamified to-dos with real stakes, a dashboard of portfolio and earnings, and a marketplace to see friends' positions. Try it at wagerai.vercel.app.",
+      link: "https://wagerai.vercel.app",
+      date: "Dec 2025",
+      repo: "https://github.com/alexshibu1/wagerai",
+      video: "",
+      writeup: "",
+      featured: true,
+    },
+    {
       name: "easyhacks.org - Hackathon for Rejects",
       description:
         "Created and led EasyHacks, a hackathon for everyone, rejected in an email thread from UBC nwhacks. It transformed into a 10-person operation for 170+ true beginners, from military veterans to high school students in Nepal, with 170+ participants and $8K in prizes raised from sponsors.",

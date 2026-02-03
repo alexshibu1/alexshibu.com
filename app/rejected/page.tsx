@@ -19,7 +19,7 @@ function getRejectionMarkdown(): string | null {
     process.cwd(),
     "app",
     "rejected",
-    "rejection-log.md",
+    "rejection-log.md"
   );
   if (!fs.existsSync(filePath)) return null;
   let content = fs.readFileSync(filePath, "utf8");
@@ -47,7 +47,7 @@ export default function RejectedPage() {
       </p>
 
       <p className="mb-4 sm:mb-6">
-        Although it may seem like only a small portion of the attepmpts convert,
+        Although it may seem like only a small portion of the attempts convert,
         the ones that do at the right time, are tremendously more meaningful in
         creating asymmetric outcomes I&apos;m looking for. I try to think
         it&apos;s God. Great miracles come to people in motion.
