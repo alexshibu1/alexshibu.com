@@ -2,8 +2,11 @@
 import Link from "next/link";
 import InteractiveHeading from "./components/waveHeading";
 
+// Hero inline links: override .page-content a (red in globals.css) with ! so gray wins
 const subtleLink =
-  "text-gray-500 hover:text-gray-800 transition-colors duration-150 cursor-pointer";
+  "group inline-flex items-baseline !text-gray-600 hover:!text-gray-800 !font-medium hover:underline hover:decoration-gray-400 hover:underline-offset-2 transition-all duration-150 cursor-pointer";
+const linkV4Arrow =
+  "inline-block max-w-0 ml-0 overflow-hidden opacity-0 whitespace-nowrap align-baseline text-[0.65em] group-hover:max-w-[1.25em] group-hover:opacity-100 group-hover:ml-0.5 transition-all duration-150";
 export default function Home() {
   return (
     <div className="page-content">
@@ -25,22 +28,41 @@ export default function Home() {
           document my{" "}
           <Link href="/lore" className={subtleLink}>
             journey
+            <span className={linkV4Arrow} aria-hidden="true">
+              ↗
+            </span>
           </Link>
           , and dive into rabbit holes and{" "}
           <Link href="/sidequests" className={subtleLink}>
             sidequests
+            <span className={linkV4Arrow} aria-hidden="true">
+              ↗
+            </span>
           </Link>
-          . I&apos;ve previously worked on everyhting from research at Technion on
-          decision theory during a war to running global hackathons and IG theme
-          pages for selling keto books and bath bombs.
+          . I&apos;ve previously worked on everything from research at Technion
+          on decision theory during a war to running global hackathons and IG
+          theme pages for selling keto books and bath bombs.
         </p>
         <p>
-          You can find me running in different cities, writing awful coffee
-          reviews, and throwing potatoes at the wall.
+          I love to running in different cities,{" "}
+          <Link href="/writing" className={subtleLink}>
+            write
+            <span className={linkV4Arrow} aria-hidden="true">
+              ↗
+            </span>
+          </Link>
+          , reviewing{" "}
+          <Link href="/coffee" className={subtleLink}>
+            coffee
+            <span className={linkV4Arrow} aria-hidden="true">
+              ↗
+            </span>
+          </Link>
+          , and doing hard things.
         </p>
         <p>
-          I will soon become the ultimate Swiss Army knife that can build useful
-          products,understand users, and scale with growth hacking.
+          My goal is to become the ultimate Swiss Army knife that can build
+          useful products, understand users, and grow hack.
         </p>
         <p>Join my internal board of directors, I would love to chat!</p>
         <p>Would love to chat!</p>
@@ -72,7 +94,17 @@ export default function Home() {
             >
               v2
             </a>
+            <span className="mx-1 text-gray-300">,</span>
           </span>
+          <span className="opacity-20 select-none">|</span>
+          <a
+            href="https://cloud.umami.is/analytics/us/share/OPUHKK1qkJtLbIAZ"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="!text-gray-500 opacity-50 hover:!text-red-500 hover:underline transition-colors hover:opacity-100"
+          >
+            stats
+          </a>
         </div>
       </footer>
       {/* 

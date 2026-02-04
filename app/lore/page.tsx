@@ -96,7 +96,7 @@ const LORE: LoreItem[] = [
     id: "shopify-vanauley-2022-04",
     date: "04.2022",
     line: "First dollars on Shopify selling bath bombs",
-    more: "Launched a Shopify storefront for bath bomb fundraising for the Vanauley homeless shelter, promoted via Instagram theme pages. Had around 600 folloewers. Learned e-commerce + order fulfillment and marketing.",
+    more: "Launched a Shopify storefront for bath bomb fundraising for the Vanauley homeless shelter, promoted via Instagram theme pages. Had around 600 followers. Learned e-commerce + order fulfillment and marketing.",
     links: [
       {
         label: "Screenshot",
@@ -107,7 +107,7 @@ const LORE: LoreItem[] = [
   {
     id: "easyhacks-2025-03",
     date: "03.2025",
-    line: "Created, led and funraised 8K for EasyHacks",
+    line: "Created, led and fundraised 8K for EasyHacks",
     more: "Hackathon for Rejects on easyhacks.org. Started from an accidental rejection email thread from UBC nwhacks. Turned into a 10 person team with 170+ beginners from 7+ countries and about $8K in prizes.",
     links: [
       {
@@ -126,7 +126,7 @@ const LORE: LoreItem[] = [
     id: "nfts-2021-05",
     date: "05.2021",
     line: "Turned $3K into $100K in NFTs then lost it all",
-    more: "Got super into NFTs cuz of Gary Vee. Took my YMCA internship money, about $3K, and went all in. Flipped Veefriends and World of Women, did some DeFi farming, lived in Discord. Ran it up portfolio to around $100K then the market crashed and I lost it all. I did once so I can do it again! :)",
+    more: "Got super into NFTs cuz of Gary Vee. Took my YMCA internship money, about $3K, and went all in. Flipped Veefriends and World of Women, did some DeFi farming, lived in Discord. Ran the portfolio up to around $100K then the market crashed and I lost it all. I did once so I can do it again! :)",
     links: [
       {
         label: "Some of my NFTs",
@@ -135,13 +135,13 @@ const LORE: LoreItem[] = [
     ],
   },
   {
-    id: "circus-clounz-2021-09",
+    id: "circus-clownz-2021-09",
     date: "09.2021",
-    line: "Created Circus Clounz NFT project ",
-    more: "Led a 4 person team for the Circus Clounz NFT project and learned Solidity. Starting building a whole ecossystem around it with token (circus penutz) and linktree tool (bio blox). At the end of the day no product market fit and launch failed.",
+    line: "Created Circus Clownz NFT project ",
+    more: "Led a 4 person team for the Circus Clownz NFT project and learned Solidity. Started building a whole ecosystem around it with token (circus penutz) and linktree tool (bio blox). At the end of the day no product market fit and launch failed.",
     links: [
       {
-        label: "Circus Clounz (archive)",
+        label: "Circus Clownz (archive)",
         url: "https://web.archive.org/web/20220128132945/https://circusclownz.com/",
       },
     ],
@@ -192,7 +192,7 @@ const LORE: LoreItem[] = [
     id: "poland-2025-07",
     date: "07.2025",
     line: "Went to Poland to teach tech and English",
-    more: "It was a traveling circus acorss Krakow and Warsaw. Led daily conversations, group sessions and acitivities for 80+ students. I mainly taught frameworks and pitching while helping teenagers build English confidence.",
+    more: "It was a traveling circus across Krakow and Warsaw. Led daily conversations, group sessions and activities for 80+ students. I mainly taught frameworks and pitching while helping teenagers build English confidence.",
   },
   {
     id: "half-murph-2025-05",
@@ -228,7 +228,7 @@ const LORE: LoreItem[] = [
     id: "first-book-finished-2025-11",
     date: "11.2025",
     line: "Finished my first book",
-    more: "Nov 2025 I finished my first full book cover to cover. Atomic Habits by James Clear.I've carried it acorss almost 20 flights for the past 2 years.",
+    more: "Nov 2025 I finished my first full book cover to cover. Atomic Habits by James Clear. I've carried it across almost 20 flights for the past 2 years.",
   },
   {
     id: "programming-serious-2025-12",
@@ -258,13 +258,13 @@ const LORE: LoreItem[] = [
     id: "yakov-research-2024-07",
     date: "07.2024",
     line: "Decision theory research with Professor Yakov in Haifa, Israel during a war",
-    more: "Research work with Professor Yakov, focused on info-gap decision theory. Optimizing for windfall while increasing robustness under severe uncertainty. One of the most intense and challenging experiences of my life. Transfored my thinking, travled acorss Israel and met some of my best friends.",
+    more: "Research work with Professor Yakov, focused on info-gap decision theory. Optimizing for windfall while increasing robustness under severe uncertainty. One of the most intense and challenging experiences of my life. Transformed my thinking, traveled across Israel and met some of my best friends.",
   },
   {
     id: "bike-rides-2024-11",
     date: "11.2024",
     line: "50km Scarborough → downtown bike rides",
-    more: "Did a 50km Scarborough → downtown bike ride for fun. All on the toronto bike share system. Probly the first person to do it. Switched bikes 13 times",
+    more: "Did a 50km Scarborough → downtown bike ride for fun. All on the Toronto bike share system. Probably the first person to do it. Switched bikes 13 times.",
     links: [
       {
         label: "Strava",
