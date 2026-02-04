@@ -403,7 +403,7 @@ export default function AboutPage() {
       {/* Affiliations */}
       <section style={{ marginTop: "2rem", marginBottom: "2rem" }}>
         <h2 className="text-lg font-semibold mb-2 text-gray-900">
-          Affiliations
+          Organizations/Communities/Prizes
         </h2>
         <div className="flex flex-wrap gap-2">
           <span className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200">
@@ -411,6 +411,9 @@ export default function AboutPage() {
           </span>
           <span className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200">
             The Knowledge Society
+          </span>
+          <span className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200">
+            Syro Malabar Youth Movement
           </span>
           <span className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200">
             YC AI Startup School

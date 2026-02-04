@@ -90,7 +90,7 @@ const LORE: LoreItem[] = [
     id: "learned-drive-motorcycle-2025-09",
     date: "09.2025",
     line: "Learned to drive manuel and ride motorcycle",
-    more: "Learned to drive manuel on a Toyota Innova and a KIA while in India and 100 cc motorcycle Yamaha Rx 100. Nothing more fun!",
+    more: "Learned to drive manuel on a Toyota Innova and a KIA while in India and 100 cc motorcycle Yamaha Rx 100. Nothing more fun! Got my actual Indian 4-wheeler motor license too, in a pretty sus way tho.",
   },
   {
     id: "shopify-vanauley-2022-04",

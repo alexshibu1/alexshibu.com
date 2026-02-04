@@ -41,6 +41,13 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${spaceGrotesk.variable} ${plexSans.variable}`}
     >
+      <head>
+        <script
+          async
+          src="https://cloud.umami.is/script.js"
+          data-website-id="5f0d2a32-d312-45a8-a58e-351cf6190d79"
+        />
+      </head>
       <body className="antialiased" suppressHydrationWarning>
         <Sidebar />
         {children}
