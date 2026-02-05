@@ -97,7 +97,7 @@ export default function Home() {
           </span>
           <span className="opacity-20 select-none">|</span>
           <a
-            href="https://alexshibustats.vercel.app/share/id7rhN2vZ8oIvigP"
+            href="https://alexshibustats.vercel.app/share/tGdLEFmSbLfZxG6F"
             target="_blank"
             rel="noopener noreferrer"
             className="!text-gray-500 opacity-50 hover:!text-red-500 hover:underline transition-colors hover:opacity-100"
