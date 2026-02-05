@@ -44,8 +44,8 @@ export default function RootLayout({
       <head>
         <script
           async
-          src="https://cloud.umami.is/script.js"
-          data-website-id="5f0d2a32-d312-45a8-a58e-351cf6190d79"
+          src="https://alexshibustats.vercel.app/script.js"
+          data-website-id="ee9bbb18-6cf5-4341-8228-010f8f7b4245"
         />
       </head>
       <body className="antialiased" suppressHydrationWarning>
