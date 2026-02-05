@@ -94,16 +94,15 @@ export default function Home() {
             >
               v2
             </a>
-            <span className="mx-1 text-gray-300">,</span>
           </span>
           <span className="opacity-20 select-none">|</span>
           <a
-            href="https://cloud.umami.is/analytics/us/share/OPUHKK1qkJtLbIAZ"
+            href="https://alexshibustats.vercel.app/share/id7rhN2vZ8oIvigP"
             target="_blank"
             rel="noopener noreferrer"
             className="!text-gray-500 opacity-50 hover:!text-red-500 hover:underline transition-colors hover:opacity-100"
           >
-            stats
+            Stats
           </a>
         </div>
       </footer>

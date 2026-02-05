@@ -95,7 +95,7 @@ const LORE: LoreItem[] = [
   {
     id: "shopify-vanauley-2022-04",
     date: "04.2022",
-    line: "First dollars on Shopify selling bath bombs",
+    line: "First dollar on Shopify selling bath bombs",
     more: "Launched a Shopify storefront for bath bomb fundraising for the Vanauley homeless shelter, promoted via Instagram theme pages. Had around 600 followers. Learned e-commerce + order fulfillment and marketing.",
     links: [
       {
@@ -173,7 +173,7 @@ const LORE: LoreItem[] = [
   {
     id: "uatx-forbidden-courses-2023-07",
     date: "07.2023",
-    line: "Accepted to UATX Forbidden Courses (Science and Christianity)",
+    line: "Joined UATX Forbidden Courses",
     more: "Massive Validation of my path so far. Invited to Forbidden Courses prior to it become a university. Completed the pre-course work, but couldn’t join the in-person seminar due to visa constraints. With Harvard and MIT kids",
   },
   {
@@ -215,20 +215,20 @@ const LORE: LoreItem[] = [
   {
     id: "veritas-2025-06",
     date: "06.2025",
-    line: "Invited to VERITAS at the Thomistic Institute in DC",
-    more: "Some of the smartest catholics I've met. Engaged with scholars and explored foundational questions and philosophical thought though aquinas lens. Inspired me to take my faith more seriously.",
+    line: "Joined VERITAS at the Thomistic Institute",
+    more: "Some of the smartest catholics I've met. Engaged with scholars and explored foundational questions and philosophical thought though aquinas lens. Inspired me to take my faith more seriously. First time in washington DC.",
   },
   {
     id: "india-ai-film-family-2025-09",
     date: "09.2025",
-    line: "AI film festival and family trip across South India",
-    more: "In Kerala, Bangalore, Hyderabad, and Wayanad I did an AI film festival and visited family.",
+    line: "Joined AI film festival",
+    more: "Travelled to Kerala, Bangalore, Hyderabad, and Wayanad and did an AI film festival and visited family.",
   },
   {
     id: "first-book-finished-2025-11",
     date: "11.2025",
-    line: "Finished my first book",
-    more: "Nov 2025 I finished my first full book cover to cover. Atomic Habits by James Clear. I've carried it across almost 20 flights for the past 2 years.",
+    line: "Read my first book",
+    more: "In November 2025 finished reading my first full book cover to cover. Atomic Habits by James Clear. I've carried it across almost 20 flights for the past 2 years.",
   },
   {
     id: "programming-serious-2025-12",
@@ -239,8 +239,8 @@ const LORE: LoreItem[] = [
   {
     id: "missing-relic-film-2026-01",
     date: "01.2026",
-    line: "Spent 4 days filming and creating a film about our missing relic",
-    more: "Jan 2026 I spent four straight days making my first film in a long time, documenting the story of the missing relic at our church.",
+    line: "Got 50K+ views on a film about our missing relic",
+    more: "I spent five straight days in January 2026 making my first film in a long time, documenting the story of the missing relic at our church. The footage looks saucey and got over 50K views on Instagram.",
     links: [
       {
         label: "Film",
@@ -251,20 +251,20 @@ const LORE: LoreItem[] = [
   {
     id: "italy-24hr-no-internet-2024-08",
     date: "08.2024",
-    line: "24 hours in Italy with no internet",
+    line: "24 hours in Italy without internet",
     more: "Survived an insane 24 hours in Italy without internet, relying on the kindness of strangers to get around.",
   },
   {
     id: "yakov-research-2024-07",
     date: "07.2024",
-    line: "Decision theory research with Professor Yakov in Haifa, Israel during a war",
-    more: "Research work with Professor Yakov, focused on info-gap decision theory. Optimizing for windfall while increasing robustness under severe uncertainty. One of the most intense and challenging experiences of my life. Transformed my thinking, traveled across Israel and met some of my best friends.",
+    line: "Worked on Decision theory in Israel",
+    more: "Worked with Professor Yakov on info-gap decision theory. Optimizing for windfall while increasing robustness under severe uncertainty. One of the most intense and challenging experiences of my life. Transformed my thinking, traveled across Israel and met some of my best friends. All during a war.",
   },
   {
     id: "bike-rides-2024-11",
     date: "11.2024",
-    line: "50km Scarborough → downtown bike rides",
-    more: "Did a 50km Scarborough → downtown bike ride for fun. All on the Toronto bike share system. Probably the first person to do it. Switched bikes 13 times.",
+    line: "50km on bike share from Scarborough to downtown Toronto",
+    more: "Did a 50km bike ride from Scarborough to downtown Toronto for fun. All on the Toronto bike share system. Probably the first person to do it. Switched bikes 13 times in the span of 6 hours.",
     links: [
       {
         label: "Strava",
@@ -299,14 +299,14 @@ const LORE: LoreItem[] = [
   {
     id: "dji-mavic-2020-07",
     date: "07.2020",
-    line: "Got DJI Mavic and Transport Canada basic Flight license",
+    line: "Received Transport Canada basic Flight license",
     more: "I got a DJI Mavic. Since it was the early days for drone stuff, I got the Transport Canada basic Flight license.",
   },
   {
     id: "online-money-2020-05",
     date: "05.2020",
-    line: "Made my first dollar online selling keto books to women in nebraska",
-    more: "Build mutiple theme pages for gaming, health keto and other stuff and sold a clickbank product",
+    line: "My first dollar online selling keto books",
+    more: " I made my first dollar online, selling keto books to women in Nebraska. I've built mutiple theme pages for gaming, health keto and other stuff and sold a clickbank product.",
     links: [
       {
         label: "Screenshot",
@@ -322,7 +322,13 @@ const LORE: LoreItem[] = [
     id: "sony-a7-iii-2021-06",
     date: "06.2021",
     line: "Bought Sony A7 III with crypto profits",
-    more: "Took some of the crypto money and cashed out to buy a Sony A7 III for around $2k. I love it!",
+    more: "Took some of the crypto money and cashed out to buy a Sony A7 III for around $2k. I wanted to take film seriously and this was my first camera. I love it!",
+    links: [
+      {
+        label: "photo gallery",
+        url: "https://photos.app.goo.gl/hQHRSkBeNKmKsgMP7",
+      },
+    ],
   },
   {
     id: "scholarship-workflow-2021",
@@ -333,8 +339,8 @@ const LORE: LoreItem[] = [
   {
     id: "cube-2-shutdown-late-2021",
     date: "11.2021",
-    line: "My first game Cube Runner 2.0 got Shut down by Google after a privacy threat",
-    more: "I was a child who built my first game with unity but few weeks after release and 30 users. Project got shut down by Google for violting user privacy and got a legal email from them.",
+    line: "Launched Cube Runner 2.0 but got taken down",
+    more: "I was a child who built my first game with unity but few weeks after release and 30 users. Project got taken down by Google for violating user privacy and got a legal email from them.",
     links: [
       {
         label: "Screenshot",
@@ -343,6 +349,10 @@ const LORE: LoreItem[] = [
       {
         label: "Instagram post",
         url: "https://www.instagram.com/p/BwTdbmtjkZD/",
+      },
+      {
+        label: "photo gallery",
+        url: "https://photos.app.goo.gl/dqKq7rCJyfKLBj688",
       },
     ],
   },
@@ -360,43 +370,84 @@ const LORE: LoreItem[] = [
         label: "my rode reel (short film)",
         url: "https://youtu.be/lFMXM3H3K1I?si=0fx5mwu6zfClNrro",
       },
+      {
+        label: "photo gallery",
+        url: "https://photos.app.goo.gl/hQHRSkBeNKmKsgMP7",
+      },
     ],
   },
   {
     id: "easter-seals-2019-11",
     date: "11.2019",
-    line: "Built a Raspberry Pi OCR glasses for Easter Seals Canada ",
-    more: "Built and shipped real time Raspberry Pi glasses to help visually impaired folks read what is in front of them. Used OCR and wired it up to Google Assistant and Alexa. First shipped hardware project at 15. I was the youngest there. Thanks Ms. Chan for the opportunity.",
+    line: "Built a real time OCR glasses for visually impaired",
+    more: "Built and shipped real time Raspberry Pi glasses to help visually impaired folks read what is in front of them. Used OCR and wired it up to Google Assistant and Alexa. First shipped hardware project at 15. I was the youngest presentor at the easter seals canada innovation night. Thanks Ms. Chan for the opportunity.",
+    links: [
+      {
+        label: "Easter Seals",
+        url: "https://photos.app.goo.gl/dqKq7rCJyfKLBj688",
+      },
+    ],
+  },
+  {
+    id: "bible-companion-2019-09",
+    date: "09.2019",
+    line: "Got 10K in cloud after building on Actions on Google",
+    more: "Received 10K in cloud credits to work on Actions on Google, plus free merch. Created Bible Companion - a voice-first Bible study application that allows users to ask questions about scripture, receive daily verses, and explore biblical content through natural language conversations. Built using Google's Actions SDK, Dialogflow, and TensorFlow. It was a pivotal moment of validation: realizing that emerging tech could be this cool and that the scale of (even fake) cloud-credit money could be so large, even if it wasn't real cash yet.",
   },
   {
     id: "church-logo-2019-06",
     date: "06.2019",
-    line: "Won church logo competition and got $100 from the bishop",
-    more: "I made the first logo for the St. Thomas Syro Malabar Forane Church. It was a competition. I won and got $100 from the bishop in front of everyone. This started my pursuit of money.",
+    line: "Won church logo competition and got $100",
+    more: "I made the first logo for the St. Thomas Syro Malabar Forane Church. I won the competition and got $100 from the bishop in front of everyone. This started my pursuit of money.",
   },
   {
     id: "first-yt-2018",
     date: "03.2018",
     line: "Started my first YouTube channel",
-    more: "Started my first YouTube channel and made my first videos. Over time I received ~ $100 in free products across channels through partnerships and sponsorships. Even tho I only had 50 subscribers.",
+    more: "Started my first YouTube channel and made my first videos. Over time I received ~ $100 in free products across channels through partnerships and sponsorships. Even though I only had 50 subscribers.",
   },
+  {
+    id: "photography-competitions-2020",
+    date: "08.2020",
+    line: "Started winning photography competitions",
+    more: "Started winning photography competitions. I would sign up for everything. I even had a gallery showcase one of my photographs. Won around one thousand dollars in total. ",
+    links: [
+      {
+        label: "photo gallery",
+        url: "https://photos.app.goo.gl/hQHRSkBeNKmKsgMP7",
+      },
+    ],
+  },
+
   {
     id: "first-app-2018",
     date: "06.2018",
-    line: "Launched my first Android app (Kotlin calculator)",
-    more: "A simple calculator app written in Kotlin: clean UI, basic operations (add/subtract/multiply/divide), and a straightforward keypad layout. It was written in kotlin.",
+    line: "Launched my first Android app",
+    more: "A simple calculator app written in Kotlin. Made a clean UI, basic operations (add/subtract/multiply/divide), and a straightforward keypad layout. It was written in Kotlin and launched on the Google Play Store.",
+    links: [
+      {
+        label: "photo gallery",
+        url: "https://photos.app.goo.gl/dqKq7rCJyfKLBj688",
+      },
+    ],
   },
   {
     id: "first-pc-2017",
     date: "06.2017",
     line: "Built my first PC",
-    more: "Inspired by dave2d and linus tech tips. I built my first PC. This started everything.",
+    more: "Inspired by dave2d and linus tech tips. I built my first PC. This started my whole journey of building things and tech",
   },
   {
     id: "arduino-2015-2016",
     date: "11.2018",
-    line: "Arduino obsession and robot builds",
-    more: "Begged my parents for random arduino tech. And started building random things like RC cars and open source OTTO project.",
+    line: "Obsession with Arduino and robots",
+    more: "Begged my parents for random Arduino tech. And started building random things like RC cars and open source OTTO project.",
+    links: [
+      {
+        label: "photo gallery",
+        url: "https://photos.app.goo.gl/dqKq7rCJyfKLBj688",
+      },
+    ],
   },
   {
     id: "moved-canada-2012",
