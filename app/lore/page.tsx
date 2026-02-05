@@ -391,8 +391,8 @@ const LORE: LoreItem[] = [
   {
     id: "bible-companion-2019-09",
     date: "09.2019",
-    line: "Got 10K in cloud after building on Actions on Google",
-    more: "Received 10K in cloud credits to work on Actions on Google, plus free merch. Created Bible Companion. A google assistant  Bible study skill that allows users to ask questions about scripture, receive daily verses, and explore biblical content through natural language conversations. Built using Google's Actions SDK, Dialogflow, and TensorFlow. It was a pivotal moment of validation: realizing that emerging tech could be this cool and that the scale of (even fake) cloud-credit money could be so large, even if it wasn't real cash yet. This is when i started to take software seriously.",
+    line: "Built a Actions on Google skill and got 10K in cloud",
+    more: "Received 10K in cloud credits to work on Actions on Google, plus free merch. Created Bible Companion. A google assistant bible study skill that allows users to ask questions about scripture, receive daily verses, and explore biblical content through natural language conversations. Built using Google's Actions SDK, Dialogflow, and TensorFlow. It was a pivotal moment of validation: realizing that emerging tech could be this cool and that the scale of (even fake) cloud-credit money could be so large, even if it wasn't real cash yet. This is when i started to take software seriously.",
   },
   {
     id: "church-logo-2019-06",
