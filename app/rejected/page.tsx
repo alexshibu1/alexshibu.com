@@ -19,7 +19,7 @@ function getRejectionMarkdown(): string | null {
     process.cwd(),
     "app",
     "rejected",
-    "rejection-log.md"
+    "rejection-log.md",
   );
   if (!fs.existsSync(filePath)) return null;
   let content = fs.readFileSync(filePath, "utf8");
@@ -42,15 +42,14 @@ export default function RejectedPage() {
     <main className="page-content">
       <h1 className="hero-heading">rejected</h1>
       <p className="hero-subline">
-        Running log of rejections. Used as training data for a better ML model.
-        Simply me throwing enough potatoes at the wall.
+        Running log of my rejections. Throwing enough potatoes at the wall.
       </p>
 
       <p className="mb-4 sm:mb-6">
         Although it may seem like only a small portion of the attempts convert,
         the ones that do at the right time, are tremendously more meaningful in
-        creating asymmetric outcomes I&apos;m looking for. I try to think
-        it&apos;s God. Great miracles come to people in motion.
+        creating the types of outcomes I&apos;m looking for. I&apos;d like to
+        think it&apos;s God work. But great things come to people in motion.
       </p>
 
       <RejectionStats
@@ -61,7 +60,7 @@ export default function RejectedPage() {
 
       <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 my-6 sm:my-10">
         <p className="text-sm sm:text-base text-neutral-600 italic tracking-tight sm:max-w-[240px] shrink-0 pl-3 sm:pl-4 border-l-2 border-neutral-200 leading-relaxed">
-          Best experienced scrolling with this playlist ❤️
+          Best experienced while listening to this playlist ❤️
         </p>
         <iframe
           title="Spotify playlist – soundtrack for reading"

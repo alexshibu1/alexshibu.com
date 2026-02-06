@@ -7,7 +7,7 @@ export default function SidequestsPage() {
         sidequests
       </h1>
       <p className="text-base text-gray-600">
-        tiny side quests and lists that don&apos;t fit anywhere else.
+        Side quests and projects just for fun.
       </p>
 
       <div className="mt-4 divide-y divide-gray-100 border-t border-b border-gray-100 rounded-md bg-white/60">
@@ -22,7 +22,7 @@ export default function SidequestsPage() {
                 coffee reviews
               </span>
               <span className="ml-2 text-sm text-gray-500 truncate group-hover:text-gray-700">
-                60+ downtown Toronto cafes — vibes, beans, baristas.
+                Reviewing 60+ downtown Toronto cafes.
               </span>
             </div>
             <span
@@ -45,8 +45,8 @@ export default function SidequestsPage() {
                 rejected
               </span>
               <span className="ml-2 text-sm text-gray-500 truncate group-hover:text-gray-700">
-                running list of rejections. you miss the shots you don&apos;t
-                take, and throwing potatoes gets you far.
+                A log of my rejections. Throwing enough potatoes at the wall for
+                greatnesses.
               </span>
             </div>
             <span

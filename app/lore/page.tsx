@@ -393,6 +393,16 @@ const LORE: LoreItem[] = [
     date: "09.2019",
     line: "Built a Actions on Google and got 10K in cloud",
     more: "Received 10K in cloud credits to work on Actions on Google, plus free merch. Created Bible Companion. A google assistant bible study skill that allows users to ask questions about scripture, receive daily verses on google assistant. It was a pivotal moment of validation. Realizing that emerging tech could be this cool and that the scale of (even fake) cloud-credit money could be so large. This is when i started to take software seriously.",
+    links: [
+      {
+        label: "Actions on Google",
+        url: "public/projects/actions on google 2.png",
+      },
+      {
+        label: "screenshot",
+        url: "public/projects/actions on google.png",
+      },
+    ],
   },
   {
     id: "church-logo-2019-06",
@@ -404,13 +414,23 @@ const LORE: LoreItem[] = [
     id: "first-yt-2018",
     date: "03.2018",
     line: "Started my first YouTube channel",
-    more: "Started my first YouTube channel and made my first videos. Over time I received ~ $100 in free products across channels through partnerships and sponsorships. Even though I only had 50 subscribers.",
+    more: "Started my first YouTube channel and made my first videos. Over time I received ~ $100 in free products across channels through partnerships and sponsorships. Even though I only had 50 subscribers, I was still able to everything from 3d printers, driving wheels, parts and lot's of microphones from Fifine. There was a whole shady side of this along the lines of me -> parkistan ->  china -> amazon. Ask me in person :)",
+    links: [
+      {
+        label: "3d printer",
+        url: "https://youtu.be/ljdU0ozsyL0?si=8PyQfuKFo_yTZqIg",
+      },
+      {
+        label: "microphone",
+        url: "https://youtu.be/gP5NFGZgsek?si=AIVCuFfjRTPWL8rd",
+      },
+    ],
   },
   {
     id: "photography-competitions-2020",
     date: "08.2020",
     line: "Started winning photography competitions",
-    more: "Started winning photography competitions. I would sign up for everything. I even had a gallery showcase one of my photographs. Won around one thousand dollars in total. ",
+    more: "Started winning photography competitions. I would sign up for everything. One of my photographs was even featured in a local gallery showcase. Won around one thousand dollars in total.",
     links: [
       {
         label: "photo gallery",
@@ -435,13 +455,13 @@ const LORE: LoreItem[] = [
     id: "first-pc-2017",
     date: "06.2017",
     line: "Built my first PC",
-    more: "Inspired by dave2d and linus tech tips. I built my first PC. This started my whole journey of building things and tech",
+    more: "Inspired by linus tech tips and dave2d. I built my first PC. This started my whole journey of building things and tech. Then this became my thing. I'd build PCs for everyone from random parts and CPU's from Value Village. I loved it.",
   },
   {
     id: "arduino-2015-2016",
     date: "11.2018",
     line: "Obsession with Arduino and robots",
-    more: "Begged my parents for random Arduino tech. And started building random things like RC cars and open source OTTO project.",
+    more: "Begged my parents for random Arduino tech. And started building random things bluetooth controlled RC cars and open source OTTO project. Even prior to this I luv breaking apart RC cars from value village ",
     links: [
       {
         label: "photo gallery",

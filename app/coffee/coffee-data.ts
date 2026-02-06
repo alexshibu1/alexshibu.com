@@ -68,6 +68,17 @@ const DEFAULT_LOCATION = {
 
 export const coffeeShops: CoffeeShop[] = [
   {
+    id: "tim-hortons-feb-5-2025",
+    date: "Feb 6th, 2025",
+    drink: "Double Double",
+    shopName: "Tim Hortons",
+    rating: 8.9,
+    review:
+      "Great. Better when good always solid. But a bit too sugary. Saucey when it's cold outside and the drink is hot.",
+    isChain: true,
+    location: DEFAULT_LOCATION,
+  },
+  {
     id: "starbucks-march-1-2024",
     date: "March 1st, 2024",
     drink: "Blonde Vanilla Latte with 2 hazelnut shot",
