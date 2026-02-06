@@ -414,7 +414,7 @@ const LORE: LoreItem[] = [
     id: "first-yt-2018",
     date: "03.2018",
     line: "Started my first YouTube channel",
-    more: "Started my first YouTube channel and made my first videos. Over time I received ~ $100 in free products across channels through partnerships and sponsorships. Even though I only had 50 subscribers, I was still able to everything from 3d printers, driving wheels, parts and lot's of microphones from Fifine. There was a whole shady side of this along the lines of me -> parkistan ->  china -> amazon. Ask me in person :)",
+    more: "Started my first YouTube channel and made my first videos. Even though I only had 50 subscribers, I was still able to everything from 3d printers, driving wheels, parts and lot's of microphones from Fifine.Over time I received ~$400 in free products/cash across channels through sponsorships. There was a whole shady side of this along the lines of me -> parkistan ->  china -> amazon. Ask me in person :)",
     links: [
       {
         label: "3d printer",
@@ -423,6 +423,10 @@ const LORE: LoreItem[] = [
       {
         label: "microphone",
         url: "https://youtu.be/gP5NFGZgsek?si=AIVCuFfjRTPWL8rd",
+      },
+      {
+        label: "first video",
+        url: "https://youtu.be/ShW01SDJI0c",
       },
     ],
   },

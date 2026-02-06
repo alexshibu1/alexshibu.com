@@ -58,7 +58,7 @@ export default function RejectedPage() {
         conversionRate={conversionRate}
       />
 
-      <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 my-6 sm:my-10">
+      <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mt-6 sm:mt-10 mb-2 sm:mb-3">
         <p className="text-sm sm:text-base text-neutral-600 italic tracking-tight sm:max-w-[240px] shrink-0 pl-3 sm:pl-4 border-l-2 border-neutral-200 leading-relaxed">
           Best experienced while listening to this playlist ❤️
         </p>
@@ -75,7 +75,7 @@ export default function RejectedPage() {
         />
       </div>
 
-      <section className="mt-2 pb-6 sm:pb-8">
+      <section className="mt-4 pt-0 pb-6 sm:pb-4">
         <a
           href="https://alexshibu.notion.site/Alex-s-Rejections-1a1305d8d2448059bc5dd5e6c499d0f5"
           target="_blank"
@@ -103,7 +103,7 @@ export default function RejectedPage() {
       {/* Rejection essay + screenshots from app/essay/rejection/*.md */}
       {rejectionContent && (
         <section
-          className="mt-6 pt-6 sm:mt-10 sm:pt-8 border-t border-neutral-200 rejection-markdown"
+          className="mt-2 pt-2 sm:mt-6 sm:pt-8 border-t border-neutral-200 rejection-markdown"
           aria-label="Rejection log screenshots"
         >
           <ReactMarkdown
