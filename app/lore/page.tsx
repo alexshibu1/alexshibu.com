@@ -414,7 +414,7 @@ const LORE: LoreItem[] = [
     id: "first-yt-2018",
     date: "03.2018",
     line: "Started my first YouTube channel",
-    more: "Started my first YouTube channel and made my first videos. Even though I only had 50 subscribers, I was still able to everything from 3d printers, driving wheels, parts and lot's of microphones from Fifine.Over time I received ~$400 in free products/cash across channels through sponsorships. There was a whole shady side of this along the lines of me -> parkistan ->  china -> amazon. Ask me in person :)",
+    more: "Started my first YouTube channel and made my first videos. Even though I only had 50 subscribers, I was still able to everything from 3d printers, driving wheels, parts and lot's of microphones from Fifine. Over time I received ~$400 in free products/cash across channels through sponsorships. There was a whole shady side, along the lines of me -> parkistan -> china -> amazon. Ask me in person :)",
     links: [
       {
         label: "3d printer",
