@@ -668,8 +668,9 @@ body {
   font-family: var(--font-space-grotesk), system-ui, sans-serif;
   font-size: 14px !important;
   font-weight: 400 !important;
-  color: #6f6e6e !important;
   line-height: 1.5;
+  color: #666666 !important;
+
   display: block;
   margin-left: 0; /* No margin needed, gap handles spacing */
   opacity: 0.85;
@@ -689,7 +690,7 @@ body {
 
 .project-date {
   font-size: 14px;
-  color: #616161; /* Darker, more visible gray */
+  color: #535353; /* Darker, more visible gray */
   line-height: 1.4;
   display: inline-block;
   font-weight: 500; /* Slightly bolder */

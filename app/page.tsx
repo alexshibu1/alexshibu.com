@@ -1,6 +1,7 @@
 // app/page.tsx
 import Link from "next/link";
 import InteractiveHeading from "./components/waveHeading";
+import SubstackForm from "./components/SubstackForm";
 
 // Hero inline links: override .page-content a (red in globals.css) with ! so gray wins
 const subtleLink =
@@ -24,7 +25,7 @@ export default function Home() {
           math & physics, and then building really great products.
         </p>
         <p>
-          At UofT I study physics & comp sci. On this site I park experiments,
+          At UofT, I study physics & comp sci. On this site I park experiments,
           document my{" "}
           <Link href="/lore" className={subtleLink}>
             journey
@@ -44,9 +45,9 @@ export default function Home() {
           theme pages for selling keto books and bath bombs.
         </p>
         <p>
-          I love to running in different cities,{" "}
+          I love running in different cities,{" "}
           <Link href="/writing" className={subtleLink}>
-            write
+            writing
             <span className={linkV4Arrow} aria-hidden="true">
               ↗
             </span>
@@ -61,11 +62,20 @@ export default function Home() {
           , and doing hard things.
         </p>
         <p>
-          My goal is to become the ultimate Swiss Army knife that can build
-          useful products, understand users, and grow hack.
+          I want to become the ultimate Swiss Army knife that can build useful
+          products, understand users, and grow hack.
         </p>
-        <p>Join my internal board of directors, I would love to chat!</p>
-        <p>Would love to chat!</p>
+        <p>Join my internal board of directors. Love to chat!</p>
+
+        <div
+          style={{
+            margin: "1.5rem 0 0 0",
+            display: "flex",
+            justifyContent: "left",
+          }}
+        >
+          <SubstackForm />
+        </div>
       </div>
 
       <footer className="footer">

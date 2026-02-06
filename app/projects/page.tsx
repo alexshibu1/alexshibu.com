@@ -241,7 +241,7 @@ export default function WorkIndex() {
       description:
         "Created a film on why young people should build and won first place in a nationwide competition. Led to invite to Desjardins Dream the Impossible event in Montreal.",
       link: "https://www.ymcagta.org/blog/congratulations-to-the-winners-of-the-youth-for-entrepreneurship-media-contest-powered-by-desjardins", // Add link later
-      date: "2022",
+      date: "03.2022",
       video: "https://www.youtube.com/watch?v=mHKDR622pCM", // Add video link later
       repo: "",
       writeup:
@@ -252,7 +252,7 @@ export default function WorkIndex() {
       description:
         "Top 14% global finalist for the challenge, explaining quantum computing fundamentals, superposition, entanglement, and John Bell's Theorem. Built a video explaining Radioisotope thermoelectric generators that ranked globally among thousands of entries.",
       link: "#", // Add link later
-      date: "2022",
+      date: "06.2022",
       video: "https://www.youtube.com/watch?v=xuL75NnIcks&t=11s",
       repo: "",
       writeup: "",
@@ -262,7 +262,7 @@ export default function WorkIndex() {
       description:
         "The Polymarket for focus. A command terminal for deep work: open a position (task), add liquidity, execute or get liquidated. Built with Tempo Labs in 5 days—gamified to-dos with real stakes, a dashboard of portfolio and earnings, and a marketplace to see friends' positions. Try it at wagerai.vercel.app.",
       link: "https://wagerai.vercel.app",
-      date: "Dec 2025",
+      date: "12.2025",
       repo: "https://github.com/alexshibu1/wagerai",
       video: "",
       writeup: "",
@@ -273,7 +273,7 @@ export default function WorkIndex() {
       description:
         "Created and led EasyHacks, a hackathon for everyone, rejected in an email thread from UBC nwhacks. It transformed into a 10-person operation for 170+ true beginners, from military veterans to high school students in Nepal, with 170+ participants and $8K in prizes raised from sponsors.",
       link: "https://easyhacks.org/",
-      date: "2025",
+      date: "01.2025",
       repo: "",
       video: "https://www.youtube.com/watch?v=BUFH1s5iUtw&t=55s",
       writeup: "",
@@ -284,7 +284,7 @@ export default function WorkIndex() {
       description:
         "Built generative-AI meditation app with neural voice, ultra-low-latency audio mixing. LUMA uses generative AI to create a unique, personalized meditation experience on demand, addressing the global mental health crisis by making effective, accessible mindfulness practices available to everyone. Built with React, Flask, Cohere Command-R LLM, Google Cloud TTS, and pydub. Submitted to GenAI Genesis 2025.",
       link: "https://devpost.com/software/luma-luminous-understanding-through-mindful-ai",
-      date: "2025",
+      date: "05.2025",
       repo: "https://github.com/e-ndorfin/luma",
       video: "https://www.youtube.com/watch?v=neO-K2qJo6Y&t=20s",
       writeup: "",
@@ -294,7 +294,7 @@ export default function WorkIndex() {
       description:
         "Built an internal Slack AI (BenchBot) prototype to streamline HR/business communications and modeled a $4.5M annual savings scenario that CIBC stakeholders adopted as an internal estimate. Repetitive queries and information overload are hindering BenchSci's productivity up to 104,000 hours annually. As BenchSci's team size doubled from 200 to 400+ employees in 2022, repetition of common administrative and technical questions asked by new and existing employees have surged.",
       link: "",
-      date: "2024",
+      date: "12.2022",
       repo: "",
       video: "https://www.youtube.com/watch?v=Mqb1hEqly_Y",
       writeup: "",
@@ -304,7 +304,7 @@ export default function WorkIndex() {
       description:
         "Pitch for BridgeWorks Fellowship focused on increasing youth employment opportunities.",
       link: "/projects/bridgeworks.pdf",
-      date: "2024",
+      date: "05.2024",
       repo: "",
       video: "https://www.youtube.com/watch?v=Jz48kAlGy3o&t=25s",
       writeup: "",
@@ -314,7 +314,7 @@ export default function WorkIndex() {
       description:
         "Co-founded Avalonn, a 24/7 voice agent that answers common inquiries in under 8s, books jobs and quotes with automatic CRM updates, and escalates emergencies via SMS, helping small businesses recover roughly $78 per missed call on average. Built using React + Flask + ElevenLabs + OpenAI + Twilio. Found early stage traction through customer interviews, live demos and onboarding local service businesses in plumbing, HVAC, and retail, integrating into their existing workflows. Received $25k in AWS credits, participated in DMZ Basecamp and featured in UofT Centre for Entrepreneurship founder showcases.",
       link: "https://www.youtube.com/watch?v=qsD2kOopCK4",
-      date: "2025",
+      date: "06.2025",
       repo: "",
       video: "https://www.youtube.com/watch?v=dnusNHRDGMo",
       writeup:
@@ -326,7 +326,7 @@ export default function WorkIndex() {
       description:
         "Forge your path with Titans - AI-powered mentorship platform that provides guidance from industry giants. Features custom virtual boardrooms, optimized action roadmaps, and 50+ decision-making frameworks.",
       link: "https://web.archive.org/web/20240924161229/http://www.coachmi.co/",
-      date: "2024",
+      date: "09.2024",
       repo: "",
       video: "https://www.youtube.com/watch?v=xWqw_l3Nh2M",
       writeup:
@@ -337,7 +337,7 @@ export default function WorkIndex() {
       description:
         "hired 2 ppl; created nfts, social media, and discord community; Did not launch due to the lack of long-term utility.",
       link: "/essay/circusclownz",
-      date: "2021",
+      date: "04.2021",
       repo: "https://web.archive.org/web/20220128132945/https:/circusclownz.com/",
       video: "https://youtu.be/_ycxR8aP980?si=oeGxGrFIYkKJ_gkC",
       writeup:
@@ -349,7 +349,7 @@ export default function WorkIndex() {
       description:
         "Designed AR glasses translating sign language to text using transformers and OCR, demoed prototype. The development of glasses that can interpret ASL would help bridge the communication gap by allowing wearers to see text translations of what is being signed in real-time, thus making communication easier and more accessible.",
       link: "https://firebasestorage.googleapis.com/v0/b/tks-life-prod.appspot.com/o/items%2FZnFxCGk9nXYoiuJ37ArrGUjiBDB2%2FExplore%20Hackathon%20-%20ASL.pdf?alt=media&token=7d19ef3d-7d77-4059-8bd0-526fef256322",
-      date: "2022",
+      date: "11.2022",
       repo: "",
       video: "https://www.youtube.com/watch?v=1n0SDjeV7Ao",
       writeup: "",
@@ -360,7 +360,7 @@ export default function WorkIndex() {
       description:
         "Received 10k in cloud credits to work on Actions on Google + free merch. Created Bible Companion - a voice-first Bible study application that allows users to ask questions about scripture, receive daily verses, and explore biblical content through natural language conversations. Built using Google's Actions SDK, Dialogflow, and TensorFlow.",
       link: "#", // Add link later
-      date: "2019",
+      date: "11.2019",
       video: "",
       repo: "",
       writeup: "",
@@ -374,7 +374,7 @@ export default function WorkIndex() {
       name: "Bioblox",
       description: "10x better LinkedIn pic and Tinder pic with 2 clicks.",
       link: "https://web.archive.org/web/20230722063459/https://bioblox.xyz/",
-      date: "2023",
+      date: "07.2023",
       repo: "https://github.com/alexshibu1/photoBloxAI",
       video: "",
       writeup: "",
@@ -384,7 +384,7 @@ export default function WorkIndex() {
       description:
         "Built an AI-powered sleep-music generator using K-means clustering for personalized audio. The app uses artificial intelligence and K-means clustering to create personalized music for insomniacs, based on their sleep routines and music preferences. Hackathon finalist with Figma prototype.",
       link: "https://www.figma.com/design/WJ7zap2lEOHglmLiuYWH2K/Cyberpunk-Music-App--Community-?node-id=0-1&p=f",
-      date: "2024",
+      date: "04.2024",
       repo: "",
       video: "",
       writeup: "",
@@ -394,7 +394,7 @@ export default function WorkIndex() {
       description:
         "Designed a consulting prototype for CIBC Rewards using Figma, modeling user engagement and projecting lift. Worked to increase Gen Z adoption of CIBC projecting up to 77% increase in Gen Z adoption through prototype user testing and survey analysis. Gen Z customers are switching banks, with only 50% remaining loyal to their parents' bank.",
       link: "https://www.figma.com/file/X8pq2OGANVnQhQkyE5bTzR/CIBC-Rewards-Design",
-      date: "2024",
+      date: "03.2023",
       repo: "",
       video: "",
       writeup: "",
@@ -404,7 +404,7 @@ export default function WorkIndex() {
       description:
         "Developed a 2-click AI system for professional-quality profile images using Stable Diffusion, serving 50+ users and fine-tuned on 10–12 samples. Transform your profiles with AI generated images for a standout professional presence.",
       link: "#", // Add link later
-      date: "2024",
+      date: "06.2023",
       repo: "",
       video: "https://www.youtube.com/watch?v=BjR4rSWL9y4",
       writeup: "",
@@ -414,7 +414,7 @@ export default function WorkIndex() {
       description:
         "Unlock limitless learning with our AI tool, delivering personalized educational resources to empower students worldwide.",
       link: "https://sms.teleporthq.app/",
-      date: "2024",
+      date: "01.2023",
       repo: "",
       video: "https://www.youtube.com/watch?v=zuGTUhnynEg",
       writeup: "",
@@ -424,7 +424,7 @@ export default function WorkIndex() {
       description:
         "The AI-Powered Personalized Feedback Tool is a transformative technology that offers feedback from the greatest minds in your field. Simply paste your content on the website and receive personalized feedback. The tool aims to break down barriers in education, inspired by the video of Bill Gates and Kevin Scott explaining the challenges many students face in the current system. Built using tutorials and feedback from friends.",
       link: "https://x.com/AlexShibu2/status/1642946139723841548",
-      date: "2023",
+      date: "08.2023",
       repo: "",
       video: "https://www.youtube.com/watch?v=FVZCkDxriFI",
       writeup: "",
@@ -434,7 +434,7 @@ export default function WorkIndex() {
       description:
         "Wallet-gated message wall for authenticated messages and posts. Connect your wallet and say something on our open message board. Created late 2021.",
       link: "#", // Add link later
-      date: "2021",
+      date: "11.2021",
       repo: "https://github.com/alexshibu1/web3-message-board",
       video: "",
       writeup: "",
@@ -444,7 +444,7 @@ export default function WorkIndex() {
       description:
         "Restored full usability to iOS 7 devices by engineering a downgrade/jailbreak to iOS 6, fully documented for the community. Used iOS 6, Jailbreak, and Cydia tools.",
       link: "",
-      date: "2024",
+      date: "10.2025",
       repo: "",
       video: "https://www.youtube.com/watch?v=mIjrcIrA4IM",
       writeup: "",
@@ -454,7 +454,7 @@ export default function WorkIndex() {
       description:
         "Built and grew multiple Instagram theme pages including Bath Bombs For Vanauley (595 followers), Healthy Life Tips (621 followers), and Game Lynxe (739 followers). Received around $500 in free products across channels through partnerships and sponsorships.",
       link: "https://www.instagram.com/bath.bombs.for.vanauley/",
-      date: "2020",
+      date: "05.2020",
       repo: "",
       video: "",
       writeup: "",
@@ -465,7 +465,7 @@ export default function WorkIndex() {
       description:
         "Launched a Shopify storefront for bath bomb fundraising for the Vanauley homeless shelter with Instagram while learning e-commerce and order fulfillment workflows. Built using Shopify, Marketing, and Frontend development.",
       link: "https://www.linkedin.com/in/alexshibu/details/experience/1753015047/multiple-media-viewer/?profileId=ACoAACk8q9ABrmBqQ4wz9R3Ev5JU1iATl26x-5M&treasuryMediaId=1719025718914/",
-      date: "2020",
+      date: "05.2020",
       repo: "",
       video: "",
       writeup: "",
@@ -476,7 +476,7 @@ export default function WorkIndex() {
       description:
         "INTRODUCING IMPOSSIBLE-*FINISH IT*-TEST&DEVLOP YOUR IQ-TOTALLY FREE!!-*NO ADDS* Cube runner game with impossible levels designed to increase IQ and reaction times.",
       link: "/projects/cube.png",
-      date: "2019",
+      date: "08.2019",
       repo: "",
       video: "",
       writeup: "/essay/cuberunner",
@@ -487,7 +487,7 @@ export default function WorkIndex() {
       description:
         "A very simple calculator app written in Kotlin, meant for everyone and helpful for quick calculations. Features a clean design with basic operations: addition, subtraction, multiplication, and division. Simple keypad layout that's quick and easy to use, compatible with 82.1% of devices. My first Android application - feedback was requested for improvements.",
       link: "/projects/cal link.png",
-      date: "2018",
+      date: "07.2018",
       repo: "",
       video: "",
       writeup: "/essay/calculator",
@@ -498,7 +498,7 @@ export default function WorkIndex() {
       description:
         "Developed agri-center model projecting 5.6M jobs and a 285% profit increase for Ethiopian farmers by 2030 based on export and yield data. Worked with a 4-person team to develop strategic solutions to problems faced by 10 million Ethiopian coffee farmers, proposing 5.6M jobs based on agricultural data and stakeholder input. 10 million smallholder coffee farmers in Ethiopia face issues with access to international markets, inefficient farming practices, and inadequate lending options.",
       link: "https://www.linkedin.com/in/alexshibu/details/projects/1635528864697/single-media-viewer?type=DOCUMENT",
-      date: "2024",
+      date: "05.2023",
       repo: "",
       video: "",
       writeup: "",
@@ -508,7 +508,7 @@ export default function WorkIndex() {
       description:
         "I wrote about how machine learning is transforming different industries and fields such as healthcare, finance, and transportation. I highlighted the advantages of machine learning such as efficiency and accuracy, and provided examples of how it is being used to solve complex problems and make data-driven decisions. Additionally, I encouraged readers to learn more about machine learning and its potential applications to become part of the transformative change it is bringing to the world. Regarding diabetes diagnostics, I briefly mentioned how machine learning algorithms are analyzing large amounts of patient data to accurately diagnose and predict the progression of diabetes. I also pointed out the potential benefits of using machine learning in improving diabetes care, such as early detection and prevention of complications. However, I noted that this was only a small part of the larger discussion on how machine learning is transforming various industries and fields",
       link: "https://alexshibu.medium.com/trasforming-the-world-with-machine-learnnig-3467389abb0a",
-      date: "2023",
+      date: "02.2023",
       repo: "",
       video: "",
       writeup: "",
@@ -518,7 +518,7 @@ export default function WorkIndex() {
       description:
         "Ran deep-dive technical analysis on Ethereum price trends, built sheets & regression models, published insights and project video for public walkthrough. Full-stack Web3 project with technical analysis.",
       link: "#",
-      date: "2022",
+      date: "12.2021",
       repo: "",
       video: "https://youtu.be/JaFX-dkkLl0?si=5XxSh6zqk1TdqF7P",
       writeup: "",
@@ -528,7 +528,7 @@ export default function WorkIndex() {
       description:
         "Developed a mobile Q&A system using Twilio and OpenAI providing personalized feedback and reducing help-response time for users. The AI-powered SMS system provides an effective and efficient way for students to learn and improve their skills through mobile devices.",
       link: "#",
-      date: "2023",
+      date: "01.2023",
       repo: "",
       video: "https://www.youtube.com/watch?v=kNTfCxXBre4",
       writeup: "",
@@ -540,11 +540,16 @@ export default function WorkIndex() {
     ? projects.filter((p) => p.featured)
     : projects;
 
-  // Sort projects by date (newest first)
+  // Sort projects by date (newest first). Date format: MM.YYYY
+  const parseDate = (d: string) => {
+    const [mm, yyyy] = d.split(".").map(Number);
+    return { month: mm, year: yyyy };
+  };
   const sortedProjects = [...filteredProjects].sort((a, b) => {
-    const dateA = parseInt(a.date);
-    const dateB = parseInt(b.date);
-    return dateB - dateA; // Descending order (newest first)
+    const pa = parseDate(a.date);
+    const pb = parseDate(b.date);
+    if (pa.year !== pb.year) return pb.year - pa.year;
+    return pb.month - pa.month;
   });
 
   // Count featured projects
