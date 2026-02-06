@@ -121,7 +121,7 @@ function BigProjectButton({
           transition: "color 0.2s ease",
         }}
       >
-        {isActive ? "big projects" : "big project"}
+        {isActive ? "Featured Projects" : "Featured Projects"}
       </span>
     </motion.button>
   );
@@ -260,7 +260,7 @@ export default function WorkIndex() {
     {
       name: "WagerAI",
       description:
-        "The Polymarket for focus. A command terminal for deep work: open a position (task), add liquidity, execute or get liquidated. Built with Tempo Labs in 5 days—gamified to-dos with real stakes, a dashboard of portfolio and earnings, and a marketplace to see friends' positions. Try it at wagerai.vercel.app.",
+        "The Polymarket for focus. A command terminal for deep work. Open a position (task), add liquidity, execute or get liquidated. To-dos with real stakes, a dashboard of portfolio and earnings, and a marketplace to see friends' positions.",
       link: "https://wagerai.vercel.app",
       date: "12.2025",
       repo: "https://github.com/alexshibu1/wagerai",
@@ -272,7 +272,7 @@ export default function WorkIndex() {
       name: "easyhacks.org - Hackathon for Rejects",
       description:
         "Created and led EasyHacks, a hackathon for everyone, rejected in an email thread from UBC nwhacks. It transformed into a 10-person operation for 170+ true beginners, from military veterans to high school students in Nepal, with 170+ participants and $8K in prizes raised from sponsors.",
-      link: "https://easyhacks.org/",
+      link: "https://archive.ph/2mqxj",
       date: "01.2025",
       repo: "",
       video: "https://www.youtube.com/watch?v=BUFH1s5iUtw&t=55s",
@@ -280,9 +280,9 @@ export default function WorkIndex() {
       featured: true,
     },
     {
-      name: "LUMA (Luminous Understanding through Mindful AI)",
+      name: "LUMA - AI Meditations [hackathon]",
       description:
-        "Built generative-AI meditation app with neural voice, ultra-low-latency audio mixing. LUMA uses generative AI to create a unique, personalized meditation experience on demand, addressing the global mental health crisis by making effective, accessible mindfulness practices available to everyone. Built with React, Flask, Cohere Command-R LLM, Google Cloud TTS, and pydub. Submitted to GenAI Genesis 2025.",
+        "LUMA uses generative AI to create a unique, personalized meditation experience on demand, addressing the global mental health crisis by making effective, accessible mindfulness practices available to everyone. Built with React, Flask, Cohere Command-R LLM, Google Cloud TTS, and pydub. Submitted to GenAI Genesis 2025.",
       link: "https://devpost.com/software/luma-luminous-understanding-through-mindful-ai",
       date: "05.2025",
       repo: "https://github.com/e-ndorfin/luma",
@@ -292,8 +292,8 @@ export default function WorkIndex() {
     {
       name: "BenchBot - Internal Slack AI for BenchSci",
       description:
-        "Built an internal Slack AI (BenchBot) prototype to streamline HR/business communications and modeled a $4.5M annual savings scenario that CIBC stakeholders adopted as an internal estimate. Repetitive queries and information overload are hindering BenchSci's productivity up to 104,000 hours annually. As BenchSci's team size doubled from 200 to 400+ employees in 2022, repetition of common administrative and technical questions asked by new and existing employees have surged.",
-      link: "",
+        "Built an internal Slack AI (BenchBot) prototype to streamline HR/business communications and modeled a $4.5M annual savings scenario.  BenchSci's team size doubled from 200 to 400+ employees in 2022, repetition of common administrative, onboarding, HR, and technical questions asked by new and existing employees have surged. Repetitive queries and information overload are hindering BenchSci's productivity up to 104,000 hours annually.",
+      link: "https://docs.google.com/presentation/d/1cwFMnute4f_i65IaNJsnTHUXk0QaryH_FKPFqDETxKM/edit?usp=sharing",
       date: "12.2022",
       repo: "",
       video: "https://www.youtube.com/watch?v=Mqb1hEqly_Y",
@@ -312,7 +312,7 @@ export default function WorkIndex() {
     {
       name: "Avalonn - Voice Agents for SMBs",
       description:
-        "Co-founded Avalonn, a 24/7 voice agent that answers common inquiries in under 8s, books jobs and quotes with automatic CRM updates, and escalates emergencies via SMS, helping small businesses recover roughly $78 per missed call on average. Built using React + Flask + ElevenLabs + OpenAI + Twilio. Found early stage traction through customer interviews, live demos and onboarding local service businesses in plumbing, HVAC, and retail, integrating into their existing workflows. Received $25k in AWS credits, participated in DMZ Basecamp and featured in UofT Centre for Entrepreneurship founder showcases.",
+        "Avalonn is a 24/7 voice agent that answers common inquiries in under 8s, books jobs and quotes with automatic CRM updates, and escalates emergencies via SMS, helping small businesses recover roughly $78 per missed call on average.  Found early stage traction through customer interviews, live demos and onboarding local service businesses in plumbing, HVAC, and retail, integrating into their existing workflows. Received $25k in AWS credits, participated in DMZ Basecamp and featured in UofT Centre for Entrepreneurship founder showcases. Built using React + Flask + ElevenLabs + OpenAI + Twilio.",
       link: "https://www.youtube.com/watch?v=qsD2kOopCK4",
       date: "06.2025",
       repo: "",
@@ -347,7 +347,7 @@ export default function WorkIndex() {
     {
       name: "ASL Glasses [Hackathon]",
       description:
-        "Designed AR glasses translating sign language to text using transformers and OCR, demoed prototype. The development of glasses that can interpret ASL would help bridge the communication gap by allowing wearers to see text translations of what is being signed in real-time, thus making communication easier and more accessible.",
+        "Designed AR glasses translating sign language to text using transformers and OCR, demoed prototype.",
       link: "https://firebasestorage.googleapis.com/v0/b/tks-life-prod.appspot.com/o/items%2FZnFxCGk9nXYoiuJ37ArrGUjiBDB2%2FExplore%20Hackathon%20-%20ASL.pdf?alt=media&token=7d19ef3d-7d77-4059-8bd0-526fef256322",
       date: "11.2022",
       repo: "",
@@ -358,31 +358,31 @@ export default function WorkIndex() {
     {
       name: "Actions on Google - Bible Companion",
       description:
-        "Received 10k in cloud credits to work on Actions on Google + free merch. Created Bible Companion - a voice-first Bible study application that allows users to ask questions about scripture, receive daily verses, and explore biblical content through natural language conversations. Built using Google's Actions SDK, Dialogflow, and TensorFlow.",
+        "Received 10k in cloud credits to work on Actions on Google + free merch. Created Bible Companion. A Bible study application that allows users to ask questions about scripture and receive daily verses on google assistant. Built using Google's Actions SDK, Dialogflow, and TensorFlow.",
       link: "#", // Add link later
       date: "11.2019",
       video: "",
       repo: "",
       writeup: "",
-      featured: true,
       images: [
         "/projects/actions on google.png",
         "/projects/actions on google 2.png",
       ],
     },
     {
-      name: "Bioblox",
-      description: "10x better LinkedIn pic and Tinder pic with 2 clicks.",
+      name: "Bioblox - AI Profile Pictures ",
+      description:
+        "Developed a 2-click AI system for professional-quality profile images using Stable Diffusion, serving 50+ users and fine-tuned on 10–12 samples. Transform your profiles with AI generated images for a standout professional presence",
       link: "https://web.archive.org/web/20230722063459/https://bioblox.xyz/",
-      date: "07.2023",
+      date: "05.2023",
       repo: "https://github.com/alexshibu1/photoBloxAI",
-      video: "",
+      video: "https://www.youtube.com/watch?v=BjR4rSWL9y4",
       writeup: "",
     },
     {
-      name: "Cuddle - AI Focus Hackathon [hackathon]",
+      name: "Cuddle - AI Sleep Music [hackathon]",
       description:
-        "Built an AI-powered sleep-music generator using K-means clustering for personalized audio. The app uses artificial intelligence and K-means clustering to create personalized music for insomniacs, based on their sleep routines and music preferences. Hackathon finalist with Figma prototype.",
+        "Built an AI-powered sleep-music generator using K-means clustering for personalized audio. The app uses artificial intelligence and K-means clustering to create personalized music for insomniacs, based on their sleep routines and music preferences. Hackathon finalist",
       link: "https://www.figma.com/design/WJ7zap2lEOHglmLiuYWH2K/Cyberpunk-Music-App--Community-?node-id=0-1&p=f",
       date: "04.2024",
       repo: "",
@@ -392,7 +392,7 @@ export default function WorkIndex() {
     {
       name: "CIBC Rewards - UX Design [TKS]",
       description:
-        "Designed a consulting prototype for CIBC Rewards using Figma, modeling user engagement and projecting lift. Worked to increase Gen Z adoption of CIBC projecting up to 77% increase in Gen Z adoption through prototype user testing and survey analysis. Gen Z customers are switching banks, with only 50% remaining loyal to their parents' bank.",
+        "Designed a consulting prototype for CIBC Rewards using Figma, modeling user engagement and projecting lift. Solved the problem of Gen Z customers switching banks, with only 50% remaining loyal to their parents bank. Worked to increase Gen Z adoption of CIBC projecting up to 77% increase in Gen Z adoption through prototype user testing and survey analysis. Projected to save CIBC $4.5M annually.",
       link: "https://www.figma.com/file/X8pq2OGANVnQhQkyE5bTzR/CIBC-Rewards-Design",
       date: "03.2023",
       repo: "",
@@ -400,29 +400,9 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
-      name: "BioBlox",
-      description:
-        "Developed a 2-click AI system for professional-quality profile images using Stable Diffusion, serving 50+ users and fine-tuned on 10–12 samples. Transform your profiles with AI generated images for a standout professional presence.",
-      link: "#", // Add link later
-      date: "06.2023",
-      repo: "",
-      video: "https://www.youtube.com/watch?v=BjR4rSWL9y4",
-      writeup: "",
-    },
-    {
-      name: "Helpa",
-      description:
-        "Unlock limitless learning with our AI tool, delivering personalized educational resources to empower students worldwide.",
-      link: "https://sms.teleporthq.app/",
-      date: "01.2023",
-      repo: "",
-      video: "https://www.youtube.com/watch?v=zuGTUhnynEg",
-      writeup: "",
-    },
-    {
       name: "AI-Powered Personalized Feedback",
       description:
-        "The AI-Powered Personalized Feedback Tool is a transformative technology that offers feedback from the greatest minds in your field. Simply paste your content on the website and receive personalized feedback. The tool aims to break down barriers in education, inspired by the video of Bill Gates and Kevin Scott explaining the challenges many students face in the current system. Built using tutorials and feedback from friends.",
+        "The AI-Powered Personalized Feedback Tool is a transformative technology that offers feedback from the greatest minds in your field. Simply paste your content on the website and receive personalized feedback. The tool aims to break down barriers in education, inspired by the video of Bill Gates and Kevin Scott explaining the challenges many students face in the current system.",
       link: "https://x.com/AlexShibu2/status/1642946139723841548",
       date: "08.2023",
       repo: "",
@@ -432,7 +412,7 @@ export default function WorkIndex() {
     {
       name: "Web3 Message Board",
       description:
-        "Wallet-gated message wall for authenticated messages and posts. Connect your wallet and say something on our open message board. Created late 2021.",
+        "Wallet-gated message wall for authenticated messages and posts. Connect your wallet and say something on our open message board. Buildspace project.",
       link: "#", // Add link later
       date: "11.2021",
       repo: "https://github.com/alexshibu1/web3-message-board",
@@ -472,9 +452,9 @@ export default function WorkIndex() {
       image: "/projects/bathbombs.png",
     },
     {
-      name: "Cube Runner",
+      name: "Cube Runner2",
       description:
-        "INTRODUCING IMPOSSIBLE-*FINISH IT*-TEST&DEVLOP YOUR IQ-TOTALLY FREE!!-*NO ADDS* Cube runner game with impossible levels designed to increase IQ and reaction times.",
+        "Made a impossible cube runner game with radomly generated  levels designed to increase test  reaction times. First Unity game of mine.",
       link: "/projects/cube.png",
       date: "08.2019",
       repo: "",
@@ -485,7 +465,7 @@ export default function WorkIndex() {
     {
       name: "Calculator App 1.1",
       description:
-        "A very simple calculator app written in Kotlin, meant for everyone and helpful for quick calculations. Features a clean design with basic operations: addition, subtraction, multiplication, and division. Simple keypad layout that's quick and easy to use, compatible with 82.1% of devices. My first Android application - feedback was requested for improvements.",
+        "Simple calculator app written in Kotlin for quick calculations. Features a clean design with basic operations: addition, subtraction, multiplication, and division. Simple keypad layout that's quick and easy to use, compatible with 82.1% of devices. My first published Android app.",
       link: "/projects/cal link.png",
       date: "07.2018",
       repo: "",
@@ -506,7 +486,7 @@ export default function WorkIndex() {
     {
       name: "Fixing diabetes diagnostics with linear regression models",
       description:
-        "I wrote about how machine learning is transforming different industries and fields such as healthcare, finance, and transportation. I highlighted the advantages of machine learning such as efficiency and accuracy, and provided examples of how it is being used to solve complex problems and make data-driven decisions. Additionally, I encouraged readers to learn more about machine learning and its potential applications to become part of the transformative change it is bringing to the world. Regarding diabetes diagnostics, I briefly mentioned how machine learning algorithms are analyzing large amounts of patient data to accurately diagnose and predict the progression of diabetes. I also pointed out the potential benefits of using machine learning in improving diabetes care, such as early detection and prevention of complications. However, I noted that this was only a small part of the larger discussion on how machine learning is transforming various industries and fields",
+        "I wrote about how machine learning is transforming diabetes diagnostics. Built and trained a model to analyze large amounts of patient data to accurately diagnose and predict the progression of diabetes. ",
       link: "https://alexshibu.medium.com/trasforming-the-world-with-machine-learnnig-3467389abb0a",
       date: "02.2023",
       repo: "",
@@ -524,14 +504,14 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
-      name: "SMS AI Tool",
+      name: "Helpa - SMS AI Tool",
       description:
-        "Developed a mobile Q&A system using Twilio and OpenAI providing personalized feedback and reducing help-response time for users. The AI-powered SMS system provides an effective and efficient way for students to learn and improve their skills through mobile devices.",
-      link: "#",
+        "Developed a mobile Q&A system using Twilio and OpenAI providing personalized feedback for students. The AI-powered SMS system provides an effective and efficient way for students to learn and improve their skills through mobile devices.",
+      link: "https://sms.teleporthq.app/",
       date: "01.2023",
       repo: "",
       video: "https://www.youtube.com/watch?v=kNTfCxXBre4",
-      writeup: "",
+      writeup: "https://www.youtube.com/watch?v=zuGTUhnynEg",
     },
   ];
 

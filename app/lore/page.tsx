@@ -180,7 +180,7 @@ const LORE: LoreItem[] = [
     id: "york-university-2023-09",
     date: "08.2023",
     line: "Started comp eng at York University",
-    more: "I joined the Computer Engineering program at York University. I had fun at engineering frosh and 2 weeks of classes before dropping out.Still have many friends ",
+    more: "I joined the Computer Engineering program at York University. I had fun at engineering frosh and went to 2 weeks of classes before dropping out. Still have many friends there. ",
   },
   {
     id: "villars-2025-08",
@@ -263,7 +263,7 @@ const LORE: LoreItem[] = [
   {
     id: "bike-rides-2024-11",
     date: "11.2024",
-    line: "50km on bike share from Scarborough to downtown Toronto",
+    line: "50km on bike share to downtown Toronto",
     more: "Did a 50km bike ride from Scarborough to downtown Toronto for fun. All on the Toronto bike share system. Probably the first person to do it. Switched bikes 13 times in the span of 6 hours.",
     links: [
       {
@@ -391,8 +391,8 @@ const LORE: LoreItem[] = [
   {
     id: "bible-companion-2019-09",
     date: "09.2019",
-    line: "Built a Actions on Google skill and got 10K in cloud",
-    more: "Received 10K in cloud credits to work on Actions on Google, plus free merch. Created Bible Companion. A google assistant bible study skill that allows users to ask questions about scripture, receive daily verses, and explore biblical content through natural language conversations. Built using Google's Actions SDK, Dialogflow, and TensorFlow. It was a pivotal moment of validation: realizing that emerging tech could be this cool and that the scale of (even fake) cloud-credit money could be so large, even if it wasn't real cash yet. This is when i started to take software seriously.",
+    line: "Built a Actions on Google and got 10K in cloud",
+    more: "Received 10K in cloud credits to work on Actions on Google, plus free merch. Created Bible Companion. A google assistant bible study skill that allows users to ask questions about scripture, receive daily verses on google assistant. It was a pivotal moment of validation. Realizing that emerging tech could be this cool and that the scale of (even fake) cloud-credit money could be so large. This is when i started to take software seriously.",
   },
   {
     id: "church-logo-2019-06",
@@ -553,7 +553,6 @@ function LoreListRow({
         </div>
       </div>
 
-      {/* Desktop: hover to preview, click to pin (unchanged UX) */}
       <button
         type="button"
         onMouseEnter={onHover}
@@ -626,12 +625,10 @@ export default function LorePage() {
       <div className="mb-4">
         <p className="text-gray-700 leading-relaxed text-sm">
           <span className="hidden md:inline">
-            Reverse-chronological moments that shaped me. One line each. Hover
-            to preview details, click to pin.
+            A timeline of moments that shaped my life. Hover for details.
           </span>
           <span className="md:hidden">
-            Reverse-chronological moments that shaped me. One line each. Tap a
-            moment to expand.
+            A timeline of moments that shaped my life. Tap to expand.
           </span>
         </p>
       </div>
