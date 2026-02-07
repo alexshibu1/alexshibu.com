@@ -334,7 +334,7 @@ const LORE: LoreItem[] = [
     id: "scholarship-workflow-2021",
     date: "06.2021",
     line: "Built a scholarship workflow and raised $8k+",
-    more: "Learned millions of dollars are left on the table. So I did a experiment with early GPT-2 fine-tuning to speed up applications. Raised $6k+ from scholarships, grants, and honorariums. Learned how incentives really work in education + nonprofits.",
+    more: "Learned millions of dollars are left on the table. I experimented with early GPT-2 fine-tuning to speed up applications. Learned how incentives really work in education and nonprofits.",
   },
   {
     id: "cube-2-shutdown-late-2021",

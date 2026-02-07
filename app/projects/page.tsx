@@ -239,7 +239,7 @@ export default function WorkIndex() {
     {
       name: "Youth 4 Entrepreneurship Desjardins x YMCA",
       description:
-        "Created a film on why young people should build and won first place in a nationwide competition. Led to invite to Desjardins Dream the Impossible event in Montreal.",
+        "Created a film on why young people should build and won first place in a nationwide competition. Led to invite from Desjardins Dream the Impossible event in Montreal.",
       link: "https://www.ymcagta.org/blog/congratulations-to-the-winners-of-the-youth-for-entrepreneurship-media-contest-powered-by-desjardins", // Add link later
       date: "03.2022",
       video: "https://www.youtube.com/watch?v=mHKDR622pCM", // Add video link later
@@ -260,7 +260,7 @@ export default function WorkIndex() {
     {
       name: "WagerAI",
       description:
-        "The Polymarket for focus. A command terminal for deep work. Open a position (task), add liquidity, execute or get liquidated. To-dos with real stakes, a dashboard of portfolio and earnings, and a marketplace to see friends' positions.",
+        "The Polymarket for focus. A command terminal for deep work. Open a position task, add liquidity, and execute. To-dos with real stakes, a dashboard of portfolio and earnings, and a marketplace to see friends' positions.",
       link: "https://wagerai.vercel.app",
       date: "12.2025",
       repo: "https://github.com/alexshibu1/wagerai",
@@ -271,7 +271,7 @@ export default function WorkIndex() {
     {
       name: "easyhacks.org - Hackathon for Rejects",
       description:
-        "Created and led EasyHacks, a hackathon for everyone, rejected in an email thread from UBC nwhacks. It transformed into a 10-person operation for 170+ true beginners, from military veterans to high school students in Nepal, with 170+ participants and $8K in prizes raised from sponsors.",
+        "Created and led EasyHacks, a hackathon for everyone, rejected in an email thread from UBC nwhacks. It transformed into a 20 person operation, from military veterans to high school students in Nepal, with 170+ participants and $8K in prizes raised from sponsors.",
       link: "https://archive.ph/2mqxj",
       date: "01.2025",
       repo: "",
@@ -282,7 +282,7 @@ export default function WorkIndex() {
     {
       name: "LUMA - AI Meditations [hackathon]",
       description:
-        "LUMA uses generative AI to create a unique, personalized meditation experience on demand, addressing the global mental health crisis by making effective, accessible mindfulness practices available to everyone. Built with React, Flask, Cohere Command-R LLM, Google Cloud TTS, and pydub. Submitted to GenAI Genesis 2025.",
+        "LUMA uses generative AI to create a unique, personalized meditation experience, addressing the global mental health crisis with personalized meditations practices for everyone. Built with React, Flask, Cohere, Google Cloud TTS, and pydub.",
       link: "https://devpost.com/software/luma-luminous-understanding-through-mindful-ai",
       date: "05.2025",
       repo: "https://github.com/e-ndorfin/luma",
@@ -312,7 +312,7 @@ export default function WorkIndex() {
     {
       name: "Avalonn - Voice Agents for SMBs",
       description:
-        "Avalonn is a 24/7 voice agent that answers common inquiries in under 8s, books jobs and quotes with automatic CRM updates, and escalates emergencies via SMS, helping small businesses recover roughly $78 per missed call on average.  Found early stage traction through customer interviews, live demos and onboarding local service businesses in plumbing, HVAC, and retail, integrating into their existing workflows. Received $25k in AWS credits, participated in DMZ Basecamp and featured in UofT Centre for Entrepreneurship founder showcases. Built using React + Flask + ElevenLabs + OpenAI + Twilio.",
+        "Avalonn is voice agent that answers common inquiries, books jobs, estimate quotes, and escalates emergencies, helping small businesses recover roughly $78 per missed call on average.  Found early stage traction through customer interviews, live demos and onboarding local service businesses in plumbing and HVAC integrating into their existing workflows. Received $25k in AWS credits, participated in DMZ Basecamp and featured in UofT Centre for Entrepreneurship founder showcases. Built using React + Flask + ElevenLabs + OpenAI + Twilio.",
       link: "https://www.youtube.com/watch?v=qsD2kOopCK4",
       date: "06.2025",
       repo: "",
@@ -324,7 +324,7 @@ export default function WorkIndex() {
     {
       name: "CoachMi.co",
       description:
-        "Forge your path with Titans - AI-powered mentorship platform that provides guidance from industry giants. Features custom virtual boardrooms, optimized action roadmaps, and 50+ decision-making frameworks.",
+        "Forge your path with Titans, an AI-powered mentorship platform that provides guidance from industry giants. Features custom virtual boardrooms, optimized action roadmaps, and 50+ decision-making frameworks.",
       link: "https://web.archive.org/web/20240924161229/http://www.coachmi.co/",
       date: "09.2024",
       repo: "",
@@ -335,7 +335,7 @@ export default function WorkIndex() {
     {
       name: "Circus Clownz NFT",
       description:
-        "hired 2 ppl; created nfts, social media, and discord community; Did not launch due to the lack of long-term utility.",
+        "Hired 2 people, created nfts, social media, and discord community, but did not launch due to the lack of long term utility and the massive market crash of 2022.",
       link: "/essay/circusclownz",
       date: "04.2021",
       repo: "https://web.archive.org/web/20220128132945/https:/circusclownz.com/",
@@ -358,7 +358,7 @@ export default function WorkIndex() {
     {
       name: "Actions on Google - Bible Companion",
       description:
-        "Received 10k in cloud credits to work on Actions on Google + free merch. Created Bible Companion. A Bible study application that allows users to ask questions about scripture and receive daily verses on google assistant. Built using Google's Actions SDK, Dialogflow, and TensorFlow.",
+        "Received 10k in cloud credits to work on Actions on Google + free merch. Created Bible Companion, a Bible study application that allows users to ask questions about scripture and receive daily verses on Google Assistant. Built using Google's Actions SDK, Dialogflow, and TensorFlow.",
       link: "#", // Add link later
       date: "11.2019",
       video: "",
@@ -372,7 +372,7 @@ export default function WorkIndex() {
     {
       name: "Bioblox - AI Profile Pictures ",
       description:
-        "Developed a 2-click AI system for professional-quality profile images using Stable Diffusion, serving 50+ users and fine-tuned on 10–12 samples. Transform your profiles with AI generated images for a standout professional presence",
+        "Developed a 2-click AI system for professional-quality profile images using Stable Diffusion, serving 50+ users and fine-tuned on 10-12 samples. Transform your profiles with AI generated images for a standout professional presence",
       link: "https://web.archive.org/web/20230722063459/https://bioblox.xyz/",
       date: "05.2023",
       repo: "https://github.com/alexshibu1/photoBloxAI",
@@ -382,7 +382,7 @@ export default function WorkIndex() {
     {
       name: "Cuddle - AI Sleep Music [hackathon]",
       description:
-        "Built an AI-powered sleep-music generator using K-means clustering for personalized audio. The app uses artificial intelligence and K-means clustering to create personalized music for insomniacs, based on their sleep routines and music preferences. Hackathon finalist",
+        "Built an AI-powered sleep-music generator using K-means clustering for personalized audio. The app uses artificial intelligence and K-means clustering to create personalized music for insomniacs, based on their sleep routines and music preferences. Hackathon finalist.",
       link: "https://www.figma.com/design/WJ7zap2lEOHglmLiuYWH2K/Cyberpunk-Music-App--Community-?node-id=0-1&p=f",
       date: "04.2024",
       repo: "",
