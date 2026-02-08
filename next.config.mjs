@@ -30,6 +30,11 @@ const nextConfig = {
         destination: "/rejected",
         permanent: true,
       },
+      {
+        source: "/smym",
+        destination: "https://smym.beehiiv.com",
+        permanent: true,
+      },
     ];
   },
 };
