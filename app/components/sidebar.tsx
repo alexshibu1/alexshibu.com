@@ -101,14 +101,14 @@ export default function Sidebar() {
 
         <div className="social-links mt-12">
           <a
-            href="https://twitter.com"
+            href="https://x.com/alexshibu2"
             target="_blank"
             rel="noopener noreferrer"
           >
             x
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/alexshibu1"
             target="_blank"
             rel="noopener noreferrer"
           >
