@@ -519,7 +519,7 @@ function LoreListRow({
           "py-2.5 rounded-md",
           "transition-colors",
           "md:hidden",
-          isExpanded ? "bg-gray-50" : "active:bg-gray-50",
+          isExpanded ? "bg-red-50/70" : "active:bg-red-50/50 hover:bg-red-50/40",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-200 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
         ].join(" ")}
         id={toggleId}
@@ -531,7 +531,7 @@ function LoreListRow({
         </span>
 
         <span className="min-w-0">
-          <span className="block text-sm text-gray-900 leading-snug truncate group-hover:underline group-hover:decoration-gray-200 group-hover:underline-offset-4">
+          <span className="block text-sm text-gray-900 leading-snug truncate group-hover:underline group-hover:decoration-red-200 group-hover:underline-offset-4">
             {item.line}
           </span>
         </span>
@@ -588,7 +588,7 @@ function LoreListRow({
           "hidden md:grid grid-cols-[90px_1fr] gap-6 items-baseline",
           "py-1 rounded-md",
           "transition-colors",
-          isActive ? "bg-gray-50" : "hover:bg-gray-50",
+          isActive ? "bg-red-50/70" : "hover:bg-red-50/50",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-200 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
         ].join(" ")}
         aria-current={isPinned ? "true" : undefined}
@@ -598,7 +598,7 @@ function LoreListRow({
         </span>
 
         <span className="min-w-0">
-          <span className="block text-sm text-gray-900 leading-snug truncate group-hover:underline group-hover:decoration-gray-200 group-hover:underline-offset-4">
+          <span className="block text-sm text-gray-900 leading-snug truncate group-hover:underline group-hover:decoration-red-200 group-hover:underline-offset-4">
             {item.line}
           </span>
         </span>
