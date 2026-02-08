@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,13 +15,29 @@ export default function Sidebar() {
     setIsOpen(false);
   };
 
+  // Close menu on Escape; lock body scroll when open (mobile)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeMenu();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    const prevOverflow = document.body.style.overflow;
+    if (isOpen) document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [isOpen]);
+
   return (
     <>
       {/* Hamburger button - visible on mobile only */}
       <button
+        type="button"
         className={`hamburger-button ${isOpen ? "hamburger-open" : ""}`}
         onClick={toggleMenu}
-        aria-label="Toggle menu"
+        aria-label={isOpen ? "Close menu" : "Open menu"}
+        aria-expanded={isOpen}
       >
         <svg
           width="24"
@@ -39,8 +55,8 @@ export default function Sidebar() {
         </svg>
       </button>
 
-      {/* Overlay - appears when menu is open on mobile */}
-      {isOpen && <div className="menu-overlay" onClick={closeMenu}></div>}
+      {/* Overlay - appears when menu is open on mobile; tap to close */}
+      {isOpen && <div className="menu-overlay" onClick={closeMenu} />}
 
       {/* Sidebar */}
       <div className={`sidebar ${isOpen ? "sidebar-open" : ""}`}>

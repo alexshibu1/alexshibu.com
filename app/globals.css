@@ -811,6 +811,7 @@ body {
     max-width: 100%;
     padding: 1rem 1.25rem;
     padding-top: 4.5rem; /* Space for hamburger button */
+    padding-bottom: 5rem; /* Space for fixed footer so it doesn't overlap content */
     width: 100%;
     box-sizing: border-box;
     overflow-x: hidden; /* Prevent horizontal overflow */
