@@ -1,9 +1,18 @@
 import { BookCard } from "./BookCard";
 import { books, READING_HOURS_ESTIMATE } from "./books-data";
 
+/** Sort by date finished (MM.YYYY), most recent first. */
+function sortByDateRead(a: { dateRead: string }, b: { dateRead: string }) {
+  const [ma, ya] = a.dateRead.split(".").map(Number);
+  const [mb, yb] = b.dateRead.split(".").map(Number);
+  if (ya !== yb) return yb - ya;
+  return mb - ma;
+}
+
 export default function ReadingPage() {
   const totalBooks = books.length;
   const totalHours = READING_HOURS_ESTIMATE;
+  const sortedBooks = [...books].sort(sortByDateRead);
 
   return (
     <main className="page-content">
@@ -70,7 +79,7 @@ export default function ReadingPage() {
       </div>
 
       <ul className="mt-6">
-        {books.map((book) => (
+        {sortedBooks.map((book) => (
           <BookCard key={`${book.title}-${book.author}`} book={book} />
         ))}
       </ul>
