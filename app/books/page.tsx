@@ -1,5 +1,5 @@
 import { BookCard } from "./BookCard";
-import { books, READING_HOURS_ESTIMATE } from "./books-data";
+import { books, TOTAL_BOOKS, TOTAL_HOURS } from "./books-data";
 
 /** Sort by date finished (MM.YYYY), most recent first. */
 function sortByDateRead(a: { dateRead: string }, b: { dateRead: string }) {
@@ -10,8 +10,6 @@ function sortByDateRead(a: { dateRead: string }, b: { dateRead: string }) {
 }
 
 export default function ReadingPage() {
-  const totalBooks = books.length;
-  const totalHours = READING_HOURS_ESTIMATE;
   const sortedBooks = [...books].sort(sortByDateRead);
 
   return (
@@ -44,7 +42,7 @@ export default function ReadingPage() {
               Books
             </div>
             <div className="text-base text-gray-900 font-semibold tabular-nums leading-tight">
-              {totalBooks}
+              {TOTAL_BOOKS}
             </div>
           </div>
           <div className="md:hidden h-11 rounded-lg border border-gray-200 bg-gray-50 flex flex-col items-center justify-center">
@@ -52,7 +50,7 @@ export default function ReadingPage() {
               Hours
             </div>
             <div className="text-base text-gray-900 font-semibold tabular-nums leading-tight">
-              {totalHours}
+              {TOTAL_HOURS}
             </div>
           </div>
 
@@ -63,7 +61,7 @@ export default function ReadingPage() {
                 Books
               </div>
               <div className="text-base text-gray-900 font-semibold tabular-nums leading-tight">
-                {totalBooks}
+                {TOTAL_BOOKS}
               </div>
             </div>
             <div className="flex-1 px-3 py-2 flex flex-col items-center justify-center text-center">
@@ -71,7 +69,7 @@ export default function ReadingPage() {
                 Hours
               </div>
               <div className="text-base text-gray-900 font-semibold tabular-nums leading-tight">
-                {totalHours}
+                {TOTAL_HOURS}
               </div>
             </div>
           </div>

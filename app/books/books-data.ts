@@ -14,13 +14,17 @@ export type Book = {
   slug?: string;
   /** True if consumed as audiobook (shows small indicator beside title). */
   isAudiobook?: boolean;
+  /** Audiobook: total listening time in hours. Used for total-hours calculation. */
+  durationHours?: number;
+  /** Print/ebook: total word count. Used with READING_WPM for total-hours calculation. */
+  wordCount?: number;
 };
 
 /** Date format for "finished" display: month and year only (MM.YYYY). */
 export const BOOK_DATE_FORMAT = "MM.YYYY";
 
-// Quick-to-edit single number for now.
-export const READING_HOURS_ESTIMATE = 110;
+/** Reading speed for print/ebook: words per minute (just below average ~238 for non-fiction). */
+export const READING_WPM = 200;
 
 export const books: Book[] = [
   {
@@ -30,6 +34,7 @@ export const books: Book[] = [
     dateRead: "01.2026",
     notes: "make-your-bed-notes",
     slug: "make-your-bed",
+    wordCount: 25_000,
     summary:
       "Repetitive but solid; the idea of starting your day with a completed task is powerful.",
     review:
@@ -43,6 +48,7 @@ export const books: Book[] = [
     dateRead: "12.2025",
     notes: "naval-almanack-notes",
     slug: "almanack-of-naval-ravikant",
+    wordCount: 60_000,
     summary: "Good book.",
     review: "Good book",
   },
@@ -53,6 +59,7 @@ export const books: Book[] = [
     dateRead: "03.2025",
     slug: "will",
     isAudiobook: true,
+    durationHours: 16 + 16 / 60,
     summary: "Good when I read; had a clue he was a bit off before the slap.",
     review:
       "it was good when I read. I had clues this guy was a bit off. but the slap didn't seem out of the ordinary.",
@@ -64,6 +71,7 @@ export const books: Book[] = [
     dateRead: "03.2025",
     slug: "the-ride-of-a-lifetime",
     isAudiobook: true,
+    durationHours: 8 + 45 / 60,
     summary: "Beginning was awesome; not much value beyond that.",
     review:
       "no value really. Thanks for telling me you saved the company. The beginning was really awesome.",
@@ -75,6 +83,7 @@ export const books: Book[] = [
     dateRead: "12.2025",
     notes: "war-of-art-notes",
     slug: "the-war-of-art",
+    wordCount: 35_000,
     summary: "Converting procrastination into a war against a force of nature.",
     review: "converting procrastination into a war against a force of nature",
   },
@@ -87,6 +96,7 @@ export const books: Book[] = [
     notes: "the-third-door",
     slug: "the-third-door",
     isAudiobook: true,
+    durationHours: 9.5,
     summary:
       "Bias to action and finding the alternative route; break the perceived limit of access.",
     review:
@@ -101,6 +111,7 @@ export const books: Book[] = [
     notes: "why-we-sleep",
     slug: "why-we-sleep",
     isAudiobook: true,
+    durationHours: 13 + 52 / 60,
     summary:
       "Mid self-improvement read; the main part scares you about how lack of sleep is killing you.",
     review:
@@ -113,6 +124,7 @@ export const books: Book[] = [
     dateRead: "01.2024",
     slug: "what-the-most-successful-people-do-before-breakfast",
     isAudiobook: true,
+    durationHours: 4.5,
     summary:
       "Pretty good value; will power in the morning, auto pilot at night.",
     review:
@@ -125,6 +137,7 @@ export const books: Book[] = [
     dateRead: "01.2024",
     slug: "the-5-second-rule",
     isAudiobook: true,
+    durationHours: 7.5,
     summary:
       "The 5-4-3-2-1 idea is good; in action it's harder to get your mind to do it.",
     review:
@@ -138,12 +151,29 @@ export const books: Book[] = [
     dateStarted: "03.2023",
     notes: "atomic-habits-notes",
     slug: "atomic-habits",
+    wordCount: 90_000,
     summary:
       "First book I finished; make habits easy, attractive, obvious, and satisfying.",
     review:
       "I really enjoyed this book and it's pretty much the first book I finished. I'm gonna write an actual review for my website. but 1 basic thing I learned: make any habit easy, attractive, obvious, and satisfying.",
   },
 ];
+
+/** Hours for one book: audiobook → durationHours; print/ebook → wordCount / (READING_WPM × 60). */
+function hoursForBook(book: Book): number {
+  if (book.isAudiobook && book.durationHours != null) return book.durationHours;
+  if (book.wordCount != null)
+    return book.wordCount / (READING_WPM * 60);
+  return 0;
+}
+
+/** Total number of books. */
+export const TOTAL_BOOKS = books.length;
+
+/** Total hours reading/listening: audiobooks by duration, print/ebook by wordCount at READING_WPM. */
+export const TOTAL_HOURS = Math.round(
+  books.reduce((sum, b) => sum + hoursForBook(b), 0),
+);
 
 /** Get book by slug (for /books/[slug] pages). Returns undefined if not found. */
 export function getBookBySlug(slug: string): Book | undefined {
@@ -166,7 +196,9 @@ export const LONG_REVIEW_MIN_LENGTH = 200;
 
 /** True if the book has a long review and should have an essay page. */
 export function hasLongReview(book: Book): boolean {
-  return Boolean(book.slug && book.review && book.review.length >= LONG_REVIEW_MIN_LENGTH);
+  return Boolean(
+    book.slug && book.review && book.review.length >= LONG_REVIEW_MIN_LENGTH,
+  );
 }
 
 /** Books that have long reviews (for essay page static params). */
