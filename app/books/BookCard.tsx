@@ -40,11 +40,11 @@ export function BookCard({ book }: { book: Book }) {
                   <span className="font-normal">{book.author}</span>
                 </Link>
               ) : (
-                <>
+                <span className="cursor-default select-text">
                   <span className="font-bold">{book.title}</span>{" "}
                   <span className="text-gray-500">by</span>{" "}
                   <span className="font-normal">{book.author}</span>
-                </>
+                </span>
               )}
               {book.isAudiobook ? (
                 <span
