@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Sidebar from "./components/sidebar";
+import SidebarWrapper from "./components/SidebarWrapper";
 import { Inter, Space_Grotesk, IBM_Plex_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 
@@ -49,7 +49,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased" suppressHydrationWarning>
-        <Sidebar />
+        <SidebarWrapper />
         {children}
         <SpeedInsights />
         <Analytics />

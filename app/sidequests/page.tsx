@@ -12,6 +12,29 @@ export default function SidequestsPage() {
 
       <div className="mt-4 divide-y divide-gray-100 border-t border-b border-gray-100 rounded-md bg-white/60">
         <Link
+          href="/photos"
+          className="group block px-3 py-2 hover:bg-red-50/40 transition-colors"
+          style={{ textDecoration: "none" }}
+        >
+          <div className="flex items-center justify-between gap-2 transition-transform group-hover:translate-x-[1px]">
+            <div className="min-w-0">
+              <span className="text-base font-semibold text-gray-900 group-hover:text-red-700">
+                photos
+              </span>
+              <span className="ml-2 text-sm text-gray-500 truncate group-hover:text-gray-700">
+                Some of my best pics.
+              </span>
+            </div>
+            <span
+              className="text-xs text-gray-400 flex-shrink-0 transition-transform group-hover:translate-x-[1px] group-hover:text-red-500"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
+          </div>
+        </Link>
+
+        <Link
           href="/coffee"
           className="group block px-3 py-2 hover:bg-red-50/40 transition-colors"
           style={{ textDecoration: "none" }}
