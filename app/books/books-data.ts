@@ -30,7 +30,7 @@ export const books: Book[] = [
   {
     title: "Make Your Bed",
     author: "William H. McRaven",
-    rating: 8,
+    rating: 7,
     dateRead: "01.2026",
     notes: "make-your-bed-notes",
     slug: "make-your-bed",
@@ -55,7 +55,7 @@ export const books: Book[] = [
   {
     title: "Will",
     author: "Will Smith",
-    rating: 8.5,
+    rating: 6,
     dateRead: "03.2025",
     slug: "will",
     isAudiobook: true,
@@ -105,7 +105,7 @@ export const books: Book[] = [
   {
     title: "Why We Sleep",
     author: "Matthew Walker",
-    rating: 8.7,
+    rating: 8,
     dateStarted: "12.2023",
     dateRead: "01.2024",
     notes: "why-we-sleep",
@@ -146,7 +146,7 @@ export const books: Book[] = [
   {
     title: "Atomic Habits",
     author: "James Clear",
-    rating: 10,
+    rating: 9,
     dateRead: "11.2025",
     dateStarted: "03.2023",
     notes: "atomic-habits-notes",

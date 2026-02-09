@@ -1,21 +1,14 @@
 import Link from "next/link";
 import type { Book } from "./books-data";
 import { formatDateOfFinishing, hasLongReview } from "./books-data";
+import { RatingPillTypography } from "./BookRatingDisplay";
 
 /** True if the book has a dedicated page (essay notes or long review). */
 function hasReviewPage(book: Book): boolean {
   return Boolean(book.notes || (book.slug && book.review && hasLongReview(book)));
 }
 
-function getRatingDisplay(rating: number): { full: number; hasHalf: boolean } {
-  const rating5 = Math.round((rating / 10) * 5 * 2) / 2;
-  const fullRating = Math.floor(rating5);
-  const hasHalf = rating5 % 1 !== 0;
-  return { full: fullRating, hasHalf };
-}
-
 export function BookCard({ book }: { book: Book }) {
-  const { full, hasHalf } = getRatingDisplay(book.rating);
   const formattedDate = formatDateOfFinishing(book.dateRead);
 
   return (
@@ -61,18 +54,8 @@ export function BookCard({ book }: { book: Book }) {
             </span>
           </div>
 
-          {/* Rating: fixed width so potatoes align left in same place (4 or 5) */}
-          <div className="text-gray-900 text-base leading-none flex justify-start md:justify-end">
-            <span
-              className="inline-flex justify-start min-w-[5.5rem]"
-              style={{ width: "5.5rem" }}
-              aria-label={`${book.rating} out of 10`}
-            >
-              {"🥔".repeat(full)}
-              <span className="opacity-0" aria-hidden="true">
-                {"🥔".repeat(5 - full - (hasHalf ? 1 : 0))}
-              </span>
-            </span>
+          <div className="flex justify-start md:justify-end">
+            <RatingPillTypography ratingOutOf10={book.rating} ariaLabel={`${book.rating} out of 10`} />
           </div>
         </div>
 

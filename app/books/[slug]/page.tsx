@@ -6,6 +6,7 @@ import {
   formatDateOfFinishing,
   LONG_REVIEW_MIN_LENGTH,
 } from "../books-data";
+import { RatingPillTypography } from "../BookRatingDisplay";
 
 export function generateStaticParams() {
   return getBooksWithLongReview().map((b) => ({ slug: b.slug! }));
@@ -24,8 +25,6 @@ export default function BookReviewPage({
   const formattedStarted = book.dateStarted
     ? formatDateOfFinishing(book.dateStarted)
     : null;
-  const full = Math.floor((book.rating / 10) * 5);
-  const hasHalf = Math.round((book.rating / 10) * 5 * 2) / 2 - full !== 0;
 
   return (
     <main className="page-content">
@@ -61,10 +60,7 @@ export default function BookReviewPage({
             <span className="tabular-nums">{formattedDate}</span>
           )}
           <span className="mx-2 text-gray-400">·</span>
-          <span className="text-gray-900">
-            {"🥔".repeat(full)}
-            {hasHalf ? "" : null}
-          </span>
+          <RatingPillTypography ratingOutOf10={book.rating} ariaLabel={`${book.rating} out of 10`} />
         </p>
         <div className="mt-2 prose prose-gray max-w-none">
           <p className="text-base md:text-lg text-gray-700 leading-relaxed whitespace-pre-line">
