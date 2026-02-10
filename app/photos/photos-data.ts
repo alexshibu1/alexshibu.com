@@ -17,8 +17,9 @@ export const PHOTOS = [
 export const PORTRAIT_PHOTOS = ["sf1.jpg", "sf3.jpg", "swiss.jpg"] as const;
 
 /** Rest of the pics for the grid (excludes portrait row). */
+const portraitSet = new Set<string>(PORTRAIT_PHOTOS);
 export const GRID_PHOTOS = PHOTOS.filter(
-  (f) => !PORTRAIT_PHOTOS.includes(f),
+  (f) => !portraitSet.has(f),
 ) as (typeof PHOTOS)[number][];
 
 const BASE = "/photos";
