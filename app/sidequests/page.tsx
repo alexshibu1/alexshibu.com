@@ -22,7 +22,7 @@ export default function SidequestsPage() {
                 photos
               </span>
               <span className="ml-2 text-sm text-gray-500 truncate group-hover:text-gray-700">
-                Some of my best pics.
+                Some of my best photographs from around the world.
               </span>
             </div>
             <span

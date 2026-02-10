@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PHOTOS, getPhotoSrc } from "./photos-data";
+import { PORTRAIT_PHOTOS, GRID_PHOTOS, getPhotoSrc } from "./photos-data";
 
 export default function PhotosPage() {
   return (
     <main className="min-h-screen w-full bg-white">
-      <div className="w-full max-w-5xl mx-auto px-4 pt-6 pb-16 sm:px-6">
+      <div className="w-full max-w-6xl mx-auto px-5 pt-8 pb-20 sm:px-8 md:px-10">
         <Link
           href="/sidequests"
-          className="inline-block text-sm text-gray-500 hover:text-red-600 hover:underline transition-colors mb-6"
+          className="inline-block text-sm text-gray-500 hover:text-red-600 hover:underline transition-colors mb-3"
         >
           ← sidequests
         </Link>
@@ -19,11 +19,30 @@ export default function PhotosPage() {
           photos
         </h1>
 
-        <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-5 mt-8 w-full">
-          {PHOTOS.map((filename) => (
+        {/* Portrait row: same-size cells, crop to fill */}
+        <div className="grid grid-cols-3 gap-4 sm:gap-5 md:gap-6 mt-6 w-full">
+          {PORTRAIT_PHOTOS.map((filename) => (
             <div
               key={filename}
-              className="relative aspect-square w-full overflow-hidden bg-gray-100"
+              className="relative aspect-[3/4] w-full overflow-hidden bg-white"
+            >
+              <Image
+                src={getPhotoSrc(filename)}
+                alt=""
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 50vw, 33vw"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Landscape grid: same-size square cells, crop to fill */}
+        <div className="grid grid-cols-3 gap-4 sm:gap-5 md:gap-6 mt-4 sm:mt-6 w-full">
+          {GRID_PHOTOS.map((filename) => (
+            <div
+              key={filename}
+              className="relative aspect-square w-full overflow-hidden bg-white"
             >
               <Image
                 src={getPhotoSrc(filename)}
