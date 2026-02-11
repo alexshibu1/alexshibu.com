@@ -1,7 +1,7 @@
 export type Book = {
   title: string;
   author: string;
-  rating: number; // out of 10
+  rating: number; // out of 5
   dateRead: string; // month and year of finishing, use BOOK_DATE_FORMAT (e.g. "12.2025")
   /** Month and year started (MM.YYYY), optional. */
   dateStarted?: string;
@@ -30,7 +30,7 @@ export const books: Book[] = [
   {
     title: "Make Your Bed",
     author: "William H. McRaven",
-    rating: 7,
+    rating: 3.5,
     dateRead: "01.2026",
     notes: "make-your-bed-notes",
     slug: "make-your-bed",
@@ -43,7 +43,7 @@ export const books: Book[] = [
   {
     title: "Almanack of Naval Ravikant",
     author: "Eric Jorgenson",
-    rating: 10,
+    rating: 5,
     dateStarted: "11.2025",
     dateRead: "12.2025",
     notes: "naval-almanack-notes",
@@ -55,7 +55,7 @@ export const books: Book[] = [
   {
     title: "Will",
     author: "Will Smith",
-    rating: 6,
+    rating: 3,
     dateRead: "03.2025",
     slug: "will",
     isAudiobook: true,
@@ -67,7 +67,7 @@ export const books: Book[] = [
   {
     title: "The Ride of a Lifetime",
     author: "Robert Iger",
-    rating: 8.8,
+    rating: 4.4,
     dateRead: "03.2025",
     slug: "the-ride-of-a-lifetime",
     isAudiobook: true,
@@ -79,7 +79,7 @@ export const books: Book[] = [
   {
     title: "The War of Art",
     author: "Steven Pressfield",
-    rating: 10,
+    rating: 5,
     dateRead: "12.2025",
     notes: "war-of-art-notes",
     slug: "the-war-of-art",
@@ -90,7 +90,7 @@ export const books: Book[] = [
   {
     title: "The Third Door",
     author: "Alex Banayan",
-    rating: 8.3,
+    rating: 4.2,
     dateStarted: "01.2024",
     dateRead: "02.2024",
     notes: "the-third-door",
@@ -105,7 +105,7 @@ export const books: Book[] = [
   {
     title: "Why We Sleep",
     author: "Matthew Walker",
-    rating: 8,
+    rating: 3.5,
     dateStarted: "12.2023",
     dateRead: "01.2024",
     notes: "why-we-sleep",
@@ -120,7 +120,7 @@ export const books: Book[] = [
   {
     title: "What Successful People Do Before Breakfast",
     author: "Laura Vanderkam",
-    rating: 6.8,
+    rating: 3.4,
     dateRead: "01.2024",
     slug: "what-the-most-successful-people-do-before-breakfast",
     isAudiobook: true,
@@ -133,7 +133,7 @@ export const books: Book[] = [
   {
     title: "The 5 Second Rule",
     author: "Mel Robbins",
-    rating: 7.7,
+    rating: 3.9,
     dateRead: "01.2024",
     slug: "the-5-second-rule",
     isAudiobook: true,
@@ -146,7 +146,7 @@ export const books: Book[] = [
   {
     title: "Atomic Habits",
     author: "James Clear",
-    rating: 9,
+    rating: 4.5,
     dateRead: "11.2025",
     dateStarted: "03.2023",
     notes: "atomic-habits-notes",

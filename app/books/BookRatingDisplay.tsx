@@ -1,32 +1,34 @@
 "use client";
 
-/** Convert rating out of 10 to display value out of 5 (0.5 steps). */
-export function getRating5(ratingOutOf10: number): {
+/** Normalize rating out of 5 to 0.5 steps and star display parts. */
+export function getRating5(rating: number): {
   full: number;
   hasHalf: boolean;
   value: number;
 } {
-  const value = Math.round((ratingOutOf10 / 10) * 5 * 2) / 2;
+  // Clamp between 0 and 5, then round to nearest 0.5
+  const clamped = Math.max(0, Math.min(5, rating));
+  const value = Math.round(clamped * 2) / 2;
   const full = Math.floor(value);
   const hasHalf = value % 1 !== 0;
   return { full, hasHalf, value };
 }
 
-type RatingDisplayProps = { ratingOutOf10: number; ariaLabel?: string };
+type RatingDisplayProps = { rating: number; ariaLabel?: string };
 
 /** Shared pill wrapper: same look for every rating option, font-medium throughout. */
 const PILL_CLASS =
   "inline-flex items-center justify-center gap-1.5 rounded-lg px-2.5 py-1 text-sm font-medium tabular-nums bg-gray-100 text-gray-800 border border-gray-200/80";
 
 /** Option 1: Stars inside pill — ★★★★½ */
-export function RatingStars({ ratingOutOf10, ariaLabel }: RatingDisplayProps) {
-  const { full, hasHalf } = getRating5(ratingOutOf10);
-  const label = ariaLabel ?? `${ratingOutOf10} out of 10`;
+export function RatingStars({ rating, ariaLabel }: RatingDisplayProps) {
+  const { full, hasHalf, value } = getRating5(rating);
+  const label = ariaLabel ?? `${value} out of 5`;
   return (
     <span
       className={PILL_CLASS}
       aria-label={label}
-      title={`${(ratingOutOf10 / 2).toFixed(1)} / 5`}
+      title={`${value} / 5`}
     >
       {Array.from({ length: 5 }, (_, i) => {
         if (i < full)
@@ -54,11 +56,11 @@ export function RatingStars({ ratingOutOf10, ariaLabel }: RatingDisplayProps) {
 
 /** Option 2: Pill + typography — "4.5 / 5" inside one pill, same font weight. */
 export function RatingPillTypography({
-  ratingOutOf10,
+  rating,
   ariaLabel,
 }: RatingDisplayProps) {
-  const { value } = getRating5(ratingOutOf10);
-  const label = ariaLabel ?? `${ratingOutOf10} out of 10`;
+  const { value } = getRating5(rating);
+  const label = ariaLabel ?? `${value} out of 5`;
   return (
     <span
       className={PILL_CLASS}
@@ -72,14 +74,14 @@ export function RatingPillTypography({
 }
 
 /** Option 3: Bar inside pill — segments + "/ 5" */
-export function RatingBar({ ratingOutOf10, ariaLabel }: RatingDisplayProps) {
-  const { full, hasHalf } = getRating5(ratingOutOf10);
-  const label = ariaLabel ?? `${ratingOutOf10} out of 10`;
+export function RatingBar({ rating, ariaLabel }: RatingDisplayProps) {
+  const { full, hasHalf, value } = getRating5(rating);
+  const label = ariaLabel ?? `${value} out of 5`;
   return (
     <span
       className={PILL_CLASS}
       aria-label={label}
-      title={`${(ratingOutOf10 / 2).toFixed(1)} / 5`}
+      title={`${value} / 5`}
     >
       <span className="inline-flex items-center gap-0.5">
         {Array.from({ length: 5 }, (_, i) => {
@@ -106,14 +108,14 @@ export function RatingBar({ ratingOutOf10, ariaLabel }: RatingDisplayProps) {
 }
 
 /** Option 4: Dots inside pill — ●●●●○ + "/ 5" */
-export function RatingDots({ ratingOutOf10, ariaLabel }: RatingDisplayProps) {
-  const { full, hasHalf } = getRating5(ratingOutOf10);
-  const label = ariaLabel ?? `${ratingOutOf10} out of 10`;
+export function RatingDots({ rating, ariaLabel }: RatingDisplayProps) {
+  const { full, hasHalf, value } = getRating5(rating);
+  const label = ariaLabel ?? `${value} out of 5`;
   return (
     <span
       className={PILL_CLASS}
       aria-label={label}
-      title={`${(ratingOutOf10 / 2).toFixed(1)} / 5`}
+      title={`${value} / 5`}
     >
       <span className="inline-flex items-center gap-1">
         {Array.from({ length: 5 }, (_, i) => {

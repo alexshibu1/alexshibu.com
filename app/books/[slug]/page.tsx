@@ -60,7 +60,7 @@ export default function BookReviewPage({
             <span className="tabular-nums">{formattedDate}</span>
           )}
           <span className="mx-2 text-gray-400">·</span>
-          <RatingPillTypography ratingOutOf10={book.rating} ariaLabel={`${book.rating} out of 10`} />
+          <RatingPillTypography rating={book.rating} ariaLabel={`${book.rating} out of 5`} />
         </p>
         <div className="mt-2 prose prose-gray max-w-none">
           <p className="text-base md:text-lg text-gray-700 leading-relaxed whitespace-pre-line">

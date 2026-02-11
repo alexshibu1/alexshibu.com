@@ -55,7 +55,7 @@ export function BookCard({ book }: { book: Book }) {
           </div>
 
           <div className="flex justify-start md:justify-end">
-            <RatingPillTypography ratingOutOf10={book.rating} ariaLabel={`${book.rating} out of 10`} />
+            <RatingPillTypography rating={book.rating} ariaLabel={`${book.rating} out of 5`} />
           </div>
         </div>
 

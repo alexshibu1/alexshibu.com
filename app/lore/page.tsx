@@ -291,6 +291,12 @@ const LORE: LoreItem[] = [
     more: "Jan 1st, 2025 — did a cold plunge with Jack.org at Woodbine Beach in Toronto.",
   },
   {
+    id: "3d-printing-2020-10",
+    date: "10.2020",
+    line: "Got into 3D printing",
+    more: "I used to 3D print a lot of things from the Toronto Public library. I would go to every workshop and learn modelling and Maya. I even got an embroidery certification.",
+  },
+  {
     id: "monitor-flip-2024",
     date: "03.2024",
     line: "Flipped free monitors to fund my startup",
