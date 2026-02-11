@@ -297,6 +297,19 @@ const LORE: LoreItem[] = [
     more: "I used to 3D print a lot of things from the Toronto Public library. I would go to every workshop and learn modelling and Maya. I even got an embroidery certification.",
   },
   {
+    id: "garage-learning-fellow-2020-12",
+    date: "12.2020",
+    line: "The Garage Learning Fellow",
+    more:
+      "I was very into filmmaking and received the #SAVETHENIGHT scholarship from The Garage Learning through their partnership with Jägermeister. Each scholarship winner got a Pro Subscription and a Hard LED Light or Soft Panel Light Learning Kit. I became a big fan of Steve Giralt and his commercials — and saw up close what chapter 7 bankruptcy looks like.",
+    links: [
+      {
+        label: "Scholarship winners page (archive)",
+        url: "http://web.archive.org/web/20220116221819/https://www.thegaragelearning.com/pages/social-impact-jager-winners",
+      },
+    ],
+  },
+  {
     id: "monitor-flip-2024",
     date: "03.2024",
     line: "Flipped free monitors to fund my startup",
