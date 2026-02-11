@@ -286,9 +286,9 @@ const LORE: LoreItem[] = [
   },
   {
     id: "cold-plunge-2024-01",
-    date: "01.2024",
+    date: "01.2025",
     line: "Cold plunge at Woodbine Beach, Toronto",
-    more: "Jan 1st, 2024 — did a cold plunge with Jack.org at Woodbine Beach in Toronto.",
+    more: "Jan 1st, 2025 — did a cold plunge with Jack.org at Woodbine Beach in Toronto.",
   },
   {
     id: "monitor-flip-2024",
@@ -519,7 +519,9 @@ function LoreListRow({
           "py-2.5 rounded-md",
           "transition-colors",
           "md:hidden",
-          isExpanded ? "bg-red-50/70" : "active:bg-red-50/50 hover:bg-red-50/40",
+          isExpanded
+            ? "bg-red-50/70"
+            : "active:bg-red-50/50 hover:bg-red-50/40",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-200 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
         ].join(" ")}
         id={toggleId}
