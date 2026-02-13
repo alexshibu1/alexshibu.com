@@ -12,6 +12,21 @@ export default function TechnicalPage() {
         Mind‑mapping how I become technically dangerous — from first principles
         to shipping real products.
       </p>
+      <p className="text-sm text-gray-600 mb-4">
+        This map ties directly to my{" "}
+        <Link href="/projects" className="text-gray-700 hover:text-red-600 hover:underline">
+          projects
+        </Link>
+        ,{" "}
+        <Link href="/writing" className="text-gray-700 hover:text-red-600 hover:underline">
+          writing
+        </Link>
+        , and{" "}
+        <Link href="/lore" className="text-gray-700 hover:text-red-600 hover:underline">
+          lore
+        </Link>{" "}
+        as I build toward a founder-minded profile.
+      </p>
 
       <div className="space-y-4 text-sm text-gray-700">
         {/* 0. Goal */}

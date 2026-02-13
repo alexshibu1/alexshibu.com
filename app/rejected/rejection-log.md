@@ -2,13 +2,21 @@
 
 ![Screenshot 2025-12-12 at 3.40.22 PM.png](/images/rejection/Screenshot_2025-12-12_at_3.40.22_PM.png)
 
-![Screenshot 2025-12-11 at 9.34.04 PM.png](/images/rejection/Screenshot_2025-12-11_at_9.34.04_PM.png)
+![Rejection screenshot 1](/images/rejection/1.png)
 
+![Rejection screenshot 2](/images/rejection/2.png)
+
+![Rejection screenshot 3](/images/rejection/3.png)
+
+![Rejection screenshot 4](/images/rejection/4.png)
+
+![Rejection screenshot 5](/images/rejection/5.png)
 ![Screenshot 2025-11-04 at 11.39.14 AM.png](/images/rejection/Screenshot_2025-11-04_at_11.39.14_AM.png)
 
 ![Screenshot 2025-11-05 at 11.42.06 AM.png](/images/rejection/Screenshot_2025-11-05_at_11.42.06_AM.png)
 
 ![Screenshot 2025-10-13 at 1.44.28 PM.png](/images/rejection/Screenshot_2025-10-13_at_1.44.28_PM.png)
+![Screenshot 2025-12-11 at 9.34.04 PM.png](/images/rejection/Screenshot_2025-12-11_at_9.34.04_PM.png)
 
 ![Screenshot 2025-08-01 at 10.02.09 AM.png](/images/rejection/Screenshot_2025-08-01_at_10.02.09_AM.png)
 

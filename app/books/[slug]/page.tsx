@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -7,9 +8,26 @@ import {
   LONG_REVIEW_MIN_LENGTH,
 } from "../books-data";
 import { RatingPillTypography } from "../BookRatingDisplay";
+import { articleJsonLd, sectionMetadata } from "../../lib/seo";
 
 export function generateStaticParams() {
   return getBooksWithLongReview().map((b) => ({ slug: b.slug! }));
+}
+
+export function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Metadata {
+  const book = getBookBySlug(params.slug);
+  if (!book) {
+    return sectionMetadata("Book Review", "Book review by Alex Shibu.", "/books");
+  }
+  const title = `${book.title} Review`;
+  const description =
+    book.summary ??
+    `Book review of ${book.title} by ${book.author}, written by Alex Shibu.`;
+  return sectionMetadata(title, description, `/books/${params.slug}`);
 }
 
 export default function BookReviewPage({
@@ -25,9 +43,20 @@ export default function BookReviewPage({
   const formattedStarted = book.dateStarted
     ? formatDateOfFinishing(book.dateStarted)
     : null;
+  const reviewJsonLd = articleJsonLd({
+    headline: `${book.title} Review`,
+    description:
+      book.summary ??
+      `Review of ${book.title} by ${book.author}, written by Alex Shibu.`,
+    pathname: `/books/${params.slug}`,
+  });
 
   return (
     <main className="page-content">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewJsonLd) }}
+      />
       <p className="mb-4">
         <Link
           href="/books"

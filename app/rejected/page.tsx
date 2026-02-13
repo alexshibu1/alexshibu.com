@@ -1,10 +1,18 @@
 import fs from "fs";
 import path from "path";
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 import RejectionStats from "./RejectionStats";
+import { sectionMetadata } from "../lib/seo";
 
 const TARGET_CONVERSION_RATE = 35; // (applications sent - rejections) / applications sent
+
+export const metadata: Metadata = sectionMetadata(
+  "Rejected",
+  "Alex Shibu's rejection log and learning loops from applying to 100+ jobs, startups, and fellowships.",
+  "/rejected",
+);
 
 /** Count screenshot images in markdown (lines matching ![...](...) ). */
 function countScreenshotsInMarkdown(content: string | null): number {

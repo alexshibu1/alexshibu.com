@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -6,9 +7,32 @@ import {
   formatDateOfFinishing,
   LONG_REVIEW_MIN_LENGTH,
 } from "@/app/books/books-data";
+import { RatingPillTypography } from "@/app/books/BookRatingDisplay";
+import { articleJsonLd, sectionMetadata } from "@/app/lib/seo";
 
 export function generateStaticParams() {
   return getBooksWithLongReview().map((b) => ({ slug: b.slug! }));
+}
+
+export function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Metadata {
+  const book = getBookBySlug(params.slug);
+  if (!book) {
+    return sectionMetadata(
+      "Book Review",
+      "Book reviews by Alex Shibu with frank frameworks and takeaways for founders and startups.",
+      "/essay/book-review",
+    );
+  }
+  return sectionMetadata(
+    `${book.title} Review`,
+    book.summary ??
+      `Book review of ${book.title} by ${book.author}, written by Alex Shibu.`,
+    `/essay/book-review/${params.slug}`,
+  );
 }
 
 export default function BookReviewEssayPage({
@@ -24,11 +48,20 @@ export default function BookReviewEssayPage({
   const formattedStarted = book.dateStarted
     ? formatDateOfFinishing(book.dateStarted)
     : null;
-  const full = Math.floor((book.rating / 10) * 5);
-  const hasHalf = Math.round((book.rating / 10) * 5 * 2) / 2 - full !== 0;
+  const reviewJsonLd = articleJsonLd({
+    headline: `${book.title} Review`,
+    description:
+      book.summary ??
+      `Book review of ${book.title} by ${book.author}, written by Alex Shibu.`,
+    pathname: `/essay/book-review/${params.slug}`,
+  });
 
   return (
     <main className="page-content">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewJsonLd) }}
+      />
       <p className="mb-4">
         <Link
           href="/books"
@@ -61,10 +94,10 @@ export default function BookReviewEssayPage({
             <span className="tabular-nums">{formattedDate}</span>
           )}
           <span className="mx-2 text-gray-400">·</span>
-          <span className="text-gray-900">
-            {"🥔".repeat(full)}
-            {hasHalf ? "" : null}
-          </span>
+          <RatingPillTypography
+            rating={book.rating}
+            ariaLabel={`${book.rating} out of 5`}
+          />
         </p>
         <div className="mt-2 prose prose-gray max-w-none">
           <p className="text-base md:text-lg text-gray-700 leading-relaxed whitespace-pre-line">

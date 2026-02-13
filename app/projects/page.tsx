@@ -553,7 +553,7 @@ export default function WorkIndex() {
           />
         )}
       </div>
-      <p className="hero-subline">some of past and present work and projects</p>
+      <p className="hero-subline">Projects I&apos;ve built and shipped.</p>
 
       <ul className="projects-list">
         {sortedProjects.map((project, i) => (

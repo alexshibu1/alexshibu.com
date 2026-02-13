@@ -2,14 +2,20 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { ALEX_PERSON, webpageJsonLd } from "../lib/seo";
 
 export default function AboutPage() {
   const [copied, setCopied] = useState(false);
   const [emailCopied, setEmailCopied] = useState(false);
   const [isQ4Open, setIsQ4Open] = useState(true);
   const [is2025Open, setIs2025Open] = useState(false);
+  const aboutWebPageJsonLd = webpageJsonLd(
+    "About Alex Shibu",
+    "About Alex Shibu, a Toronto based full-stack developer and growth engineer.",
+    "/about",
+  );
 
-  const bio = `Alex Shibu is a student at the University of Toronto, majoring in Physics and Computer Science. Passionate about leveraging emerging technologies to drive impactful change. Alex has worked on startups and larger organizations to build tools and solutions using AI, web3, healthcare, decision theory. Alex also loves bringing together young people to and has hosted experiences for over 600 folks. In his spare time, he ships intresting sidequests, takes on fitness challenges, and reviews cafes.`;
+  const bio = `Alex Shibu is a Toronto based builder studying Physics and Computer Science at the University of Toronto. Passionate about leveraging emerging technologies to drive impactful change, Alex has worked across startups and larger organizations to build tools using AI, web3, healthcare, and decision theory. Alex also loves bringing young people together and has hosted experiences for 600+ folks. In spare time, he ships interesting sidequests, takes on fitness challenges, and reviews cafes.`;
 
   const copyBio = () => {
     navigator.clipboard.writeText(bio);
@@ -25,6 +31,14 @@ export default function AboutPage() {
 
   return (
     <main className="page-content">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ALEX_PERSON) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutWebPageJsonLd) }}
+      />
       <h1 className="hero-heading" style={{ marginBottom: "0" }}>
         about ✌️
       </h1>

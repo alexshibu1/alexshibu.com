@@ -1,8 +1,15 @@
 import fs from "fs";
 import path from "path";
+import type { Metadata } from "next";
 import WritingClient from "./WritingClient";
+import { sectionMetadata } from "../lib/seo";
 
 export const dynamic = "force-dynamic";
+export const metadata: Metadata = sectionMetadata(
+  "Writing",
+  "Essays, logs, blogs, and experiments by Alex Shibu.",
+  "/writing",
+);
 
 type EssayMeta = {
   slug: string;
@@ -16,10 +23,16 @@ function readAllEssayMeta(): EssayMeta[] {
   const essaysDir = path.join(process.cwd(), "app", "essay");
   if (!fs.existsSync(essaysDir)) return [];
 
+  const EXCLUDED_WRITING_SLUGS = new Set(["naval-almanack-notes"]);
   const entries = fs.readdirSync(essaysDir, { withFileTypes: true });
 
   const metas: EssayMeta[] = entries
-    .filter((e) => e.isDirectory() && e.name !== "rejection")
+    .filter(
+      (e) =>
+        e.isDirectory() &&
+        e.name !== "rejection" &&
+        !EXCLUDED_WRITING_SLUGS.has(e.name),
+    )
     .map((dir) => {
       const mdxPath = path.join(essaysDir, dir.name, "page.mdx");
       if (!fs.existsSync(mdxPath)) return null;

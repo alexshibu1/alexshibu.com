@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
 import { BookCard } from "./BookCard";
 import { books, TOTAL_BOOKS, TOTAL_HOURS } from "./books-data";
+import { sectionMetadata } from "../lib/seo";
+
+export const metadata: Metadata = sectionMetadata(
+  "Books",
+  "Books Alex Shibu has read, ratings out of 5, notes, and honest reviews.",
+  "/books",
+);
 
 /** Sort by date finished (MM.YYYY), most recent first. */
 function sortByDateRead(a: { dateRead: string }, b: { dateRead: string }) {

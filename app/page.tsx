@@ -1,17 +1,51 @@
 // app/page.tsx
+import type { Metadata } from "next";
 import Link from "next/link";
 import InteractiveHeading from "./components/waveHeading";
 import SubstackForm from "./components/SubstackForm";
+import {
+  ALEX_PERSON,
+  sectionMetadata,
+  webpageJsonLd,
+  websiteJsonLd,
+} from "./lib/seo";
 
 // Hero inline links: override .page-content a (red in globals.css) with ! so gray wins
 const subtleLink =
   "group inline-flex items-baseline !text-gray-600 hover:!text-gray-800 !font-medium hover:underline hover:decoration-gray-400 hover:underline-offset-2 transition-all duration-150 cursor-pointer";
 const linkV4Arrow =
   "inline-block max-w-0 ml-0 overflow-hidden opacity-0 whitespace-nowrap align-baseline text-[0.65em] group-hover:max-w-[1.25em] group-hover:opacity-100 group-hover:ml-0.5 transition-all duration-150";
+
+export const metadata: Metadata = sectionMetadata(
+  "Home",
+  "Alex Shibu is a Toronto based developer, growth engineer, and student at University of Toronto sharing projects, writing, journey, books, and experiments.",
+  "/",
+);
+
 export default function Home() {
+  const homeWebPageJsonLd = webpageJsonLd(
+    "Alex Shibu",
+    "Personal website of Alex Shibu, a Toronto based developer, student at UofT sharing projects, writing, and journey in startups.",
+    "/",
+  );
+
   return (
     <div className="page-content">
       <div className="hero">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd()) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(homeWebPageJsonLd),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ALEX_PERSON) }}
+        />
         <h1 className="hero-heading">
           {" "}
           <span>
@@ -19,35 +53,49 @@ export default function Home() {
           </span>
         </h1>
         <p className="hero-subline">
-          I&apos;m a 21 y/o in Toronto. I&apos;m currently obsessed with
-          building myself a solid foundation for asymmetric outcomes. That
-          starts with getting dangerous at full-stack dev, deeply understanding
-          math & physics, and then building really great products.
+          I&apos;m Alex Shibu, from Toronto. I&apos;m currently obsessed with
+          building a solid foundation for asymmetric outcomes. That starts with
+          getting dangerous at full-stack engineering, product growth, and
+          deeply understanding math & physics for machine learning.
         </p>
         <p>
-          At UofT, I study physics & comp sci. On this site I park experiments,
-          document my{" "}
+          I am also a student at UofT, studying physics & comp sci. On this site
+          I park{" "}
+          <Link href="/projects" className={subtleLink}>
+            projects
+            <span className={linkV4Arrow} aria-hidden="true">
+              ↗
+            </span>
+          </Link>
+          , document my{" "}
           <Link href="/lore" className={subtleLink}>
             journey
             <span className={linkV4Arrow} aria-hidden="true">
               ↗
             </span>
           </Link>
-          , and dive into rabbit holes and{" "}
+          , and dive into{" "}
+          <Link href="/writing" className={subtleLink}>
+            rabbit holes
+            <span className={linkV4Arrow} aria-hidden="true">
+              ↗
+            </span>
+          </Link>{" "}
+          and{" "}
           <Link href="/sidequests" className={subtleLink}>
             sidequests
             <span className={linkV4Arrow} aria-hidden="true">
               ↗
             </span>
           </Link>
-          . I&apos;ve previously worked on everything from research at Technion
-          on decision theory during a war to running global hackathons and IG
-          theme pages for selling keto books and bath bombs.
+          . I&apos;ve previously worked on everything from research in decision
+          theory to running hackathons, selling keto books with instagram, and
+          bath bombs on Shopify. I&apos;m currently working on voice agents.
         </p>
         <p>
           I love running in different cities,{" "}
-          <Link href="/writing" className={subtleLink}>
-            writing
+          <Link href="/read" className={subtleLink}>
+            reading
             <span className={linkV4Arrow} aria-hidden="true">
               ↗
             </span>
@@ -62,11 +110,10 @@ export default function Home() {
           , and doing hard things.
         </p>
         <p>
-          I want to become the ultimate Swiss Army knife that can build useful
-          products, understand users, and grow hack.
+          I want to become the ultimate Swiss Army knife that can build great
+          products, understand users, and grow products.
         </p>
         <p>Join my internal board of directors. Love to chat!</p>
-
         <div
           style={{
             margin: "1.5rem 0 0 0",

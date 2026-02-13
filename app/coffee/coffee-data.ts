@@ -834,7 +834,7 @@ export const coffeeShops: CoffeeShop[] = [
   {
     id: "tim-hortons-dec-22-2025",
     date: "Dec 22nd, 2025",
-    drink: "Tim Double Double Dark Roast",
+    drink: "Double Double Dark Roast",
     shopName: "Tim Hortons",
     rating: 9,
     review:

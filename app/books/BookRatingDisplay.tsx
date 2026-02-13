@@ -145,7 +145,7 @@ export function RatingDots({ rating, ariaLabel }: RatingDisplayProps) {
   );
 }
 
-/** All variants for preview; pass rating out of 10. */
+/** All variants for preview; pass rating out of 5. */
 export const RATING_OPTIONS = [
   { id: "stars", label: "Stars", Component: RatingStars },
   { id: "pill-typography", label: "Pill + Typography", Component: RatingPillTypography },

@@ -1,4 +1,12 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+import { sectionMetadata } from "../lib/seo";
+
+export const metadata: Metadata = sectionMetadata(
+  "Sidequests",
+  "Alex Shibu's sidequests projects like coffee reviews website, rejection log, photos, technical masterplan, and cold email templates.",
+  "/sidequests",
+);
 
 export default function SidequestsPage() {
   return (

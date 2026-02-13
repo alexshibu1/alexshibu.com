@@ -1,6 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PORTRAIT_PHOTOS, GRID_PHOTOS, getPhotoSrc } from "./photos-data";
+import type { Metadata } from "next";
+import { sectionMetadata } from "../lib/seo";
+
+export const metadata: Metadata = sectionMetadata(
+  "Photos",
+  "Alex Shibu's favorite photos from his journey as a builder.",
+  "/photos",
+);
 
 export default function PhotosPage() {
   return (
@@ -14,7 +22,9 @@ export default function PhotosPage() {
         </Link>
         <h1
           className="font-semibold text-2xl tracking-tight text-gray-900"
-          style={{ fontFamily: "var(--font-space-grotesk), system-ui, sans-serif" }}
+          style={{
+            fontFamily: "var(--font-space-grotesk), system-ui, sans-serif",
+          }}
         >
           photos
         </h1>

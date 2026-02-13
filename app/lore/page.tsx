@@ -144,6 +144,10 @@ const LORE: LoreItem[] = [
         label: "Circus Clownz (archive)",
         url: "https://web.archive.org/web/20220128132945/https://circusclownz.com/",
       },
+      {
+        label: "GitHub",
+        url: "https://github.com/alexshibu1/CircusClownz/",
+      },
     ],
   },
   {
@@ -300,8 +304,7 @@ const LORE: LoreItem[] = [
     id: "garage-learning-fellow-2020-12",
     date: "12.2020",
     line: "The Garage Learning Fellow",
-    more:
-      "I was very into filmmaking and received the #SAVETHENIGHT scholarship from The Garage Learning through their partnership with Jägermeister. Each scholarship winner got a Pro Subscription and a Hard LED Light or Soft Panel Light Learning Kit. I became a big fan of Steve Giralt and his commercials — and saw up close what chapter 7 bankruptcy looks like.",
+    more: "I was very into filmmaking and received the #SAVETHENIGHT scholarship from The Garage Learning through their partnership with Jägermeister. Each scholarship winner got a Pro Subscription and a Hard LED Light or Soft Panel Light Learning Kit. I became a big fan of Steve Giralt and his commercials — and saw up close what chapter 7 bankruptcy looks like.",
     links: [
       {
         label: "Scholarship winners page (archive)",
