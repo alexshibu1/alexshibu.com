@@ -66,21 +66,22 @@ export default function RejectedPage() {
         conversionRate={conversionRate}
       />
 
-      <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mt-6 sm:mt-10 mb-2 sm:mb-3">
+      <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4 mt-6 sm:mt-10 mb-2 sm:mb-3">
         <p className="text-sm sm:text-base text-neutral-600 italic tracking-tight sm:max-w-[240px] shrink-0 pl-3 sm:pl-4 border-l-2 border-neutral-200 leading-relaxed">
           Best experienced while listening to this playlist ❤️
         </p>
-        <iframe
-          title="Spotify playlist – soundtrack for reading"
-          className="rounded-xl w-full max-w-full sm:w-auto sm:min-w-[520px] sm:max-w-[640px] h-[152px] min-h-[80px]"
-          src="https://open.spotify.com/embed/playlist/6IWoTmIKn5lCE3LdBSqW2D?utm_source=generator&theme=0"
-          width="640"
-          height="152"
-          frameBorder={0}
-          allowFullScreen
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        />
+        <div className="w-full sm:max-w-[420px] sm:ml-auto overflow-hidden rounded-xl bg-neutral-100 shadow-sm ring-1 ring-neutral-200/80">
+          <iframe
+            title="YouTube playlist – soundtrack for reading"
+            className="h-[200px] sm:h-[220px] w-full"
+            src="https://www.youtube.com/embed/videoseries?list=PLc6O3DtZGf8SDGl7pU9Dq2qcbE7sBlrM2"
+            frameBorder={0}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            loading="lazy"
+          />
+        </div>
       </div>
 
       <section className="mt-4 pt-0 pb-6 sm:pb-4">
