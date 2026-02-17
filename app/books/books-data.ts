@@ -36,9 +36,9 @@ export const books: Book[] = [
     slug: "make-your-bed",
     wordCount: 25_000,
     summary:
-      "Repetitive but solid; the idea of starting your day with a completed task is powerful.",
+      "Basic advice, but if you like the general Navy Seals hard life stuff, it's great. I liked it. But nothing new.\n\nThe idea of starting your day with a completed task, even if small is powerful. It makes you feel good and in motion.\n\nSome of his stories are awesome, but are not even relevant to the advice.",
     review:
-      "Pretty repetitive advice, but if you like the general Navy Seals hard life stuff, it's great. I liked it. But nothing new.\n\nThe idea of starting your day with a completed task, even if small is powerful. It makes you feel good and in motion.\n\nSome of his stories are awesome, but are not even relevant to the advice.",
+      "Pretty basic advice, but if you like the general Navy Seals hard life stuff, it's great. I liked it. But nothing new.\n\nThe idea of starting your day with a completed task, even if small is powerful. It makes you feel good and in motion.\n\nSome of his stories are awesome, but are not even relevant to the advice.",
   },
   {
     title: "Almanack of Naval Ravikant",
@@ -162,8 +162,7 @@ export const books: Book[] = [
 /** Hours for one book: audiobook → durationHours; print/ebook → wordCount / (READING_WPM × 60). */
 function hoursForBook(book: Book): number {
   if (book.isAudiobook && book.durationHours != null) return book.durationHours;
-  if (book.wordCount != null)
-    return book.wordCount / (READING_WPM * 60);
+  if (book.wordCount != null) return book.wordCount / (READING_WPM * 60);
   return 0;
 }
 
