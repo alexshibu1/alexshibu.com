@@ -3,7 +3,7 @@ import { sectionMetadata } from "../lib/seo";
 
 export const metadata: Metadata = sectionMetadata(
   "About",
-  "About Alex Shibu: full-stack developer, growth engineer, and founder in Toronto.",
+  "About Alex Shibu: full-stack developer, growth engineer, and a student founder in Toronto.",
   "/about",
 );
 

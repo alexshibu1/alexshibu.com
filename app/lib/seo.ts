@@ -12,7 +12,7 @@ export const ALEX_PERSON = {
   url: SITE_URL,
   image: `${SITE_URL}${DEFAULT_OG_IMAGE}`,
   description:
-    "Alex Shibu is a Toronto based full-stack developer, growth engineer, and student at University of Toronto becoming technically dangerous through shipping startups fast.",
+    "Alex Shibu is a Toronto based full-stack developer, growth engineer, and student at University of Toronto focusing on building and shipping products.",
   jobTitle: "Full-Stack Developer and Growth Engineer",
   homeLocation: "Toronto, Canada",
   sameAs: [
