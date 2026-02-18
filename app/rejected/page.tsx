@@ -67,47 +67,72 @@ export default function RejectedPage() {
       />
 
       <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4 mt-6 sm:mt-10 mb-2 sm:mb-3">
-        <p className="text-sm sm:text-base text-neutral-600 italic tracking-tight sm:max-w-[240px] shrink-0 pl-3 sm:pl-4 border-l-2 border-neutral-200 leading-relaxed">
-          Best experienced while listening to this playlist ❤️
-        </p>
-        <div className="w-full sm:max-w-[420px] sm:ml-auto overflow-hidden rounded-xl bg-neutral-100 shadow-sm ring-1 ring-neutral-200/80">
-          <iframe
-            title="YouTube playlist – soundtrack for reading"
-            className="h-[200px] sm:h-[220px] w-full"
-            src="https://www.youtube.com/embed/videoseries?list=PLc6O3DtZGf8SDGl7pU9Dq2qcbE7sBlrM2"
-            frameBorder={0}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-            loading="lazy"
-          />
+        <div className="flex flex-col gap-3 sm:gap-4 sm:max-w-[240px] shrink-0">
+          <p className="text-sm sm:text-base text-neutral-600 italic tracking-tight pl-3 sm:pl-4 border-l-2 border-neutral-200 leading-relaxed">
+            Best experienced while listening to this playlist ❤️
+          </p>
+          <a
+            href="https://alexshibu.notion.site/Alex-s-Rejections-1a1305d8d2448059bc5dd5e6c499d0f5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-2 text-sm rounded-md border border-neutral-300 bg-neutral-50 text-neutral-700 font-medium hover:bg-neutral-100 hover:border-neutral-400 active:scale-[0.98] transition-colors touch-manipulation w-fit"
+          >
+            View the full rejection log
+            <svg
+              className="w-3.5 h-3.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+          </a>
+        </div>
+        <div className="w-full sm:max-w-[420px] sm:ml-auto flex flex-col gap-1.5">
+          <div className="overflow-hidden rounded-xl bg-neutral-100 shadow-sm ring-1 ring-neutral-200/80">
+            <iframe
+              title="YouTube playlist – soundtrack for reading"
+              className="h-[200px] sm:h-[220px] w-full"
+              src="https://www.youtube.com/embed/videoseries?list=PLc6O3DtZGf8SDGl7pU9Dq2qcbE7sBlrM2"
+              frameBorder={0}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              loading="lazy"
+            />
+          </div>
+          <p
+            className="text-center text-neutral-500 py-0.5"
+            style={{ fontSize: "10px" }}
+          >
+            <a
+              href="https://open.spotify.com/playlist/6IWoTmIKn5lCE3LdBSqW2D?si=3pTOy2HgQ1Ko6GKNtyXYwA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-500 hover:text-neutral-700 underline underline-offset-1"
+              style={{ fontSize: "14px" }}
+            >
+              Spotify
+            </a>
+            {" · "}
+            <a
+              href="https://music.youtube.com/playlist?list=PLc6O3DtZGf8SDGl7pU9Dq2qcbE7sBlrM2&si=A5pzK6oC_nfphkna"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-500 hover:text-neutral-700 underline underline-offset-1"
+              style={{ fontSize: "14px" }}
+            >
+              YouTube
+            </a>
+          </p>
         </div>
       </div>
-
-      <section className="mt-4 pt-0 pb-6 sm:pb-4">
-        <a
-          href="https://alexshibu.notion.site/Alex-s-Rejections-1a1305d8d2448059bc5dd5e6c499d0f5"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 min-h-[44px] px-5 py-3.5 sm:py-2.5 rounded-lg border border-neutral-300 bg-neutral-50 text-neutral-700 font-medium hover:bg-neutral-100 hover:border-neutral-400 active:scale-[0.98] transition-colors touch-manipulation"
-        >
-          View the full rejection log
-          <svg
-            className="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            aria-hidden
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-            />
-          </svg>
-        </a>
-      </section>
 
       {/* Rejection essay + screenshots from app/essay/rejection/*.md */}
       {rejectionContent && (
