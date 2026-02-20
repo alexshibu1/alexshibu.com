@@ -1,7 +1,6 @@
 import fs from "fs";
 import path from "path";
 import type { MetadataRoute } from "next";
-import { getBooksWithLongReview } from "./books/books-data";
 import { SITE_URL } from "./lib/seo";
 
 function essayRoutes(): string[] {
@@ -35,11 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/rejected",
   ];
 
-  const bookReviewRoutes = getBooksWithLongReview()
-    .filter((b) => b.slug)
-    .flatMap((b) => [`/books/${b.slug!}`, `/essay/book-review/${b.slug!}`]);
-
-  const routes = [...staticRoutes, ...essayRoutes(), ...bookReviewRoutes];
+  const routes = [...staticRoutes, ...essayRoutes()];
 
   return routes.map((route) => ({
     url: `${SITE_URL}${route}`,

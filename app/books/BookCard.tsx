@@ -1,11 +1,11 @@
 import Link from "next/link";
 import type { Book } from "./books-data";
-import { formatDateOfFinishing, hasLongReview } from "./books-data";
+import { formatDateOfFinishing } from "./books-data";
 import { RatingPillTypography } from "./BookRatingDisplay";
 
-/** True if the book has a dedicated page (essay notes or long review). */
-function hasReviewPage(book: Book): boolean {
-  return Boolean(book.notes || (book.slug && book.review && hasLongReview(book)));
+/** True if the book has an essay (full review/notes) — title links to /essay/{notes}. */
+function hasEssay(book: Book): boolean {
+  return Boolean(book.notes);
 }
 
 export function BookCard({ book }: { book: Book }) {
@@ -17,13 +17,9 @@ export function BookCard({ book }: { book: Book }) {
         <div className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between md:gap-6">
           <div className="flex flex-wrap items-baseline gap-2 text-base text-black leading-snug">
             <div className="inline-flex items-baseline gap-1.5">
-              {hasReviewPage(book) ? (
+              {hasEssay(book) ? (
                 <Link
-                  href={
-                    book.notes
-                      ? `/essay/${book.notes}`
-                      : `/essay/book-review/${book.slug!}`
-                  }
+                  href={`/essay/${book.notes}`}
                   className="group !text-black hover:!text-red-600 transition-colors"
                 >
                   <span className="font-bold">{book.title}</span>{" "}
