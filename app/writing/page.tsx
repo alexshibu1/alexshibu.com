@@ -23,7 +23,7 @@ function readAllEssayMeta(): EssayMeta[] {
   const essaysDir = path.join(process.cwd(), "app", "essay");
   if (!fs.existsSync(essaysDir)) return [];
 
-  const EXCLUDED_WRITING_SLUGS = new Set(["naval-almanack-notes"]);
+  const EXCLUDED_WRITING_SLUGS = new Set(["naval-almanack"]);
   const entries = fs.readdirSync(essaysDir, { withFileTypes: true });
 
   const metas: EssayMeta[] = entries

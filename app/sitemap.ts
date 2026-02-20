@@ -7,7 +7,7 @@ function essayRoutes(): string[] {
   const essaysDir = path.join(process.cwd(), "app", "essay");
   if (!fs.existsSync(essaysDir)) return [];
 
-  const EXCLUDED_ESSAY_SLUGS = new Set(["naval-almanack-notes"]);
+  const EXCLUDED_ESSAY_SLUGS = new Set(["naval-almanack"]);
 
   return fs
     .readdirSync(essaysDir, { withFileTypes: true })
