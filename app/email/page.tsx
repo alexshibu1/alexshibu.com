@@ -9,13 +9,13 @@ export default function EmailPage() {
         email [page in progress]
       </h1>
       <p className="text-base text-gray-600 mb-4">
-        Best cold emails I&apos;ve tried and sent — and why they worked.
+        I&apos;ll add my favorite cold emails I&apos;ve sent and others found on
+        internet rabbit holes.
       </p>
 
       <p className="text-sm text-gray-700">
-        I&apos;ll add my favorite cold email templates and breakdowns here: the
-        exact messages I sent, the responses I got, and how I refine the
-        playbook over time.
+        I was a tiny boy when I discovered the power of the internet. You are
+        simply 1 email away from some of the post powerful people on earth.
       </p>
     </main>
   );
