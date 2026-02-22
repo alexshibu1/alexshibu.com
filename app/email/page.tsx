@@ -15,7 +15,8 @@ export default function EmailPage() {
 
       <p className="text-sm text-gray-700">
         I was a tiny boy when I discovered the power of the internet. You are
-        simply 1 email away from some of the post powerful people on earth.
+        simply 1 email away from some of the post powerful people on earth. Keep
+        in mind these are a few that worked out of a thousands of fails.
       </p>
       <div>
         <img
