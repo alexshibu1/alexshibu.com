@@ -59,6 +59,18 @@ export default function EmailPage() {
             </p>
           </div>
         </div>
+        <div>
+          <img
+            src="/images/cold/cold5.png"
+            alt="Brand deal email"
+            style={{ width: "100%", height: "auto" }}
+          />
+          <div className="my-3 sm:my-4 px-3 sm:px-4 py-0.5 bg-neutral-100 border-l-4 border-neutral-300 rounded-r-lg text-neutral-600 italic text-sm leading-tight">
+            <p className="m-0">
+              one of my first working brand deals for my then YouTube channel.
+            </p>
+          </div>
+        </div>
       </div>
     </main>
   );

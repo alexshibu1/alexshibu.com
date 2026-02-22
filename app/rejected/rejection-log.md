@@ -178,3 +178,10 @@ the next year I got in
 ![Screenshot 2025-04-07 at 10.19.01 PM.png](/images/rejection/Screenshot_2025-04-07_at_10.19.01_PM.png)
 
 ![Screenshot 2025-04-07 at 10.18.18 PM.png](/images/rejection/Screenshot_2025-04-07_at_10.18.18_PM.png)
+
+some of my first rejections. this is when I started a youtube channel. I sent out 80+ email for free products
+
+![123.png](/images/rejection/123.png)
+![124.png](/images/rejection/124.png)
+![125.png](/images/rejection/125.png)
+![126.png](/images/rejection/126.png)
