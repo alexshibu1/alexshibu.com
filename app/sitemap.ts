@@ -27,10 +27,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/writing",
     "/books",
     "/coffee",
+    "/email",
     "/experiments",
     "/lore",
     "/sidequests",
-    "/photos",
     "/rejected",
   ];
 

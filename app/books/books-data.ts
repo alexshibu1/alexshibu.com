@@ -112,7 +112,7 @@ export const books: Book[] = [
     isAudiobook: true,
     durationHours: 7.5,
     summary:
-      "The 5-4-3-2-1 idea is good; in action it's harder to get your mind to do it. If you break it, it's harder to get back on track.",
+      "The 5-4-3-2-1 idea is good. In action it's harder to get your mind to do it. If you break it, it's harder to get back on track.",
   },
   {
     title: "Atomic Habits",

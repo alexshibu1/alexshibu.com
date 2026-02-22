@@ -185,7 +185,7 @@ export default function RejectedPage() {
 
                 if (isComment) {
                   return (
-                    <div className="my-3 sm:my-4 px-3 sm:px-4 py-3 bg-neutral-100 border-l-4 border-neutral-300 rounded-r-lg text-neutral-600 italic text-sm">
+                    <div className="my-3 sm:my-4 px-3 sm:px-4 py-0.5 bg-neutral-100 border-l-4 border-neutral-300 rounded-r-lg text-neutral-600 italic text-sm leading-tight">
                       {children}
                     </div>
                   );

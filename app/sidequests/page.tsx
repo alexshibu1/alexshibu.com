@@ -4,7 +4,7 @@ import { sectionMetadata } from "../lib/seo";
 
 export const metadata: Metadata = sectionMetadata(
   "Sidequests",
-  "Alex Shibu's sidequests projects like coffee reviews website, rejection log, photos, technical masterplan, and cold email templates.",
+  "Alex Shibu's sidequests projects like coffee reviews website, rejection log, technical masterplan, and cold email templates.",
   "/sidequests",
 );
 
@@ -55,29 +55,6 @@ export default function SidequestsPage() {
               <span className="ml-2 text-sm text-gray-500 truncate group-hover:text-gray-700">
                 A log of my rejections. Throwing enough potatoes at the wall for
                 greatnesses.
-              </span>
-            </div>
-            <span
-              className="text-xs text-gray-400 flex-shrink-0 transition-transform group-hover:translate-x-[1px] group-hover:text-red-500"
-              aria-hidden="true"
-            >
-              ↗
-            </span>
-          </div>
-        </Link>
-
-        <Link
-          href="/photos"
-          className="group block px-3 py-2 hover:bg-red-50/40 transition-colors"
-          style={{ textDecoration: "none" }}
-        >
-          <div className="flex items-center justify-between gap-2 transition-transform group-hover:translate-x-[1px]">
-            <div className="min-w-0">
-              <span className="text-base font-semibold text-gray-900 group-hover:text-red-700">
-                photos
-              </span>
-              <span className="ml-2 text-sm text-gray-500 truncate group-hover:text-gray-700">
-                Some of my best photographs of me or from me.
               </span>
             </div>
             <span
