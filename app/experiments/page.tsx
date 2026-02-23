@@ -191,58 +191,44 @@ export default function ExperimentsPage() {
           </div>
 
           {/* Title + Subtext */}
-          <div className="mb-2">
+          <div className="mb-1.5">
             <h3 className="text-lg font-bold text-gray-900 mb-0.5 leading-tight flex items-center gap-2">
               <span>🏋️‍♂️</span>
               <span>Can 20 pushups a day change my life?</span>
             </h3>
-            <p className="text-xs text-gray-600 leading-relaxed">
+            <p className="text-[11px] text-gray-600 leading-snug">
               First thing every morning (no decisions). Aimed for strict reps
               (no knees), but often used knee pushups to keep the streak alive.
             </p>
           </div>
 
-          {/* Key Stats (compact) */}
-          <div className="mb-2">
-            <div className="text-[11px] font-semibold text-gray-500 mb-1">
+          {/* Key Stats (compact, text-only) */}
+          <div className="mb-1.5">
+            <div className="text-[11px] font-semibold text-gray-500 mb-0.5">
               STATS
             </div>
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 border border-emerald-200 px-2.5 py-0.5 text-xs leading-none text-gray-700 shadow-sm">
-                <span className="text-gray-500 font-medium">Consistency</span>
+            <div className="space-y-0.5 text-[11px] text-gray-700">
+              <div className="flex items-center justify-between">
+                <span className="text-gray-500">Consistency</span>
                 <span className="font-semibold text-gray-900">92%</span>
-                <span className="w-14 bg-gray-100 rounded-full h-1.5 overflow-hidden">
-                  <span
-                    className="block bg-emerald-600 h-1.5 rounded-full"
-                    style={{ width: "92%" }}
-                  />
-                </span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 border border-emerald-200 px-2.5 py-0.5 text-xs leading-none text-gray-700 shadow-sm">
-                <span className="text-gray-500 font-medium">Total</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-gray-500">Total pushups</span>
                 <span className="font-semibold text-gray-900">7,300+</span>
-                <span className="text-gray-500">pushups</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 border border-emerald-200 px-2.5 py-0.5 text-xs leading-none text-gray-700 shadow-sm">
-                <span className="text-gray-500 font-medium">By the end</span>
-                <span className="font-semibold text-gray-900">~15</span>
-                <span className="text-gray-500">strict unbroken</span>
-              </span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-gray-500">By the end</span>
+                <span className="font-semibold text-gray-900">
+                  ~15 strict unbroken
+                </span>
+              </div>
             </div>
           </div>
 
-          {/* Completed Bar */}
-          <div className="mb-2 pt-2 border-t border-emerald-100">
-            <div className="flex items-center justify-between text-xs text-gray-500 mb-1">
-              <span>Dec 31, 2024</span>
-              <span className="font-semibold text-emerald-700">100%</span>
-            </div>
-            <div className="w-full bg-emerald-100 rounded-full h-2 overflow-hidden">
-              <div
-                className="bg-emerald-600 h-2 rounded-full"
-                style={{ width: "100%" }}
-              />
-            </div>
+          {/* Date + completion (no bar) */}
+          <div className="mb-2 flex items-center justify-between text-[11px] text-gray-500">
+            <span>Started: Dec 31, 2024</span>
+            <span className="font-semibold text-emerald-700">100% complete</span>
           </div>
 
           {/* Result (sentence) */}
@@ -255,12 +241,9 @@ export default function ExperimentsPage() {
             consistency.
           </p>
 
-          {/* Footer Metadata */}
-          <div className="flex items-center justify-between text-xs text-gray-500 pt-1.5 border-t border-gray-100">
+          {/* Footer Outcome */}
+          <div className="text-xs text-gray-500 pt-1.5 border-t border-gray-100">
             <span>Outcome: Yes — massively</span>
-            <span className="text-emerald-700 font-medium">
-              Built the habit
-            </span>
           </div>
         </div>
       </div>
