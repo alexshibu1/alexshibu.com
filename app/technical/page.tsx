@@ -9,44 +9,18 @@ export default function TechnicalPage() {
         technical [page in progress]
       </h1>
       <p className="text-base text-gray-600 mb-4">
-        Mind‑mapping how I become technically dangerous — from first principles
-        to shipping real products.
-      </p>
-      <p className="text-sm text-gray-600 mb-4">
-        This map ties directly to my{" "}
-        <Link href="/projects" className="text-gray-700 hover:text-red-600 hover:underline">
-          projects
-        </Link>
-        ,{" "}
-        <Link href="/writing" className="text-gray-700 hover:text-red-600 hover:underline">
-          writing
-        </Link>
-        , and{" "}
-        <Link href="/lore" className="text-gray-700 hover:text-red-600 hover:underline">
-          lore
-        </Link>{" "}
-        as I build toward a founder-minded profile.
+        Mind‑mapping my plan to become technically dangerous — from first
+        principles to shipping real products.
       </p>
 
       <div className="space-y-4 text-sm text-gray-700">
         {/* 0. Goal */}
         <section>
           <h2 className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-1">
-            0. Goal
+            0. Phase 1 - Get good at frontend
           </h2>
           <ul className="list-disc list-inside space-y-1">
-            <li>
-              Become{" "}
-              <span className="font-semibold">technically dangerous</span> at
-              full‑stack product building.
-            </li>
-            <li>
-              Can design, build, deploy, and debug real products end‑to‑end.
-            </li>
-            <li>
-              Can reason from first principles about systems, performance, and
-              trade‑offs.
-            </li>
+            <li>ship to get github every day </li>
           </ul>
         </section>
       </div>
