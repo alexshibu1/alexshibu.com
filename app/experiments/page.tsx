@@ -1,5 +1,40 @@
 "use client";
 
+const EXPERIMENTS = [
+  {
+    emoji: "🏃‍♂️",
+    title: "Can I complete a full marathon?",
+    detail: "Toronto Marathon 2026 · base mileage",
+    progress: 15,
+    meta: "Jan 2026",
+    color: "#3b82f6",
+  },
+  {
+    emoji: "💊",
+    title: "Does vitamin D help hair growth?",
+    detail: "2000 IU daily · hair thickness",
+    progress: 40,
+    meta: "Jan 2026",
+    color: "#22c55e",
+  },
+  {
+    emoji: "😴",
+    title: "Sleep earlier, wake earlier?",
+    detail: "10:30 PM → 6:30 AM · light therapy",
+    progress: 25,
+    meta: "Jan 2026",
+    color: "#a855f7",
+  },
+  {
+    emoji: "💪",
+    title: "Body fat under 20%?",
+    detail: "Calorie deficit + strength training",
+    progress: 30,
+    meta: "Jan 2026",
+    color: "#f97316",
+  },
+];
+
 export default function ExperimentsPage() {
   return (
     <main className="page-content">
@@ -7,244 +42,119 @@ export default function ExperimentsPage() {
         experiments 🧪
       </h1>
 
-      {/* Description */}
+      <p
+        className="text-gray-500 text-sm mb-6"
+        style={{ marginBottom: "1.5rem" }}
+      >
+        Ongoing self-experiments. Tracking what works.
+      </p>
+
+      {/* In-progress list */}
       <div className="mb-4">
-        <p className="text-gray-700 leading-relaxed text-sm">
-          My ongoing experiments and self-improvement projects. Tracking
-          progress, testing hypotheses, and learning through experimentation.
-        </p>
-      </div>
-
-      {/* Experiments Grid */}
-      <div className="flex flex-col gap-2">
-        {/* Marathon 2026 */}
-        <div className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 p-3">
-          {/* Top Row: Status Pill */}
-          <div className="flex items-center justify-between mb-1.5">
-            <span className="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs font-medium rounded-full">
-              In Progress
-            </span>
-          </div>
-
-          {/* Title + Subtext */}
-          <div className="mb-1.5">
-            <h3 className="text-lg font-bold text-gray-900 mb-0.5 leading-tight flex items-center gap-2">
-              <span>🏃‍♂️</span>
-              <span>Can I complete a full marathon?</span>
-            </h3>
-            <p className="text-xs text-gray-500 leading-tight">
-              Building base mileage for Toronto Marathon 2026
-            </p>
-          </div>
-
-          {/* Progress Section */}
-          <div className="mb-1.5">
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-xs text-gray-600">Progress</span>
-              <span className="text-xs font-semibold text-blue-600">15%</span>
-            </div>
-            <div className="w-full bg-gray-100 rounded-full h-2 overflow-hidden">
-              <div
-                className="bg-blue-600 h-2 rounded-full transition-all duration-500"
-                style={{ width: "15%" }}
-              ></div>
-            </div>
-          </div>
-
-          {/* Footer Metadata */}
-          <div className="flex items-center justify-between text-xs text-gray-500 pt-1.5 border-t border-gray-100">
-            <span>Started: Jan 2025</span>
-            <span>Training Phase</span>
-          </div>
-        </div>
-
-        {/* Vitamin D Hair Growth */}
-        <div className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 p-3">
-          {/* Top Row: Status Pill */}
-          <div className="flex items-center justify-between mb-1.5">
-            <span className="px-2 py-0.5 bg-green-100 text-green-700 text-xs font-medium rounded-full">
-              In Progress
-            </span>
-          </div>
-
-          {/* Title + Subtext */}
-          <div className="mb-1.5">
-            <h3 className="text-lg font-bold text-gray-900 mb-0.5 leading-tight flex items-center gap-2">
-              <span>💊</span>
-              <span>Does vitamin D help hair growth?</span>
-            </h3>
-            <p className="text-xs text-gray-500 leading-tight">
-              Testing 2000 IU daily supplementation for hair thickness
-            </p>
-          </div>
-
-          {/* Progress Section */}
-          <div className="mb-1.5">
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-xs text-gray-600">Progress</span>
-              <span className="text-xs font-semibold text-green-600">40%</span>
-            </div>
-            <div className="w-full bg-gray-100 rounded-full h-2 overflow-hidden">
-              <div
-                className="bg-green-600 h-2 rounded-full transition-all duration-500"
-                style={{ width: "40%" }}
-              ></div>
-            </div>
-          </div>
-
-          {/* Footer Metadata */}
-          <div className="flex items-center justify-between text-xs text-gray-500 pt-1.5 border-t border-gray-100">
-            <span>Started: Nov 2024</span>
-            <span>Month 2/3</span>
-          </div>
-        </div>
-
-        {/* Sleep Optimization */}
-        <div className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 p-3">
-          {/* Top Row: Status Pill */}
-          <div className="flex items-center justify-between mb-1.5">
-            <span className="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs font-medium rounded-full">
-              In Progress
-            </span>
-          </div>
-
-          {/* Title + Subtext */}
-          <div className="mb-1.5">
-            <h3 className="text-lg font-bold text-gray-900 mb-0.5 leading-tight flex items-center gap-2">
-              <span>😴</span>
-              <span>How can I sleep earlier and wake earlier?</span>
-            </h3>
-            <p className="text-xs text-gray-500 leading-tight">
-              Optimizing sleep schedule to 10:30 PM - 6:30 AM with light therapy
-            </p>
-          </div>
-
-          {/* Progress Section */}
-          <div className="mb-1.5">
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-xs text-gray-600">Progress</span>
-              <span className="text-xs font-semibold text-purple-600">25%</span>
-            </div>
-            <div className="w-full bg-gray-100 rounded-full h-2 overflow-hidden">
-              <div
-                className="bg-purple-600 h-2 rounded-full transition-all duration-500"
-                style={{ width: "25%" }}
-              ></div>
-            </div>
-          </div>
-
-          {/* Footer Metadata */}
-          <div className="flex items-center justify-between text-xs text-gray-500 pt-1.5 border-t border-gray-100">
-            <span>Target: 10:30 PM - 6:30 AM</span>
-            <span>Week 3/8</span>
-          </div>
-        </div>
-
-        {/* Body Fat Reduction */}
-        <div className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 p-3">
-          {/* Top Row: Status Pill */}
-          <div className="flex items-center justify-between mb-1.5">
-            <span className="px-2 py-0.5 bg-orange-100 text-orange-700 text-xs font-medium rounded-full">
-              In Progress
-            </span>
-          </div>
-
-          {/* Title + Subtext */}
-          <div className="mb-1.5">
-            <h3 className="text-lg font-bold text-gray-900 mb-0.5 leading-tight flex items-center gap-2">
-              <span>💪</span>
-              <span>Can I lower my body fat to under 20%?</span>
-            </h3>
-            <p className="text-xs text-gray-500 leading-tight">
-              Reducing body fat through calorie deficit and strength training
-            </p>
-          </div>
-
-          {/* Progress Section */}
-          <div className="mb-1.5">
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-xs text-gray-600">Progress</span>
-              <span className="text-xs font-semibold text-orange-600">30%</span>
-            </div>
-            <div className="w-full bg-gray-100 rounded-full h-2 overflow-hidden">
-              <div
-                className="bg-orange-600 h-2 rounded-full transition-all duration-500"
-                style={{ width: "30%" }}
-              ></div>
-            </div>
-          </div>
-
-          {/* Footer Metadata */}
-          <div className="flex items-center justify-between text-xs text-gray-500 pt-1.5 border-t border-gray-100">
-            <span>Goal: Under 20% body fat</span>
-            <span>In Progress</span>
-          </div>
-        </div>
-
-        {/* 20 Pushups a Day */}
-        <div className="bg-gradient-to-br from-emerald-50 to-white border border-emerald-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 p-4">
-          {/* Top Row: Status Pill */}
-          <div className="flex items-center justify-between mb-1.5">
-            <span className="px-2 py-0.5 bg-emerald-100 text-emerald-800 text-xs font-semibold rounded-full">
-              Completed ✅
-            </span>
-          </div>
-
-          {/* Title + Subtext */}
-          <div className="mb-1.5">
-            <h3 className="text-lg font-bold text-gray-900 mb-0.5 leading-tight flex items-center gap-2">
-              <span>🏋️‍♂️</span>
-              <span>Can 20 pushups a day change my life?</span>
-            </h3>
-            <p className="text-[11px] text-gray-600 leading-snug">
-              First thing every morning (no decisions). Aimed for strict reps
-              (no knees), but often used knee pushups to keep the streak alive.
-            </p>
-          </div>
-
-          {/* Key Stats (compact, text-only) */}
-          <div className="mb-1.5">
-            <div className="text-[11px] font-semibold text-gray-500 mb-0.5">
-              STATS
-            </div>
-            <div className="space-y-0.5 text-[11px] text-gray-700">
-              <div className="flex items-center justify-between">
-                <span className="text-gray-500">Consistency</span>
-                <span className="font-semibold text-gray-900">92%</span>
+        {EXPERIMENTS.map((exp, i) => (
+          <div
+            key={exp.title}
+            className={`flex items-center gap-3 py-2 ${i < EXPERIMENTS.length - 1 ? "border-b border-gray-100" : ""}`}
+          >
+            <div
+              className="w-1 self-stretch rounded-full shrink-0"
+              style={{ backgroundColor: exp.color }}
+            />
+            <span className="text-base leading-none">{exp.emoji}</span>
+            <div className="flex-1 min-w-0">
+              <div className="flex items-baseline justify-between gap-2">
+                <span className="text-[13px] font-semibold text-gray-900 truncate">
+                  {exp.title}
+                </span>
+                <span
+                  className="text-[13px] font-bold tabular-nums shrink-0"
+                  style={{ color: exp.color }}
+                >
+                  {exp.progress}%
+                </span>
               </div>
-              <div className="flex items-center justify-between">
-                <span className="text-gray-500">Total pushups</span>
-                <span className="font-semibold text-gray-900">7,300+</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-gray-500">By the end</span>
-                <span className="font-semibold text-gray-900">
-                  ~15 strict unbroken
+              <div className="flex items-center justify-between mt-0.5">
+                <span className="text-[11px] text-gray-400 truncate">
+                  {exp.detail}
+                </span>
+                <span className="text-[10px] text-gray-400 shrink-0 ml-2">
+                  {exp.meta}
                 </span>
               </div>
             </div>
           </div>
+        ))}
+      </div>
 
-          {/* Date + completion (no bar) */}
-          <div className="mb-2 flex items-center justify-between text-[11px] text-gray-500">
-            <span>Started: Dec 31, 2024</span>
-            <span className="font-semibold text-emerald-700">100% complete</span>
+      {/* Completed: 20 Pushups a Day */}
+      <div className="relative overflow-hidden rounded-lg border border-emerald-200 bg-gradient-to-br from-emerald-50/80 via-white to-emerald-50/30 p-3">
+        <div
+          className="absolute top-0 left-0 w-full h-0.5"
+          style={{
+            background: "linear-gradient(90deg, #059669, #34d399, #059669)",
+          }}
+        />
+
+        <div className="flex items-center justify-between mb-1.5">
+          <div className="flex items-center gap-2">
+            <span className="text-base leading-none">🏋️‍♂️</span>
+            <span className="text-[15px] font-bold text-gray-900">
+              Can 20 pushups a day change my life?
+            </span>
           </div>
+          <span className="text-[10px] font-semibold text-emerald-700 bg-emerald-100 px-1.5 py-0.5 rounded">
+            DONE
+          </span>
+        </div>
 
-          {/* Result (sentence) */}
-          <p className="text-xs text-gray-700 leading-relaxed mb-2">
-            <span className="font-semibold text-emerald-900">Result:</span>{" "}
-            <span className="font-semibold text-gray-900">
-              Yes — massively.
-            </span>{" "}
-            Weight loss, better body image, mental toughness, confidence, and
-            consistency.
-          </p>
+        <p className="text-[9px] text-gray-400 leading-tight mb-2 ml-7">
+          Every morning, no decisions. Full reps when possible, knees to keep
+          the streak.
+        </p>
 
-          {/* Footer Outcome */}
-          <div className="text-xs text-gray-500 pt-1.5 border-t border-gray-100">
-            <span>Outcome: Yes — massively</span>
+        {/* Stats row */}
+        <div className="flex items-end gap-4 ml-7 mb-2">
+          <div>
+            <div className="text-[9px] text-gray-400 uppercase tracking-wider">
+              consistency
+            </div>
+            <div className="text-lg font-bold text-gray-900 leading-none">
+              92%
+            </div>
           </div>
+          <div>
+            <div className="text-[9px] text-gray-400 uppercase tracking-wider">
+              total
+            </div>
+            <div className="text-lg font-bold text-gray-900 leading-none">
+              7,300+
+            </div>
+          </div>
+          <div>
+            <div className="text-[9px] text-gray-400 uppercase tracking-wider">
+              by end
+            </div>
+            <div className="text-lg font-bold text-gray-900 leading-none">
+              ~15 <span className="text-[11px] text-gray-400">straight</span>
+            </div>
+          </div>
+          <div className="ml-auto text-right">
+            <div className="text-[10px] text-gray-400">Jan → Dec 2024</div>
+            <div className="text-[11px] font-semibold text-emerald-600">
+              365 days
+            </div>
+          </div>
+        </div>
+
+        {/* Outcome */}
+        <div className="ml-7 pt-1.5 border-t border-emerald-100">
+          <span className="text-[11px] font-semibold text-gray-900">
+            Outcome: Yes — massively.
+          </span>
+          <span className="text-[10px] text-gray-400 ml-1">
+            Weight loss, body image, mental toughness, confidence. Plan to
+            continue.
+          </span>
         </div>
       </div>
     </main>
