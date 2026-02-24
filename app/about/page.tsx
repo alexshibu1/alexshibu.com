@@ -342,7 +342,15 @@ export default function AboutPage() {
               Obj 08
             </span>
             <span className="text-gray-800 about-ops-text">
-              Run once per week
+              Run once per week{" "}
+              <a
+                href="https://www.strava.com/athletes/113105752"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10px] text-gray-400 hover:text-red-500 transition-colors"
+              >
+                (strava)
+              </a>
             </span>
             <span className="about-ops-status sm:ml-auto inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
               Executing

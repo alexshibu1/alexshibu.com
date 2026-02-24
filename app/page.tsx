@@ -12,7 +12,7 @@ import {
 
 // Hero inline links: override .page-content a (red in globals.css) with ! so gray wins
 const subtleLink =
-  "group inline-flex items-baseline !text-gray-600 hover:!text-gray-800 !font-medium hover:underline hover:decoration-gray-400 hover:underline-offset-2 transition-all duration-150 cursor-pointer";
+  "group inline-flex items-baseline !text-black hover:!text-red-500 !font-medium hover:underline hover:decoration-red-300 hover:underline-offset-2 transition-all duration-150 cursor-pointer";
 const linkV4Arrow =
   "inline-block max-w-0 ml-0 overflow-hidden opacity-0 whitespace-nowrap align-baseline text-[0.65em] group-hover:max-w-[1.25em] group-hover:opacity-100 group-hover:ml-0.5 transition-all duration-150";
 
@@ -93,7 +93,14 @@ export default function Home() {
           bath bombs on Shopify. I&apos;m currently working on voice agents.
         </p>
         <p>
-          I love running in different cities,{" "}
+          I love{" "}
+          <Link href="/run" className={subtleLink}>
+            running
+            <span className={linkV4Arrow} aria-hidden="true">
+              ↗
+            </span>
+          </Link>{" "}
+          in different cities,{" "}
           <Link href="/read" className={subtleLink}>
             reading
             <span className={linkV4Arrow} aria-hidden="true">
