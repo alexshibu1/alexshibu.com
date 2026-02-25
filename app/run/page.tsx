@@ -237,6 +237,8 @@ export default function RunPage() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [visibleSet, setVisibleSet] = useState<Set<number>>(new Set());
   const articleRefs = useRef<(HTMLElement | null)[]>([]);
+  const timelineScrollerRef = useRef<HTMLDivElement | null>(null);
+  const timelineItemRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   // Load Strava embed script once
   useEffect(() => {
@@ -335,6 +337,28 @@ export default function RunPage() {
     });
   };
 
+  // Keep left timeline in sync with the active card.
+  useEffect(() => {
+    const scroller = timelineScrollerRef.current;
+    const activeItem = timelineItemRefs.current[activeIndex];
+    if (!scroller || !activeItem) return;
+
+    const scrollerRect = scroller.getBoundingClientRect();
+    const itemRect = activeItem.getBoundingClientRect();
+    const currentScrollTop = scroller.scrollTop;
+    const itemTopInScroller =
+      itemRect.top - scrollerRect.top + currentScrollTop;
+    const targetScrollTop =
+      itemTopInScroller -
+      scroller.clientHeight * 0.45 +
+      activeItem.clientHeight / 2;
+
+    scroller.scrollTo({
+      top: Math.max(0, targetScrollTop),
+      behavior: "smooth",
+    });
+  }, [activeIndex]);
+
   return (
     <main className="page-content">
       {/* Header */}
@@ -366,54 +390,70 @@ export default function RunPage() {
 
       {/* Two-column layout */}
       <div className="flex gap-8 items-start">
-        {/* Left: sticky timeline nav — 20% bigger, city on top */}
-        <aside className="hidden sm:flex flex-col sticky top-8 pt-1 shrink-0 w-[168px]">
-          <div className="relative flex flex-col">
-            <div className="absolute top-3 bottom-3 left-[5px] w-px bg-gray-200" />
+        {/* Left: sticky timeline nav */}
+        <aside className="hidden sm:flex flex-col sticky top-4 h-[calc(100vh-2rem)] shrink-0 w-[180px]">
+          {/* Scroll container */}
+          <div
+            ref={timelineScrollerRef}
+            className="relative flex-1 min-h-0 overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {/* Inner wrapper — relative so the line spans full content height */}
+            <div className="relative py-2 ml-2">
+              {/* Continuous connector line — spans first dot to last dot */}
+              <div className="absolute top-0 bottom-0 left-[6px] w-px bg-gray-200/80" />
 
-            {ACTIVITIES.map((activity, index) => {
-              const isActive = activeIndex === index;
-              return (
-                <button
-                  key={activity.stravaEmbedId}
-                  onClick={() => scrollTo(index)}
-                  title={activity.title}
-                  className="relative z-10 flex items-start gap-3 py-[14px] group focus:outline-none text-left"
-                  aria-label={`Scroll to ${activity.title}`}
-                >
-                  <span
-                    className={`mt-[3px] w-[11px] h-[11px] rounded-full shrink-0 transition-all duration-300 ${
-                      isActive
-                        ? "bg-red-400 scale-110 shadow-sm"
-                        : "bg-gray-200 group-hover:bg-gray-400"
-                    }`}
-                  />
-                  <span className="flex flex-col leading-tight">
-                    {/* City — primary, bold */}
+              {ACTIVITIES.map((activity, index) => {
+                const isActive = activeIndex === index;
+                return (
+                  <button
+                    key={activity.stravaEmbedId}
+                    ref={(el) => {
+                      timelineItemRefs.current[index] = el;
+                    }}
+                    onClick={() => scrollTo(index)}
+                    title={activity.title}
+                    className="relative z-10 flex items-start gap-4 py-3 group focus:outline-none text-left w-full transition-opacity duration-300"
+                    style={{ opacity: isActive ? 1 : 0.55 }}
+                    aria-label={`Scroll to ${activity.title}`}
+                  >
+                    {/* Dot */}
                     <span
-                      className={`text-[13px] font-semibold transition-colors duration-200 ${
+                      className={`mt-[3px] w-[13px] h-[13px] rounded-full shrink-0 transition-all duration-400 ring-2 ${
                         isActive
-                          ? "text-gray-900"
-                          : "text-gray-400 group-hover:text-gray-700"
+                          ? "bg-red-400 ring-red-200 scale-110"
+                          : "bg-gray-300 ring-transparent group-hover:bg-gray-400 group-hover:ring-gray-200"
                       }`}
-                    >
-                      {activity.location.split(",")[0]}
+                    />
+                    {/* City + date */}
+                    <span className="flex flex-col leading-tight transition-all duration-300">
+                      <span
+                        className={`text-[13px] font-semibold transition-colors duration-300 ${
+                          isActive
+                            ? "text-gray-900"
+                            : "text-gray-500 group-hover:text-gray-800"
+                        }`}
+                      >
+                        {activity.location.split(",")[0]}
+                      </span>
+                      <span
+                        className={`text-[11px] mt-px transition-colors duration-300 ${
+                          isActive
+                            ? "text-gray-500"
+                            : "text-gray-400 group-hover:text-gray-500"
+                        }`}
+                      >
+                        {activity.dateTime.split("·")[0].trim()}
+                      </span>
                     </span>
-                    {/* Date — secondary */}
-                    <span
-                      className={`text-[11px] transition-colors duration-200 ${
-                        isActive
-                          ? "text-gray-400"
-                          : "text-gray-300 group-hover:text-gray-400"
-                      }`}
-                    >
-                      {activity.dateTime.split("·")[0].trim()}
-                    </span>
-                  </span>
-                </button>
-              );
-            })}
+                  </button>
+                );
+              })}
+            </div>
           </div>
+
+          {/* Top + bottom fade masks */}
+          <div className="pointer-events-none absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-white to-transparent z-20" />
+          <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white to-transparent z-20" />
         </aside>
 
         {/* Right: activity cards — narrowed to max-w-sm so embed is ~40% smaller */}
@@ -426,7 +466,7 @@ export default function RunPage() {
               ref={(el) => {
                 articleRefs.current[index] = el;
               }}
-              className={`scroll-mt-8 transition-all duration-700 ease-out max-w-[480px] ${
+              className={`scroll-mt-8 transition-all duration-500 ease-out max-w-[480px] ${
                 visibleSet.has(index)
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-3"
