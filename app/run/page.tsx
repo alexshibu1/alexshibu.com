@@ -10,6 +10,7 @@ type Activity = {
   location: string;
   stravaEmbedId: string;
   activityType: ActivityType;
+  distance?: string;
   note?: string;
 };
 
@@ -20,6 +21,7 @@ const ACTIVITIES: Activity[] = [
     location: "Bengaluru, India",
     stravaEmbedId: "15733574092",
     activityType: "Walk",
+    distance: "5.29 km",
     note: "Late-night city energy, clear head, long walk home.",
   },
   {
@@ -68,6 +70,7 @@ const ACTIVITIES: Activity[] = [
     location: "Haifa, Israel",
     stravaEmbedId: "11821742885",
     activityType: "Hike",
+    distance: "5 km",
     note: "Steep sections and sunshine. A compact but memorable climb.",
   },
   {
@@ -84,6 +87,7 @@ const ACTIVITIES: Activity[] = [
     location: "Toronto, Canada",
     stravaEmbedId: "11532392645",
     activityType: "Run",
+    distance: "10 km",
     note: "With the homies, almost got cooked, but made it out alive.",
   },
 ];
@@ -259,37 +263,49 @@ export default function RunPage() {
               }`}
             >
               <div className="rounded-xl border border-gray-100 bg-white shadow-sm overflow-hidden">
-                {/* Colored top stripe per activity type */}
+                {/* Colored top stripe */}
                 <div
                   className="h-[3px]"
                   style={{ background: TYPE_STRIPE[activity.activityType] }}
                 />
 
-                {/* Card header — clean, no gray bg */}
-                <div className="px-4 pt-3 pb-2">
-                  <div className="flex items-center justify-between gap-2 mb-1">
-                    <div className="flex items-center gap-1.5 min-w-0">
-                      <span
-                        className={`text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded ${TYPE_STYLES[activity.activityType]}`}
-                      >
-                        {activity.activityType}
+                <div className="p-3">
+                  {/* Row 1: Title + Type badge */}
+                  <div className="flex items-start justify-between gap-3 mb-px">
+                    <h2 className="text-[16px] font-semibold text-gray-900 leading-tight flex-1 !m-0">
+                      {activity.title}
+                    </h2>
+                    {activity.distance && (
+                      <span className="ml-auto flex items-baseline gap-0.5 shrink-0">
+                        <span className="!text-[24px] font-bold tabular-nums leading-none text-gray-900">
+                          {activity.distance.replace(" km", "")}
+                        </span>
+                        <span className="text-[10px] text-gray-400 font-normal">
+                          km
+                        </span>
                       </span>
-                      <span className="text-[10px] text-gray-300">·</span>
-                      <span className="text-[11px] text-gray-500 truncate">
-                        {activity.location}
-                      </span>
-                    </div>
-                    <span className="text-[10px] text-gray-400 shrink-0">
+                    )}
+                  </div>
+
+                  {/* Row 2: City · date + Distance */}
+                  <div className="flex items-center gap-1.5 mb-2">
+                    <span className="text-[13px] font-medium text-gray-600 truncate">
+                      {activity.location}
+                    </span>
+                    <span className="text-[11px] text-gray-300">·</span>
+                    <span className="text-[12px] text-gray-400 shrink-0">
                       {activity.dateTime.split("·")[0].trim()}
                     </span>
                   </div>
-                  <h2 className="text-[15px] font-semibold text-gray-900 leading-snug">
-                    {activity.title}
-                  </h2>
-                </div>
 
-                {/* Embed */}
-                <div className="px-4 pb-3">
+                  {/* Caption */}
+                  {activity.note && (
+                    <p className="!text-[14px] text-gray-400 italic leading-relaxed !mb-3">
+                      {activity.note}
+                    </p>
+                  )}
+
+                  {/* Embed */}
                   <div className="rounded-lg overflow-hidden border border-gray-100">
                     <div
                       className="strava-embed-placeholder"
@@ -300,15 +316,6 @@ export default function RunPage() {
                     />
                   </div>
                 </div>
-
-                {/* Note */}
-                {activity.note ? (
-                  <div className="px-4 pb-3 -mt-1">
-                    <p className="text-[11px] text-gray-400 italic leading-relaxed m-0">
-                      {activity.note}
-                    </p>
-                  </div>
-                ) : null}
               </div>
             </article>
           ))}
