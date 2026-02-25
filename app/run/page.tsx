@@ -15,14 +15,6 @@ type Activity = {
 
 const ACTIVITIES: Activity[] = [
   {
-    title: "Back at it",
-    dateTime: "Feb 22, 2026",
-    location: "Toronto, Canada",
-    stravaEmbedId: "12532392645",
-    activityType: "Run",
-    note: "Simple comeback run. No heroics, just momentum.",
-  },
-  {
     title: "Night Walk in the City",
     dateTime: "Sep 7, 2025 · 7:51 PM",
     location: "Bengaluru, India",
@@ -79,10 +71,18 @@ const ACTIVITIES: Activity[] = [
     note: "Steep sections and sunshine. A compact but memorable climb.",
   },
   {
+    title: "First run with UofT run club",
+    dateTime: "2024",
+    location: "Toronto, Canada",
+    stravaEmbedId: "12446369376",
+    activityType: "Run",
+    note: "First time running with a crew. Different energy entirely.",
+  },
+  {
     title: "Bimbo 10K",
     dateTime: "Sep 29, 2024 · 8:06 AM",
     location: "Toronto, Canada",
-    stravaEmbedId: "12532392645",
+    stravaEmbedId: "11532392645",
     activityType: "Run",
     note: "With the homies, almost got cooked, but made it out alive.",
   },
@@ -93,6 +93,20 @@ const TYPE_STYLES: Record<ActivityType, string> = {
   Walk: "text-blue-600 bg-blue-50 border border-blue-100",
   Hike: "text-emerald-600 bg-emerald-50 border border-emerald-100",
   Ride: "text-purple-600 bg-purple-50 border border-purple-100",
+};
+
+const TYPE_STRIPE: Record<ActivityType, string> = {
+  Run: "#f97316",
+  Walk: "#3b82f6",
+  Hike: "#3b82f6",
+  Ride: "#10b981",
+};
+
+const TYPE_DOT: Record<ActivityType, string> = {
+  Run: "bg-orange-400",
+  Walk: "bg-blue-400",
+  Hike: "bg-blue-400",
+  Ride: "bg-emerald-400",
 };
 
 export default function RunPage() {
@@ -177,56 +191,59 @@ export default function RunPage() {
 
       {/* Two-column layout */}
       <div className="flex gap-8 items-start">
-        {/* Left: sticky timeline nav */}
-        <aside className="hidden sm:flex flex-col sticky top-8 pt-1 shrink-0 w-[130px]">
+        {/* Left: sticky timeline nav — 20% bigger, city on top */}
+        <aside className="hidden sm:flex flex-col sticky top-8 pt-1 shrink-0 w-[168px]">
           <div className="relative flex flex-col">
-            {/* Vertical line — sits behind the dots */}
-            <div className="absolute top-3 bottom-3 left-[7px] w-px bg-gray-200" />
+            <div className="absolute top-3 bottom-3 left-[5px] w-px bg-gray-200" />
 
-            {ACTIVITIES.map((activity, index) => (
-              <button
-                key={activity.stravaEmbedId}
-                onClick={() => scrollTo(index)}
-                title={activity.title}
-                className="relative z-10 flex items-start gap-2.5 py-[11px] group focus:outline-none text-left"
-                aria-label={`Scroll to ${activity.title}`}
-              >
-                {/* Dot */}
-                <span
-                  className={`mt-[3px] w-[7px] h-[7px] rounded-full shrink-0 transition-all duration-300 ${
-                    activeIndex === index
-                      ? "bg-gray-900 scale-125 shadow-sm"
-                      : "bg-gray-300 group-hover:bg-gray-500"
-                  }`}
-                />
-                {/* Date + city */}
-                <span className="flex flex-col leading-tight">
+            {ACTIVITIES.map((activity, index) => {
+              const isActive = activeIndex === index;
+              return (
+                <button
+                  key={activity.stravaEmbedId}
+                  onClick={() => scrollTo(index)}
+                  title={activity.title}
+                  className="relative z-10 flex items-start gap-3 py-[14px] group focus:outline-none text-left"
+                  aria-label={`Scroll to ${activity.title}`}
+                >
+                  {/* Colored dot when active, gray otherwise */}
                   <span
-                    className={`text-[11px] font-medium transition-colors duration-200 ${
-                      activeIndex === index
-                        ? "text-gray-900"
-                        : "text-gray-400 group-hover:text-gray-600"
+                    className={`mt-[3px] w-[11px] h-[11px] rounded-full shrink-0 transition-all duration-300 ${
+                      isActive
+                        ? `${TYPE_DOT[activity.activityType]} scale-110 shadow-sm`
+                        : "bg-gray-200 group-hover:bg-gray-400"
                     }`}
-                  >
-                    {activity.dateTime.split("·")[0].trim()}
+                  />
+                  <span className="flex flex-col leading-tight">
+                    {/* City — primary, bold */}
+                    <span
+                      className={`text-[13px] font-semibold transition-colors duration-200 ${
+                        isActive
+                          ? "text-gray-900"
+                          : "text-gray-400 group-hover:text-gray-700"
+                      }`}
+                    >
+                      {activity.location.split(",")[0]}
+                    </span>
+                    {/* Date — secondary */}
+                    <span
+                      className={`text-[11px] transition-colors duration-200 ${
+                        isActive
+                          ? "text-gray-400"
+                          : "text-gray-300 group-hover:text-gray-400"
+                      }`}
+                    >
+                      {activity.dateTime.split("·")[0].trim()}
+                    </span>
                   </span>
-                  <span
-                    className={`text-[10px] transition-colors duration-200 ${
-                      activeIndex === index
-                        ? "text-gray-500"
-                        : "text-gray-300 group-hover:text-gray-400"
-                    }`}
-                  >
-                    {activity.location.split(",")[0]}
-                  </span>
-                </span>
-              </button>
-            ))}
+                </button>
+              );
+            })}
           </div>
         </aside>
 
-        {/* Right: activity cards */}
-        <div className="flex-1 min-w-0 flex flex-col gap-6">
+        {/* Right: activity cards — narrowed to max-w-sm so embed is ~40% smaller */}
+        <div className="flex-1 min-w-0 flex flex-col gap-5">
           {ACTIVITIES.map((activity, index) => (
             <article
               key={activity.stravaEmbedId}
@@ -235,39 +252,44 @@ export default function RunPage() {
               ref={(el) => {
                 articleRefs.current[index] = el;
               }}
-              className={`scroll-mt-8 transition-all duration-700 ease-out ${
+              className={`scroll-mt-8 transition-all duration-700 ease-out max-w-[422px] ${
                 visibleSet.has(index)
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-3"
               }`}
             >
-              {/* Card */}
               <div className="rounded-xl border border-gray-100 bg-white shadow-sm overflow-hidden">
-                {/* Card header */}
-                <div className="flex items-center justify-between gap-3 px-4 py-2.5 bg-gray-50/60 border-b border-gray-100">
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-1.5 flex-wrap">
-                      <span className="text-[11px] font-medium text-gray-500 bg-gray-100 px-1.5 py-0.5 rounded-full">
-                        {activity.location}
+                {/* Colored top stripe per activity type */}
+                <div
+                  className="h-[3px]"
+                  style={{ background: TYPE_STRIPE[activity.activityType] }}
+                />
+
+                {/* Card header — clean, no gray bg */}
+                <div className="px-4 pt-3 pb-2">
+                  <div className="flex items-center justify-between gap-2 mb-1">
+                    <div className="flex items-center gap-1.5 min-w-0">
+                      <span
+                        className={`text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded ${TYPE_STYLES[activity.activityType]}`}
+                      >
+                        {activity.activityType}
                       </span>
                       <span className="text-[10px] text-gray-300">·</span>
-                      <span className="text-[11px] text-gray-400">
-                        {activity.dateTime}
+                      <span className="text-[11px] text-gray-500 truncate">
+                        {activity.location}
                       </span>
                     </div>
-                    <h2 className="text-[15px] font-semibold text-gray-900 leading-snug mt-0.5">
-                      {activity.title}
-                    </h2>
+                    <span className="text-[10px] text-gray-400 shrink-0">
+                      {activity.dateTime.split("·")[0].trim()}
+                    </span>
                   </div>
-                  <span
-                    className={`shrink-0 inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold uppercase tracking-[0.1em] ${TYPE_STYLES[activity.activityType]}`}
-                  >
-                    {activity.activityType}
-                  </span>
+                  <h2 className="text-[15px] font-semibold text-gray-900 leading-snug">
+                    {activity.title}
+                  </h2>
                 </div>
 
-                {/* Embed area */}
-                <div className="px-4 py-3">
+                {/* Embed */}
+                <div className="px-4 pb-3">
                   <div className="rounded-lg overflow-hidden border border-gray-100">
                     <div
                       className="strava-embed-placeholder"
@@ -279,10 +301,10 @@ export default function RunPage() {
                   </div>
                 </div>
 
-                {/* Card footer / note */}
+                {/* Note */}
                 {activity.note ? (
-                  <div className="px-4 py-2 border-t border-gray-100 bg-gray-50/40">
-                    <p className="text-[11px] text-gray-500 italic leading-relaxed m-0">
+                  <div className="px-4 pb-3 -mt-1">
+                    <p className="text-[11px] text-gray-400 italic leading-relaxed m-0">
                       {activity.note}
                     </p>
                   </div>
