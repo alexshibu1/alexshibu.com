@@ -110,27 +110,78 @@ export default function RunPage() {
     document.body.appendChild(script);
   }, []);
 
-  // IntersectionObserver: track active dot + fade-in
+  // IntersectionObserver: track active dot + fade-in (stable, low-jitter)
   useEffect(() => {
     const articles = articleRefs.current.filter(Boolean) as HTMLElement[];
     if (articles.length === 0) return;
+
+    const visibilityByIndex = new Map<number, number>();
+    let frame: number | null = null;
+
+    const updateActiveFromRatios = () => {
+      let bestIndex = 0;
+      let bestRatio = -1;
+      visibilityByIndex.forEach((ratio, idx) => {
+        if (ratio > bestRatio) {
+          bestRatio = ratio;
+          bestIndex = idx;
+        }
+      });
+      if (bestRatio >= 0) {
+        setActiveIndex((prev) => (prev === bestIndex ? prev : bestIndex));
+      }
+    };
+
+    // Fallback during smooth scrolling: choose card nearest anchor.
+    const updateActiveFromScroll = () => {
+      const anchorY = window.innerHeight * 0.28;
+      let bestIdx = 0;
+      let bestDistance = Number.POSITIVE_INFINITY;
+      articles.forEach((el, idx) => {
+        const distance = Math.abs(el.getBoundingClientRect().top - anchorY);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          bestIdx = idx;
+        }
+      });
+      setActiveIndex((prev) => (prev === bestIdx ? prev : bestIdx));
+    };
+
+    const onScroll = () => {
+      if (frame !== null) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = null;
+        updateActiveFromScroll();
+      });
+    };
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           const idx = Number((entry.target as HTMLElement).dataset.idx);
           if (!Number.isFinite(idx)) return;
-          if (entry.isIntersecting) {
-            setActiveIndex(idx);
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.15) {
             setVisibleSet((prev) => new Set(prev).add(idx));
           }
+          visibilityByIndex.set(idx, entry.intersectionRatio);
         });
+        updateActiveFromRatios();
       },
-      { threshold: 0.2 },
+      {
+        threshold: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9],
+        rootMargin: "-12% 0px -38% 0px",
+      },
     );
 
     articles.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    updateActiveFromScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
+      if (frame !== null) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   const uniqueCities = useMemo(
