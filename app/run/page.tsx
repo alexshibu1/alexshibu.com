@@ -92,26 +92,7 @@ const ACTIVITIES: Activity[] = [
   },
 ];
 
-const TYPE_STYLES: Record<ActivityType, string> = {
-  Run: "text-orange-600 bg-orange-50 border border-orange-100",
-  Walk: "text-blue-600 bg-blue-50 border border-blue-100",
-  Hike: "text-emerald-600 bg-emerald-50 border border-emerald-100",
-  Ride: "text-purple-600 bg-purple-50 border border-purple-100",
-};
-
-const TYPE_STRIPE: Record<ActivityType, string> = {
-  Run: "#f97316",
-  Walk: "#3b82f6",
-  Hike: "#3b82f6",
-  Ride: "#10b981",
-};
-
-const TYPE_DOT: Record<ActivityType, string> = {
-  Run: "bg-orange-400",
-  Walk: "bg-blue-400",
-  Hike: "bg-blue-400",
-  Ride: "bg-emerald-400",
-};
+const ACTIVE_RED = "#ef4444";
 
 export default function RunPage() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -210,11 +191,10 @@ export default function RunPage() {
                   className="relative z-10 flex items-start gap-3 py-[14px] group focus:outline-none text-left"
                   aria-label={`Scroll to ${activity.title}`}
                 >
-                  {/* Colored dot when active, gray otherwise */}
                   <span
                     className={`mt-[3px] w-[11px] h-[11px] rounded-full shrink-0 transition-all duration-300 ${
                       isActive
-                        ? `${TYPE_DOT[activity.activityType]} scale-110 shadow-sm`
+                        ? "bg-red-400 scale-110 shadow-sm"
                         : "bg-gray-200 group-hover:bg-gray-400"
                     }`}
                   />
@@ -256,28 +236,30 @@ export default function RunPage() {
               ref={(el) => {
                 articleRefs.current[index] = el;
               }}
-              className={`scroll-mt-8 transition-all duration-700 ease-out max-w-[422px] ${
+              className={`scroll-mt-8 transition-all duration-700 ease-out max-w-[480px] ${
                 visibleSet.has(index)
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-3"
               }`}
             >
               <div className="rounded-xl border border-gray-100 bg-white shadow-sm overflow-hidden">
-                {/* Colored top stripe */}
+                {/* Top stripe — red on active card, gray otherwise */}
                 <div
-                  className="h-[3px]"
-                  style={{ background: TYPE_STRIPE[activity.activityType] }}
+                  className="h-[3px] transition-colors duration-500"
+                  style={{
+                    background: activeIndex === index ? ACTIVE_RED : "#e5e7eb",
+                  }}
                 />
 
                 <div className="p-3">
-                  {/* Row 1: Title + Type badge */}
+                  {/* Row 1: Title + Distance */}
                   <div className="flex items-start justify-between gap-3 mb-px">
                     <h2 className="text-[16px] font-semibold text-gray-900 leading-tight flex-1 !m-0">
                       {activity.title}
                     </h2>
                     {activity.distance && (
-                      <span className="ml-auto flex items-baseline gap-0.5 shrink-0">
-                        <span className="!text-[24px] font-bold tabular-nums leading-none text-gray-900">
+                      <span className="flex items-baseline gap-0.5 shrink-0">
+                        <span className="text-[18px] font-bold tabular-nums leading-none text-gray-900">
                           {activity.distance.replace(" km", "")}
                         </span>
                         <span className="text-[10px] text-gray-400 font-normal">
@@ -306,7 +288,10 @@ export default function RunPage() {
                   )}
 
                   {/* Embed */}
-                  <div className="rounded-lg overflow-hidden border border-gray-100">
+                  <div
+                    className="rounded-lg overflow-hidden border border-gray-100"
+                    style={{ zoom: 0.95 }}
+                  >
                     <div
                       className="strava-embed-placeholder"
                       data-embed-type="activity"
