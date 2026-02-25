@@ -218,6 +218,7 @@ const ACTIVITIES: Activity[] = [
     location: "Toronto, Canada",
     stravaEmbedId: "12446369376",
     activityType: "Run",
+    distance: "5.20 km",
   },
   {
     title: "Bimbo 10K",
