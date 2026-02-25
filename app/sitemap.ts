@@ -32,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/lore",
     "/sidequests",
     "/rejected",
+    "/run",
   ];
 
   const routes = [...staticRoutes, ...essayRoutes()];
@@ -43,4 +44,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "/" ? 1 : 0.7,
   }));
 }
-
