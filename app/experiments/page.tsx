@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const EXPERIMENTS = [
   {
     emoji: "🏃‍♂️",
@@ -26,12 +28,22 @@ const EXPERIMENTS = [
     color: "#a855f7",
   },
   {
+    emoji: "🧠",
+    title: "Can I become technically dangerous in 6 months?",
+    detail: "Deep work on CS, systems, and real shipped projects",
+    progress: 10,
+    meta: "Dec 2025",
+    color: "#6366f1",
+    planHref: "/technical",
+  },
+  {
     emoji: "💪",
-    title: "Body fat under 20%?",
+    title: "Body fat under 25%?",
     detail: "Calorie deficit + strength training",
     progress: 30,
     meta: "Jan 2026",
     color: "#f97316",
+    planHref: "/essay/body",
   },
 ];
 
@@ -81,6 +93,20 @@ export default function ExperimentsPage() {
                   {exp.meta}
                 </span>
               </div>
+              {"planHref" in exp && exp.planHref ? (
+                <div className="mt-1 flex justify-between items-center">
+                  <span className="text-[10px] text-gray-300">
+                    notes &amp; details
+                  </span>
+                  <Link
+                    href={exp.planHref}
+                    className="inline-flex items-center gap-1 text-[11px] text-gray-500 hover:text-red-500 transition-colors"
+                  >
+                    <span aria-hidden="true">📝</span>
+                    <span>read plan</span>
+                  </Link>
+                </div>
+              ) : null}
             </div>
           </div>
         ))}
