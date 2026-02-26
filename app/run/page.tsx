@@ -22,7 +22,7 @@ const ACTIVITIES: Activity[] = [
     stravaEmbedId: "15733574092",
     activityType: "Walk",
     distance: "5.29 km",
-    note: "Fun City, did a film Festival in Koramangala.",
+    note: "Fun City, did a film Festival in Koramangala. I got on a 11pm bus, got to the city at 5am. Spent the day with my boi then left at 1 am that night to kerala.",
   },
   {
     title: "Running toward Tea",
@@ -50,7 +50,7 @@ const ACTIVITIES: Activity[] = [
     stravaEmbedId: "15577844246",
     activityType: "Run",
     distance: "3.02 km",
-    note: "Uncles looking at me like I'm running from elephants.",
+    note: "Uncles looking at me like I'm running from elephants. I was here for a retreat",
   },
   {
     title: "Running in Hyderabad",
@@ -95,7 +95,7 @@ const ACTIVITIES: Activity[] = [
     stravaEmbedId: "15337162885",
     activityType: "Run",
     distance: "2.23 km",
-    note: "Started a run club at Villars Institute.Breathing this much fresh air is difficult.",
+    note: "Started a run club at Villars Institute. Breathing this much fresh air is difficult.",
   },
   {
     title: "Exploring Geneva",
@@ -113,7 +113,7 @@ const ACTIVITIES: Activity[] = [
     stravaEmbedId: "15181666326",
     activityType: "Run",
     distance: "5.02 km",
-    note: "I went to a football game.",
+    note: "I went to a football game",
   },
   {
     title: "Running in Warsaw",
@@ -122,7 +122,7 @@ const ACTIVITIES: Activity[] = [
     stravaEmbedId: "15177655787",
     activityType: "Run",
     distance: "3.65 km",
-    note: "I missed my bus to Berlin.",
+    note: "I missed my bus to Berlin. My bus then was stoped cuz someone jumped the border.",
   },
   {
     title: "Middle of Nowhere Run",
@@ -131,6 +131,7 @@ const ACTIVITIES: Activity[] = [
     stravaEmbedId: "15153424026",
     activityType: "Run",
     distance: "5.40 km",
+    note: "Decided Ukraine might not be a good idea.",
   },
   {
     title: "Morning run in a Polish village",
@@ -147,7 +148,7 @@ const ACTIVITIES: Activity[] = [
     stravaEmbedId: "15032810445",
     activityType: "Run",
     distance: "5.66 km",
-    note: "So much to see",
+    note: "I took a train from here to Czech Republic then to Krakow overnight to save on hotel costs. But my train got delayed. I had to sneak into another one",
   },
   {
     title: "Exploring New York at Midnight",
@@ -362,31 +363,32 @@ export default function RunPage() {
   return (
     <main className="page-content">
       {/* Header */}
-      <h1 className="hero-heading" style={{ marginBottom: "0.25rem" }}>
+      <h1 className="hero-heading" style={{ marginBottom: "0.5rem" }}>
         Alex&apos;s Running logs
       </h1>
 
-      <div className="flex items-center gap-3 flex-wrap mb-1">
-        <p className="text-sm text-gray-500 m-0">
-          A log of my favorite runs, walks, hikes, and rides. Running is my
-          favorite way to explore new cities.
-        </p>
+      <p className="text-sm text-gray-500 m-0 mb-3">
+        A log of my favorite runs, walks, hikes, and rides. Running is my
+        favorite way to explore new cities. Also a fun challenge while
+        traveling.
+      </p>
+
+      <div className="flex items-center gap-2 mb-6">
+        <span className="inline-flex items-baseline gap-1.5 rounded-lg bg-gray-100 px-3 py-1.5 text-[15px] font-semibold tabular-nums text-gray-800">
+          {uniqueCities} cities
+        </span>
         <a
           href="https://www.strava.com/athletes/113105752"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center text-sm text-gray-500 hover:text-red-500 transition-colors group"
+          className="inline-flex items-center gap-1.5 rounded-lg bg-gray-100 px-3 py-1.5 text-[15px] font-semibold text-gray-800 hover:bg-gray-200 hover:text-red-600 transition-colors"
         >
-          <span>Strava</span>
-          <span className="text-gray-300 group-hover:text-red-400 transition-colors">
+          Strava
+          <span className="text-gray-400" aria-hidden>
             ↗
           </span>
         </a>
       </div>
-
-      <p className="text-[11px] text-gray-400 mb-6">
-        {uniqueCities} cities · {ACTIVITIES.length} highlights
-      </p>
 
       {/* Two-column layout */}
       <div className="flex gap-8 items-start">

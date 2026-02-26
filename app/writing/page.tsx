@@ -50,12 +50,16 @@ function readAllEssayMeta(): EssayMeta[] {
       if (metadataMatch) {
         const content = metadataMatch[1];
 
-        // Match title: "..." or title: '...'
-        const titleMatch = content.match(/title:\s*["']([^"']*)["']/);
+        // Match title: "..." or title: '...' (use [^"] or [^'] so apostrophes in e.g. "Alex's" don't end the match)
+        const titleMatch =
+          content.match(/title:\s*"([^"]*)"/) ||
+          content.match(/title:\s*'([^']*)'/);
         if (titleMatch) title = titleMatch[1];
 
         // Match description: "..." or description: '...'
-        const descMatch = content.match(/description:\s*["']([^"']*)["']/);
+        const descMatch =
+          content.match(/description:\s*"([^"]*)"/) ||
+          content.match(/description:\s*'([^']*)'/);
         if (descMatch) description = descMatch[1];
 
         // Match date: "..." or date: '...'
@@ -77,9 +81,9 @@ function readAllEssayMeta(): EssayMeta[] {
 
       // 3. Fallback: if title is in EssayHeader but not metadata
       if (title === dir.name) {
-        const headerTitleMatch = raw.match(
-          /<EssayHeader[^>]*title=["']([^"']*)["']/,
-        );
+        const headerTitleMatch =
+          raw.match(/<EssayHeader[^>]*title="([^"]*)"/) ||
+          raw.match(/<EssayHeader[^>]*title='([^']*)'/);
         if (headerTitleMatch) {
           title = headerTitleMatch[1];
         }
