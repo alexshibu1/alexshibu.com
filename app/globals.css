@@ -482,6 +482,8 @@ body {
 
   font-weight: 600;
 
+  color: #1f1f1f;
+
   line-height: 1.08;
 
   letter-spacing: -0.02em;
@@ -547,7 +549,7 @@ body {
 }
 
 .date {
-  color: #999;
+  color: #666666;
   font-size: 0.9rem;
   text-align: right; /* Right align date against the title */
   white-space: nowrap; /* Prevent date wrapping */

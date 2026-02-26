@@ -68,7 +68,7 @@ const ACTIVITIES: Activity[] = [
     stravaEmbedId: "15397163156",
     activityType: "Hike",
     distance: "5.06 km",
-    note: "Water inside the mountains.",
+    note: "Water inside the mountains. We found a cafe inside this mountain.",
   },
   {
     title: "Walking around Veytaux",
@@ -77,7 +77,7 @@ const ACTIVITIES: Activity[] = [
     stravaEmbedId: "15399538231",
     activityType: "Walk",
     distance: "4.19 km",
-    note: "nice little town.",
+    note: "nice little town. I tried the mcdonalds and it was terrible.",
   },
   {
     title: "Hiking the mountains",
@@ -127,7 +127,7 @@ const ACTIVITIES: Activity[] = [
   {
     title: "Middle of Nowhere Run",
     dateTime: "Jul 18, 2025 · 7:31 AM",
-    location: "gmina Trąbki Wielkie, Poland",
+    location: "Gmina Trąbki Wielkie, Poland",
     stravaEmbedId: "15153424026",
     activityType: "Run",
     distance: "5.40 km",
@@ -136,7 +136,7 @@ const ACTIVITIES: Activity[] = [
   {
     title: "Morning run in a Polish village",
     dateTime: "Jul 11, 2025 · 7:04 AM",
-    location: "gmina Leśnica, Poland",
+    location: "Gmina Leśnica, Poland",
     stravaEmbedId: "15075724006",
     activityType: "Run",
     distance: "5.20 km",

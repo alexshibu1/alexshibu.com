@@ -13,13 +13,12 @@ export function EssayHeader({ title, date }: { title: string; date: string }) {
       </h1>
       <p
         style={{
-          color: "#a8a8a8", // Grayer
-          marginTop: "0.5rem",
+          color: "#2f2f2f",
           fontFamily: "var(--font-plex-sans)",
           fontWeight: "600",
         }}
       >
-        {date} {/* Format date as "Month Day, Year" */}
+        {date}
       </p>
     </div>
   );
