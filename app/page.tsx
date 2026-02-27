@@ -117,8 +117,8 @@ export default function Home() {
           , and doing hard things.
         </p>
         <p>
-          I want to become the ultimate Swiss Army knife that can build great
-          products, understand users, and grow products.
+          I&apos;m in the pursuit of becoming the ultimate Swiss Army knife who
+          can create great products, grow users, and build communities.
         </p>
         <p>Join my internal board of directors. Love to chat!</p>
         <div

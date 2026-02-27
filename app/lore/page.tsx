@@ -538,7 +538,7 @@ function LoreListRow({
           "group",
           "w-full text-left",
           "grid grid-cols-[90px_1fr] gap-6 items-baseline",
-          "py-2.5 rounded-md",
+          "py-2.5",
           "transition-colors",
           "md:hidden",
           isExpanded
@@ -610,7 +610,7 @@ function LoreListRow({
           "group",
           "w-full text-left",
           "hidden md:grid grid-cols-[90px_1fr] gap-6 items-baseline",
-          "py-1 rounded-md",
+          "py-1",
           "transition-colors",
           isActive ? "bg-red-50/70" : "hover:bg-red-50/50",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-200 focus-visible:ring-offset-2 focus-visible:ring-offset-white",

@@ -280,7 +280,7 @@ body {
 
   font-weight: 400;
 
-  color: #666666;
+  color: #4f4f4f;
 
   margin-bottom: 1.5rem; /* Add spacing between paragraphs */
 }
@@ -883,6 +883,11 @@ body {
     margin-top: 1.5rem;
   }
 
+  /* Home page only: no top margin on hero h1 in mobile */
+  .page-content > .hero > .hero-heading {
+    margin-top: 0;
+  }
+
   .hero-subline {
     font-size: 18px;
   }
@@ -1028,6 +1033,10 @@ body {
   .brand-name {
     font-size: 40px; /* Larger name on big screens */
   }
+
+  .page-content p {
+    font-size: 22px;
+  }
 }
 
 @media (min-width: 1920px) {
@@ -1042,11 +1051,11 @@ body {
   }
 
   .brand-name {
-    font-size: 40px; /* Larger name on big screens */
+    font-size: 50px; /* Larger name on big screens */
   }
 
   .page-content {
-    max-width: 800px;
+    max-width: 1000px;
   }
 }
 
