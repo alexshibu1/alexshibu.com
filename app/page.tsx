@@ -54,7 +54,13 @@ export default function Home() {
         </h1>
         <p className="hero-subline">
           I&apos;m Alex Shibu, from Toronto. Currently obsessed with building a
-          foundation for asymmetric outcomes. That starts with getting dangerous
+          foundation for asymmetric outcomes. That starts with getting{" "}
+          <Link href="/technical" className={subtleLink}>
+            dangerous
+            <span className={linkV4Arrow} aria-hidden="true">
+              ↗
+            </span>
+          </Link>{" "}
           at full-stack engineering, product growth, and math & physics for
           machine learning.
         </p>

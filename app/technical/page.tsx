@@ -6,7 +6,7 @@ export default function TechnicalPage() {
   return (
     <main className="page-content">
       <h1 className="hero-heading" style={{ marginBottom: "0.5rem" }}>
-        technical [page in progress]
+        Operation Forge [page in progress]
       </h1>
       <p className="text-base text-gray-600 mb-4">
         Mind‑mapping my plan to become technically dangerous — from first
