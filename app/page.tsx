@@ -53,14 +53,14 @@ export default function Home() {
           </span>
         </h1>
         <p className="hero-subline">
-          I&apos;m Alex Shibu, from Toronto. I&apos;m currently obsessed with
-          building a solid foundation for asymmetric outcomes. That starts with
-          getting dangerous at full-stack engineering, product growth, and
-          deeply understanding math & physics for machine learning.
+          I&apos;m Alex Shibu, from Toronto. Currently obsessed with building a
+          foundation for asymmetric outcomes. That starts with getting dangerous
+          at full-stack engineering, product growth, and math & physics for
+          machine learning.
         </p>
         <p>
-          I am also a student at UofT, studying physics & comp sci. On this site
-          I park{" "}
+          I am a student at University of Toronto, for physics & computer
+          science. On this site I park{" "}
           <Link href="/projects" className={subtleLink}>
             projects
             <span className={linkV4Arrow} aria-hidden="true">
@@ -88,19 +88,19 @@ export default function Home() {
               ↗
             </span>
           </Link>
-          . I&apos;ve previously worked on everything from research in decision
-          theory to running hackathons, selling keto books with instagram, and
-          bath bombs on Shopify. I&apos;m currently working on voice agents.
+          . Past work includes everything from decision theory, organizing
+          hackathons, selling keto books on instagram, and bath bombs on
+          Shopify. Currently building voice agents for SMBs or HR departments.
         </p>
         <p>
-          I love{" "}
+          I spend a lot of time{" "}
           <Link href="/run" className={subtleLink}>
             running
             <span className={linkV4Arrow} aria-hidden="true">
               ↗
             </span>
           </Link>{" "}
-          in different cities,{" "}
+          ,{" "}
           <Link href="/read" className={subtleLink}>
             reading
             <span className={linkV4Arrow} aria-hidden="true">
@@ -114,11 +114,18 @@ export default function Home() {
               ↗
             </span>
           </Link>
-          , and doing hard things.
+          , and doing{" "}
+          <Link href="/experiments" className={subtleLink}>
+            experiments
+            <span className={linkV4Arrow} aria-hidden="true">
+              ↗
+            </span>
+          </Link>
+          .
         </p>
         <p>
-          I&apos;m in the pursuit of becoming the ultimate Swiss Army knife who
-          can create great products, grow users, and build communities.
+          In the pursuit of becoming the ultimate Swiss Army knife who can build
+          great products, grow users, and create communities.
         </p>
         <p>Join my internal board of directors. Love to chat!</p>
         <div
