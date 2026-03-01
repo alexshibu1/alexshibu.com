@@ -127,7 +127,10 @@ export default function Home() {
           In the pursuit of becoming the ultimate Swiss Army knife who can build
           great products, grow users, and create communities.
         </p>
-        <p>Join my internal board of directors. Love to chat!</p>
+        <p>
+          Join my internal board of directors for occasional updates. Love to
+          chat!
+        </p>
         <div
           style={{
             margin: "1.5rem 0 0 0",
