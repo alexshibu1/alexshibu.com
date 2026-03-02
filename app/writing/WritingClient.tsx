@@ -24,7 +24,7 @@ function FilterButtons({
   const filters = [
     { key: "all" as const, label: "All", emoji: "" },
     { key: "essay" as const, label: "Essays", emoji: "📝" },
-    { key: "thought" as const, label: "Dumb Thoughts", emoji: "💭" },
+    { key: "thought" as const, label: "Blog", emoji: "💭" },
     { key: "book" as const, label: "Books", emoji: "📚" },
     { key: "project" as const, label: "Projects", emoji: "🚀" },
   ];
