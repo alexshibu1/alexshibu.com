@@ -47,7 +47,7 @@ export const books: Book[] = [
     title: "Will",
     author: "Will Smith",
     rating: 3,
-    dateRead: "03.2025",
+    dateRead: "04.2023",
     isAudiobook: true,
     durationHours: 16 + 16 / 60,
     summary: "Good when I read; had a clue he was a bit off before the slap.",
@@ -56,7 +56,7 @@ export const books: Book[] = [
     title: "The Ride of a Lifetime",
     author: "Robert Iger",
     rating: 4.4,
-    dateRead: "03.2025",
+    dateRead: "06.2023",
     isAudiobook: true,
     durationHours: 8 + 45 / 60,
     summary: "Beginning was awesome; not much value beyond that.",
@@ -124,6 +124,13 @@ export const books: Book[] = [
     wordCount: 90_000,
     summary:
       "First book I finished; make habits easy, attractive, obvious, and satisfying.",
+  },
+  {
+    title: "The 12 Week Year",
+    author: "Brian P. Moran",
+    rating: 4,
+    dateRead: "02.2026",
+    summary: "A structure to reimagine goals.",
   },
 ];
 
