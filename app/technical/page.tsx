@@ -147,9 +147,9 @@ export default function TechnicalPage() {
 
         {/* GitHub contribution chart */}
         <div className="mb-2">
-          <p className="text-[11px] font-semibold uppercase tracking-widest text-gray-400 mb-0">
+          <div className="text-[14px] font-semibold uppercase tracking-widest text-gray-400">
             Streak
-          </p>
+          </div>
           <div className="flex justify-center sm:justify-start">
             <img
               src="https://ghchart.rshah.org/0e4429/alexshibu1"
