@@ -18,7 +18,7 @@ function FilterButtons({
 }: {
   activeFilter: "all" | "essay" | "thought" | "book" | "project";
   onFilterChange: (
-    filter: "all" | "essay" | "thought" | "book" | "project"
+    filter: "all" | "essay" | "thought" | "book" | "project",
   ) => void;
 }) {
   const filters = [
@@ -33,7 +33,7 @@ function FilterButtons({
     <>
       {/* Mobile: horizontally scrollable filter chips */}
       <div
-        className="md:hidden writing-filter-scroll -mx-5 px-5 mb-4 pb-1 overflow-x-auto"
+        className="md:hidden writing-filter-scroll -mx-5 px-5 !mb-0 pb-1 overflow-x-auto"
         style={{ WebkitOverflowScrolling: "touch" }}
       >
         <div className="flex gap-2 w-max">
@@ -69,7 +69,7 @@ function FilterButtons({
       {/* Desktop: keep existing look */}
       <div
         className="hidden md:flex"
-        style={{ gap: "0.5rem", marginBottom: "1rem" }}
+        style={{ gap: "0.5rem", marginBottom: 0 }}
       >
         {filters.map(({ key, label, emoji }) => (
           <button
@@ -110,12 +110,12 @@ export default function WritingClient({ essays }: { essays: EssayMeta[] }) {
     urlFilter === "book"
       ? "book"
       : urlFilter === "essay"
-      ? "essay"
-      : urlFilter === "thought"
-      ? "thought"
-      : urlFilter === "project"
-      ? "project"
-      : "all"
+        ? "essay"
+        : urlFilter === "thought"
+          ? "thought"
+          : urlFilter === "project"
+            ? "project"
+            : "all",
   );
 
   // Filter essays based on active filter
