@@ -105,9 +105,9 @@ export default function Home() {
             <span className={linkV4Arrow} aria-hidden="true">
               ↗
             </span>
-          </Link>{" "}
-          ,{" "}
-          <Link href="/read" className={subtleLink}>
+          </Link>
+          {""},{" "}
+          <Link href="/books" className={subtleLink}>
             reading
             <span className={linkV4Arrow} aria-hidden="true">
               ↗

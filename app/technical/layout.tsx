@@ -8,8 +8,8 @@ export const metadata: Metadata = {
     "/technical",
   ),
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 };
 
