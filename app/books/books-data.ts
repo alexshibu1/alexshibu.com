@@ -130,7 +130,8 @@ export const books: Book[] = [
     author: "Brian P. Moran",
     rating: 4,
     dateRead: "02.2026",
-    summary: "A structure to reimagine goals.",
+    summary:
+      "A structure to reimagine goals. But he started shilling his consutlancy services. This should be 150 pages max.",
   },
 ];
 
