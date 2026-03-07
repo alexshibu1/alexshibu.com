@@ -59,7 +59,7 @@ export function BookCard({ book }: { book: Book }) {
         </div>
 
         {book.summary ? (
-          <p className="text-sm md:text-base text-gray-600 leading-relaxed !mb-[4px]">
+          <p className="!text-[14px] text-gray-600 leading-relaxed !mb-[4px] max-w-[85%]">
             {book.summary}
           </p>
         ) : null}

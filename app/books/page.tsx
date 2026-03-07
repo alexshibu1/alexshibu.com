@@ -84,7 +84,7 @@ export default function ReadingPage() {
         </div>
       </div>
 
-      <ul className="mt-6">
+      <ul className="mt-2">
         {sortedBooks.map((book) => (
           <BookCard key={`${book.title}-${book.author}`} book={book} />
         ))}
