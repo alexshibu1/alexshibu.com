@@ -214,7 +214,7 @@ const LORE: LoreItem[] = [
     id: "yc-ai-school-2025-06",
     date: "06.2025",
     line: "YC AI Startup School",
-    more: "Two-day intensive workshop in San Francisco on building and shipping with AI, alongside ~2,000 top CS undergrads and grad students. Absorbed founder lessons: talk to users, ship fast, and iterate.",
+    more: "Two-day intensive workshop in San Francisco on building and shipping with AI, alongside ~2,000 top CS undergrads and grad students. Absorbed founder lessons: talk to users, ship fast, and iterate. Huge stamp of validation for me in the startup space.",
   },
   {
     id: "veritas-2025-06",

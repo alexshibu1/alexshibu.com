@@ -106,7 +106,7 @@ export default function CoffeeTable({
       drinks: shops.length,
       uniqueCafes,
       uniqueCities,
-      estimatedDollars: Math.round(estimatedDollars * 10) / 10, // Round to 1 decimal
+      estimatedDollars: Math.round(estimatedDollars), // Nearest dollar
     };
   }, [shops]);
 
@@ -209,7 +209,7 @@ export default function CoffeeTable({
           <span className="stat-label">drinks</span>
         </div>
         <div className="stat-item">
-          <span className="stat-value">${stats.estimatedDollars}</span>
+          <span className="stat-value">${stats.estimatedDollars + "+"}</span>
           <span className="stat-label">spent</span>
         </div>
         <button
@@ -221,11 +221,11 @@ export default function CoffeeTable({
           }}
         >
           <span className="stat-value">{stats.uniqueCities}</span>
-          <span className="stat-label">unique cities</span>
+          <span className="stat-label">cities</span>
         </button>
         <div className="stat-item">
           <span className="stat-value">{stats.uniqueCafes}</span>
-          <span className="stat-label">unique cafes</span>
+          <span className="stat-label">cafes</span>
         </div>
       </div>
 
