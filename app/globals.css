@@ -338,6 +338,109 @@ body {
   text-decoration: underline;
 }
 
+/* ============================================================
+   Essay typography — single source of truth.
+   Scope: .essay-content (set in mdx-components.tsx wrapper).
+   Title + date (.essay-header) are intentionally excluded here.
+   ============================================================ */
+
+.essay-content {
+  --essay-text: #4b5563; /* body copy */
+  --essay-heading: #111827; /* h2/h3 */
+  --essay-strong: #1f2937; /* bold emphasis */
+  --essay-muted: #6b7280; /* secondary / meta */
+  --essay-marker: #111111; /* bullet dots — solid black */
+  --essay-accent: #ff3a3a; /* links (matches site red) */
+}
+
+/* Body paragraphs */
+.essay-content p {
+  color: var(--essay-text);
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+/* Section headings */
+.essay-content h2 {
+  color: var(--essay-heading);
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.01em;
+}
+
+.essay-content h3 {
+  color: var(--essay-muted);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Lists: disc bullets, tight indent, no top gap after headings */
+.essay-content ul,
+.essay-content ol {
+  color: var(--essay-text);
+  font-size: 16px;
+  line-height: 1.65;
+  padding-left: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  list-style-type: disc;
+}
+
+.essay-content li {
+  margin-bottom: 0.4rem;
+}
+
+.essay-content ul li::marker,
+.essay-content ol li::marker {
+  color: var(--essay-marker);
+}
+
+/* Nested lists */
+.essay-content ul ul,
+.essay-content ol ul,
+.essay-content ul ol,
+.essay-content ol ol {
+  margin-top: 0.2rem;
+  margin-bottom: 0;
+  list-style-type: disc;
+}
+
+.essay-content ul ul li::marker,
+.essay-content ol ul li::marker {
+  color: #111111;
+}
+
+/* Bold emphasis */
+.essay-content strong {
+  color: var(--essay-strong);
+  font-weight: 600;
+}
+
+/* Links */
+.essay-content a {
+  color: var(--essay-accent);
+}
+
+/* Zero gap when a list immediately follows a heading */
+.essay-content h2 + ul,
+.essay-content h2 + ol,
+.essay-content h3 + ul,
+.essay-content h3 + ol {
+  margin-top: 0.15rem;
+}
+
+/* Keep essay date styling independent from body text rules. */
+.essay-content .essay-header-date {
+  color: #2f2f2f;
+}
+
 .essay-soil aside {
   font-family: var(--font-plex-sans), system-ui, sans-serif;
   font-size: 16px;
@@ -1036,6 +1139,22 @@ body {
 
   .page-content p {
     font-size: 22px;
+  }
+
+  /* Essay pages: hold body copy at a comfortable reading size on large screens. */
+  .essay-content p,
+  .essay-content ul,
+  .essay-content ol,
+  .essay-content li {
+    font-size: 17px;
+  }
+
+  .essay-content h2 {
+    font-size: 19px;
+  }
+
+  .essay-content h3 {
+    font-size: 11px;
   }
 }
 

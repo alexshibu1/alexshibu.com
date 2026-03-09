@@ -10,7 +10,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 
     wrapper: ({ children }) => (
       <main
-        className="page-content"
+        className="page-content essay-content"
         style={{ maxWidth: "650px", display: "block" }}
       >
         {children}
