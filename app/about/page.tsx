@@ -617,7 +617,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <p className="mt-0 pt-0 border-t border-neutral-200 text-center">
+      <p className="mt-0 pt-0 border-t border-neutral-200 text-center flex items-center justify-center gap-2">
         <a
           href="https://docs.google.com/document/d/1j5WOx9gao1vKG2NpczVFo49O5kxLEFYmUHhnuPNFGag/edit?usp=sharing"
           target="_blank"
@@ -626,6 +626,26 @@ export default function AboutPage() {
         >
           why I made this website!
         </a>
+        <span className="text-xs text-neutral-200 opacity-40 select-none">|</span>
+        <span className="text-xs">
+          <a
+            href="https://web.archive.org/web/20230404045813/https://alexshibu.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="!text-neutral-200 opacity-50 hover:!text-neutral-400 hover:underline transition-colors hover:opacity-100"
+          >
+            v1
+          </a>
+          <span className="mx-1 text-neutral-200 opacity-30">,</span>
+          <a
+            href="https://personalsite-jfsmu01xm-alex-ss-projects-55e2bcbf.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="!text-neutral-200 opacity-50 hover:!text-neutral-400 hover:underline transition-colors hover:opacity-100"
+          >
+            v2
+          </a>
+        </span>
       </p>
     </main>
   );

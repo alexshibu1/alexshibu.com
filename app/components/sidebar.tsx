@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { ThemeToggle } from "./ThemeToggle";
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -129,6 +130,8 @@ export default function Sidebar() {
             instagram
           </a>
         </div>
+
+        <ThemeToggle wrapperClass="theme-toggle-sidebar" />
       </div>
     </>
   );

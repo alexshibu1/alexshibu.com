@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import InteractiveHeading from "./components/waveHeading";
 import SubstackForm from "./components/SubstackForm";
+import { ThemeToggle } from "./components/ThemeToggle";
 import {
   ALEX_PERSON,
   sectionMetadata,
@@ -12,7 +13,7 @@ import {
 
 // Hero inline links: override .page-content a (red in globals.css) with ! so gray wins
 const subtleLink =
-  "group inline-flex items-baseline !text-black hover:!text-red-500 !font-medium hover:underline hover:decoration-red-300 hover:underline-offset-2 transition-all duration-150 cursor-pointer";
+  "subtle-link group inline-flex items-baseline !text-black hover:!text-red-500 !font-medium hover:underline hover:decoration-red-300 hover:underline-offset-2 transition-all duration-150 cursor-pointer";
 const linkV4Arrow =
   "inline-block max-w-0 ml-0 overflow-hidden opacity-0 whitespace-nowrap align-baseline text-[0.65em] group-hover:max-w-[1.25em] group-hover:opacity-100 group-hover:ml-0.5 transition-all duration-150";
 
@@ -155,27 +156,6 @@ export default function Home() {
           </span>
 
           <span className="opacity-20 select-none">|</span>
-
-          <span>
-            <a
-              href="https://web.archive.org/web/20230404045813/https://alexshibu.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="!text-gray-500 opacity-50 hover:!text-red-500 hover:underline transition-colors hover:opacity-100"
-            >
-              v1
-            </a>
-            <span className="mx-1 text-gray-300">,</span>
-            <a
-              href="https://personalsite-jfsmu01xm-alex-ss-projects-55e2bcbf.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="!text-gray-500 opacity-50 hover:!text-red-500 hover:underline transition-colors hover:opacity-100"
-            >
-              v2
-            </a>
-          </span>
-          <span className="opacity-20 select-none">|</span>
           <a
             href="https://alexshibustats.vercel.app/share/tGdLEFmSbLfZxG6F"
             target="_blank"
@@ -184,6 +164,8 @@ export default function Home() {
           >
             Stats
           </a>
+          <span className="opacity-20 select-none">|</span>
+          <ThemeToggle wrapperClass="theme-toggle-footer" />
         </div>
       </footer>
       {/* 
