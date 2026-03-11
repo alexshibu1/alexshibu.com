@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import InteractiveHeading from "./components/waveHeading";
 import SubstackForm from "./components/SubstackForm";
-import { ThemeToggle } from "./components/ThemeToggle";
 import {
   ALEX_PERSON,
   sectionMetadata,
@@ -13,7 +12,7 @@ import {
 
 // Hero inline links: override .page-content a (red in globals.css) with ! so gray wins
 const subtleLink =
-  "subtle-link group inline-flex items-baseline !text-black hover:!text-red-500 !font-medium hover:underline hover:decoration-red-300 hover:underline-offset-2 transition-all duration-150 cursor-pointer";
+  "group inline-flex items-baseline !text-black hover:!text-red-500 !font-medium hover:underline hover:decoration-red-300 hover:underline-offset-2 transition-all duration-150 cursor-pointer";
 const linkV4Arrow =
   "inline-block max-w-0 ml-0 overflow-hidden opacity-0 whitespace-nowrap align-baseline text-[0.65em] group-hover:max-w-[1.25em] group-hover:opacity-100 group-hover:ml-0.5 transition-all duration-150";
 
@@ -151,21 +150,19 @@ export default function Home() {
 
       <footer className="footer">
         <div className="flex items-center gap-1 text-sm text-gray-500">
-          <span className="font-sans text-gray-500 ">
+          <span className="font-sans text-gray-500 opacity-50">
             God Bless the Hustle 🚢
           </span>
 
           <span className="opacity-20 select-none">|</span>
           <a
-            href="https://alexshibustats.vercel.app/share/tGdLEFmSbLfZxG6F"
+            href="https://alexshibustats.vercel.app/share/tGdLEFmSbLfZxG6F?date=7day"
             target="_blank"
             rel="noopener noreferrer"
             className="!text-gray-500 opacity-50 hover:!text-red-500 hover:underline transition-colors hover:opacity-100"
           >
             Stats
           </a>
-          <span className="opacity-20 select-none">|</span>
-          <ThemeToggle wrapperClass="theme-toggle-footer" />
         </div>
       </footer>
       {/* 

@@ -1,55 +1,5 @@
 @import "tailwindcss";
 
-/* ============================================================
-   Color tokens — all theme colors live here.
-   .dark toggles on <html> to switch to pure black theme.
-   ============================================================ */
-:root {
-  --color-bg: #ffffff;
-  --color-surface: #ffffff;
-  --color-surface-hover: #f9fafb;
-  --color-heading: #000000;
-  --color-text: #333333;
-  --color-text-secondary: #666666;
-  --color-text-muted: #999999;
-  --color-border: #e5e7eb;
-  --color-border-subtle: #f3f4f6;
-  --color-accent: #ff3a3a;
-  --color-accent-hover: #d80000;
-  --essay-h2-color: #333;
-}
-
-.dark {
-  --color-bg: #000000;
-  --color-surface: #0a0a0a;
-  --color-surface-hover: #141414;
-  --color-heading: #ffffff;
-  --color-text: #f0f0f0;
-  --color-text-secondary: #e0e0e0;
-  --color-text-muted: #a1a1a1;
-  --color-border: #262626;
-  --color-border-subtle: #161616;
-  --color-accent: #ff6666;
-  --color-accent-hover: #ff8888;
-  --essay-h2-color: #f0f0f0;
-}
-
-/* Smooth color transition when theme changes */
-body,
-.hamburger-button,
-.sidebar,
-.nav-link,
-.brand-name,
-.page-content,
-.coffee-table,
-.coffee-table th,
-.coffee-table td {
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease;
-}
-
 /* Universal box-sizing for consistent sizing */
 *,
 *::before,
@@ -74,9 +24,9 @@ body {
     "Segoe UI",
     sans-serif;
 
-  background: var(--color-bg);
+  background: #ffffff;
 
-  color: var(--color-text);
+  color: #333333;
 }
 
 /* Hamburger Button */
@@ -86,12 +36,12 @@ body {
   top: 1.5rem;
   left: 1.5rem;
   z-index: 1001;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: white;
+  border: 1px solid #dde2eb;
   border-radius: 8px;
   padding: 0;
   cursor: pointer;
-  color: var(--color-text-muted);
+  color: #6c757d;
   transition: all 0.2s ease;
   width: 44px; /* Touch-friendly size for iPhone */
   height: 44px;
@@ -101,13 +51,13 @@ body {
 }
 
 .hamburger-button:hover {
-  background: var(--color-surface-hover);
-  border-color: var(--color-border);
+  background: #f9f9f9;
+  border-color: #dde2eb;
 }
 
 .hamburger-button:active {
   transform: scale(0.95);
-  background: var(--color-surface-hover);
+  background: #f5f5f5;
 }
 
 .hamburger-button svg {
@@ -160,7 +110,7 @@ body {
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: -0.01em;
-  color: var(--color-heading);
+  color: #000000;
   margin: 0;
   padding: 0;
   text-rendering: optimizeLegibility;
@@ -185,7 +135,7 @@ body {
 .brand-tagline {
   font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 12px;
-  color: var(--color-text-muted);
+  color: #999999;
   margin: 0.25rem 0 0 0;
   padding: 0;
   font-weight: 400;
@@ -201,7 +151,7 @@ body {
   margin-left: -0.6rem;
 }
 .sidebar strong {
-  color: var(--color-text);
+  color: #4b4b4b;
 }
 
 /* glassy nav links */
@@ -223,7 +173,7 @@ body {
 
   font-family: var(--font-inter), sans-serif;
 
-  color: var(--color-text-secondary);
+  color: #666666;
 
   text-decoration: none;
 
@@ -266,7 +216,7 @@ body {
 }
 
 .nav-link:hover {
-  color: var(--color-heading);
+  color: #111111;
 
   transform: translateY(-1px);
 }
@@ -284,7 +234,7 @@ body {
 .social-links a {
   text-decoration: none;
 
-  color: var(--color-text-secondary);
+  color: #666666;
 
   display: flex;
 
@@ -294,7 +244,7 @@ body {
 }
 
 .social-links a:hover {
-  color: var(--color-accent);
+  color: #ff3a3a;
 }
 
 /* Main Wrapper - centers content column in remaining space */
@@ -330,7 +280,7 @@ body {
 
   font-weight: 400;
 
-  color: var(--color-text-secondary);
+  color: #666666;
 
   margin-bottom: 1.5rem; /* Add spacing between paragraphs */
 }
@@ -355,7 +305,7 @@ body {
   font-weight: 600;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
-  color: var(--color-text);
+  color: #333;
 }
 
 .page-content ul,
@@ -363,7 +313,7 @@ body {
   font-family: var(--font-plex-sans), system-ui, sans-serif;
   font-size: 16px; /* Reduced from 18px */
   line-height: 1.65;
-  color: var(--color-text-secondary);
+  color: #666666;
   padding-left: 1.5rem;
   margin-bottom: 1.5rem;
 }
@@ -380,7 +330,7 @@ body {
 }
 
 .page-content a {
-  color: var(--color-accent);
+  color: #ff3a3a;
   text-decoration: none;
 }
 
@@ -395,12 +345,12 @@ body {
    ============================================================ */
 
 .essay-content {
-  --essay-text: #4b5563;
-  --essay-heading: #111827;
-  --essay-strong: #1f2937;
-  --essay-muted: #6b7280;
-  --essay-marker: #111111;
-  --essay-accent: #ff3a3a;
+  --essay-text: #4b5563; /* body copy */
+  --essay-heading: #111827; /* h2/h3 */
+  --essay-strong: #1f2937; /* bold emphasis */
+  --essay-muted: #6b7280; /* secondary / meta */
+  --essay-marker: #111111; /* bullet dots — solid black */
+  --essay-accent: #ff3a3a; /* links (matches site red) */
 }
 
 /* Body paragraphs */
@@ -464,7 +414,7 @@ body {
 
 .essay-content ul ul li::marker,
 .essay-content ol ul li::marker {
-  color: var(--essay-marker);
+  color: #111111;
 }
 
 /* Bold emphasis */
@@ -488,7 +438,7 @@ body {
 
 /* Keep essay date styling independent from body text rules. */
 .essay-content .essay-header-date {
-  color: var(--color-text);
+  color: #2f2f2f;
 }
 
 .essay-soil aside {
@@ -501,10 +451,6 @@ body {
   border-radius: 12px;
   padding: 0.85rem 1.25rem 1rem;
   margin: 0.5rem 0 0.625rem !important;
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease;
 }
 
 .essay-soil hr {
@@ -542,7 +488,7 @@ body {
 }
 
 .essay-soil ul li::marker {
-  color: var(--color-text);
+  color: #111111;
 }
 
 .essay-osteo h2 {
@@ -639,7 +585,7 @@ body {
 
   font-weight: 600;
 
-  color: var(--color-heading);
+  color: #1f1f1f;
 
   line-height: 1.08;
 
@@ -652,7 +598,7 @@ body {
 .hero-subline {
   font-family: var(--font-plex-sans), system-ui, sans-serif;
   font-size: 20px;
-  color: var(--color-text-secondary);
+  color: #666666;
 }
 
 /* Footer */
@@ -672,7 +618,7 @@ body {
   right: 20px;
   z-index: 100;
   font-size: 0.875rem;
-  color: var(--color-text-muted);
+  color: #6b7280;
 }
 
 /* Essays list */
@@ -696,17 +642,17 @@ body {
 
 .essay-item a {
   text-decoration: none;
-  color: var(--color-accent) !important;
+  color: #ff3a3a !important;
   font-weight: 500;
 }
 
 .essay-item a:hover {
   text-decoration: underline;
-  color: var(--color-accent-hover) !important;
+  color: #d80000 !important;
 }
 
 .date {
-  color: var(--color-text-secondary);
+  color: #666666;
   font-size: 0.9rem;
   text-align: right; /* Right align date against the title */
   white-space: nowrap; /* Prevent date wrapping */
@@ -766,7 +712,7 @@ body {
   font-family: var(--font-space-grotesk), system-ui, sans-serif;
   font-size: 15px !important;
   font-weight: 500 !important;
-  color: var(--color-text) !important;
+  color: #333 !important;
   margin: 0;
   padding: 0;
   display: inline-block;
@@ -781,7 +727,7 @@ body {
 }
 
 .project-title:hover {
-  color: var(--color-accent) !important;
+  color: #ff3a3a !important;
   text-decoration: underline !important;
   opacity: 1;
 }
@@ -810,7 +756,7 @@ body {
   transition:
     opacity 0.15s ease,
     transform 0.15s ease;
-  color: var(--color-text-muted) !important;
+  color: #868686 !important;
   line-height: 1;
   margin-left: 0.4rem; /* Space between icons */
   vertical-align: baseline;
@@ -819,7 +765,7 @@ body {
 .project-link-icon:hover {
   opacity: 1;
   transform: translateY(-0.5px);
-  color: var(--color-text-muted) !important;
+  color: #868686 !important;
   text-decoration: none !important;
 }
 
@@ -828,7 +774,7 @@ body {
   font-size: 14px !important;
   font-weight: 400 !important;
   line-height: 1.5;
-  color: var(--color-text-secondary) !important;
+  color: #666666 !important;
 
   display: block;
   margin-left: 0; /* No margin needed, gap handles spacing */
@@ -849,7 +795,7 @@ body {
 
 .project-date {
   font-size: 14px;
-  color: var(--color-text-secondary);
+  color: #535353; /* Darker, more visible gray */
   line-height: 1.4;
   display: inline-block;
   font-weight: 500; /* Slightly bolder */
@@ -901,7 +847,7 @@ body {
     height: 100vh;
     width: 320px;
     max-width: 90vw;
-    background: var(--color-surface);
+    background: white;
     padding: 3rem 2.5rem 2rem 2.5rem;
     z-index: 1000;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
@@ -1030,7 +976,7 @@ body {
 
   .writing-page .date {
     font-size: 13px;
-    color: var(--color-text-muted);
+    color: #9ca3af;
     letter-spacing: 0.02em;
   }
 
@@ -1260,14 +1206,14 @@ body {
 }
 
 .coffee-table thead {
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .coffee-table th {
   text-align: left;
   padding: 0.5rem 0.5rem;
   font-weight: 500;
-  color: var(--color-text);
+  color: #555;
   font-family: var(--font-space-grotesk), system-ui, sans-serif;
   font-size: 12px;
 }
@@ -1281,45 +1227,45 @@ body {
 }
 
 .coffee-table th.sortable:hover {
-  color: var(--color-heading);
-  background-color: var(--color-surface-hover);
+  color: #222;
+  background-color: #f9fafb;
 }
 
 .coffee-table tbody tr {
-  border-bottom: 1px solid var(--color-border-subtle);
+  border-bottom: 1px solid #f3f4f6;
   transition: background-color 0.12s ease;
   cursor: pointer;
 }
 
 .coffee-table tbody tr:hover {
-  background-color: var(--color-surface-hover);
+  background-color: #f9fafb;
 }
 
 .coffee-table tbody tr.selected-row {
-  background-color: var(--color-surface-hover);
+  background-color: #fdf2f2;
 }
 
 .coffee-table td {
   padding: 0.5rem 0.5rem;
-  color: var(--color-text);
+  color: #555;
   vertical-align: top;
 }
 
 .coffee-table .date-cell {
   font-size: 12px;
-  color: var(--color-text-muted);
+  color: #999;
   white-space: nowrap;
   width: 100px;
 }
 
 .coffee-table .shop-cell {
   font-weight: 500;
-  color: var(--color-text);
+  color: #333;
   min-width: 180px;
 }
 
 .coffee-table .drink-cell {
-  color: var(--color-text-secondary);
+  color: #777;
   font-style: italic;
   min-width: 150px;
 }
@@ -1332,7 +1278,7 @@ body {
 }
 
 .coffee-table .review-cell {
-  color: var(--color-text-secondary);
+  color: #666;
   line-height: 1.5;
   max-width: 600px;
 }
@@ -1349,7 +1295,7 @@ body {
   color: inherit;
   cursor: pointer;
   text-decoration: underline;
-  text-decoration-color: var(--color-border);
+  text-decoration-color: #d1d5db;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
   transition: none;
@@ -1357,13 +1303,13 @@ body {
 }
 
 .chain-link:hover {
-  text-decoration-color: var(--color-accent);
-  color: var(--color-accent);
+  text-decoration-color: #ff3a3a;
+  color: #ff3a3a;
 }
 
 .chain-link.active {
-  text-decoration-color: var(--color-accent);
-  color: var(--color-accent);
+  text-decoration-color: #ff3a3a;
+  color: #ff3a3a;
   font-weight: 600;
 }
 
@@ -1372,7 +1318,7 @@ body {
   display: flex;
   gap: 2rem;
   padding: 1rem 0;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .stat-item {
@@ -1385,13 +1331,13 @@ body {
   font-family: var(--font-space-grotesk), system-ui, sans-serif;
   font-size: 24px;
   font-weight: 600;
-  color: var(--color-text);
+  color: #333;
   line-height: 1;
 }
 
 .stat-label {
   font-size: 12px;
-  color: var(--color-text-secondary);
+  color: #666;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -1454,150 +1400,5 @@ body {
 
   .coffee-table .review-cell {
     max-width: 200px;
-  }
-}
-
-/* ============================================================
-   Dark mode — overrides for elements that use hardcoded values
-   or need different gradient/shadow treatment in dark themes.
-   ============================================================ */
-
-/* nav-link hover glow: invert the gradient for dark backgrounds */
-.dark .nav-link::before {
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0.07),
-    rgba(255, 255, 255, 0.02)
-  );
-}
-
-/* essay-content variables */
-.dark .essay-content {
-  --essay-text: var(--color-text-secondary);
-  --essay-heading: var(--color-heading);
-  --essay-strong: var(--color-text);
-  --essay-muted: var(--color-text-muted);
-  --essay-marker: var(--color-text-secondary);
-  --essay-accent: var(--color-accent);
-}
-
-/* essay-soil aside card */
-.dark .essay-soil aside {
-  color: var(--color-text-secondary);
-  background: var(--color-surface);
-  border-color: var(--color-border);
-}
-
-.dark .essay-soil hr {
-  border-top-color: var(--color-border);
-}
-
-.dark .essay-soil strong {
-  color: var(--color-text);
-}
-
-/* essay-content nested list markers */
-.dark .essay-content ul ul li::marker,
-.dark .essay-content ol ul li::marker {
-  color: var(--color-text-secondary);
-}
-
-/* essay-soil ul markers */
-.dark .essay-soil ul li::marker {
-  color: var(--color-text-secondary);
-}
-
-/* essay-soil links */
-.dark .essay-soil a {
-  color: var(--color-text-secondary);
-}
-
-/* essay-soil citation link */
-.dark .essay-soil .citation-link {
-  color: var(--color-text-muted);
-  background: var(--color-surface);
-  border-bottom-color: var(--color-border);
-}
-
-/* essay header date */
-.dark .essay-content .essay-header-date {
-  color: var(--color-text-secondary);
-}
-
-/* writing-page mobile border */
-.dark .writing-page .essay-item {
-  border-bottom-color: var(--color-border);
-}
-
-/* coffee table selected row */
-.dark .coffee-table tbody tr.selected-row {
-  background-color: var(--color-surface-hover);
-}
-
-/* Home page footer — make text visible in dark mode */
-.dark .footer,
-.dark .footer span,
-.dark .footer a {
-  color: #e8e8e8 !important;
-  opacity: 1 !important;
-}
-
-.dark .footer a:hover {
-  color: var(--color-accent) !important;
-}
-
-/* Home page inline subtle links — override !text-black in dark mode */
-.dark .subtle-link,
-.dark .subtle-link *,
-.dark .subtle-link:visited {
-  color: #ffffff !important;
-  font-weight: 700 !important;
-  opacity: 1 !important;
-}
-
-/* ============================================================
-   Theme toggle button
-   ============================================================ */
-.theme-toggle {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 6px;
-  border-radius: 8px;
-  color: var(--color-text-muted);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition:
-    color 0.2s ease,
-    background-color 0.2s ease;
-}
-
-.theme-toggle:hover {
-  color: var(--color-text);
-  background: var(--color-surface-hover);
-}
-
-/* Footer toggle — inline beside "God Bless the Hustle", desktop only */
-.theme-toggle-footer {
-  display: flex;
-  align-items: center;
-}
-
-/* Mobile: inside sidebar */
-.theme-toggle-sidebar {
-  margin-top: 2rem;
-}
-
-/* Show/hide per breakpoint */
-@media (min-width: 801px) {
-  .theme-toggle-sidebar {
-    display: none;
-  }
-}
-
-@media (max-width: 800px) {
-  .theme-toggle-footer {
-    display: none;
   }
 }

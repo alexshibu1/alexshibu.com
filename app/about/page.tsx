@@ -626,26 +626,24 @@ export default function AboutPage() {
         >
           why I made this website!
         </a>
-        <span className="text-xs text-neutral-200 opacity-40 select-none">|</span>
-        <span className="text-xs">
-          <a
-            href="https://web.archive.org/web/20230404045813/https://alexshibu.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="!text-neutral-200 opacity-50 hover:!text-neutral-400 hover:underline transition-colors hover:opacity-100"
-          >
-            v1
-          </a>
-          <span className="mx-1 text-neutral-200 opacity-30">,</span>
-          <a
-            href="https://personalsite-jfsmu01xm-alex-ss-projects-55e2bcbf.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="!text-neutral-200 opacity-50 hover:!text-neutral-400 hover:underline transition-colors hover:opacity-100"
-          >
-            v2
-          </a>
-        </span>
+        <span className="text-xs !text-neutral-200 select-none">|</span>
+        <a
+          href="https://web.archive.org/web/20230404045813/https://alexshibu.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs !text-neutral-200 hover:!text-neutral-400 transition-colors"
+        >
+          v1
+        </a>
+        <span className="text-xs !text-neutral-200 select-none">,</span>
+        <a
+          href="https://personalsite-jfsmu01xm-alex-ss-projects-55e2bcbf.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs !text-neutral-200 hover:!text-neutral-400 transition-colors"
+        >
+          v2
+        </a>
       </p>
     </main>
   );

@@ -74,12 +74,6 @@ export default function RootLayout({
       className={`${inter.variable} ${spaceGrotesk.variable} ${plexSans.variable}`}
     >
       <head>
-        {/* Runs before paint to prevent flash of wrong theme */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){var t=localStorage.getItem('theme');var d=document.documentElement;if(t==='dark'){d.classList.add('dark');}else if(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches){d.classList.add('dark');}})();`,
-          }}
-        />
         <script
           async
           src="https://alexshibustats.vercel.app/script.js"

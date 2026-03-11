@@ -7,9 +7,9 @@ export default function SubstackForm() {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const email = formData.get("email") as string;
-    
+
     // Always redirect to Substack, with email if provided
-    const url = email 
+    const url = email
       ? `https://shibusays.substack.com/subscribe?email=${encodeURIComponent(email)}`
       : `https://shibusays.substack.com/subscribe`;
     window.open(url, "_blank");
