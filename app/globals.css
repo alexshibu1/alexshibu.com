@@ -338,6 +338,24 @@ body {
   text-decoration: underline;
 }
 
+/* About footer: site doc + v1/v2 — gray, not global red links */
+.page-content .about-site-versions {
+  padding-top: 10px !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.page-content .about-site-versions a {
+  color: #bcbcbc !important; /* neutral-400 */
+  text-decoration: none !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.page-content .about-site-versions a:hover {
+  color: #404040 !important; /* neutral-700 */
+  text-decoration: none !important;
+}
+
 /* ============================================================
    Essay typography — single source of truth.
    Scope: .essay-content (set in mdx-components.tsx wrapper).
@@ -718,6 +736,10 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+  /* Override .page-content img — margin causes a strip above card previews */
+  margin: 0 !important;
+  border-radius: 0 !important;
+  vertical-align: top;
 }
 
 /* Same fill behavior as next/image fill inside relative shell */
@@ -726,10 +748,14 @@ body {
   max-height: 220px;
 }
 
-/* Clips scaled video so preview tile height/width stay unchanged */
+/* Clips scaled video/image; extra bleed hides subpixel gaps + global img margin residue */
 .project-video-zoom-shell {
   position: absolute;
-  inset: 0;
+  top: -4px;
+  left: -1px;
+  right: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 8px);
   overflow: hidden;
   pointer-events: none;
 }

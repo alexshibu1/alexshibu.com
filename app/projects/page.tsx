@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 
 type Project = {
   name: string;
@@ -20,10 +20,16 @@ type Project = {
   /** Playback speed for local preview (e.g. 2 = 2×) */
   previewPlaybackRate?: number;
   repo?: string;
+  /** Second repo (e.g. umbrella / archive) — extra 💻 */
+  repoSecondary?: string;
   writeup?: string;
   featured?: boolean;
   image?: string;
   images?: string[];
+  /** CSS object-position for image preview (e.g. "top" to show top crop) */
+  previewImageObjectPosition?: string;
+  /** Scale image preview (1.1 = 10% zoom; clipped to tile) */
+  previewImageScale?: number;
 };
 
 function FeaturedIndicator({ isHovered }: { isHovered: boolean }) {
@@ -232,32 +238,49 @@ function ProjectItem({ project }: { project: Project }) {
           </div>
         )
       ) : previewMedia ? (
-        primaryLink ? (
-          <a
-            href={primaryLink}
-            className="project-media-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        (() => {
+          const imgScale = project.previewImageScale ?? 1;
+          const imageStyle: CSSProperties = {
+            ...(project.previewImageObjectPosition && {
+              objectPosition: project.previewImageObjectPosition,
+            }),
+            ...(imgScale !== 1 && {
+              transform: `scale(${imgScale})`,
+              transformOrigin:
+                project.previewImageObjectPosition === "top"
+                  ? "center top"
+                  : "center center",
+            }),
+          };
+          const imageEl = (
             <Image
               src={previewMedia}
               alt={`${project.name} preview`}
               fill
               sizes="(max-width: 800px) 100vw, 50vw"
               className="project-media"
+              style={Object.keys(imageStyle).length ? imageStyle : undefined}
             />
-          </a>
-        ) : (
-          <div className="project-media-shell">
-            <Image
-              src={previewMedia}
-              alt={`${project.name} preview`}
-              fill
-              sizes="(max-width: 800px) 100vw, 50vw"
-              className="project-media"
-            />
-          </div>
-        )
+          );
+          const wrapped =
+            imgScale !== 1 ? (
+              <div className="project-video-zoom-shell">{imageEl}</div>
+            ) : (
+              imageEl
+            );
+          return primaryLink ? (
+            <a
+              href={primaryLink}
+              className="project-media-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {wrapped}
+            </a>
+          ) : (
+            <div className="project-media-shell">{wrapped}</div>
+          );
+        })()
       ) : primaryLink ? (
         <a
           href={primaryLink}
@@ -318,6 +341,17 @@ function ProjectItem({ project }: { project: Project }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Repository"
+                >
+                  💻
+                </a>
+              )}
+              {project.repoSecondary && project.repoSecondary !== "" && (
+                <a
+                  href={project.repoSecondary}
+                  className="project-link-icon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="dAPPS (minting + engines)"
                 >
                   💻
                 </a>
@@ -400,11 +434,13 @@ export default function WorkIndex() {
       name: "Breakthrough Junior Challenge",
       description:
         "Top 14% global finalist for the challenge, explaining quantum computing fundamentals, superposition, entanglement, and John Bell's Theorem. Built a video explaining Radioisotope thermoelectric generators that ranked globally among thousands of entries.",
-      link: "#", // Add link later
+      link: "https://www.youtube.com/watch?v=xuL75NnIcks&t=11s",
       date: "06.2022",
       video: "https://www.youtube.com/watch?v=xuL75NnIcks&t=11s",
       repo: "",
       writeup: "",
+      image: "/projects/placeholders/project%20quantum.png",
+      previewImageObjectPosition: "top",
     },
     {
       name: "WagerAI",
@@ -421,14 +457,14 @@ export default function WorkIndex() {
       featured: true,
     },
     {
-      name: "Perplexity AI easyhacks.org",
+      name: "PerplexityAI - easyhacks.org",
       description:
         "Created and led EasyHacks, a hackathon rejects. It started in an email thread from UBC nwhacks. It transformed into a 20 person operation, from military veterans to high school students in Nepal, with 170+ participants and $8K in prizes raised from sponsors.",
       link: "https://archive.ph/2mqxj",
       date: "01.2025",
       repo: "",
       previewVideoLocal: "/projects/placeholders/easyhacks.mp4",
-      previewVideoScale: 1.2,
+      previewVideoScale: 1.4,
       cardMediaLink: "https://archive.ph/2mqxj",
       video: "https://www.youtube.com/watch?v=BUFH1s5iUtw&t=55s",
       writeup: "",
@@ -442,6 +478,8 @@ export default function WorkIndex() {
       date: "05.2025",
       repo: "https://github.com/e-ndorfin/luma",
       previewVideoLocal: "/projects/placeholders/project%20luma.mp4",
+      previewVideoScale: 1.2,
+
       cardMediaLink:
         "https://devpost.com/software/luma-luminous-understanding-through-mindful-ai",
       video: "https://www.youtube.com/watch?v=neO-K2qJo6Y&t=20s",
@@ -464,6 +502,8 @@ export default function WorkIndex() {
       link: "/projects/bridgeworks.pdf",
       date: "05.2024",
       repo: "",
+      previewVideoLocal: "/projects/placeholders/project%20bridgeworks.mp4",
+      cardMediaLink: "/projects/bridgeworks.pdf",
       video: "https://www.youtube.com/watch?v=Jz48kAlGy3o&t=25s",
       writeup: "",
     },
@@ -502,7 +542,10 @@ export default function WorkIndex() {
         "Hired 2 people, created nfts, social media, and discord community, but did not launch due to the lack of long term utility and the massive market crash of 2022.",
       link: "/essay/circusclownz",
       date: "04.2021",
-      repo: "https://web.archive.org/web/20220128132945/https:/circusclownz.com/",
+      repo: "https://github.com/alexshibu1/CircusClownz",
+      repoSecondary: "https://github.com/alexshibu1/dAPPS",
+      previewVideoLocal: "/projects/placeholders/project%20clownz.mp4",
+      cardMediaLink: "/essay/circusclownz",
       video: "https://youtu.be/_ycxR8aP980?si=oeGxGrFIYkKJ_gkC",
       writeup:
         "https://docs.google.com/presentation/d/1EGrDyCZGxc3NRiDLo3721Ev--xtsH0U9p3JEGijZNIs/edit?slide=id.p#slide=id.p",
@@ -528,6 +571,7 @@ export default function WorkIndex() {
       video: "",
       repo: "",
       writeup: "",
+      previewImageObjectPosition: "top",
       images: [
         "/projects/actions on google.png",
         "/projects/actions on google 2.png",
@@ -574,6 +618,17 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
+      name: "Family Guy - Quest for Survival",
+      description:
+        "Family Guy - Quest for Survival is an interactive text-based adventure game set in the Griffin family's house. I built this Python project using a room-based navigation system with directional commands. Challenges that test players' Family Guy knowledge, with a scoring system that tracks points across multiple puzzle types.",
+      link: "https://github.com/alexshibu1/family-guy",
+      date: "10.2021",
+      repo: "https://github.com/alexshibu1/family-guy",
+      video: "",
+      writeup: "",
+      image: "/projects/placeholders/family%20guy.jpg",
+    },
+    {
       name: "Web3 Message Board",
       description:
         "Wallet-gated message wall for authenticated messages and posts. Connect your wallet and say something on our open message board. Buildspace project.",
@@ -591,8 +646,7 @@ export default function WorkIndex() {
       date: "10.2025",
       repo: "",
       previewVideoLocal: "/projects/placeholders/project%20iphone%204.mp4",
-      cardMediaLink:
-        "https://x.com/AlexShibu2/status/2032561523973882195?s=20",
+      cardMediaLink: "https://x.com/AlexShibu2/status/2032561523973882195?s=20",
       video: "https://www.youtube.com/watch?v=mIjrcIrA4IM",
       writeup: "",
     },
@@ -606,6 +660,8 @@ export default function WorkIndex() {
       video: "",
       writeup: "",
       image: "/projects/gaming.png",
+      previewImageObjectPosition: "top",
+      previewImageScale: 1.1,
     },
     {
       name: "Bath Bombs for Vanauley",
@@ -617,6 +673,8 @@ export default function WorkIndex() {
       video: "",
       writeup: "",
       image: "/projects/bathbombs.png",
+      previewImageObjectPosition: "top",
+      previewImageScale: 1.2,
     },
     {
       name: "Cube Runner2",

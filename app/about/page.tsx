@@ -617,30 +617,34 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <p className="mt-0 pt-0 border-t border-neutral-200 text-center flex items-center justify-center gap-2">
+      <p className="about-site-versions mt-0 border-t border-neutral-300 py-0 text-center flex flex-wrap items-center justify-center gap-x-2 gap-y-1 leading-none">
         <a
           href="https://docs.google.com/document/d/1j5WOx9gao1vKG2NpczVFo49O5kxLEFYmUHhnuPNFGag/edit?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xs !text-neutral-200 hover:!text-neutral-400 transition-colors"
+          className="text-xs !text-neutral-400 hover:!text-neutral-700 hover:!no-underline transition-colors py-0"
         >
           why I made this website!
         </a>
-        <span className="text-xs !text-neutral-200 select-none">|</span>
+        <span className="text-xs text-neutral-400 select-none py-0" aria-hidden>
+          |
+        </span>
         <a
           href="https://web.archive.org/web/20230404045813/https://alexshibu.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xs !text-neutral-200 hover:!text-neutral-400 transition-colors"
+          className="text-xs !text-neutral-400 hover:!text-neutral-700 hover:!no-underline transition-colors py-0"
         >
           v1
         </a>
-        <span className="text-xs !text-neutral-200 select-none">,</span>
+        <span className="text-xs text-neutral-400 select-none py-0" aria-hidden>
+          ,
+        </span>
         <a
           href="https://personalsite-jfsmu01xm-alex-ss-projects-55e2bcbf.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xs !text-neutral-200 hover:!text-neutral-400 transition-colors"
+          className="text-xs !text-neutral-400 hover:!text-neutral-700 hover:!no-underline transition-colors py-0"
         >
           v2
         </a>
