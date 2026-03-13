@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useState } from "react";
 
 type Project = {
@@ -8,7 +9,16 @@ type Project = {
   description: string;
   link: string;
   date: string;
+  /** YouTube etc. — 🎥 icon links here */
   video?: string;
+  /** Local MP4/WebM for looping card preview (optional; else `video` if it’s a /path) */
+  previewVideoLocal?: string;
+  /** Where the big preview (image/video) links; defaults to `link` */
+  cardMediaLink?: string;
+  /** Scale local preview video (1.2 ≈ 20% zoom-in; crops edges) */
+  previewVideoScale?: number;
+  /** Playback speed for local preview (e.g. 2 = 2×) */
+  previewPlaybackRate?: number;
   repo?: string;
   writeup?: string;
   featured?: boolean;
@@ -129,10 +139,145 @@ function BigProjectButton({
 
 function ProjectItem({ project }: { project: Project }) {
   const [isTitleHovered, setIsTitleHovered] = useState(false);
+  const imageExtensionPattern = /\.(png|jpe?g|webp|gif|avif|svg)$/i;
+  const isUsableLink = (url?: string) =>
+    Boolean(url && url.trim() !== "" && url.trim() !== "#");
+  const isLocalHostedMedia = (url?: string) =>
+    Boolean(url && url.startsWith("/"));
+
+  const imageCandidates = [
+    project.image,
+    ...(project.images ?? []),
+    project.link && imageExtensionPattern.test(project.link)
+      ? project.link
+      : "",
+  ];
+
+  const previewMedia = imageCandidates.find((candidate) =>
+    isLocalHostedMedia(candidate),
+  );
+  const localPreviewVideo =
+    (project.previewVideoLocal &&
+      isLocalHostedMedia(project.previewVideoLocal) &&
+      /\.(mp4|webm|mov)$/i.test(project.previewVideoLocal) &&
+      project.previewVideoLocal) ||
+    (project.video &&
+      isLocalHostedMedia(project.video) &&
+      /\.(mp4|webm|mov)$/i.test(project.video) &&
+      project.video) ||
+    null;
+  const primaryLink = isUsableLink(project.link)
+    ? project.link
+    : previewMedia && isUsableLink(previewMedia)
+      ? previewMedia
+      : "";
+  const mediaLink =
+    isUsableLink(project.cardMediaLink) ? project.cardMediaLink! : primaryLink;
+
+  /**
+   * Muted autoplay satisfies browser policy; `controls` lets users unmute (user gesture)
+   * so audio is available. Video is not wrapped in <a> so the control bar stays clickable.
+   */
+  const zoom = project.previewVideoScale ?? 1;
+  const playbackRate = project.previewPlaybackRate ?? 1;
+  const previewVideoEl = (
+    <video
+      className="project-media project-media-video"
+      autoPlay
+      muted
+      loop
+      playsInline
+      controls
+      controlsList="nodownload"
+      preload="metadata"
+      aria-label={`${project.name} preview`}
+      style={
+        zoom !== 1
+          ? {
+              transform: `scale(${zoom})`,
+              transformOrigin: "center center",
+            }
+          : undefined
+      }
+      onLoadedMetadata={(e) => {
+        if (playbackRate !== 1) {
+          (e.target as HTMLVideoElement).playbackRate = playbackRate;
+        }
+      }}
+    >
+      <source src={localPreviewVideo!} type="video/mp4" />
+    </video>
+  );
 
   return (
-    <li className="project-item">
-      <div className="project-left">
+    <li className="project-card">
+      {localPreviewVideo ? (
+        <div className="project-media-shell project-media-shell--video">
+          {previewVideoEl}
+          {mediaLink ? (
+            <a
+              href={mediaLink}
+              className="project-media-open"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open ↗
+            </a>
+          ) : null}
+        </div>
+      ) : previewMedia ? (
+        primaryLink ? (
+          <a
+            href={primaryLink}
+            className="project-media-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={previewMedia}
+              alt={`${project.name} preview`}
+              fill
+              sizes="(max-width: 800px) 100vw, 50vw"
+              className="project-media"
+            />
+          </a>
+        ) : (
+          <div className="project-media-shell">
+            <Image
+              src={previewMedia}
+              alt={`${project.name} preview`}
+              fill
+              sizes="(max-width: 800px) 100vw, 50vw"
+              className="project-media"
+            />
+          </div>
+        )
+      ) : primaryLink ? (
+        <a
+          href={primaryLink}
+          className="project-media-placeholder"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className="project-media-placeholder-title">
+            {project.name}
+          </span>
+          <span className="project-media-placeholder-meta">
+            add gif/video/screenshot later
+          </span>
+        </a>
+      ) : (
+        <div className="project-media-placeholder">
+          <span className="project-media-placeholder-title">
+            {project.name}
+          </span>
+          <span className="project-media-placeholder-meta">
+            add gif/video/screenshot later
+          </span>
+        </div>
+      )}
+
+      <div className="project-card-content">
         <div
           className="project-title-wrapper"
           onMouseEnter={() => setIsTitleHovered(true)}
@@ -143,14 +288,9 @@ function ProjectItem({ project }: { project: Project }) {
               <FeaturedIndicator isHovered={isTitleHovered} />
             </span>
           )}
-          {(project.link && project.link !== "") ||
-          (project.image && project.image !== "") ? (
+          {primaryLink ? (
             <a
-              href={
-                project.link && project.link !== ""
-                  ? project.link
-                  : project.image
-              }
+              href={primaryLink}
               className="project-title"
               target="_blank"
               rel="noopener noreferrer"
@@ -163,70 +303,71 @@ function ProjectItem({ project }: { project: Project }) {
               {project.name}
             </span>
           )}
-          {/* Optional link icons - only show if link exists */}
-          {project.repo && project.repo !== "" && (
-            <a
-              href={project.repo}
-              className="project-link-icon"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Repository"
-            >
-              💻
-            </a>
-          )}
-          {project.writeup && project.writeup !== "" && (
-            <a
-              href={project.writeup}
-              className="project-link-icon"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Write-up"
-            >
-              ✍️
-            </a>
-          )}
-          {project.video && project.video !== "" && (
-            <a
-              href={project.video}
-              className="project-link-icon"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Video"
-            >
-              🎥
-            </a>
-          )}
-          {project.image && project.image !== "" && (
-            <a
-              href={project.image}
-              className="project-link-icon"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="View Image"
-            >
-              📷
-            </a>
-          )}
-          {project.images &&
-            project.images.length > 0 &&
-            project.images.map((img, index) => (
+          <div className="project-actions">
+            {project.repo && project.repo !== "" && (
               <a
-                key={index}
-                href={img}
+                href={project.repo}
                 className="project-link-icon"
                 target="_blank"
                 rel="noopener noreferrer"
-                title={`View Image ${index + 1}`}
+                title="Repository"
+              >
+                💻
+              </a>
+            )}
+            {project.writeup && project.writeup !== "" && (
+              <a
+                href={project.writeup}
+                className="project-link-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Write-up"
+              >
+                ✍️
+              </a>
+            )}
+            {project.video &&
+              project.video !== "" &&
+              /^https?:\/\//i.test(project.video) && (
+                <a
+                  href={project.video}
+                  className="project-link-icon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Video"
+                >
+                  🎥
+                </a>
+              )}
+            {project.image && project.image !== "" && (
+              <a
+                href={project.image}
+                className="project-link-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="View Image"
               >
                 📷
               </a>
-            ))}
+            )}
+            {project.images &&
+              project.images.length > 0 &&
+              project.images.map((img, index) => (
+                <a
+                  key={index}
+                  href={img}
+                  className="project-link-icon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={`View Image ${index + 1}`}
+                >
+                  📷
+                </a>
+              ))}
+          </div>
         </div>
-        <span className="project-desc">{project.description}</span>
-      </div>
-      <div className="project-right">
         <span className="project-date">{project.date}</span>
+        <span className="project-desc">{project.description}</span>
       </div>
     </li>
   );
@@ -264,7 +405,11 @@ export default function WorkIndex() {
       link: "https://wagerai.vercel.app",
       date: "12.2025",
       repo: "https://github.com/alexshibu1/wagerai",
-      video: "",
+      previewVideoLocal: "/projects/placeholders/Project%20Wager.mp4",
+      previewPlaybackRate: 2,
+      cardMediaLink:
+        "https://x.com/AlexShibu2/status/1998972302046707852?s=20",
+      video: "https://youtu.be/Kd5UmGPF9lA?si=xTIPaNNNE4rpaO0o",
       writeup: "",
       featured: true,
     },
@@ -275,6 +420,9 @@ export default function WorkIndex() {
       link: "https://archive.ph/2mqxj",
       date: "01.2025",
       repo: "",
+      previewVideoLocal: "/projects/placeholders/easyhacks.mp4",
+      previewVideoScale: 1.2,
+      cardMediaLink: "https://archive.ph/2mqxj",
       video: "https://www.youtube.com/watch?v=BUFH1s5iUtw&t=55s",
       writeup: "",
       featured: true,
@@ -286,6 +434,9 @@ export default function WorkIndex() {
       link: "https://devpost.com/software/luma-luminous-understanding-through-mindful-ai",
       date: "05.2025",
       repo: "https://github.com/e-ndorfin/luma",
+      previewVideoLocal: "/projects/placeholders/project%20luma.mp4",
+      cardMediaLink:
+        "https://devpost.com/software/luma-luminous-understanding-through-mindful-ai",
       video: "https://www.youtube.com/watch?v=neO-K2qJo6Y&t=20s",
       writeup: "",
     },
@@ -316,6 +467,9 @@ export default function WorkIndex() {
       link: "https://www.youtube.com/watch?v=qsD2kOopCK4",
       date: "06.2025",
       repo: "",
+      previewVideoLocal: "/projects/placeholders/project%20avalonn.mp4",
+      previewVideoScale: 1.1,
+      cardMediaLink: "https://www.youtube.com/watch?v=qsD2kOopCK4",
       video: "https://www.youtube.com/watch?v=dnusNHRDGMo",
       writeup:
         "https://www.entrepreneurship.artsci.utoronto.ca/news/we-asked-7-founders-what-sparked-your-startup-idea",
@@ -423,9 +577,11 @@ export default function WorkIndex() {
       name: "Legacy iPhone 4 Revival",
       description:
         "Restored full usability to iOS 7 devices by engineering a downgrade/jailbreak to iOS 6, fully documented for the community. Used iOS 6, Jailbreak, and Cydia tools.",
-      link: "",
+      link: "https://www.youtube.com/watch?v=mIjrcIrA4IM",
       date: "10.2025",
       repo: "",
+      previewVideoLocal: "/projects/placeholders/project%20iphone%204.mp4",
+      cardMediaLink: "https://www.youtube.com/watch?v=mIjrcIrA4IM",
       video: "https://www.youtube.com/watch?v=mIjrcIrA4IM",
       writeup: "",
     },
@@ -553,7 +709,9 @@ export default function WorkIndex() {
           />
         )}
       </div>
-      <p className="hero-subline">Projects I&apos;ve built and shipped.</p>
+      <p className="hero-subline">
+        a collection of my experience and projects i&apos;ve built and shipped.
+      </p>
 
       <ul className="projects-list">
         {sortedProjects.map((project, i) => (

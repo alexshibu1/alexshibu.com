@@ -150,7 +150,7 @@ export default function Home() {
 
       <footer className="footer">
         <div className="flex items-center gap-1 text-sm text-gray-500">
-          <span className="font-sans text-gray-500 opacity-50">
+          <span className="font-sans text-gray-500 opacity-75">
             God Bless the Hustle 🚢
           </span>
 
@@ -159,7 +159,7 @@ export default function Home() {
             href="https://alexshibustats.vercel.app/share/tGdLEFmSbLfZxG6F?date=7day"
             target="_blank"
             rel="noopener noreferrer"
-            className="!text-gray-500 opacity-50 hover:!text-red-500 hover:underline transition-colors hover:opacity-100"
+            className="!text-gray-500 opacity-75 hover:!text-red-500 hover:underline transition-colors hover:opacity-100"
           >
             Stats
           </a>

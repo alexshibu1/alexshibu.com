@@ -660,38 +660,24 @@ body {
 
 /* Projects list */
 .projects-list {
-  margin-top: 1.5rem; /* Space between subtitle and projects */
+  margin-top: 1.5rem;
   padding-left: 0;
   list-style: none;
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 2rem;
+  row-gap: 1.6rem;
+}
+
+.project-card {
   display: flex;
   flex-direction: column;
-  gap: 0rem; /* Reduced space between list items */
-}
-
-.project-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 0;
-  gap: 3rem; /* Increased gap to push right side further */
-  width: 100%;
-  padding: 0.25rem 0; /* Subtle vertical padding for better touch targets */
-}
-
-.project-left {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem; /* Small gap between title and description */
-  flex: 1;
-  min-width: 0;
-  max-width: calc(100% - 200px); /* Reserve space for right side */
-}
-
-.project-title-wrapper {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.5rem;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  overflow: visible;
+  min-height: 100%;
+  transition: none;
 }
 
 .project-featured-indicator {
@@ -706,6 +692,111 @@ body {
   vertical-align: middle;
   position: relative;
   top: -0.5px;
+}
+
+.project-media-link,
+.project-media-shell,
+.project-media-placeholder {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 190px;
+  max-height: 190px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: none;
+  background: transparent;
+}
+
+.project-media-link {
+  text-decoration: none;
+}
+
+.project-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Same fill behavior as next/image fill inside relative shell */
+/* Local preview videos: allow pointer events so native controls (volume/unmute) work */
+.project-media-shell--video {
+  min-height: 220px;
+  max-height: 220px;
+}
+
+.project-media-shell--video .project-media-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: auto;
+}
+
+.project-media-open {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #374151;
+  text-decoration: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.project-media-open:hover {
+  background: #fff;
+  color: #ff3a3a;
+}
+
+.project-media-link .project-media-video,
+.project-media-shell:not(.project-media-shell--video) .project-media-video {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.project-media-placeholder-title {
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.project-media-placeholder-meta {
+  font-size: 12px;
+  color: #9ca3af;
+  letter-spacing: 0.01em;
+}
+
+.project-media-placeholder {
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.75rem 0;
+  text-align: center;
+  text-decoration: none;
+}
+
+.project-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.6rem 0 0;
+  height: auto;
+}
+
+.project-title-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  flex-wrap: wrap;
 }
 
 .project-title {
@@ -738,12 +829,16 @@ body {
   margin-right: 0.5rem; /* Space before icons */
   font-size: 0.85em;
   vertical-align: baseline;
-  opacity: 0.7;
-  transition: opacity 0.15s ease;
+  opacity: 0;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+  transform: translateY(1px);
 }
 
 .project-title:hover .project-arrow {
   opacity: 1;
+  transform: translateY(0);
 }
 
 .project-link-icon {
@@ -758,7 +853,7 @@ body {
     transform 0.15s ease;
   color: #868686 !important;
   line-height: 1;
-  margin-left: 0.4rem; /* Space between icons */
+  margin-left: 0;
   vertical-align: baseline;
 }
 
@@ -777,31 +872,32 @@ body {
   color: #666666 !important;
 
   display: block;
-  margin-left: 0; /* No margin needed, gap handles spacing */
+  margin-left: 0;
   opacity: 0.85;
   max-width: 100%;
   word-wrap: break-word;
+  margin-bottom: 0;
 }
 
-.project-right {
-  display: flex;
+.project-actions {
+  display: inline-flex;
   align-items: center;
-  gap: 0.85rem; /* Refined spacing */
-  white-space: nowrap;
-  flex-shrink: 0;
-  margin-left: auto; /* Push to the right */
-  padding-left: 1rem; /* Extra space from description */
+  gap: 0.2rem;
+  flex-wrap: nowrap;
 }
 
 .project-date {
-  font-size: 14px;
-  color: #535353; /* Darker, more visible gray */
+  font-size: 12px;
+  color: #6b7280;
   line-height: 1.4;
-  display: inline-block;
-  font-weight: 500; /* Slightly bolder */
-  letter-spacing: 0.02em; /* Slightly more letter spacing */
-  opacity: 1; /* Full opacity */
-  font-variant-numeric: tabular-nums; /* Monospaced numbers for alignment */
+  display: block;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  opacity: 0.9;
+  font-variant-numeric: tabular-nums;
+  margin-left: 0;
+  margin-top: -0.05rem;
+  margin-bottom: 0.25rem;
 }
 
 /* Responsive - mobile & tablets (<= 800px) */
@@ -995,71 +1091,36 @@ body {
     font-size: 18px;
   }
 
-  /* Project items stack better on mobile */
-  /*
-    Why: mobile flex-column puts the date under the description, and flex wrapping
-    can push the emoji icons onto their own line.
-    Fix: grid layout that keeps (title + emojis) on the left and date on the right.
-  */
-  .project-item {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-areas:
-      "title date"
-      "desc desc";
-    column-gap: 0.75rem;
-    row-gap: 0.4rem;
-    padding: 0.75rem 0;
-    width: 100%;
-    box-sizing: border-box;
+  .projects-list {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
   }
 
-  /* Flatten wrapper so title + desc can be grid children */
-  .project-left {
-    display: contents;
+  .project-card {
+    border-radius: 0;
   }
 
-  .project-title-wrapper {
-    grid-area: title;
-    /*
-      Why: with flex items, the title can wrap internally but the emoji icon
-      links are separate siblings, so they may not sit at the *end of the
-      wrapped title text* (they can jump to a new flex line).
-      Fix: use normal inline flow so icons follow the title text naturally.
-    */
-    display: block;
-    width: 100%;
-    min-width: 0;
-    box-sizing: border-box;
+  .project-media-link,
+  .project-media-shell,
+  .project-media-placeholder {
+    min-height: 190px;
+    max-height: 190px;
   }
 
-  /* Allow project titles to wrap on mobile */
+  .project-card-content {
+    padding: 0.5rem 0 0;
+  }
+
   .project-title {
     white-space: normal !important;
     word-wrap: break-word;
     overflow-wrap: break-word;
     max-width: 100%;
     display: inline;
-    box-sizing: border-box;
   }
 
-  .project-link-icon {
-    flex-shrink: 0; /* Keep icons from shrinking */
-  }
-
-  .project-desc {
-    grid-area: desc;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    max-width: 100%;
-  }
-
-  .project-right {
-    grid-area: date;
-    align-self: end; /* align date with the last line of a wrapped title */
+  .project-date {
     margin-left: 0;
-    padding-left: 0;
-    width: auto;
   }
 
   /* About page mobile optimizations */
