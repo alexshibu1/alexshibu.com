@@ -171,24 +171,22 @@ function ProjectItem({ project }: { project: Project }) {
     : previewMedia && isUsableLink(previewMedia)
       ? previewMedia
       : "";
-  const mediaLink =
-    isUsableLink(project.cardMediaLink) ? project.cardMediaLink! : primaryLink;
-
+  const mediaLink = isUsableLink(project.cardMediaLink)
+    ? project.cardMediaLink!
+    : primaryLink;
   /**
-   * Muted autoplay satisfies browser policy; `controls` lets users unmute (user gesture)
-   * so audio is available. Video is not wrapped in <a> so the control bar stays clickable.
+   * Keep previews silent + clean: muted autoplay with no controls.
+   * The entire preview surface can then be a single click target.
    */
   const zoom = project.previewVideoScale ?? 1;
   const playbackRate = project.previewPlaybackRate ?? 1;
-  const previewVideoEl = (
+  const videoNode = (
     <video
       className="project-media project-media-video"
       autoPlay
       muted
       loop
       playsInline
-      controls
-      controlsList="nodownload"
       preload="metadata"
       aria-label={`${project.name} preview`}
       style={
@@ -208,23 +206,31 @@ function ProjectItem({ project }: { project: Project }) {
       <source src={localPreviewVideo!} type="video/mp4" />
     </video>
   );
+  /** Wrapper keeps tile size fixed while scale() crops edges (same dimensions as other cards). */
+  const previewVideoEl =
+    zoom !== 1 ? (
+      <div className="project-video-zoom-shell">{videoNode}</div>
+    ) : (
+      videoNode
+    );
 
   return (
     <li className="project-card">
       {localPreviewVideo ? (
-        <div className="project-media-shell project-media-shell--video">
-          {previewVideoEl}
-          {mediaLink ? (
-            <a
-              href={mediaLink}
-              className="project-media-open"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open ↗
-            </a>
-          ) : null}
-        </div>
+        mediaLink ? (
+          <a
+            href={mediaLink}
+            className="project-media-link project-media-shell project-media-shell--video"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {previewVideoEl}
+          </a>
+        ) : (
+          <div className="project-media-shell project-media-shell--video">
+            {previewVideoEl}
+          </div>
+        )
       ) : previewMedia ? (
         primaryLink ? (
           <a
@@ -284,7 +290,7 @@ function ProjectItem({ project }: { project: Project }) {
           onMouseLeave={() => setIsTitleHovered(false)}
         >
           {project.featured && (
-            <span style={{ marginRight: "0.3rem", verticalAlign: "middle" }}>
+            <span style={{ verticalAlign: "middle" }}>
               <FeaturedIndicator isHovered={isTitleHovered} />
             </span>
           )}
@@ -303,70 +309,72 @@ function ProjectItem({ project }: { project: Project }) {
               {project.name}
             </span>
           )}
-          <div className="project-actions">
-            {project.repo && project.repo !== "" && (
-              <a
-                href={project.repo}
-                className="project-link-icon"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Repository"
-              >
-                💻
-              </a>
-            )}
-            {project.writeup && project.writeup !== "" && (
-              <a
-                href={project.writeup}
-                className="project-link-icon"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Write-up"
-              >
-                ✍️
-              </a>
-            )}
-            {project.video &&
-              project.video !== "" &&
-              /^https?:\/\//i.test(project.video) && (
+          <div className="project-meta-trail">
+            <div className="project-actions">
+              {project.repo && project.repo !== "" && (
                 <a
-                  href={project.video}
+                  href={project.repo}
                   className="project-link-icon"
                   target="_blank"
                   rel="noopener noreferrer"
-                  title="Video"
+                  title="Repository"
                 >
-                  🎥
+                  💻
                 </a>
               )}
-            {project.image && project.image !== "" && (
-              <a
-                href={project.image}
-                className="project-link-icon"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="View Image"
-              >
-                📷
-              </a>
-            )}
-            {project.images &&
-              project.images.length > 0 &&
-              project.images.map((img, index) => (
+              {project.writeup && project.writeup !== "" && (
                 <a
-                  key={index}
-                  href={img}
+                  href={project.writeup}
                   className="project-link-icon"
                   target="_blank"
                   rel="noopener noreferrer"
-                  title={`View Image ${index + 1}`}
+                  title="Write-up"
+                >
+                  ✍️
+                </a>
+              )}
+              {project.video &&
+                project.video !== "" &&
+                /^https?:\/\//i.test(project.video) && (
+                  <a
+                    href={project.video}
+                    className="project-link-icon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Video"
+                  >
+                    🎥
+                  </a>
+                )}
+              {project.image && project.image !== "" && (
+                <a
+                  href={project.image}
+                  className="project-link-icon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="View Image"
                 >
                   📷
                 </a>
-              ))}
+              )}
+              {project.images &&
+                project.images.length > 0 &&
+                project.images.map((img, index) => (
+                  <a
+                    key={index}
+                    href={img}
+                    className="project-link-icon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={`View Image ${index + 1}`}
+                  >
+                    📷
+                  </a>
+                ))}
+            </div>
+            <span className="project-date">{project.date}</span>
           </div>
         </div>
-        <span className="project-date">{project.date}</span>
         <span className="project-desc">{project.description}</span>
       </div>
     </li>
@@ -407,16 +415,15 @@ export default function WorkIndex() {
       repo: "https://github.com/alexshibu1/wagerai",
       previewVideoLocal: "/projects/placeholders/Project%20Wager.mp4",
       previewPlaybackRate: 2,
-      cardMediaLink:
-        "https://x.com/AlexShibu2/status/1998972302046707852?s=20",
+      cardMediaLink: "https://x.com/AlexShibu2/status/1998972302046707852?s=20",
       video: "https://youtu.be/Kd5UmGPF9lA?si=xTIPaNNNE4rpaO0o",
       writeup: "",
       featured: true,
     },
     {
-      name: "easyhacks.org - Hackathon for Rejects",
+      name: "Perplexity AI easyhacks.org",
       description:
-        "Created and led EasyHacks, a hackathon for everyone, rejected in an email thread from UBC nwhacks. It transformed into a 20 person operation, from military veterans to high school students in Nepal, with 170+ participants and $8K in prizes raised from sponsors.",
+        "Created and led EasyHacks, a hackathon rejects. It started in an email thread from UBC nwhacks. It transformed into a 20 person operation, from military veterans to high school students in Nepal, with 170+ participants and $8K in prizes raised from sponsors.",
       link: "https://archive.ph/2mqxj",
       date: "01.2025",
       repo: "",
@@ -482,6 +489,9 @@ export default function WorkIndex() {
       link: "https://web.archive.org/web/20240924161229/http://www.coachmi.co/",
       date: "09.2024",
       repo: "",
+      previewVideoLocal: "/projects/placeholders/project%20coachmi.mp4",
+      cardMediaLink:
+        "https://web.archive.org/web/20240924161229/http://www.coachmi.co/",
       video: "https://www.youtube.com/watch?v=xWqw_l3Nh2M",
       writeup:
         "https://docs.google.com/presentation/d/1kiCEzGCJV-VriZXeSeexSCXZerS3k28HrKrysDQ4vbE/edit?slide=id.g26767847792_2_120#slide=id.g26767847792_2_120",
@@ -577,11 +587,12 @@ export default function WorkIndex() {
       name: "Legacy iPhone 4 Revival",
       description:
         "Restored full usability to iOS 7 devices by engineering a downgrade/jailbreak to iOS 6, fully documented for the community. Used iOS 6, Jailbreak, and Cydia tools.",
-      link: "https://www.youtube.com/watch?v=mIjrcIrA4IM",
+      link: "https://x.com/AlexShibu2/status/2032561523973882195?s=20",
       date: "10.2025",
       repo: "",
       previewVideoLocal: "/projects/placeholders/project%20iphone%204.mp4",
-      cardMediaLink: "https://www.youtube.com/watch?v=mIjrcIrA4IM",
+      cardMediaLink:
+        "https://x.com/AlexShibu2/status/2032561523973882195?s=20",
       video: "https://www.youtube.com/watch?v=mIjrcIrA4IM",
       writeup: "",
     },

@@ -721,45 +721,27 @@ body {
 }
 
 /* Same fill behavior as next/image fill inside relative shell */
-/* Local preview videos: allow pointer events so native controls (volume/unmute) work */
 .project-media-shell--video {
   min-height: 220px;
   max-height: 220px;
 }
 
-.project-media-shell--video .project-media-video {
+/* Clips scaled video so preview tile height/width stay unchanged */
+.project-video-zoom-shell {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.project-media-shell--video .project-media-video,
+.project-media-link .project-media-video,
+.project-media-shell:not(.project-media-shell--video) .project-media-video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  pointer-events: auto;
-}
-
-.project-media-open {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  z-index: 2;
-  font-size: 11px;
-  font-weight: 600;
-  padding: 4px 8px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.92);
-  color: #374151;
-  text-decoration: none;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-}
-
-.project-media-open:hover {
-  background: #fff;
-  color: #ff3a3a;
-}
-
-.project-media-link .project-media-video,
-.project-media-shell:not(.project-media-shell--video) .project-media-video {
-  position: absolute;
-  inset: 0;
   pointer-events: none;
 }
 
@@ -794,9 +776,10 @@ body {
 
 .project-title-wrapper {
   display: flex;
-  align-items: baseline;
-  gap: 0.45rem;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: nowrap;
+  min-width: 0;
 }
 
 .project-title {
@@ -815,6 +798,10 @@ body {
     color 0.15s ease,
     opacity 0.15s ease;
   letter-spacing: -0.01em; /* Tighter letter spacing for cleaner look */
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
 }
 
 .project-title:hover {
@@ -823,10 +810,19 @@ body {
   opacity: 1;
 }
 
+.project-meta-trail {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: auto;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+}
+
 .project-arrow {
   display: inline-block;
   margin-left: 0.3rem;
-  margin-right: 0.5rem; /* Space before icons */
+  margin-right: 0;
   font-size: 0.85em;
   vertical-align: baseline;
   opacity: 0;
@@ -889,15 +885,20 @@ body {
 .project-date {
   font-size: 12px;
   color: #6b7280;
-  line-height: 1.4;
-  display: block;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
   font-weight: 500;
   letter-spacing: 0.03em;
   opacity: 0.9;
   font-variant-numeric: tabular-nums;
   margin-left: 0;
-  margin-top: -0.05rem;
-  margin-bottom: 0.25rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  white-space: nowrap;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(107, 114, 128, 0.1);
 }
 
 /* Responsive - mobile & tablets (<= 800px) */
@@ -1117,10 +1118,25 @@ body {
     overflow-wrap: break-word;
     max-width: 100%;
     display: inline;
+    overflow: visible;
+    text-overflow: unset;
+  }
+
+  .project-title-wrapper {
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+
+  .project-meta-trail {
+    flex-basis: 100%;
+    justify-content: flex-end;
+    margin-left: 0;
+    margin-top: 0.2rem;
   }
 
   .project-date {
     margin-left: 0;
+    margin-top: 0;
   }
 
   /* About page mobile optimizations */
@@ -1182,10 +1198,39 @@ body {
   .about-bio {
     padding: 20px;
   }
+
+  /*
+    Laptop (e.g. M1 14" MacBook ~1512px wide): preview band 10% shorter than base
+    so the list breathes on smaller vertical space. Base = 190 / 220.
+  */
+  .project-media-link,
+  .project-media-shell,
+  .project-media-placeholder {
+    min-height: 171px; /* 190 × 0.9 */
+    max-height: 171px;
+  }
+
+  .project-media-shell--video {
+    min-height: 198px; /* 220 × 0.9 */
+    max-height: 198px;
+  }
 }
 
 /* Large screens - bigger than 14" MacBook Pro */
 @media (min-width: 1600px) {
+  /* Desktop: preview band ~10% taller than base (not laptop-short) */
+  .project-media-link,
+  .project-media-shell,
+  .project-media-placeholder {
+    min-height: 209px; /* 190 × 1.1 */
+    max-height: 209px;
+  }
+
+  .project-media-shell--video {
+    min-height: 242px; /* 220 × 1.1 */
+    max-height: 242px;
+  }
+
   .sidebar {
     padding-top: 96px; /* 1 inch from top */
   }
