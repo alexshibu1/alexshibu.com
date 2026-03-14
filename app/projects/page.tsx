@@ -716,7 +716,7 @@ export default function WorkIndex() {
       link: "#", // Add link later
       date: "11.2021",
       repo: "https://github.com/alexshibu1/web3-message-board",
-      image: "/projects/placeholders/project%20web3.png",
+      image: "/projects/placeholders/project%20Web3.png",
       hideImageLink: true,
       video: "",
       writeup: "",
