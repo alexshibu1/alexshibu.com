@@ -427,20 +427,70 @@ export default function WorkIndex() {
       date: "03.2022",
       video: "https://www.youtube.com/watch?v=mHKDR622pCM", // Add video link later
       repo: "",
+      previewVideoLocal: "/projects/placeholders/project%20gala.mp4",
+      cardMediaLink:
+        "https://www.ymcagta.org/blog/congratulations-to-the-winners-of-the-youth-for-entrepreneurship-media-contest-2025",
       writeup:
+        "https://www.ymcagta.org/blog/congratulations-to-the-winners-of-the-youth-for-entrepreneurship-media-contest-2025",
+      images: [
         "https://www.linkedin.com/posts/alexshibu_dreamtheimpossible-reverlimpossible-activity-7077475467871600640-FrKP/",
+        "/projects/placeholders/project%20chips.mp4",
+      ],
+    },
+    {
+      name: "YMCA — Y Story about me",
+      description:
+        "The YMCA ran a Y Story feature on me. I shared how the Y gave me confidence and a real shot at making change—and a big thank-you to donors and staff who keep programs like that running. I was also heavily involved in production.",
+      link: "https://www.instagram.com/p/Cyi95HKKV2d/",
+      date: "10.2023",
+      repo: "",
+      previewVideoLocal: "/projects/placeholders/project%20shine%20one.mp4",
+      cardMediaLink: "https://www.instagram.com/p/Cyi95HKKV2d/",
+      video: "https://youtu.be/fvr0F0S-xQ4?si=ubMof5sBfV1wf6Hf",
+      writeup: "",
+    },
+    {
+      name: "Youth Advisory Committee",
+      description:
+        "Working with the Youth Advisory Committee to provide strategic advice to the YMCA of Greater Toronto's Board of Directors, championing youth voices and strengthening community engagement for young people in the GTA. Grounded in creative problem-solving and emerging technology.",
+      link: "#",
+      date: "03.2025",
+      repo: "",
+      video: "",
+      writeup: "",
+      image: "/projects/placeholders/project%20YAC.png",
     },
     {
       name: "Breakthrough Junior Challenge",
       description:
         "Top 14% global finalist for the challenge, explaining quantum computing fundamentals, superposition, entanglement, and John Bell's Theorem. Built a video explaining Radioisotope thermoelectric generators that ranked globally among thousands of entries.",
-      link: "https://www.youtube.com/watch?v=xuL75NnIcks&t=11s",
-      date: "06.2022",
-      video: "https://www.youtube.com/watch?v=xuL75NnIcks&t=11s",
+      link: "https://www.youtube.com/watch?v=vQcW4T5JnPU",
+      date: "06.2021",
+      video: "https://www.youtube.com/watch?v=vQcW4T5JnPU",
       repo: "",
       writeup: "",
       image: "/projects/placeholders/project%20quantum.png",
       previewImageObjectPosition: "top",
+    },
+    {
+      name: "Google Ads & Analytics Team",
+      description:
+        "STEM Fellowship (Feb 2022). Wrote monthly SC reports using Google Ads and Google Analytics data, including conclusions from statistical testing; monthly social media reports with statistical comparisons across platforms; used Plerdy to analyze the SF website for optimization and SEO.",
+      link: "#",
+      date: "02.2022",
+      repo: "",
+      video: "",
+      writeup: "",
+    },
+    {
+      name: "Young Canadians Parliament Member",
+      description:
+        "Children First Canada (Sep 2022 – Jul 2023). Developed a policy brief on youth mental health crises with actionable recommendations for the Canadian government; advocated for a government-funded mental health app; proposed regulations for non-scientific mental health apps (aligned with over-the-counter drug standards); conceptualized a certification for sub-specialist mental health providers.",
+      link: "#",
+      date: "09.2022",
+      repo: "",
+      video: "",
+      writeup: "",
     },
     {
       name: "WagerAI",
@@ -467,7 +517,7 @@ export default function WorkIndex() {
       previewVideoScale: 1.4,
       cardMediaLink: "https://archive.ph/2mqxj",
       video: "https://www.youtube.com/watch?v=BUFH1s5iUtw&t=55s",
-      writeup: "",
+      writeup: "https://www.sprint.dev/hackathons/easyhacks",
       featured: true,
     },
     {
@@ -492,6 +542,9 @@ export default function WorkIndex() {
       link: "https://docs.google.com/presentation/d/1cwFMnute4f_i65IaNJsnTHUXk0QaryH_FKPFqDETxKM/edit?usp=sharing",
       date: "12.2022",
       repo: "",
+      previewVideoLocal: "/projects/placeholders/project%20benchsci.mp4",
+      cardMediaLink:
+        "https://docs.google.com/presentation/d/1cwFMnute4f_i65IaNJsnTHUXk0QaryH_FKPFqDETxKM/edit?usp=sharing",
       video: "https://www.youtube.com/watch?v=Mqb1hEqly_Y",
       writeup: "",
     },
@@ -530,6 +583,7 @@ export default function WorkIndex() {
       date: "09.2024",
       repo: "",
       previewVideoLocal: "/projects/placeholders/project%20coachmi.mp4",
+      previewPlaybackRate: 2,
       cardMediaLink:
         "https://web.archive.org/web/20240924161229/http://www.coachmi.co/",
       video: "https://www.youtube.com/watch?v=xWqw_l3Nh2M",
@@ -549,6 +603,10 @@ export default function WorkIndex() {
       video: "https://youtu.be/_ycxR8aP980?si=oeGxGrFIYkKJ_gkC",
       writeup:
         "https://docs.google.com/presentation/d/1EGrDyCZGxc3NRiDLo3721Ev--xtsH0U9p3JEGijZNIs/edit?slide=id.p#slide=id.p",
+      images: [
+        "/projects/placeholders/Clownz.mov",
+        "https://drive.google.com/file/d/1GdstHAo_J6shml5zO7uMGuMrhWa8OGyF/view?usp=sharing",
+      ],
       featured: true,
     },
     {
@@ -591,11 +649,15 @@ export default function WorkIndex() {
       name: "Cuddle - AI Sleep Music [hackathon]",
       description:
         "Built an AI-powered sleep-music generator using K-means clustering for personalized audio. The app uses artificial intelligence and K-means clustering to create personalized music for insomniacs, based on their sleep routines and music preferences. Hackathon finalist.",
-      link: "https://www.figma.com/design/WJ7zap2lEOHglmLiuYWH2K/Cyberpunk-Music-App--Community-?node-id=0-1&p=f",
+      link: "https://www.figma.com/design/WJ7zap2lEOHglmLiuYWH2K/Cyberpunk-Music-App--Community-?node-id=0-1&t=dGlw3IO6XB8Jvufx-1",
       date: "04.2024",
       repo: "",
+      previewVideoLocal: "/projects/placeholders/cuddle.mp4",
+      cardMediaLink:
+        "https://www.figma.com/design/WJ7zap2lEOHglmLiuYWH2K/Cyberpunk-Music-App--Community-?node-id=0-1&t=dGlw3IO6XB8Jvufx-1",
       video: "",
-      writeup: "",
+      writeup:
+        "https://docs.google.com/presentation/d/1-uXNfIXqmT1l2TJIfoq779bCx94CTdyN9aVPQfNiW5E/edit?usp=sharing",
     },
     {
       name: "CIBC Rewards - UX Design [TKS]",
@@ -604,6 +666,9 @@ export default function WorkIndex() {
       link: "https://www.figma.com/file/X8pq2OGANVnQhQkyE5bTzR/CIBC-Rewards-Design",
       date: "03.2023",
       repo: "",
+      previewVideoLocal: "/projects/placeholders/projectCIBC.mp4",
+      cardMediaLink:
+        "https://www.figma.com/file/X8pq2OGANVnQhQkyE5bTzR/CIBC-Rewards-Design",
       video: "",
       writeup: "",
     },
@@ -614,6 +679,8 @@ export default function WorkIndex() {
       link: "https://x.com/AlexShibu2/status/1642946139723841548",
       date: "08.2023",
       repo: "",
+      previewVideoLocal: "/projects/placeholders/project%20feedback.mp4",
+      cardMediaLink: "https://x.com/AlexShibu2/status/1642946139723841548",
       video: "https://www.youtube.com/watch?v=FVZCkDxriFI",
       writeup: "",
     },

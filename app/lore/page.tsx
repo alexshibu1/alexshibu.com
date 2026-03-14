@@ -99,6 +99,18 @@ const LORE: LoreItem[] = [
     ],
   },
   {
+    id: "y4e-emcee-2025-02",
+    date: "02.2025",
+    line: "Emceed the Y4E gala",
+    more: "Got to come back and emcee the Youth for Entrepreneurship awards night. Full circle after winning the media contest a few years earlier. Shared a bit of my journey with the room. YMCA of Greater Toronto wrote it up on their blog.",
+    links: [
+      {
+        label: "YMCA blog (Y4E 2025)",
+        url: "https://www.ymcagta.org/blog/congratulations-to-the-winners-of-the-youth-for-entrepreneurship-media-contest-2025",
+      },
+    ],
+  },
+  {
     id: "learned-drive-motorcycle-2025-09",
     date: "09.2025",
     line: "Learned to drive manuel and ride motorcycle",
