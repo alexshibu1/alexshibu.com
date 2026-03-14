@@ -129,10 +129,10 @@ const LORE: LoreItem[] = [
     ],
   },
   {
-    id: "replit-investment-2022-05",
-    date: "05.2022",
+    id: "replit-investment-2022-04",
+    date: "04.2022",
     line: "Invested in Replit",
-    more: "Invested in a private round into Replit in May 2022. A product I actually used and believed in. At a $979M valuation, on paper it has 6.6x in Mar 2026 they closed Series D at $9B. I later got blocked on X by Amjad for no apparent reason. So a bit of a sour taste in my mouth.",
+    more: "Invested in a private round into Replit on Apr 2, 2022. A product I actually used and believed in. At a $979M valuation, on paper it has 6.6x in Mar 2026 they closed Series D at $9B. I later got blocked on X by Amjad for no apparent reason. So a bit of a sour taste in my mouth.",
     links: [
       {
         label: "Wefunder (my profile)",

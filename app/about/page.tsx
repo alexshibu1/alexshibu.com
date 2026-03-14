@@ -514,7 +514,7 @@ export default function AboutPage() {
             West Rouge Sports - Photo Contest Winner
           </a>
           <a
-            href="https://childrenfirstcanada.org/wp-content/uploads/2025/08/Raising-Canada-Report-2025-FINAL_WEB.pdf"
+            href="https://childrenfirstcanada.org/wp-content/uploads/2025/08/Raising-Canada-Report-2025-UPDATED.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-3 py-1.5 bg-gray-50 !text-black rounded-md text-sm font-medium border border-gray-200 hover:bg-red-50 hover:border-red-200 hover:rounded-full hover:!text-red-600 transition-all duration-200 cursor-pointer"
