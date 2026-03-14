@@ -87,6 +87,18 @@ function inferSortKey(date: string): number {
 
 const LORE: LoreItem[] = [
   {
+    id: "replit-series-d-2026-03",
+    date: "03.2026",
+    line: "Replit Series D — $400M at $9B valuation",
+    more: "Replit announced Series D in Mar 2026: $400M raised at a $9B valuation. Nice marker if you were in the early Wefunder community rounds at a $979M cap.",
+    links: [
+      {
+        label: "Wefunder (my profile)",
+        url: "https://wefunder.com/alexshibu",
+      },
+    ],
+  },
+  {
     id: "learned-drive-motorcycle-2025-09",
     date: "09.2025",
     line: "Learned to drive manuel and ride motorcycle",
@@ -101,6 +113,18 @@ const LORE: LoreItem[] = [
       {
         label: "Screenshot",
         url: "/projects/bathbombs.png",
+      },
+    ],
+  },
+  {
+    id: "replit-investment-2022-05",
+    date: "05.2022",
+    line: "Invested in Replit",
+    more: "Invested in a private round into Replit in May 2022. A product I actually used and believed in. At a $979M valuation, on paper it has 6.6x in Mar 2026 they closed Series D at $9B. I later got blocked on X by Amjad for no apparent reason. So a bit of a sour taste in my mouth.",
+    links: [
+      {
+        label: "Wefunder (my profile)",
+        url: "https://wefunder.com/alexshibu",
       },
     ],
   },

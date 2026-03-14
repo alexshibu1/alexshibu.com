@@ -479,7 +479,7 @@ export default function WorkIndex() {
       repo: "https://github.com/e-ndorfin/luma",
       previewVideoLocal: "/projects/placeholders/project%20luma.mp4",
       previewVideoScale: 1.2,
-
+      previewPlaybackRate: 4,
       cardMediaLink:
         "https://devpost.com/software/luma-luminous-understanding-through-mindful-ai",
       video: "https://www.youtube.com/watch?v=neO-K2qJo6Y&t=20s",
