@@ -30,6 +30,8 @@ type Project = {
   previewImageObjectPosition?: string;
   /** Scale image preview (1.1 = 10% zoom; clipped to tile) */
   previewImageScale?: number;
+  /** If true, do not show the 📷 link for the main image */
+  hideImageLink?: boolean;
 };
 
 function FeaturedIndicator({ isHovered }: { isHovered: boolean }) {
@@ -380,17 +382,19 @@ function ProjectItem({ project }: { project: Project }) {
                     🎥
                   </a>
                 )}
-              {project.image && project.image !== "" && (
-                <a
-                  href={project.image}
-                  className="project-link-icon"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="View Image"
-                >
-                  📷
-                </a>
-              )}
+              {project.image &&
+                project.image !== "" &&
+                !project.hideImageLink && (
+                  <a
+                    href={project.image}
+                    className="project-link-icon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="View Image"
+                  >
+                    📷
+                  </a>
+                )}
               {project.images &&
                 project.images.length > 0 &&
                 project.images.map((img, index) => (
@@ -445,6 +449,7 @@ export default function WorkIndex() {
       date: "10.2023",
       repo: "",
       previewVideoLocal: "/projects/placeholders/project%20shine%20one.mp4",
+      previewVideoScale: 1.2,
       cardMediaLink: "https://www.instagram.com/p/Cyi95HKKV2d/",
       video: "https://youtu.be/fvr0F0S-xQ4?si=ubMof5sBfV1wf6Hf",
       writeup: "",
@@ -460,6 +465,7 @@ export default function WorkIndex() {
       writeup: "",
       image: "/projects/placeholders/project%20YAC.png",
       previewImageObjectPosition: "bottom",
+      previewImageScale: 1.1,
       cardMediaLink: "https://www.ymcagta.org/about-us/youth-advisory-committee",
       images: [
         "https://www.linkedin.com/posts/alexshibu_youthleadership-activity-7338411863904309249-frCZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAACk8q9ABrmBqQ4wz9R3Ev5JU1iATl26x-5M",
@@ -722,6 +728,7 @@ export default function WorkIndex() {
       date: "11.2021",
       repo: "https://github.com/alexshibu1/web3-message-board",
       image: "/projects/placeholders/project%20web3.png",
+      hideImageLink: true,
       video: "",
       writeup: "",
     },
@@ -806,6 +813,7 @@ export default function WorkIndex() {
       date: "02.2023",
       repo: "",
       previewVideoLocal: "/projects/placeholders/project%20diabities.mp4",
+      previewVideoScale: 1.1,
       cardMediaLink:
         "https://alexshibu.medium.com/trasforming-the-world-with-machine-learnnig-3467389abb0a",
       video: "",
