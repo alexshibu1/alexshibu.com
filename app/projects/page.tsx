@@ -426,7 +426,7 @@ export default function WorkIndex() {
     {
       name: "Youth 4 Entrepreneurship Desjardins x YMCA",
       description:
-        "Created a film on why young people should build and won first place in a nationwide competition. Led to invite from Desjardins Dream the Impossible event in Montreal.",
+        "Created a film on why young people should build and won first place in a nationwide competition. Led to invite from Desjardins Dream the Impossible event in Montreal.I also emceed the event the year after.",
       link: "https://www.ymcagta.org/blog/congratulations-to-the-winners-of-the-youth-for-entrepreneurship-media-contest-powered-by-desjardins", // Add link later
       date: "03.2022",
       video: "https://www.youtube.com/watch?v=mHKDR622pCM", // Add video link later
@@ -442,19 +442,6 @@ export default function WorkIndex() {
       ],
     },
     {
-      name: "YMCA — Y Story about me",
-      description:
-        "The YMCA ran a Y Story feature on me. I shared how the Y gave me confidence and a real shot at making change—and a big thank-you to donors and staff who keep programs like that running. I was also heavily involved in production.",
-      link: "https://www.instagram.com/p/Cyi95HKKV2d/",
-      date: "10.2023",
-      repo: "",
-      previewVideoLocal: "/projects/placeholders/project%20shine%20one.mp4",
-      previewVideoScale: 1.2,
-      cardMediaLink: "https://www.instagram.com/p/Cyi95HKKV2d/",
-      video: "https://youtu.be/fvr0F0S-xQ4?si=ubMof5sBfV1wf6Hf",
-      writeup: "",
-    },
-    {
       name: "Youth Advisory Committee",
       description:
         "Working with the Youth Advisory Committee to provide strategic advice to the YMCA of Greater Toronto's Board of Directors, championing youth voices and strengthening community engagement for young people in the GTA. Grounded in creative problem-solving and emerging technology.",
@@ -466,7 +453,8 @@ export default function WorkIndex() {
       image: "/projects/placeholders/project%20YAC.png",
       previewImageObjectPosition: "bottom",
       previewImageScale: 1.1,
-      cardMediaLink: "https://www.ymcagta.org/about-us/youth-advisory-committee",
+      cardMediaLink:
+        "https://www.ymcagta.org/about-us/youth-advisory-committee",
       images: [
         "https://www.linkedin.com/posts/alexshibu_youthleadership-activity-7338411863904309249-frCZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAACk8q9ABrmBqQ4wz9R3Ev5JU1iATl26x-5M",
       ],
@@ -666,7 +654,8 @@ export default function WorkIndex() {
       date: "05.2023",
       repo: "https://github.com/alexshibu1/photoBloxAI",
       previewVideoLocal: "/projects/placeholders/project%20bioblox.mp4",
-      cardMediaLink: "https://web.archive.org/web/20230722063459/https://bioblox.xyz/",
+      cardMediaLink:
+        "https://web.archive.org/web/20230722063459/https://bioblox.xyz/",
       video: "https://www.youtube.com/watch?v=BjR4rSWL9y4",
       writeup: "",
     },
