@@ -739,11 +739,18 @@ body {
   /* Override .page-content img — margin causes a strip above card previews */
   margin: 0 !important;
   border-radius: 0 !important;
-  vertical-align: top;
+  backface-visibility: hidden;
 }
 
 /* Same fill behavior as next/image fill inside relative shell */
 .project-media-shell--video {
+  min-height: 220px;
+  max-height: 220px;
+}
+
+/* Tall image preview (same height as video cards; e.g. Youth Advisory Committee) */
+.project-media-link.project-media--tall,
+.project-media-shell.project-media--tall {
   min-height: 220px;
   max-height: 220px;
 }
@@ -1134,6 +1141,12 @@ body {
     max-height: 190px;
   }
 
+  .project-media-link.project-media--tall,
+  .project-media-shell.project-media--tall {
+    min-height: 220px;
+    max-height: 220px;
+  }
+
   .project-card-content {
     padding: 0.5rem 0 0;
   }
@@ -1236,6 +1249,12 @@ body {
     max-height: 171px;
   }
 
+  .project-media-link.project-media--tall,
+  .project-media-shell.project-media--tall {
+    min-height: 198px; /* 220 × 0.9 */
+    max-height: 198px;
+  }
+
   .project-media-shell--video {
     min-height: 198px; /* 220 × 0.9 */
     max-height: 198px;
@@ -1250,6 +1269,12 @@ body {
   .project-media-placeholder {
     min-height: 209px; /* 190 × 1.1 */
     max-height: 209px;
+  }
+
+  .project-media-link.project-media--tall,
+  .project-media-shell.project-media--tall {
+    min-height: 242px; /* 220 × 1.1 */
+    max-height: 242px;
   }
 
   .project-media-shell--video {

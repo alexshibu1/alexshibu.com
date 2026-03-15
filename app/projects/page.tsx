@@ -2,7 +2,23 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState, type CSSProperties } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type CSSProperties,
+} from "react";
+import { webpageJsonLd } from "../lib/seo";
+
+const INITIAL_PRIORITY_COUNT = 4;
+const TARGET_ACTIVE_VIDEO_COUNT = 6;
+const TRANSITION_ACTIVE_ALLOWANCE = 2;
+const MAX_ACTIVE_VIDEO_COUNT =
+  TARGET_ACTIVE_VIDEO_COUNT + TRANSITION_ACTIVE_ALLOWANCE;
+const OBSERVER_THRESHOLDS = [0, 0.01, 0.08, 0.2, 0.4, 0.6, 1];
+const OBSERVER_ROOT_MARGIN = "800px 0px 800px 0px";
 
 type Project = {
   name: string;
@@ -17,6 +33,8 @@ type Project = {
   cardMediaLink?: string;
   /** Scale local preview video (1.2 ≈ 20% zoom-in; crops edges) */
   previewVideoScale?: number;
+  /** CSS object-position for video preview (e.g. "bottom" to show lower crop) */
+  previewVideoObjectPosition?: string;
   /** Playback speed for local preview (e.g. 2 = 2×) */
   previewPlaybackRate?: number;
   repo?: string;
@@ -30,6 +48,8 @@ type Project = {
   previewImageObjectPosition?: string;
   /** Scale image preview (1.1 = 10% zoom; clipped to tile) */
   previewImageScale?: number;
+  /** If true, use taller preview band (same as video cards) for this image */
+  previewImageTall?: boolean;
   /** If true, do not show the 📷 link for the main image */
   hideImageLink?: boolean;
 };
@@ -145,8 +165,27 @@ function BigProjectButton({
   );
 }
 
-function ProjectItem({ project }: { project: Project }) {
+function ProjectItem({
+  project,
+  index,
+  onMount,
+  shouldActivateVideo,
+  shouldPrimeVideo,
+  shouldLoadImmediately,
+  onHoverChange,
+}: {
+  project: Project;
+  index: number;
+  onMount?: (index: number, el: HTMLLIElement | null) => void;
+  shouldActivateVideo: boolean;
+  shouldPrimeVideo: boolean;
+  shouldLoadImmediately: boolean;
+  onHoverChange?: (index: number | null) => void;
+}) {
   const [isTitleHovered, setIsTitleHovered] = useState(false);
+  const liRef = useRef<HTMLLIElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const pauseTimeoutRef = useRef<number | null>(null);
   const imageExtensionPattern = /\.(png|jpe?g|webp|gif|avif|svg)$/i;
   const isUsableLink = (url?: string) =>
     Boolean(url && url.trim() !== "" && url.trim() !== "#");
@@ -174,6 +213,11 @@ function ProjectItem({ project }: { project: Project }) {
       /\.(mp4|webm|mov)$/i.test(project.video) &&
       project.video) ||
     null;
+  const previewVideoType = localPreviewVideo?.toLowerCase().endsWith(".webm")
+    ? "video/webm"
+    : localPreviewVideo?.toLowerCase().endsWith(".mov")
+      ? "video/quicktime"
+      : "video/mp4";
   const primaryLink = isUsableLink(project.link)
     ? project.link
     : previewMedia && isUsableLink(previewMedia)
@@ -182,36 +226,113 @@ function ProjectItem({ project }: { project: Project }) {
   const mediaLink = isUsableLink(project.cardMediaLink)
     ? project.cardMediaLink!
     : primaryLink;
+  const isoDate = (() => {
+    const [mm, yyyy] = project.date.split(".");
+    if (!mm || !yyyy) return undefined;
+    return `${yyyy}-${mm.padStart(2, "0")}`;
+  })();
   /**
    * Keep previews silent + clean: muted autoplay with no controls.
    * The entire preview surface can then be a single click target.
    */
   const zoom = project.previewVideoScale ?? 1;
   const playbackRate = project.previewPlaybackRate ?? 1;
+  const videoStyle: CSSProperties = {
+    ...(project.previewVideoObjectPosition && {
+      objectPosition: project.previewVideoObjectPosition,
+    }),
+    ...(zoom !== 1 && {
+      transform: `scale(${zoom})`,
+      transformOrigin:
+        project.previewVideoObjectPosition === "bottom"
+          ? "center bottom"
+          : "center center",
+    }),
+  };
+
+  useEffect(() => {
+    const videoEl = videoRef.current;
+    if (!videoEl || (!shouldPrimeVideo && !shouldLoadImmediately)) return;
+
+    // Force the browser to begin fetching/decoding near-viewport previews.
+    if (videoEl.networkState === HTMLMediaElement.NETWORK_EMPTY) {
+      videoEl.load();
+    }
+  }, [shouldPrimeVideo, shouldLoadImmediately]);
+
+  useEffect(() => {
+    const videoEl = videoRef.current;
+    if (!videoEl) return;
+
+    if (pauseTimeoutRef.current !== null) {
+      window.clearTimeout(pauseTimeoutRef.current);
+      pauseTimeoutRef.current = null;
+    }
+
+    if (playbackRate !== 1) {
+      videoEl.playbackRate = playbackRate;
+    }
+
+    if (shouldActivateVideo) {
+      if (videoEl.networkState === HTMLMediaElement.NETWORK_EMPTY) {
+        videoEl.load();
+      }
+      const playPromise = videoEl.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(() => {
+          // Silent fail: autoplay can be blocked in some contexts.
+        });
+      }
+      return;
+    }
+    // Small grace period prevents play/pause thrash during quick scrolling.
+    pauseTimeoutRef.current = window.setTimeout(() => {
+      videoEl.pause();
+      pauseTimeoutRef.current = null;
+    }, 180);
+
+    return () => {
+      if (pauseTimeoutRef.current !== null) {
+        window.clearTimeout(pauseTimeoutRef.current);
+        pauseTimeoutRef.current = null;
+      }
+    };
+  }, [shouldActivateVideo, playbackRate]);
+
+  useEffect(() => {
+    if (onMount) onMount(index, liRef.current);
+    return () => {
+      if (onMount) onMount(index, null);
+    };
+  }, [index, onMount]);
+
   const videoNode = (
     <video
+      ref={videoRef}
       className="project-media project-media-video"
-      autoPlay
+      autoPlay={shouldActivateVideo}
       muted
       loop
       playsInline
-      preload="metadata"
-      aria-label={`${project.name} preview`}
-      style={
-        zoom !== 1
-          ? {
-              transform: `scale(${zoom})`,
-              transformOrigin: "center center",
-            }
-          : undefined
+      preload={
+        shouldLoadImmediately || shouldPrimeVideo || shouldActivateVideo
+          ? "auto"
+          : "none"
       }
-      onLoadedMetadata={(e) => {
-        if (playbackRate !== 1) {
-          (e.target as HTMLVideoElement).playbackRate = playbackRate;
+      aria-label={`${project.name} preview`}
+      onCanPlay={() => {
+        const videoEl = videoRef.current;
+        if (!videoEl || !shouldActivateVideo) return;
+        const playPromise = videoEl.play();
+        if (playPromise && typeof playPromise.catch === "function") {
+          playPromise.catch(() => {
+            // Silent fail: autoplay can be blocked in some contexts.
+          });
         }
       }}
+      style={Object.keys(videoStyle).length ? videoStyle : undefined}
     >
-      <source src={localPreviewVideo!} type="video/mp4" />
+      <source src={localPreviewVideo!} type={previewVideoType} />
     </video>
   );
   /** Wrapper keeps tile size fixed while scale() crops edges (same dimensions as other cards). */
@@ -223,7 +344,15 @@ function ProjectItem({ project }: { project: Project }) {
     );
 
   return (
-    <li className="project-card">
+    <li
+      ref={liRef}
+      data-project-index={index}
+      className="project-card"
+      onMouseEnter={() => onHoverChange?.(index)}
+      onMouseLeave={() => onHoverChange?.(null)}
+      itemScope
+      itemType="https://schema.org/CreativeWork"
+    >
       {localPreviewVideo ? (
         mediaLink ? (
           <a
@@ -231,6 +360,7 @@ function ProjectItem({ project }: { project: Project }) {
             className="project-media-link project-media-shell project-media-shell--video"
             target="_blank"
             rel="noopener noreferrer"
+            itemProp="url"
           >
             {previewVideoEl}
           </a>
@@ -260,6 +390,9 @@ function ProjectItem({ project }: { project: Project }) {
               alt={`${project.name} preview`}
               fill
               sizes="(max-width: 800px) 100vw, 50vw"
+              priority={shouldLoadImmediately}
+              loading={shouldLoadImmediately ? "eager" : "lazy"}
+              fetchPriority={shouldLoadImmediately ? "high" : "auto"}
               className="project-media"
               style={Object.keys(imageStyle).length ? imageStyle : undefined}
             />
@@ -270,17 +403,21 @@ function ProjectItem({ project }: { project: Project }) {
             ) : (
               imageEl
             );
+          const tallClass = project.previewImageTall
+            ? " project-media--tall"
+            : "";
           return primaryLink ? (
             <a
               href={primaryLink}
-              className="project-media-link"
+              className={`project-media-link${tallClass}`}
               target="_blank"
               rel="noopener noreferrer"
+              itemProp="url"
             >
               {wrapped}
             </a>
           ) : (
-            <div className="project-media-shell">{wrapped}</div>
+            <div className={`project-media-shell${tallClass}`}>{wrapped}</div>
           );
         })()
       ) : primaryLink ? (
@@ -325,12 +462,17 @@ function ProjectItem({ project }: { project: Project }) {
               className="project-title"
               target="_blank"
               rel="noopener noreferrer"
+              itemProp="url"
             >
-              {project.name}
+              <span itemProp="name">{project.name}</span>
               <span className="project-arrow">↗</span>
             </a>
           ) : (
-            <span className="project-title" style={{ cursor: "default" }}>
+            <span
+              className="project-title"
+              style={{ cursor: "default" }}
+              itemProp="name"
+            >
               {project.name}
             </span>
           )}
@@ -410,10 +552,18 @@ function ProjectItem({ project }: { project: Project }) {
                   </a>
                 ))}
             </div>
-            <span className="project-date">{project.date}</span>
+            <time
+              className="project-date"
+              dateTime={isoDate}
+              itemProp="dateCreated"
+            >
+              {project.date}
+            </time>
           </div>
         </div>
-        <span className="project-desc">{project.description}</span>
+        <span className="project-desc" itemProp="description">
+          {project.description}
+        </span>
       </div>
     </li>
   );
@@ -421,6 +571,28 @@ function ProjectItem({ project }: { project: Project }) {
 
 export default function WorkIndex() {
   const [showOnlyFeatured, setShowOnlyFeatured] = useState(false);
+  const [hoveredProjectIndex, setHoveredProjectIndex] = useState<number | null>(
+    null,
+  );
+  const [secondaryHoveredProjectIndex, setSecondaryHoveredProjectIndex] =
+    useState<number | null>(null);
+  const hoverGraceTimeoutRef = useRef<number | null>(null);
+  const secondaryHoverGraceTimeoutRef = useRef<number | null>(null);
+  const hoveredProjectIndexRef = useRef<number | null>(null);
+  const secondaryHoveredProjectIndexRef = useRef<number | null>(null);
+  const [intersectionMap, setIntersectionMap] = useState<
+    Record<
+      number,
+      { ratio: number; top: number; bottom: number; isIntersecting: boolean }
+    >
+  >({});
+  const cardRefs = useRef<Record<number, HTMLLIElement | null>>({});
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  const projectsWebPageJsonLd = webpageJsonLd(
+    "Projects | Alex Shibu",
+    "Projects, jobs, and experiences Alex Shibu has built and shipped across AI, product, web3, and more.",
+    "/projects",
+  );
 
   const projects = [
     {
@@ -428,17 +600,17 @@ export default function WorkIndex() {
       description:
         "Created a film on why young people should build and won first place in a nationwide competition. Led to invite from Desjardins Dream the Impossible event in Montreal.I also emceed the event the year after.",
       link: "https://www.ymcagta.org/blog/congratulations-to-the-winners-of-the-youth-for-entrepreneurship-media-contest-powered-by-desjardins", // Add link later
-      date: "03.2022",
+      date: "02.2025",
       video: "https://www.youtube.com/watch?v=mHKDR622pCM", // Add video link later
       repo: "",
       previewVideoLocal: "/projects/placeholders/project%20gala.mp4",
+      previewPlaybackRate: 0.9,
       cardMediaLink:
         "https://www.ymcagta.org/blog/congratulations-to-the-winners-of-the-youth-for-entrepreneurship-media-contest-2025",
       writeup:
         "https://www.ymcagta.org/blog/congratulations-to-the-winners-of-the-youth-for-entrepreneurship-media-contest-2025",
       images: [
         "https://www.linkedin.com/posts/alexshibu_dreamtheimpossible-reverlimpossible-activity-7077475467871600640-FrKP/",
-        "/projects/placeholders/project%20chips.mp4",
       ],
     },
     {
@@ -452,7 +624,8 @@ export default function WorkIndex() {
       writeup: "",
       image: "/projects/placeholders/project%20YAC.png",
       previewImageObjectPosition: "bottom",
-      previewImageScale: 1.1,
+      previewImageScale: 1.2,
+      previewImageTall: true,
       cardMediaLink:
         "https://www.ymcagta.org/about-us/youth-advisory-committee",
       images: [
@@ -479,6 +652,8 @@ export default function WorkIndex() {
       date: "02.2022",
       repo: "",
       image: "/projects/placeholders/project%20stem.png",
+      previewImageScale: 1.1,
+      previewImageTall: true,
       video: "",
       writeup: "",
     },
@@ -487,7 +662,7 @@ export default function WorkIndex() {
       description:
         "Children First Canada (Sep 2022 – Jul 2023). Developed a policy brief on youth mental health crises with actionable recommendations for the Canadian government; advocated for a government-funded mental health app; proposed regulations for non-scientific mental health apps (aligned with over-the-counter drug standards); conceptualized a certification for sub-specialist mental health providers.",
       link: "https://childrenfirstcanada.org/wp-content/uploads/2025/08/Raising-Canada-Report-2025-UPDATED.pdf",
-      date: "09.2022",
+      date: "04.2023",
       repo: "",
       previewVideoLocal: "/projects/placeholders/project%20children.mp4",
       previewVideoScale: 2,
@@ -519,7 +694,7 @@ export default function WorkIndex() {
       description:
         "Created and led EasyHacks, a hackathon rejects. It started in an email thread from UBC nwhacks. It transformed into a 20 person operation, from military veterans to high school students in Nepal, with 170+ participants and $8K in prizes raised from sponsors.",
       link: "https://archive.ph/2mqxj",
-      date: "01.2025",
+      date: "03.2025",
       repo: "",
       previewVideoLocal: "/projects/placeholders/easyhacks.mp4",
       previewVideoScale: 1.4,
@@ -537,7 +712,8 @@ export default function WorkIndex() {
       repo: "https://github.com/e-ndorfin/luma",
       previewVideoLocal: "/projects/placeholders/project%20luma.mp4",
       previewVideoScale: 1.2,
-      previewPlaybackRate: 4,
+      previewVideoObjectPosition: "bottom",
+      previewPlaybackRate: 3.6,
       cardMediaLink:
         "https://devpost.com/software/luma-luminous-understanding-through-mindful-ai",
       video: "https://www.youtube.com/watch?v=neO-K2qJo6Y&t=20s",
@@ -548,7 +724,7 @@ export default function WorkIndex() {
       description:
         "Built an internal Slack AI (BenchBot) prototype to streamline HR/business communications and modeled a $4.5M annual savings scenario.  BenchSci's team size doubled from 200 to 400+ employees in 2022, repetition of common administrative, onboarding, HR, and technical questions asked by new and existing employees have surged. Repetitive queries and information overload are hindering BenchSci's productivity up to 104,000 hours annually.",
       link: "https://docs.google.com/presentation/d/1cwFMnute4f_i65IaNJsnTHUXk0QaryH_FKPFqDETxKM/edit?usp=sharing",
-      date: "12.2022",
+      date: "06.2023",
       repo: "",
       previewVideoLocal: "/projects/placeholders/project%20benchsci.mp4",
       cardMediaLink:
@@ -591,12 +767,25 @@ export default function WorkIndex() {
       date: "09.2024",
       repo: "",
       previewVideoLocal: "/projects/placeholders/project%20coachmi.mp4",
-      previewPlaybackRate: 2,
+      previewPlaybackRate: 1.5,
       cardMediaLink:
         "https://web.archive.org/web/20240924161229/http://www.coachmi.co/",
       video: "https://www.youtube.com/watch?v=xWqw_l3Nh2M",
       writeup:
         "https://docs.google.com/presentation/d/1kiCEzGCJV-VriZXeSeexSCXZerS3k28HrKrysDQ4vbE/edit?slide=id.g26767847792_2_120#slide=id.g26767847792_2_120",
+    },
+    {
+      name: "Character Animation",
+      description:
+        "I made a short animated short end to end. full created by me",
+      link: "https://www.youtube.com/watch?v=POYhP8TYyBM",
+      date: "06.2021",
+      repo: "",
+      previewVideoLocal: "/projects/placeholders/project%20animation.mp4",
+      previewPlaybackRate: 1.5,
+      cardMediaLink: "https://www.youtube.com/watch?v=POYhP8TYyBM",
+      video: "https://www.youtube.com/watch?v=POYhP8TYyBM",
+      writeup: "",
     },
     {
       name: "Circus Clownz NFT",
@@ -606,13 +795,12 @@ export default function WorkIndex() {
       date: "04.2021",
       repo: "https://github.com/alexshibu1/CircusClownz",
       repoSecondary: "https://github.com/alexshibu1/dAPPS",
-      previewVideoLocal: "/projects/placeholders/project%20clownz.mp4",
+      previewVideoLocal: "/projects/placeholders/Clownz.mp4",
       cardMediaLink: "/essay/circusclownz",
       video: "https://youtu.be/_ycxR8aP980?si=oeGxGrFIYkKJ_gkC",
       writeup:
         "https://docs.google.com/presentation/d/1EGrDyCZGxc3NRiDLo3721Ev--xtsH0U9p3JEGijZNIs/edit?slide=id.p#slide=id.p",
       images: [
-        "/projects/placeholders/Clownz.mov",
         "https://drive.google.com/file/d/1GdstHAo_J6shml5zO7uMGuMrhWa8OGyF/view?usp=sharing",
       ],
       featured: true,
@@ -664,9 +852,10 @@ export default function WorkIndex() {
       description:
         "Built an AI-powered sleep-music generator using K-means clustering for personalized audio. The app uses artificial intelligence and K-means clustering to create personalized music for insomniacs, based on their sleep routines and music preferences. Hackathon finalist.",
       link: "https://www.figma.com/design/WJ7zap2lEOHglmLiuYWH2K/Cyberpunk-Music-App--Community-?node-id=0-1&t=dGlw3IO6XB8Jvufx-1",
-      date: "04.2024",
+      date: "04.2023",
       repo: "",
       previewVideoLocal: "/projects/placeholders/cuddle.mp4",
+      previewVideoScale: 1.1,
       cardMediaLink:
         "https://www.figma.com/design/WJ7zap2lEOHglmLiuYWH2K/Cyberpunk-Music-App--Community-?node-id=0-1&t=dGlw3IO6XB8Jvufx-1",
       video: "",
@@ -678,7 +867,7 @@ export default function WorkIndex() {
       description:
         "Designed a consulting prototype for CIBC Rewards using Figma, modeling user engagement and projecting lift. Solved the problem of Gen Z customers switching banks, with only 50% remaining loyal to their parents bank. Worked to increase Gen Z adoption of CIBC projecting up to 77% increase in Gen Z adoption through prototype user testing and survey analysis. Projected to save CIBC $4.5M annually.",
       link: "https://www.figma.com/file/X8pq2OGANVnQhQkyE5bTzR/CIBC-Rewards-Design",
-      date: "03.2023",
+      date: "12.2022",
       repo: "",
       previewVideoLocal: "/projects/placeholders/projectCIBC.mp4",
       cardMediaLink:
@@ -708,6 +897,8 @@ export default function WorkIndex() {
       video: "",
       writeup: "",
       image: "/projects/placeholders/family%20guy.jpg",
+      previewImageScale: 1.1,
+      previewImageTall: true,
     },
     {
       name: "Web3 Message Board",
@@ -718,6 +909,8 @@ export default function WorkIndex() {
       repo: "https://github.com/alexshibu1/web3-message-board",
       image: "/projects/placeholders/project%20Web3.png",
       hideImageLink: true,
+      previewImageScale: 1.1,
+      previewImageTall: true,
       video: "",
       writeup: "",
     },
@@ -726,7 +919,7 @@ export default function WorkIndex() {
       description:
         "Restored full usability to iOS 7 devices by engineering a downgrade/jailbreak to iOS 6, fully documented for the community. Used iOS 6, Jailbreak, and Cydia tools.",
       link: "https://x.com/AlexShibu2/status/2032561523973882195?s=20",
-      date: "10.2025",
+      date: "11.2025",
       repo: "",
       previewVideoLocal: "/projects/placeholders/project%20iphone%204.mp4",
       cardMediaLink: "https://x.com/AlexShibu2/status/2032561523973882195?s=20",
@@ -745,6 +938,7 @@ export default function WorkIndex() {
       image: "/projects/gaming.png",
       previewImageObjectPosition: "top",
       previewImageScale: 1.1,
+      previewImageTall: true,
     },
     {
       name: "Bath Bombs for Vanauley",
@@ -758,6 +952,7 @@ export default function WorkIndex() {
       image: "/projects/bathbombs.png",
       previewImageObjectPosition: "top",
       previewImageScale: 1.2,
+      previewImageTall: true,
     },
     {
       name: "Cube Runner2",
@@ -789,6 +984,7 @@ export default function WorkIndex() {
       date: "05.2023",
       repo: "",
       previewVideoLocal: "/projects/placeholders/project%20Ethiopian.mp4",
+      previewVideoScale: 1.1,
       cardMediaLink:
         "https://www.linkedin.com/in/alexshibu/details/projects/1635528864697/single-media-viewer?type=DOCUMENT",
       video: "",
@@ -803,6 +999,7 @@ export default function WorkIndex() {
       repo: "",
       previewVideoLocal: "/projects/placeholders/project%20diabities.mp4",
       previewVideoScale: 1.1,
+      previewPlaybackRate: 0.9,
       cardMediaLink:
         "https://alexshibu.medium.com/trasforming-the-world-with-machine-learnnig-3467389abb0a",
       video: "",
@@ -854,8 +1051,303 @@ export default function WorkIndex() {
   // Count featured projects
   const featuredCount = projects.filter((p) => p.featured).length;
 
+  const hasLocalPreviewVideo = (project: Project) =>
+    Boolean(
+      (project.previewVideoLocal &&
+        project.previewVideoLocal.startsWith("/") &&
+        /\.(mp4|webm|mov)$/i.test(project.previewVideoLocal)) ||
+      (project.video &&
+        project.video.startsWith("/") &&
+        /\.(mp4|webm|mov)$/i.test(project.video)),
+    );
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        setIntersectionMap((prev) => {
+          const next = { ...prev };
+          for (const entry of entries) {
+            const target = entry.target as HTMLElement;
+            const index = Number(target.dataset.projectIndex);
+            if (!Number.isFinite(index)) continue;
+            next[index] = {
+              ratio: entry.isIntersecting ? entry.intersectionRatio : 0,
+              top: entry.boundingClientRect.top,
+              bottom: entry.boundingClientRect.bottom,
+              isIntersecting: entry.isIntersecting,
+            };
+          }
+          return next;
+        });
+      },
+      {
+        threshold: OBSERVER_THRESHOLDS,
+        // Observe a bit ahead of viewport so upcoming videos can be primed.
+        rootMargin: OBSERVER_ROOT_MARGIN,
+      },
+    );
+    observerRef.current = observer;
+
+    Object.values(cardRefs.current).forEach((node) => {
+      if (node) observer.observe(node);
+    });
+
+    return () => {
+      observer.disconnect();
+      observerRef.current = null;
+    };
+  }, [sortedProjects.length, showOnlyFeatured]);
+
+  const activeVideoIndexes = useMemo(() => {
+    if (Object.keys(intersectionMap).length === 0) {
+      const firstVisibleBudget = sortedProjects
+        .map((project, index) => ({ project, index }))
+        .filter(({ project }) => hasLocalPreviewVideo(project))
+        .slice(0, TARGET_ACTIVE_VIDEO_COUNT)
+        .map(({ index }) => index);
+      return new Set(firstVisibleBudget);
+    }
+
+    const viewportHeight =
+      typeof window !== "undefined"
+        ? window.innerHeight
+        : Number.POSITIVE_INFINITY;
+
+    const candidates = Object.entries(intersectionMap)
+      .map(([indexStr, entry]) => ({
+        index: Number(indexStr),
+        ...entry,
+        inViewport: entry.top < viewportHeight && entry.bottom > 0,
+        distanceToViewport:
+          entry.top >= 0
+            ? entry.top
+            : entry.bottom <= 0
+              ? Math.abs(entry.bottom)
+              : 0,
+      }))
+      .filter(
+        ({ index, isIntersecting }) =>
+          isIntersecting &&
+          Boolean(sortedProjects[index]) &&
+          hasLocalPreviewVideo(sortedProjects[index]),
+      )
+      .sort((a, b) => {
+        if (a.inViewport !== b.inViewport) return a.inViewport ? -1 : 1;
+        if (a.ratio !== b.ratio) return b.ratio - a.ratio;
+        if (a.distanceToViewport !== b.distanceToViewport) {
+          return a.distanceToViewport - b.distanceToViewport;
+        }
+        return a.top - b.top;
+      });
+
+    const inViewport = candidates
+      .filter((c) => c.inViewport)
+      .map(({ index }) => index);
+    const nearViewport = candidates
+      .filter((c) => !c.inViewport)
+      .map(({ index }) => index);
+
+    const base = inViewport.slice(0, TARGET_ACTIVE_VIDEO_COUNT);
+    if (base.length < TARGET_ACTIVE_VIDEO_COUNT) {
+      base.push(
+        ...nearViewport.slice(0, TARGET_ACTIVE_VIDEO_COUNT - base.length),
+      );
+    }
+
+    const transition = nearViewport.slice(0, TRANSITION_ACTIVE_ALLOWANCE);
+    let activeWithTransition = Array.from(
+      new Set([...base, ...transition]),
+    ).slice(0, MAX_ACTIVE_VIDEO_COUNT);
+
+    // Hovered card is absolute priority for active playback.
+    const hoverPriorityIndexes: number[] = [];
+    if (
+      hoveredProjectIndex !== null &&
+      sortedProjects[hoveredProjectIndex] &&
+      hasLocalPreviewVideo(sortedProjects[hoveredProjectIndex])
+    ) {
+      hoverPriorityIndexes.push(hoveredProjectIndex);
+    }
+    if (
+      secondaryHoveredProjectIndex !== null &&
+      sortedProjects[secondaryHoveredProjectIndex] &&
+      hasLocalPreviewVideo(sortedProjects[secondaryHoveredProjectIndex]) &&
+      secondaryHoveredProjectIndex !== hoveredProjectIndex
+    ) {
+      hoverPriorityIndexes.push(secondaryHoveredProjectIndex);
+    }
+    if (hoverPriorityIndexes.length > 0) {
+      activeWithTransition = [
+        ...hoverPriorityIndexes,
+        ...activeWithTransition.filter((i) => !hoverPriorityIndexes.includes(i)),
+      ].slice(0, MAX_ACTIVE_VIDEO_COUNT);
+    }
+
+    return new Set(activeWithTransition);
+  }, [
+    hoveredProjectIndex,
+    secondaryHoveredProjectIndex,
+    intersectionMap,
+    sortedProjects,
+  ]);
+
+  const primedVideoIndexes = useMemo(() => {
+    if (Object.keys(intersectionMap).length === 0) {
+      const firstVisibleBudget = sortedProjects
+        .map((project, index) => ({ project, index }))
+        .filter(({ project }) => hasLocalPreviewVideo(project))
+        .slice(0, TARGET_ACTIVE_VIDEO_COUNT)
+        .map(({ index }) => index);
+      return new Set(firstVisibleBudget);
+    }
+
+    const candidates = Object.entries(intersectionMap)
+      .map(([indexStr, entry]) => ({ index: Number(indexStr), ...entry }))
+      .filter(
+        ({ index, isIntersecting }) =>
+          isIntersecting &&
+          Boolean(sortedProjects[index]) &&
+          hasLocalPreviewVideo(sortedProjects[index]),
+      )
+      .map(({ index }) => index);
+
+    // Hovered card is absolute priority for priming as well.
+    const primedPriorityIndexes: number[] = [];
+    if (
+      hoveredProjectIndex !== null &&
+      sortedProjects[hoveredProjectIndex] &&
+      hasLocalPreviewVideo(sortedProjects[hoveredProjectIndex])
+    ) {
+      primedPriorityIndexes.push(hoveredProjectIndex);
+    }
+    if (
+      secondaryHoveredProjectIndex !== null &&
+      sortedProjects[secondaryHoveredProjectIndex] &&
+      hasLocalPreviewVideo(sortedProjects[secondaryHoveredProjectIndex]) &&
+      secondaryHoveredProjectIndex !== hoveredProjectIndex
+    ) {
+      primedPriorityIndexes.push(secondaryHoveredProjectIndex);
+    }
+
+    return new Set([...primedPriorityIndexes, ...candidates]);
+  }, [
+    hoveredProjectIndex,
+    secondaryHoveredProjectIndex,
+    intersectionMap,
+    sortedProjects,
+  ]);
+
+  const setProjectRef = useCallback((index: number, node: HTMLLIElement | null) => {
+    const prevNode = cardRefs.current[index];
+    if (prevNode && observerRef.current) {
+      observerRef.current.unobserve(prevNode);
+    }
+
+    cardRefs.current[index] = node;
+
+    if (node && observerRef.current) {
+      observerRef.current.observe(node);
+    }
+  }, []);
+
+  const handleHoverChange = (index: number | null) => {
+    if (hoverGraceTimeoutRef.current !== null) {
+      window.clearTimeout(hoverGraceTimeoutRef.current);
+      hoverGraceTimeoutRef.current = null;
+    }
+
+    // Enter: promote immediately.
+    if (index !== null) {
+      const currentPrimary = hoveredProjectIndexRef.current;
+      if (
+        currentPrimary !== null &&
+        currentPrimary !== index &&
+        sortedProjects[currentPrimary] &&
+        hasLocalPreviewVideo(sortedProjects[currentPrimary])
+      ) {
+        if (secondaryHoverGraceTimeoutRef.current !== null) {
+          window.clearTimeout(secondaryHoverGraceTimeoutRef.current);
+          secondaryHoverGraceTimeoutRef.current = null;
+        }
+        secondaryHoveredProjectIndexRef.current = currentPrimary;
+        setSecondaryHoveredProjectIndex(currentPrimary);
+        secondaryHoverGraceTimeoutRef.current = window.setTimeout(() => {
+          if (secondaryHoveredProjectIndexRef.current === currentPrimary) {
+            secondaryHoveredProjectIndexRef.current = null;
+            setSecondaryHoveredProjectIndex(null);
+          }
+          secondaryHoverGraceTimeoutRef.current = null;
+        }, 10000);
+      }
+      hoveredProjectIndexRef.current = index;
+      setHoveredProjectIndex(index);
+      return;
+    }
+
+    // Leave: keep hovered priority alive for 10s.
+    if (hoveredProjectIndexRef.current !== null) {
+      const lockedIndex = hoveredProjectIndexRef.current;
+      hoverGraceTimeoutRef.current = window.setTimeout(() => {
+        if (hoveredProjectIndexRef.current === lockedIndex) {
+          hoveredProjectIndexRef.current = null;
+          setHoveredProjectIndex(null);
+        }
+        hoverGraceTimeoutRef.current = null;
+      }, 10000);
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (hoverGraceTimeoutRef.current !== null) {
+        window.clearTimeout(hoverGraceTimeoutRef.current);
+      }
+      if (secondaryHoverGraceTimeoutRef.current !== null) {
+        window.clearTimeout(secondaryHoverGraceTimeoutRef.current);
+      }
+    };
+  }, []);
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://alexshibu.com/projects#itemlist",
+    name: "Alex Shibu Projects",
+    numberOfItems: sortedProjects.length,
+    itemListElement: sortedProjects.map((project, index) => {
+      const url =
+        project.cardMediaLink && project.cardMediaLink !== "#"
+          ? project.cardMediaLink
+          : project.link && project.link !== "#"
+            ? project.link
+            : "https://alexshibu.com/projects";
+      const absoluteUrl = url.startsWith("/")
+        ? `https://alexshibu.com${url}`
+        : url;
+      return {
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "CreativeWork",
+          name: project.name,
+          description: project.description,
+          url: absoluteUrl,
+        },
+      };
+    }),
+  };
+
   return (
     <main className="page-content">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(projectsWebPageJsonLd),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
       <div
         style={{
           display: "flex",
@@ -878,7 +1370,16 @@ export default function WorkIndex() {
 
       <ul className="projects-list">
         {sortedProjects.map((project, i) => (
-          <ProjectItem key={i} project={project} />
+          <ProjectItem
+            key={i}
+            index={i}
+            project={project}
+            onMount={setProjectRef}
+            shouldActivateVideo={activeVideoIndexes.has(i)}
+            shouldPrimeVideo={primedVideoIndexes.has(i)}
+            shouldLoadImmediately={i < INITIAL_PRIORITY_COUNT}
+            onHoverChange={handleHoverChange}
+          />
         ))}
       </ul>
     </main>

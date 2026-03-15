@@ -3,6 +3,21 @@ import createMDX from "@next/mdx";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
+  async headers() {
+    return [
+      {
+        source: "/projects/placeholders/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            // Balance speed + update safety for frequently tweaked preview assets.
+            value:
+              "public, max-age=86400, s-maxage=604800, stale-while-revalidate=2592000",
+          },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       {
