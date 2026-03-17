@@ -27,6 +27,8 @@ type Project = {
   date: string;
   /** YouTube etc. — 🎥 icon links here */
   video?: string;
+  /** Second YouTube etc. — extra 🎥 icon */
+  videoSecondary?: string;
   /** Local MP4/WebM for looping card preview (optional; else `video` if it’s a /path) */
   previewVideoLocal?: string;
   /** Where the big preview (image/video) links; defaults to `link` */
@@ -524,6 +526,19 @@ function ProjectItem({
                     🎥
                   </a>
                 )}
+              {project.videoSecondary &&
+                project.videoSecondary !== "" &&
+                /^https?:\/\//i.test(project.videoSecondary) && (
+                  <a
+                    href={project.videoSecondary}
+                    className="project-link-icon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Video"
+                  >
+                    🎥
+                  </a>
+                )}
               {project.image &&
                 project.image !== "" &&
                 !project.hideImageLink && (
@@ -596,9 +611,9 @@ export default function WorkIndex() {
 
   const projects = [
     {
-      name: "Youth 4 Entrepreneurship Desjardins x YMCA",
+      name: "Y4E YMCA x Desjardins",
       description:
-        "Created a film on why young people should build and won first place in a nationwide competition. Led to invite from Desjardins Dream the Impossible event in Montreal.I also emceed the event the year after.",
+        "Created a film on why young people should build and won first place in the nationwide youth for entrepreneurship competition. Led to invite from Desjardins Dream the Impossible event in Montreal.I also emceed the event the year after.",
       link: "https://www.ymcagta.org/blog/congratulations-to-the-winners-of-the-youth-for-entrepreneurship-media-contest-powered-by-desjardins", // Add link later
       date: "02.2025",
       video: "https://www.youtube.com/watch?v=mHKDR622pCM", // Add video link later
@@ -635,19 +650,21 @@ export default function WorkIndex() {
     {
       name: "Breakthrough Junior Challenge",
       description:
-        "Top 14% global finalist for the challenge, explaining quantum computing fundamentals, superposition, entanglement, and John Bell's Theorem. Built a video explaining Radioisotope thermoelectric generators that ranked globally among thousands of entries.",
-      link: "https://www.youtube.com/watch?v=vQcW4T5JnPU",
+        "Top 14% global finalist for the challenge. Video 1: quantum computing fundamentals (superposition, entanglement, and John Bell's Theorem). Video 2: Mars rover Radioisotope thermoelectric generators.",
+      link: "https://youtu.be/xuL75NnIcks?si=oU-N7jkcPdNaFPm7",
       date: "06.2021",
       video: "https://www.youtube.com/watch?v=vQcW4T5JnPU",
+      videoSecondary: "https://youtu.be/xuL75NnIcks?si=oU-N7jkcPdNaFPm7",
       repo: "",
       writeup: "",
       previewVideoLocal: "/projects/placeholders/project%20quantum.mp4",
       previewVideoScale: 1.1,
+      cardMediaLink: "https://www.youtube.com/watch?v=vQcW4T5JnPU",
     },
     {
-      name: "Google Ads & Analytics Team",
+      name: "STEM Fellowship Data Analytics",
       description:
-        "STEM Fellowship (Feb 2022). Wrote monthly SC reports using Google Ads and Google Analytics data, including conclusions from statistical testing; monthly social media reports with statistical comparisons across platforms; used Plerdy to analyze the SF website for optimization and SEO.",
+        "STEM Fellowship (Feb 2022). I did data analytics for the team. Wrote monthly SC reports using Google Ads and Google Analytics data, including conclusions from statistical testing; monthly social media reports with statistical comparisons across platforms; used Plerdy to analyze everything from website to social media, Ads and calcualte every possible metric to derive insights",
       link: "#",
       date: "02.2022",
       repo: "",
@@ -1179,7 +1196,9 @@ export default function WorkIndex() {
     if (hoverPriorityIndexes.length > 0) {
       activeWithTransition = [
         ...hoverPriorityIndexes,
-        ...activeWithTransition.filter((i) => !hoverPriorityIndexes.includes(i)),
+        ...activeWithTransition.filter(
+          (i) => !hoverPriorityIndexes.includes(i),
+        ),
       ].slice(0, MAX_ACTIVE_VIDEO_COUNT);
     }
 
@@ -1237,18 +1256,21 @@ export default function WorkIndex() {
     sortedProjects,
   ]);
 
-  const setProjectRef = useCallback((index: number, node: HTMLLIElement | null) => {
-    const prevNode = cardRefs.current[index];
-    if (prevNode && observerRef.current) {
-      observerRef.current.unobserve(prevNode);
-    }
+  const setProjectRef = useCallback(
+    (index: number, node: HTMLLIElement | null) => {
+      const prevNode = cardRefs.current[index];
+      if (prevNode && observerRef.current) {
+        observerRef.current.unobserve(prevNode);
+      }
 
-    cardRefs.current[index] = node;
+      cardRefs.current[index] = node;
 
-    if (node && observerRef.current) {
-      observerRef.current.observe(node);
-    }
-  }, []);
+      if (node && observerRef.current) {
+        observerRef.current.observe(node);
+      }
+    },
+    [],
+  );
 
   const handleHoverChange = (index: number | null) => {
     if (hoverGraceTimeoutRef.current !== null) {
