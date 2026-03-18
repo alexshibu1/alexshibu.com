@@ -706,6 +706,22 @@ export default function WorkIndex() {
       ],
     },
     {
+      name: "Recover the Relic Campaign",
+      description:
+        "Led end to end production and campaign strategy for the Recover the Relic campaign. Drove 80K+ cumulative views across platforms. A fun side project for church.",
+      link: "https://www.instagram.com/reel/DUB6-6hjtkp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      date: "01.2026",
+      repo: "",
+      previewVideoLocal: "/projects/placeholders/project%20relic.mp4",
+      previewVideoScale: 1.05,
+      previewVideoObjectPosition: "bottom right",
+      cardMediaLink:
+        "https://www.instagram.com/reel/DUB6-6hjtkp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      video:
+        "https://www.instagram.com/reel/DUB6-6hjtkp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      writeup: "",
+    },
+    {
       name: "WagerAI",
       description:
         "The Polymarket for focus. A command terminal for deep work. Open a position task, add liquidity, and execute. To-dos with real stakes, a dashboard of portfolio and earnings, and a marketplace to see friends' positions.",
