@@ -43,6 +43,8 @@ type Project = {
   /** Second repo (e.g. umbrella / archive) — extra 💻 */
   repoSecondary?: string;
   writeup?: string;
+  /** Second write-up — extra ✍️ */
+  writeupSecondary?: string;
   featured?: boolean;
   image?: string;
   images?: string[];
@@ -513,6 +515,17 @@ function ProjectItem({
                   ✍️
                 </a>
               )}
+              {project.writeupSecondary && project.writeupSecondary !== "" && (
+                <a
+                  href={project.writeupSecondary}
+                  className="project-link-icon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Write-up"
+                >
+                  ✍️
+                </a>
+              )}
               {project.video &&
                 project.video !== "" &&
                 /^https?:\/\//i.test(project.video) && (
@@ -709,7 +722,7 @@ export default function WorkIndex() {
     {
       name: "PerplexityAI - easyhacks.org",
       description:
-        "Created and led EasyHacks, a hackathon rejects. It started in an email thread from UBC nwhacks. It transformed into a 20 person operation, from military veterans to high school students in Nepal, with 170+ participants and $8K in prizes raised from sponsors.",
+        "Created and led EasyHacks, a hackathon rejects. It started in an email thread from UBC nwhacks. It transformed into a 20 person operation, from military veterans to high school students in Nepal, with 170+ participants and $8K in prizes raised from sponsors. Perplexity Campus Strategist (Toronto, ON, Dec 2024 – May 2025): onboarded 300+ students and shared $6K+ in Perplexity Pro credits through demos, showcases, and events; Perplexity was directly integrated into easyHacks to increase retention and demonstrate the value proposition.",
       link: "https://archive.ph/2mqxj",
       date: "03.2025",
       repo: "",
@@ -735,6 +748,36 @@ export default function WorkIndex() {
         "https://devpost.com/software/luma-luminous-understanding-through-mindful-ai",
       video: "https://www.youtube.com/watch?v=neO-K2qJo6Y&t=20s",
       writeup: "",
+    },
+    {
+      name: "Physics Inspired Drilling Simulator (PhiDrillSim) — Product (Remote)",
+      description:
+        "Calgary, AB (Remote). Product, part-time (Jun 2025 – Aug 2025). Mentored directly by founder Dr. Etjaie to understand and model the physics of oilfield drilling systems in MATLAB, contributing to simulation tools for vibration, torque/drag, and well control analysis. Created a technical map of VR/XR adoption across mining, oil & gas, energy, and manufacturing—actionable insights that shaped pilot proposals, identified potential partners, training bodies, and innovation funders.",
+      link: "https://www.linkedin.com/company/phidrillsim/",
+      date: "06.2025",
+      repo: "",
+      previewVideoLocal: "/projects/placeholders/phidrillsim.mp4",
+      previewVideoScale: 1.05,
+      video: "",
+      writeup:
+        "https://alexshibu.notion.site/VR-Applications-in-the-Canadian-Energy-Sector-231305d8d24480198f6cc3a98d059b29?pvs=74",
+      writeupSecondary:
+        "https://alexshibu.notion.site/Virtual-Reality-Adoption-Across-Mining-Oil-Gas-Energy-and-Manufacturing-257305d8d2448038ae50eacc3c01986c?pvs=74",
+    },
+    {
+      name: "Research @ Technion",
+      description:
+        "Worked on info-gap decision theory, focusing on economic and financial decision-making using robustness and opportuneness models under deep uncertainty. Collaborated with Professor Yakov Ben-Haim to develop and refine decision models that address the lack of probabilistic data in problems across policy, finance, and credit assessment. Created info-gap models that evaluate Seed and Series A startups for venture capital firms, enhancing decision-making robustness and windfall outcomes to a projected 15% for high-risk investments.",
+      link: "https://www.facebook.com/share/p/1Dmh3huqbC/",
+      date: "06.2024",
+      repo: "",
+      image: "/projects/placeholders/Israel.png",
+      previewImageObjectPosition: "top",
+      previewImageTall: true,
+      previewImageScale: 1.05,
+      video: "",
+      writeup:
+        "https://www.linkedin.com/posts/faculty-of-mechanical-engineering-technion_ackacwacjacxadgacuacraclacwacladgachacoacracwacpaclacv-activity-7225789866289045504-W_SO?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACk8q9ABrmBqQ4wz9R3Ev5JU1iATl26x-5M",
     },
     {
       name: "BenchBot - Internal Slack AI for BenchSci",
@@ -779,7 +822,7 @@ export default function WorkIndex() {
     {
       name: "CoachMi.co",
       description:
-        "Forge your path with Titans, an AI-powered mentorship platform that provides guidance from industry giants. Features custom virtual boardrooms, optimized action roadmaps, and 50+ decision-making frameworks.",
+        "Forge your path with Titans, an AI-powered mentorship platform that provides guidance from industry giants. Features custom virtual boardrooms, optimized action roadmaps, and 50+ decision-making frameworks. Alongside Canadian Gap Year Association's Impact fellowship traveled to bangalore for PMF.",
       link: "https://web.archive.org/web/20240924161229/http://www.coachmi.co/",
       date: "09.2024",
       repo: "",
