@@ -645,7 +645,7 @@ export default function WorkIndex() {
       ],
     },
     {
-      name: "Youth Advisory Committee",
+      name: "Youth Advisory(YAC) YMCA",
       description:
         "Working with the Youth Advisory Committee to provide strategic advice to the YMCA of Greater Toronto's Board of Directors, championing youth voices and strengthening community engagement for young people in the GTA. Grounded in creative problem-solving and emerging technology.",
       link: "https://www.ymcagta.org/about-us/youth-advisory-committee",
@@ -678,7 +678,7 @@ export default function WorkIndex() {
       cardMediaLink: "https://www.youtube.com/watch?v=vQcW4T5JnPU",
     },
     {
-      name: "STEM Fellowship Data Analytics",
+      name: "STEM Fellowship Data Team",
       description:
         "STEM Fellowship (Feb 2022). I did data analytics for the team. Wrote monthly SC reports using Google Ads and Google Analytics data, including conclusions from statistical testing; monthly social media reports with statistical comparisons across platforms; used Plerdy to analyze everything from website to social media, Ads and calculate every possible metric to derive insights",
       link: "#",
@@ -691,7 +691,7 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
-      name: "Young Canadians Parliament Member",
+      name: "Young Canadians Parliament (YCP)",
       description:
         "Children First Canada (Sep 2022 – Jul 2023). Developed a policy brief on youth mental health crises with actionable recommendations for the Canadian government; advocated for a government-funded mental health app; proposed regulations for non-scientific mental health apps (aligned with over-the-counter drug standards); conceptualized a certification for sub-specialist mental health providers.",
       link: "https://childrenfirstcanada.org/wp-content/uploads/2025/08/Raising-Canada-Report-2025-UPDATED.pdf",
@@ -739,7 +739,7 @@ export default function WorkIndex() {
       featured: true,
     },
     {
-      name: "PerplexityAI - easyhacks.org",
+      name: "Perplexity Strategy - easyhacks.org",
       description:
         "Created and led EasyHacks, a hackathon rejects. It started in an email thread from UBC nwhacks. It transformed into a 20 person operation, from military veterans to high school students in Nepal, with 170+ participants and $8K in prizes raised from sponsors. Perplexity Campus Strategist (Toronto, ON, Dec 2024 – May 2025): onboarded 300+ students and shared $6K+ in Perplexity Pro credits through demos, showcases, and events; Perplexity was directly integrated into easyHacks to increase retention and demonstrate the value proposition.",
       link: "https://archive.ph/2mqxj",
@@ -753,7 +753,7 @@ export default function WorkIndex() {
       featured: true,
     },
     {
-      name: "LUMA - AI Meditations [hackathon]",
+      name: "LUMA - AI Meditations [hack]",
       description:
         "LUMA uses generative AI to create a unique, personalized meditation experience, addressing the global mental health crisis with personalized meditation practices for everyone. Built with React, Flask, Cohere, Google Cloud TTS, and pydub.",
       link: "https://devpost.com/software/luma-luminous-understanding-through-mindful-ai",
