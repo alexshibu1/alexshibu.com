@@ -250,7 +250,10 @@ function ProjectItem({
       transformOrigin:
         project.previewVideoObjectPosition === "bottom"
           ? "center bottom"
-          : "center center",
+          : project.previewVideoObjectPosition === "top right" ||
+              project.previewVideoObjectPosition === "bottom right"
+            ? project.previewVideoObjectPosition
+            : "center center",
     }),
   };
 
@@ -626,7 +629,7 @@ export default function WorkIndex() {
     {
       name: "Y4E YMCA x Desjardins",
       description:
-        "Created a film on why young people should build and won first place in the nationwide youth for entrepreneurship competition. Led to invite from Desjardins Dream the Impossible event in Montreal.I also emceed the event the year after.",
+        "Created a film on why young people should build and won first place in the nationwide youth for entrepreneurship competition. Led to invite from Desjardins Dream the Impossible event in Montreal. I also emceed the event the year after.",
       link: "https://www.ymcagta.org/blog/congratulations-to-the-winners-of-the-youth-for-entrepreneurship-media-contest-powered-by-desjardins", // Add link later
       date: "02.2025",
       video: "https://www.youtube.com/watch?v=mHKDR622pCM", // Add video link later
@@ -677,7 +680,7 @@ export default function WorkIndex() {
     {
       name: "STEM Fellowship Data Analytics",
       description:
-        "STEM Fellowship (Feb 2022). I did data analytics for the team. Wrote monthly SC reports using Google Ads and Google Analytics data, including conclusions from statistical testing; monthly social media reports with statistical comparisons across platforms; used Plerdy to analyze everything from website to social media, Ads and calcualte every possible metric to derive insights",
+        "STEM Fellowship (Feb 2022). I did data analytics for the team. Wrote monthly SC reports using Google Ads and Google Analytics data, including conclusions from statistical testing; monthly social media reports with statistical comparisons across platforms; used Plerdy to analyze everything from website to social media, Ads and calculate every possible metric to derive insights",
       link: "#",
       date: "02.2022",
       repo: "",
@@ -708,13 +711,13 @@ export default function WorkIndex() {
     {
       name: "Recover the Relic Campaign",
       description:
-        "Led end to end production and campaign strategy for the Recover the Relic campaign. Drove 80K+ cumulative views across platforms. A fun side project for church.",
+        "Led end to end production and campaign strategy for the Recover the Relic campaign. Drove 80K+ cumulative views across platforms. A fun passion project for church after months of not using my film skills.",
       link: "https://www.instagram.com/reel/DUB6-6hjtkp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       date: "01.2026",
       repo: "",
       previewVideoLocal: "/projects/placeholders/project%20relic.mp4",
-      previewVideoScale: 1.05,
-      previewVideoObjectPosition: "bottom right",
+      previewVideoScale: 1.1,
+      previewVideoObjectPosition: "top right",
       cardMediaLink:
         "https://www.instagram.com/reel/DUB6-6hjtkp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       video:
@@ -722,7 +725,7 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
-      name: "WagerAI",
+      name: "Polymarket for focus",
       description:
         "The Polymarket for focus. A command terminal for deep work. Open a position task, add liquidity, and execute. To-dos with real stakes, a dashboard of portfolio and earnings, and a marketplace to see friends' positions.",
       link: "https://wagerai.vercel.app",
@@ -752,7 +755,7 @@ export default function WorkIndex() {
     {
       name: "LUMA - AI Meditations [hackathon]",
       description:
-        "LUMA uses generative AI to create a unique, personalized meditation experience, addressing the global mental health crisis with personalized meditations practices for everyone. Built with React, Flask, Cohere, Google Cloud TTS, and pydub.",
+        "LUMA uses generative AI to create a unique, personalized meditation experience, addressing the global mental health crisis with personalized meditation practices for everyone. Built with React, Flask, Cohere, Google Cloud TTS, and pydub.",
       link: "https://devpost.com/software/luma-luminous-understanding-through-mindful-ai",
       date: "05.2025",
       repo: "https://github.com/e-ndorfin/luma",
@@ -798,7 +801,7 @@ export default function WorkIndex() {
     {
       name: "BenchBot - Internal Slack AI for BenchSci",
       description:
-        "Built an internal Slack AI (BenchBot) prototype to streamline HR/business communications and modeled a $4.5M annual savings scenario.  BenchSci's team size doubled from 200 to 400+ employees in 2022, repetition of common administrative, onboarding, HR, and technical questions asked by new and existing employees have surged. Repetitive queries and information overload are hindering BenchSci's productivity up to 104,000 hours annually.",
+        "Built an internal Slack AI (BenchBot) prototype to streamline HR/business communications and modeled a $4.5M annual savings scenario.  BenchSci's team size doubled from 200 to 400+ employees in 2022, repetition of common administrative, onboarding, HR, and technical questions asked by new and existing employees has surged. Repetitive queries and information overload are hindering BenchSci's productivity up to 104,000 hours annually.",
       link: "https://docs.google.com/presentation/d/1cwFMnute4f_i65IaNJsnTHUXk0QaryH_FKPFqDETxKM/edit?usp=sharing",
       date: "06.2023",
       repo: "",
@@ -823,7 +826,7 @@ export default function WorkIndex() {
     {
       name: "Avalonn - Voice Agents for SMBs",
       description:
-        "Avalonn is voice agent that answers common inquiries, books jobs, estimate quotes, and escalates emergencies, helping small businesses recover roughly $78 per missed call on average.  Found early stage traction through customer interviews, live demos and onboarding local service businesses in plumbing and HVAC integrating into their existing workflows. Received $25k in AWS credits, participated in DMZ Basecamp and featured in UofT Centre for Entrepreneurship founder showcases. Built using React + Flask + ElevenLabs + OpenAI + Twilio.",
+        "Avalonn is a voice agent that answers common inquiries, books jobs, estimates quotes, and escalates emergencies, helping small businesses recover roughly $78 per missed call on average.  Found early stage traction through customer interviews, live demos and onboarding local service businesses in plumbing and HVAC integrating into their existing workflows. Received $25k in AWS credits, participated in DMZ Basecamp and featured in UofT Centre for Entrepreneurship founder showcases. Built using React + Flask + ElevenLabs + OpenAI + Twilio.",
       link: "https://www.youtube.com/watch?v=qsD2kOopCK4",
       date: "06.2025",
       repo: "",
@@ -838,7 +841,7 @@ export default function WorkIndex() {
     {
       name: "CoachMi.co",
       description:
-        "Forge your path with Titans, an AI-powered mentorship platform that provides guidance from industry giants. Features custom virtual boardrooms, optimized action roadmaps, and 50+ decision-making frameworks. Alongside Canadian Gap Year Association's Impact fellowship traveled to bangalore for PMF.",
+        "Forge your path with Titans, an AI-powered mentorship platform that provides guidance from industry giants. Features custom virtual boardrooms, optimized action roadmaps, and 50+ decision-making frameworks. Alongside Canadian Gap Year Association's Impact fellowship traveled to Bangalore for PMF.",
       link: "https://web.archive.org/web/20240924161229/http://www.coachmi.co/",
       date: "09.2024",
       repo: "",
@@ -866,7 +869,7 @@ export default function WorkIndex() {
     {
       name: "Circus Clownz NFT",
       description:
-        "Hired 2 people, created nfts, social media, and discord community, but did not launch due to the lack of long term utility and the massive market crash of 2022.",
+        "Hired 2 people, created NFTs, social media, and discord community, but did not launch due to the lack of long term utility and the massive market crash of 2022.",
       link: "/essay/circusclownz",
       date: "04.2021",
       repo: "https://github.com/alexshibu1/CircusClownz",
@@ -911,7 +914,7 @@ export default function WorkIndex() {
       ],
     },
     {
-      name: "Bioblox - AI Profile Pictures ",
+      name: "Bioblox - AI Profile Pictures",
       description:
         "Developed a 2-click AI system for professional-quality profile images using Stable Diffusion, serving 50+ users and fine-tuned on 10-12 samples. Transform your profiles with AI generated images for a standout professional presence",
       link: "https://web.archive.org/web/20230722063459/https://bioblox.xyz/",
@@ -941,7 +944,7 @@ export default function WorkIndex() {
     {
       name: "CIBC Rewards - UX Design [TKS]",
       description:
-        "Designed a consulting prototype for CIBC Rewards using Figma, modeling user engagement and projecting lift. Solved the problem of Gen Z customers switching banks, with only 50% remaining loyal to their parents bank. Worked to increase Gen Z adoption of CIBC projecting up to 77% increase in Gen Z adoption through prototype user testing and survey analysis. Projected to save CIBC $4.5M annually.",
+        "Designed a consulting prototype for CIBC Rewards using Figma, modeling user engagement and projecting lift. Solved the problem of Gen Z customers switching banks, with only 50% remaining loyal to their parents' bank. Worked to increase Gen Z adoption of CIBC projecting up to 77% increase in Gen Z adoption through prototype user testing and survey analysis. Projected to save CIBC $4.5M annually.",
       link: "https://www.figma.com/file/X8pq2OGANVnQhQkyE5bTzR/CIBC-Rewards-Design",
       date: "12.2022",
       repo: "",
@@ -1003,7 +1006,7 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
-      name: "Instagram Theme Pages ",
+      name: "Instagram Theme Pages",
       description:
         "Built and grew multiple Instagram theme pages including Bath Bombs For Vanauley (595 followers), Healthy Life Tips (621 followers), and Game Lynxe (739 followers). Received around $500 in free products across channels through partnerships and sponsorships.",
       link: "https://www.instagram.com/bath.bombs.for.vanauley/",
@@ -1033,7 +1036,7 @@ export default function WorkIndex() {
     {
       name: "Cube Runner2",
       description:
-        "Made a impossible cube runner game with radomly generated  levels designed to increase test  reaction times. First Unity game of mine.",
+        "Made an impossible cube runner game with randomly generated levels designed to increase test reaction times. First Unity game of mine.",
       link: "/projects/cube.png",
       date: "08.2019",
       repo: "",
