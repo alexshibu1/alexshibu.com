@@ -51,7 +51,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/aivideo",
+        source: "/aifilms",
         destination:
           "https://docs.google.com/presentation/d/1y6aeqlCFMKFFEhaa4p_Cwgv3zj_8TyVIIhbSX87auPo/edit?usp=sharing",
         permanent: true,
