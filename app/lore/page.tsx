@@ -87,18 +87,6 @@ function inferSortKey(date: string): number {
 
 const LORE: LoreItem[] = [
   {
-    id: "replit-series-d-2026-03",
-    date: "03.2026",
-    line: "Replit Series D — $400M at $9B valuation",
-    more: "Replit announced Series D in Mar 2026: $400M raised at a $9B valuation. Nice marker if you were in the early Wefunder community rounds at a $979M cap.",
-    links: [
-      {
-        label: "Wefunder (my profile)",
-        url: "https://wefunder.com/alexshibu",
-      },
-    ],
-  },
-  {
     id: "y4e-emcee-2025-02",
     date: "02.2025",
     line: "Emceed the Y4E gala",
@@ -131,8 +119,8 @@ const LORE: LoreItem[] = [
   {
     id: "replit-investment-2022-04",
     date: "04.2022",
-    line: "Invested in Replit",
-    more: "Invested in a private round into Replit on Apr 2, 2022. A product I actually used and believed in. At a $979M valuation, on paper it has 6.6x in Mar 2026 they closed Series D at $9B. I later got blocked on X by Amjad for no apparent reason. So a bit of a sour taste in my mouth.",
+    line: "Invested in Replit — later Series D ($400M at $9B)",
+    more: "Invested in a private round into Replit on Apr 2, 2022 (Wefunder community round at a $979M cap). A product I actually used and believed in. In Mar 2026 they announced Series D: $400M raised at a $9B valuation—on paper something like ~6.6× from that cap. I later got blocked on X by Amjad for no apparent reason, so a bit of a sour taste in my mouth.",
     links: [
       {
         label: "Wefunder (my profile)",
@@ -156,7 +144,7 @@ const LORE: LoreItem[] = [
     id: "tks-2022-09",
     date: "09.2022",
     line: "Joined The Knowledge Society (TKS)",
-    more: "A community that opened my eyes to what’s really possible. Pitched and built tech with 200+ innovators, shipped and explored 30+ conferences around the world. Presented projects at Microsoft HQ, Interac, and Sensei Labs. This is where I met some of my best friends and learned to pitch and ship.",
+    more: "A community that opened my eyes to what’s really possible. Pitched and built tech with 200+ innovators, shipped and explored 30+ conferences around the world. Presented projects at Microsoft HQ, Interac, and Sensei Labs. This is where I met some of my best friends and learned to pitch and ship. Did some wild stuff here.Somewhat of a cult and messed me up in many ways but overall net positive.",
   },
   {
     id: "nfts-2021-05",
@@ -205,10 +193,10 @@ const LORE: LoreItem[] = [
     ],
   },
   {
-    id: "gap-year-2023-09",
-    date: "09.2023",
+    id: "gap-year-2022-09",
+    date: "10.2022",
     line: "Started my gap year",
-    more: "A year to do cool shit, explore, travel, and learn outside school. I said yes to everything. I travel to new cities and visited family in India.",
+    more: "A year to do cool shit, explore, travel, and learn outside school. I said yes to everything. I travel to new cities and visited family in India. It's a complicated cuz I technically did 2 years but 1 sem of school in between. The first thing I did was visit firends at around 6 schools in ontario. ",
   },
   {
     id: "uatx-forbidden-courses-2023-07",
@@ -217,8 +205,8 @@ const LORE: LoreItem[] = [
     more: "Massive Validation of my path so far. Invited to Forbidden Courses prior to it become a university. Completed the pre-course work, but couldn’t join the in-person seminar due to visa constraints. With Harvard and MIT kids",
   },
   {
-    id: "york-university-2023-09",
-    date: "08.2023",
+    id: "york-university-2022-09",
+    date: "08.2022",
     line: "Started comp eng at York University",
     more: "I joined the Computer Engineering program at York University. I had fun at engineering frosh and went to 2 weeks of classes before dropping out. Still have many friends there. ",
   },
@@ -352,7 +340,7 @@ const LORE: LoreItem[] = [
     id: "monitor-flip-2024",
     date: "03.2024",
     line: "Flipped free monitors to fund my startup",
-    more: "Carried free monitors from benchsci's old office across Toronto to resell and fund my voice agents project",
+    more: "Carried free monitors from benchsci's old office across Toronto to resell and fund my voice agents tokens",
   },
   {
     id: "dji-mavic-2020-07",
