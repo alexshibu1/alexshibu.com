@@ -250,7 +250,17 @@ const LORE: LoreItem[] = [
     id: "india-ai-film-family-2025-09",
     date: "09.2025",
     line: "Joined AI film festival",
-    more: "Travelled to Kerala, Bangalore, Hyderabad, and Wayanad and did an AI film festival and visited family.",
+    more: "Travelled to Kerala, Bangalore, Hyderabad, and Wayanad for an AI film festival and visited family. I made my own piece for it—on YouTube below. After that trip I went on to host a smaller AI film festival in Canada; the deck linked below is the rundown for that.",
+    links: [
+      {
+        label: "my creation (YouTube)",
+        url: "https://youtu.be/ywiabz7s_Zw",
+      },
+      {
+        label: "hosted in Canada (slides)",
+        url: "https://docs.google.com/presentation/d/1y6aeqlCFMKFFEhaa4p_Cwgv3zj_8TyVIIhbSX87auPo/edit?usp=sharing",
+      },
+    ],
   },
   {
     id: "first-book-finished-2025-11",
@@ -263,6 +273,12 @@ const LORE: LoreItem[] = [
     date: "12.2025",
     line: "Started shipping daily to GitHub",
     more: "Dec 2025 I decided to take programming seriously and started shipping code to GitHub every day. I felt like a fraud of a developer.",
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/alexshibu1",
+      },
+    ],
   },
   {
     id: "missing-relic-film-2026-01",
@@ -287,6 +303,12 @@ const LORE: LoreItem[] = [
     date: "07.2024",
     line: "Worked on Decision theory in Israel",
     more: "Worked with Professor Yakov on info-gap decision theory. Optimizing for windfall while increasing robustness under severe uncertainty. One of the most intense and challenging experiences of my life. Transformed my thinking, traveled across Israel and met some of my best friends. All during a war.",
+    links: [
+      {
+        label: "Instagram",
+        url: "https://www.instagram.com/p/C-V5YMQSesn/",
+      },
+    ],
   },
   {
     id: "bike-rides-2024-11",
@@ -435,6 +457,36 @@ const LORE: LoreItem[] = [
     ],
   },
   {
+    id: "easter-seals-a-eye-presentation-2020-02",
+    date: "02.2020",
+    line: "Presented A-EYE Glasses at Easter Seals",
+    more: "My school chose me to attend and present at the Easter Seals competition—it felt special to be picked. I represented A-EYE Glasses: an affordable, AI-powered wearable for the visually impaired, with OCR, voice assistants, and object recognition. Lightweight and hands-free, built for under $100 using a Raspberry Pi, a micro camera, and machine learning—aimed at the huge scale of vision loss worldwide.",
+    links: [
+      {
+        label: "Easter Seals (photos)",
+        url: "https://photos.app.goo.gl/dqKq7rCJyfKLBj688",
+      },
+      {
+        label: "A-EYE device photo",
+        url: "/projects/a-eye%20glasses.jpg",
+      },
+      {
+        label: "A-EYE device photo 2",
+        url: "/projects/a-eye%20glasses%202.jpg",
+      },
+      {
+        label: "project deck (slides)",
+        url: "https://docs.google.com/presentation/d/1G8_XCaV8Ci9-GXH43l-Am_w0zsiiAKNf1AF1uaB9FtE/edit?usp=sharing",
+      },
+    ],
+  },
+  {
+    id: "ubisoft-esports-playtester-2019-12",
+    date: "12.2019",
+    line: "Professional gamer (eSports) — Ubisoft",
+    more: "Dec 2019–Dec 2021. Paid playtester for Ubisoft's Science & Technology program—tried the newest games from studios in Halifax, Vancouver, and Toronto.",
+  },
+  {
     id: "bible-companion-2019-09",
     date: "09.2019",
     line: "Built a Actions on Google and got 10K in cloud",
@@ -480,11 +532,19 @@ const LORE: LoreItem[] = [
     id: "photography-competitions-2020",
     date: "08.2020",
     line: "Started winning photography competitions",
-    more: "Started winning photography competitions. I would sign up for everything. One of my photographs was even featured in a local gallery showcase. Won around one thousand dollars in total.",
+    more: "Started winning photography competitions. I would sign up for everything. One of my photographs was even featured in a local gallery showcase. Won around one thousand dollars in total.I got into graphic design as well. AI image generation with CNNs",
     links: [
       {
         label: "photo gallery",
         url: "https://photos.app.goo.gl/hQHRSkBeNKmKsgMP7",
+      },
+      {
+        label: "photography portfolio (slides)",
+        url: "https://docs.google.com/presentation/d/1QfkIEgiRkMpQ1d4Nnp9WIhx8iBZDx9TLMKeRPUl97CE/edit?usp=sharing",
+      },
+      {
+        label: "graphic design portfolio (slides)",
+        url: "https://docs.google.com/presentation/d/1xEkuHC_e85UgQhgjzB8BNU3o2OEnrZvOwOvjBP2nhiA/edit?usp=sharing",
       },
     ],
   },

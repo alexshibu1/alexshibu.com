@@ -864,7 +864,8 @@ export default function WorkIndex() {
       previewPlaybackRate: 1.5,
       cardMediaLink: "https://www.youtube.com/watch?v=POYhP8TYyBM",
       video: "https://www.youtube.com/watch?v=POYhP8TYyBM",
-      writeup: "",
+      writeup:
+        "https://docs.google.com/presentation/d/1xEkuHC_e85UgQhgjzB8BNU3o2OEnrZvOwOvjBP2nhiA/edit?usp=sharing",
     },
     {
       name: "Circus Clownz NFT",
@@ -1009,12 +1010,12 @@ export default function WorkIndex() {
       name: "Instagram Theme Pages",
       description:
         "Built and grew multiple Instagram theme pages including Bath Bombs For Vanauley (595 followers), Healthy Life Tips (621 followers), and Game Lynxe (739 followers). Received around $500 in free products across channels through partnerships and sponsorships.",
-      link: "https://www.instagram.com/bath.bombs.for.vanauley/",
+      link: "https://www.instagram.com/gaminglynxe/",
       date: "05.2020",
       repo: "",
       video: "",
       writeup: "",
-      image: "/projects/gaming.png",
+      image: "/projects/gaming.png?v=20260324",
       previewImageObjectPosition: "top",
       previewImageScale: 1.1,
       previewImageTall: true,
@@ -1031,6 +1032,21 @@ export default function WorkIndex() {
       image: "/projects/bathbombs.png",
       previewImageObjectPosition: "top",
       previewImageScale: 1.2,
+      previewImageTall: true,
+    },
+    {
+      name: "A-EYE Glasses",
+      description:
+        "Affordable, AI-powered wearable for the visually impaired. Targets the scale of vision loss affecting roughly 2.2 billion people worldwide. Core features: optical character recognition (OCR), voice assistants, and object recognition. Lightweight, hands-free build for under $100 total using a Raspberry Pi, micro camera, and machine learning models.",
+      link: "https://docs.google.com/presentation/d/1G8_XCaV8Ci9-GXH43l-Am_w0zsiiAKNf1AF1uaB9FtE/edit?usp=sharing",
+      date: "02.2020",
+      repo: "",
+      video: "",
+      writeup: "",
+      image: "/projects/a-eye%20glasses.jpg",
+      images: ["/projects/a-eye%20glasses%202.jpg"],
+      previewImageObjectPosition: "top",
+      previewImageScale: 1.1,
       previewImageTall: true,
     },
     {
