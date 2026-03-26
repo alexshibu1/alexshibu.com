@@ -843,6 +843,20 @@ body {
   opacity: 1;
 }
 
+/* Category-aware hover colors in /projects only.
+   Priority: featured (red) > work (blue) > community (green). */
+.project-card.project-card--community:not(.project-card--work):not(.project-card--featured) .project-title:hover {
+  color: #16a34a !important;
+}
+
+.project-card.project-card--work:not(.project-card--featured) .project-title:hover {
+  color: #3f6df4 !important;
+}
+
+.project-card.project-card--featured .project-title:hover {
+  color: #ff3a3a !important;
+}
+
 .project-meta-trail {
   display: inline-flex;
   align-items: center;

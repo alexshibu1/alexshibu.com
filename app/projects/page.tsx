@@ -46,6 +46,8 @@ type Project = {
   /** Second write-up — extra ✍️ */
   writeupSecondary?: string;
   featured?: boolean;
+  isWork?: boolean;
+  isCommunity?: boolean;
   image?: string;
   images?: string[];
   /** CSS object-position for image preview (e.g. "top" to show top crop) */
@@ -67,12 +69,14 @@ function FeaturedIndicator({ isHovered }: { isHovered: boolean }) {
               width: 4,
               height: 12,
               borderRadius: 999,
+              y: 0,
               opacity: 1,
             }
           : {
               width: 5,
               height: 5,
               borderRadius: 999,
+              y: -0.25,
               opacity: 0.6,
             }
       }
@@ -81,6 +85,7 @@ function FeaturedIndicator({ isHovered }: { isHovered: boolean }) {
       style={{
         background: "#ff3a3a",
         display: "inline-block",
+        alignSelf: "center",
       }}
       transition={{
         type: "spring",
@@ -135,17 +140,20 @@ function BigProjectButton({
                 width: 4,
                 height: 12,
                 borderRadius: 999,
+                y: 0,
               }
             : {
                 width: 5,
                 height: 5,
                 borderRadius: 999,
+                y: -1,
               }
         }
         initial={false}
         style={{
           background: isActive ? "#ff3a3a" : isHovered ? "#ff3a3a" : "#ff3a3a",
           display: "inline-block",
+          alignSelf: "center",
           opacity: isActive ? 1 : isHovered ? 1 : 0.6,
         }}
         transition={{
@@ -163,7 +171,169 @@ function BigProjectButton({
           transition: "color 0.2s ease",
         }}
       >
-        {isActive ? "Featured Projects" : "Featured Projects"}
+        {isActive ? "Featured" : "Featured"}
+      </span>
+    </motion.button>
+  );
+}
+
+function WorkProjectButton({
+  isActive,
+  onClick,
+}: {
+  isActive: boolean;
+  onClick: () => void;
+}) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <motion.button
+      type="button"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        onClick();
+      }}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: "0.5rem",
+        padding: "0.4rem 0.8rem",
+        borderRadius: "6px",
+        cursor: "pointer",
+        border: "none",
+        background: "transparent",
+        transition: "background-color 0.2s ease",
+        backgroundColor: isActive ? "rgba(79, 124, 255, 0.1)" : "transparent",
+      }}
+      whileHover={{
+        backgroundColor: isActive
+          ? "rgba(79, 124, 255, 0.15)"
+          : "rgba(0, 0, 0, 0.02)",
+      }}
+    >
+      <motion.span
+        animate={
+          isHovered
+            ? {
+                width: 4,
+                height: 12,
+                borderRadius: 999,
+                y: 0,
+              }
+            : {
+                width: 5,
+                height: 5,
+                borderRadius: 999,
+                y: -1,
+              }
+        }
+        initial={false}
+        style={{
+          background: "#4f7cff",
+          display: "inline-block",
+          alignSelf: "center",
+          opacity: isActive ? 1 : isHovered ? 1 : 0.6,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 600,
+          damping: 22,
+        }}
+      />
+      <span
+        style={{
+          fontSize: "14px",
+          color: isActive ? "#4f7cff" : "#666",
+          fontFamily: "var(--font-inter), sans-serif",
+          fontWeight: 400,
+          transition: "color 0.2s ease",
+        }}
+      >
+        {isActive ? "Work" : "Work"}
+      </span>
+    </motion.button>
+  );
+}
+
+function CommunityProjectButton({
+  isActive,
+  onClick,
+}: {
+  isActive: boolean;
+  onClick: () => void;
+}) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <motion.button
+      type="button"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        onClick();
+      }}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: "0.5rem",
+        padding: "0.4rem 0.8rem",
+        borderRadius: "6px",
+        cursor: "pointer",
+        border: "none",
+        background: "transparent",
+        transition: "background-color 0.2s ease",
+        backgroundColor: isActive ? "rgba(34, 197, 94, 0.1)" : "transparent",
+      }}
+      whileHover={{
+        backgroundColor: isActive
+          ? "rgba(34, 197, 94, 0.15)"
+          : "rgba(0, 0, 0, 0.02)",
+      }}
+    >
+      <motion.span
+        animate={
+          isHovered
+            ? {
+                width: 4,
+                height: 12,
+                borderRadius: 999,
+                y: 0,
+              }
+            : {
+                width: 5,
+                height: 5,
+                borderRadius: 999,
+                y: -1,
+              }
+        }
+        initial={false}
+        style={{
+          background: "#22c55e",
+          display: "inline-block",
+          alignSelf: "center",
+          opacity: isActive ? 1 : isHovered ? 1 : 0.6,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 600,
+          damping: 22,
+        }}
+      />
+      <span
+        style={{
+          fontSize: "14px",
+          color: isActive ? "#22c55e" : "#666",
+          fontFamily: "var(--font-inter), sans-serif",
+          fontWeight: 400,
+          transition: "color 0.2s ease",
+        }}
+      >
+        {isActive ? "Community" : "Community"}
       </span>
     </motion.button>
   );
@@ -354,7 +524,7 @@ function ProjectItem({
     <li
       ref={liRef}
       data-project-index={index}
-      className="project-card"
+      className={`project-card${project.featured ? " project-card--featured" : ""}${project.isWork ? " project-card--work" : ""}${project.isCommunity ? " project-card--community" : ""}`}
       onMouseEnter={() => onHoverChange?.(index)}
       onMouseLeave={() => onHoverChange?.(null)}
       itemScope
@@ -459,7 +629,13 @@ function ProjectItem({
           onMouseLeave={() => setIsTitleHovered(false)}
         >
           {project.featured && (
-            <span style={{ verticalAlign: "middle" }}>
+            <span
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                lineHeight: 1,
+              }}
+            >
               <FeaturedIndicator isHovered={isTitleHovered} />
             </span>
           )}
@@ -601,7 +777,9 @@ function ProjectItem({
 }
 
 export default function WorkIndex() {
-  const [showOnlyFeatured, setShowOnlyFeatured] = useState(false);
+  const [activeFilter, setActiveFilter] = useState<
+    "featured" | "work" | "community" | null
+  >(null);
   const [hoveredProjectIndex, setHoveredProjectIndex] = useState<number | null>(
     null,
   );
@@ -643,6 +821,7 @@ export default function WorkIndex() {
       images: [
         "https://www.linkedin.com/posts/alexshibu_dreamtheimpossible-reverlimpossible-activity-7077475467871600640-FrKP/",
       ],
+      isCommunity: true,
     },
     {
       name: "Youth Advisory(YAC) YMCA",
@@ -662,6 +841,7 @@ export default function WorkIndex() {
       images: [
         "https://www.linkedin.com/posts/alexshibu_youthleadership-activity-7338411863904309249-frCZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAACk8q9ABrmBqQ4wz9R3Ev5JU1iATl26x-5M",
       ],
+      isCommunity: true,
     },
     {
       name: "Breakthrough Junior Challenge",
@@ -689,6 +869,7 @@ export default function WorkIndex() {
       previewImageTall: true,
       video: "",
       writeup: "",
+      isCommunity: true,
     },
     {
       name: "Young Canadians Parliament (YCP)",
@@ -707,6 +888,7 @@ export default function WorkIndex() {
         "https://www.linkedin.com/in/alexshibu/details/volunteering-experiences/1749446429/multiple-media-viewer/?profileId=ACoAACk8q9ABrmBqQ4wz9R3Ev5JU1iATl26x-5M&treasuryMediaId=1719252984259&type=DOCUMENT",
         "https://www.linkedin.com/in/alexshibu/details/volunteering-experiences/1749446429/multiple-media-viewer/?profileId=ACoAACk8q9ABrmBqQ4wz9R3Ev5JU1iATl26x-5M&treasuryMediaId=1719252984260&type=DOCUMENT",
       ],
+      isCommunity: true,
     },
     {
       name: "Recover the Relic Campaign",
@@ -723,6 +905,7 @@ export default function WorkIndex() {
       video:
         "https://www.instagram.com/reel/DUB6-6hjtkp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       writeup: "",
+      isCommunity: true,
     },
     {
       name: "Polymarket for focus",
@@ -751,6 +934,7 @@ export default function WorkIndex() {
       video: "https://www.youtube.com/watch?v=BUFH1s5iUtw&t=55s",
       writeup: "https://www.sprint.dev/hackathons/easyhacks",
       featured: true,
+      isCommunity: true,
     },
     {
       name: "LUMA - AI Meditations [Hack]",
@@ -782,6 +966,7 @@ export default function WorkIndex() {
         "https://alexshibu.notion.site/VR-Applications-in-the-Canadian-Energy-Sector-231305d8d24480198f6cc3a98d059b29?pvs=74",
       writeupSecondary:
         "https://alexshibu.notion.site/Virtual-Reality-Adoption-Across-Mining-Oil-Gas-Energy-and-Manufacturing-257305d8d2448038ae50eacc3c01986c?pvs=74",
+      isWork: true,
     },
     {
       name: "Research @ Technion",
@@ -797,6 +982,7 @@ export default function WorkIndex() {
       video: "",
       writeup:
         "https://www.linkedin.com/posts/faculty-of-mechanical-engineering-technion_ackacwacjacxadgacuacraclacwacladgachacoacracwacpaclacv-activity-7225789866289045504-W_SO?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACk8q9ABrmBqQ4wz9R3Ev5JU1iATl26x-5M",
+      isWork: true,
     },
     {
       name: "BenchBot - Slack Bot for BenchSci",
@@ -810,6 +996,7 @@ export default function WorkIndex() {
         "https://docs.google.com/presentation/d/1cwFMnute4f_i65IaNJsnTHUXk0QaryH_FKPFqDETxKM/edit?usp=sharing",
       video: "https://www.youtube.com/watch?v=Mqb1hEqly_Y",
       writeup: "",
+      isWork: true,
     },
     {
       name: "YouthfulCities - BridgeWorks",
@@ -823,6 +1010,7 @@ export default function WorkIndex() {
       video: "https://www.youtube.com/watch?v=Jz48kAlGy3o&t=25s",
       writeup:
         "https://www.notion.so/alexshibu/BridgeWorks-Fellowship-5e86599a42f048d391033e171a9497f9?source=copy_link",
+      isCommunity: true,
     },
     {
       name: "Avalonn - Voice Agents for SMBs",
@@ -955,6 +1143,7 @@ export default function WorkIndex() {
         "https://www.figma.com/file/X8pq2OGANVnQhQkyE5bTzR/CIBC-Rewards-Design",
       video: "",
       writeup: "",
+      isWork: true,
     },
     {
       name: "AI Feedback for Essays",
@@ -1085,6 +1274,7 @@ export default function WorkIndex() {
         "https://www.linkedin.com/in/alexshibu/details/projects/1635528864697/single-media-viewer?type=DOCUMENT",
       video: "",
       writeup: "",
+      isWork: true,
     },
     {
       name: "Fixing Diabetes Diagnostics w/AI",
@@ -1127,10 +1317,15 @@ export default function WorkIndex() {
     },
   ];
 
-  // Filter projects if showing only featured
-  const filteredProjects = showOnlyFeatured
-    ? projects.filter((p) => p.featured)
-    : projects;
+  // Single-select filters: Featured OR Work (or none).
+  const filteredProjects =
+    activeFilter === "featured"
+      ? projects.filter((p) => p.featured)
+      : activeFilter === "work"
+        ? projects.filter((p) => p.isWork)
+        : activeFilter === "community"
+          ? projects.filter((p) => p.isCommunity)
+        : projects;
 
   // Sort projects by date (newest first). Date format: MM.YYYY
   const parseDate = (d: string) => {
@@ -1146,6 +1341,8 @@ export default function WorkIndex() {
 
   // Count featured projects
   const featuredCount = projects.filter((p) => p.featured).length;
+  const workCount = projects.filter((p) => p.isWork).length;
+  const communityCount = projects.filter((p) => p.isCommunity).length;
 
   const hasLocalPreviewVideo = (project: Project) =>
     Boolean(
@@ -1192,7 +1389,7 @@ export default function WorkIndex() {
       observer.disconnect();
       observerRef.current = null;
     };
-  }, [sortedProjects.length, showOnlyFeatured]);
+  }, [sortedProjects.length, activeFilter]);
 
   const activeVideoIndexes = useMemo(() => {
     if (Object.keys(intersectionMap).length === 0) {
@@ -1458,11 +1655,37 @@ export default function WorkIndex() {
         }}
       >
         <h1 className="hero-heading">projects</h1>
-        {featuredCount > 0 && (
-          <BigProjectButton
-            isActive={showOnlyFeatured}
-            onClick={() => setShowOnlyFeatured(!showOnlyFeatured)}
-          />
+        {(featuredCount > 0 || workCount > 0 || communityCount > 0) && (
+          <div style={{ display: "inline-flex", gap: "0.35rem" }}>
+            {featuredCount > 0 && (
+              <BigProjectButton
+                isActive={activeFilter === "featured"}
+                onClick={() =>
+                  setActiveFilter((prev) =>
+                    prev === "featured" ? null : "featured",
+                  )
+                }
+              />
+            )}
+            {workCount > 0 && (
+              <WorkProjectButton
+                isActive={activeFilter === "work"}
+                onClick={() =>
+                  setActiveFilter((prev) => (prev === "work" ? null : "work"))
+                }
+              />
+            )}
+            {communityCount > 0 && (
+              <CommunityProjectButton
+                isActive={activeFilter === "community"}
+                onClick={() =>
+                  setActiveFilter((prev) =>
+                    prev === "community" ? null : "community",
+                  )
+                }
+              />
+            )}
+          </div>
         )}
       </div>
       <p className="hero-subline">
