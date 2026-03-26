@@ -440,6 +440,16 @@ function ProjectItem({
   useEffect(() => {
     const videoEl = videoRef.current;
     if (!videoEl) return;
+    // When a row instance receives a different local preview source (e.g. after
+    // fast filter/category switches), force a media reset so old frames don't linger.
+    videoEl.pause();
+    videoEl.currentTime = 0;
+    videoEl.load();
+  }, [localPreviewVideo]);
+
+  useEffect(() => {
+    const videoEl = videoRef.current;
+    if (!videoEl) return;
 
     if (pauseTimeoutRef.current !== null) {
       window.clearTimeout(pauseTimeoutRef.current);
@@ -824,7 +834,7 @@ export default function WorkIndex() {
       isCommunity: true,
     },
     {
-      name: "Youth Advisory(YAC) YMCA",
+      name: "Youth Advisory(YAC) @ YMCA",
       description:
         "Working with the Youth Advisory Committee to provide strategic advice to the YMCA of Greater Toronto's Board of Directors, championing youth voices and strengthening community engagement for young people in the GTA. Grounded in creative problem-solving and emerging technology.",
       link: "https://www.ymcagta.org/about-us/youth-advisory-committee",
@@ -841,6 +851,23 @@ export default function WorkIndex() {
       images: [
         "https://www.linkedin.com/posts/alexshibu_youthleadership-activity-7338411863904309249-frCZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAACk8q9ABrmBqQ4wz9R3Ev5JU1iATl26x-5M",
       ],
+      isCommunity: true,
+    },
+    {
+      name: "Apathy Is Boring - Innovation Roundtable",
+      description:
+        "Hosted a national Zoom roundtable for 20+ students across Canada on youth-led social innovation and community problem-solving. We mapped local barriers (resources, policy roadblocks, mentorship gaps) and turned them into practical action paths aligned with building solutions people actually want.Inspired by @buildcanada.",
+      link: "https://www.apathyisboring.com/rtt_rsvp_youth_innnovation",
+      date: "03.2025",
+      repo: "",
+      video: "",
+      writeup: "",
+      image: "/projects/apathy-workshop.png?v=20260326",
+      previewImageObjectPosition: "top left",
+      previewImageScale: 1.3,
+      previewImageTall: true,
+      cardMediaLink:
+        "https://www.apathyisboring.com/rtt_rsvp_youth_innnovation",
       isCommunity: true,
     },
     {
@@ -1275,6 +1302,7 @@ export default function WorkIndex() {
       video: "",
       writeup: "",
       isWork: true,
+      featured: true,
     },
     {
       name: "Fixing Diabetes Diagnostics w/AI",
@@ -1325,7 +1353,7 @@ export default function WorkIndex() {
         ? projects.filter((p) => p.isWork)
         : activeFilter === "community"
           ? projects.filter((p) => p.isCommunity)
-        : projects;
+          : projects;
 
   // Sort projects by date (newest first). Date format: MM.YYYY
   const parseDate = (d: string) => {
@@ -1689,13 +1717,14 @@ export default function WorkIndex() {
         )}
       </div>
       <p className="hero-subline">
-        a collection of my experience and projects i&apos;ve built and shipped.
+        a collection of my experiences, work, and projects i&apos;ve built and
+        shipped.
       </p>
 
       <ul className="projects-list">
         {sortedProjects.map((project, i) => (
           <ProjectItem
-            key={i}
+            key={`${project.name}-${project.date}`}
             index={i}
             project={project}
             onMount={setProjectRef}
