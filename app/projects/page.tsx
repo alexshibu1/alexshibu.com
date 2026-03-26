@@ -855,9 +855,9 @@ export default function WorkIndex() {
         "https://docs.google.com/presentation/d/1kiCEzGCJV-VriZXeSeexSCXZerS3k28HrKrysDQ4vbE/edit?slide=id.g26767847792_2_120#slide=id.g26767847792_2_120",
     },
     {
-      name: "Character Animation",
+      name: "Potato Chips Animation",
       description:
-        "I made a short animated short end to end. full created by me",
+        "Made a short animated short end to end. full animation created by me ",
       link: "https://www.youtube.com/watch?v=POYhP8TYyBM",
       date: "06.2021",
       repo: "",
@@ -887,7 +887,7 @@ export default function WorkIndex() {
       featured: true,
     },
     {
-      name: "ASL Glasses [Hackathon]",
+      name: "ASL Glasses [Hack]",
       description:
         "Designed AR glasses translating sign language to text using transformers and OCR, demoed prototype.",
       link: "https://firebasestorage.googleapis.com/v0/b/tks-life-prod.appspot.com/o/items%2FZnFxCGk9nXYoiuJ37ArrGUjiBDB2%2FExplore%20Hackathon%20-%20ASL.pdf?alt=media&token=7d19ef3d-7d77-4059-8bd0-526fef256322",
@@ -929,7 +929,7 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
-      name: "Cuddle - AI Sleep Music [hackathon]",
+      name: "Cuddle - AI Sleep Music [hack]",
       description:
         "Built an AI-powered sleep-music generator using K-means clustering for personalized audio. The app uses artificial intelligence and K-means clustering to create personalized music for insomniacs, based on their sleep routines and music preferences. Hackathon finalist.",
       link: "https://www.figma.com/design/WJ7zap2lEOHglmLiuYWH2K/Cyberpunk-Music-App--Community-?node-id=0-1&t=dGlw3IO6XB8Jvufx-1",
@@ -944,7 +944,7 @@ export default function WorkIndex() {
         "https://docs.google.com/presentation/d/1-uXNfIXqmT1l2TJIfoq779bCx94CTdyN9aVPQfNiW5E/edit?usp=sharing",
     },
     {
-      name: "CIBC Rewards - UX Design [TKS]",
+      name: "CIBC Rewards - The Knowledge Society",
       description:
         "Designed a consulting prototype for CIBC Rewards using Figma, modeling user engagement and projecting lift. Solved the problem of Gen Z customers switching banks, with only 50% remaining loyal to their parents' bank. Worked to increase Gen Z adoption of CIBC projecting up to 77% increase in Gen Z adoption through prototype user testing and survey analysis. Projected to save CIBC $4.5M annually.",
       link: "https://www.figma.com/file/X8pq2OGANVnQhQkyE5bTzR/CIBC-Rewards-Design",
@@ -957,7 +957,7 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
-      name: "AI-Powered Personalized Feedback",
+      name: "AI Feedback for Essays",
       description:
         "The AI-Powered Personalized Feedback Tool is a transformative technology that offers feedback from the greatest minds in your field. Simply paste your content on the website and receive personalized feedback. The tool aims to break down barriers in education, inspired by the video of Bill Gates and Kevin Scott explaining the challenges many students face in the current system.",
       link: "https://x.com/AlexShibu2/status/1642946139723841548",
@@ -969,7 +969,7 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
-      name: "Family Guy - Quest for Survival",
+      name: "Family Guy Text Adventure",
       description:
         "Family Guy - Quest for Survival is an interactive text-based adventure game set in the Griffin family's house. I built this Python project using a room-based navigation system with directional commands. Challenges that test players' Family Guy knowledge, with a scoring system that tracks points across multiple puzzle types.",
       link: "https://github.com/alexshibu1/family-guy",
@@ -1087,7 +1087,7 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
-      name: "Fixing diabetes diagnostics with linear regression models",
+      name: "Fixing Diabetes Diagnostics w/AI",
       description:
         "I wrote about how machine learning is transforming diabetes diagnostics. Built and trained a model to analyze large amounts of patient data to accurately diagnose and predict the progression of diabetes. ",
       link: "https://alexshibu.medium.com/trasforming-the-world-with-machine-learnnig-3467389abb0a",
