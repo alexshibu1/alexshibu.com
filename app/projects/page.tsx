@@ -1240,7 +1240,7 @@ export default function WorkIndex() {
     {
       name: "Bath Bombs for Vanauley",
       description:
-        "Launched a Shopify fundraising storefront for bath bombs benefiting the Vanauley homeless shelter. Learned e-commerce, order fulfillment, and Instagram marketing end-to-end. This was as part of the NYLD program.",
+        "Launched a Shopify fundraising storefront for bath bombs benefiting the Vanauley homeless shelter. Learned e-commerce, order fulfillment, and Instagram marketing end-to-end. This was as a YMCA Intern.",
       link: "https://www.linkedin.com/in/alexshibu/details/experience/1753015047/multiple-media-viewer/?profileId=ACoAACk8q9ABrmBqQ4wz9R3Ev5JU1iATl26x-5M&treasuryMediaId=1719025718914/",
       date: "05.2020",
       repo: "",
@@ -1250,7 +1250,7 @@ export default function WorkIndex() {
       previewImageObjectPosition: "top",
       previewImageScale: 1.2,
       previewImageTall: true,
-      isCommunity: true,
+      isWork: true,
     },
     {
       name: "A-EYE Glasses",
