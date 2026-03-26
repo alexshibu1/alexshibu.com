@@ -680,7 +680,7 @@ export default function WorkIndex() {
     {
       name: "STEM Fellowship Data Team",
       description:
-        "STEM Fellowship (Feb 2022). I did data analytics for the team. Wrote monthly SC reports using Google Ads and Google Analytics data, including conclusions from statistical testing; monthly social media reports with statistical comparisons across platforms; used Plerdy to analyze everything from website to social media, Ads and calculate every possible metric to derive insights",
+        "Did data analytics for the STEM Fellowship team. Wrote monthly SC reports using Google Ads and Google Analytics data, including conclusions from statistical testing; monthly social media reports with statistical comparisons across platforms; used Plerdy to analyze everything from website to social media, Ads and calculate every possible metric to derive insights",
       link: "#",
       date: "02.2022",
       repo: "",
@@ -693,7 +693,7 @@ export default function WorkIndex() {
     {
       name: "Young Canadians Parliament (YCP)",
       description:
-        "Children First Canada (Sep 2022 – Jul 2023). Developed a policy brief on youth mental health crises with actionable recommendations for the Canadian government; advocated for a government-funded mental health app; proposed regulations for non-scientific mental health apps (aligned with over-the-counter drug standards); conceptualized a certification for sub-specialist mental health providers.",
+        "Worked with Children First Canada to develop a policy brief on youth mental health crises with actionable recommendations for the Canadian government; advocated for a government-funded mental health app; proposed regulations for non-scientific mental health apps (aligned with over-the-counter drug standards); conceptualized a certification for sub-specialist mental health providers.",
       link: "https://childrenfirstcanada.org/wp-content/uploads/2025/08/Raising-Canada-Report-2025-UPDATED.pdf",
       date: "04.2023",
       repo: "",
@@ -739,9 +739,9 @@ export default function WorkIndex() {
       featured: true,
     },
     {
-      name: "Perplexity Strategy - easyhacks.org",
+      name: "Perplexity - easyhacks.org",
       description:
-        "Created and led EasyHacks, a hackathon rejects. It started in an email thread from UBC nwhacks. It transformed into a 20 person operation, from military veterans to high school students in Nepal, with 170+ participants and $8K in prizes raised from sponsors. Perplexity Campus Strategist (Toronto, ON, Dec 2024 – May 2025): onboarded 300+ students and shared $6K+ in Perplexity Pro credits through demos, showcases, and events; Perplexity was directly integrated into easyHacks to increase retention and demonstrate the value proposition.",
+        "Did Created Campus Strategist w/Perplexityand led EasyHacks, a hackathon rejects. It started in an email thread from UBC nwhacks. It transformed into a 20 person operation, from military veterans to high school students in Nepal, with 170+ participants and $8K in prizes raised from sponsors. Onboarded 300+ students and shared $6K+ in Perplexity Pro credits through demos, showcases, and events; Perplexity was directly integrated into easyHacks to increase retention and demonstrate the value proposition.",
       link: "https://archive.ph/2mqxj",
       date: "03.2025",
       repo: "",
@@ -753,7 +753,7 @@ export default function WorkIndex() {
       featured: true,
     },
     {
-      name: "LUMA - AI Meditations [hack]",
+      name: "LUMA - AI Meditations [Hack]",
       description:
         "LUMA uses generative AI to create a unique, personalized meditation experience, addressing the global mental health crisis with personalized meditation practices for everyone. Built with React, Flask, Cohere, Google Cloud TTS, and pydub.",
       link: "https://devpost.com/software/luma-luminous-understanding-through-mindful-ai",
@@ -769,9 +769,9 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
-      name: "Physics Inspired Drilling Simulator (PhiDrillSim) — Product (Remote)",
+      name: "PhiDrillSim - Product",
       description:
-        "Calgary, AB (Remote). Product, part-time (Jun 2025 – Aug 2025). Mentored directly by founder Dr. Etjaie to understand and model the physics of oilfield drilling systems in MATLAB, contributing to simulation tools for vibration, torque/drag, and well control analysis. Created a technical map of VR/XR adoption across mining, oil & gas, energy, and manufacturing—actionable insights that shaped pilot proposals, identified potential partners, training bodies, and innovation funders.",
+        "Mentored directly by founder Dr. Etjaie to understand and model the physics of oilfield drilling systems in MATLAB, contributing to simulation tools for vibration, torque/drag, and well control analysis. Created a technical map of VR/XR adoption across mining, oil & gas, energy, and manufacturing—actionable insights that shaped pilot proposals, identified potential partners, training bodies, and innovation funders.",
       link: "https://www.linkedin.com/company/phidrillsim/",
       date: "06.2025",
       repo: "",
@@ -799,9 +799,9 @@ export default function WorkIndex() {
         "https://www.linkedin.com/posts/faculty-of-mechanical-engineering-technion_ackacwacjacxadgacuacraclacwacladgachacoacracwacpaclacv-activity-7225789866289045504-W_SO?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACk8q9ABrmBqQ4wz9R3Ev5JU1iATl26x-5M",
     },
     {
-      name: "BenchBot - Internal Slack AI for BenchSci",
+      name: "BenchBot - Slack Bot for BenchSci",
       description:
-        "Built an internal Slack AI (BenchBot) prototype to streamline HR/business communications and modeled a $4.5M annual savings scenario.  BenchSci's team size doubled from 200 to 400+ employees in 2022, repetition of common administrative, onboarding, HR, and technical questions asked by new and existing employees has surged. Repetitive queries and information overload are hindering BenchSci's productivity up to 104,000 hours annually.",
+        "Built a Slack Bot (BenchBot) prototype to streamline HR/business communications and modeled a $4.5M annual savings scenario.  BenchSci's team size doubled from 200 to 400+ employees in 2022, repetition of common administrative, onboarding, HR, and technical questions asked by new and existing employees has surged. Repetitive queries and information overload are hindering BenchSci's productivity up to 104,000 hours annually.",
       link: "https://docs.google.com/presentation/d/1cwFMnute4f_i65IaNJsnTHUXk0QaryH_FKPFqDETxKM/edit?usp=sharing",
       date: "06.2023",
       repo: "",
@@ -812,16 +812,17 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
-      name: "BridgeWorks Fellowship - Increase Youth Employment",
+      name: "YouthfulCities - BridgeWorks",
       description:
-        "Pitch for BridgeWorks Fellowship focused on increasing youth employment opportunities.",
+        "Worked with YouthfulCities to build in Increase Youth Employment Pitched for BridgeWorks Fellowship focused on increasing youth employment opportunities.",
       link: "/projects/bridgeworks.pdf",
       date: "05.2024",
       repo: "",
       previewVideoLocal: "/projects/placeholders/project%20bridgeworks.mp4",
       cardMediaLink: "/projects/bridgeworks.pdf",
       video: "https://www.youtube.com/watch?v=Jz48kAlGy3o&t=25s",
-      writeup: "",
+      writeup:
+        "https://www.notion.so/alexshibu/BridgeWorks-Fellowship-5e86599a42f048d391033e171a9497f9?source=copy_link",
     },
     {
       name: "Avalonn - Voice Agents for SMBs",
@@ -839,9 +840,9 @@ export default function WorkIndex() {
       featured: true,
     },
     {
-      name: "CoachMi.co",
+      name: "CoachMi.co - AI Coach",
       description:
-        "Forge your path with Titans, an AI-powered mentorship platform that provides guidance from industry giants. Features custom virtual boardrooms, optimized action roadmaps, and 50+ decision-making frameworks. Alongside Canadian Gap Year Association's Impact fellowship traveled to Bangalore for PMF.",
+        "Built CoachMi.co a AI Coach that provides personalized coaching from industry giants. Features custom virtual boardrooms, optimized action roadmaps, and 50+ decision-making frameworks. Alongside Canadian Gap Year Association's Impact fellowship traveled to Bangalore for PMF.",
       link: "https://web.archive.org/web/20240924161229/http://www.coachmi.co/",
       date: "09.2024",
       repo: "",
