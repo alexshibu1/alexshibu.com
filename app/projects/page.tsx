@@ -815,9 +815,9 @@ export default function WorkIndex() {
 
   const projects = [
     {
-      name: "Y4E YMCA x Desjardins",
+      name: "Y4E Film – YMCA x Desjardins",
       description:
-        "Created a film on why young people should build and won first place in the nationwide youth for entrepreneurship competition. Led to invite from Desjardins Dream the Impossible event in Montreal. I also emceed the event the year after.",
+        "Won first place nationally in the Y4E competition with a film on why young people should build. Led to an invite from Desjardins for Dream the Impossible in Montreal. I later emceed the event the next year.",
       link: "https://www.ymcagta.org/blog/congratulations-to-the-winners-of-the-youth-for-entrepreneurship-media-contest-powered-by-desjardins", // Add link later
       date: "02.2025",
       video: "https://www.youtube.com/watch?v=mHKDR622pCM", // Add video link later
@@ -834,9 +834,9 @@ export default function WorkIndex() {
       isCommunity: true,
     },
     {
-      name: "Youth Advisory(YAC) @ YMCA",
+      name: "Youth Advisory @ YMCA",
       description:
-        "Working with the Youth Advisory Committee to provide strategic advice to the YMCA of Greater Toronto's Board of Directors, championing youth voices and strengthening community engagement for young people in the GTA. Grounded in creative problem-solving and emerging technology.",
+        "On the Youth Advisory Committee providing strategic advice to YMCA of Greater Toronto's Board of Directors, championing youth voices and emerging tech in community programming.",
       link: "https://www.ymcagta.org/about-us/youth-advisory-committee",
       date: "03.2025",
       repo: "",
@@ -854,17 +854,17 @@ export default function WorkIndex() {
       isCommunity: true,
     },
     {
-      name: "Apathy Is Boring - Innovation Roundtable",
+      name: "Apathy Is Boring Roundtable",
       description:
-        "Hosted a national Zoom roundtable for 20+ students across Canada on youth-led social innovation and community problem-solving. We mapped local barriers (resources, policy roadblocks, mentorship gaps) and turned them into practical action paths aligned with building solutions people actually want.Inspired by @buildcanada.",
+        "Hosted a national Zoom roundtable for 20+ Canadian students on youth-led innovation. We mapped local barriers (resources, policy roadblocks, mentorship gaps) and turned them into practical action paths aligned with building solutions people actually want. Inspired by @buildcanada.",
       link: "https://www.apathyisboring.com/rtt_rsvp_youth_innnovation",
       date: "03.2025",
       repo: "",
       video: "",
       writeup: "",
       image: "/projects/apathy-workshop.png?v=20260326",
-      previewImageObjectPosition: "top left",
-      previewImageScale: 1.3,
+      previewImageObjectPosition: "top",
+      previewImageScale: 1.2,
       previewImageTall: true,
       cardMediaLink:
         "https://www.apathyisboring.com/rtt_rsvp_youth_innnovation",
@@ -873,7 +873,7 @@ export default function WorkIndex() {
     {
       name: "Breakthrough Junior Challenge",
       description:
-        "Top 14% global finalist for the challenge. Video 1: quantum computing fundamentals (superposition, entanglement, and John Bell's Theorem). Video 2: Mars rover Radioisotope thermoelectric generators.",
+        "Top 14% global finalist. Produced two science explainer videos: quantum computing fundamentals (superposition, entanglement, Bell's Theorem) and Mars rover RTG power systems.",
       link: "https://youtu.be/xuL75NnIcks?si=oU-N7jkcPdNaFPm7",
       date: "06.2021",
       video: "https://www.youtube.com/watch?v=vQcW4T5JnPU",
@@ -887,7 +887,7 @@ export default function WorkIndex() {
     {
       name: "STEM Fellowship Data Team",
       description:
-        "Did data analytics for the STEM Fellowship team. Wrote monthly SC reports using Google Ads and Google Analytics data, including conclusions from statistical testing; monthly social media reports with statistical comparisons across platforms; used Plerdy to analyze everything from website to social media, Ads and calculate every possible metric to derive insights",
+        "Ran monthly analytics for STEM Fellowship using Google Ads, Analytics, and Plerdy. We analyzed everything including website, cross-platform social, Ads campaigns, and calculated every possible metric to derive conversion insights",
       link: "#",
       date: "02.2022",
       repo: "",
@@ -899,9 +899,9 @@ export default function WorkIndex() {
       isCommunity: true,
     },
     {
-      name: "Young Canadians Parliament (YCP)",
+      name: "Young Canadians Parliament",
       description:
-        "Worked with Children First Canada to develop a policy brief on youth mental health crises with actionable recommendations for the Canadian government; advocated for a government-funded mental health app; proposed regulations for non-scientific mental health apps (aligned with over-the-counter drug standards); conceptualized a certification for sub-specialist mental health providers.",
+        "Developed a youth mental health policy brief for the Canadian government with Children First Canada. Ending with proposing a funded mental health app, app regulation standards, and provider certification.",
       link: "https://childrenfirstcanada.org/wp-content/uploads/2025/08/Raising-Canada-Report-2025-UPDATED.pdf",
       date: "04.2023",
       repo: "",
@@ -920,7 +920,7 @@ export default function WorkIndex() {
     {
       name: "Recover the Relic Campaign",
       description:
-        "Led end to end production and campaign strategy for the Recover the Relic campaign. Drove 80K+ cumulative views across platforms. A fun passion project for church after months of not using my film skills.",
+        "Led end-to-end production and campaign strategy for a church passion project after months off from film. Drove 80K+ cumulative views across platforms. Passion project after months of not not working on films.",
       link: "https://www.instagram.com/reel/DUB6-6hjtkp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       date: "01.2026",
       repo: "",
@@ -935,9 +935,9 @@ export default function WorkIndex() {
       isCommunity: true,
     },
     {
-      name: "Polymarket for focus",
+      name: "Wager – Polymarket for Focus",
       description:
-        "The Polymarket for focus. A command terminal for deep work. Open a position task, add liquidity, and execute. To-dos with real stakes, a dashboard of portfolio and earnings, and a marketplace to see friends' positions.",
+        "A command terminal for deep work. Open a position on a task, add liquidity, and execute. To-dos with real stakes, a portfolio dashboard, and a marketplace to see friends' bets.",
       link: "https://wagerai.vercel.app",
       date: "12.2025",
       repo: "https://github.com/alexshibu1/wagerai",
@@ -949,9 +949,9 @@ export default function WorkIndex() {
       featured: true,
     },
     {
-      name: "Perplexity - easyhacks.org",
+      name: "EasyHacks x Perplexity",
       description:
-        "Did Created Campus Strategist w/Perplexityand led EasyHacks, a hackathon rejects. It started in an email thread from UBC nwhacks. It transformed into a 20 person operation, from military veterans to high school students in Nepal, with 170+ participants and $8K in prizes raised from sponsors. Onboarded 300+ students and shared $6K+ in Perplexity Pro credits through demos, showcases, and events; Perplexity was directly integrated into easyHacks to increase retention and demonstrate the value proposition.",
+        "Campus Strategist w/Perplexity AI. Ran EasyHacks, a hackathon that grew from UBC Hacks rejection thread into a 20-person operation with 170+ participants, $6K in prizes, and 300+ students onboarded.",
       link: "https://archive.ph/2mqxj",
       date: "03.2025",
       repo: "",
@@ -964,9 +964,9 @@ export default function WorkIndex() {
       isCommunity: true,
     },
     {
-      name: "LUMA - AI Meditations [Hack]",
+      name: "LUMA – AI Meditations [Hack]",
       description:
-        "LUMA uses generative AI to create a unique, personalized meditation experience, addressing the global mental health crisis with personalized meditation practices for everyone. Built with React, Flask, Cohere, Google Cloud TTS, and pydub.",
+        "Built a generative AI meditation app at a hackathon that creates personalized audio experiences based on user state. Stack: React, Flask, Cohere, Google Cloud TTS, pydub.",
       link: "https://devpost.com/software/luma-luminous-understanding-through-mindful-ai",
       date: "05.2025",
       repo: "https://github.com/e-ndorfin/luma",
@@ -980,9 +980,9 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
-      name: "PhiDrillSim - Product",
+      name: "PhiDrillSim – Drilling Physics",
       description:
-        "Mentored directly by founder Dr. Etjaie to understand and model the physics of oilfield drilling systems in MATLAB, contributing to simulation tools for vibration, torque/drag, and well control analysis. Created a technical map of VR/XR adoption across mining, oil & gas, energy, and manufacturing—actionable insights that shaped pilot proposals, identified potential partners, training bodies, and innovation funders.",
+        "Mentored by founder Dr. Etjaie at PhiDrillSim. Creating simulation tools for oilfield drilling including vibration, torque/drag, and well control analysis in MATLAB. Built a VR/XR adoption map across energy and manufacturing for pilot proposals and partner identification.",
       link: "https://www.linkedin.com/company/phidrillsim/",
       date: "06.2025",
       repo: "",
@@ -998,7 +998,7 @@ export default function WorkIndex() {
     {
       name: "Research @ Technion",
       description:
-        "Worked on info-gap decision theory, focusing on economic and financial decision-making using robustness and opportuneness models under deep uncertainty. Collaborated with Professor Yakov Ben-Haim to develop and refine decision models that address the lack of probabilistic data in problems across policy, finance, and credit assessment. Created info-gap models that evaluate Seed and Series A startups for venture capital firms, enhancing decision-making robustness and windfall outcomes to a projected 15% for high-risk investments.",
+        "Worked with Prof. Yakov Ben-Haim on info-gap decision theory. Foucused on economic and financial decision-making using robustness and opportuneness to make decisions under deep uncertainty with the lack of probabilistic data. Built uncertainty models and applied them to VC startup evaluation, projecting 15% lift for high-risk investments.",
       link: "https://www.facebook.com/share/p/1Dmh3huqbC/",
       date: "06.2024",
       repo: "",
@@ -1014,7 +1014,7 @@ export default function WorkIndex() {
     {
       name: "BenchBot - Slack Bot for BenchSci",
       description:
-        "Built a Slack Bot (BenchBot) prototype to streamline HR/business communications and modeled a $4.5M annual savings scenario.  BenchSci's team size doubled from 200 to 400+ employees in 2022, repetition of common administrative, onboarding, HR, and technical questions asked by new and existing employees has surged. Repetitive queries and information overload are hindering BenchSci's productivity up to 104,000 hours annually.",
+        "Built a Slack bot prototype to automate HR and onboarding at BenchSci. Modeled $4.5M in annual savings as headcount doubled from 200 to 400+ and repetitive queries surged. Productivity loss due to repetitive queries is estimated to be up to 104,000 hours annually at BenchSci.",
       link: "https://docs.google.com/presentation/d/1cwFMnute4f_i65IaNJsnTHUXk0QaryH_FKPFqDETxKM/edit?usp=sharing",
       date: "06.2023",
       repo: "",
@@ -1026,9 +1026,9 @@ export default function WorkIndex() {
       isWork: true,
     },
     {
-      name: "YouthfulCities - BridgeWorks",
+      name: "BridgeWorks – YouthfulCities",
       description:
-        "Worked with YouthfulCities to build in Increase Youth Employment Pitched for BridgeWorks Fellowship focused on increasing youth employment opportunities.",
+        "Worked with YouthfulCities to build a project to increase youth employment opportunities in underserved communities called BridgeWorks Fellowship. Developed and received initial cohort signups.",
       link: "/projects/bridgeworks.pdf",
       date: "05.2024",
       repo: "",
@@ -1040,9 +1040,9 @@ export default function WorkIndex() {
       isCommunity: true,
     },
     {
-      name: "Avalonn - Voice Agents for SMBs",
+      name: "Avalonn – Voice Agents",
       description:
-        "Avalonn is a voice agent that answers common inquiries, books jobs, estimates quotes, and escalates emergencies, helping small businesses recover roughly $78 per missed call on average.  Found early stage traction through customer interviews, live demos and onboarding local service businesses in plumbing and HVAC integrating into their existing workflows. Received $25k in AWS credits, participated in DMZ Basecamp and featured in UofT Centre for Entrepreneurship founder showcases. Built using React + Flask + ElevenLabs + OpenAI + Twilio.",
+        "Voice agent for SMBs that answers inquiries, books jobs, estimates quotes, and escalates emergencies. Targets the ~$78 lost per missed call. Got $25K AWS credits, joined DMZ Basecamp, UofT Center for Entrepreneurship. Found early stage traction through customer interviews, live demos and onboarding local service businesses in plumbing and HVAC integrating into their existing workflows. ",
       link: "https://www.youtube.com/watch?v=qsD2kOopCK4",
       date: "06.2025",
       repo: "",
@@ -1057,7 +1057,7 @@ export default function WorkIndex() {
     {
       name: "CoachMi.co - AI Coach",
       description:
-        "Built CoachMi.co a AI Coach that provides personalized coaching from industry giants. Features custom virtual boardrooms, optimized action roadmaps, and 50+ decision-making frameworks. Alongside Canadian Gap Year Association's Impact fellowship traveled to Bangalore for PMF.",
+        "AI coaching platform with 50+ decision-making frameworks and custom virtual boardrooms. Built with a Canadian Gap Year Association fellowship and traveled to Bangalore for PMF validation.",
       link: "https://web.archive.org/web/20240924161229/http://www.coachmi.co/",
       date: "09.2024",
       repo: "",
@@ -1072,7 +1072,7 @@ export default function WorkIndex() {
     {
       name: "Potato Chips Animation",
       description:
-        "Made a short animated short end to end. full animation created by me ",
+        "Built and produced a short animated film end-to-end. Concept, storyboard, art, and final render done solo. Using Adobe After Effects and Character Animator.",
       link: "https://www.youtube.com/watch?v=POYhP8TYyBM",
       date: "06.2021",
       repo: "",
@@ -1086,7 +1086,7 @@ export default function WorkIndex() {
     {
       name: "Circus Clownz NFT",
       description:
-        "Hired 2 people, created NFTs, social media, and discord community, but did not launch due to the lack of long term utility and the massive market crash of 2022.",
+        "Built the brand, hired two people, created the art, and launched a Discord community. Didn't ship due to long term utility and the 2022 market crash.",
       link: "/essay/circusclownz",
       date: "04.2021",
       repo: "https://github.com/alexshibu1/CircusClownz",
@@ -1104,7 +1104,7 @@ export default function WorkIndex() {
     {
       name: "ASL Glasses [Hack]",
       description:
-        "Designed AR glasses translating sign language to text using transformers and OCR, demoed prototype.",
+        "Designed AR glasses that translate sign language to text in real time using transformers and OCR. Demoed a working prototype at a hackathon.",
       link: "https://firebasestorage.googleapis.com/v0/b/tks-life-prod.appspot.com/o/items%2FZnFxCGk9nXYoiuJ37ArrGUjiBDB2%2FExplore%20Hackathon%20-%20ASL.pdf?alt=media&token=7d19ef3d-7d77-4059-8bd0-526fef256322",
       date: "11.2022",
       repo: "",
@@ -1116,9 +1116,9 @@ export default function WorkIndex() {
     },
 
     {
-      name: "Actions on Google - Bible Companion",
+      name: "Bible Companion – Google",
       description:
-        "Received 10k in cloud credits to work on Actions on Google + free merch. Created Bible Companion, a Bible study application that allows users to ask questions about scripture and receive daily verses on Google Assistant. Built using Google's Actions SDK, Dialogflow, and TensorFlow.",
+        "Built a Bible study app on Google Assistant where users ask questions about scripture and get daily verses. Won $10K in cloud credits. Stack: Actions SDK, Dialogflow, TensorFlow.",
       link: "#", // Add link later
       date: "11.2019",
       video: "",
@@ -1131,9 +1131,9 @@ export default function WorkIndex() {
       ],
     },
     {
-      name: "Bioblox - AI Profile Pictures",
+      name: "Bioblox - AI Profile Pics",
       description:
-        "Developed a 2-click AI system for professional-quality profile images using Stable Diffusion, serving 50+ users and fine-tuned on 10-12 samples. Transform your profiles with AI generated images for a standout professional presence",
+        "2-click system for professional AI-generated profile pictures using Stable Diffusion, fine-tuned on 10-12 personal samples. Served 50+ users.",
       link: "https://web.archive.org/web/20230722063459/https://bioblox.xyz/",
       date: "05.2023",
       repo: "https://github.com/alexshibu1/photoBloxAI",
@@ -1144,9 +1144,9 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
-      name: "Cuddle - AI Sleep Music [hack]",
+      name: "Cuddle – AI Sleep Music [Hack]",
       description:
-        "Built an AI-powered sleep-music generator using K-means clustering for personalized audio. The app uses artificial intelligence and K-means clustering to create personalized music for insomniacs, based on their sleep routines and music preferences. Hackathon finalist.",
+        "Built an AI sleep-music generator using K-means clustering to personalize audio based on sleep routines and music preferences. Hackathon finalist.",
       link: "https://www.figma.com/design/WJ7zap2lEOHglmLiuYWH2K/Cyberpunk-Music-App--Community-?node-id=0-1&t=dGlw3IO6XB8Jvufx-1",
       date: "04.2023",
       repo: "",
@@ -1159,9 +1159,9 @@ export default function WorkIndex() {
         "https://docs.google.com/presentation/d/1-uXNfIXqmT1l2TJIfoq779bCx94CTdyN9aVPQfNiW5E/edit?usp=sharing",
     },
     {
-      name: "CIBC Rewards - The Knowledge Society",
+      name: "CIBC Rewards [TKS]",
       description:
-        "Designed a consulting prototype for CIBC Rewards using Figma, modeling user engagement and projecting lift. Solved the problem of Gen Z customers switching banks, with only 50% remaining loyal to their parents' bank. Worked to increase Gen Z adoption of CIBC projecting up to 77% increase in Gen Z adoption through prototype user testing and survey analysis. Projected to save CIBC $4.5M annually.",
+        "Designed a consulting prototype for CIBC Rewards in Figma targeting Gen Z user retention. Modeled a 77% increase in adoption and $4.5M annual savings through user testing and survey analysis.",
       link: "https://www.figma.com/file/X8pq2OGANVnQhQkyE5bTzR/CIBC-Rewards-Design",
       date: "12.2022",
       repo: "",
@@ -1173,9 +1173,9 @@ export default function WorkIndex() {
       isWork: true,
     },
     {
-      name: "AI Feedback for Essays",
+      name: "AI Essay Feedback",
       description:
-        "The AI-Powered Personalized Feedback Tool is a transformative technology that offers feedback from the greatest minds in your field. Simply paste your content on the website and receive personalized feedback. The tool aims to break down barriers in education, inspired by the video of Bill Gates and Kevin Scott explaining the challenges many students face in the current system.",
+        "Built a tool that delivers personalized essay feedback framed by top minds in your field. Paste content and get instant expert-style critique.",
       link: "https://x.com/AlexShibu2/status/1642946139723841548",
       date: "08.2023",
       repo: "",
@@ -1187,7 +1187,7 @@ export default function WorkIndex() {
     {
       name: "Family Guy Text Adventure",
       description:
-        "Family Guy - Quest for Survival is an interactive text-based adventure game set in the Griffin family's house. I built this Python project using a room-based navigation system with directional commands. Challenges that test players' Family Guy knowledge, with a scoring system that tracks points across multiple puzzle types.",
+        "Python text adventure set in the Griffin house with room navigation, directional commands, trivia challenges, and a multi-type scoring system. First game I shipped.",
       link: "https://github.com/alexshibu1/family-guy",
       date: "10.2021",
       repo: "https://github.com/alexshibu1/family-guy",
@@ -1200,7 +1200,7 @@ export default function WorkIndex() {
     {
       name: "Web3 Message Board",
       description:
-        "Wallet-gated message wall for authenticated messages and posts. Connect your wallet and say something on our open message board. Buildspace project.",
+        "Wallet-gated message wall where users connect their wallet to post publicly on an open board. Buildspace project using nextjs and solidity.",
       link: "#", // Add link later
       date: "11.2021",
       repo: "https://github.com/alexshibu1/web3-message-board",
@@ -1214,7 +1214,7 @@ export default function WorkIndex() {
     {
       name: "Legacy iPhone 4 Revival",
       description:
-        "Restored full usability to iOS 7 devices by engineering a downgrade/jailbreak to iOS 6, fully documented for the community. Used iOS 6, Jailbreak, and Cydia tools.",
+        "Engineered a downgrade from iOS 7 to iOS 6 with a jailbreak to restore full usability to abandoned devices. Fully documented for the community. Used iOS 6, Jailbreak, and Cydia tools.",
       link: "https://x.com/AlexShibu2/status/2032561523973882195?s=20",
       date: "11.2025",
       repo: "",
@@ -1226,7 +1226,7 @@ export default function WorkIndex() {
     {
       name: "Instagram Theme Pages",
       description:
-        "Built and grew multiple Instagram theme pages including Bath Bombs For Vanauley (595 followers), Healthy Life Tips (621 followers), and Game Lynxe (739 followers). Received around $500 in free products across channels through partnerships and sponsorships.",
+        "Built and grew three Instagram theme pages to 600-740 followers each. Earned ~$500 in free products through brand partnerships and sponsorships.",
       link: "https://www.instagram.com/gaminglynxe/",
       date: "05.2020",
       repo: "",
@@ -1240,7 +1240,7 @@ export default function WorkIndex() {
     {
       name: "Bath Bombs for Vanauley",
       description:
-        "Launched a Shopify storefront for bath bomb fundraising for the Vanauley homeless shelter with Instagram while learning e-commerce and order fulfillment workflows. Built using Shopify, Marketing, and Frontend development.",
+        "Launched a Shopify fundraising storefront for bath bombs benefiting the Vanauley homeless shelter. Learned e-commerce, order fulfillment, and Instagram marketing end-to-end. This was as part of the NYLD program.",
       link: "https://www.linkedin.com/in/alexshibu/details/experience/1753015047/multiple-media-viewer/?profileId=ACoAACk8q9ABrmBqQ4wz9R3Ev5JU1iATl26x-5M&treasuryMediaId=1719025718914/",
       date: "05.2020",
       repo: "",
@@ -1250,11 +1250,12 @@ export default function WorkIndex() {
       previewImageObjectPosition: "top",
       previewImageScale: 1.2,
       previewImageTall: true,
+      isCommunity: true,
     },
     {
       name: "A-EYE Glasses",
       description:
-        "Affordable, AI-powered wearable for the visually impaired. Targets the scale of vision loss affecting roughly 2.2 billion people worldwide. Core features: optical character recognition (OCR), voice assistants, and object recognition. Lightweight, hands-free build for under $100 total using a Raspberry Pi, micro camera, and machine learning models.",
+        "ABuilt an affordable AI wearable for the visually impaired under $100 using a Raspberry Pi. Features OCR, voice assistant, and object recognition targeting 2.2B people affected by vision loss.",
       link: "https://docs.google.com/presentation/d/1G8_XCaV8Ci9-GXH43l-Am_w0zsiiAKNf1AF1uaB9FtE/edit?usp=sharing",
       date: "02.2020",
       repo: "",
@@ -1269,7 +1270,7 @@ export default function WorkIndex() {
     {
       name: "Cube Runner2",
       description:
-        "Made an impossible cube runner game with randomly generated levels designed to increase test reaction times. First Unity game of mine.",
+        "First Unity game. An impossible cube runner with randomly generated levels designed to test reaction time.",
       link: "/projects/cube.png",
       date: "08.2019",
       repo: "",
@@ -1280,7 +1281,7 @@ export default function WorkIndex() {
     {
       name: "Calculator App 1.1",
       description:
-        "Simple calculator app written in Kotlin for quick calculations. Features a clean design with basic operations: addition, subtraction, multiplication, and division. Simple keypad layout that's quick and easy to use, compatible with 82.1% of devices. My first published Android app.",
+        "First published Android app, written in Kotlin. Clean calculator with basic operations, compatible with 82% of devices.",
       link: "/projects/cal link.png",
       date: "07.2018",
       repo: "",
@@ -1291,7 +1292,7 @@ export default function WorkIndex() {
     {
       name: "Ethiopian Coffee Strategy [TKS]",
       description:
-        "Developed agri-center model projecting 5.6M jobs and a 285% profit increase for Ethiopian farmers by 2030 based on export and yield data. Worked with a 4-person team to develop strategic solutions to problems faced by 10 million Ethiopian coffee farmers, proposing 5.6M jobs based on agricultural data and stakeholder input. 10 million smallholder coffee farmers in Ethiopia face issues with access to international markets, inefficient farming practices, and inadequate lending options.",
+        "Developed an agri-center model projecting 5.6M jobs and 285% profit growth for Ethiopian farmers by 2030. Addressed market access, farming efficiency, and lending gaps for 10M smallholders. Validated initiative with over 20 stakeholders in the coffee industry in Ethiopia.",
       link: "https://www.linkedin.com/in/alexshibu/details/projects/1635528864697/single-media-viewer?type=DOCUMENT",
       date: "05.2023",
       repo: "",
@@ -1305,9 +1306,9 @@ export default function WorkIndex() {
       featured: true,
     },
     {
-      name: "Fixing Diabetes Diagnostics w/AI",
+      name: "Diabetes Diagnostics w/ AI",
       description:
-        "I wrote about how machine learning is transforming diabetes diagnostics. Built and trained a model to analyze large amounts of patient data to accurately diagnose and predict the progression of diabetes. ",
+        "Built and trained an ML model to diagnose and predict diabetes progression from patient data. Published a writeup on how machine learning is reshaping medical diagnostics.",
       link: "https://alexshibu.medium.com/trasforming-the-world-with-machine-learnnig-3467389abb0a",
       date: "02.2023",
       repo: "",
@@ -1322,7 +1323,7 @@ export default function WorkIndex() {
     {
       name: "Ethereum Trend Analysis",
       description:
-        "Ran deep-dive technical analysis on Ethereum price trends, built sheets & regression models, published insights and project video for public walkthrough. Full-stack Web3 project with technical analysis.",
+        "Deep-dive technical analysis on Ethereum price trends. Built regression models, published insights, and recorded a full public walkthrough video.",
       link: "#",
       date: "12.2021",
       repo: "",
@@ -1332,9 +1333,9 @@ export default function WorkIndex() {
       writeup: "",
     },
     {
-      name: "Helpa - SMS AI Tool",
+      name: "Helpa – SMS AI Tool",
       description:
-        "Developed a mobile Q&A system using Twilio and OpenAI providing personalized feedback for students. The AI-powered SMS system provides an effective and efficient way for students to learn and improve their skills through mobile devices.",
+        "Built an SMS-based Q&A system using Twilio and OpenAI that delivers personalized academic feedback to students directly via mobile. It's for students in developing countries to use llms with limited internet access.",
       link: "https://sms.teleporthq.app/",
       date: "01.2023",
       repo: "",
