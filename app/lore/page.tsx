@@ -147,6 +147,12 @@ const LORE: LoreItem[] = [
     more: "A community that opened my eyes to what’s really possible. Pitched and built tech with 200+ innovators, shipped and explored 30+ conferences around the world. Presented projects at Microsoft HQ, Interac, and Sensei Labs. This is where I met some of my best friends and learned to pitch and ship. Did some wild stuff here.Somewhat of a cult and messed me up in many ways but overall net positive.",
   },
   {
+    id: "catechism-sunday-school-2022-09",
+    date: "09.2022",
+    line: "Main catechism teacher at Sunday school",
+    more: "Started teaching catechism at my church’s Sunday school in Sept 2022 and quickly became the main teacher. Every week I bring systems, tech, real-world news, high standards, startups, culture, and mindsets into the room—and thread them back to Jesus. Since then I’ve taught 100+ students, mostly grade 8s; older grades often already have a fixed idea of what’s “cool,” so new ideas land harder. It’s one of the most rewarding things I do.",
+  },
+  {
     id: "nfts-2021-05",
     date: "05.2021",
     line: "Turned $3K into $100K in NFTs then lost it all",
@@ -250,15 +256,11 @@ const LORE: LoreItem[] = [
     id: "india-ai-film-family-2025-09",
     date: "09.2025",
     line: "Joined AI film festival",
-    more: "Travelled to Kerala, Bangalore, Hyderabad, and Wayanad for an AI film festival and visited family. I made my own piece for it—on YouTube below. After that trip I went on to host a smaller AI film festival in Canada; the deck linked below is the rundown for that.",
+    more: "Travelled to Kerala, Bangalore, Hyderabad, and Wayanad for an AI film festival and visited family. I made my own piece for it—on YouTube below. After that trip I went on to host a student AI film competition in Canada; the films, guide, and walkthrough are linked in my Mar 2026 lore entry.",
     links: [
       {
         label: "my creation (YouTube)",
         url: "https://youtu.be/ywiabz7s_Zw",
-      },
-      {
-        label: "hosted in Canada (slides)",
-        url: "https://docs.google.com/presentation/d/1y6aeqlCFMKFFEhaa4p_Cwgv3zj_8TyVIIhbSX87auPo/edit?usp=sharing",
       },
     ],
   },
@@ -293,6 +295,26 @@ const LORE: LoreItem[] = [
     ],
   },
   {
+    id: "ai-film-competition-host-2026-03",
+    date: "03.2026",
+    line: "Hosted AI film competition for students",
+    more: "Hosted an AI film competition for students. Wrote the full guide—theme, the specific shots we needed, and the rules—and recorded a walkthrough of the AI tools stack and how to execute the vision. Reached out across the industry from ByteDance to Runway to help make it happen.",
+    links: [
+      {
+        label: "films & deck (Google Slides)",
+        url: "https://docs.google.com/presentation/d/1y6aeqlCFMKFFEhaa4p_Cwgv3zj_8TyVIIhbSX87auPo/edit?usp=sharing",
+      },
+      {
+        label: "competition guide (Notion)",
+        url: "https://www.notion.so/alexshibu/AI-Film-Competition-Guide-325305d8d244809fab9fef4847c101bc",
+      },
+      {
+        label: "tech stack walkthrough (YouTube)",
+        url: "https://youtu.be/iXUpw6sxaXQ",
+      },
+    ],
+  },
+  {
     id: "italy-24hr-no-internet-2024-08",
     date: "08.2024",
     line: "24 hours in Italy without internet",
@@ -319,6 +341,22 @@ const LORE: LoreItem[] = [
       {
         label: "Strava",
         url: "https://strava.app.link/R9CRcto25Zb",
+      },
+    ],
+  },
+  {
+    id: "montreal-church-camp-2024-12",
+    date: "12.2024",
+    line: "Montreal church camp for 200+ kids",
+    more: "Traveled to Montreal and helped host a church camp—entertainment, games, and presentations for 200+ kids and high schoolers. Talks covered Kanye, music, demons, saints, and seven reasons for God's existence. Decks below.",
+    links: [
+      {
+        label: "Jesus Walked/Walks (Google Slides)",
+        url: "https://docs.google.com/presentation/d/1eVH-tjYf_PNFhw3BVXEHNsi4YTseOelH3Fbgpnbpamg/edit?usp=sharing",
+      },
+      {
+        label: "Demons & Angels (Google Slides)",
+        url: "https://docs.google.com/presentation/d/1KYivpFJvrDggCdYGsZ-ibDu50LWLMkMplbY1qPFG9TY/edit?usp=sharing",
       },
     ],
   },

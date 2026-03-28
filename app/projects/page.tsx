@@ -45,6 +45,8 @@ type Project = {
   writeup?: string;
   /** Second write-up — extra ✍️ */
   writeupSecondary?: string;
+  /** Slides deck (e.g. Google Slides) — extra 📊 */
+  slides?: string;
   featured?: boolean;
   isWork?: boolean;
   isCommunity?: boolean;
@@ -715,6 +717,17 @@ function ProjectItem({
                   ✍️
                 </a>
               )}
+              {project.slides && project.slides !== "" && (
+                <a
+                  href={project.slides}
+                  className="project-link-icon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Slides deck"
+                >
+                  📊
+                </a>
+              )}
               {project.video &&
                 project.video !== "" &&
                 /^https?:\/\//i.test(project.video) && (
@@ -993,6 +1006,8 @@ export default function WorkIndex() {
         "https://alexshibu.notion.site/VR-Applications-in-the-Canadian-Energy-Sector-231305d8d24480198f6cc3a98d059b29?pvs=74",
       writeupSecondary:
         "https://alexshibu.notion.site/Virtual-Reality-Adoption-Across-Mining-Oil-Gas-Energy-and-Manufacturing-257305d8d2448038ae50eacc3c01986c?pvs=74",
+      slides:
+        "https://docs.google.com/presentation/d/1ueNBfU5aKFael_EIqafkclWBiBFRkylgIdgG3wOgkq4/edit?usp=sharing",
       isWork: true,
     },
     {
