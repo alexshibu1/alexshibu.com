@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Lottie from "lottie-react";
 import { motion, AnimatePresence } from "framer-motion";
 import waveData from "../../assets/wave.json";
@@ -37,7 +38,7 @@ export default function InteractiveHeading() {
   };
 
   return (
-    <div className="relative inline-block">
+    <div className="hero-heading-stack relative inline-flex flex-col items-start">
       <h1 className="hero-heading">
         {/* ONLY "Hey" is clickable now */}
         <span
@@ -48,6 +49,26 @@ export default function InteractiveHeading() {
         </span>{" "}
         I&apos;m Alex.
       </h1>
+
+      <div
+        className="hero-affiliation"
+        aria-label="Physics and computer science at University of Toronto"
+      >
+        <span className="hero-affiliation-highlight">Physics + CS</span>
+        <span className="hero-affiliation-tail">
+          <span className="hero-affiliation-at">@</span>
+          <span className="hero-affiliation-logo-wrap">
+            <Image
+              src="/images/Utoronto.png"
+              alt="University of Toronto"
+              width={29}
+              height={29}
+              className="hero-affiliation-logo"
+            />
+          </span>
+          <span className="hero-affiliation-school">UofToronto</span>
+        </span>
+      </div>
 
       <div className="pointer-events-none fixed inset-0 z-50 overflow-hidden">
         <AnimatePresence>

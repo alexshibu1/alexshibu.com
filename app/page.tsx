@@ -46,12 +46,7 @@ export default function Home() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ALEX_PERSON) }}
         />
-        <h1 className="hero-heading">
-          {" "}
-          <span>
-            <InteractiveHeading />
-          </span>
-        </h1>
+        <InteractiveHeading />
         <p className="hero-subline">
           I&apos;m Alex Shibu, from Toronto. Currently obsessed with building a
           foundation for asymmetric outcomes. That starts with getting{" "}
@@ -65,8 +60,7 @@ export default function Home() {
           machine learning.
         </p>
         <p>
-          I am a student at University of Toronto, for physics & computer
-          science. On this site I park{" "}
+          On this site I park{" "}
           <Link href="/projects" className={subtleLink}>
             projects
             <span className={linkV4Arrow} aria-hidden="true">

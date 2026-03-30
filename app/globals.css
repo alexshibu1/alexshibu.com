@@ -329,6 +329,16 @@ body {
   height: auto;
 }
 
+/* Hero crest: beat .page-content img (2rem ≈ 32px vertical margin) */
+.page-content img.hero-affiliation-logo {
+  margin: 0;
+  border-radius: 0;
+  max-width: none;
+  height: 1.38em;
+  max-height: 29px;
+  width: auto;
+}
+
 .page-content a {
   color: #ff3a3a;
   text-decoration: none;
@@ -619,6 +629,100 @@ body {
   color: #666666;
 }
 
+/* Only the home wave block: pull affiliation up; kill h1 default bottom margin */
+.hero-heading-stack {
+  gap: 0;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.hero-heading-stack > .hero-heading {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  /* Less line-box slack below the title so the affiliation row can sit closer */
+  line-height: 1.02;
+}
+
+.hero-affiliation {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.28rem;
+  /* Pull the whole row (chip + @ + crest + UofToronto) up into leftover h1 line-box space */
+  margin: -0.45rem 0 0.5rem 0;
+  padding: 16px 0;
+  max-width: 100%;
+  min-width: 0;
+  font-family: var(--font-plex-sans), system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #1f1f1f;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+/* Kill inline line-box gap under the crest (Next/Image + font metrics) */
+.hero-affiliation-logo-wrap {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-affiliation-logo {
+  display: block;
+  margin: 0;
+  margin-top: 0;
+  padding: 0;
+  border: 0;
+  width: auto;
+  height: 1.38em;
+  max-height: 29px;
+  object-fit: contain;
+  /* Crop ~20% off each horizontal side (was 10%) */
+  clip-path: inset(0 20% 0 20%);
+}
+
+.hero-affiliation-tail {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-family: var(--font-plex-sans), system-ui, sans-serif;
+  font-size: inherit;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: -0.01em;
+  color: #000;
+}
+
+.hero-affiliation-at,
+.hero-affiliation-school {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  font-weight: 600;
+}
+
+.hero-affiliation-highlight {
+  display: inline;
+  line-height: 1;
+  font-weight: 400;
+  background-color: rgba(255, 58, 58, 0.06);
+  color: #1f1f1f;
+  padding: 0.26em 0.32em;
+  border-radius: 3px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
 /* Footer */
 
 .page-content footer {
@@ -845,11 +949,15 @@ body {
 
 /* Category-aware hover colors in /projects only.
    Priority: featured (red) > work (blue) > community (green). */
-.project-card.project-card--community:not(.project-card--work):not(.project-card--featured) .project-title:hover {
+.project-card.project-card--community:not(.project-card--work):not(
+    .project-card--featured
+  )
+  .project-title:hover {
   color: #16a34a !important;
 }
 
-.project-card.project-card--work:not(.project-card--featured) .project-title:hover {
+.project-card.project-card--work:not(.project-card--featured)
+  .project-title:hover {
   color: #3f6df4 !important;
 }
 
@@ -1130,13 +1238,19 @@ body {
     margin-top: 1.5rem;
   }
 
-  /* Home page only: no top margin on hero h1 in mobile */
-  .page-content > .hero > .hero-heading {
+  /* Home: hero title lives inside .hero-heading-stack (not direct child of .hero) */
+  .page-content > .hero .hero-heading-stack > .hero-heading {
     margin-top: 0;
   }
 
   .hero-subline {
     font-size: 18px;
+  }
+
+  .hero-affiliation {
+    font-size: 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .projects-list {
