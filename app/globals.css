@@ -682,8 +682,8 @@ body {
   height: 1.38em;
   max-height: 29px;
   object-fit: contain;
-  /* Crop ~20% off each horizontal side (was 10%) */
-  clip-path: inset(0 20% 0 20%);
+  /* Crop each horizontal side (only middle band stays visible) */
+  clip-path: inset(0 32% 0 32%);
 }
 
 .hero-affiliation-tail {

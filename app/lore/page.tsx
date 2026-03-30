@@ -609,7 +609,7 @@ const LORE: LoreItem[] = [
     id: "arduino-2015-2016",
     date: "11.2018",
     line: "Obsession with Arduino and robots",
-    more: "Begged my parents for random Arduino tech. And started building random things bluetooth controlled RC cars and open source OTTO project. Even prior to this I luv breaking apart RC cars from value village ",
+    more: "Begged my parents for random Arduino tech and started building random things—Bluetooth-controlled RC cars and the open-source OTTO project. Even before that I loved breaking apart RC cars from Value Village. I kept buying boards and kits anyway, but for a really long time I couldn’t get much to actually work or fix anything when it broke—lots of enthusiasm, slow skill catch-up.",
     links: [
       {
         label: "photo gallery",
