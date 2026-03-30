@@ -1198,6 +1198,8 @@ export default function WorkIndex() {
       cardMediaLink: "https://x.com/AlexShibu2/status/1642946139723841548",
       video: "https://www.youtube.com/watch?v=FVZCkDxriFI",
       writeup: "",
+      slides:
+        "https://docs.google.com/presentation/d/1Zxh80gdlRTKp2EOR8gcBFxL5u5b73cF2jKdU1IbcCtQ/edit?usp=sharing",
     },
     {
       name: "Family Guy Text Adventure",
