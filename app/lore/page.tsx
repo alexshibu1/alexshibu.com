@@ -220,7 +220,13 @@ const LORE: LoreItem[] = [
     id: "villars-2025-08",
     date: "08.2025",
     line: "Villars fellowship in Switzerland",
-    more: "Immersive global fellowship on Systems Thinking and Ecopreneurship in the Swiss Alps to develop scalable impact ventures. Met some of my best friends and learned systems thinking. Swiszzerland is expensive but probly the most beautiful place I've ever been alongside San Francisco.",
+    more: "Immersive global fellowship on Systems Thinking and Ecopreneurship in the Swiss Alps to develop scalable impact ventures. Met some of my best friends and learned systems thinking. Swiszzerland is expensive but probly the most beautiful place I've ever been alongside San Francisco. At the end of the program I gave a pitch—video below.",
+    links: [
+      {
+        label: "Pitch / program video (YouTube)",
+        url: "https://youtu.be/hsMn1vSRKX8",
+      },
+    ],
   },
   {
     id: "poland-2025-07",
