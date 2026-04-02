@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 
-const APPLICATIONS_SENT = 315;
 const TOOLTIP_TEXT = "The majority were ghosted.";
 
 export default function RejectionStats({
   rejectionsLogged,
+  applicationsSentComputed,
   conversionRate,
 }: {
   rejectionsLogged: number;
@@ -75,7 +75,7 @@ export default function RejectionStats({
           </span>
         </span>
         <span className="text-sm sm:text-3xl font-bold tabular-nums text-neutral-900 tracking-tight truncate">
-          {APPLICATIONS_SENT}
+          {applicationsSentComputed}
         </span>
       </div>
       <div className="bg-white rounded-r-xl rounded-l-none px-2 py-2 sm:px-6 sm:py-5 flex flex-row sm:flex-col gap-1.5 sm:gap-0.5 justify-center items-center sm:items-start min-w-0">

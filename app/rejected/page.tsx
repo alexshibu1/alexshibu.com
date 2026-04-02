@@ -6,7 +6,7 @@ import ReactMarkdown from "react-markdown";
 import RejectionStats from "./RejectionStats";
 import { sectionMetadata } from "../lib/seo";
 
-const TARGET_CONVERSION_RATE = 35; // (applications sent - rejections) / applications sent
+const TARGET_CONVERSION_RATE = 10; // (applications sent - rejections) / applications sent
 
 export const metadata: Metadata = sectionMetadata(
   "Rejected",
@@ -39,25 +39,22 @@ function getRejectionMarkdown(): string | null {
 export default function RejectedPage() {
   const rejectionContent = getRejectionMarkdown();
   const rejectionsLogged = countScreenshotsInMarkdown(rejectionContent);
-  // applications sent so conversion rate = target: (sent - rejections) / sent => sent = rejections / (1 - rate)
-  const applicationsSent =
-    rejectionsLogged > 0
-      ? Math.round(rejectionsLogged / (1 - TARGET_CONVERSION_RATE / 100))
-      : 400;
+  const applicationsSent = 395;
   const conversionRate = `~${TARGET_CONVERSION_RATE}%`;
 
   return (
     <main className="page-content">
       <h1 className="hero-heading">rejected</h1>
       <p className="hero-subline">
-        Running log of my rejections. Throwing enough potatoes at the wall.
+        Running log of my rejections. Throwing enough potatoes at the wall to
+        see what sticks.
       </p>
 
       <p className="mb-4 sm:mb-6">
-        Although it may seem like only a small portion of the attempts convert,
-        the ones that do at the right time, are tremendously more meaningful in
-        creating the types of outcomes I&apos;m looking for. I&apos;d like to
-        think it&apos;s God work. But great things come to people in motion.
+        Although it may seem like only a small portion of attempts convert, the
+        ones that do at the right time are tremendously more meaningful for the
+        type of outcomes I want. I&apos;d like to think it&apos;s God&apos;s
+        work. Great things still come to people in motion.
       </p>
 
       <RejectionStats
