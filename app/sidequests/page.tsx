@@ -70,7 +70,7 @@ export default function SidequestsPage() {
               </div>
               <span className="text-sm text-gray-500 sm:ml-2 sm:truncate group-hover:text-gray-700">
                 A log of my rejections. Throwing enough potatoes at the wall for
-                greatnesses.
+                greatness.
               </span>
             </div>
             <span

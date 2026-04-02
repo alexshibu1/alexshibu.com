@@ -183,7 +183,7 @@ export default function AboutPage() {
         className="about-current-focus"
         style={{ marginTop: "-2rem", marginBottom: "-20px" }}
       >
-        <h2 className="pt-10 text-2xl md:text-4xl font-black mb-3 uppercase text-gray-900">
+        <h2 className="pt-5 text-2xl md:text-4xl font-black mb-3 uppercase text-gray-900">
           <span className="inline-flex items-center gap-2 sm:gap-3 tracking-[0.18em] sm:tracking-[0.28em]">
             <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
               OPERATION

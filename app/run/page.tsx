@@ -31,7 +31,7 @@ const ACTIVITIES: Activity[] = [
     stravaEmbedId: "15860933804",
     activityType: "Run",
     distance: "4.20 km",
-    note: "I ran a lot Thodupuzha. Small town but chaotic place to run.",
+    note: "I ran a lot in Thodupuzha. Small town but chaotic place to run.",
   },
   {
     title: "Thrissur Pulikalli",
@@ -104,7 +104,7 @@ const ACTIVITIES: Activity[] = [
     stravaEmbedId: "15329737832",
     activityType: "Run",
     distance: "6.32 km",
-    note: "One of the nicest places i've run.",
+    note: "One of the nicest places I've run.",
   },
   {
     title: "Berlin at Night",
@@ -122,7 +122,7 @@ const ACTIVITIES: Activity[] = [
     stravaEmbedId: "15177655787",
     activityType: "Run",
     distance: "3.65 km",
-    note: "I missed my bus to Berlin. My bus then was stoped cuz someone jumped the border.",
+    note: "I missed my bus to Berlin. My bus then was stopped cuz someone jumped the border.",
   },
   {
     title: "Middle of Nowhere Run",
@@ -193,7 +193,7 @@ const ACTIVITIES: Activity[] = [
     stravaEmbedId: "14605641640",
     activityType: "Run",
     distance: "2.53 km",
-    note: "Lot's of pain",
+    note: "Lots of pain",
   },
   {
     title: "Across Toronto on Bike Share",

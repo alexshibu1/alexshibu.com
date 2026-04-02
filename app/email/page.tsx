@@ -15,8 +15,8 @@ export default function EmailPage() {
 
       <p className="text-sm text-gray-700">
         I was a tiny boy when I discovered the power of the internet. You are
-        simply 1 email away from some of the post powerful people on earth. Keep
-        in mind these are a few that worked out of a thousands of fails.
+        simply 1 email away from some of the most powerful people on earth. Keep
+        in mind these are a few that worked out of thousands of fails.
       </p>
       <div>
         <img
@@ -47,8 +47,8 @@ export default function EmailPage() {
             <p className="m-0">
               this is the first time i realized cold emails work. I eventually
               met the nice lady who approved this. I got free tix for the
-              conferance. This was my playground for networking and picking up
-              coporate guys for coffee.{" "}
+              conference. This was my playground for networking and picking up
+              corporate guys for coffee.{" "}
               <a
                 href="https://www.youtube.com/watch?v=-vPNeo5_ZU4"
                 target="_blank"

@@ -54,7 +54,7 @@ export default function RejectedPage() {
         Although it may seem like only a small portion of attempts convert, the
         ones that do at the right time are tremendously more meaningful for the
         type of outcomes I want. I&apos;d like to think it&apos;s God&apos;s
-        work. Great things still come to people in motion.
+        work. Great things only come to people in motion.
       </p>
 
       <RejectionStats

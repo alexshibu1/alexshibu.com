@@ -105,7 +105,7 @@ export const coffeeShops: CoffeeShop[] = [
     shopName: "Starbucks",
     rating: 8.5,
     review:
-      "Does not need wiping cream. I had multiple times, it just tastes perfect",
+      "Does not need whipped cream. I had multiple times, it just tastes perfect",
     isChain: true,
     location: DEFAULT_LOCATION,
   },
@@ -198,7 +198,7 @@ export const coffeeShops: CoffeeShop[] = [
     shopName: "Little Pebbles Café",
     rating: 9.7,
     review:
-      "Very close to perfect. Tastes. The right amount of coffee and chocate. Ideally I want more hot coffee. The bliss is crazy.",
+      "Very close to perfect. Tastes. The right amount of coffee and chocolate. Ideally I want more hot coffee. The bliss is crazy.",
     isChain: false,
     location: DEFAULT_LOCATION,
   },
@@ -208,7 +208,7 @@ export const coffeeShops: CoffeeShop[] = [
     drink: "Mocha",
     shopName: "Jimmy's Coffee",
     rating: 9,
-    review: "Somithin weird but really good. Very hot as well",
+    review: "Something weird but really good. Very hot as well",
     isChain: false,
     location: DEFAULT_LOCATION,
   },
@@ -239,7 +239,7 @@ export const coffeeShops: CoffeeShop[] = [
     drink: "Mocha Latte",
     shopName: "Tim Hortons",
     rating: 6,
-    review: "Very watery, too much viscoscity",
+    review: "Very watery, too much viscosity",
     isChain: true,
     location: DEFAULT_LOCATION,
   },
@@ -259,7 +259,7 @@ export const coffeeShops: CoffeeShop[] = [
     drink: "Macchiato",
     shopName: "Second Cup",
     rating: 9.2,
-    review: "Very good, smooth, creamy, choaclate",
+    review: "Very good, smooth, creamy, chocolate",
     isChain: true,
     location: DEFAULT_LOCATION,
   },
@@ -334,7 +334,7 @@ export const coffeeShops: CoffeeShop[] = [
     shopName: "Rooster Coffee",
     rating: 9.75,
     review:
-      "Really good but somthin is missing. It not full flavour. The beginning is nice. Great place to work.",
+      "Really good but something is missing. It's not full flavour. The beginning is nice. Great place to work.",
     isChain: false,
     location: {
       lat: 43.6691754,
@@ -349,7 +349,7 @@ export const coffeeShops: CoffeeShop[] = [
     shopName: "Tim Hortons",
     rating: 9,
     review:
-      "If sugar had a dad it would be this. Initially It was a sugar overload. Then it became the new nornmal",
+      "If sugar had a dad it would be this. Initially It was a sugar overload. Then it became the new normal",
     isChain: true,
     location: DEFAULT_LOCATION,
   },
@@ -360,7 +360,7 @@ export const coffeeShops: CoffeeShop[] = [
     shopName: "Dinner's Coffee",
     rating: 6,
     review:
-      "Pretty standard. Had to put sugar and honey to make it statement better. Also the wifi and me had fight. I lost. Nothing special.",
+      "Pretty standard. Had to put sugar and honey to make it taste better. Also the wifi and me had fight. I lost. Nothing special.",
     isChain: false,
     location: DEFAULT_LOCATION,
   },
@@ -412,7 +412,7 @@ export const coffeeShops: CoffeeShop[] = [
     shopName: "kioscafe קיוסקפה חיפה",
     rating: 9,
     review:
-      "Great coffee, but after it got cold. The cholcate becomes swirly. . great place to work.",
+      "Great coffee, but after it got cold. The chocolate becomes swirly. . great place to work.",
     isChain: false,
     location: DEFAULT_LOCATION,
   },
@@ -455,7 +455,7 @@ export const coffeeShops: CoffeeShop[] = [
     shopName: "Versus Coffee",
     rating: 8.5,
     review:
-      "So much space and stuff to work on laptop. But the coffee is too cold. I sipped it in a few minutes. Way to watery.plain, I want rich Tates. Non of the. It takes old.",
+      "So much space and stuff to work on laptop. But the coffee is too cold. I sipped it in a few minutes. Way too watery. Plain, I want rich tastes. None of that. It tastes old.",
     isChain: false,
     location: DEFAULT_LOCATION,
   },
@@ -487,7 +487,7 @@ export const coffeeShops: CoffeeShop[] = [
     shopName: "Tim Hortons",
     rating: 9.4,
     review:
-      "Int;s not insane. No Love in the coffee. Lol. But it's good. Tate nice.",
+      "It's not insane. No love in the coffee. Lol. But it's good. Tastes nice.",
     isChain: true,
     location: DEFAULT_LOCATION,
   },

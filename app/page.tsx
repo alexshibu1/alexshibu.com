@@ -89,7 +89,7 @@ export default function Home() {
             </span>
           </Link>
           . Past work includes everything from decision theory, organizing
-          hackathons, selling keto books on instagram, and bath bombs on
+          hackathons, selling keto books on Instagram, and bath bombs on
           Shopify. Currently building voice agents for SMBs or HR departments.
         </p>
         <p>
