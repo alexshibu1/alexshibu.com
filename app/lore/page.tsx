@@ -431,8 +431,8 @@ const LORE: LoreItem[] = [
     ],
   },
   {
-    id: "ninebot-scooter-trash-2020-03",
-    date: "03.2020",
+    id: "ninebot-scooter-trash-2021-01",
+    date: "01.2021",
     line: "Rebuilt a Ninebot scooter from the garbage",
     more: "Found a Ninebot in the trash, fixed the frame, battery, and charging, then modded it to go faster.",
   },
