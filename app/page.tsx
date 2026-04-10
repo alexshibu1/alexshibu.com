@@ -48,8 +48,8 @@ export default function Home() {
         />
         <InteractiveHeading />
         <p className="hero-subline">
-          I&apos;m Alex Shibu, from Toronto. Currently obsessed with building a
-          foundation for asymmetric outcomes. That starts with getting{" "}
+          I&apos;m Alex Shibu. Currently obsessed with building a foundation for
+          asymmetric outcomes. That starts with getting{" "}
           <Link href="/technical" className={subtleLink}>
             dangerous
             <span className={linkV4Arrow} aria-hidden="true">

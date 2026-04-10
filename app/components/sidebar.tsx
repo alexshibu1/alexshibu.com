@@ -107,6 +107,7 @@ export default function Sidebar() {
           >
             x
           </a>
+
           <a
             href="https://github.com/alexshibu1"
             target="_blank"
@@ -128,6 +129,7 @@ export default function Sidebar() {
           >
             instagram
           </a>
+          <a href="mailto:alexshibu04@gmail.com">contact</a>
         </div>
       </div>
     </>

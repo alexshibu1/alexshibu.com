@@ -54,12 +54,7 @@ export default function InteractiveHeading() {
         aria-label="Physics and computer science at University of Toronto"
       >
         <span className="v4-bracket" aria-hidden="true">[</span>
-        <a
-          href="https://www.entrepreneurship.artsci.utoronto.ca/news/we-asked-7-founders-what-sparked-your-startup-idea"
-          target="_blank"
-          rel="noreferrer"
-          className="v4-subject v4-link"
-        >Physics + CS</a>
+        <span className="v4-subject">Physics + CS</span>
         <span className="v4-sep" aria-hidden="true">/</span>
         <Image src="/images/Utoronto.png" alt="" width={18} height={18} className="v4-logo" />
         <span className="v4-school">UofToronto</span>
