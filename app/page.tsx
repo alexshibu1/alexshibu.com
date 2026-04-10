@@ -16,11 +16,14 @@ const subtleLink =
 const linkV4Arrow =
   "inline-block max-w-0 ml-0 overflow-hidden opacity-0 whitespace-nowrap align-baseline text-[0.65em] group-hover:max-w-[1.25em] group-hover:opacity-100 group-hover:ml-0.5 transition-all duration-150";
 
-export const metadata: Metadata = sectionMetadata(
-  "Home",
-  "Alex Shibu is a Toronto based developer, growth engineer, and student at University of Toronto sharing projects, writing, journey, books, and experiments.",
-  "/",
-);
+const homeDescription =
+  "Alex Shibu is a Toronto based developer, growth engineer, and student at University of Toronto sharing projects, writing, journey, books, and experiments.";
+
+export const metadata: Metadata = {
+  ...sectionMetadata("Alex Shibu", homeDescription, "/"),
+  // Bypass root layout template ("%s | Alex Shibu") so the tab title is not "Alex Shibu | Alex Shibu"
+  title: { absolute: "Alex Shibu" },
+};
 
 export default function Home() {
   const homeWebPageJsonLd = webpageJsonLd(
@@ -48,8 +51,8 @@ export default function Home() {
         />
         <InteractiveHeading />
         <p className="hero-subline">
-          I&apos;m Alex Shibu. Currently obsessed with building a foundation for
-          asymmetric outcomes. That starts with getting{" "}
+          I&apos;m Alex Shibu from Toronto. Currently obsessed with building a
+          foundation for asymmetric outcomes. That starts with getting{" "}
           <Link href="/technical" className={subtleLink}>
             dangerous
             <span className={linkV4Arrow} aria-hidden="true">

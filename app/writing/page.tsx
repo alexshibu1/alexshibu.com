@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import WritingClient from "./WritingClient";
 import { sectionMetadata } from "../lib/seo";
 
-export const dynamic = "force-dynamic";
 export const metadata: Metadata = sectionMetadata(
   "Writing",
   "Essays, logs, blogs, and experiments by Alex Shibu.",
