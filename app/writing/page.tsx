@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import WritingClient from "./WritingClient";
 import { sectionMetadata } from "../lib/seo";
@@ -128,7 +129,9 @@ export default function WritingIndex() {
         essays, logs, and experiments from the builder gap year.
       </p>
 
-      <WritingClient essays={essays} />
+      <Suspense>
+        <WritingClient essays={essays} />
+      </Suspense>
     </main>
   );
 }
