@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import WritingClient from "./WritingClient";
 import { sectionMetadata } from "../lib/seo";
 
+export const dynamic = "force-dynamic";
 export const metadata: Metadata = sectionMetadata(
   "Writing",
   "Essays, logs, blogs, and experiments by Alex Shibu.",
@@ -95,10 +96,6 @@ function readAllEssayMeta(): EssayMeta[] {
           title = h1Match[1];
         }
       }
-
-      console.log(
-        `Parsed essay: ${dir.name}, Title: ${title}, Date: ${date}, Type: ${type}`,
-      );
 
       return {
         slug: dir.name,
