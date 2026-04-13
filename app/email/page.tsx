@@ -1,6 +1,12 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
+import { sectionMetadata } from "../lib/seo";
+
+export const metadata: Metadata = sectionMetadata(
+  "Cold Emails",
+  "Cold email examples and templates that actually worked — from conference tickets to brand deals.",
+  "/email",
+);
 
 export default function EmailPage() {
   return (

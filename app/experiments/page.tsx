@@ -1,6 +1,12 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
+import { sectionMetadata } from "../lib/seo";
+
+export const metadata: Metadata = sectionMetadata(
+  "Experiments",
+  "Ongoing self-experiments by Alex Shibu — marathon training, vitamin D, sleep, technical depth, and body composition.",
+  "/experiments",
+);
 
 const EXPERIMENTS = [
   {

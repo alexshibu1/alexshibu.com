@@ -50,8 +50,10 @@ export default function Home() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ALEX_PERSON) }}
         />
         <InteractiveHeading />
+
+        {/* Intro */}
         <p className="hero-subline">
-          I&apos;m Alex Shibu from Toronto. Currently obsessed with building a
+          I&apos;m Alex Shibu, from Toronto. Currently obsessed with building a
           foundation for asymmetric outcomes. That starts with getting{" "}
           <Link href="/technical" className={subtleLink}>
             dangerous
@@ -62,6 +64,40 @@ export default function Home() {
           at full-stack engineering, product growth, and math & physics for
           machine learning.
         </p>
+        <p>
+          Currently building voice agents for plumbers and SMBs, making content
+          that scales, writing on{" "}
+          <a
+            href="https://x.com/alexshibu2"
+            className={subtleLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Twitter
+            <span className={linkV4Arrow} aria-hidden="true">
+              ↗
+            </span>
+          </a>
+          , and getting increasingly pulled into drones and hardware.
+        </p>
+        <div className="home-previously-block">
+          <p>Previously, I...</p>
+          <ul>
+            <li>Turned $3K into $100K in NFTs, then lost it all</li>
+            <li>Worked on decision theory in Israel at the Technion</li>
+            <li>
+              Went to Poland to teach 100+ young people tech through English
+            </li>
+            <li>
+              Flyered for Wizeprep, converting 46% of 400+ cold conversations to
+              leads
+            </li>
+            <li>
+              Made my first dollars selling keto books and bath bombs on Shopify
+              and IG
+            </li>
+          </ul>
+        </div>
         <p>
           On this site I park{" "}
           <Link href="/projects" className={subtleLink}>
@@ -91,26 +127,21 @@ export default function Home() {
               ↗
             </span>
           </Link>
-          . Past work includes everything from decision theory, organizing
-          hackathons, selling keto books on Instagram, and bath bombs on
-          Shopify. Currently building voice agents for SMBs or HR departments.
-        </p>
-        <p>
-          I spend a lot of time{" "}
+          . Outside of that you&apos;ll find me{" "}
           <Link href="/run" className={subtleLink}>
             running
             <span className={linkV4Arrow} aria-hidden="true">
               ↗
             </span>
           </Link>
-          {""},{" "}
+          around the cities,{" "}
           <Link href="/books" className={subtleLink}>
             reading
             <span className={linkV4Arrow} aria-hidden="true">
               ↗
             </span>
-          </Link>
-          , reviewing{" "}
+          </Link>{" "}
+          for the first time, reviewing{" "}
           <Link href="/coffee" className={subtleLink}>
             coffee
             <span className={linkV4Arrow} aria-hidden="true">
@@ -123,12 +154,8 @@ export default function Home() {
             <span className={linkV4Arrow} aria-hidden="true">
               ↗
             </span>
-          </Link>
-          .
-        </p>
-        <p>
-          In the pursuit of becoming the ultimate Swiss Army knife who can build
-          great products, grow users, and create communities.
+          </Link>{" "}
+          on myself.
         </p>
         <p>
           Join my internal board of directors for occasional updates. Love to

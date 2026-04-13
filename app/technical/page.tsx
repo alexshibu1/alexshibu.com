@@ -1,4 +1,11 @@
-"use client";
+import type { Metadata } from "next";
+import { sectionMetadata } from "../lib/seo";
+
+export const metadata: Metadata = sectionMetadata(
+  "Operation Forge",
+  "Alex Shibu's 6-month plan to become technically dangerous — from first principles to shipping real products.",
+  "/technical",
+);
 
 export default function TechnicalPage() {
   return (
@@ -108,7 +115,7 @@ export default function TechnicalPage() {
           <p className="text-[11px] font-semibold uppercase tracking-widest text-gray-400 mb-3">
             Goals
           </p>
-          <ul className="space-y-2 text-sm text-gray-700">
+          <ul className="list-none space-y-2 text-sm text-gray-700">
             <li className="flex items-start gap-2">
               <span className="mt-[3px] w-1.5 h-1.5 rounded-full bg-indigo-400 shrink-0" />
               Learn core JavaScript from first principles — types, closures,
