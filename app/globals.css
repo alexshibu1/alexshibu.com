@@ -327,6 +327,10 @@ body {
   margin: 0;
 }
 
+.page-content .home-previously-block > ul > li {
+  margin-bottom: calc(0.5rem * 0.25);
+}
+
 .page-content .home-previously-block > ul > li:last-child {
   margin-bottom: 0;
 }

@@ -65,8 +65,8 @@ export default function Home() {
           machine learning.
         </p>
         <p className="home-current-build">
-          Currently building voice agents for plumbers and SMBs, documenting
-          with content, writing on{" "}
+          Building voice agents for plumbers and SMBs, documenting with content,
+          writing on{" "}
           <a
             href="https://x.com/alexshibu2"
             className={subtleLink}
