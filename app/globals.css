@@ -271,6 +271,19 @@ body {
   /* No margin auto needed if parent centers it */
 }
 
+/* Home: tighter top — padding + h1 offset each stepped down by 10% twice (0.9²) */
+.page-content.home-page {
+  padding-top: calc(2rem * 0.9 * 0.9);
+  /* Lowest of former hero-subline / home-current-build / default <p> bottom spacing */
+  --home-section-gap: calc(1rem * 0.9 * 0.9);
+}
+
+@media (min-width: 801px) {
+  .page-content.home-page .hero .hero-heading-stack > .hero-heading {
+    margin-top: calc(2.5rem * 0.9 * 0.9);
+  }
+}
+
 .page-content p {
   font-family: var(--font-plex-sans), system-ui, sans-serif;
 
@@ -285,13 +298,25 @@ body {
   margin-bottom: 1.5rem; /* Add spacing between paragraphs */
 }
 
+/* Hero subline (non-home pages) */
 .page-content .hero-subline {
-  margin-bottom: 1rem;
+  margin-bottom: calc(1rem * 0.9 * 0.9);
 }
 
-/* Home: no outer margin on Previously block (list still uses li spacing) */
+/* Home: same bottom margin for intro subline, voice-build paragraph, “On this site…” — all use --home-section-gap (the minimum of the three) */
+.page-content.home-page .hero-subline,
+.page-content.home-page p.home-current-build,
+.page-content.home-page p.home-on-this-site {
+  margin-bottom: var(--home-section-gap);
+}
+
+.page-content.home-page p.home-on-this-site {
+  padding-top: 0;
+}
+
+/* Home: no top/side margin; bottom matches .hero-subline → even rhythm before next <p> */
 .page-content .home-previously-block {
-  margin: 0;
+  margin: 0 0 calc(1rem * 0.9) 0;
 }
 
 .page-content .home-previously-block > p {
@@ -300,6 +325,10 @@ body {
 
 .page-content .home-previously-block > ul {
   margin: 0;
+}
+
+.page-content .home-previously-block > ul > li:last-child {
+  margin-bottom: 0;
 }
 
 /* Markdown Styles inside page-content */
@@ -1482,6 +1511,10 @@ body {
     width: 100%;
     box-sizing: border-box;
     overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+
+  .page-content.home-page {
+    padding-top: calc(4.5rem * 0.9 * 0.9);
   }
 
   .projects-list {

@@ -50,7 +50,10 @@ export default function InteractiveHeading() {
       {/* V4: Bracket monospace — ACTIVE */}
       <div
         className="hero-affiliation v4"
-        style={{ paddingTop: '10px', paddingBottom: '42px' }}
+        style={{
+          paddingTop: "10px",
+          paddingBottom: "calc(42px * 0.85 * 0.9)",
+        }}
         aria-label="Physics and computer science at University of Toronto"
       >
         <span className="v4-bracket" aria-hidden="true">[</span>

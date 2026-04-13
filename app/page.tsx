@@ -33,7 +33,7 @@ export default function Home() {
   );
 
   return (
-    <div className="page-content">
+    <div className="page-content home-page">
       <div className="hero">
         <script
           type="application/ld+json"
@@ -64,9 +64,9 @@ export default function Home() {
           at full-stack engineering, product growth, and math & physics for
           machine learning.
         </p>
-        <p>
-          Currently building voice agents for plumbers and SMBs, making content
-          that scales, writing on{" "}
+        <p className="home-current-build">
+          Currently building voice agents for plumbers and SMBs, documenting
+          with content, writing on{" "}
           <a
             href="https://x.com/alexshibu2"
             className={subtleLink}
@@ -89,16 +89,17 @@ export default function Home() {
               Went to Poland to teach 100+ young people tech through English
             </li>
             <li>
-              Flyered for Wizeprep, converting 46% of 400+ cold conversations to
-              leads
+              Led EasyHacks w/Perplexity AI — 170+ participants, 13 countries,
+              $6K in prizes
             </li>
+
             <li>
               Made my first dollars selling keto books and bath bombs on Shopify
               and IG
             </li>
           </ul>
         </div>
-        <p>
+        <p className="home-on-this-site">
           On this site I park{" "}
           <Link href="/projects" className={subtleLink}>
             projects
@@ -133,15 +134,15 @@ export default function Home() {
             <span className={linkV4Arrow} aria-hidden="true">
               ↗
             </span>
-          </Link>
-          around the cities,{" "}
+          </Link>{" "}
+          around different cities,{" "}
           <Link href="/books" className={subtleLink}>
             reading
             <span className={linkV4Arrow} aria-hidden="true">
               ↗
             </span>
-          </Link>{" "}
-          for the first time, reviewing{" "}
+          </Link>
+          , reviewing{" "}
           <Link href="/coffee" className={subtleLink}>
             coffee
             <span className={linkV4Arrow} aria-hidden="true">

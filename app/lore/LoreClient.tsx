@@ -367,6 +367,11 @@ const LORE: LoreItem[] = [
     ],
   },
   {
+    id: "wizeprep-start-2024-12",
+    date: "12.2024",
+    line: "Started at Wizeprep",
+  },
+  {
     id: "first-10k-2024-10",
     date: "10.2024",
     line: "Ran my first 10K",
