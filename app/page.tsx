@@ -66,7 +66,7 @@ export default function Home() {
         </p>
         <p className="home-current-build">
           Building voice agents for plumbers and SMBs, documenting with content,
-          writing on{" "}
+          thoughts on{" "}
           <a
             href="https://x.com/alexshibu2"
             className={subtleLink}
@@ -84,18 +84,16 @@ export default function Home() {
           <p>Previously, I...</p>
           <ul>
             <li>Turned $3K into $100K in NFTs, then lost it all</li>
-            <li>Worked on decision theory in Israel at the Technion</li>
+            <li>Worked on info gap decision theory at Technion</li>
+            <li>Taught 100+ young people tech and English in Poland</li>
             <li>
-              Went to Poland to teach 100+ young people tech through English
-            </li>
-            <li>
-              Led EasyHacks w/Perplexity AI — 170+ participants, 13 countries,
-              $6K in prizes
+              Led EasyHacks w/Perplexity AI with 170+ participants from 13
+              countries with $4K in prizes
             </li>
 
             <li>
-              Made my first dollars selling keto books and bath bombs on Shopify
-              and IG
+              Made my first dollars selling bath bombs and keto ebooks on
+              Shopify and IG
             </li>
           </ul>
         </div>
@@ -135,7 +133,7 @@ export default function Home() {
               ↗
             </span>
           </Link>{" "}
-          around different cities,{" "}
+          in different cities,{" "}
           <Link href="/books" className={subtleLink}>
             reading
             <span className={linkV4Arrow} aria-hidden="true">
@@ -149,14 +147,14 @@ export default function Home() {
               ↗
             </span>
           </Link>
-          , and doing{" "}
+          , and doing fun{" "}
           <Link href="/experiments" className={subtleLink}>
             experiments
             <span className={linkV4Arrow} aria-hidden="true">
               ↗
             </span>
-          </Link>{" "}
-          on myself.
+          </Link>
+          .
         </p>
         <p>
           Join my internal board of directors for occasional updates. Love to
