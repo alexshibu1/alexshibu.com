@@ -188,10 +188,13 @@ export default function Home() {
           </a>
         </div>
       </footer>
-      {/* 
-      <div className="footer-right-corner">
-        <span className="opacity-80 tracking-tight">
-          Last edited <span className="italic tracking-tight">Dec 5, 2025</span>
+
+      {/* <div className="footer-right-corner">
+        <span className="block opacity-50 tracking-tight text-right footer-last-edited-date">
+          Last edited{" "}
+          <span className="footer-last-edited-date italic tracking-tight">
+            Apr 14, 2026
+          </span>
         </span>
       </div> */}
     </div>

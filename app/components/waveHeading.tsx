@@ -52,7 +52,7 @@ export default function InteractiveHeading() {
         className="hero-affiliation v4"
         style={{
           paddingTop: "10px",
-          paddingBottom: "calc(42px * 0.85 * 0.9 * 0.75)",
+          paddingBottom: "20px",
         }}
         aria-label="Physics and computer science at University of Toronto"
       >
