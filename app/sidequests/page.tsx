@@ -4,7 +4,7 @@ import { sectionMetadata } from "../lib/seo";
 
 export const metadata: Metadata = sectionMetadata(
   "Sidequests",
-  "Alex Shibu's sidequests projects like coffee reviews website, rejection log, technical masterplan, and cold email templates.",
+  "Alex Shibu's sidequests projects like coffee reviews website, rejection log, technical masterplan, and running log.",
   "/sidequests",
 );
 
@@ -102,37 +102,6 @@ export default function SidequestsPage() {
               </div>
               <span className="text-sm text-gray-500 sm:ml-2 sm:truncate group-hover:text-gray-700">
                 Mapping my journey to becoming technically dangerous.
-              </span>
-            </div>
-            <span
-              className="hidden sm:inline text-xs text-gray-400 flex-shrink-0 transition-transform group-hover:translate-x-[1px] group-hover:text-red-500"
-              aria-hidden="true"
-            >
-              ↗
-            </span>
-          </div>
-        </Link>
-
-        <Link
-          href="/email"
-          className="group block px-4 py-3 sm:px-3 sm:py-2 hover:bg-red-50/40 transition-colors min-h-[44px] sm:min-h-0 flex items-center"
-          style={{ textDecoration: "none" }}
-        >
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2 w-full min-w-0 transition-transform group-hover:translate-x-[1px]">
-            <div className="min-w-0 flex flex-col gap-0.5 sm:flex-row sm:items-baseline">
-              <div className="flex items-center gap-1.5 sm:contents">
-                <span className="text-base font-semibold text-gray-900 group-hover:text-red-700">
-                  email
-                </span>
-                <span
-                  className="text-xs text-gray-400 flex-shrink-0 sm:hidden transition-transform group-hover:translate-x-[1px] group-hover:text-red-500"
-                  aria-hidden="true"
-                >
-                  ↗
-                </span>
-              </div>
-              <span className="text-sm text-gray-500 sm:ml-2 sm:truncate group-hover:text-gray-700">
-                Best cold emails I&apos;ve tried and sent.
               </span>
             </div>
             <span

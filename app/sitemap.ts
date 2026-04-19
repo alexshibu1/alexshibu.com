@@ -97,12 +97,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      route: "/email",
-      sourcePath: path.join(appDir, "email", "page.tsx"),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
       route: "/experiments",
       sourcePath: path.join(appDir, "experiments", "page.tsx"),
       changeFrequency: "monthly",
