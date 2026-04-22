@@ -859,7 +859,7 @@ export default function LoreClient() {
                 <div className="text-sm font-semibold text-gray-900 mt-1">
                   {active.line}
                 </div>
-                <p className="text-xs text-gray-600 leading-relaxed mt-2">
+                <p className="text-sm text-gray-600 leading-relaxed mt-2 lore-side-description">
                   {active.more}
                 </p>
                 {active.links?.length ? (
@@ -879,7 +879,7 @@ export default function LoreClient() {
                 ) : null}
               </>
             ) : (
-              <p className="text-xs text-gray-500">
+              <p className="text-sm text-gray-500 lore-side-description">
                 Hover or click a moment to see more context.
               </p>
             )}

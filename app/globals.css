@@ -1822,6 +1822,22 @@ body {
   .about-bio {
     font-size: 12px;
   }
+
+  /*
+    Why: only on the 15" viewport, lore side-pane description text should be 2px
+    smaller while keeping the title size unchanged.
+  */
+  .lore-side-description {
+    font-size: 12px;
+  }
+
+  /*
+    Why: this experiments card note should be 2px smaller only in this viewport
+    band, without affecting the card title.
+  */
+  .experiments-completed-description {
+    font-size: 7px;
+  }
 }
 
 @media (min-width: 1920px) {
