@@ -139,7 +139,7 @@ export default function ExperimentsPage() {
           </span>
         </div>
 
-        <p className="text-[9px] text-gray-400 leading-tight mb-2 ml-7 experiments-completed-description">
+        <p className="text-[10px] text-gray-400 leading-tight mb-2 ml-7 experiments-completed-description">
           Every morning, no decisions. Full reps when possible, knees to keep
           the streak.
         </p>

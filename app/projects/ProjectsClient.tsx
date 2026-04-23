@@ -1392,6 +1392,12 @@ export default function ProjectsClient() {
         project.video.startsWith("/") &&
         /\.(mp4|webm|mov)$/i.test(project.video)),
     );
+  const getFallbackVideoIndexes = (limit: number) =>
+    sortedProjects
+      .map((project, index) => ({ project, index }))
+      .filter(({ project }) => hasLocalPreviewVideo(project))
+      .slice(0, limit)
+      .map(({ index }) => index);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -1432,11 +1438,9 @@ export default function ProjectsClient() {
 
   const activeVideoIndexes = useMemo(() => {
     if (Object.keys(intersectionMap).length === 0) {
-      const firstVisibleBudget = sortedProjects
-        .map((project, index) => ({ project, index }))
-        .filter(({ project }) => hasLocalPreviewVideo(project))
-        .slice(0, TARGET_ACTIVE_VIDEO_COUNT)
-        .map(({ index }) => index);
+      const firstVisibleBudget = getFallbackVideoIndexes(
+        TARGET_ACTIVE_VIDEO_COUNT,
+      );
       return new Set(firstVisibleBudget);
     }
 
@@ -1517,6 +1521,13 @@ export default function ProjectsClient() {
       ].slice(0, MAX_ACTIVE_VIDEO_COUNT);
     }
 
+    // Cross-device safety net: some browsers/devices can emit observer entries
+    // with 0 intersection for all nodes during zoom/scaling transitions. Keep
+    // a deterministic animated baseline instead of freezing all previews.
+    if (activeWithTransition.length === 0) {
+      activeWithTransition = getFallbackVideoIndexes(MAX_ACTIVE_VIDEO_COUNT);
+    }
+
     return new Set(activeWithTransition);
   }, [
     hoveredProjectIndex,
@@ -1527,11 +1538,9 @@ export default function ProjectsClient() {
 
   const primedVideoIndexes = useMemo(() => {
     if (Object.keys(intersectionMap).length === 0) {
-      const firstVisibleBudget = sortedProjects
-        .map((project, index) => ({ project, index }))
-        .filter(({ project }) => hasLocalPreviewVideo(project))
-        .slice(0, TARGET_ACTIVE_VIDEO_COUNT)
-        .map(({ index }) => index);
+      const firstVisibleBudget = getFallbackVideoIndexes(
+        TARGET_ACTIVE_VIDEO_COUNT,
+      );
       return new Set(firstVisibleBudget);
     }
 
@@ -1563,7 +1572,12 @@ export default function ProjectsClient() {
       primedPriorityIndexes.push(secondaryHoveredProjectIndex);
     }
 
-    return new Set([...primedPriorityIndexes, ...candidates]);
+    const merged = [...primedPriorityIndexes, ...candidates];
+    if (merged.length === 0) {
+      return new Set(getFallbackVideoIndexes(TARGET_ACTIVE_VIDEO_COUNT));
+    }
+
+    return new Set(merged);
   }, [
     hoveredProjectIndex,
     secondaryHoveredProjectIndex,

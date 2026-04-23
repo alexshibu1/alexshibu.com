@@ -758,7 +758,9 @@ body {
 /* ═══════════════════════════════════════════
    V1 — Inline chip + dot + school
    ═══════════════════════════════════════════ */
-.v1 { gap: 0.35rem; }
+.v1 {
+  gap: 0.35rem;
+}
 .v1-highlight {
   font-weight: 600;
   color: #1a1a1a;
@@ -773,7 +775,10 @@ body {
   font-size: 0.85em;
   margin: 0 0.05em;
 }
-.v1-logo { width: 20px; height: 20px; }
+.v1-logo {
+  width: 20px;
+  height: 20px;
+}
 .v1-school {
   font-weight: 600;
   color: #1a1a1a;
@@ -783,7 +788,9 @@ body {
 /* ═══════════════════════════════════════════
    V1b — Plain text, @ separator
    ═══════════════════════════════════════════ */
-.v1b { gap: 0.3rem; }
+.v1b {
+  gap: 0.3rem;
+}
 .v1b-subject {
   font-weight: 600;
   color: #1a1a1a;
@@ -793,7 +800,10 @@ body {
   color: #bbb;
   font-weight: 400;
 }
-.v1b-logo { width: 18px; height: 18px; }
+.v1b-logo {
+  width: 18px;
+  height: 18px;
+}
 .v1b-school {
   font-weight: 600;
   color: #1a1a1a;
@@ -803,7 +813,9 @@ body {
 /* ═══════════════════════════════════════════
    V2 — Clean inline, comma separated
    ═══════════════════════════════════════════ */
-.v2 { gap: 0.25rem; }
+.v2 {
+  gap: 0.25rem;
+}
 .v2-subject {
   font-weight: 600;
   color: #1a1a1a;
@@ -814,7 +826,10 @@ body {
   font-weight: 400;
   margin-right: 0.05rem;
 }
-.v2-logo { width: 17px; height: 17px; }
+.v2-logo {
+  width: 17px;
+  height: 17px;
+}
 .v2-school {
   font-weight: 500;
   color: #555;
@@ -824,7 +839,9 @@ body {
 /* ═══════════════════════════════════════════
    V3 — Underline on subject, @ logo school
    ═══════════════════════════════════════════ */
-.v3 { gap: 0.3rem; }
+.v3 {
+  gap: 0.3rem;
+}
 .v3-subject {
   font-weight: 600;
   color: #1a1a1a;
@@ -836,7 +853,10 @@ body {
   color: #aaa;
   font-weight: 400;
 }
-.v3-logo { width: 17px; height: 17px; }
+.v3-logo {
+  width: 17px;
+  height: 17px;
+}
 .v3-school {
   font-weight: 600;
   color: #1a1a1a;
@@ -846,8 +866,13 @@ body {
 /* ═══════════════════════════════════════════
    V3b — Arrow breadcrumb
    ═══════════════════════════════════════════ */
-.v3b { gap: 0.25rem; }
-.v3b-logo { width: 17px; height: 17px; }
+.v3b {
+  gap: 0.25rem;
+}
+.v3b-logo {
+  width: 17px;
+  height: 17px;
+}
 .v3b-school {
   font-weight: 500;
   color: #888;
@@ -870,7 +895,7 @@ body {
    ═══════════════════════════════════════════ */
 .v4 {
   gap: 0.4rem;
-  font-family: var(--font-plex-mono, 'IBM Plex Mono', monospace);
+  font-family: var(--font-plex-mono, "IBM Plex Mono", monospace);
   font-size: 1.1rem;
 }
 .v4-bracket {
@@ -887,7 +912,10 @@ body {
   color: #d0d0d0;
   font-weight: 300;
 }
-.v4-logo { width: 29px; height: 29px; }
+.v4-logo {
+  width: 29px;
+  height: 29px;
+}
 .v4-school {
   font-weight: 600;
   color: #1a1a1a;
@@ -928,33 +956,54 @@ body {
 /* ═══════════════════════════════════════════
    V4d — Mono pill with brackets + @
    ═══════════════════════════════════════════ */
-.v4d { gap: 0; }
+.v4d {
+  gap: 0;
+}
 .v4d-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.2rem;
-  font-family: var(--font-plex-mono, 'IBM Plex Mono', monospace);
+  font-family: var(--font-plex-mono, "IBM Plex Mono", monospace);
   font-size: 0.82rem;
   background: #f7f7f7;
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 5px;
   padding: 0.35em 0.6em;
 }
-.v4d-bracket { color: #ccc; font-weight: 300; }
-.v4d-subject { font-weight: 600; color: #1a1a1a; }
-.v4d-at { color: #bbb; font-weight: 400; }
-.v4d-logo { width: 16px; height: 16px; }
-.v4d-school { font-weight: 500; color: #555; }
+.v4d-bracket {
+  color: #ccc;
+  font-weight: 300;
+}
+.v4d-subject {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+.v4d-at {
+  color: #bbb;
+  font-weight: 400;
+}
+.v4d-logo {
+  width: 16px;
+  height: 16px;
+}
+.v4d-school {
+  font-weight: 500;
+  color: #555;
+}
 
 /* ═══════════════════════════════════════════
    V4e — Path style ~/UofToronto/physics+cs
    ═══════════════════════════════════════════ */
 .v4e {
   gap: 0;
-  font-family: var(--font-plex-mono, 'IBM Plex Mono', monospace);
+  font-family: var(--font-plex-mono, "IBM Plex Mono", monospace);
   font-size: 0.82rem;
 }
-.v4e-logo { width: 16px; height: 16px; margin-right: 0.25rem; }
+.v4e-logo {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.25rem;
+}
 .v4e-path {
   font-weight: 400;
   color: #999;
@@ -969,10 +1018,14 @@ body {
    ═══════════════════════════════════════════ */
 .v4f {
   gap: 0;
-  font-family: var(--font-plex-mono, 'IBM Plex Mono', monospace);
+  font-family: var(--font-plex-mono, "IBM Plex Mono", monospace);
   font-size: 0.82rem;
 }
-.v4f-logo { width: 17px; height: 17px; margin-right: 0.2rem; }
+.v4f-logo {
+  width: 17px;
+  height: 17px;
+  margin-right: 0.2rem;
+}
 .v4f-school {
   font-weight: 400;
   color: #888;
@@ -997,7 +1050,9 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.07);
   border-radius: 10px;
   background: #fafafa;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 .v5-badge:hover {
   border-color: rgba(0, 0, 0, 0.13);
@@ -1031,7 +1086,9 @@ body {
 /* ═══════════════════════════════════════════
    V5b — Stacked dark badge
    ═══════════════════════════════════════════ */
-.v5b { gap: 0; }
+.v5b {
+  gap: 0;
+}
 .v5b-badge {
   display: inline-flex;
   align-items: center;
@@ -1837,6 +1894,19 @@ body {
   */
   .experiments-completed-description {
     font-size: 7px;
+  }
+}
+
+/* 14" MacBook profile: bump home body copy back up by 2px */
+@media (min-width: 1400px) and (max-width: 1599px) and (min-height: 950px) {
+  /*
+    Why: 14" laptops in this width band have more vertical room than 15" Air.
+    Restore +2px only for home body text to improve readability.
+  */
+  .page-content.home-page p,
+  .page-content.home-page .home-previously-block > ul,
+  .page-content.home-page .home-previously-block > ul > li {
+    font-size: 16px;
   }
 }
 

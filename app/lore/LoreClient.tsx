@@ -856,7 +856,7 @@ export default function LoreClient() {
                 <div className="text-xs text-gray-400 tabular-nums">
                   {active.date}
                 </div>
-                <div className="text-sm font-semibold text-gray-900 mt-1">
+                <div className="text-base font-semibold text-gray-900 mt-1">
                   {active.line}
                 </div>
                 <p className="text-sm text-gray-600 leading-relaxed mt-2 lore-side-description">
