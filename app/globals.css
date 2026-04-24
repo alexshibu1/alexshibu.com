@@ -1907,7 +1907,7 @@ body {
 /* Laptop band safety: ensure home copy stays at requested default 16px */
 @media (min-width: 1400px) and (max-width: 1599px) {
   .page-content.home-page {
-    max-width: 880px;
+    max-width: 860px;
   }
 
   .page-content.home-page p,

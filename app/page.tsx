@@ -54,7 +54,7 @@ export default function Home() {
         {/* Intro */}
         <p className="hero-subline">
           I&apos;m Alex Shibu, from Toronto. Currently obsessed with building a
-          foundation for asymmetric outcomes. That starts with getting{" "}
+          foundation for asymmetric outcomes. Starting with getting{" "}
           <Link href="/technical" className={subtleLink}>
             dangerous
             <span className={linkV4Arrow} aria-hidden="true">
@@ -78,7 +78,7 @@ export default function Home() {
               ↗
             </span>
           </a>
-          , and getting increasingly pulled into drones and hardware.
+          , and now increasingly pulled into drones and hardware projects.
         </p>
         <div className="home-previously-block">
           <p>Previously, I...</p>
