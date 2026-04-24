@@ -1861,17 +1861,11 @@ body {
 }
 
 /* MacBook Air 15" (default scaled viewport): targeted typography trim */
-@media (min-width: 1400px) and (max-width: 1599px) {
+@media (min-width: 1400px) and (max-width: 1499px) {
   /*
     Why: keep this change device-specific instead of changing global type scale.
     Home body copy is reduced by 2px only for this viewport band.
   */
-  .page-content.home-page p,
-  .page-content.home-page .home-previously-block > ul,
-  .page-content.home-page .home-previously-block > ul > li {
-    font-size: 14px;
-  }
-
   /*
     Why: the about bio reads dense on this screen size.
     Reduce just the bio paragraph by 4px as requested.
@@ -1897,12 +1891,25 @@ body {
   }
 }
 
-/* 14" MacBook profile: bump home body copy back up by 2px */
-@media (min-width: 1400px) and (max-width: 1599px) and (min-height: 950px) {
+/* M1 MacBook Pro profile: bump home body copy up by one step */
+@media (min-width: 1500px) and (max-width: 1599px) {
   /*
-    Why: 14" laptops in this width band have more vertical room than 15" Air.
-    Restore +2px only for home body text to improve readability.
+    Why: viewport-height based targeting is brittle due browser chrome/toolbars.
+    Width band targeting is more reliable across Safari/Chrome on MacBook Pro.
   */
+  .page-content.home-page p,
+  .page-content.home-page .home-previously-block > ul,
+  .page-content.home-page .home-previously-block > ul > li {
+    font-size: 16px;
+  }
+}
+
+/* Laptop band safety: ensure home copy stays at requested default 16px */
+@media (min-width: 1400px) and (max-width: 1599px) {
+  .page-content.home-page {
+    max-width: 880px;
+  }
+
   .page-content.home-page p,
   .page-content.home-page .home-previously-block > ul,
   .page-content.home-page .home-previously-block > ul > li {
