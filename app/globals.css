@@ -1714,14 +1714,14 @@ body {
   .project-media-link,
   .project-media-shell,
   .project-media-placeholder {
-    min-height: 190px;
-    max-height: 190px;
+    min-height: 176px;
+    max-height: 176px;
   }
 
   .project-media-link.project-media--tall,
   .project-media-shell.project-media--tall {
-    min-height: 220px;
-    max-height: 220px;
+    min-height: 200px;
+    max-height: 200px;
   }
 
   .project-card-content {
@@ -1745,6 +1745,7 @@ body {
   .project-title-wrapper {
     flex-wrap: wrap;
     align-items: baseline;
+    row-gap: 0.2rem;
   }
 
   .project-meta-trail {
@@ -1760,9 +1761,16 @@ body {
     row-gap: 0.3rem;
   }
 
+  .project-link-icon {
+    min-width: 1.9rem;
+    min-height: 1.9rem;
+    border-radius: 999px;
+  }
+
   .project-date {
     margin-left: 0;
     margin-top: 0;
+    flex-shrink: 0;
   }
 
   /* About page mobile optimizations */
