@@ -1693,17 +1693,10 @@ export default function ProjectsClient() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
-      <div
-        style={{
-          display: "flex",
-          alignItems: "baseline",
-          justifyContent: "space-between",
-          gap: "1rem",
-        }}
-      >
+      <div className="projects-header-row">
         <h1 className="hero-heading">projects</h1>
         {(featuredCount > 0 || workCount > 0 || communityCount > 0) && (
-          <div style={{ display: "inline-flex", gap: "0.35rem" }}>
+          <div className="projects-filter-row" aria-label="Project filters">
             {featuredCount > 0 && (
               <BigProjectButton
                 isActive={activeFilter === "featured"}
