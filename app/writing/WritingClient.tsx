@@ -131,10 +131,10 @@ export default function WritingClient({ essays }: { essays: EssayMeta[] }) {
         onFilterChange={setActiveFilter}
       />
 
-      <ul className="writing-list">
+      <ul className="writing-list writing-list--layout-2a">
         {filteredEssays.map((e) => (
-          <li key={e.slug} className="essay-item ">
-            <span className="date ">{e.date ?? ""}</span>
+          <li key={e.slug} className="essay-item">
+            <span className="date">{e.date ?? ""}</span>
             <Link href={`/essay/${e.slug}`}>{e.title}</Link>
           </li>
         ))}

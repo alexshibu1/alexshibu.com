@@ -1190,6 +1190,40 @@ body {
   white-space: nowrap; /* Prevent date wrapping */
 }
 
+/* Writing list final style (selected: title-first 2a) */
+.writing-page .writing-list--layout-2a .essay-item {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 0.85rem;
+  padding: 0.1rem 0;
+  margin-bottom: 0.35rem;
+}
+
+.writing-page .writing-list--layout-2a .essay-item:last-child {
+  margin-bottom: 0;
+}
+
+.writing-page .writing-list--layout-2a .essay-item a {
+  order: 1;
+  flex: 1;
+  min-width: 0;
+}
+
+.writing-page .writing-list--layout-2a .date {
+  order: 2;
+  flex-shrink: 0;
+  text-align: right;
+  font-size: calc(0.8rem + 1px);
+  color: #888888;
+  padding: 0;
+  border: none;
+  background: none;
+  border-radius: 0;
+  font-variant-numeric: tabular-nums;
+}
+
 /* Projects list */
 .projects-list {
   margin-top: 1.5rem;
@@ -1683,6 +1717,29 @@ body {
     letter-spacing: 0.02em;
   }
 
+  /* Writing list final style on mobile (2a) */
+  .writing-page .writing-list--layout-2a .essay-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    margin-bottom: 0.5rem;
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .writing-page .writing-list--layout-2a .essay-item a {
+    order: 1;
+  }
+
+  .writing-page .writing-list--layout-2a .date {
+    order: 2;
+    align-self: flex-start;
+    text-align: left;
+    font-size: 13px;
+    border-right: none;
+    padding-right: 0;
+  }
+
   /* Adjust hero heading for mobile */
   .hero-heading {
     font-size: 36px;
@@ -1891,6 +1948,11 @@ body {
 
   .page-content p {
     font-size: 22px;
+  }
+
+  /* About page: intro bio only — not other <p> blocks (Work with me, footer, etc.) */
+  .page-content .about-bio {
+    font-size: 20px;
   }
 
   .page-content .home-previously-block > ul,

@@ -81,7 +81,7 @@ export default function AboutClient() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "0.5rem",
-                padding: "0.4rem 0.8rem",
+                padding: "0 0.8rem 0.4rem 0.8rem",
                 borderRadius: "6px",
                 cursor: "pointer",
                 transition: "background-color 0.2s",
