@@ -50,7 +50,7 @@ export function BookCard({ book }: { book: Book }) {
             </span>
           </div>
 
-          <div className="flex justify-start md:justify-end">
+          <div className="hidden md:flex md:justify-end">
             <RatingPillTypography
               rating={book.rating}
               ariaLabel={`${book.rating} out of 5`}
@@ -59,10 +59,25 @@ export function BookCard({ book }: { book: Book }) {
         </div>
 
         {book.summary ? (
-          <p className="!text-[14px] text-gray-600 leading-relaxed !mb-[4px] max-w-[85%]">
-            {book.summary}
-          </p>
-        ) : null}
+          <div className="flex items-start gap-3 md:block">
+            <p className="!text-[14px] text-gray-600 leading-relaxed !mb-[4px] max-w-[85%] md:max-w-[85%] flex-1 min-w-0">
+              {book.summary}
+            </p>
+            <div className="shrink-0 md:hidden pt-[1px]">
+              <RatingPillTypography
+                rating={book.rating}
+                ariaLabel={`${book.rating} out of 5`}
+              />
+            </div>
+          </div>
+        ) : (
+          <div className="md:hidden flex justify-end">
+            <RatingPillTypography
+              rating={book.rating}
+              ariaLabel={`${book.rating} out of 5`}
+            />
+          </div>
+        )}
       </div>
     </li>
   );
