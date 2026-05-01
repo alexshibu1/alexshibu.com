@@ -385,6 +385,9 @@ body {
 .page-content ul.projects-list,
 .page-content ul.list-none {
   list-style: none;
+  /* Beat .page-content ul default indent (padding-left: 1.5rem) */
+  padding-left: 0;
+  margin-left: 0;
 }
 
 .page-content li {
@@ -1224,6 +1227,58 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
+/* Writing page filters: compact, scannable chip system */
+.writing-filter-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.writing-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  height: 2rem;
+  padding: 0 0.75rem;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #6b7280;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease,
+    background-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.writing-filter-chip:hover {
+  border-color: #d1d5db;
+  color: #374151;
+  background: #f9fafb;
+}
+
+.writing-filter-chip:focus-visible {
+  outline: none;
+  border-color: #ff9f9f;
+  box-shadow: 0 0 0 3px rgba(255, 58, 58, 0.12);
+}
+
+.writing-filter-chip.is-active {
+  border-color: #fecaca;
+  background: #fff5f5;
+  color: #b91c1c;
+}
+
+.writing-filter-chip-emoji {
+  font-size: 0.95em;
+  line-height: 1;
+}
+
 /* Projects list */
 .projects-list {
   margin-top: 1.5rem;
@@ -1691,6 +1746,19 @@ body {
     scrollbar-width: none;
   }
 
+  .writing-page .writing-filter-bar--mobile {
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+    padding-right: 0.35rem; /* visual breathing room at end of horizontal scroll */
+  }
+
+  .writing-page .writing-filter-chip {
+    flex: 0 0 auto;
+    height: 1.9rem;
+    padding: 0 0.68rem;
+    font-size: 0.8rem;
+  }
+
   .writing-page .writing-filter-scroll::-webkit-scrollbar {
     display: none;
   }
@@ -1768,8 +1836,15 @@ body {
 
   .projects-list {
     grid-template-columns: 1fr;
-    gap: 0.65rem;
+    row-gap: 0.45rem;
+    column-gap: 0;
     margin-top: 1rem;
+  }
+
+  /* Kill inherited list-item spacing that can create large gaps under cards */
+  .page-content .projects-list > .project-card {
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .project-card {
