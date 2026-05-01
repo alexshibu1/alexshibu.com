@@ -1229,53 +1229,58 @@ body {
 
 /* Writing page filters: compact, scannable chip system */
 .writing-filter-bar {
-  display: inline-flex;
   align-items: center;
   gap: 0.45rem;
   flex-wrap: wrap;
 }
 
+.writing-filter-bar--mobile {
+  display: inline-flex;
+}
+
 .writing-filter-chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  justify-content: center;
+  gap: 0.28rem;
   height: 2rem;
-  padding: 0 0.75rem;
-  border-radius: 999px;
-  border: 1px solid #e5e7eb;
+  min-width: 5.4rem;
+  padding: 0 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #e6e6e6;
   background: #ffffff;
-  color: #6b7280;
-  font-size: 0.82rem;
+  color: #4b5563;
+  font-size: 0.78rem;
   font-weight: 500;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
   line-height: 1;
   transition:
     border-color 0.15s ease,
     color 0.15s ease,
-    background-color 0.15s ease,
-    transform 0.15s ease;
+    background-color 0.15s ease;
 }
 
 .writing-filter-chip:hover {
-  border-color: #d1d5db;
-  color: #374151;
-  background: #f9fafb;
+  border-color: #d4d4d4;
+  color: #111827;
+  background: #fafafa;
 }
 
 .writing-filter-chip:focus-visible {
   outline: none;
-  border-color: #ff9f9f;
-  box-shadow: 0 0 0 3px rgba(255, 58, 58, 0.12);
+  border-color: #c9c9c9;
+  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.08);
 }
 
 .writing-filter-chip.is-active {
-  border-color: #fecaca;
-  background: #fff5f5;
-  color: #b91c1c;
+  border-color: #111827;
+  background: #111827;
+  color: #ffffff;
 }
 
 .writing-filter-chip-emoji {
-  font-size: 0.95em;
+  font-size: 0.92em;
   line-height: 1;
 }
 
@@ -1571,9 +1576,22 @@ body {
 /* Responsive - mobile & tablets (<= 800px) */
 
 @media (max-width: 800px) {
-  .page-content footer {
-    /* Pin mobile footer to the viewport edge instead of floating 20px up */
+  .page-content footer,
+  .page-content footer.footer {
+    /*
+      iOS Safari can visually "drift" centered fixed elements during scroll when
+      they rely on left:50% + transform. Use a full-width fixed rail and center
+      content with flex so the footer stays stable at the viewport bottom.
+    */
+    position: fixed;
+    left: 0;
+    right: 0;
     bottom: max(0px, env(safe-area-inset-bottom, 0px));
+    transform: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 120;
   }
 
   html {
@@ -1652,30 +1670,30 @@ body {
 
   /* Larger nav links in mobile sidebar */
   .sidebar .nav-link {
-    font-size: 18px;
-    padding: 8px 14px;
-    margin: 4px 0;
-    min-height: 44px; /* Touch-friendly target size */
+    font-size: 16px;
+    padding: 6px 12px;
+    margin: 2px 0;
+    min-height: 38px;
     display: flex;
     align-items: center;
   }
 
   /* Larger social links in mobile sidebar */
   .sidebar .social-links {
-    margin-top: 2rem;
+    margin-top: 1.4rem;
   }
 
   .sidebar .social-links a {
-    font-size: 17px;
-    padding: 8px 0;
-    min-height: 44px; /* Touch-friendly target size */
+    font-size: 15px;
+    padding: 5px 0;
+    min-height: 34px;
     display: flex;
     align-items: center;
   }
 
   /* More spacing between nav links on mobile */
   .sidebar .nav-links {
-    gap: 0.25rem;
+    gap: 0.08rem;
   }
 
   .main-wrapper {
@@ -1754,9 +1772,10 @@ body {
 
   .writing-page .writing-filter-chip {
     flex: 0 0 auto;
-    height: 1.9rem;
-    padding: 0 0.68rem;
-    font-size: 0.8rem;
+    height: 1.85rem;
+    min-width: 5.15rem;
+    padding: 0 0.52rem;
+    font-size: 0.75rem;
   }
 
   .writing-page .writing-filter-scroll::-webkit-scrollbar {
@@ -1844,7 +1863,7 @@ body {
   /* Kill inherited list-item spacing that can create large gaps under cards */
   .page-content .projects-list > .project-card {
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 0 0 0.14rem 0 !important;
   }
 
   .project-card {
