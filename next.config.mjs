@@ -4,10 +4,7 @@ import createMDX from "@next/mdx";
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   images: {
-    localPatterns: [
-      { pathname: "/projects/**" },
-      { pathname: "/images/**" },
-    ],
+    localPatterns: [{ pathname: "/projects/**" }, { pathname: "/images/**" }],
   },
   async headers() {
     return [
@@ -53,7 +50,7 @@ const nextConfig = {
       },
       {
         source: "/smym",
-        destination: "https://smym.beehiiv.com",
+        destination: "https://smym.substack.com/",
         permanent: true,
       },
       {

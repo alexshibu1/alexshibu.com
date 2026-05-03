@@ -681,7 +681,7 @@ function LoreListRow({
           "transition-colors",
           "md:hidden",
           isExpanded
-            ? "bg-red-50/70"
+            ? "bg-red-50/35 border-l-2 border-red-300 pl-2.5"
             : "active:bg-red-50/50 hover:bg-red-50/40",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-200 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
         ].join(" ")}
@@ -689,12 +689,12 @@ function LoreListRow({
         aria-expanded={isExpanded}
         aria-controls={panelId}
       >
-        <span className="text-sm text-gray-400 tabular-nums leading-snug group-hover:text-gray-500">
+        <span className="text-sm text-gray-500 tabular-nums leading-snug group-hover:text-gray-700">
           {item.date}
         </span>
 
         <span className="min-w-0">
-          <span className="block text-sm text-gray-900 leading-snug truncate group-hover:underline group-hover:decoration-red-200 group-hover:underline-offset-4">
+          <span className="block text-sm text-gray-900 leading-snug truncate group-hover:underline group-hover:decoration-red-300 group-hover:underline-offset-4">
             {item.line}
           </span>
         </span>
@@ -751,17 +751,19 @@ function LoreListRow({
           "hidden md:grid grid-cols-[90px_1fr] gap-6 items-baseline",
           "py-1",
           "transition-colors",
-          isActive ? "bg-red-50/70" : "hover:bg-red-50/50",
+          isActive
+            ? "bg-red-50/35 border-l-2 border-red-300 pl-2.5"
+            : "hover:bg-red-50/50",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-200 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
         ].join(" ")}
         aria-current={isPinned ? "true" : undefined}
       >
-        <span className="text-sm text-gray-400 tabular-nums leading-snug group-hover:text-gray-500">
+        <span className="text-sm text-gray-500 tabular-nums leading-snug group-hover:text-gray-700">
           {item.date}
         </span>
 
         <span className="min-w-0">
-          <span className="block text-sm text-gray-900 leading-snug truncate group-hover:underline group-hover:decoration-red-200 group-hover:underline-offset-4">
+          <span className="block text-sm text-gray-900 leading-snug truncate group-hover:underline group-hover:decoration-red-300 group-hover:underline-offset-4">
             {item.line}
           </span>
         </span>

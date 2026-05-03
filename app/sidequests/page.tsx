@@ -14,7 +14,7 @@ export default function SidequestsPage() {
       <h1 className="hero-heading" style={{ marginBottom: "0.25rem" }}>
         sidequests
       </h1>
-      <p className="text-base text-gray-600">
+      <p className="text-base text-gray-600 !m-0">
         Side quests and projects just for fun.
       </p>
 
