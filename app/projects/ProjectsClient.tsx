@@ -11,13 +11,16 @@ import {
   type CSSProperties,
 } from "react";
 
-const INITIAL_PRIORITY_COUNT = 4;
-const TARGET_ACTIVE_VIDEO_COUNT = 6;
+const INITIAL_PRIORITY_COUNT = 2;
+const TARGET_ACTIVE_VIDEO_COUNT = 3;
 const TRANSITION_ACTIVE_ALLOWANCE = 2;
 const MAX_ACTIVE_VIDEO_COUNT =
   TARGET_ACTIVE_VIDEO_COUNT + TRANSITION_ACTIVE_ALLOWANCE;
+const TARGET_PRIMED_VIDEO_COUNT = 2;
 const OBSERVER_THRESHOLDS = [0, 0.01, 0.08, 0.2, 0.4, 0.6, 1];
-const OBSERVER_ROOT_MARGIN = "800px 0px 800px 0px";
+const OBSERVER_ROOT_MARGIN = "250px 0px 250px 0px";
+const EMPTY_CAPTIONS_TRACK =
+  "data:text/vtt;charset=utf-8,WEBVTT%0A%0A00%3A00.000%20--%3E%2000%3A00.100%0A%20";
 
 type Project = {
   name: string;
@@ -502,11 +505,7 @@ function ProjectItem({
       muted
       loop
       playsInline
-      preload={
-        shouldLoadImmediately || shouldPrimeVideo || shouldActivateVideo
-          ? "auto"
-          : "none"
-      }
+      preload={shouldActivateVideo || shouldPrimeVideo ? "auto" : "metadata"}
       aria-label={`${project.name} preview`}
       onCanPlay={() => {
         const videoEl = videoRef.current;
@@ -521,6 +520,12 @@ function ProjectItem({
       style={Object.keys(videoStyle).length ? videoStyle : undefined}
     >
       <source src={localPreviewVideo!} type={previewVideoType} />
+      <track
+        kind="captions"
+        src={EMPTY_CAPTIONS_TRACK}
+        srcLang="en"
+        label={`${project.name} captions`}
+      />
     </video>
   );
   /** Wrapper keeps tile size fixed while scale() crops edges (same dimensions as other cards). */
@@ -848,7 +853,7 @@ export default function ProjectsClient() {
       repo: "",
       video: "",
       writeup: "",
-      image: "/projects/placeholders/project%20YAC.png",
+      image: "/projects/placeholders/project%20YAC.avif",
       previewImageObjectPosition: "bottom",
       previewImageScale: 1.2,
       previewImageTall: true,
@@ -1010,7 +1015,8 @@ export default function ProjectsClient() {
       link: "https://www.facebook.com/share/p/1Dmh3huqbC/",
       date: "06.2024",
       repo: "",
-      image: "/projects/placeholders/Israel.png",
+      image: "/projects/placeholders/Israel.avif",
+      hideImageLink: true,
       previewImageObjectPosition: "top",
       previewImageTall: true,
       previewImageScale: 1.05,
@@ -1242,7 +1248,7 @@ export default function ProjectsClient() {
       repo: "",
       video: "",
       writeup: "",
-      image: "/projects/gaming.png?v=20260324",
+      image: "/projects/gaming.avif?v=20260324",
       previewImageObjectPosition: "top",
       previewImageScale: 1.1,
       previewImageTall: true,
@@ -1271,8 +1277,8 @@ export default function ProjectsClient() {
       repo: "",
       video: "",
       writeup: "",
-      image: "/projects/a-eye%20glasses.jpg",
-      images: ["/projects/a-eye%20glasses%202.jpg"],
+      image: "/projects/a-eye%20glasses.avif",
+      images: ["/projects/a-eye%20glasses%202.avif"],
       previewImageObjectPosition: "top",
       previewImageScale: 1.1,
       previewImageTall: true,
@@ -1404,18 +1410,30 @@ export default function ProjectsClient() {
       (entries) => {
         setIntersectionMap((prev) => {
           const next = { ...prev };
+          let hasChanges = false;
           for (const entry of entries) {
             const target = entry.target as HTMLElement;
             const index = Number(target.dataset.projectIndex);
             if (!Number.isFinite(index)) continue;
-            next[index] = {
+            const nextEntry = {
               ratio: entry.isIntersecting ? entry.intersectionRatio : 0,
               top: entry.boundingClientRect.top,
               bottom: entry.boundingClientRect.bottom,
               isIntersecting: entry.isIntersecting,
             };
+            const prevEntry = prev[index];
+            if (
+              !prevEntry ||
+              prevEntry.ratio !== nextEntry.ratio ||
+              prevEntry.top !== nextEntry.top ||
+              prevEntry.bottom !== nextEntry.bottom ||
+              prevEntry.isIntersecting !== nextEntry.isIntersecting
+            ) {
+              next[index] = nextEntry;
+              hasChanges = true;
+            }
           }
-          return next;
+          return hasChanges ? next : prev;
         });
       },
       {
@@ -1478,6 +1496,7 @@ export default function ProjectsClient() {
 
     const inViewport = candidates
       .filter((c) => c.inViewport)
+      .slice(0, TARGET_PRIMED_VIDEO_COUNT)
       .map(({ index }) => index);
     const nearViewport = candidates
       .filter((c) => !c.inViewport)
@@ -1572,9 +1591,12 @@ export default function ProjectsClient() {
       primedPriorityIndexes.push(secondaryHoveredProjectIndex);
     }
 
-    const merged = [...primedPriorityIndexes, ...candidates];
+    const merged = [
+      ...primedPriorityIndexes,
+      ...candidates.filter((index) => !primedPriorityIndexes.includes(index)),
+    ].slice(0, TARGET_PRIMED_VIDEO_COUNT + primedPriorityIndexes.length);
     if (merged.length === 0) {
-      return new Set(getFallbackVideoIndexes(TARGET_ACTIVE_VIDEO_COUNT));
+      return new Set(getFallbackVideoIndexes(TARGET_PRIMED_VIDEO_COUNT));
     }
 
     return new Set(merged);

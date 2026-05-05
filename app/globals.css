@@ -1513,6 +1513,8 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-width: 2rem;
+  min-height: 2rem;
   font-size: 0.9em;
   text-decoration: none !important;
   opacity: 0.6;
