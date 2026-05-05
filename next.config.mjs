@@ -19,6 +19,17 @@ const nextConfig = {
           },
         ],
       },
+      {
+        source: "/(images|projects)/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            // Reuse the same profile for static media outside placeholders.
+            value:
+              "public, max-age=86400, s-maxage=604800, stale-while-revalidate=2592000",
+          },
+        ],
+      },
     ];
   },
   async redirects() {

@@ -6,6 +6,7 @@ import ConditionalSidebar from "./components/ConditionalSidebar";
 import { Inter, Space_Grotesk, IBM_Plex_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { DEFAULT_OG_IMAGE, SITE_URL } from "./lib/seo";
+import Script from "next/script";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -16,14 +17,14 @@ const inter = Inter({
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
 const plexSans = IBM_Plex_Sans({
   variable: "--font-plex-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -74,14 +75,16 @@ export default function RootLayout({
       className={`${inter.variable} ${spaceGrotesk.variable} ${plexSans.variable}`}
     >
       <head>
-        <script
-          async
-          src="https://alexshibustats.vercel.app/script.js"
-          data-website-id="ee9bbb18-6cf5-4341-8228-010f8f7b4245"
-        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="preconnect" href="https://alexshibustats.vercel.app" />
       </head>
       <body className="antialiased" suppressHydrationWarning>
         <ConditionalSidebar>{children}</ConditionalSidebar>
+        <Script
+          src="https://alexshibustats.vercel.app/script.js"
+          data-website-id="ee9bbb18-6cf5-4341-8228-010f8f7b4245"
+          strategy="lazyOnload"
+        />
         <SpeedInsights />
         <Analytics />
       </body>
