@@ -1012,17 +1012,15 @@ export default function ProjectsClient() {
       name: "Research @ Technion",
       description:
         "Worked with Prof. Yakov Ben-Haim on info-gap decision theory. Foucused on economic and financial decision-making using robustness and opportuneness to make decisions under deep uncertainty with the lack of probabilistic data. Built uncertainty models and applied them to VC startup evaluation, projecting 15% lift for high-risk investments.",
-      link: "https://www.facebook.com/share/p/1Dmh3huqbC/",
+      link: "#",
       date: "06.2024",
       repo: "",
       image: "/projects/placeholders/Israel.avif",
-      hideImageLink: true,
       previewImageObjectPosition: "top",
       previewImageTall: true,
       previewImageScale: 1.05,
       video: "",
-      writeup:
-        "https://www.linkedin.com/posts/faculty-of-mechanical-engineering-technion_ackacwacjacxadgacuacraclacwacladgachacoacracwacpaclacv-activity-7225789866289045504-W_SO?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACk8q9ABrmBqQ4wz9R3Ev5JU1iATl26x-5M",
+      writeup: "",
       isWork: true,
     },
     {
