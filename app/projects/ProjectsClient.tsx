@@ -5,7 +5,6 @@ import Image from "next/image";
 import {
   useCallback,
   useEffect,
-  useMemo,
   useRef,
   useState,
   type CSSProperties,
@@ -1452,7 +1451,7 @@ export default function ProjectsClient() {
     };
   }, [sortedProjects.length, activeFilter]);
 
-  const activeVideoIndexes = useMemo(() => {
+  const activeVideoIndexes = (() => {
     if (Object.keys(intersectionMap).length === 0) {
       const firstVisibleBudget = getFallbackVideoIndexes(
         TARGET_ACTIVE_VIDEO_COUNT,
@@ -1546,14 +1545,9 @@ export default function ProjectsClient() {
     }
 
     return new Set(activeWithTransition);
-  }, [
-    hoveredProjectIndex,
-    secondaryHoveredProjectIndex,
-    intersectionMap,
-    sortedProjects,
-  ]);
+  })();
 
-  const primedVideoIndexes = useMemo(() => {
+  const primedVideoIndexes = (() => {
     if (Object.keys(intersectionMap).length === 0) {
       const firstVisibleBudget = getFallbackVideoIndexes(
         TARGET_ACTIVE_VIDEO_COUNT,
@@ -1598,12 +1592,7 @@ export default function ProjectsClient() {
     }
 
     return new Set(merged);
-  }, [
-    hoveredProjectIndex,
-    secondaryHoveredProjectIndex,
-    intersectionMap,
-    sortedProjects,
-  ]);
+  })();
 
   const setProjectRef = useCallback(
     (index: number, node: HTMLLIElement | null) => {
