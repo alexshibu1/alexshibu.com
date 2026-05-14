@@ -88,7 +88,7 @@ export default function Home() {
             <li>Taught 100+ young people tech and English in Poland</li>
             <li>
               Led EasyHacks w/Perplexity AI with 170+ participants from 13
-              countries with $4K in prizes
+              countries
             </li>
 
             <li>
