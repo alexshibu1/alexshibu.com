@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import {
   useCallback,
@@ -65,280 +64,41 @@ type Project = {
 
 function FeaturedIndicator({ isHovered }: { isHovered: boolean }) {
   return (
-    <motion.span
-      animate={
-        isHovered
-          ? {
-              width: 4,
-              height: 12,
-              borderRadius: 999,
-              y: 0,
-              opacity: 1,
-            }
-          : {
-              width: 5,
-              height: 5,
-              borderRadius: 999,
-              y: -0.25,
-              opacity: 0.6,
-            }
-      }
-      className="flex items-center justify-center"
-      initial={false}
-      style={{
-        background: "#ff3a3a",
-        display: "inline-block",
-        alignSelf: "center",
-      }}
-      transition={{
-        type: "spring",
-        stiffness: 600,
-        damping: 22,
-      }}
+    <span
+      className={`project-featured-indicator ${
+        isHovered ? "project-featured-indicator--hovered" : ""
+      }`}
+      aria-hidden="true"
     />
   );
 }
 
-function BigProjectButton({
+function ProjectFilterButton({
+  label,
   isActive,
+  colorClass,
   onClick,
 }: {
+  label: string;
   isActive: boolean;
+  colorClass: string;
   onClick: () => void;
 }) {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
-    <motion.button
+    <button
       type="button"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className={`project-filter-button ${colorClass} ${
+        isActive ? "project-filter-button--active" : ""
+      }`}
       onClick={(e) => {
         e.preventDefault();
         e.stopPropagation();
         onClick();
       }}
-      style={{
-        display: "inline-flex",
-        alignItems: "center",
-        gap: "0.5rem",
-        padding: "0.4rem 0.8rem",
-        borderRadius: "6px",
-        cursor: "pointer",
-        border: "none",
-        background: "transparent",
-        transition: "background-color 0.2s ease",
-        backgroundColor: isActive ? "rgba(255, 58, 58, 0.1)" : "transparent",
-      }}
-      whileHover={{
-        backgroundColor: isActive
-          ? "rgba(255, 58, 58, 0.15)"
-          : "rgba(0, 0, 0, 0.02)",
-      }}
     >
-      <motion.span
-        animate={
-          isHovered
-            ? {
-                width: 4,
-                height: 12,
-                borderRadius: 999,
-                y: 0,
-              }
-            : {
-                width: 5,
-                height: 5,
-                borderRadius: 999,
-                y: -1,
-              }
-        }
-        initial={false}
-        style={{
-          background: isActive ? "#ff3a3a" : isHovered ? "#ff3a3a" : "#ff3a3a",
-          display: "inline-block",
-          alignSelf: "center",
-          opacity: isActive ? 1 : isHovered ? 1 : 0.6,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 600,
-          damping: 22,
-        }}
-      />
-      <span
-        style={{
-          fontSize: "14px",
-          color: isActive ? "#ff3a3a" : "#666",
-          fontFamily: "var(--font-inter), sans-serif",
-          fontWeight: 400,
-          transition: "color 0.2s ease",
-        }}
-      >
-        {isActive ? "Featured" : "Featured"}
-      </span>
-    </motion.button>
-  );
-}
-
-function WorkProjectButton({
-  isActive,
-  onClick,
-}: {
-  isActive: boolean;
-  onClick: () => void;
-}) {
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <motion.button
-      type="button"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={(e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        onClick();
-      }}
-      style={{
-        display: "inline-flex",
-        alignItems: "center",
-        gap: "0.5rem",
-        padding: "0.4rem 0.8rem",
-        borderRadius: "6px",
-        cursor: "pointer",
-        border: "none",
-        background: "transparent",
-        transition: "background-color 0.2s ease",
-        backgroundColor: isActive ? "rgba(79, 124, 255, 0.1)" : "transparent",
-      }}
-      whileHover={{
-        backgroundColor: isActive
-          ? "rgba(79, 124, 255, 0.15)"
-          : "rgba(0, 0, 0, 0.02)",
-      }}
-    >
-      <motion.span
-        animate={
-          isHovered
-            ? {
-                width: 4,
-                height: 12,
-                borderRadius: 999,
-                y: 0,
-              }
-            : {
-                width: 5,
-                height: 5,
-                borderRadius: 999,
-                y: -1,
-              }
-        }
-        initial={false}
-        style={{
-          background: "#4f7cff",
-          display: "inline-block",
-          alignSelf: "center",
-          opacity: isActive ? 1 : isHovered ? 1 : 0.6,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 600,
-          damping: 22,
-        }}
-      />
-      <span
-        style={{
-          fontSize: "14px",
-          color: isActive ? "#4f7cff" : "#666",
-          fontFamily: "var(--font-inter), sans-serif",
-          fontWeight: 400,
-          transition: "color 0.2s ease",
-        }}
-      >
-        {isActive ? "Work" : "Work"}
-      </span>
-    </motion.button>
-  );
-}
-
-function CommunityProjectButton({
-  isActive,
-  onClick,
-}: {
-  isActive: boolean;
-  onClick: () => void;
-}) {
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <motion.button
-      type="button"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={(e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        onClick();
-      }}
-      style={{
-        display: "inline-flex",
-        alignItems: "center",
-        gap: "0.5rem",
-        padding: "0.4rem 0.8rem",
-        borderRadius: "6px",
-        cursor: "pointer",
-        border: "none",
-        background: "transparent",
-        transition: "background-color 0.2s ease",
-        backgroundColor: isActive ? "rgba(34, 197, 94, 0.1)" : "transparent",
-      }}
-      whileHover={{
-        backgroundColor: isActive
-          ? "rgba(34, 197, 94, 0.15)"
-          : "rgba(0, 0, 0, 0.02)",
-      }}
-    >
-      <motion.span
-        animate={
-          isHovered
-            ? {
-                width: 4,
-                height: 12,
-                borderRadius: 999,
-                y: 0,
-              }
-            : {
-                width: 5,
-                height: 5,
-                borderRadius: 999,
-                y: -1,
-              }
-        }
-        initial={false}
-        style={{
-          background: "#22c55e",
-          display: "inline-block",
-          alignSelf: "center",
-          opacity: isActive ? 1 : isHovered ? 1 : 0.6,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 600,
-          damping: 22,
-        }}
-      />
-      <span
-        style={{
-          fontSize: "14px",
-          color: isActive ? "#22c55e" : "#666",
-          fontFamily: "var(--font-inter), sans-serif",
-          fontWeight: 400,
-          transition: "color 0.2s ease",
-        }}
-      >
-        {isActive ? "Community" : "Community"}
-      </span>
-    </motion.button>
+      <span className="project-filter-button-indicator" />
+      {label}
+    </button>
   );
 }
 
@@ -408,6 +168,13 @@ function ProjectItem({
     if (!mm || !yyyy) return undefined;
     return `${yyyy}-${mm.padStart(2, "0")}`;
   })();
+  const shouldRenderPreviewVideo = Boolean(
+    localPreviewVideo && (shouldActivateVideo || shouldPrimeVideo),
+  );
+  const videoPreload = shouldActivateVideo || shouldPrimeVideo
+    ? "auto"
+    : "none";
+  const videoPoster = previewMedia ?? undefined;
   /**
    * Keep previews silent + clean: muted autoplay with no controls.
    * The entire preview surface can then be a single click target.
@@ -496,7 +263,7 @@ function ProjectItem({
     };
   }, [index, onMount]);
 
-  const videoNode = (
+  const videoNode = shouldRenderPreviewVideo ? (
     <video
       ref={videoRef}
       className="project-media project-media-video"
@@ -504,7 +271,8 @@ function ProjectItem({
       muted
       loop
       playsInline
-      preload={shouldActivateVideo || shouldPrimeVideo ? "auto" : "metadata"}
+      preload={videoPreload}
+      poster={videoPoster}
       aria-label={`${project.name} preview`}
       onCanPlay={() => {
         const videoEl = videoRef.current;
@@ -526,6 +294,11 @@ function ProjectItem({
         label={`${project.name} captions`}
       />
     </video>
+  ) : (
+    <div
+      className="project-media project-media-video project-media-video--placeholder"
+      aria-hidden="true"
+    />
   );
   /** Wrapper keeps tile size fixed while scale() crops edges (same dimensions as other cards). */
   const previewVideoEl =
@@ -1707,7 +1480,9 @@ export default function ProjectsClient() {
         {(featuredCount > 0 || workCount > 0 || communityCount > 0) && (
           <div className="projects-filter-row" aria-label="Project filters">
             {featuredCount > 0 && (
-              <BigProjectButton
+              <ProjectFilterButton
+                label="Featured"
+                colorClass="project-filter-button--featured"
                 isActive={activeFilter === "featured"}
                 onClick={() =>
                   setActiveFilter((prev) =>
@@ -1717,7 +1492,9 @@ export default function ProjectsClient() {
               />
             )}
             {workCount > 0 && (
-              <WorkProjectButton
+              <ProjectFilterButton
+                label="Work"
+                colorClass="project-filter-button--work"
                 isActive={activeFilter === "work"}
                 onClick={() =>
                   setActiveFilter((prev) => (prev === "work" ? null : "work"))
@@ -1725,7 +1502,9 @@ export default function ProjectsClient() {
               />
             )}
             {communityCount > 0 && (
-              <CommunityProjectButton
+              <ProjectFilterButton
+                label="Community"
+                colorClass="project-filter-button--community"
                 isActive={activeFilter === "community"}
                 onClick={() =>
                   setActiveFilter((prev) =>

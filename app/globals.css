@@ -1308,6 +1308,54 @@ body {
   gap: 0.35rem;
 }
 
+.project-filter-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #4b5563;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.3;
+  cursor: pointer;
+  transition: color 0.18s ease, background-color 0.18s ease,
+    border-color 0.18s ease, transform 0.18s ease;
+}
+
+.project-filter-button:hover {
+  transform: translateY(-1px);
+  border-color: #9ca3af;
+}
+
+.project-filter-button--active {
+  background: rgba(255, 58, 58, 0.1);
+  border-color: rgba(255, 58, 58, 0.25);
+  color: #b91c1c;
+}
+
+.project-filter-button--work.project-filter-button--active {
+  background: rgba(79, 124, 255, 0.1);
+  border-color: rgba(79, 124, 255, 0.25);
+  color: #1d4ed8;
+}
+
+.project-filter-button--community.project-filter-button--active {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.25);
+  color: #15803d;
+}
+
+.project-filter-button-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.7;
+}
+
 .project-card {
   display: flex;
   flex-direction: column;
@@ -1367,6 +1415,10 @@ body {
 .project-media-shell--video {
   min-height: 220px;
   max-height: 220px;
+}
+
+.project-media-video--placeholder {
+  background: linear-gradient(180deg, #f8fafc 0%, #e5e7eb 100%);
 }
 
 /* Tall image preview (same height as video cards; e.g. Youth Advisory Committee) */
