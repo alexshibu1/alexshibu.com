@@ -1,6 +1,6 @@
 // app/page.tsx
 import type { Metadata } from "next";
-import Link from "next/link";
+import HeroLink from "./components/HeroLink";
 import InteractiveHeading from "./components/waveHeading";
 import SubstackForm from "./components/SubstackForm";
 import {
@@ -13,8 +13,6 @@ import {
 // Hero inline links: override .page-content a (red in globals.css) with ! so gray wins
 const subtleLink =
   "group inline-flex items-baseline !text-black hover:!text-red-500 !font-medium hover:underline hover:decoration-red-300 hover:underline-offset-2 transition-all duration-150 cursor-pointer";
-const linkV4Arrow =
-  "inline-block max-w-0 ml-0 overflow-hidden opacity-0 whitespace-nowrap align-baseline text-[0.65em] group-hover:max-w-[1.25em] group-hover:opacity-100 group-hover:ml-0.5 transition-all duration-150";
 
 const homeDescription =
   "Alex Shibu is a Toronto based developer, growth engineer, and student at University of Toronto sharing projects, writing, journey, books, and experiments.";
@@ -54,30 +52,19 @@ export default function Home() {
         {/* Intro */}
         <p className="hero-subline">
           I&apos;m Alex Shibu, from Toronto. Currently obsessed with building a
-          foundation for asymmetric outcomes. Starting with getting{" "}
-          <Link href="/technical" className={subtleLink}>
+          foundation for asymmetric outcomes. Starting with getting {" "}
+          <HeroLink href="/technical" className={subtleLink}>
             dangerous
-            <span className={linkV4Arrow} aria-hidden="true">
-              ↗
-            </span>
-          </Link>{" "}
+          </HeroLink>{" "}
           at full-stack engineering, product growth, and math & physics for
           machine learning.
         </p>
         <p className="home-current-build">
           Building voice agents for plumbers and SMBs, documenting with content,
-          thoughts on{" "}
-          <a
-            href="https://x.com/alexshibu2"
-            className={subtleLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          thoughts on {" "}
+          <HeroLink href="https://x.com/alexshibu2" className={subtleLink}>
             Twitter
-            <span className={linkV4Arrow} aria-hidden="true">
-              ↗
-            </span>
-          </a>
+          </HeroLink>
           , and now increasingly pulled into drones and hardware projects.
         </p>
         <div className="home-previously-block">
@@ -98,62 +85,38 @@ export default function Home() {
           </ul>
         </div>
         <p className="home-on-this-site">
-          On this site I park{" "}
-          <Link href="/projects" className={subtleLink}>
+          On this site I park {" "}
+          <HeroLink href="/projects" className={subtleLink}>
             projects
-            <span className={linkV4Arrow} aria-hidden="true">
-              ↗
-            </span>
-          </Link>
-          , document my{" "}
-          <Link href="/lore" className={subtleLink}>
+          </HeroLink>
+          , document my {" "}
+          <HeroLink href="/lore" className={subtleLink}>
             journey
-            <span className={linkV4Arrow} aria-hidden="true">
-              ↗
-            </span>
-          </Link>
-          , and dive into{" "}
-          <Link href="/writing" className={subtleLink}>
+          </HeroLink>
+          , and dive into {" "}
+          <HeroLink href="/writing" className={subtleLink}>
             rabbit holes
-            <span className={linkV4Arrow} aria-hidden="true">
-              ↗
-            </span>
-          </Link>{" "}
-          and{" "}
-          <Link href="/sidequests" className={subtleLink}>
+          </HeroLink>{" "}
+          and {" "}
+          <HeroLink href="/sidequests" className={subtleLink}>
             sidequests
-            <span className={linkV4Arrow} aria-hidden="true">
-              ↗
-            </span>
-          </Link>
-          . Outside of that you&apos;ll find me{" "}
-          <Link href="/run" className={subtleLink}>
+          </HeroLink>
+          . Outside of that you&apos;ll find me {" "}
+          <HeroLink href="/run" className={subtleLink}>
             running
-            <span className={linkV4Arrow} aria-hidden="true">
-              ↗
-            </span>
-          </Link>{" "}
-          in different cities,{" "}
-          <Link href="/books" className={subtleLink}>
+          </HeroLink>{" "}
+          in different cities, {" "}
+          <HeroLink href="/books" className={subtleLink}>
             reading
-            <span className={linkV4Arrow} aria-hidden="true">
-              ↗
-            </span>
-          </Link>
-          , reviewing{" "}
-          <Link href="/coffee" className={subtleLink}>
+          </HeroLink>
+          , reviewing {" "}
+          <HeroLink href="/coffee" className={subtleLink}>
             coffee
-            <span className={linkV4Arrow} aria-hidden="true">
-              ↗
-            </span>
-          </Link>
-          , and doing fun{" "}
-          <Link href="/experiments" className={subtleLink}>
+          </HeroLink>
+          , and doing fun {" "}
+          <HeroLink href="/experiments" className={subtleLink}>
             experiments
-            <span className={linkV4Arrow} aria-hidden="true">
-              ↗
-            </span>
-          </Link>
+          </HeroLink>
           .
         </p>
         <p>
