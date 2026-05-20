@@ -1285,6 +1285,7 @@ export default function ProjectsClient() {
     ).slice(0, MAX_ACTIVE_VIDEO_COUNT);
 
     // Hovered card is absolute priority for active playback.
+    // This ensures the hovered project preview loads before other nearby cards.
     const hoverPriorityIndexes: number[] = [];
     if (
       hoveredProjectIndex !== null &&
@@ -1339,6 +1340,8 @@ export default function ProjectsClient() {
       .map(({ index }) => index);
 
     // Hovered card is absolute priority for priming as well.
+    // This makes sure the hovered card starts loading immediately even if
+    // it is not yet among the closest visible entries.
     const primedPriorityIndexes: number[] = [];
     if (
       hoveredProjectIndex !== null &&
