@@ -110,8 +110,8 @@ export default function Home() {
             reading
           </HeroLink>
           , reviewing {" "}
-          <HeroLink href="/coffee" className={subtleLink}>
-            coffee
+          <HeroLink href="/cafe" className={subtleLink}>
+            cafe reviews
           </HeroLink>
           , and doing fun {" "}
           <HeroLink href="/experiments" className={subtleLink}>

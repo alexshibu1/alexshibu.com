@@ -9,7 +9,7 @@ export default function CoffeeClient() {
 
   return (
     <>
-      <h1 className="hero-heading">Coffee Reviews</h1>
+      <h1 className="hero-heading">Cafe Reviews</h1>
       <p className="hero-subline">
         reviews of cafes in Toronto + others that I&apos;ve been to when
         traveling

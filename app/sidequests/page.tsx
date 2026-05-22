@@ -20,7 +20,7 @@ export default function SidequestsPage() {
 
       <div className="mt-4 divide-y divide-gray-100 border-t border-b border-gray-100 rounded-md bg-white/60">
         <Link
-          href="/coffee"
+          href="/cafe"
           className="group block px-4 py-3 sm:px-3 sm:py-2 hover:bg-red-50/40 transition-colors min-h-[44px] sm:min-h-0 flex items-center"
           style={{ textDecoration: "none" }}
         >
@@ -28,7 +28,7 @@ export default function SidequestsPage() {
             <div className="min-w-0 flex flex-col gap-0.5 sm:flex-row sm:items-baseline">
               <div className="flex items-center gap-1.5 sm:contents">
                 <span className="text-base font-semibold text-gray-900 group-hover:text-red-700">
-                  coffee reviews
+                  cafe reviews
                 </span>
                 <span
                   className="text-xs text-gray-400 flex-shrink-0 sm:hidden transition-transform group-hover:translate-x-[1px] group-hover:text-red-500"
