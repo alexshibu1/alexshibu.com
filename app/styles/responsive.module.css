@@ -1,0 +1,387 @@
+/* ============================================================
+   Responsive Design System - Consolidated Media Queries
+   All breakpoints organized by device size for better maintainability
+   Reduced from scattered ~800 lines to organized ~400 lines (50% reduction)
+   ============================================================ */
+
+/* ===============================
+   Mobile & Tablets (≤ 800px)
+   =============================== */
+@media (max-width: 800px) {
+  /* Layout Structure */
+  html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  body {
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Navigation System */
+  .hamburger-button {
+    display: flex;
+    top: max(0.75rem, env(safe-area-inset-top, 0px));
+  }
+
+  .hamburger-button.hamburger-open {
+    left: calc(min(320px, 90vw) - 1.5rem - 44px);
+  }
+
+  .menu-overlay {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed; top: 0; left: 0; height: 100vh; width: 320px; max-width: 90vw;
+    background: white; padding: 3rem 2.5rem 2rem 2.5rem; z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); transform: translateX(-100%);
+    opacity: 0; overflow-y: auto; flex: none; pointer-events: none;
+  }
+
+  .sidebar.sidebar-open {
+    transform: translateX(0); opacity: 1; pointer-events: auto;
+  }
+
+  /* Brand & Navigation */
+  .sidebar-brand { margin-bottom: 2rem; padding-top: 0.5rem; }
+  .brand-name { font-size: 28px; }
+  .brand-tagline { font-size: 11px; }
+
+  .sidebar .nav-link {
+    font-size: 16px; padding: 6px 12px; margin: 2px 0;
+    min-height: 38px; display: flex; align-items: center;
+  }
+
+  .sidebar .social-links { margin-top: 1.4rem; }
+  .sidebar .social-links a {
+    font-size: 15px; padding: 5px 0; min-height: 34px;
+    display: flex; align-items: center;
+  }
+
+  .sidebar .nav-links { gap: 0.08rem; }
+
+  /* Main Content Layout */
+  .main-wrapper { display: block; width: 100%; }
+
+  .page-content {
+    max-width: 100%; padding: 1rem 1.25rem; padding-top: 4.5rem;
+    padding-bottom: 0; width: 100%; box-sizing: border-box; overflow-x: hidden;
+  }
+
+  .page-content.home-page {
+    padding-top: calc(4.5rem * 0.9 * 0.9);
+  }
+
+  /* Hero Section */
+  .hero-heading { font-size: 36px; margin-top: 1.5rem; }
+  .page-content > .hero .hero-heading-stack > .hero-heading { margin-top: 0; }
+  .hero-subline { font-size: 18px; }
+  .hero-affiliation { font-size: 0.8rem; }
+
+  /* Projects Grid */
+  .projects-list {
+    width: 100%; max-width: 100%; box-sizing: border-box;
+    grid-template-columns: 1fr; row-gap: 0.45rem; column-gap: 0; margin-top: 1rem;
+  }
+
+  .page-content .projects-list > .project-card {
+    margin: 0 !important; padding: 0 0 0.14rem 0 !important;
+  }
+
+  .project-card { border-radius: 0; }
+
+  .project-media-link,
+  .project-media-shell,
+  .project-media-placeholder {
+    min-height: 176px; max-height: 176px;
+  }
+
+  .project-media-link.project-media--tall,
+  .project-media-shell.project-media--tall {
+    min-height: 200px; max-height: 200px;
+  }
+
+  .project-card-content { padding: 0.3rem 0 0; }
+  .project-desc { line-height: 1.45; }
+
+  .project-title {
+    white-space: nowrap !important; max-width: 100%; display: inline-block;
+    overflow: hidden; text-overflow: ellipsis;
+  }
+
+  .project-title-wrapper {
+    flex-wrap: nowrap; align-items: center; row-gap: 0;
+  }
+
+  .project-meta-trail {
+    flex-basis: auto; justify-content: flex-end; margin-left: auto;
+    margin-top: 0; gap: 0.55rem;
+  }
+
+  .project-actions { flex-wrap: nowrap; row-gap: 0; }
+  .project-link-icon { min-width: 1.9rem; min-height: 1.9rem; border-radius: 999px; }
+  .project-date { margin-left: 0; margin-top: 0; flex-shrink: 0; }
+
+  /* Projects Filters */
+  .projects-header-row { align-items: flex-start; flex-direction: column; gap: 0.45rem; }
+
+  .projects-filter-row {
+    width: calc(100% + 0.35rem); margin-right: -0.35rem; overflow-x: auto;
+    overflow-y: hidden; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    padding-bottom: 0.1rem;
+  }
+
+  .projects-filter-row::-webkit-scrollbar { display: none; }
+  .projects-filter-row > * { flex: 0 0 auto; }
+
+  /* Writing/Essays Mobile Layout */
+  .essay-item {
+    display: flex; flex-direction: column; align-items: flex-start; gap: 0.25rem;
+  }
+
+  .date { text-align: left; min-width: auto; }
+
+  .writing-page .writing-filter-scroll {
+    scroll-snap-type: x proximity; scrollbar-width: none;
+  }
+
+  .writing-page .writing-filter-bar--mobile {
+    flex-wrap: nowrap; gap: 0.4rem;
+    padding-right: 0.35rem;
+  }
+
+  .writing-page .writing-filter-chip {
+    flex: 0 0 auto; height: 1.85rem; min-width: 5.15rem;
+    padding: 0 0.52rem; font-size: 0.75rem;
+  }
+
+  .writing-page .writing-filter-scroll::-webkit-scrollbar { display: none; }
+  .writing-page .writing-filter-scroll > div > * { scroll-snap-align: start; }
+
+  .writing-page .writing-list { margin-top: 1.25rem; }
+
+  .writing-page .essay-item {
+    padding: 0.75rem 0; border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+  }
+
+  .writing-page .essay-item:last-child { border-bottom: 0; }
+
+  .writing-page .essay-item a {
+    font-size: 18px; line-height: 1.25; letter-spacing: -0.01em;
+  }
+
+  .writing-page .date {
+    font-size: 13px; color: #9ca3af; letter-spacing: 0.02em;
+  }
+
+  .writing-page .writing-list--layout-2a .essay-item {
+    flex-direction: column; align-items: flex-start; gap: 0.2rem;
+    margin-bottom: 0.5rem; border-left: none; padding-left: 0;
+  }
+
+  .writing-page .writing-list--layout-2a .essay-item a { order: 1; }
+
+  .writing-page .writing-list--layout-2a .date {
+    order: 2; align-self: flex-start; text-align: left; font-size: 13px;
+    border-right: none; padding-right: 0;
+  }
+
+  /* About Page Mobile */
+  .about-current-focus {
+    margin-top: -1rem !important; margin-bottom: -10px !important;
+  }
+
+  .about-current-focus .about-ops-item {
+    display: grid !important; grid-template-columns: auto 1fr;
+    column-gap: 12px; row-gap: 6px; padding-top: 0.55rem !important;
+    padding-bottom: 0.55rem !important;
+  }
+
+  .about-current-focus .about-ops-label {
+    grid-column: 1; grid-row: 1; white-space: nowrap;
+    align-self: start; letter-spacing: 0.12em;
+  }
+
+  .about-current-focus .about-ops-status {
+    grid-column: 2; grid-row: 1; justify-self: end;
+    align-self: start; letter-spacing: 0.12em;
+  }
+
+  .about-current-focus .about-ops-text {
+    grid-column: 1 / -1; grid-row: 2; line-height: 1.35;
+  }
+
+  /* Coffee Page Mobile */
+  .coffee-stats { gap: 1.5rem; padding: 0.75rem 0; }
+  .stat-value { font-size: 20px; }
+  .stat-label { font-size: 11px; }
+
+  .coffee-table-container {
+    overflow-x: scroll; -webkit-overflow-scrolling: touch;
+  }
+
+  .coffee-table { font-size: 12px; min-width: 600px; }
+  .coffee-table th,
+  .coffee-table td { padding: 0.5rem; }
+  .coffee-table .review-cell { max-width: 200px; }
+
+  /* Footer */
+  .page-content footer,
+  .page-content footer.footer {
+    position: static; margin: 100px auto 0; width: auto; transform: none;
+    display: block; justify-content: initial; z-index: 100;
+  }
+
+  /* Accessibility */
+  .touch-target { min-height: 44px; min-width: 44px; }
+}
+
+/* ===============================
+   Desktop/Laptop (801px+)
+   =============================== */
+@media (min-width: 801px) {
+  /* About page specific */
+  .about-bio { padding: 20px; }
+
+  /* Project media sizing for laptops */
+  .project-media-link,
+  .project-media-shell,
+  .project-media-placeholder {
+    min-height: 171px; /* 190 × 0.9 */
+    max-height: 171px;
+  }
+
+  .project-media-link.project-media--tall,
+  .project-media-shell.project-media--tall {
+    min-height: 198px; /* 220 × 0.9 */
+    max-height: 198px;
+  }
+
+  .project-media-shell--video {
+    min-height: 198px; /* 220 × 0.9 */
+    max-height: 198px;
+  }
+
+  /* Home page hero adjustment */
+  .page-content.home-page .hero .hero-heading-stack > .hero-heading {
+    margin-top: calc(2.5rem * 0.9 * 0.9);
+  }
+}
+
+/* ===============================
+   Large Screens (1600px+)
+   =============================== */
+@media (min-width: 1600px) {
+  /* Project media sizing for large screens */
+  .project-media-link,
+  .project-media-shell,
+  .project-media-placeholder {
+    min-height: 209px; /* 190 × 1.1 */
+    max-height: 209px;
+  }
+
+  .project-media-link.project-media--tall,
+  .project-media-shell.project-media--tall {
+    min-height: 242px; /* 220 × 1.1 */
+    max-height: 242px;
+  }
+
+  .project-media-shell--video {
+    min-height: 242px; /* 220 × 1.1 */
+    max-height: 242px;
+  }
+
+  /* Layout adjustments */
+  .sidebar { padding-top: 96px; /* 1 inch from top */ }
+  .sidebar-brand { margin-bottom: 4rem; }
+  .brand-name { font-size: 40px; }
+
+  /* Typography scaling */
+  .page-content p { font-size: 22px; }
+  .page-content .about-bio { font-size: 20px; }
+
+  .page-content .home-previously-block > ul,
+  .page-content .home-previously-block > ul > li {
+    font-size: 22px;
+  }
+
+  /* Essay typography */
+  .essay-content p,
+  .essay-content ul,
+  .essay-content ol,
+  .essay-content li {
+    font-size: 17px;
+  }
+
+  .essay-content h2 { font-size: 19px; }
+  .essay-content h3 { font-size: 11px; }
+}
+
+/* ===============================
+   MacBook Air 15" (1400px-1499px)
+   =============================== */
+@media (min-width: 1400px) and (max-width: 1499px) {
+  .about-bio { font-size: 12px; }
+  .lore-side-description { font-size: 12px; }
+  .experiments-completed-description { font-size: 7px; }
+}
+
+/* ===============================
+   MacBook Pro 14" (1500px-1599px)
+   =============================== */
+@media (min-width: 1500px) and (max-width: 1599px) {
+  .page-content.home-page p,
+  .page-content.home-page .home-previously-block > ul,
+  .page-content.home-page .home-previously-block > ul > li {
+    font-size: 16px;
+  }
+}
+
+/* ===============================
+   Laptop Band Safety (1400px-1599px)
+   =============================== */
+@media (min-width: 1400px) and (max-width: 1599px) {
+  .page-content.home-page { max-width: 860px; }
+
+  .page-content.home-page p,
+  .page-content.home-page .home-previously-block > ul,
+  .page-content.home-page .home-previously-block > ul > li {
+    font-size: 16px;
+  }
+}
+
+/* ===============================
+   Ultra-wide Screens (1920px+)
+   =============================== */
+@media (min-width: 1920px) {
+  .sidebar {
+    padding: 96px 4rem 4rem 150px; /* 1 inch (96px) from top */
+    font-size: 22px;
+  }
+
+  .sidebar-brand { margin-bottom: 4rem; }
+  .brand-name { font-size: 50px; }
+  .page-content { max-width: 1000px; }
+}
+
+/* ===============================
+   Small Mobile (430px and below)
+   =============================== */
+@media (max-width: 430px) {
+  .coffee-stats { gap: 1.5rem; padding: 0.75rem 0; }
+  .stat-value { font-size: 20px; }
+  .stat-label { font-size: 11px; }
+
+  .coffee-table-container {
+    overflow-x: scroll; -webkit-overflow-scrolling: touch;
+  }
+
+  .coffee-table { font-size: 12px; min-width: 600px; }
+  .coffee-table th,
+  .coffee-table td { padding: 0.5rem; }
+  .coffee-table .review-cell { max-width: 200px; }
+}
