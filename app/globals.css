@@ -418,6 +418,12 @@ body {
   text-decoration: underline;
 }
 
+.page-content a > .no-underline,
+.page-content a > span[aria-hidden] {
+  display: inline-flex;
+  text-decoration: none !important;
+}
+
 /* About footer: site doc + v1/v2 — gray, not global red links */
 .page-content .about-site-versions {
   padding-top: 10px !important;

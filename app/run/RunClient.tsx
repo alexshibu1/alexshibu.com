@@ -373,40 +373,43 @@ export default function RunClient() {
         traveling.
       </p>
 
-      {/* Summary stats boxes */}
-      <div className="flex flex-wrap gap-3 mb-6">
-        <div className="inline-flex flex-col items-center justify-center rounded-lg bg-gray-50 px-4 py-3 text-center min-w-[120px]">
-          <span className="text-xs text-gray-500">Number of runs</span>
-          <span className="text-lg font-semibold text-gray-900">79</span>
+      {/* Summary stats */}
+      <div className="flex flex-wrap gap-4 items-end  mb-4">
+        <div className="flex flex-wrap gap-4 items-end">
+          <div className="inline-flex flex-col items-center justify-center rounded-lg bg-gray-50 px-4 py-3 min-w-[120px]">
+            <span className="text-2xl font-bold text-gray-900">{uniqueCities}</span>
+            <span className="text-sm text-gray-500">Cities</span>
+          </div>
+
+          <div className="inline-flex flex-col items-center justify-center rounded-lg bg-gray-50 px-4 py-3 min-w-[140px]">
+            <span className="text-2xl font-bold text-gray-900">269.9 km</span>
+            <span className="text-sm text-gray-500">Distance</span>
+          </div>
+
+          <div className="inline-flex flex-col items-center justify-center rounded-lg bg-gray-50 px-4 py-3 min-w-[120px]">
+            <span className="text-2xl font-bold text-gray-900">79</span>
+            <span className="text-sm text-gray-500">Runs</span>
+          </div>
+
+          <div className="inline-flex flex-col items-center justify-center rounded-lg bg-gray-50 px-4 py-3 min-w-[140px]">
+            <span className="text-2xl font-bold text-gray-900">36h 42m</span>
+            <span className="text-sm text-gray-500">Time</span>
+          </div>
         </div>
 
-        <div className="inline-flex flex-col items-center justify-center rounded-lg bg-gray-50 px-4 py-3 text-center min-w-[120px]">
-          <span className="text-xs text-gray-500">Distance</span>
-          <span className="text-lg font-semibold text-gray-900">269.9 km</span>
-        </div>
-
-        <div className="inline-flex flex-col items-center justify-center rounded-lg bg-gray-50 px-4 py-3 text-center min-w-[140px]">
-          <span className="text-xs text-gray-500">Time</span>
-          <span className="text-lg font-semibold text-gray-900">36h 42m</span>
-        </div>
-      </div>
-
-      <div className="flex items-center gap-2 mb-6">
-        <span className="inline-flex items-baseline gap-1.5 rounded-lg bg-gray-100 px-3 py-1.5 text-[15px] font-semibold tabular-nums text-gray-800">
-          {uniqueCities} cities
-        </span>
         <a
           href="https://www.strava.com/athletes/113105752"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 rounded-lg bg-gray-100 px-3 py-1.5 text-[15px] font-semibold text-gray-800 hover:bg-gray-200 hover:text-red-600 transition-colors"
+          className="inline-flex self-end items-center gap-1.5 rounded-lg bg-gray-100 px-3 py-1.5 text-[15px] font-semibold text-gray-800 hover:bg-gray-200 hover:text-red-600 transition-colors"
         >
           Strava
-          <span className="text-gray-400" aria-hidden>
+          <span className="text-gray-400 no-underline" style={{ textDecoration: "none" }} aria-hidden>
             ↗
           </span>
         </a>
       </div>
+
 
       {/* Two-column layout */}
       <div className="flex gap-8 items-start">
