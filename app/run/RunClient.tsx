@@ -373,6 +373,24 @@ export default function RunClient() {
         traveling.
       </p>
 
+      {/* Summary stats boxes */}
+      <div className="flex flex-wrap gap-3 mb-6">
+        <div className="inline-flex flex-col items-center justify-center rounded-lg bg-gray-50 px-4 py-3 text-center min-w-[120px]">
+          <span className="text-xs text-gray-500">Number of runs</span>
+          <span className="text-lg font-semibold text-gray-900">79</span>
+        </div>
+
+        <div className="inline-flex flex-col items-center justify-center rounded-lg bg-gray-50 px-4 py-3 text-center min-w-[120px]">
+          <span className="text-xs text-gray-500">Distance</span>
+          <span className="text-lg font-semibold text-gray-900">269.9 km</span>
+        </div>
+
+        <div className="inline-flex flex-col items-center justify-center rounded-lg bg-gray-50 px-4 py-3 text-center min-w-[140px]">
+          <span className="text-xs text-gray-500">Time</span>
+          <span className="text-lg font-semibold text-gray-900">36h 42m</span>
+        </div>
+      </div>
+
       <div className="flex items-center gap-2 mb-6">
         <span className="inline-flex items-baseline gap-1.5 rounded-lg bg-gray-100 px-3 py-1.5 text-[15px] font-semibold tabular-nums text-gray-800">
           {uniqueCities} cities

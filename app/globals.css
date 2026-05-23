@@ -274,6 +274,7 @@ body {
 /* Home: tighter top — padding + h1 offset each stepped down by 10% twice (0.9²) */
 .page-content.home-page {
   padding-top: calc(2rem * 0.9 * 0.9);
+  padding-bottom: 0;
   /* Lowest of former hero-subline / home-current-build / default <p> bottom spacing */
   --home-section-gap: calc(1rem * 0.9 * 0.9);
 }
@@ -1129,10 +1130,8 @@ body {
 /* Footer */
 
 .page-content footer {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: static;
+  margin: 100px auto 0;
   width: max-content;
   z-index: 100;
 }
@@ -1632,20 +1631,13 @@ body {
 @media (max-width: 800px) {
   .page-content footer,
   .page-content footer.footer {
-    /*
-      iOS Safari can visually "drift" centered fixed elements during scroll when
-      they rely on left:50% + transform. Use a full-width fixed rail and center
-      content with flex so the footer stays stable at the viewport bottom.
-    */
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: max(0px, env(safe-area-inset-bottom, 0px));
+    position: static;
+    margin: 100px auto 0;
+    width: auto;
     transform: none;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    z-index: 120;
+    display: block;
+    justify-content: initial;
+    z-index: 100;
   }
 
   html {
@@ -1759,7 +1751,7 @@ body {
     max-width: 100%;
     padding: 1rem 1.25rem;
     padding-top: 4.5rem; /* Space for hamburger button */
-    padding-bottom: 5rem; /* Space for fixed footer so it doesn't overlap content */
+    padding-bottom: 0;
     width: 100%;
     box-sizing: border-box;
     overflow-x: hidden; /* Prevent horizontal overflow */

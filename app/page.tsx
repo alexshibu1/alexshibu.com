@@ -72,14 +72,14 @@ export default function Home() {
           <ul>
             <li>Turned $3K into $100K in NFTs, then lost it all</li>
             <li>Worked on info gap decision theory at Technion</li>
-            <li>Taught 100+ young people tech and English in Poland</li>
+            <li>Taught 100+ young people tech and english in Poland</li>
             <li>
               Led EasyHacks w/Perplexity AI with 170+ participants from 13
               countries
             </li>
 
             <li>
-              Made my first dollars selling bath bombs and keto ebooks on
+              Made my first $1 selling bath bombs and keto on
               Shopify and IG
             </li>
           </ul>
