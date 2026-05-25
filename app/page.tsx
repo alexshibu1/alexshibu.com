@@ -13,6 +13,8 @@ import {
 // Hero inline links: override .page-content a (red in globals.css) with ! so gray wins
 const subtleLink =
   "group inline-flex items-baseline !text-black hover:!text-red-500 !font-medium hover:underline hover:decoration-red-300 hover:underline-offset-2 transition-all duration-150 cursor-pointer";
+const subtleInlineLink =
+  "group inline-flex items-baseline !text-[#666666] !no-underline hover:!text-black hover:underline hover:decoration-black hover:underline-offset-2 transition-all duration-150 cursor-pointer";
 
 const homeDescription =
   "Alex Shibu is a Toronto based developer, growth engineer, and student at University of Toronto sharing projects, writing, journey, books, and experiments.";
@@ -70,8 +72,16 @@ export default function Home() {
         <div className="home-previously-block">
           <p>Previously, I...</p>
           <ul>
-            <li>Turned $3K into $100K in NFTs, then lost it all</li>
-            <li>Worked on info gap decision theory at Technion</li>
+            <li>Turned $3K into $100K in NFTs, then lost it all :(</li>
+            <li>
+              Worked on info gap decision theory in Israel at {" "}
+              <HeroLink
+                href="https://www.technion.ac.il/en/"
+                className={subtleInlineLink}
+              >
+                Technion
+              </HeroLink>
+            </li>
             <li>Taught 100+ young people tech and english in Poland</li>
             <li>
               Led EasyHacks w/Perplexity AI with 170+ participants from 13
@@ -80,7 +90,7 @@ export default function Home() {
 
             <li>
               Made my first $1 selling bath bombs and keto on
-              Shopify and IG
+              Shopify and Insta
             </li>
           </ul>
         </div>

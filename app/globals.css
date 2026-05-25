@@ -728,32 +728,6 @@ body {
 
 
 
-/* ═══════════════════════════════════════════
-   V3b — Arrow breadcrumb
-   ═══════════════════════════════════════════ */
-.v3b {
-  gap: 0.25rem;
-}
-.v3b-logo {
-  width: 17px;
-  height: 17px;
-}
-.v3b-school {
-  font-weight: 500;
-  color: #888;
-  letter-spacing: -0.01em;
-}
-.v3b-arrow {
-  color: #ccc;
-  font-size: 1.3em;
-  font-weight: 300;
-  line-height: 1;
-}
-.v3b-subject {
-  font-weight: 600;
-  color: #1a1a1a;
-  letter-spacing: -0.015em;
-}
 
 /* ═══════════════════════════════════════════
    V4 — Bracket / monospace (now with logo)
