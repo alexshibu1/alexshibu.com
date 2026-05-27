@@ -91,20 +91,20 @@ export default function TechnicalPage() {
             </a>
 
             <a
-              href="https://fireship.dev"
+              href="https://cs50.harvard.edu/x/2024/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col gap-1 rounded-lg border border-gray-200 bg-white px-4 py-3 hover:border-indigo-300 hover:bg-indigo-50/30 transition-all group"
               style={{ textDecoration: "none" }}
             >
               <span className="text-sm font-semibold text-gray-900 group-hover:text-indigo-700">
-                Fireship JS
+                CS50
               </span>
               <span className="text-xs text-gray-500">
-                Fast, dense JavaScript lessons
+                Harvard's intro to computer science
               </span>
               <span className="text-[11px] text-gray-400 mt-1">
-                fireship.dev ↗
+                cs50.harvard.edu ↗
               </span>
             </a>
           </div>
