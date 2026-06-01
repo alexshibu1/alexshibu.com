@@ -123,6 +123,13 @@ export default function Sidebar() {
             linkedin
           </a>
           <a
+            href="https://www.youtube.com/@alexshibu/videos"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            youtube
+          </a>
+          <a
             href="https://instagram.com/alexshibu1"
             target="_blank"
             rel="noopener noreferrer"

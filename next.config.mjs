@@ -35,6 +35,22 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "alexshibu.com",
+          },
+        ],
+        destination: "https://www.alexshibu.com/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*/",
+        destination: "/:path*",
+        permanent: true,
+      },
+      {
         source: "/gapyear",
         destination: "/essay/gapyear",
         permanent: true,
