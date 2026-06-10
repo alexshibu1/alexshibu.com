@@ -232,7 +232,7 @@
   /* Footer */
   .page-content footer,
   .page-content footer.footer {
-    position: static; margin: 100px auto 0; width: auto; transform: none;
+    position: static; margin: 40px auto 0; width: auto; transform: none;
     display: block; justify-content: initial; z-index: 100;
   }
 
@@ -384,4 +384,18 @@
   .coffee-table th,
   .coffee-table td { padding: 0.5rem; }
   .coffee-table .review-cell { max-width: 200px; }
+
+  /* Hero heading fits 375px screens */
+  .hero-heading { font-size: 32px; }
+
+  /* Substack form: stack on very small screens */
+  .substack-form { flex-direction: column; align-items: stretch; }
+  .substack-input {
+    min-width: 0;
+    border-radius: 11px;
+  }
+  .substack-button {
+    border-radius: 11px;
+    text-align: center;
+  }
 }
