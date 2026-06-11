@@ -81,6 +81,18 @@ body {
   backdrop-filter: blur(2px);
 }
 
+@media (max-width: 800px) {
+  .hamburger-button {
+    display: flex;
+    top: max(0.75rem, env(safe-area-inset-top, 0px));
+    left: 0.75rem;
+  }
+
+  .menu-overlay {
+    display: block;
+  }
+}
+
 /* Sidebar */
 
 .sidebar {
@@ -966,7 +978,7 @@ body {
 
 .page-content footer {
   position: static;
-  margin: 100px auto 0;
+  margin: 92.15px auto 0;
   width: max-content;
   z-index: 100;
 }
