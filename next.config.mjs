@@ -30,6 +30,33 @@ const nextConfig = {
           },
         ],
       },
+      {
+        source: "/_next/static/:path*",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow",
+          },
+        ],
+      },
+      {
+        source: "/manifest.webmanifest",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex",
+          },
+        ],
+      },
+      {
+        source: "/:path*.woff2",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex",
+          },
+        ],
+      },
     ];
   },
   async redirects() {
@@ -41,7 +68,32 @@ const nextConfig = {
       },
       {
         source: "/gapyear",
-        destination: "/essay/gapyear",
+        destination: "/writing",
+        permanent: true,
+      },
+      {
+        source: "/essay/gapyear",
+        destination: "/writing",
+        permanent: true,
+      },
+      {
+        source: "/essay/gap-year",
+        destination: "/writing",
+        permanent: true,
+      },
+      {
+        source: "/read",
+        destination: "/books",
+        permanent: true,
+      },
+      {
+        source: "/resume",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/content",
+        destination: "/writing",
         permanent: true,
       },
       {

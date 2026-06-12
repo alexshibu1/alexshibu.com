@@ -7,6 +7,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        disallow: [
+          "/_next/static/",
+          "/*.woff",
+          "/*.woff2",
+          "/manifest.webmanifest",
+        ],
       },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,

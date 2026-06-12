@@ -97,16 +97,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      route: "/coffee",
+      sourcePath: path.join(appDir, "coffee", "page.tsx"),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
       route: "/experiments",
       sourcePath: path.join(appDir, "experiments", "page.tsx"),
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.5,
     },
     {
       route: "/lore",
       sourcePath: path.join(appDir, "lore", "page.tsx"),
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.5,
     },
     {
       route: "/sidequests",
