@@ -278,7 +278,7 @@ body {
 
   width: 100%;
 
-  max-width: 820px; /* Increased to maintain text width */
+  max-width: 825px; /* Increased to fix Twitter word spacing */
 
   padding: 2rem 2rem 20px 2rem;
 
