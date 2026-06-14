@@ -1028,7 +1028,7 @@ body {
 
 .page-content footer {
   position: static;
-  margin: 3rem auto 2rem;
+  margin: 3rem auto 1rem;
   width: 100%;
   max-width: max-content;
   z-index: 100;
