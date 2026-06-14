@@ -1046,10 +1046,10 @@ body {
   }
 }
 
-/* Large desktop only: center footer at bottom with minimal space */
-@media (min-width: 1440px) {
+/* Laptop: reduce top margin */
+@media (min-width: 1440px) and (max-width: 1699px) {
   .page-content footer {
-    margin: 4rem auto 1rem;
+    margin: 2rem auto 0.5rem;
   }
 }
 
