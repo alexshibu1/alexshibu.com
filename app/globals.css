@@ -1049,7 +1049,7 @@ body {
 /* Laptop: balanced top/bottom margin */
 @media (min-width: 1440px) and (max-width: 1699px) {
   .page-content footer {
-    margin: 3.5rem auto 0.5rem;
+    margin: 3.5rem auto 0.25rem;
   }
 }
 
