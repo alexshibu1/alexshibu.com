@@ -356,10 +356,16 @@
 }
 
 /* ===============================
-   Laptop Band Safety (1400px-1599px)
+   Laptop Band Safety (1400px-1699px)
    =============================== */
-@media (min-width: 1400px) and (max-width: 1599px) {
-  .page-content.home-page { max-width: 845px; }
+@media (min-width: 1400px) and (max-width: 1699px) {
+  .page-content {
+    max-width: 795px;
+  }
+
+  .page-content.home-page {
+    max-width: 835px;
+  }
 }
 
 /* ===============================
