@@ -301,7 +301,7 @@ body {
 
 .page-content p {
   font-family: var(--font-plex-sans), system-ui, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.65;
   font-weight: 400;
   color: #666666;
@@ -319,7 +319,7 @@ body {
 .page-content .hero-subline {
   margin-bottom: calc(1rem * 0.9 * 0.9);
   font-family: var(--font-plex-sans), system-ui, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.65;
   font-weight: 400;
   color: #666666;
@@ -337,7 +337,7 @@ body {
 .page-content.home-page p.home-on-this-site {
   margin-bottom: var(--home-section-gap);
   font-family: var(--font-plex-sans), system-ui, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.65;
   font-weight: 400;
   color: #666666;
@@ -363,7 +363,7 @@ body {
 .page-content .home-previously-block > p {
   margin: 0;
   font-family: var(--font-plex-sans), system-ui, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.65;
   font-weight: 400;
   color: #666666;
@@ -382,7 +382,7 @@ body {
 .page-content .home-previously-block > ul > li {
   margin-bottom: 0.35rem;
   font-family: var(--font-plex-sans), system-ui, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.65;
   font-weight: 400;
   color: #666666;
