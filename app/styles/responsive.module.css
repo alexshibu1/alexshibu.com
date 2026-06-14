@@ -278,6 +278,15 @@
    Large Screens (1700px+) - External Monitors Only
    =============================== */
 @media (min-width: 1700px) {
+  /* Increase content width for large monitors */
+  .page-content {
+    max-width: 835px;
+  }
+
+  .page-content.home-page {
+    max-width: 870px;
+  }
+
   /* Project media sizing for large screens */
   .project-media-link,
   .project-media-shell,
@@ -350,7 +359,7 @@
    Laptop Band Safety (1400px-1599px)
    =============================== */
 @media (min-width: 1400px) and (max-width: 1599px) {
-  .page-content.home-page { max-width: 870px; }
+  .page-content.home-page { max-width: 860px; }
 }
 
 /* ===============================
