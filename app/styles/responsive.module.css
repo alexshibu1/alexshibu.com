@@ -275,9 +275,9 @@
 }
 
 /* ===============================
-   Large Screens (1600px+)
+   Large Screens (1700px+) - External Monitors Only
    =============================== */
-@media (min-width: 1600px) {
+@media (min-width: 1700px) {
   /* Project media sizing for large screens */
   .project-media-link,
   .project-media-shell,
@@ -303,12 +303,19 @@
   .brand-name { font-size: 40px; }
 
   /* Typography scaling */
-  .page-content p { font-size: 22px; }
-  .page-content .about-bio { font-size: 20px; }
+  .page-content p { font-size: 18px; }
+  .page-content .about-bio { font-size: 18px; }
 
   .page-content .home-previously-block > ul,
   .page-content .home-previously-block > ul > li {
-    font-size: 22px;
+    font-size: 18px;
+  }
+
+  .page-content .hero-subline,
+  .page-content.home-page .hero-subline,
+  .page-content.home-page p.home-current-build,
+  .page-content.home-page p.home-on-this-site {
+    font-size: 18px;
   }
 
   /* Essay typography */
@@ -336,11 +343,7 @@
    MacBook Pro 14" (1500px-1599px)
    =============================== */
 @media (min-width: 1500px) and (max-width: 1599px) {
-  .page-content.home-page p,
-  .page-content.home-page .home-previously-block > ul,
-  .page-content.home-page .home-previously-block > ul > li {
-    font-size: 16px;
-  }
+  /* Removed conflicting font-size rules */
 }
 
 /* ===============================
@@ -348,12 +351,6 @@
    =============================== */
 @media (min-width: 1400px) and (max-width: 1599px) {
   .page-content.home-page { max-width: 860px; }
-
-  .page-content.home-page p,
-  .page-content.home-page .home-previously-block > ul,
-  .page-content.home-page .home-previously-block > ul > li {
-    font-size: 16px;
-  }
 }
 
 /* ===============================
