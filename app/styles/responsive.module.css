@@ -360,11 +360,11 @@
    =============================== */
 @media (min-width: 1400px) and (max-width: 1699px) {
   .page-content {
-    max-width: 795px;
+    max-width: 790px;
   }
 
   .page-content.home-page {
-    max-width: 835px;
+    max-width: 830px;
   }
 }
 
