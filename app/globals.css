@@ -1034,6 +1034,18 @@ body {
   z-index: 100;
 }
 
+/* Large desktop: fixed to bottom center */
+@media (min-width: 1700px) {
+  .page-content footer {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    width: auto;
+  }
+}
+
 /* Large desktop only: center footer at bottom with minimal space */
 @media (min-width: 1440px) {
   .page-content footer {
