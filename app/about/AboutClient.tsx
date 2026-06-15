@@ -75,91 +75,142 @@ export default function AboutClient() {
             >
               {bio}
             </p>
-            <button
-              onClick={copyBio}
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                padding: "0 0.8rem 0.4rem 0.8rem",
-                borderRadius: "6px",
-                cursor: "pointer",
-                transition: "background-color 0.2s",
-                backgroundColor: "rgba(0, 0, 0, 0)",
-                border: "none",
-                marginLeft: "0",
-                marginTop: "0.5rem",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0.02)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0)";
-              }}
-              title="Copy bio"
-            >
-              <span
+            <div style={{ display: "flex", gap: "0.5rem", marginTop: "0.5rem", flexWrap: "wrap" }}>
+              <button
+                onClick={copyBio}
                 style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                  padding: "0 0.8rem 0.4rem 0.8rem",
+                  borderRadius: "6px",
+                  cursor: "pointer",
+                  transition: "background-color 0.2s",
+                  backgroundColor: "rgba(0, 0, 0, 0)",
+                  border: "none",
+                  marginLeft: "0",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0.02)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0)";
+                }}
+                title="Copy bio"
+              >
+                <span
+                  style={{
+                    fontSize: "14px",
+                    color: "#666",
+                    fontFamily: "var(--font-inter), sans-serif",
+                    fontWeight: 400,
+                    transition: "color 0.2s ease",
+                  }}
+                >
+                  {copied ? (
+                    <>
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        style={{
+                          display: "inline-block",
+                          verticalAlign: "middle",
+                          marginRight: "0.25rem",
+                        }}
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Copied
+                    </>
+                  ) : (
+                    <>
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        style={{
+                          display: "inline-block",
+                          verticalAlign: "middle",
+                          marginRight: "0.25rem",
+                        }}
+                      >
+                        <rect
+                          x="9"
+                          y="9"
+                          width="13"
+                          height="13"
+                          rx="2"
+                          ry="2"
+                        ></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      Copy bio
+                    </>
+                  )}
+                </span>
+              </button>
+              <a
+                href="https://chatgpt.com/?q=Detailed+overview+of+who+is+Alex+Shibu+from+Toronto.+http://alexshibu.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.4rem",
+                  padding: "0.4rem 0.9rem",
+                  borderRadius: "6px",
+                  cursor: "pointer",
+                  transition: "all 0.15s ease",
+                  backgroundColor: "#f5f5f5",
+                  border: "1px solid #e5e5e5",
+                  textDecoration: "none",
                   fontSize: "14px",
                   color: "#666",
                   fontFamily: "var(--font-inter), sans-serif",
                   fontWeight: 400,
-                  transition: "color 0.2s ease",
                 }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = "#efefef";
+                  e.currentTarget.style.borderColor = "#d0d0d0";
+                  e.currentTarget.style.color = "#333";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = "#f5f5f5";
+                  e.currentTarget.style.borderColor = "#e5e5e5";
+                  e.currentTarget.style.color = "#666";
+                }}
+                title="Chat with AI about Alex"
               >
-                {copied ? (
-                  <>
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      style={{
-                        display: "inline-block",
-                        verticalAlign: "middle",
-                        marginRight: "0.25rem",
-                      }}
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Copied
-                  </>
-                ) : (
-                  <>
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      style={{
-                        display: "inline-block",
-                        verticalAlign: "middle",
-                        marginRight: "0.25rem",
-                      }}
-                    >
-                      <rect
-                        x="9"
-                        y="9"
-                        width="13"
-                        height="13"
-                        rx="2"
-                        ry="2"
-                      ></rect>
-                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                    </svg>
-                    Copy bio
-                  </>
-                )}
-              </span>
-            </button>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  style={{
+                    display: "inline-block",
+                    verticalAlign: "middle",
+                  }}
+                >
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                Chat w/AI
+              </a>
+            </div>
           </div>
         </div>
       </div>
