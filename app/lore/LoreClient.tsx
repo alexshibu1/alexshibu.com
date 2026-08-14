@@ -98,6 +98,12 @@ const LORE: LoreItem[] = [
     line: "Helped 20 kids earn $3K running booths at Parish Feast",
     more:
       "One of my favorite things I've led this year started with a question. How do we become a catalyst for young folks who want to get a glimpse of entrepreneurship. For our three-night Parish Feast which pulls around 1,500 people a night Scarborough SMYM builds a whole economy. Instead of doing the standard thing of running a  couple food stalls ourselves, we became an incubator investing 60 bucks into 8 groups of 4 kids. I set up a negative working capital model with the booths and SMYM ourselves owned high margin lanes like popcorn,  and cotton candy. Which became a financial backbone for the kids to experiment, building a whole ticket economy with fraud controls, dual ledger reconciliation all while also filming a documentary about the ups and downs of the whole 40+ person operation. Night after night of organizing PR, dealing with a chaotic mess, my job everyday was crisis management. We made over 3k in revenue and had a whole lot of fun doing it.",
+    links: [
+      {
+        label: "Instagram",
+        url: "https://www.instagram.com/p/DalJy7MDuJn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      },
+    ],
   },
   {
     id: "y4e-emcee-2025-02",
