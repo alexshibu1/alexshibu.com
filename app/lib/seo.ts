@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const SITE_URL = "https://alexshibu.com";
-export const DEFAULT_OG_IMAGE = "/images/about/banner3.png";
+export const DEFAULT_OG_IMAGE = "/images/about/og-banner.png";
 
 export const ALEX_PERSON = {
   "@context": "https://schema.org",

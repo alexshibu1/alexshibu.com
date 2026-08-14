@@ -51,6 +51,21 @@ function essayEntries(): Array<{ route: string; sourcePath: string }> {
     }));
 }
 
+const EXCLUDED_SITEMAP_ROUTES = new Set([
+  "/gapyear",
+  "/essay/gapyear",
+  "/essay/gap-year",
+  "/read",
+  "/resume",
+  "/content",
+  "/ethereum",
+  "/profs",
+  "/nft",
+  "/reject",
+  "/smym",
+  "/aifilms",
+]);
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const appDir = path.join(process.cwd(), "app");
 
@@ -141,12 +156,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const entries = [
-    ...staticEntries,
-    ...essayEntries().map((e) => ({
-      ...e,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    })),
+    ...staticEntries.filter(({ route }) => !EXCLUDED_SITEMAP_ROUTES.has(route)),
+    ...essayEntries()
+      .filter(({ route }) => !EXCLUDED_SITEMAP_ROUTES.has(route))
+      .map((e) => ({
+        ...e,
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+      })),
   ];
 
   return entries.map((entry) => ({

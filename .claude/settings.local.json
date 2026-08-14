@@ -29,7 +29,11 @@
       "Bash(wait *)",
       "Bash(xargs -I {} sh -c 'echo \"=== {} ===\" && head -30 {}')",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://alexshibu.com/sitemap.xml)",
-      "Bash(curl -s https://alexshibu.com/)"
+      "Bash(curl -s https://alexshibu.com/)",
+      "Bash(sips *)",
+      "Bash(python3 -c \"from PIL import Image; print\\('PIL available'\\)\")",
+      "Bash(python3 *)",
+      "Bash(npx tsc *)"
     ]
   }
 }
