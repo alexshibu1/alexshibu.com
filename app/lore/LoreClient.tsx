@@ -87,6 +87,12 @@ function inferSortKey(date: string): number {
 
 const LORE: LoreItem[] = [
   {
+    id: "jersey-importer-2026-06",
+    date: "06.2026",
+    line: "Chinese Jersey importer for the World Cup",
+    more: "Became a Chinese jersey importer for the World Cup. Facetimed factories, learned enough Mandarin to negotiate, got custom pieces made at prices that shouldn't exist, and figured out customs. Talked with 15+ suppliers evryone from eletronics to peptides. I came out knowing how relationships get built in this industry ",
+  },
+  {
     id: "y4e-emcee-2025-02",
     date: "02.2025",
     line: "Emceed the Y4E gala",
@@ -107,7 +113,7 @@ const LORE: LoreItem[] = [
   {
     id: "shopify-vanauley-2022-04",
     date: "04.2022",
-    line: "First dollar on Shopify selling bath bombs",
+    line: "Made my first $1 selling bath bombs and keto on Shopify and Insta.",
     more: "Launched a Shopify storefront for bath bomb fundraising for the Vanauley homeless shelter, promoted via Instagram theme pages. Had around 600 followers. Learned e-commerce + order fulfillment and marketing.",
     links: [
       {
@@ -291,8 +297,8 @@ const LORE: LoreItem[] = [
   {
     id: "missing-relic-film-2026-01",
     date: "01.2026",
-    line: "Got 50K+ views on a film about our missing relic",
-    more: "I spent five straight days in January 2026 making my first film in a long time, documenting the story of the missing relic at our church. The footage looks saucey and got over 50K views on Instagram.",
+    line: "Got 100K+ views on a film about our missing relic",
+    more: "I spent five straight days in January 2026 making my first film in a long time, documenting the story of the missing relic at our church. The footage looks saucey and got over 100K views accross platforms. Even got connected to some cool people in the industry.",
     links: [
       {
         label: "Film",

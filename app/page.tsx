@@ -84,13 +84,12 @@ export default function Home() {
             </li>
             <li>Taught 100+ young people tech and english in Poland</li>
             <li>
-              Led EasyHacks w/Perplexity AI with 170+ participants from 13
+              Led EasyHacks w/Perplexity AI with 170+ participants from 7+
               countries
             </li>
 
             <li>
-              Made my first $1 selling bath bombs and keto on
-              Shopify and Insta
+              Became a Chinese jersey importer for the World Cup
             </li>
           </ul>
         </div>
@@ -121,7 +120,7 @@ export default function Home() {
           </HeroLink>
           , reviewing {" "}
           <HeroLink href="/cafe" className={subtleLink}>
-            cafe reviews
+            cafes
           </HeroLink>
           , and doing fun {" "}
           <HeroLink href="/experiments" className={subtleLink}>

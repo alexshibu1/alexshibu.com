@@ -15,7 +15,21 @@
       "Bash(cp /tmp/mobile-check.js /Users/alexshibu/Documents/AlexwebDevBootcamp/alexshibu.com/alex/mobile-check.js)",
       "Bash(node mobile-check.js)",
       "Bash(npm install *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(curl -I https://alexshibu.com/)",
+      "Bash(curl -sL https://www.alexshibu.com/)",
+      "Bash(curl -sL https://alexshibu.com/)",
+      "Bash(curl -I https://alexshibu.com/essay/calculator)",
+      "Bash(curl -I https://www.alexshibu.com/)",
+      "Bash(curl -sI https://www.alexshibu.com/writing)",
+      "Bash(cat)",
+      "Read(//tmp/**)",
+      "Bash(git commit *)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(wait *)",
+      "Bash(xargs -I {} sh -c 'echo \"=== {} ===\" && head -30 {}')",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://alexshibu.com/sitemap.xml)",
+      "Bash(curl -s https://alexshibu.com/)"
     ]
   }
 }
