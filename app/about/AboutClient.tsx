@@ -259,7 +259,7 @@ export default function AboutClient() {
           </svg>
         </button>
         <ul
-          className={`transition-all duration-300 ease-in-out rounded-xl sm:rounded-2xl border border-gray-200/70 bg-white/90 shadow-md ring-1 ring-gray-200/40 divide-y divide-gray-200/60 ${
+          className={`list-none transition-all duration-300 ease-in-out rounded-xl sm:rounded-2xl border border-gray-200/70 bg-white/90 shadow-md ring-1 ring-gray-200/40 divide-y divide-gray-200/60 ${
             isQ4Open ? "opacity-100 max-h-[1400px]" : "opacity-0 max-h-0"
           }`}
           style={{ overflow: "hidden" }}
