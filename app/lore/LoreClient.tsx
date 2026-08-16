@@ -114,9 +114,9 @@ const LORE: LoreItem[] = [
   {
     id: "smym-feast-2026-07",
     date: "07.2026",
-    line: "Helped 20 kids earn $3K running booths at Parish Feast",
+    line: "Helped 20 kids earn $3K running booths for parish feast",
     more:
-      "One of my favorite things I've led this year started with a question. How do we become a catalyst for young folks who want to get a glimpse of entrepreneurship. For our three-night Parish Feast which pulls around 1,500 people a night Scarborough SMYM builds a whole economy. Instead of doing the standard thing of running a  couple food stalls ourselves, we became an incubator investing 60 bucks into 8 groups of 4 kids. I set up a negative working capital model with the booths Building a whole ticket economy with fraud controls, dual ledger reconciliation all while also filming a documentary about the ups and downs of the whole 40+ person operation. Night after night of organizing PR, dealing with a chaotic mess, my job everyday was crisis management. We made over 3k in revenue and had a whole lot of fun doing it.",
+      "One of my favorite things I've led this year, how do we become a catalyst for young entrepreneurship. For our three-night Parish Feast pulling around 1,500 people a night Scarborough. SMYM became an incubator investing 60 bucks into 8 groups of 4 kids. I set up a negative working capital model with the booths, a whole ticket economy with fraud controls all while also filming a documentary about the ups and downs of the whole 40+ person operation. Night after night of organizing PR, dealing with a chaotic mess, my job everyday was crisis management. We made over 3k in revenue and had a whole lot of fun doing it.",
     links: [
       {
         label: "Instagram",
@@ -145,7 +145,7 @@ const LORE: LoreItem[] = [
   {
     id: "shopify-vanauley-2022-04",
     date: "04.2022",
-    line: "Made my first $1 selling bath bombs and keto on Shopify and Insta.",
+    line: "Made my first $1 selling bath bombs and keto",
     more: "Launched a Shopify storefront for bath bomb fundraising for the Vanauley homeless shelter, promoted via Instagram theme pages. Had around 600 followers. Learned e-commerce + order fulfillment and marketing.",
     links: [
       {
@@ -860,7 +860,7 @@ export default function LoreClient() {
         </p>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-[1.35fr_0.65fr]">
+      <div className="grid gap-4 md:grid-cols-[1.35fr_0.65fr]">
         {/* Timeline */}
         <div>
           <ul className="list-none space-y-0">
@@ -890,7 +890,7 @@ export default function LoreClient() {
 
         {/* Desktop details pane */}
         <aside className="hidden md:block">
-          <div className="sticky top-24 border-l border-gray-100 pl-6">
+          <div className="sticky top-24 border-l border-gray-100 pl-6 w-[130%] max-w-[40rem] ml-auto">
             {active?.more ? (
               <>
                 <div className="text-xs text-gray-400 tabular-nums">
