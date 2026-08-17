@@ -576,8 +576,8 @@ const LORE: LoreItem[] = [
   {
     id: "ubisoft-esports-playtester-2019-12",
     date: "12.2019",
-    line: "Professional gamer (eSports) — Ubisoft",
-    more: "Dec 2019–Dec 2021. Paid playtester for Ubisoft's Science & Technology program—tried the newest games from studios in Halifax, Vancouver, and Toronto.",
+    line: "Professional game tester Ubisoft",
+    more: "For over 2 years I was paid to play unreleased games for Ubisoft from studios in Halifax and Toronto.",
   },
   {
     id: "bible-companion-2019-09",

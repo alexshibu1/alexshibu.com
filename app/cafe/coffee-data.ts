@@ -842,4 +842,37 @@ export const coffeeShops: CoffeeShop[] = [
     isChain: true,
     location: DEFAULT_LOCATION,
   },
+  {
+    id: "krispy-kreme-april-17-2026",
+    date: "April 17th, 2026",
+    drink: "Original coffee, two sugar, two cream",
+    shopName: "Krispy Kreme Spadina",
+    rating: 8.5,
+    review:
+      "Honestly, the coffee was way too watery. I think I added too much cream or something, but I didn’t add the cream, but it seems like they added milk instead of cream or something. It’s way too watery. Ideally a bit more sugar, but then that combined with two donuts and the cost of it, it boosts it up like three points. It’s really good in the glazed on it, although it’s 200 cal each. I would much rather have my calories like that, but it’s a very area. It’s like eating a Chito, though the original glazed donut. Also, the medium coffee here is like a large coffee. It’s pretty big.",
+    isChain: false,
+    location: DEFAULT_LOCATION,
+  },
+  {
+    id: "tim-hortons-june-3-2026",
+    date: "June 3rd, 2026",
+    drink: "Medium Caramel Churro Cold Brew",
+    shopName: "Tim Hortons",
+    rating: 7,
+    review:
+      "It’s good but also super bad. There is some weird aftertaste. Not really caramel-y. Like bitter, or like one weird spice. Not the bitter from the coffee. Something else. It’s not good at all for my liking.",
+    isChain: true,
+    location: DEFAULT_LOCATION,
+  },
+  {
+    id: "trailer-uoft-june-19-2026",
+    date: "June 19th, 2026",
+    drink: "Vanilla matcha latte",
+    shopName: "Trailer at UofT",
+    rating: 6,
+    review:
+      "It tastes like watery green stuff. Like eating vegetables.",
+    isChain: false,
+    location: DEFAULT_LOCATION,
+  },
 ];
