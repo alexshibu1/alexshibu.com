@@ -1,5 +1,7 @@
 # Alex’s Rejections
 
+![Screenshot 2026-08-15 at 7.28.51 PM.png](/images/rejection/Screenshot%202026-08-15%20at%207.28.51%E2%80%AFPM.png)
+
 ![Screenshot 2026-03-11 at 9.49.29 PM.png](/images/rejection/Screenshot%202026-03-11%20at%209.49.29%E2%80%AFPM.png)
 
 ![Screenshot 2026-03-08 at 10.22.55 PM.png](/images/rejection/Screenshot%202026-03-08%20at%2010.22.55%E2%80%AFPM.png)
