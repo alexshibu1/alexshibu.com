@@ -9,7 +9,11 @@ function hasEssay(book: Book): boolean {
 }
 
 export function BookCard({ book }: { book: Book }) {
-  const formattedDate = formatDateOfFinishing(book.dateRead);
+  const formattedDate = book.dateRead
+    ? formatDateOfFinishing(book.dateRead)
+    : book.dateStarted
+      ? `Started ${formatDateOfFinishing(book.dateStarted)}`
+      : formatDateOfFinishing();
 
   return (
     <li className="pt-1.5 pb-1 border-b border-gray-100 last:border-b-0">

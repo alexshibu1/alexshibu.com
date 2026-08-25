@@ -33,7 +33,9 @@
       "Bash(sips *)",
       "Bash(python3 -c \"from PIL import Image; print\\('PIL available'\\)\")",
       "Bash(python3 *)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(git -C /Users/alexshibu/Documents/AlexwebDevBootcamp/alexshibu.com/alex status)",
+      "Bash(git *)"
     ]
   }
 }

@@ -2,7 +2,7 @@ export type Book = {
   title: string;
   author: string;
   rating: number; // out of 5
-  dateRead: string; // month and year of finishing, use BOOK_DATE_FORMAT (e.g. "12.2025")
+  dateRead?: string; // month and year of finishing, use BOOK_DATE_FORMAT (e.g. "12.2025")
   /** Month and year started (MM.YYYY), optional. */
   dateStarted?: string;
   notes?: string; // slug of the essay (full review/notes) — title links to /essay/{notes}
@@ -23,6 +23,22 @@ export const BOOK_DATE_FORMAT = "MM.YYYY";
 export const READING_WPM = 200;
 
 export const books: Book[] = [
+  {
+    title: "Turning Pro",
+    author: "Steven Pressfield",
+    rating: 4.8,
+    dateStarted: "08.2026",
+    summary:
+      "A practical way to stop treating creative work like a hobby and start acting like a professional.",
+  },
+  {
+    title: "The Inner Game of Tennis",
+    author: "W. Timothy Gallwey",
+    rating: 4.5,
+    dateStarted: "08.2026",
+    summary:
+      "The game becomes easier once you stop fighting yourself and trust the skill you’ve already built.",
+  },
   {
     title: "Make Your Bed",
     author: "William H. McRaven",
@@ -151,7 +167,8 @@ export const TOTAL_HOURS = Math.round(
 );
 
 /** Format date of finishing to match BOOK_DATE_FORMAT (e.g. MM.YYYY). */
-export function formatDateOfFinishing(dateRead: string): string {
+export function formatDateOfFinishing(dateRead?: string): string {
+  if (!dateRead) return "Currently reading";
   if (BOOK_DATE_FORMAT !== "MM.YYYY") return dateRead;
   if (/^\d{1,2}\.\d{4}$/.test(dateRead)) {
     const [m, y] = dateRead.split(".");

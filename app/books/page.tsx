@@ -9,10 +9,15 @@ export const metadata: Metadata = sectionMetadata(
   "/books",
 );
 
-/** Sort by date finished (MM.YYYY), most recent first. */
-function sortByDateRead(a: { dateRead: string }, b: { dateRead: string }) {
-  const [ma, ya] = a.dateRead.split(".").map(Number);
-  const [mb, yb] = b.dateRead.split(".").map(Number);
+/** Sort by the most relevant date (finished first, otherwise started), most recent first. */
+function sortByDateRead(
+  a: { dateRead?: string; dateStarted?: string },
+  b: { dateRead?: string; dateStarted?: string },
+) {
+  const aDate = a.dateRead ?? a.dateStarted ?? "00.0000";
+  const bDate = b.dateRead ?? b.dateStarted ?? "00.0000";
+  const [ma, ya] = aDate.split(".").map(Number);
+  const [mb, yb] = bDate.split(".").map(Number);
   if (ya !== yb) return yb - ya;
   return mb - ma;
 }
