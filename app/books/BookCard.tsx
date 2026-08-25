@@ -9,11 +9,13 @@ function hasEssay(book: Book): boolean {
 }
 
 export function BookCard({ book }: { book: Book }) {
-  const formattedDate = book.dateRead
+  const hasFinishedDate = Boolean(book.dateRead);
+  const formattedDate = hasFinishedDate
     ? formatDateOfFinishing(book.dateRead)
-    : book.dateStarted
-      ? `Started ${formatDateOfFinishing(book.dateStarted)}`
-      : formatDateOfFinishing();
+    : "Currently reading";
+  const startedDate = book.dateStarted
+    ? `Started ${formatDateOfFinishing(book.dateStarted)}`
+    : null;
 
   return (
     <li className="pt-1.5 pb-1 border-b border-gray-100 last:border-b-0">
@@ -54,34 +56,44 @@ export function BookCard({ book }: { book: Book }) {
             </span>
           </div>
 
-          <div className="hidden md:flex md:justify-end">
-            <RatingPillTypography
-              rating={book.rating}
-              ariaLabel={`${book.rating} out of 5`}
-            />
-          </div>
+          {hasFinishedDate ? (
+            <div className="hidden md:flex md:justify-end">
+              <RatingPillTypography
+                rating={book.rating}
+                ariaLabel={`${book.rating} out of 5`}
+              />
+            </div>
+          ) : null}
         </div>
+
+        {startedDate ? (
+          <div className="text-xs uppercase tracking-[0.08em] text-gray-500">
+            {startedDate}
+          </div>
+        ) : null}
 
         {book.summary ? (
           <div className="flex items-start gap-3 md:block">
             <p className="!text-[14px] text-gray-600 leading-relaxed !mb-[4px] max-w-[85%] md:max-w-[85%] flex-1 min-w-0">
               {book.summary}
             </p>
-            <div className="shrink-0 md:hidden pt-[1px]">
-              <RatingPillTypography
-                rating={book.rating}
-                ariaLabel={`${book.rating} out of 5`}
-              />
-            </div>
+            {hasFinishedDate ? (
+              <div className="shrink-0 md:hidden pt-[1px]">
+                <RatingPillTypography
+                  rating={book.rating}
+                  ariaLabel={`${book.rating} out of 5`}
+                />
+              </div>
+            ) : null}
           </div>
-        ) : (
+        ) : hasFinishedDate ? (
           <div className="md:hidden flex justify-end">
             <RatingPillTypography
               rating={book.rating}
               ariaLabel={`${book.rating} out of 5`}
             />
           </div>
-        )}
+        ) : null}
       </div>
     </li>
   );
