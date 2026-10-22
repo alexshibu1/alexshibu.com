@@ -127,6 +127,11 @@ const nextConfig = {
           "https://docs.google.com/presentation/d/1y6aeqlCFMKFFEhaa4p_Cwgv3zj_8TyVIIhbSX87auPo/edit?usp=sharing",
         permanent: true,
       },
+      {
+        source: "/turnitin",
+        destination: "https://alexturnitin.streamlit.app",
+        permanent: false,
+      },
     ];
   },
 };
