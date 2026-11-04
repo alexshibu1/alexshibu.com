@@ -132,6 +132,11 @@ const nextConfig = {
         destination: "https://alexturnitin.streamlit.app",
         permanent: false,
       },
+      {
+        source: "/Arctic",
+        destination: "https://youtube.com/shorts/7FDMR5D40KQ?feature=share",
+        permanent: false,
+      },
     ];
   },
 };
