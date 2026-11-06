@@ -75,6 +75,8 @@ export default function RootLayout({
       className={`${inter.variable} ${spaceGrotesk.variable} ${plexSans.variable}`}
     >
       <head>
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="color-scheme" content="light" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="preconnect" href="https://alexshibustats.vercel.app" />
       </head>

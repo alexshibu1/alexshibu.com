@@ -56,7 +56,16 @@ export default function Sidebar() {
       </button>
 
       {/* Overlay - appears when menu is open on mobile; tap to close */}
-      {isOpen && <div className="menu-overlay" onClick={closeMenu} />}
+      {isOpen && (
+        <div
+          className="menu-overlay"
+          onClick={closeMenu}
+          onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") closeMenu(); }}
+          role="button"
+          tabIndex={-1}
+          aria-label="Close menu"
+        />
+      )}
 
       {/* Sidebar */}
       <div className={`sidebar ${isOpen ? "sidebar-open" : ""}`}>
@@ -104,6 +113,7 @@ export default function Sidebar() {
             href="https://x.com/alexshibu2"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="X (Twitter)"
           >
             x
           </a>
@@ -112,6 +122,7 @@ export default function Sidebar() {
             href="https://github.com/alexshibu1"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub"
           >
             github
           </a>
@@ -119,6 +130,7 @@ export default function Sidebar() {
             href="https://linkedin.com/in/alexshibu"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn"
           >
             linkedin
           </a>
@@ -126,6 +138,7 @@ export default function Sidebar() {
             href="https://www.youtube.com/@alexshibu/videos"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="YouTube"
           >
             youtube
           </a>
@@ -133,10 +146,11 @@ export default function Sidebar() {
             href="https://instagram.com/alexshibu1"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Instagram"
           >
             instagram
           </a>
-          <a href="mailto:alexshibu04@gmail.com">contact</a>
+          <a href="mailto:alexshibu04@gmail.com" aria-label="Contact via email">contact</a>
         </div>
       </div>
     </>

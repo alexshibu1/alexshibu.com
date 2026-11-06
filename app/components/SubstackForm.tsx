@@ -14,7 +14,8 @@ export default function SubstackForm() {
         id="substack-email"
         name="email"
         type="email"
-        placeholder="your@email.com"
+        placeholder="your@email.com…"
+      autoComplete="email"
         className="substack-input"
         aria-label="Email address"
       />
